@@ -25,6 +25,6 @@ For more, check out [`jekyll/jekyll#2563`](https://github.com/jekyll/jekyll/pull
 Additionally, the dependency on Maruku has been loosened and a bug was
 fixed with document URLs.
 
-As always, check out the [full changelog](/docs/history/) for more info!
+As always, check out the [full changelog]({{ site.baseurl }}/docs/history/) for more info!
 
 Happy Jekylling!

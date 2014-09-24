@@ -38,4 +38,4 @@ well-established (at least since Jekyll v0.7.0), and was convenient.
 [#2705]: {{ site.repository }}/issues/2705
 
 For more excellent CHANGELOG reading material, check out the [History
-page](/docs/history/)! Happy Jekylling!
+page]({{ site.baseurl }}/docs/history/)! Happy Jekylling!

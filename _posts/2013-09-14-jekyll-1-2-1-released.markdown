@@ -16,4 +16,4 @@ the command for killing the process). **Note**: the `--detach` flag and
 `--watch` flags are presently incompatible in 1.2.x. Fix for that coming soon!
 
 For a full list of the fixes in this release, check out [the change
-log](/docs/history/)!
+log]({{ site.baseurl }}/docs/history/)!

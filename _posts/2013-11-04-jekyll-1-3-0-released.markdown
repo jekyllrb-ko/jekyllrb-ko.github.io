@@ -38,6 +38,6 @@ Here are a few things we think you'll want to know about this release:
 * Expose the current Jekyll version as the `jekyll.version` Liquid
   variable.
 
-For a full run-down, visit our [change log](/docs/history/)!
+For a full run-down, visit our [change log]({{ site.baseurl }}/docs/history/)!
 
-[arbitrary data]: /docs/datafiles/
+[arbitrary data]: {{ site.baseurl }}/docs/datafiles/
