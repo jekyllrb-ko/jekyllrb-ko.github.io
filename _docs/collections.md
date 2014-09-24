@@ -105,7 +105,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>title</code></p>
       </td>
       <td>
-        <p>The document's lowercase title (as defined in its <a href="/docs/frontmatter/">front matter</a>), with every sequence of spaces and non-alphanumeric characters replaced by a hyphen. If the document does not define a title in its <a href="/docs/frontmatter/">front matter</a>, this is equivalent to <code>name</code>.</p>
+        <p>The document's lowercase title (as defined in its <a href="{{ site.baseurl }}/docs/frontmatter/">front matter</a>), with every sequence of spaces and non-alphanumeric characters replaced by a hyphen. If the document does not define a title in its <a href="{{ site.baseurl }}/docs/frontmatter/">front matter</a>, this is equivalent to <code>name</code>.</p>
       </td>
     </tr>
     <tr>

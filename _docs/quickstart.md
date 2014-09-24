@@ -25,4 +25,4 @@ advantage of all the awesome configuration options Jekyll makes available.
 If you're running into problems, ensure you have all the [requirements
 installed][Installation].
 
-[Installation]: /docs/installation/
+[Installation]: {{ site.baseurl }}/docs/installation/
