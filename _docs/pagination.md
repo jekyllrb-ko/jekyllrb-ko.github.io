@@ -1,89 +1,76 @@
 ---
 layout: docs
-title: Pagination
+title: 페이지 나누기
 prev_section: permalinks
 next_section: plugins
 permalink: /docs/pagination/
 ---
 
-With many websites—especially blogs—it’s very common to break the main listing
-of posts up into smaller lists and display them over multiple pages. Jekyll has
-pagination built-in, so you can automatically generate the appropriate files and
-folders you need for paginated listings.
+포스트 목록을 작게 나누어 여러 페이지에 걸쳐 보여주는 방법은 많은 웹 사이트 - 특히 블로그 - 에서 일반적으로 사용되고 있습니다. Jekyll 에 내장된 페이지 나누기 기능을 사용하여, 파일과 폴더 목록에 페이지 번호를 매길 수 있습니다.
 
 <div class="note info">
-  <h5>Pagination only works within HTML files</h5>
+  <h5>페이지 나누기는 오직 HTML 파일에서만 작동합니다</h5>
   <p>
-    Pagination does not work with Markdown or Textile files in your Jekyll site.
-    It will only work when used within HTML files. Since you’ll likely be using
-    this for the list of Posts, this shouldn’t be an issue.
+    페이지 나누기는 Markdown 이나 Textile 파일에서는 작동하지 않습니다. 오직 HTML 파일에서 사용될 때에만 작동합니다. 보통 이 기능은 포스트 목록에 사용되기 때문에, 이 제약사항이 문제가 되지는 않을 것입니다.
   </p>
 </div>
 
-## Enable pagination
+## 페이지 나누기 활성화
 
-To enable pagination for your blog, add a line to the `_config.yml` file that
-specifies how many items should be displayed per page:
+블로그에 페이지 나누기 기능을 활성화하려면, 한 페이지에 몇 개의 항목을 보여줄 지 `_config.yml` 파일에 추가하세요:
 
 {% highlight yaml %}
 paginate: 5
 {% endhighlight %}
 
-The number should be the maximum number of Posts you’d like to be displayed per-
-page in the generated site.
+한 페이지에 표시하고자 하는 최대 포스트 수를 입력하면 됩니다.
 
-You may also specify where the destination of the pagination pages:
+이렇게 나뉘어진 페이지가 생성될 위치도 지정할 수 있습니다:
 
 {% highlight yaml %}
 paginate_path: "blog/page:num"
 {% endhighlight %}
 
-This will read in `blog/index.html`, send it each pagination page in Liquid as `paginator`
-and write the output to `blog/page:num`, where `:num` is the pagination page number,
-starting with `2`. If a site has 12 posts and specifies `paginate: 5`, Jekyll will write
-`blog/index.html` with the first 5 posts, `blog/page2/index.html` with the next 5 posts
-and `blog/page3/index.html` with the last 2 posts into the destination directory.
+이 설정은 `blog/index.html` 에서 사용되어, `paginator` 라는 Liquid 에 나뉘어진 각 페이지를 보내고 `blog/page:num` 에 결과물이 만들어집니다. 여기서 `:num` 은 `2` 부터 시작하는 페이지 번호입니다. 사이트가 12 개의 포스트를 가지고 있고 `pagenate: 5` 가 설정되어 있을 경우, Jekyll 은 처음 5 개의 포스트를 `blog/index.html` 에 만들고, `blog/page2/index.html` 에 다음 5 개의 포스트를, `blog/page3/index.html` 에 마지막 2 개의 포스트를 만들게 됩니다.
 
-## Liquid Attributes Available
+## 사용가능한 Liquid 속성
 
-The pagination plugin exposes the `paginator` liquid object with the following
-attributes:
+페이지 나누기 플러그인은 `paginator` 라는 Liquid 객체를 사용할 수 있게 해주며, 이 객체는 다음 속성들을 가지고 있습니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Attribute</th>
-      <th>Description</th>
+      <th>속성</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><p><code>page</code></p></td>
-      <td><p>current page number</p></td>
+      <td><p>현재 페이지 번호</p></td>
     </tr>
     <tr>
       <td><p><code>per_page</code></p></td>
-      <td><p>number of posts per page</p></td>
+      <td><p>페이지 당 포스트 갯수</p></td>
     </tr>
     <tr>
       <td><p><code>posts</code></p></td>
-      <td><p>a list of posts for the current page</p></td>
+      <td><p>현재 페이지의 포스트 목록</p></td>
     </tr>
     <tr>
       <td><p><code>total_posts</code></p></td>
-      <td><p>total number of posts in the site</p></td>
+      <td><p>사이트의 전체 포스트 갯수</p></td>
     </tr>
     <tr>
       <td><p><code>total_pages</code></p></td>
-      <td><p>number of pagination pages</p></td>
+      <td><p>전체 페이지 수</p></td>
     </tr>
     <tr>
       <td><p><code>previous_page</code></p></td>
       <td>
           <p>
-              page number of the previous pagination page,
-              or <code>nil</code> if no previous page exists
+              이전 페이지 번호, 또는 이전 페이지가 없을 때 <code>nil</code>
           </p>
       </td>
     </tr>
@@ -91,8 +78,7 @@ attributes:
       <td><p><code>previous_page_path</code></p></td>
       <td>
           <p>
-              path of previous pagination page,
-              or <code>nil</code> if no previous page exists
+              이전 페이지 경로, 또는 이전 페이지가 없을 때 <code>nil</code>
           </p>
       </td>
     </tr>
@@ -100,8 +86,7 @@ attributes:
       <td><p><code>next_page</code></p></td>
       <td>
           <p>
-              page number of the next pagination page,
-              or <code>nil</code> if no subsequent page exists
+              다음 페이지 번호, 또는 다음 페이지가 없을 때 <code>nil</code>
           </p>
       </td>
     </tr>
@@ -109,8 +94,7 @@ attributes:
       <td><p><code>next_page_path</code></p></td>
       <td>
           <p>
-              path of next pagination page,
-              or <code>nil</code> if no subsequent page exists
+              다음 페이지 경로, 또는 다음 페이지가 없을 때 <code>nil</code>
           </p>
       </td>
     </tr>
@@ -119,20 +103,13 @@ attributes:
 </div>
 
 <div class="note info">
-  <h5>Pagination does not support tags or categories</h5>
-  <p>Pagination pages through every post in the <code>posts</code>
-  variable regardless of variables defined in the YAML Front Matter of
-  each. It does not currently allow paging over groups of posts linked
-  by a common tag or category. It cannot include any collection of
-  documents because it is restricted to posts.</p>
+  <h5>페이지 나누기는 태그나 카테고리를 지원하지 않습니다</h5>
+  <p>페이지 나누기는 각 포스트의 YAML 머리말에 정의된 변수에 관계없이 `posts` 변수의 모든 포스트를 나눕니다. 태그나 카테고리로 구분된 포스트 묶음을 페이지로 나누는 것은 현재 허용되지 않습니다. 포스트에만 국한되기 때문에 문서 집합도 적용할 수 없습니다.</p>
 </div>
 
-## Render the paginated Posts
+## 페이지로 나눠진 포스트 렌더링
 
-The next thing you need to do is to actually display your posts in a list using
-the `paginator` variable that will now be available to you. You’ll probably want
-to do this in one of the main pages of your site. Here’s one example of a simple
-way of rendering paginated Posts in a HTML file:
+다음 할 일은 `paginator` 변수를 사용하여 목록에 있는 포스트를 실제로 출력하는 것입니다. 보통은 사이트의 메인 페이지에 이 작업을 하게 됩니다. HTML 파일에 페이지로 나뉘어진 포스트를 표시하는 간단한 예시는 다음과 같습니다:
 
 {% highlight html %}
 {% raw %}
@@ -170,16 +147,13 @@ title: My Blog
 {% endhighlight %}
 
 <div class="note warning">
-  <h5>Beware the page one edge-case</h5>
+  <h5>첫 페이지 경계조건을 주의하세요</h5>
   <p>
-    Jekyll does not generate a ‘page1’ folder, so the above code will not work
-    when a <code>/page1</code> link is produced. See below for a way to handle
-    this if it’s a problem for you.
+    Jekyll 은 ‘page1’ 폴더를 생성하지 않기 때문에, 위 코드는 <code>/page1</code> 링크에 대하여 올바르게 작동하지 않습니다. 만약 이것이 문제가 된다면 아래의 방법을 참고하세요.
   </p>
 </div>
 
-The following HTML snippet should handle page one, and render a list of each
-page with links to all but the current page.
+아래 HTML 코드는 첫 번째 페이지와 함께 나머지 페이지들의 링크도 올바르게 처리합니다.
 
 {% highlight html %}
 {% raw %}

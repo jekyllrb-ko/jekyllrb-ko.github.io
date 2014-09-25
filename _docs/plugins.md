@@ -1,85 +1,56 @@
 ---
 layout: docs
-title: Plugins
+title: 플러그인
 prev_section: pagination
 next_section: extras
 permalink: /docs/plugins/
 ---
 
-Jekyll has a plugin system with hooks that allow you to create custom generated
-content specific to your site. You can run custom code for your site without
-having to modify the Jekyll source itself.
+Jekyll 의 플러그인 시스템은 훅을 제공하여, 자신의 사이트에 꼭 맞는 컨텐츠를 생성할 수 있게 해줍니다. 따라서, Jekyll 의 소스를 직접 수정하지 않고도 자신의 코드를 실행할 수 있습니다.
 
 <div class="note info">
-  <h5>Plugins on GitHub Pages</h5>
+  <h5>GitHub Pages 와 플러그인</h5>
   <p>
-    <a href="http://pages.github.com/">GitHub Pages</a> is powered by Jekyll,
-    however all Pages sites are generated using the <code>--safe</code> option
-    to disable custom plugins for security reasons. Unfortunately, this means
-    your plugins won’t work if you’re deploying to GitHub Pages.<br><br>
-    You can still use GitHub Pages to publish your site, but you’ll need to
-    convert the site locally and push the generated static files to your GitHub
-    repository instead of the Jekyll source files.
+    <a href="http://pages.github.com/">GitHub Pages</a> 는 Jekyll 을 사용합니다. 하지만 보안상의 이유로, 사용자 플러그인을 비활성화하는 <code>--safe</code> 옵션으로 모든 사이트를 생성합니다. 이 말은 안타깝게도, GitHub Pages 에서는 당신의 플러그인을 사용할 수 없다는 뜻입니다.<br><br>그래도 GitHub Pages 를 사용할 수 있는 방법이 있습니다. GitHub 에 소스를 직접 올리는 대신, 먼저 로컬상에서 변환한 뒤에 생성된 파일을 푸쉬하면 됩니다.
   </p>
 </div>
 
 ## Installing a plugin
 
-You have 2 options for installing plugins:
+플러그인을 설치하는 방법은 두 가지가 있습니다:
 
-1. In your site source root, make a `_plugins` directory. Place your plugins here.
-    Any file ending in `*.rb` inside this directory will be loaded before Jekyll
-    generates your site.
-2. In your `_config.yml` file, add a new array with the key `gems` and the values
-    of the gem names of the plugins you'd like to use. An example:
+1. 사이트의 루트에 `_plugins` 디렉토리를 만드세요. 여기에 자신의 플러그인을 넣으면 됩니다. Jekyll 은 사이트를 생성하기 전에 이 디렉토리 안에 `*.rb` 로 끝나는 모든 파일을 읽어들이게 됩니다.
+2. `_config.yml` 파일에 `gems` 라는 키로 배열을 추가해서 사용하려는 플러그인들의 gem 이름을 나열하세요. 예를 들면:
 
         gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
         # This will require each of these gems automatically.
 
 <div class="note info">
   <h5>
-    <code>_plugins</code> and <code>gems</code>
-    can be used simultaneously
+    <code>_plugins</code> 과 <code>gems</code> 는 동시에 사용할 수 있습니다
   </h5>
   <p>
-    You may use both of the aforementioned plugin options simultaneously in the
-    same site if you so choose. Use of one does not restrict the use of the other
+    앞서 언급한 플러그인 옵션 두 가지는 원한다면 동시에 사용할 수 있습니다. 한 쪽을 사용한다고 해서 다른 쪽을 사용하는데 제한이 걸리지 않습니다.
   </p>
 </div>
 
-In general, plugins you make will fall into one of three categories:
+플러그인은 일반적으로 세 가지 카테고리 중 하나에 속하게 됩니다:
 
-1. Generators
-2. Converters
-3. Tags
+1. 생성기
+2. 변환기
+3. 태그
 
-## Generators
+## 생성기
 
-You can create a generator when you need Jekyll to create additional content
-based on your own rules.
+생성기를 만들면 자신만의 규칙에 따라 부가적인 컨텐츠를 생성할 수 있습니다.
 
-A generator is a subclass of `Jekyll::Generator` that defines a `generate`
-method, which receives an instance of
-[`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb).
+생성기는 `generate` 메소드가 정의되어 있는 `Jekyll::Generator` 의 하위 클래스로서 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 인스턴스를 받습니다.
 
-Generation is triggered for its side-effects, the return value of `generate` is
-ignored. Jekyll does not assume any particular side-effect to happen, it just
-runs the method.
+`generate` 메소드의 안의 다른 코드에 의해서 생성 작업이 이루어지고, 메소드의 반환 값은 무시됩니다. Jekyll 은 메소드 안에서 어떤 일이 일어나는지 신경쓰지 않습니다. 단지 실행할 뿐입니다.
 
-Generators run after Jekyll has made an inventory of the existing content, and
-before the site is generated. Pages with YAML Front Matters are stored as
-instances of
-[`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb)
-and are available via `site.pages`. Static files become instances of
-[`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)
-and are available via `site.static_files`. See
-[the Variables documentation page]({{ site.baseurl }}/docs/variables/) and
-[`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)
-for more details.
+생성기는 Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 전에 실행됩니다. YAML 머리말을 가진 페이지들은 [`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb) 인스턴스가 되고 `site.pages` 로 사용할 수 있습니다. 정적 파일들은 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb) 인스턴스가 되고 `site.static_files` 로 사용할 수 있습니다. 더 자세한 내용은 [변수 문서 페이지]({{ site.baseurl }}/docs/variables/)와 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 를 살펴보세요.
 
-For instance, a generator can inject values computed at build time for template
-variables. In the following example the template `reading.html` has two
-variables `ongoing` and `done` that we fill in the generator:
+예를 들어, 빌드 시점에 생성기는 템플릿 변수에 계산된 값을 주입할 수 있습니다. 다음 예제에서 템플릿 `reading.html` 은 두 가지 변수 `ongoing` 과 `done` 를 가지고 있으며 생성기에서 값이 채워질 것입니다:
 
 {% highlight ruby %}
 module Reading
@@ -95,7 +66,7 @@ module Reading
 end
 {% endhighlight %}
 
-This is a more complex generator that generates new pages:
+다음은 새 페이지를 생성하는, 좀 더 복잡한 생성기입니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -132,18 +103,16 @@ module Jekyll
 end
 {% endhighlight %}
 
-In this example, our generator will create a series of files under the
-`categories` directory for each category, listing the posts in each category
-using the `category_index.html` layout.
+이 생성기는 `category_index.html` 레이아웃을 사용하여 각 카테고리 별 포스트 목록을 보여주는 파일을 `categories` 디렉토리에 만들 것입니다.
 
-Generators are only required to implement one method:
+생성기가 필수로 구현해야 할 메소드는 하나입니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Method</th>
-      <th>Description</th>
+      <th>메소드</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -152,29 +121,25 @@ Generators are only required to implement one method:
         <p><code>generate</code></p>
       </td>
       <td>
-        <p>Generates content as a side-effect.</p>
+        <p>컨텐츠를 생성합니다.</p>
       </td>
     </tr>
   </tbody>
 </table>
 </div>
 
-## Converters
+## 변환기
 
-If you have a new markup language you’d like to use with your site, you can
-include it by implementing your own converter. Both the Markdown and Textile
-markup languages are implemented using this method.
+다른 마크업 언어를 사용하고 싶다면, 해당 언어를 처리할 수 있는 변환기를 직접 구현하면 됩니다. 기본으로 포함된 Markdown 과 Textile 에 대해서도 이 메소드가 구현되어 있습니다.
 
 <div class="note info">
-  <h5>Remember your YAML Front Matter</h5>
+  <h5>YAML 머리말을 잊지 마세요</h5>
   <p>
-    Jekyll will only convert files that have a YAML header at the top, even for
-    converters you add using a plugin.
+    Jekyll 은 오직 YAML 머리말로 시작하는 파일만 변환합니다. 변환기를 추가한 경우에도 마찬가지 입니다.
   </p>
 </div>
 
-Below is a converter that will take all posts ending in `.upcase` and process
-them using the `UpcaseConverter`:
+다음은 변환기 예제입니다. `.upcase` 로 끝나는 모든 포스트를 읽어서 `UpcaseConverter` 로 처리합니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -197,14 +162,14 @@ module Jekyll
 end
 {% endhighlight %}
 
-Converters should implement at a minimum 3 methods:
+변환기가 반드시 구현해야 할 메소드는 3 가지 입니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Method</th>
-      <th>Description</th>
+      <th>메소드</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -213,10 +178,7 @@ Converters should implement at a minimum 3 methods:
         <p><code>matches</code></p>
       </td>
       <td><p>
-        Does the given extension match this converter’s list of acceptable
-        extensions? Takes one argument: the file’s extension (including the
-        dot). Must return <code>true</code> if it matches, <code>false</code>
-        otherwise.
+        이 변환기가 처리할 수 있는 확장자와 주어진 확장자가 일치하는지 확인합니다. 전달인자는 파일 확장자 (점 포함) 입니다. 일치하는 경우엔 <code>true</code> 를, 일치하지 않는 경우엔 <code>false</code> 를 반환해야 합니다.
       </p></td>
     </tr>
     <tr>
@@ -224,8 +186,7 @@ Converters should implement at a minimum 3 methods:
         <p><code>output_ext</code></p>
       </td>
       <td><p>
-        The extension to be given to the output file (including the dot).
-        Usually this will be <code>".html"</code>.
+        변환된 파일의 확장자 (점 포함). 일반적으로 <code>".html"</code> 가 될 것입니다.
       </p></td>
     </tr>
     <tr>
@@ -233,26 +194,18 @@ Converters should implement at a minimum 3 methods:
         <p><code>convert</code></p>
       </td>
       <td><p>
-        Logic to do the content conversion. Takes one argument: the raw content
-        of the file (without YAML Front Matter). Must return a String.
+        컨텐츠를 변환하는 로직. 전달 인자는 소스 파일 내용 (YAML 머리말 제외) 입니다. 문자열을 반환해야 합니다.
       </p></td>
     </tr>
   </tbody>
 </table>
 </div>
 
-In our example, `UpcaseConverter#matches` checks if our filename extension is
-`.upcase`, and will render using the converter if it is. It will call
-`UpcaseConverter#convert` to process the content. In our simple converter we’re
-simply uppercasing the entire content string. Finally, when it saves the page,
-it will do so with a `.html` extension.
+위 예제에서는, 확장자가 `.upcase` 인지 `UpcaseConverter#matches` 가 확인하고, 만약 그렇다면 `UpcaseConverter#convert` 를 호출하여 내용을 변환합니다. 이 변환기는 단순히 전체 내용을 대문자로 변환합니다. 마지막으로, 변환된 내용을 페이지로 저장할 때 `.html` 확장자를 사용합니다.
 
-## Tags
+## 태그
 
-If you’d like to include custom liquid tags in your site, you can do so by
-hooking into the tagging system. Built-in examples added by Jekyll include the
-`highlight` and `include` tags. Below is an example of a custom liquid tag that
-will output the time the page was rendered:
+사이트에 자신의 Liquid 태그를 추가하려면, 태그 시스템의 훅을 사용하면 됩니다. Jekyll 에 내장된 예제로는 `highlight` 와 `include` 등이 있습니다. 다음은 페이지가 생성된 시간을 출력해주는 Liquid 태그 예제입니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -272,14 +225,14 @@ end
 Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
 {% endhighlight %}
 
-At a minimum, liquid tags must implement:
+Liquid 태그는 최소한 다음 메소드는 구현해야 합니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Method</th>
-      <th>Description</th>
+      <th>메소드</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -288,22 +241,20 @@ At a minimum, liquid tags must implement:
         <p><code>render</code></p>
       </td>
       <td>
-        <p>Outputs the content of the tag.</p>
+        <p>태그 컨텐츠를 출력합니다.</p>
       </td>
     </tr>
   </tbody>
 </table>
 </div>
 
-You must also register the custom tag with the Liquid template engine as
-follows:
+또, 다음과 같이 Liquid 템플릿 엔진에 태그를 등록해야 합니다:
 
 {% highlight ruby %}
 Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
 {% endhighlight %}
 
-In the example above, we can place the following tag anywhere in one of our
-pages:
+이렇게 하면, 페이지의 어느 곳에서나 다음과 같이 태그를 사용할 수 있습니다:
 
 {% highlight ruby %}
 {% raw %}
@@ -311,18 +262,15 @@ pages:
 {% endraw %}
 {% endhighlight %}
 
-And we would get something like this on the page:
+결과는 다음과 같이 보일 것입니다:
 
 {% highlight html %}
 <p>page rendered at: Tue June 22 23:38:47 –0500 2010</p>
 {% endhighlight %}
 
-### Liquid filters
+### Liquid 필터
 
-You can add your own filters to the Liquid template system much like you can add
-tags above. Filters are simply modules that export their methods to liquid. All
-methods will have to take at least one parameter which represents the input of
-the filter. The return value will be the output of the filter.
+Liquid 템플릿 시스템에 필터를 추가하는 것은 위에 설명한 태그 추가 방법과 상당히 유사합니다. 필터는 단지 메소드를 Liquid 로 보내는 모듈일 뿐입니다. 모든 메소드는 최소한 하나의 파라메터를 가지며, 이는 필터의 입력입니다. 반환값은 필터의 출력이 될 것입니다.
 
 {% highlight ruby %}
 module Jekyll
@@ -337,25 +285,22 @@ Liquid::Template.register_filter(Jekyll::AssetFilter)
 {% endhighlight %}
 
 <div class="note">
-  <h5>ProTip™: Access the site object using Liquid</h5>
+  <h5>ProTip™: Liquid 를 사용해서 site 객체에 접근할 수 있습니다</h5>
   <p>
-    Jekyll lets you access the <code>site</code> object through the
-    <code>context.registers</code> feature of Liquid at <code>context.registers[:site]</code>. For example, you can
-    access the global configuration file <code>_config.yml</code> using
-    <code>context.registers[:site].config</code>.
+    Jekyll 은 <code>context.registers[:site]</code> 와 같이 Liquid 의 <code>context.registers</code> 기능을 통해서 <code>site</code> 객체에 접근할 수 있게 해줍니다. 예를 들어, 전역 환경설정 파일인 <code>_config.yml</code> 에 접근하려면 <code>context.registers.config</code> 를 사용하면 됩니다. 예를 들어, <code>context.registers[:site].config</code> 라고 입력하여 전역 환경설정 파일 <code>_config.yml</code> 에 접근할 수 있습니다.
   </p>
 </div>
 
-### Flags
+### 플래그
 
-There are two flags to be aware of when writing a plugin:
+플러그인을 만들 때는 다음 두 플래그를 알아두어야 합니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Flag</th>
-      <th>Description</th>
+      <th>플래그</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -365,13 +310,7 @@ There are two flags to be aware of when writing a plugin:
       </td>
       <td>
         <p>
-          A boolean flag that informs Jekyll whether this plugin may be safely
-          executed in an environment where arbitrary code execution is not
-          allowed. This is used by GitHub Pages to determine which core plugins
-          may be used, and which are unsafe to run. If your plugin does not
-          allow for arbitrary code execution, set this to <code>true</code>.
-          GitHub Pages still won’t load your plugin, but if you submit it for
-          inclusion in core, it’s best for this to be correct!
+          이 플러그인이 임의의 코드가 실행되는 것이 금지된 환경에서도 안전하게 실행될 수 있다는 것을 알려주는 boolean 플래그입니다. GitHub Pages 는 실행해도 안전한 Core 플러그인을 골라내기 위해 이 플래그를 사용합니다. 플러그인이 임의의 코드 실행이 없는 환경에서 사용되어야 한다면, 이 플래그를 <code>true</code> 로 설정하세요. 그래도 GitHub Pages 에서는 자신의 플러그인을 사용할 수 없습니다. 하지만, Jekyll 프로젝트에 포함시키려는 경우에는 이게 제일 좋은 방법입니다!
         </p>
       </td>
     </tr>
@@ -381,10 +320,7 @@ There are two flags to be aware of when writing a plugin:
       </td>
       <td>
         <p>
-          This flag determines what order the plugin is loaded in. Valid values
-          are: <code>:lowest</code>, <code>:low</code>, <code>:normal</code>,
-          <code>:high</code>, and <code>:highest</code>. Highest priority
-          matches are applied first, lowest priority are applied last.
+          플러그인을 읽어들이는 순서를 결정하는 플래그입니다. 사용할 수 있는 값은 <code>:lowest</code> 와 <code>:low</code>, <code>:normal</code>, <code>:high</code>, <code>:highest</code> 입니다. 우선순위가 높은 플러그인이 먼저 적용되고, 우선순위가 낮은 플러그인이 나중에 적용됩니다.
         </p>
       </td>
     </tr>
@@ -392,8 +328,7 @@ There are two flags to be aware of when writing a plugin:
 </table>
 </div>
 
-To use one of the example plugins above as an illustration, here is how you’d
-specify these two flags:
+앞서 설명한 플러그인 예제를 사용하려면, 다음과 같이 플래그를 설정해야 합니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -405,11 +340,11 @@ module Jekyll
 end
 {% endhighlight %}
 
-## Available Plugins
+## 사용가능한 플러그인
 
-You can find a few useful plugins at the following locations:
+유용한 플러그인들을 모아두었습니다:
 
-#### Generators
+#### 생성기
 
 - [ArchiveGenerator by Ilkka Laukkanen](https://gist.github.com/707909): Uses [this archive page](https://gist.github.com/707020) to generate archives.
 - [LESS.js Generator by Andy Fowler](https://gist.github.com/642739): Renders LESS.js files during generation.
@@ -430,7 +365,7 @@ You can find a few useful plugins at the following locations:
 - [Jekyll::GitMetadata by Ivan Tse](https://github.com/ivantsepp/jekyll-git_metadata): Expose Git metadata for your templates.
 - [Jekyll Http Basic Auth Plugin](https://gist.github.com/snrbrnjna/422a4b7e017192c284b3): Plugin to manage http basic auth for jekyll generated pages and directories.
 
-#### Converters
+#### 변환기
 
 - [Slim plugin](https://github.com/slim-template/jekyll-slim): Slim converter and includes for Jekyll with support for Liquid tags.
 - [Jade plugin by John Papandriopoulos](https://github.com/snappylabs/jade-jekyll-plugin): Jade converter for Jekyll.
@@ -451,7 +386,7 @@ You can find a few useful plugins at the following locations:
 - [Customized Kramdown Converter](https://github.com/mvdbos/kramdown-with-pygments): Enable Pygments syntax highlighting for Kramdown-parsed fenced code blocks.
 - [Bigfootnotes Plugin](https://github.com/TheFox/jekyll-bigfootnotes): Enables big footnotes for Kramdown.
 
-#### Filters
+#### 필터
 
 - [Truncate HTML](https://github.com/MattHall/truncatehtml) by [Matt Hall](http://codebeef.com): A Jekyll filter that truncates HTML while preserving markup structure.
 - [Domain Name Filter by Lawrence Woodman](https://github.com/LawrenceWoodman/domain_name-liquid_filter): Filters the input text so that just the domain name is left.
@@ -467,7 +402,7 @@ You can find a few useful plugins at the following locations:
 - [Jekyll-Ordinal](https://github.com/PatrickC8t/Jekyll-Ordinal): Jekyll liquid filter to output a date ordinal such as "st", "nd", "rd", or "th".
 - [Deprecated articles keeper](https://github.com/kzykbys/JekyllPlugins) by [Kazuya Kobayashi](http://blog.kazuya.co/): A simple Jekyll filter which monitor how old an article is.
 
-#### Tags
+#### 태그
 
 - [Asset Path Tag](https://github.com/samrayner/jekyll-asset-path-plugin) by [Sam Rayner](http://www.samrayner.com/): Allows organisation of assets into subdirectories by outputting a path for a given file relative to the current post or page.
 - [Delicious Plugin by Christian Hellsten](https://github.com/christianhellsten/jekyll-plugins): Fetches and renders bookmarks from delicious.com.
@@ -513,13 +448,13 @@ You can find a few useful plugins at the following locations:
 - [mathml.rb](https://github.com/tmthrgd/jekyll-plugins) by [Tom Thorogood](http://tomthorogood.co.uk/): A plugin to convert TeX mathematics into MathML for display.
 
 
-#### Collections
+#### 집합
 
 - [Jekyll Plugins by Recursive Design](http://recursive-design.com/projects/jekyll-plugins/): Plugins to generate Project pages from GitHub readmes, a Category page, and a Sitemap generator.
 - [Company website and blog plugins](https://github.com/flatterline/jekyll-plugins) by Flatterline, a [Ruby on Rails development company](http://flatterline.com/): Portfolio/project page generator, team/individual page generator, an author bio liquid tag for use on posts, and a few other smaller plugins.
 - [Jekyll plugins by Aucor](https://github.com/aucor/jekyll-plugins): Plugins for trimming unwanted newlines/whitespace and sorting pages by weight attribute.
 
-#### Other
+#### 기타
 
 - [Pygments Cache Path by Raimonds Simanovskis](https://github.com/rsim/blog.rayapps.com/blob/master/_plugins/pygments_cache_patch.rb): Plugin to cache syntax-highlighted code from Pygments.
 - [Draft/Publish Plugin by Michael Ivey](https://gist.github.com/49630): Save posts as drafts.
@@ -544,7 +479,7 @@ You can find a few useful plugins at the following locations:
 - [A layout that compresses HTML](https://github.com/penibelst/jekyll-compress-html) by [Anatol Broder](http://penibelst.de/): Github Pages compatible, configurable way to compress HTML files on site build.
 - [Jekyll CO₂](https://github.com/wdenton/jekyll-co2): Generates HTML showing the monthly change in atmospheric CO₂ at the Mauna Loa observatory in Hawaii.
 
-#### Editors
+#### 편집기
 
 - [sublime-jekyll](https://github.com/23maverick23/sublime-jekyll): A Sublime Text package for Jekyll static sites. This package should help creating Jekyll sites and posts easier by providing access to key template tags and filters, as well as common completions and a current date/datetime command (for dating posts). You can install this package manually via GitHub, or via [Package Control](https://sublime.wbond.net/packages/Jekyll).
 - [vim-jekyll](https://github.com/parkr/vim-jekyll): A vim plugin to generate
@@ -552,10 +487,8 @@ You can find a few useful plugins at the following locations:
 - [markdown-writer](https://atom.io/packages/markdown-writer): An Atom package for Jekyll. It can create new posts/drafts, manage tags/categories, insert link/images and add many useful key mappings.
 
 <div class="note info">
-  <h5>Jekyll Plugins Wanted</h5>
+  <h5>Jekyll 플러그인을 수배합니다</h5>
   <p>
-    If you have a Jekyll plugin that you would like to see added to this list,
-    you should <a href="../contributing/">read the contributing page</a> to find
-    out how to make that happen.
+    자신의 플러그인을 이 목록에 포함시키고 싶다면, <a href="../contributing/">기여하기 페이지를 읽어보세요</a>.
   </p>
 </div>

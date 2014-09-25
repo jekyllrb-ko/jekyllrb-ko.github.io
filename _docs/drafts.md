@@ -1,21 +1,16 @@
 ---
 layout: docs
-title: Working with drafts
+title: 초안 활용하기
 prev_section: posts
 next_section: pages
 permalink: /docs/drafts/
 ---
 
-Drafts are posts without a date. They're posts you're still working on and don't want to
-publish yet. To get up and running with drafts, create a `_drafts` folder in your site's
-root (as described in the [site structure]({{ site.baseurl }}/docs/structure/) section) and create your
-first draft:
+초안은 날짜가 없는 포스트입니다. 아직 작성이 끝나지 않아 온라인에 게시하고 싶지 않은 포스트를 초안이라고 부릅니다. 초안 기능을 사용하려면, 사이트의 루트 디렉토리 ([디렉토리 구조]({{ site.baseurl}}/docs/structure/) 섹션 참조) 에 `_drafts` 폴더를 만들고 초안을 넣으면 됩니다:
 
 {% highlight text %}
 |-- _drafts/
 |   |-- a-draft-post.md
 {% endhighlight %}
 
-To preview your site with drafts, simply run `jekyll serve` or `jekyll build` with
-the `--drafts` switch.  Each will be assigned the value modification time of the draft file
-for its date, and thus you will see currently edited drafts as the latest posts.
+사이트의 미리보기에 초안을 포함시키려면, `jekyll serve` 나 `jekyll build` 에 `--drafts` 스위치를 추가해서 실행합니다. 초안은 해당 파일의 수정 시간이 글의 작성 시간으로 사용되기 때문에, 현재 초안이 제일 최신 포스트로 표시될 것입니다.

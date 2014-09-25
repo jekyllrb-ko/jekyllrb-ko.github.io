@@ -1,29 +1,23 @@
 ---
 layout: docs
-title: Permalinks
+title: 고유주소
 prev_section: templates
 next_section: pagination
 permalink: /docs/permalinks/
 ---
 
-Jekyll supports a flexible way to build your site’s URLs. You can specify the
-permalinks for your site through the [Configuration](../configuration/) or in the
-[YAML Front Matter](../frontmatter/) for each post. You’re free to choose one of
-the built-in styles to create your links or craft your own. The default style is
-`date`.
+Jekyll 의 사이트 URL 구성 방법은 아주 유연합니다. [환경설정](../configuration/)을 통해서 사이트의 고유주소를 설정하거나 [YAML 머리말](../frontmatter/)로 각 포스트의 고유주소를 설정할 수 있습니다. Jekyll 에 내장된 스타일을 사용해도 되고 자신만의 링크를 만들어도 됩니다. 기본 스타일은 `date` 입니다.
 
-Permalinks are constructed by creating a template URL where dynamic elements are
-represented by colon-prefixed keywords. For example, the default `date`
-permalink is defined as `/:categories/:year/:month/:day/:title.html`.
+고유주소를 구성하려면, 키워드 앞에 콜론을 붙여 템플릿 URL 을 만들면 됩니다. 예를 들면, 기본값인 `date` 고유주소는 `/:categories/:year/:month/:day/:title.html` 로 정의되어 있습니다.
 
-## Template variables
+## 템플릿 변수
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Variable</th>
-      <th>Description</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +26,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>year</code></p>
       </td>
       <td>
-        <p>Year from the Post’s filename</p>
+        <p>포스트 파일명의 연도</p>
       </td>
     </tr>
     <tr>
@@ -40,7 +34,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>month</code></p>
       </td>
       <td>
-        <p>Month from the Post’s filename</p>
+        <p>포스트 파일명의 월</p>
       </td>
     </tr>
     <tr>
@@ -48,7 +42,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>i_month</code></p>
       </td>
       <td>
-        <p>Month from the Post’s filename without leading zeros.</p>
+        <p>포스트 파일명의 월 (한 자리일 경우 앞에 0 이 없음)</p>
       </td>
     </tr>
     <tr>
@@ -56,7 +50,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>day</code></p>
       </td>
       <td>
-        <p>Day from the Post’s filename</p>
+        <p>포스트 파일명의 일</p>
       </td>
     </tr>
     <tr>
@@ -64,7 +58,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>i_day</code></p>
       </td>
       <td>
-        <p>Day from the Post’s filename without leading zeros.</p>
+        <p>포스트 파일명의 일 (한 자리일 경우 앞에 0 이 없음)</p>
       </td>
     </tr>
     <tr>
@@ -72,7 +66,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>short_year</code></p>
       </td>
       <td>
-        <p>Year from the Post’s filename without the century.</p>
+        <p>포스트 파일명의 연도 (두 자리)</p>
       </td>
     </tr>
     <tr>
@@ -80,7 +74,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>title</code></p>
       </td>
       <td>
-        <p>Title from the Post’s filename</p>
+        <p>포스트 파일명의 제목</p>
       </td>
     </tr>
     <tr>
@@ -89,9 +83,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
       </td>
       <td>
         <p>
-          The specified categories for this Post. Jekyll automatically parses
-          out double slashes in the URLs, so if no categories are present, it
-          will ignore this.
+          해당 포스트에 지정된 카테고리들. Jekyll 은 URL 에서 연속된 슬래시를 자동으로 처리하기 때문에, 카테고리가 없을 경우 이 설정은 무시됩니다.
         </p>
       </td>
     </tr>
@@ -99,24 +91,16 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
 </table>
 </div>
 
-## Built-in permalink styles
+## 내장된 고유주소 스타일
 
-**Note:** these may only apply to posts, not to pages, collections or
-static files. For example, `pretty` changes page permalinks from
-`/:path/:basename:output_ext` to `/:page/:basename/` if the page is HTML,
-thus "prettyifying" the page permalink. The `date`, `none`, and all custom
-values do not apply to pages. No permalink style applies to static files,
-and collections have their own means of specifying permalinks. It's all
-rather confusing but check out [Issue #2691](https://github.com/jekyll/jekyll/issues/2691)
-for more background on the subject, and submit a PR if you're adventurous
-enough to fix it all!
+**노트:** 이 기능은 포스트에만 적용될 것입니다. 페이지나 집합, 정적인 파일들에는 해당되지 않습니다. 예를 들어, 페이지가 HTML 이라면 `pretty` 는 페이지의 고유주소를 `/:path/:basename:output_ext` 에서 `/:page/:basename/` 으로 변경하기 때문에, 페이지의 고유주소가 "prettyifying" 됩니다. `date` 나 `none` 등 다른 모든 사용자 값들은 페이지에 적용되지 않습니다. 정적 파일에는 고유주소 스타일이 적용되지 않으며, 집합에는 고유주소를 설정하는 방법이 별도로 존재합니다. 상당히 혼동스럽지만 [Issue #2691](https://github.com/jekyll/jekyll/issues/2691) 를 읽어보면 해당 주제에 대한 배경지식을 얻을 수 있습니다. 또한 이를 고칠 모험심이 강한 분은 PR 을 제출해 주시기 바랍니다!
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Permalink Style</th>
-      <th>URL Template</th>
+      <th>고유주소 스타일</th>
+      <th>URL 템플릿</th>
     </tr>
   </thead>
   <tbody>
@@ -148,22 +132,22 @@ enough to fix it all!
 </table>
 </div>
 
-## Permalink style examples
+## 고유주소 스타일 예시
 
-Given a post named: `/2009-04-29-slap-chop.textile`
+포스트 이름: `/2009-04-29-slap-chop.textile`
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>URL Template</th>
+      <th>URL 템플릿</th>
       <th>Resulting Permalink URL</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-        <p>None specified, or <code>permalink: date</code></p>
+        <p>설정하지 않음, 또는 <code>permalink: date</code></p>
       </td>
       <td>
         <p><code>/2009/04/29/slap-chop.html</code></p>

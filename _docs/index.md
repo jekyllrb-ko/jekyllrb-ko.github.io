@@ -1,58 +1,38 @@
 ---
 layout: docs
-title: Welcome
+title: 환영합니다
 next_section: quickstart
 permalink: /docs/home/
 ---
 
-This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such
-as getting your site up and running, creating and managing your content,
-customizing the way your site works and looks, deploying to various
-environments, and give you some advice on participating in the future
-development of Jekyll itself.
+이 사이트의 목표는 Jekyll 에 대한 종합 안내서가 되는 것입니다. 지금부터 사이트 구성 및 실행 방법, 컨텐츠 작성 및 관리 방법, 사이트의 외관과 동작방식 수정 방법, 다양한 시스템에 게시하는 방법, Jekyll 개발에 기여하는 방법 등의 주제를 다룰 것입니다.
 
-## So what is Jekyll, exactly?
+## 그래서, 정확히 Jekyll 이 뭔가요?
 
-Jekyll is a simple, blog-aware, static site generator. It takes a template
-directory containing raw text files in various formats, runs it through
-[Markdown](http://daringfireball.net/projects/markdown/) (or
-[Textile](http://redcloth.org/textile)) and
-[Liquid](https://github.com/Shopify/liquid/wiki)
-converters, and spits out a complete, ready-to-publish static website suitable
-for serving with your favorite web server. Jekyll also happens to be the engine
-behind [GitHub Pages](http://pages.github.com), which means you can use Jekyll
-to host your project’s page, blog, or website from GitHub’s servers **for
-free**.
+Jekyll 은 아주 간편하고, 블로그 지향적인 정적 사이트 생성기입니다. 템플릿 디렉토리에서 다양한 포맷의 원본 텍스트 파일을 읽은 후, [Markdown](http://daringfireball.net/projects/markdown/) (또는 [Textile](http://redcloth.org/textile)) 과 [Liquid](https://github.com/Shopify/liquid/wiki) 변환 작업을 수행하여, 자신이 즐겨 사용하는 웹 서버에 곧바로 게시할 수 있는 완성된 정적 웹사이트를 만들어냅니다. 또한 Jekyll 은 [GitHub Pages](http://pages.github.com) 의 내부 엔진으로 사용되고 있습니다. 이 말은, Jekyll 을 사용하여 자신의 프로젝트 페이지나 블로그, 웹사이트를 GitHub 에 **무료로** 호스팅 할 수 있다는 뜻입니다.
 
-## Helpful Hints
+## 유용한 정보
 
-Throughout this guide there are a number of small-but-handy pieces of
-information that can make using Jekyll easier, more interesting, and less
-hazardous. Here’s what to look out for.
+안내서 여기저기에 짤막하고 유용한 정보들이 붙어 있습니다. Jekyll 을 더 쉽고 재밌게, 안정적으로 사용하는데 많은 도움이 될 것입니다. 여기 있는 것들은 주의해서 봐야 합니다.
 
 <div class="note">
-  <h5>ProTips™ help you get more from Jekyll</h5>
-  <p>These are tips and tricks that will help you be a Jekyll wizard!</p>
+  <h5>ProTips™ 은 Jekyll 을 더 잘 다룰 수 있도록 도와줍니다</h5>
+  <p>이 팁들을 잘 사용하면 Jekyll 의 달인이 될 수 있습니다!</p>
 </div>
 
 <div class="note info">
-  <h5>Notes are handy pieces of information</h5>
-  <p>These are for the extra tidbits sometimes necessary to understand
-     Jekyll.</p>
+  <h5>노트는 유용한 정보를 담고 있습니다</h5>
+  <p>Jekyll 을 이해하는데에 필요한 부가 정보입니다.</p>
 </div>
 
 <div class="note warning">
-  <h5>Warnings help you not blow things up</h5>
-  <p>Be aware of these messages if you wish to avoid certain death.</p>
+  <h5>경고는 사이트가 망가지지 않도록 도와줍니다</h5>
+  <p>문제 발생을 피하고 싶다면 이 메시지를 꼭 읽어보세요.</p>
 </div>
 
 <div class="note unreleased">
-  <h5>You'll see this by a feature that hasn't been released</h5>
-  <p>Some pieces of this website are for future versions of Jekyll that
-    are not yet released.</p>
+  <h5>이 표시는 아직 릴리스 되지 않는 기능을 가리킵니다</h5>
+  <p>이 웹사이트는 아직 릴리스 되지 않는 버전에 대한 내용도 일부 포함하고 있습니다.</p>
 </div>
 
-If you come across anything along the way that we haven’t covered, or if you
-know of a tip you think others would find handy, please [file an
-issue]({{ site.repository }}/issues/new) and we’ll see about
-including it in this guide.
+부족한 부분을 발견했거나 유용한 팁을 알고 있다면, [이슈를 생성]({{ site.repository }}/issues/new)해 주시기 바랍니다. 검토 후, 필요한 내용은 본 가이드에 포함시킬 것입니다.
