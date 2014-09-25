@@ -69,7 +69,8 @@ nav li {
   -moz-border-radius: 5px;
   border-radius: 5px;
   font-weight: 900;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: inherited;
   padding: 0.5em 1em;
   text-shadow: none;
   text-transform: uppercase;
@@ -109,7 +110,8 @@ nav li {
   color: #fc0;
   text-align: center;
   text-transform: uppercase;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 21px;
   font-weight: 900;
   padding: 5px;
   -webkit-border-radius: 5px;
@@ -431,7 +433,8 @@ aside {
 
 aside h4 {
   text-transform: uppercase;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: inherited;
   font-weight: 700;
   padding: 0 0 10px 30px;
   margin-left: -30px;

@@ -2,24 +2,24 @@
   <aside>
     <ul>
       <li class="{% if page.title == 'News' %}current{% endif %}">
-        <a href="{{ site.baseurl }}/news/">All News</a>
+        <a href="{{ site.baseurl }}/news/">모든 소식</a>
       </li>
       <li class="{% if page.title == 'Releases' %}current{% endif %}">
-        <a href="{{ site.baseurl }}/news/releases/">Jekyll Releases</a>
+        <a href="{{ site.baseurl }}/news/releases/">Jekyll 릴리스</a>
       </li>
     </ul>
-    <h4>Recent Releases</h4>
+    <h4>최근 릴리스</h4>
     <ul>
       {% for post in site.categories.release limit:5 %}
       <li class="{% if page.title == post.title %}current{% endif %}">
-        <a href="{{ site.baseurl }}{{ post.url }}">Version {{ post.version }}</a>
+        <a href="{{ site.baseurl }}{{ post.url }}">버전 {{ post.version }}</a>
       </li>
       {% endfor %}
       <li>
-        <a href="{{ site.baseurl }}/docs/history/">History »</a>
+        <a href="{{ site.baseurl }}/docs/history/">개발 이력 »</a>
       </li>
     </ul>
-    <h4>Other News</h4>
+    <h4>다른 소식</h4>
     <ul>
         {% for post in site.posts %}
         {% unless post.categories contains 'release' %}
