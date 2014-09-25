@@ -1,18 +1,17 @@
 ---
 layout: docs
-title: Extras
+title: 부가기능
 prev_section: plugins
 next_section: github-pages
 permalink: /docs/extras/
 ---
 
-There are a number of (optional) extra features that Jekyll supports that you
-may want to install, depending on how you plan to use Jekyll.
+Jekyll 은 다양한 부가기능(선택사항)을 지원합니다. Jekyll 을 어떻게 사용할 것인지에 따라 원하는 기능을 골라서 설치하면 됩니다.
 
-## Math Support
+## 수학 지원
 
-Kramdown comes with optional support for LaTeX to PNG rendering via [MathJax](http://www.mathjax.org/) within math blocks. See the Kramdown documentation on [math blocks](http://kramdown.gettalong.org/syntax.html#math-blocks) and [math support](http://kramdown.gettalong.org/converter/html.html#math-support) for more details.
+Kramdown 은 수학 블럭 안에 [MathJax](http://www.mathjax.org/) 를 사용해서 LaTeX 부터 PNG 렌더링까지 지원하고 있습니다. 더 자세한 내용은 Kramdown 문서의 [수학 블럭](http://kramdown.gettalong.org/syntax.html#math-blocks)과 [수학 지원](http://kramdown.gettalong.org/converter/html.html#math-support)을 살펴보세요.
 
-## Alternative Markdown Processors
+## 다른 마크다운 처리기
 
-See the Markdown section on the [configuration page]({{ site.baseurl }}/docs/configuration/#markdown-options) for instructions on how to use and configure alternative Markdown processors, as well as how to create [custom processors]({{ site.baseurl }}/docs/configuration/#custom-markdown-processors).
+[환경설정 페이지]({{ site.baseurl }}/docs/configuration/#markdown-options)의 마크다운 섹션에는 다른 마크다운 처리기의 설정과 사용방법뿐만 아니라 [사용자 마크다운 처리기]({{ site.baseurl }}/docs/configuration/#custom-markdown-processors)를 작성하는 방법도 설명되어 있습니다.

@@ -1,32 +1,28 @@
 ---
 layout: docs
-title: Templates
+title: 템플릿
 prev_section: migrations
 next_section: permalinks
 permalink: /docs/templates/
 ---
 
-Jekyll uses the [Liquid](https://github.com/Shopify/liquid/wiki) templating language to
-process templates. All of the standard Liquid [tags](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#tags) and
-[filters](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters) are
-supported. Jekyll even adds a few handy filters and tags of its own to make
-common tasks easier.
+Jekyll 은 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 사용하여 템플릿을 처리합니다. 표준 Liquid [태그](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#tags)와 [필터](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters)가 모두 지원됩니다. 뿐만 아니라, 일부 작업을 더 쉽게 할 수 있도록 도와주는 유용한 태그와 필터가 추가되어 있습니다.
 
-## Filters
+## 필터
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Description</th>
-      <th><span class="filter">Filter</span> and <span class="output">Output</span></th>
+      <th>설명</th>
+      <th><span class="filter">필터</span> 와 <span class="output">결과</span></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
         <p class="name"><strong>Date to XML Schema</strong></p>
-        <p>Convert a Date into XML Schema (ISO 8601) format.</p>
+        <p>날짜를 XML 스키마 (ISO 8601) 형식으로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -40,7 +36,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Date to RFC-822 Format</strong></p>
-        <p>Convert a Date into the RFC-822 format used for RSS feeds.</p>
+        <p>날짜를 RSS 피드에 사용하는 RFC-822 형식으로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -54,7 +50,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Date to String</strong></p>
-        <p>Convert a date to short format.</p>
+        <p>날짜를 짧은 형식으로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -68,7 +64,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Date to Long String</strong></p>
-        <p>Format a date to long format.</p>
+        <p>날짜를 긴 형식으로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -82,7 +78,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Where</strong></p>
-        <p>Select all the objects in an array where the key has the given value.</p>
+        <p>배열 안에서 특정 키와 값을 가진 객체들을 선택합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -93,7 +89,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Group By</strong></p>
-        <p>Group an array's items by a given property.</p>
+        <p>배열 안의 항목들을 특정 속성으로 그룹 짓습니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -108,7 +104,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>XML Escape</strong></p>
-        <p>Escape some text for use in XML.</p>
+        <p>XML 에 사용되는 몇몇 텍스트를 이스케이프 합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -120,8 +116,7 @@ common tasks easier.
       <td>
         <p class="name"><strong>CGI Escape</strong></p>
         <p>
-          CGI escape a string for use in a URL. Replaces any special characters
-          with appropriate %XX replacements.
+          URL 에 사용되는 CGI 이스케이프 문자열. 모든 특수문자를 그에 맞는 %XX 로 변환합니다.
         </p>
       </td>
       <td class="align-center">
@@ -137,7 +132,7 @@ common tasks easier.
       <td>
         <p class="name"><strong>URI Escape</strong></p>
         <p>
-          URI escape a string.
+          URI 이스케이프 문자열.
         </p>
       </td>
       <td class="align-center">
@@ -152,7 +147,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Number of Words</strong></p>
-        <p>Count the number of words in some text.</p>
+        <p>텍스트 안의 단어 수.</p>
       </td>
       <td class="align-center">
         <p>
@@ -166,7 +161,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Array to Sentence</strong></p>
-        <p>Convert an array into a sentence. Useful for listing tags.</p>
+        <p>배열을 한 문장으로 변환합니다. 태그를 나열할 때 유용합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -180,7 +175,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Textilize</strong></p>
-        <p>Convert a Textile-formatted string into HTML, formatted via RedCloth</p>
+        <p>Textile 포맷 문자열을 RedCloth 포맷의 HTML 로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -191,7 +186,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Markdownify</strong></p>
-        <p>Convert a Markdown-formatted string into HTML.</p>
+        <p>Markdown 포맷 문자열을 HTML 로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -202,7 +197,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Converting Sass/SCSS</strong></p>
-        <p>Convert a Sass- or SCSS-formatted string into CSS.</p>
+        <p>Sass 또는 SCSS 형식 문자열을 CSS 로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -214,7 +209,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Slugify</strong></p>
-        <p>Convert a string into a lowercase URL "slug" by replacing every sequence of spaces and non-alphanumeric characters with a hyphen.</p>
+        <p>알파벳과 숫자가 아닌 문자와 공백 문자를 하이픈으로 교체하여, 문자열을 소문자 URL 슬러그로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -225,7 +220,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Data To JSON</strong></p>
-        <p>Convert Hash or Array to JSON.</p>
+        <p>해시나 배열을 JSON 으로 변환합니다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -236,7 +231,7 @@ common tasks easier.
     <tr>
       <td>
         <p class="name"><strong>Sort</strong></p>
-        <p>Sort an array. Optional arguments for hashes: 1.&nbsp;property name 2.&nbsp;nils order (<em>first</em> or <em>last</em>).</p>
+        <p>배열을 정렬합니다. 해시에 사용하는 선택 전달인자: 1.&nbsp;속성 이름 2.&nbsp;nils 순서 (<em>first</em> 또는 <em>last</em>).</p>
       </td>
       <td class="align-center">
         <p>
@@ -254,75 +249,59 @@ common tasks easier.
 </table>
 </div>
 
-## Tags
+## 태그
 
 ### Includes
 
-If you have small page fragments that you wish to include in multiple places on
-your site, you can use the `include` tag.
+만약 사이트 안의 여러 곳에 삽입해야 하는 작은 조각 페이지가 있다면, `include` 태그를 사용하세요.
 
 {% highlight ruby %}
 {% raw %}{% include footer.html %}{% endraw %}
 {% endhighlight %}
 
-Jekyll expects all include files to be placed in an `_includes` directory at the
-root of your source directory. This will embed the contents of
-`<source>/_includes/footer.html` into the calling file.
+조각 페이지 파일은 프로젝트의 루트 디렉토리 밑의 `_includes` 디렉토리에 넣어야 합니다. 위 코드는 해당 위치에 `<source>/_includes/footer.html` 의 내용을 삽입할 것입니다.
 
 <div class="note">
-  <h5>ProTip™: Use variables as file name</h5>
+  <h5>ProTip™: 파일 이름으로 변수를 사용하세요</h5>
   <p>
 
-    The name of the file you wish to embed can be literal (as in the example above),
-    or you can use a variable, using liquid-like variable syntax as in
-    <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code>.
+    삽입하고자 하는 파일의 이름은 실제 파일명을 사용할 수도 (위 예제처럼) 있고, <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code> 처럼 Liquid 스타일의 변수 문법을 사용할 수도 있습니다.
 
   </p>
 </div>
 
-You can also pass parameters to an include:
+조각 페이지에 파라메터를 전달할 수도 있습니다:
 
 {% highlight ruby %}
 {% raw %}{% include footer.html param="value" %}{% endraw %}
 {% endhighlight %}
 
-These parameters are available via Liquid in the include:
+전달된 파라메터는 Liquid 를 통해 사용할 수 있습니다:
 
 {% highlight ruby %}
 {% raw %}{{ include.param }}{% endraw %}
 {% endhighlight %}
 
-#### Including files relative to another file
+#### 상대 경로 사용하기
 
-You can also choose to include file fragments relative to the current file:
+현재 파일을 기준으로 한 상대경로를 사용하여 삽입할 조각 파일을 선택할 수 있습니다:
 
 {% highlight ruby %}
 {% raw %}{% include_relative somedir/footer.html %}{% endraw %}
 {% endhighlight %}
 
-You won't need to place your included content within the `_includes` directory. Instead,
-the inclusion is specifically relative to the file where the tag is being used. For example,
-if `_posts/2014-09-03-my-file.markdown` uses the `include_relative` tag, the included file
-must be within the `_posts` directory, or one of it's subdirectories. You cannot include
-files in other locations.
+삽입할 컨텐츠를 꼭 `_includes` 디렉토리에 넣을 필요가 없다. 대신 태그가 사용된 파일의 상대경로로 삽입도 가능하다. 예를 들어, `_posts/2014-09-03-my-file.markdown` 에 `include_relative` 태그를 사용했다면, 삽입될 파일은 반드시 `_posts` 디렉토리 안이나, 하위 디렉토리 중 하나에 있어야 한다. 그 밖에 다른 위치의 파일은 삽입할 수 없다.
 
-All the other capaibilities of the `include` tag are available to the `include_relative` tag,
-such as using variables.
+변수 사용 등의 `include` 태그의 다른 모든 기능도 `include_relative` 태그에서 사용할 수 있다.
 
-### Code snippet highlighting
+### 코드 구문 강조
 
-Jekyll has built in support for syntax highlighting of [over 100
-languages](http://pygments.org/languages/) thanks to
-[Pygments](http://pygments.org/). To use Pygments, you must have Python installed
-on your system and set `highlighter` to `pygments` in your site's configuration
-file.
+[Pygments](http://pygments.org/) 덕분에 Jekyll 은 [100 개 이상의 언어](http://pygments.org/languages/)에 대한 구문 강조 기능이 내장되어 있습니다. Pygments 를 사용하려면 시스템에 Python 이 설치되어 있어야 하며, 사이트 환경설정 파일에 `highlighter` 를 `pygments` 로 설정해야 합니다.
 
-Alternatively, you can use [Rouge](https://github.com/jayferd/rouge) to highlight
-your code snippets. It doesn't support as many languages as Pygments does but
-it should fit in most cases and it's written in pure Ruby ; you don't need Python
-on your system!
+그 밖에도, [Rouge](https://github.com/jayferd/rouge) 를 사용해서 구문 강조를 할 수 있습니다. Pygments 만큼 많은 언어를 지원하지는 않지만 대부분의 경우에 사용할 수 있으며 순수하게 Ruby 로 작성되었습니다 ; Python 이 필요하지 않습니다!
 
 To render a code block with syntax highlighting, surround your code as follows:
+구문 강조가 적용된 코드 블럭을 출력하려면, 코드 앞뒤에 다음과 같이 작성합니다:
 
 {% highlight text %}
 {% raw %}
@@ -334,18 +313,11 @@ end
 {% endraw %}
 {% endhighlight %}
 
-The argument to the `highlight` tag (`ruby` in the example above) is the
-language identifier. To find the appropriate identifier to use for the language
-you want to highlight, look for the “short name” on the [Pygments' Lexers
-page](http://pygments.org/docs/lexers/) or the [Rouge
-wiki](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers).
+`highlight` 태그에 전달한 인자 (위 예시에서는 `ruby`) 는 언어 식별자입니다. 구문 강조를 사용하려고 하는 언어의 식별자를 찾으려면, [Pygments 의 Lexers 페이지](http://pygments.org/docs/lexers/) 또는 [Rouge 위키](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers)에서 "short name" 을 살펴보세요.
 
-#### Line numbers
+#### 줄 번호
 
-There is a second argument to `highlight` called `linenos` that is optional.
-Including the `linenos` argument will force the highlighted code to include line
-numbers. For instance, the following code block would include line numbers next
-to each line:
+`highlight` 의 두 번째 전달인자 `linenos` 는 선택사항입니다. `linenos` 를 사용하면 코드 블록에 줄 번호가 표시됩니다. 예를 들면, 다음 코드 블록에는 각 줄에 줄 번호가 표시됩니다:
 
 {% highlight text %}
 {% raw %}
@@ -357,20 +329,13 @@ end
 {% endraw %}
 {% endhighlight %}
 
-#### Stylesheets for syntax highlighting
+#### 구문 강조용 스타일시트
 
-In order for the highlighting to show up, you’ll need to include a highlighting
-stylesheet. For an example stylesheet you can look at
-[syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css). These
-are the same styles as used by GitHub and you are free to use them for your own
-site. If you use `linenos`, you might want to include an additional CSS class
-definition for the `.lineno` class in `syntax.css` to distinguish the line
-numbers from the highlighted code.
+강조 부분을 눈에 띄게 만들려면, 구문 강조용 스타일시트를 포함시켜야 합니다. 예를 들면 [syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css) 가 있습니다. 이 파일은 GitHub 에서 사용하는 것과 동일한 스타일이며 자신의 사이트에 마음껏 사용해도 됩니다. `linenos` 를 사용할 경우, 코드와 줄 번호를 구분하기 위해 `syntax.css` 에 `.lineno` 라는 CSS 클래스 추가가 필요할 수도 있습니다.
 
-### Post URL
+### 포스트 URL
 
-If you would like to include a link to a post on your site, the `post_url` tag
-will generate the correct permalink URL for the post you specify.
+만약 포스트에 대한 링크를 사용해야 할 경우, `post_url` 태그를 사용하면 해당 포스트에 대한 고유주소 URL 을 생성할 수 있습니다.
 
 {% highlight text %}
 {% raw %}
@@ -378,8 +343,7 @@ will generate the correct permalink URL for the post you specify.
 {% endraw %}
 {% endhighlight %}
 
-If you organize your posts in subdirectories, you need to include subdirectory
-path to the post:
+만약 포스트를 하위 디렉토리에 넣고 관리한다면, 포스트에 하위 디렉토리 경로를 포함시켜야 합니다:
 
 {% highlight text %}
 {% raw %}
@@ -387,9 +351,9 @@ path to the post:
 {% endraw %}
 {% endhighlight %}
 
-There is no need to include the file extension when using the `post_url` tag.
+`post_url` 태그를 사용할 때는 파일 확장자를 지정할 필요가 없습니다.
 
-You can also use this tag to create a link to a post in Markdown as follows:
+또한, 다음과 같이 Markdown 에서도 이 태그를 사용하여 포스트 링크를 생성할 수 있습니다:
 
 {% highlight text %}
 {% raw %}
@@ -399,7 +363,7 @@ You can also use this tag to create a link to a post in Markdown as follows:
 
 ### Gist
 
-Use the `gist` tag to easily embed a GitHub Gist onto your site. This works with public or secret gists:
+gist 태그를 사용하면 사이트에 GitHub Gist 를 쉽게 끼워넣을 수 있습니다. 공개/비공개에 상관없이 잘 작동합니다:
 
 {% highlight text %}
 {% raw %}
@@ -407,7 +371,7 @@ Use the `gist` tag to easily embed a GitHub Gist onto your site. This works with
 {% endraw %}
 {% endhighlight %}
 
-You may also optionally specify the filename in the gist to display:
+표시할 파일 이름을 입력할 수도 있습니다:
 
 {% highlight text %}
 {% raw %}

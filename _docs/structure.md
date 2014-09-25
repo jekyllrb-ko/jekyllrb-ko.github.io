@@ -1,20 +1,14 @@
 ---
 layout: docs
-title: Directory structure
+title: 디렉토리 구조
 prev_section: usage
 next_section: configuration
 permalink: /docs/structure/
 ---
 
-Jekyll is, at its core, a text transformation engine. The concept behind the
-system is this: you give it text written in your favorite markup language, be
-that Markdown, Textile, or just plain HTML, and it churns that through a layout
-or series of layout files. Throughout that process you can tweak how you want
-the site URLs to look, what data gets displayed in the layout, and more. This is
-all done through editing text files, and the static web site is the final
-product.
+Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 이 시스템의 배경 컨셉은 다음과 같습니다: 자신이 즐겨 사용하는 마크업 언어 (Markdown 이나 Textile 또는 일반 HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 다양한 레이아웃으로 포장합니다. 이 과정에서 사용되는 사이트 URL 구성 방식, 데이터가 레이아웃에 배치되는 방식 등등 많은 것들을 원하는대로 설정할 수 있습니다. 이 모든 일들이 텍스트 파일을 작성하는 것 만으로 가능하며, 그 결과로 정적인 웹 사이트가 생성됩니다.
 
-A basic Jekyll site usually looks something like this:
+기본적인 Jekyll 사이트는 보통 이렇게 생겼습니다:
 
 {% highlight bash %}
 .
@@ -37,14 +31,14 @@ A basic Jekyll site usually looks something like this:
 └── index.html
 {% endhighlight %}
 
-An overview of what each of these does:
+각각 하는 일의 개요는 다음과 같습니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>File / Directory</th>
-      <th>Description</th>
+      <th>파일 / 디렉토리</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -55,9 +49,7 @@ An overview of what each of these does:
       <td>
         <p>
 
-          Stores <a href="../configuration/">configuration</a> data. Many of
-          these options can be specified from the command line executable but
-          it’s easier to specify them here so you don’t have to remember them.
+          <a href="../configuration/">환경설정</a> 정보를 보관합니다. 명령어에 직접 옵션을 지정하여 실행할 수도 있지만, 그렇게 따로 외워두는 것보다 이 파일에 정의해두는 편이 더 쉽습니다.
 
         </p>
       </td>
@@ -69,7 +61,7 @@ An overview of what each of these does:
       <td>
         <p>
 
-          Drafts are unpublished posts. The format of these files is without a date: <code>title.MARKUP</code>. Learn how to <a href="../drafts/">work with drafts</a>.
+          게시하기 전, 초안을 보관하는 곳 입니다. 파일명 형식에ㅔ 날짜가 없습니다: <code>title.MARKUP</code>. <a href="../drafts/">초안 사용하기</a>를 읽어보세요.
 
         </p>
       </td>
@@ -81,11 +73,7 @@ An overview of what each of these does:
       <td>
         <p>
 
-          These are the partials that can be mixed and matched by your layouts
-          and posts to facilitate reuse. The liquid tag
-          <code>{% raw %}{% include file.ext %}{% endraw %}</code>
-          can be used to include the partial in
-          <code>_includes/file.ext</code>.
+          필요에 따라 포스트나 레이아웃에 끼워넣을 수 있는 조각들로서, 쉽게 재사용할 수 있습니다. <code>{% raw %}{% include file.ext %}{% endraw %}</code> 라는 Liquid 태그를 사용하면, 조각 파일 <code>_includes/file.ext</code> 이 삽입됩니다.
 
         </p>
       </td>
@@ -97,11 +85,7 @@ An overview of what each of these does:
       <td>
         <p>
 
-          These are the templates that wrap posts. Layouts are chosen on a post-
-          by-post basis in the <a href="../frontmatter/">YAML Front Matter</a>,
-          which is described in the next section. The liquid tag
-          <code>{% raw %}{{ content }}{% endraw %}</code>
-          is used to inject content into the web page.
+          이 템플릿들이 포스트 주위를 감쌉니다. 다음 섹션에서 설명하는 <a href="../frontmatter/">YAML 머리말</a>에 의하여 각 포스트 별로 레이아웃이 선택됩니다. 페이지에 컨텐츠를 주입할 때는 <code>{% raw %}{{ content }}{% endraw %}</code> 라는 Liquid 태그를 사용합니다.
 
         </p>
       </td>
@@ -113,12 +97,7 @@ An overview of what each of these does:
       <td>
         <p>
 
-          Your dynamic content, so to speak. The naming convention of these files is
-          important, and must follow the format:
-          <code>YEAR-MONTH-DAY-title.MARKUP</code>.
-          The <a href="../permalinks/">permalinks</a> can be customized for each
-          post, but the date and markup language are determined solely by the
-          file name.
+          말하자면 동적인, 당신의 컨텐츠입니다. 파일의 명명 규약이 아주 중요한데, 반드시 다음 규칙을 따라야 합니다: <code>YEAR-MONTH-DAY-title.MARKUP</code>. <a href="../permalinks/">고유주소</a>는 각 포스트 별로 수정이 가능하지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해서 결정됩니다.
 
         </p>
       </td>
@@ -130,10 +109,7 @@ An overview of what each of these does:
       <td>
         <p>
 
-          Well-formatted site data should be placed here. The jekyll engine will
-          autoload all yaml files (ends with <code>.yml</code> or <code>.yaml</code>)
-          in this directory. If there's a file <code>members.yml</code> under the directory,
-          then you can access contents of the file through <code>site.data.members</code>.
+          여기에는 올바르게 형식화된 사이트 데이터를 보관합니다. Jekyll 엔진은 이 디렉토리에 있는 모든 YAML 파일 (확장자가 <code>.yml</code> 또는 <code>.yaml</code>) 을 자동으로 읽어들입니다. 만약 이 디렉토리에 <code>members.yml</code> 파일이 있다면, <code>site.data.members</code> 라고 입력하여 그 컨텐츠에 접근할 수 있습니다.
 
         </p>
       </td>
@@ -145,42 +121,31 @@ An overview of what each of these does:
       <td>
         <p>
 
-          This is where the generated site will be placed (by default) once
-          Jekyll is done transforming it. It’s probably a good idea to add this
-          to your <code>.gitignore</code> file.
+          Jekyll 이 변환을 마치고 나서 생성된 사이트가 저장되는 (기본값) 위치입니다. 아마도 <code>.gitignore</code> 파일에 이 디렉토리를 추가하는 것이 좋을 것입니다.
 
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>index.html</code> and other HTML, Markdown, Textile files</p>
+        <p><code>index.html</code> 과 다른 HTML, Markdown, Textile 파일들</p>
       </td>
       <td>
         <p>
 
-          Provided that the file has a <a href="../frontmatter/">YAML Front
-          Matter</a> section, it will be transformed by Jekyll. The same will
-          happen for any <code>.html</code>, <code>.markdown</code>,
-          <code>.md</code>, or <code>.textile</code> file in your site’s root
-          directory or directories not listed above.
+          파일에 <a href="../frontmatter/">YAML 머리말</a> 섹션이 있다면 Jekyll 에 의해 변환됩니다. 사이트의 최상위 디렉토리나 위에 언급된 디렉토리 외에 다른 모든 디렉토리 안의 <code>.html</code> 이나 <code>.markdown</code>, <code>.md</code>, <code>.textile</code> 파일도 해당됩니다.
 
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>Other Files/Folders</p>
+        <p>다른 파일/폴더</p>
       </td>
       <td>
         <p>
 
-          Every other directory and file except for those listed above—such as
-          <code>css</code> and <code>images</code> folders,
-          <code>favicon.ico</code> files, and so forth—will be copied verbatim
-          to the generated site. There are plenty of <a href="../sites/">sites
-          already using Jekyll</a> if you’re curious to see how they’re laid
-          out.
+          <code>css</code> 나 <code>images</code> 폴더, <code>favicon.ico</code> 파일 등 위에 언급되지 않은 다른 디렉토리와 파일들은 그대로 복사됩니다. 다른 사이트들은 어떤식으로 구성되었는지 궁금하다면, <a href="../sites/">이미 Jekyll 을 사용하는 사이트들</a>이 많이 있으니 살펴보세요.
 
         </p>
       </td>

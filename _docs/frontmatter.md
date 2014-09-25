@@ -1,16 +1,12 @@
 ---
 layout: docs
-title: Front Matter
+title: 머리말
 prev_section: configuration
 next_section: posts
 permalink: /docs/frontmatter/
 ---
 
-The front matter is where Jekyll starts to get really cool. Any file that
-contains a [YAML](http://yaml.org/) front matter block will be processed by
-Jekyll as a special file. The front matter must be the first thing in the file
-and must take the form of valid YAML set between triple-dashed lines. Here is a
-basic example:
+Jekyll 의 수 많은 멋진 기능들 중 그 첫 번째는 바로 머리말입니다. Jekyll 은 [YAML](http://yaml.org/) 머리말 블록이 포함된 모든 파일을 특별한 파일로 인식하여 처리합니다. 머리말은 반드시 파일의 첫 부분에, 올바른 YAML 형식으로, 대쉬문자 3 개로 감싸서 작성해야 합니다. 기본적인 예시는 다음과 같습니다:
 
 {% highlight yaml %}
 ---
@@ -19,43 +15,32 @@ title: Blogging Like a Hacker
 ---
 {% endhighlight %}
 
-Between these triple-dashed lines, you can set predefined variables (see below
-for a reference) or even create custom ones of your own. These variables will
-then be available to you to access using Liquid tags both further down in the
-file and also in any layouts or includes that the page or post in question
-relies on.
+사전-정의 변수 (설명은 아래를 참고하세요) 를 사용하거나, 심지어 새 변수를 정의할 수도 있습니다. 이 변수들은 해당 파일은 물론 레이아웃 또는 해당 페이지(또는 포스트)에 포함된 include 파일에서 Liquid 태그를 사용해서 접근할 수 있습니다.
 
 <div class="note warning">
   <h5>UTF-8 Character Encoding Warning</h5>
   <p>
-    If you use UTF-8 encoding, make sure that no <code>BOM</code> header
-    characters exist in your files or very, very bad things will happen to
-    Jekyll. This is especially relevant if you’re running
-    <a href="../windows/">Jekyll on Windows</a>.
+    만일 UTF-8 인코딩을 사용한다면, BOM 헤더 문자가 포함되어 있지는 않는지 확인하세요. 그렇지 않으면 Jekyll 에 아주 아주 안좋은 일이 벌어집니다. 이 문제는 <a href="../windows/">Jekyll 을 Windows 에서 사용</a>하는 경우 해당됩니다.
   </p>
 </div>
 
 <div class="note">
-  <h5>ProTip™: Front Matter Variables Are Optional</h5>
+  <h5>ProTip™: 머리말의 변수는 선택사항입니다</h5>
   <p>
-    If you want to use <a href="../variables/">Liquid tags and variables</a> but
-    don’t need anything in your front matter, just leave it empty! The set of
-    triple-dashed lines with nothing in between will still get Jekyll to process
-    your file. (This is useful for things like CSS and RSS feeds!)
+    만약 <a href="../variables/">Liquid 태그와 변수</a>를 사용하고 싶은데 머리말에 아무것도 입력할 필요가 없다면, 빈 칸으로 남겨두세요! 대쉬문자 내부에 아무 내용이 없어도, Jekyll 은 해당 파일에 대한 처리를 수행할 것입니다. (이것은 CSS 나 RSS 피드같은 파일에 유용합니다!)
   </p>
 </div>
 
-## Predefined Global Variables
+## 사전-정의 전역 변수
 
-There are a number of predefined global variables that you can set in the
-front matter of a page or post.
+페이지 (또는 포스트) 의 머리말에 사용할 수 있는 다양한 사전-정의 전역 변수가 있습니다.
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Variable</th>
-      <th>Description</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -66,9 +51,7 @@ front matter of a page or post.
       <td>
         <p>
 
-          If set, this specifies the layout file to use. Use the layout file
-          name without the file extension. Layout files must be placed in the
-          <code>_layouts</code> directory.
+          사용할 레이아웃 파일을 지정합니다. 파일명에서 확장자를 제외한 나머지 부분을 사용하세요. 반드시 <code>_layouts</code> 디렉토리에 레이아웃 파일이 있어야 합니다.
 
         </p>
       </td>
@@ -80,9 +63,7 @@ front matter of a page or post.
       <td>
         <p>
 
-          If you need your processed blog post URLs to be something other than
-          the default <code>/year/month/day/title.html</code> then you can set
-          this variable and it will be used as the final URL.
+          생성된 블로그 포스트의 기본 URL 인 <code>/year/month/day/title.html</code>을 사용하지 않고 다른 URL 을 입력하면, 이것이 최종 URL 로 사용됩니다.
 
         </p>
       </td>
@@ -93,8 +74,7 @@ front matter of a page or post.
       </td>
       <td>
         <p>
-          Set to false if you don’t want a specific post to show up when the
-          site is generated.
+          사이트가 생성되었을 때 특정 포스트가 나타나지 않게 하려면 false 로 지정합니다.
         </p>
       </td>
     </tr>
@@ -106,12 +86,7 @@ front matter of a page or post.
       <td>
         <p>
 
-          Instead of placing posts inside of folders, you can specify one or
-          more categories that the post belongs to. When the site is generated
-          the post will act as though it had been set with these categories
-          normally. Categories (plural key) can be specified as a <a
-          href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list</a> or a
-          space-separated string.
+          포스트를 특정 폴더에 넣는 대신, 카테고리로 포스트 위치를 지정할 수 있습니다. 사이트가 생성될 때, 포스트는 마치 카테고리에 속한 것 처럼 동작합니다. <a href="http://en.wikipedia.org/wiki/YAML#Lists">YAML 리스트</a> 또는 공백문자로 구분하여 여러 카테고리를 지정할 수 있습니다.
 
         </p>
       </td>
@@ -123,9 +98,7 @@ front matter of a page or post.
       <td>
         <p>
 
-          Similar to categories, one or multiple tags can be added to a post.
-          Also like categories, tags can be specified as a YAML list or a space-
-          separated string.
+          카테고리와 유사하게, 하나 이상의 태그를 포스트에 추가할 수 있습니다. 또한, YAML 리스트 또는 공백문자로 구분하여 여러 태그를 지정할 수 있습니다.
 
         </p>
       </td>
@@ -135,12 +108,9 @@ front matter of a page or post.
 </div>
 
 
-## Custom Variables
+## 사용자-정의 변수
 
-Any variables in the front matter that are not predefined are mixed into the
-data that is sent to the Liquid templating engine during the conversion. For
-instance, if you set a title, you can use that in your layout to set the page
-title:
+변환 도중에, 사전-정의된 변수가 아닌 모든 머리말 변수들은 Liquid 템플릿 엔진에 의해 처리됩니다. 예를 들어, title 을 설정하면, 레이아웃에서 페이지 제목이 필요할 때 사용할 수 있습니다:
 
 {% highlight html %}
 <!DOCTYPE HTML>
@@ -152,16 +122,16 @@ title:
     ...
 {% endhighlight %}
 
-## Predefined Variables for Posts
+## 포스트의 사전-정의 변수
 
-These are available out-of-the-box to be used in the front matter for a post.
+포스트에서 사용할 수 있는 특별한 머리말 변수들입니다.
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Variable</th>
-      <th>Description</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -171,8 +141,7 @@ These are available out-of-the-box to be used in the front matter for a post.
       </td>
       <td>
         <p>
-          A date here overrides the date from the name of the post. This can be
-          used to ensure correct sorting of posts.
+          포스트 이름에 지정한 날짜보다 이 변수에 지정한 날짜가 우선시됩니다. 포스트를 올바르게 정렬하기 위해 사용할 수 있습니다.
         </p>
       </td>
     </tr>
@@ -181,11 +150,8 @@ These are available out-of-the-box to be used in the front matter for a post.
 </div>
 
 <div class="note">
-  <h5>ProTip™: Don't repeat yourself</h5>
+  <h5>ProTip™: 같은 일을 반복하지 마세요</h5>
   <p>
-    If you don't want to repeat your frequently used front matter variables over and over,
-    just define <a href="../configuration/#front-matter-defaults" title="Front Matter defaults">defaults</a>
-    for them and only override them where necessary (or not at all). This works both for predefined
-    and custom variables.
+    자주 사용하는 머리말 변수를 계속 반복해서 입력하고 싶지 않으면, 해당 변수에 대한 <a href="../configuration/#front-matter-defaults" title="Front Matter defaults">기본값</a>을 정의하고, 필요한 곳에서만 다른 값으로 덮어쓰세요. 사전-정의 변수나 사용자-정의 변수 모두 사용할 수 있습니다.
   </p>
 </div>

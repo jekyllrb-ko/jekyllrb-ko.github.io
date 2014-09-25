@@ -6,30 +6,16 @@ next_section: deployment-methods
 permalink: /docs/github-pages/
 ---
 
-[GitHub Pages](http://pages.github.com) are public web pages for users,
-organizations, and repositories, that are freely hosted on GitHub's
-`github.io` domain or on a custom domain name of your choice. GitHub Pages are
-powered by Jekyll behind the scenes, so in addition to supporting regular HTML
-content, they’re also a great way to host your Jekyll-powered website for free.
+[GitHub Pages](http://pages.github.com) 는 개인이나 단체 또는 저장소를 위한 공개 웹 페이지로서, 무료로 제공되는 GitHub 의 `github.io` 도메인이나 자신만의 도메인에 호스팅할 수 있습니다. GitHub Pages 은 내부적으로 Jekyll 에 의해 작동하고 있기 때문에 일반적인 HTML 지원뿐만 아니라, Jekyll 로 생성한 웹사이트를 무료로 호스팅할 수 있는 가장 좋은 방법입니다.
 
-## Deploying Jekyll to GitHub Pages
+## GitHub Pages 에 Jekyll 사용하기
 
-GitHub Pages work by looking at certain branches of repositories on GitHub.
-There are two basic types available: user/organization pages and project pages.
-The way to deploy these two types of sites are nearly identical, except for a
-few minor details.
+GitHub Pages 는 GitHub 에 있는 저장소들의 특정 브랜치를 검색하여 작동합니다. 두 가지 기본 타입 페이지를 사용할 수 있습니다: 개인/단체 페이지 또는 프로젝트 페이지. 이 두 가지 타입의 사이트 사용 방법은 약간의 사소한 차이점을 제외하고는 거의 동일합니다.
 
 <div class="note protip">
-  <h5>Use the <code>github-pages</code> gem</h5>
+  <h5><code>github-pages</code> gem 을 사용하세요</h5>
   <p>
-    Our friends at GitHub have provided the
-    <a href="https://github.com/github/pages-gem">github-pages</a>
-    gem which is used to manage Jekyll and its dependencies on
-    GitHub Pages. Using it in your projects means that when you deploy
-    your site to GitHub Pages, you will not be caught by unexpected
-    differences between various versions of the gems. To use the
-    currently-deployed version of the gem in your project, add the
-    following to your <code>Gemfile</code>:
+    GitHub 에 있는 우리 친구들이 Jekyll 과 그 의존요소를 관리하는데에 사용하는 <a href="https://github.com/github/pages-gem">github-pages</a> gem 를 제공해주었습니다. 당신의 프로젝트에 이 gem 을 사용하면, 다양한 gem 들의 버전이 일치하지 않는 문제를 피할 수 있습니다. 현재 운영중인 버전의 gem 을 당신의 프로젝트에서 사용하려면, <code>Gemfile</code> 에 다음과 같이 설정하세요:
 
 {% highlight ruby %}
 source 'https://rubygems.org'
@@ -41,86 +27,53 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 gem 'github-pages', versions['github-pages']
 {% endhighlight %}
 
-    This will ensure that when you run <code>bundle install</code>, you
-    have the correct version of the <code>github-pages</code> gem.
+    이로서 <code>bundle install</code> 를 실행할 때, 올바른 버전의 <code>github-pages</code> gem 을 사용할 수 있습니다.
   </p>
 </div>
 
-### User and Organization Pages
+### 사용자 페이지와 단체 페이지
 
-User and organization pages live in a special GitHub repository dedicated to
-only the GitHub Pages files. This repository must be named after the account
-name. For example, [@mojombo’s user page
-repository](https://github.com/mojombo/mojombo.github.io) has the name
-`mojombo.github.io`.
+사용자 페이지와 단체 페이지는 GitHub Pages 관련 파일만을 위한 특별한 GitHub 저장소에 존재하게 됩니다. 이 저장소의 이름은 반드시 계정명으로 시작합니다. 예를 들어, [@mojombo 의 사용자 페이지 저장소](https://github.com/mojombo/mojombo.github.io)의 이름은 `mojombo.github.io` 입니다.
 
-Content from the `master` branch of your repository will be used to build and
-publish the GitHub Pages site, so make sure your Jekyll site is stored there.
+저장소의 `master` 브랜치 내용이 GitHub Pages 사이트를 구성하고 게시하는데에 사용됩니다. 이 브랜치에 Jekyll 사이트 컨텐츠가 저장되어 있는지 확인하세요.
 
 <div class="note info">
-  <h5>Custom domains do not affect repository names</h5>
+  <h5>커스텀 도메인은 저장소 이름에 영향을 미치지 않습니다</h5>
   <p>
-    GitHub Pages are initially configured to live under the
-    <code>username.github.io</code> subdomain, which is why repositories must
-    be named this way <strong>even if a custom domain is being used</strong>.
+    GitHub Pages 는 최초에 <code>username.github.io</code> 서브도메인에서 제공되도록 설정됩니다. 따라서 저장소들은 <strong>커스텀 도메인이 사용되더라도</strong> 이런 방식으로 이름지어져야 합니다.
   </p>
 </div>
 
-### Project Pages
+### 프로젝트 페이지
 
-Unlike user and organization Pages, Project Pages are kept in the same
-repository as the project they are for, except that the website content is
-stored in a specially named `gh-pages` branch. The content of this branch will
-be rendered using Jekyll, and the output will become available under a subpath
-of your user pages subdomain, such as `username.github.io/project` (unless a
-custom domain is specified—see below).
+개인과 단체 페이지와는 다르게, 프로젝트 페이지는 해당 프로젝트의 저장소에 함께 저장되어 있습니다. 하지만 `gh-pages` 라는 특별한 이름의 브랜치에 저장됩니다. 이 브랜치의 컨텐츠는 Jekyll 을 통해서 `username.github.io/project` (커스텀 도메인이 사용되지 않았을 때 기준 - 아래 참조) 와 같은 개인 페이지의 하위 경로에 만들어집니다.
 
-The Jekyll project repository itself is a perfect example of this branch
-structure—the [master branch]({{ site.repository }}) contains the
-actual software project for Jekyll, however the Jekyll website (that you’re
-looking at right now) is contained in the [gh-pages
-branch]({{ site.repository }}/tree/gh-pages) of the same repository.
+Jekyll 프로젝트의 저장소 자체가 이러한 브랜치 구조에 대한 완벽한 예시입니다. [master 브랜치]({{ site.repository }})에는 실제 Jekyll 소프트웨어가 담겨 있지만, (지금 보고있는) Jekyll 웹 사이트는 동일한 저장소의 [gh-pages 브랜치]({{ site.repository }}/tree/gh-pages)에 들어 있습니다.
 
 <div class="note warning">
-  <h5>Source Files Must be in the Root Directory</h5>
+  <h5>Source Files 은 반드시 최상위 디렉토리에 있어야 합니다</h5>
   <p>
-Github Pages <a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting">overrides</a> the <a href="http://jekyllrb.com/docs/configuration/#global-configuration">“Site Source”</a> configuration value, so if you locate your files anywhere other than the root directory, your site may not build correctly.
+GitHub Pages 는 <a href="http://jekyllrb.com/docs/configuration/#global-configuration">“Site Source”</a> 환경설정을 <a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting">덮어쓰기</a>때문에, 최상위 디렉토리가 아닌 다른 디렉토리에 파일을 넣어두면 사이트가 올바르게 빌드되지 않을 수 있습니다.
   </p>
 </div>
 
 
-### Project Page URL Structure
+### 프로젝트 페이지 URL 구조
 
-Sometimes it's nice to preview your Jekyll site before you push your `gh-pages`
-branch to GitHub. However, the subdirectory-like URL structure GitHub uses for
-Project Pages complicates the proper resolution of URLs. Here is an approach to
-utilizing the GitHub Project Page URL structure (`username.github.io/project-name/`)
-whilst maintaining the ability to preview your Jekyll site locally.
+자신의 `gh-pages` 브랜치 내용을 GitHub 에 푸쉬하기 전에 사이트를 미리보기 해보는 것은 아주 유용합니다. 하지만, GitHub 이 프로젝트 페이지에 사용하는 URL 구조 (`username.github.io/project-name/`) 같은 하위 디렉토리는 URL 을 복잡하게 만듭니다. 여기, 로컬에서 Jekyll 사이트 미리보기 기능을 유지한 채로 GitHub 프로젝트 페이지 URL 구조를 활용하는 방법이 있습니다.
 
-1. In `_config.yml`, set the `baseurl` option to `/project-name` -- note the
-   leading slash and the **absence** of a trailing slash.
-2. When referencing JS or CSS files, do it like this:
-   `{% raw %}{{ site.baseurl }}/path/to/css.css{% endraw %}` -- note the slash
-   immediately following the variable (just before "path").
-3. When doing permalinks or internal links, do it like this:
-   `{% raw %}{{ site.baseurl }}{{ post.url }}{% endraw %}` -- note that there
-   is **no** slash between the two variables.
-4. Finally, if you'd like to preview your site before committing/deploying using
-   `jekyll serve`, be sure to pass an **empty string** to the `--baseurl` option,
-   so that you can view everything at `localhost:4000` normally (without
-   `/project-name` at the beginning): `jekyll serve --baseurl ''`
+1. `_config.yml` 의 `baseurl` 옵션을 `/project-name` 으로 지정한다 -- 맨 앞에는 슬래쉬가 있고, 끝에는 슬래쉬가 **없음**
+2. JS 또는 CSS 파일을 사용할 때는 이렇게 한다:
+   `{% raw %}{{ site.baseurl }}/path/to/css.css{% endraw %}` -- 슬래쉬가 변수 다음에 바로 이어짐 ("path" 바로 앞).
+3. 고유주소나 내부 링크를 사용할 때는 이렇게 한다:
+   `{% raw %}{{ site.baseurl }}{{ post.url }}{% endraw %}` -- 두 변수 사이에는 슬래쉬가 **없음**
+4. 마지막으로, 커밋/게시 전에 `jekyll serve` 를 사용하여 사이트를 미리보기 하려면, `--baseurl` 옵션에 **빈 문자열** 을 전달해야지만 `localhost:4000` 에서 모든 것을 볼 수 있다 (시작 부분에 `/project-name` 없음): `jekyll serve --baseurl ''`
 
-This way you can preview your site locally from the site root on localhost,
-but when GitHub generates your pages from the gh-pages branch all the URLs
-will start with `/project-name` and resolve properly.
+이 방법을 사용하면 로컬에서는 미리보기 사이트가 localhost 의 루트에 생성되지만, GitHub 이 gh-pages 브랜치에서 페이지를 생성할 때에는 모든 URL 이 `/project-name` 으로 시작하고 정상적으로 작동합니다.
 
 <div class="note">
-  <h5>GitHub Pages Documentation, Help, and Support</h5>
+  <h5>GitHub Pages 문서와 도움말, 지원</h5>
   <p>
-    For more information about what you can do with GitHub Pages, as well as for
-    troubleshooting guides, you should check out <a
-    href="https://help.github.com/categories/20/articles">GitHub’s Pages Help
-    section</a>. If all else fails, you should contact <a
-    href="https://github.com/contact">GitHub Support</a>.
+    GitHub Pages 에 대한 더 많은 정보와 문제해결 안내서가 필요하다면 <a href="https://help.github.com/categories/20/articles">GitHub’s Pages Help section</a> 을 확인하세요. 또 다른 문제가 있다면 <a href="https://github.com/contact">GitHub Support</a> 에 연락하세요.
   </p>
 </div>
