@@ -1,42 +1,34 @@
 ---
 layout: docs
-title: Continuous Integration
+title: 지속적인 통합
 prev_section: deployment-methods
 next_section: troubleshooting
 permalink: /docs/continuous-integration/
 ---
 
-You can easily test your website build against one or more versions of Ruby.
-The following guide will show you how to set up a free build environment on
-[Travis][0], with [GitHub][1] integration for pull requests. Paid
-alternatives exist for private repositories.
+웹사이트 생성을 하나 이상의 Ruby 버전에서 테스트하는 것은 어렵지 않습니다. 이것은 [Travis][0] 와 Pull Request 로 [GitHub][1] 을 연동하여 빌드 환경을 무료료 구축하는 방법에 대한 안내서입니다. 비공개 저장소에 대해서는 유료로 구축할 수 있는 방법이 있습니다.
 
 [0]: https://travis-ci.org/
 [1]: https://github.com/
 
-## 1. Enabling Travis and GitHub
+## 1. Travis 와 GitHub 활성화
 
-Enabling Travis builds for your GitHub repository is pretty simple:
+GitHub 저장소에 Travis 빌드를 활성화하는 것은 상당히 간단합니다:
 
-1. Go to your profile on travis-ci.org: https://travis-ci.org/profile/username
-2. Find the repository for which you're interested in enabling builds.
-3. Click the slider on the right so it says "ON" and is a dark grey.
-4. Optionally configure the build by clicking on the wrench icon. Further
-   configuration happens in you `.travis.yml` file. More details on that
-   below.
+1. 자신의 travis-ci.org 프로파일 페이지에 접속합니다: https://travis-ci.org/profile/username
+2. 빌드를 활성화하려는 저장소를 찾습니다.
+3. 오른편의 슬라이더를 클릭해서 어두운 회색의 "ON" 상태로 만듭니다.
+4. 원한다면 공구모양 아이콘을 클릭해서 빌드에 대한 환경설정을 수정합니다.
+   `.travis.yml` 파일로도 환경설정이 가능합니다. 더 자세한 설명은 다음을
+   읽어보세요.
 
-## 2. The Test Script
+## 2. 테스트 스크립트
 
-The simplest test script simply runs `jekyll build` and ensures that Jekyll
-doesn't fail to build the site. It doesn't check the resulting site, but it
-does ensure things are built properly.
+가장 단순한 테스트 스크립트는 단지 `jekyll build` 를 실행하고 Jekyll 이 성공적으로 사이트 빌드를 마쳤는지 확인합니다. 빌드 작업이 올바른지는 확인하지만, 생성된 사이트는 확인하지 않습니다.
 
-When testing Jekyll output, there is no better tool than [html-proofer][2].
-This tool checks your resulting site to ensure all links and images exist.
-Utilize it either with the convenient `htmlproof` command-line executable,
-or write a Ruby script which utilizes the gem.
+Jekyll 결과물에 대한 테스트를 수행하려면, [html-proofer][2] 라는 더 좋은 도구가 있습니다. 이 도구는 생성된 사이트의 모든 링크와 이미지가 존재하는지 확인합니다. 명령행 실행 프로그램인 `htmlproof` 를 사용하거나, 해당 gem 을 활용하는 Ruby 스크립트를 작성하세요.
 
-### The HTML Proofer Executable
+### HTML Proofer 실행파일
 
 {% highlight bash %}
 #!/usr/bin/env bash
@@ -46,13 +38,11 @@ bundle exec jekyll build
 bundle exec htmlproof ./_site
 {% endhighlight %}
 
-Some options can be specified via command-line switches. Check out the
-`html-proofer` README for more information about these switches, or run
-`htmlproof --help` locally.
+몇 가지 옵션은 명령행 스위치를 통해서 지정할 수 있습니다. 이 스위치에 대한 더 많은 정보는 `html-proofer` README 를 읽어보거나 `htmlproof --help` 를 실행해보면 얻을 수 있습니다.
 
-### The HTML Proofer Library
+### HTML Proofer 라이브러리
 
-You can also invoke `html-proofer` in Ruby scripts (e.g. in a Rakefile):
+또한 Ruby 스크립트에서 `html-proofer` 를 호출할 수도 있습니다 (예시, Rakefile 안에서 호출):
 
 {% highlight ruby %}
 #!/usr/bin/env ruby
@@ -61,18 +51,13 @@ require 'html/proofer'
 HTML::Proofer.new("./_site").run
 {% endhighlight %}
 
-Options are given as a second argument to `.new`, and are encoded in a
-symbol-keyed Ruby Hash. More information about the configuration options,
-check out `html-proofer`'s README file.
+옵션은 `.new` 의 두 번째 전달인자로 지정하고, 심볼-키 Ruby 해시로 인코딩 됩니다. 환경설정 옵션에 관련된 더 많은 정보는 `html-proofer` 의 README 파일을 읽어보세요.
 
 [2]: https://github.com/gjtorikian/html-proofer
 
-## 3. Configuring Your Travis Builds
+## 3. Travis 빌드 환경설정
 
-This file is used to configure your Travis builds. Because Jekyll is built
-with Ruby and requires RubyGems to install, we use the Ruby language build
-environment. Below is a sample `.travis.yml` file, and what follows that is
-an explanation of each line.
+이 파일은 Travis 빌드 환경설정에 사용됩니다. Jekyll 은 Ruby 로 작성되었고 몇 가지 RubyGem 들 설치를 필요로 하기 때문에, Ruby 언어 빌드 환경을 사용합니다. 다음은 샘플 `.travis.yml` 파일이며, 그 뒤는 각 설정에 대한 설명입니다.
 
 {% highlight yaml %}
 language: ruby
@@ -91,39 +76,32 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 {% endhighlight %}
 
-Ok, now for an explanation of each line:
+좋습니다. 다음은 각 줄에 관한 설명입니다:
 
 {% highlight yaml %}
 language: ruby
 {% endhighlight %}
 
-This line tells Travis to use a Ruby build container. It gives your script
-access to Bundler, RubyGems, and a Ruby runtime.
+이 줄은 Travis 에게 Ruby 빌드 컨테이너를 사용하라고 지시합니다. Bundler, RubyGem, Ruby 실행환경의 스크립트 접근 권한도 넘겨줍니다.
 
 {% highlight yaml %}
 rvm:
 - 2.1
 {% endhighlight %}
 
-RVM is a popular Ruby Version Manager (like rbenv, chruby, etc). This
-directive tells Travis the Ruby version to use when running your test
-script.
+RVM 은 대중적인 (rbenv, chruby, 등 과 같은) Ruby 버전 관리자입니다. 위 설정은 Travis 에게 테스트 스크립트를 실행할 때 사용할 Ruby 버전을 알려줍니다.
 
 {% highlight yaml %}
 script: ./script/cibuild
 {% endhighlight %}
 
-Travis allows you to run any arbitrary shell script to test your site. One
-convention is to put all scripts for your project in the `script`
-directory, and to call your test script `cibuild`. This line is completely
-customizable. If your script won't change much, you can write your test
-incantation here directly:
+Travis 는 임의의 쉘 스크립트를 사용해서 사이트를 테스트하는 것도 허용합니다. 단 한가지 규약은 프로젝트에 관련된 모든 스크립트를 `script` 디렉토리에 넣어야 하고, `cibuild` 라는 테스트 스크립트를 호출해야 한다는 것입니다. 이 줄은 완전히 다르게 수정할 수 있습니다. 만약 스크립트가 많이 바뀌지 않는다면 테스트 명령어를 여기에 직접 적을 수도 잇습니다:
 
 {% highlight yaml %}
 script: jekyll build && htmlproof ./_site
 {% endhighlight %}
 
-The `script` directive can be absolutely any valid shell command.
+`script` 설정은 올바른 쉘 명령어라면 어떤 것이든 사용할 수 있습니다.
 
 {% highlight yaml %}
 # branch whitelist
@@ -133,16 +111,9 @@ branches:
   - /pages-(.*)/ # test every branch which starts with "pages-"
 {% endhighlight %}
 
-You want to ensure the Travis builds for your site are being run only on
-the branch or branches which contain your site. One means of ensuring this
-isolation is including a branch whitelist in your Travis configuration
-file. By specifying the `gh-pages` branch, you will ensure the associated
-test script (discussed above) is only executed on site branches. If you use
-a pull request flow for proposing changes, you may wish to enforce a
-convention for your builds such that all branches containing edits are
-prefixed, exemplified above with the `/pages-(.*)/` regular expression.
+Travis 빌드가 사이트를 담고있는 브랜치 또는 브랜치들에만 실행되게 하고 싶다고 생각해봅시다. 이렇게 빌드를 고립시키는 한 가지 방법은 Travis 환경설정 파일에 브랜치 화이트리스트를 넣는 것입니다. `gh-pages` 브랜치를 지정해서, (위에 설명한) 관련된 테스트 스크립트가 사이트 브랜치에 대해서만 실행되게 할 수 있습니다. 변경을 제안할 때 Pull Request 방식을 사용한다면, 특정 접두사를 포함하는 브랜치에만 빌드를 적용하도록 지시할 수 있는데, 위 예제에서는 정규 표현식 `/pages-(.*)/` 이 그 전형적인 예시입니다.
 
-The `branches` directive is completely optional.
+`branches` 설정은 완전히 선택사항입니다.
 
 {% highlight yaml %}
 env:
@@ -150,28 +121,21 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 {% endhighlight %}
 
-Using `html-proofer`? You'll want this environment variable. Nokogiri, used
-to parse HTML files in your compiled site, comes bundled with libraries
-which it must compile each time it is installed. Luckily, you can
-dramatically increase the install time of Nokogiri by setting the
-environment variable `NOKOGIRI_USE_SYSTEM_LIBRARIES` to `true`.
+`html-proofer` 를 사용하나요? 이 환경변수가 필요하게 될 것입니다. Nokogiri, 생성된 사이트의 HTML 파일을 파싱하는데에 사용합니다. 운 좋게도, 환경 변수 `NOKOGIRI_USE_SYSTEM_LIBRARIES` 를 `true` 로 설정해서 Nokogiri 의 설치 시간을 극적으로 향상시킬 수 있습니다.
 
 ## 4. Gotchas
 
-### Exclude `vendor`
+### `vendor` 제외시키기
 
-Travis bundles all gems in the `vendor` directory on its build servers,
-which Jekyll will mistakenly read and explode on. To avoid this, exclude
-`vendor` in your `_config.yml`:
+Travis 는 빌드 서버의 `vendor` 디렉토리에 있는 모든 gem 들을 포함하는데, 이는 의도치 않게 Jekyll 에 의해 읽혀서 망가지게 됩니다. 그렇게 되지 않게 하려면, `_config.yml` 에서 `verdor` 를 제외시키세요:
 
 {% highlight yaml %}
 exclude: [vendor]
 {% endhighlight %}
 
-### Questions?
+### 질문?
 
-This entire guide is open-source. Go ahead and [edit it][3] if you have a
-fix or [ask for help][4] if you run into trouble and need some help.
+이 안내서는 모두 오픈소스입니다. 마음껏 사용하고, 고칠 부분이 있다면 [수정][3]하거나, 문제가 발생하여 도움이 필요하다면 [도움을 요청][4]하세요.
 
 [3]: https://github.com/jekyll/jekyll/edit/master/site/_docs/continuous-integration.md
 [4]: https://github.com/jekyll/jekyll-help#how-do-i-ask-a-question

@@ -1,32 +1,32 @@
 ---
 layout: docs
-title: Collections
+title: 콜렉션
 prev_section: variables
 next_section: datafiles
 permalink: /docs/collections/
 ---
 
 <div class="note warning">
-  <h5>Collections support is unstable and may change</h5>
+  <h5>콜렉션 기능은 안정적이지 않고 변경될 수도 있습니다</h5>
   <p>
-    This is an experimental feature and that the API may likely change until the feature stabilizes.
+    실험적인 기능으로서, 안정화가 될 때까지 API 가 자주 변경될 수 있습니다.
   </p>
 </div>
 
-Not everything is a post or a page. Maybe you want to document the various methods in your open source project, members of a team, or talks at a conference. Collections allow you to define a new type of document that behave like Pages or Posts do normally, but also have their own unique properties and namespace.
+페이지나 포스트만 있는 것은 아닙니다. 예를 들면, 프로젝트 내의 다양한 메소드라던지 팀의 멤버 목록, 아니면 컨퍼런스의 대화같은 것들을 문서화하고 싶을 수도 있습니다. 콜렉션 기능을 사용하면 기본적으로는 페이지나 포스트처럼 동작하지만, 고유한 네임스페이스와 속성을 가진 새로운 종류의 문서를 정의할 수 있습니다.
 
-## Using Collections
+## 콜렉션 사용하기
 
-### Step 1: Tell Jekyll to read in your collection
+### 1 단계: Jekyll 에게 콜렉션을 읽도록 지시하기
 
-Add the following to your site's `_config.yml` file, replacing `my_collection` with the name of your collection:
+`_config.yml` 파일에 아래처럼 `my_collection` 부분은 자신의 콜렉션 이름으로 바꿔서 입력하세요:
 
 {% highlight yaml %}
 collections:
 - my_collection
 {% endhighlight %}
 
-You can optionally specify metadata for your collection in the configuration:
+원한다면 콜렉션에 관련된 메타데이터를 정의할 수도 있습니다:
 
 {% highlight yaml %}
 collections:
@@ -34,16 +34,15 @@ collections:
     foo: bar
 {% endhighlight %}
 
-### Step 2: Add your content
+### 2 단계: 컨텐츠 추가하기
 
-Create a corresponding folder (e.g. `<source>/_my_collection`) and add documents.
-YAML Front Matter is read in as data if it exists, if not, then everything is just stuck in the Document's `content` attribute.
+설정한 콜렉션 이름에 맞는 폴더 (예시, `<source>/_my_collection`) 를 생성하고 문서를 추가합니다. YAML 머리말은 원래대로 작동하며, 만약 머리말이 없다면 문서의 모든 내용은 `content` 속성에 들어갑니다.
 
-Note: the folder must be named identically to the collection you defined in your `_config.yml` file, with the addition of the preceding `_` character.
+주의: 폴더의 이름은 반드시 `_config.yml` 파일에 정의한 콜렉션에 `_` 문자를 붙인 것이어야 합니다.
 
-### Step 3: Optionally render your collection's documents into independent files
+### 3 단계: 콜렉션 내 문서를 독립적인 파일로 출력하기 (선택사항)
 
-If you'd like Jekyll to create a public-facing, rendered version of each document in your collection, set the `output` key to `true` in your collection metadata in your `_config.yml`:
+만약 콜렉션에 포함된 각각의 문서가 독립적인 버전으로 생성되게 하고 싶다면, `_config.yml` 파일의 콜렉션 정의부분에 `output` 키를 추가하고 `true` 라는 값을 설정합니다:
 
 {% highlight yaml %}
 collections:
@@ -51,12 +50,9 @@ collections:
     output: true
 {% endhighlight %}
 
-This will produce a file for each document in the collection.
-For example, if you have `_my_collection/some_subdir/some_doc.md`,
-it will be rendered using Liquid and the Markdown converter of your
-choice and written out to `<dest>/my_collection/some_subdir/some_doc.html`.
+이렇게 하면 콜렉션 안의 모든 문서가 각각 파일로 생성됩니다. 예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면, Liquid 와 Markdown 변환기를 거쳐서 `<dest>/my_collection/some_subdir/some_doc.html` 로 만들어질 것입니다.
 
-As for posts with [Permalinks](../permalinks/), document URL can be customized by setting a `permalink` metadata to the collection:
+[고유주소](../permalinks/)를 가진 포스트와 마찬가지로, 콜렉션 메타데이터에 `permalink` 설정을 하면 문서 URL 은 변경될 수도 있습니다:
 
 {% highlight yaml %}
 collections:
@@ -65,14 +61,14 @@ collections:
     permalink: /awesome/:path/
 {% endhighlight %}
 
-For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be written out to `<dest>/awesome/some_subdir/some_doc/index.html`.
+예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면, 생성되는 파일의 경로는 `<dest>/awesome/some_subdir/some_doc/index.html` 가 됩니다.
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Variable</th>
-      <th>Description</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -81,7 +77,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>collection</code></p>
       </td>
       <td>
-        <p>Label of the containing collection.</p>
+        <p>콜렉션의 제목</p>
       </td>
     </tr>
     <tr>
@@ -89,7 +85,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>path</code></p>
       </td>
       <td>
-        <p>Path to the document relative to the collection's directory.</p>
+        <p>콜렉션 디렉토리에 상대적인 문서의 경로</p>
       </td>
     </tr>
     <tr>
@@ -97,7 +93,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>name</code></p>
       </td>
       <td>
-        <p>The document's base filename, with every sequence of spaces and non-alphanumeric characters replaced by a hyphen.</p>
+        <p>알파벳과 숫자가 아닌 문자와 공백문자는 모두 하이픈으로 교체된, 문서의 기본 파일명.</p>
       </td>
     </tr>
     <tr>
@@ -105,7 +101,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>title</code></p>
       </td>
       <td>
-        <p>The document's lowercase title (as defined in its <a href="{{ site.baseurl }}/docs/frontmatter/">front matter</a>), with every sequence of spaces and non-alphanumeric characters replaced by a hyphen. If the document does not define a title in its <a href="{{ site.baseurl }}/docs/frontmatter/">front matter</a>, this is equivalent to <code>name</code>.</p>
+        <p>알파벳과 숫자가 아닌 문자와 공백문자는 모두 하이픈으로 교체된, 문서의 (<a href="{{ site.baseurl }}/docs/frontmatter/">머리말</a>에 정의된) 소문자 제목. 만약 문서의 <a href="{{ site.baseurl }}/docs/frontmatter/">머리말</a>에 제목이 정의되어 있지 않으면, <code>name</code> 와 동일하다.</p>
       </td>
     </tr>
     <tr>
@@ -113,27 +109,27 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>output_ext</code></p>
       </td>
       <td>
-        <p>Extension of the output file.</p>
+        <p>생성되는 파일의 확장자</p>
       </td>
     </tr>
   </tbody>
 </table>
 </div>
 
-## Liquid Attributes
+## Liquid 속성
 
-### Collections
+### 콜렉션
 
-Each collection is accessible via the `site` Liquid variable. For example, if you want to access the `albums` collection found in `_albums`, you'd use `site.albums`. Each collection is itself an array of documents (e.g. `site.albums` is an array of documents, much like `site.pages` and `site.posts`). See below for how to access attributes of those documents.
+모든 콜렉션은 Liquid 변수인 `site` 로 접근할 수 있습니다. 예를 들어, `_albums` 에 있는 `albums` 콜렉션에 접근하려고 한다면, `site.albums` 를 사용하면 됩니다. 모든 콜렉션은 여러 문서들에 대한 배열입니다 (예시, `site.albums` 는 `site.pages` 와 `site.posts` 거의 유사함). 이 문서들의 속성에 접근하는 방법은 아래를 참고하세요.
 
-The collections are also available under `site.collections`, with the metadata you specified in your `_config.yml` (if present) and the following information:
+콜렉션은 `site.collections` 로도 접근할 수 있으며, `_config.yml` 파일에 정의한 메타데이터와 다음 정보들도 사용할 수 있다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Variable</th>
-      <th>Description</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -143,7 +139,7 @@ The collections are also available under `site.collections`, with the metadata y
       </td>
       <td>
         <p>
-          The name of your collection, e.g. <code>my_collection</code>.
+          콜렉션의 이름. 예시, <code>my_collection</code>.
         </p>
       </td>
     </tr>
@@ -153,7 +149,7 @@ The collections are also available under `site.collections`, with the metadata y
       </td>
       <td>
         <p>
-          An array of <a href="#documents">documents</a>.
+          <a href="#documents">문서</a>들의 배열.
         </p>
       </td>
     </tr>
@@ -164,6 +160,7 @@ The collections are also available under `site.collections`, with the metadata y
       <td>
         <p>
           The path to the collections's source directory, relative to the site source.
+          사이트 소스 디렉토리 기준, 콜렉션의 소스 디렉토리 상대 경로
         </p>
       </td>
     </tr>
@@ -173,7 +170,7 @@ The collections are also available under `site.collections`, with the metadata y
       </td>
       <td>
         <p>
-          The full path to the collections's source directory.
+          콜렉션 소스 디렉토리 전체 경로
         </p>
       </td>
     </tr>
@@ -183,7 +180,7 @@ The collections are also available under `site.collections`, with the metadata y
       </td>
       <td>
         <p>
-          Whether the collection's documents will be output as individual files.
+          콜렉션의 문서들이 독립적인 파일로 출력될 것인지 여부
         </p>
       </td>
     </tr>
@@ -192,16 +189,16 @@ The collections are also available under `site.collections`, with the metadata y
 </div>
 
 
-### Documents
+### 문서
 
-In addition to any YAML Front Matter provided in the document's corresponding file, each document has the following attributes:
+파일에 지정된 YAML 머리말뿐만 아니라, 각 문서는 다음과 같은 속성을 가지고 있습니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>Variable</th>
-      <th>Description</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -211,10 +208,7 @@ In addition to any YAML Front Matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The (unrendered) content of the document. If no YAML Front Matter is provided,
-          this is the entirety of the file contents. If YAML Front Matter
-          is used, then this is all the contents of the file after the terminating
-          `---` of the front matter.
+          문서의 (변환되지 않은) 컨텐츠. 만약 YAML 머리말이 없다면, 파일 컨텐츠와 완전히 동일하다. YAML 머리말이 사용되었다면, 머리말을 제외한 컨텐츠와 동일하다.
         </p>
       </td>
     </tr>
@@ -224,7 +218,7 @@ In addition to any YAML Front Matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The rendered output of the document, based on the <code>content</code>.
+          <code>content</code> 를 기준으로, 변환된 문서
         </p>
       </td>
     </tr>
@@ -234,7 +228,7 @@ In addition to any YAML Front Matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The full path to the document's source file.
+          문서 소스 파일의 전체 경로
         </p>
       </td>
     </tr>
@@ -244,7 +238,7 @@ In addition to any YAML Front Matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The path to the document's source file relative to the site source.
+          사이트 소스 경로를 기준으로 한, 문서 소스 파일의 상대 경로
         </p>
       </td>
     </tr>
@@ -254,9 +248,7 @@ In addition to any YAML Front Matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The URL of the rendered collection. The file is only written to the
-          destination when the name of the collection to which it belongs is
-          included in the <code>render</code> key in the site's configuration file.
+          변환된 콜렉션의 URL. 사이트 환경설정 파일의 <code>render</code> 키에 포함된 콜렉션만 파일로 생성된다.
         </p>
       </td>
     </tr>
@@ -266,7 +258,7 @@ In addition to any YAML Front Matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The name of the document's collection.
+          해당 문서가 포함된 콜렉션의 이름
         </p>
       </td>
     </tr>
