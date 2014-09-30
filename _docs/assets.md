@@ -6,7 +6,7 @@ next_section: migrations
 permalink: /docs/assets/
 ---
 
-Jekyll 은 Sass 와 CoffeeScript 에 대한 지원을 기본적으로 내장하고 있습니다. 이를 사용하기 위해서는, 적절한 확장자를 가진 (`.sass` 나 `.scss`, `.coffee` 중 하나) 파일을 생성하고 파일이 3 개의 대쉬문자 두 줄로 시작해야 합니다. 이렇게 말이죠:
+Jekyll 은 기본적으로 Sass 와 CoffeeScript 를 지원합니다. 이를 사용하기 위해서는, 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중 하나) 로 파일을 생성하고 파일의 시작부분에 3 개의 대쉬문자 두 줄을 입력해야 합니다. 이렇게 말이죠:
 
 {% highlight sass %}
 ---
@@ -17,7 +17,7 @@ Jekyll 은 Sass 와 CoffeeScript 에 대한 지원을 기본적으로 내장하�
   font-size: 1.2em
 {% endhighlight %}
 
-Jekyll 은 이러한 파일들을 일반 페이지처럼 다루기 때문에, 출력물이 원본과 동일한 디렉토리에 담기게 됩니다. 예를 들어, 사이트 원본 폴더에 `css/styles.scss` 라는 이름의 파일을 가지고 있다면, Jekyll 은 해당 파일을 처리한 후 사이트 결과물 폴더의 `css/styles.css` 에 생성합니다.
+Jekyll 은 이러한 파일들을 일반 페이지처럼 다루기 때문에, 원본과 동일한 디렉토리에 출력물이 담기게 됩니다. 예를 들어, Site Source 폴더에 `css/styles.scss` 라는 이름의 파일을 가지고 있다면, Jekyll 은 해당 파일을 처리한 후 Site Destination 폴더의 `css/styles.css` 에 넣습니다.
 
 <div class="note info">
   <h5>Jekyll 은 자료 파일의 모든 Liquid 필터와 태그를 처리합니다</h5>
@@ -26,11 +26,11 @@ Jekyll 은 이러한 파일들을 일반 페이지처럼 다루기 때문에, �
 
 ## Sass/SCSS
 
-Jekyll 은 Sass 변환을 당신만의 방법으로 사용자화 할 수 있게 허용합니다.
+Jekyll 로 Sass 변환을 당신만의 방법으로 사용자화 할 수 있습니다.
 
-관련된 파일들을 기본값이 `<source>/_sass` 인 `sass_dir` 에 넣습니다. `<source>/css` 같은 곳에 메인 SCSS 나 Sass 파일을 넣습니다. 예를 들면, [이 Jekyll 의 Sass 지원을 사용한 예제 사이트][example-sass]를 살펴보세요.
+관련된 파일들을 `sass_dir` (기본값은 `<source>/_sass`) 에 넣습니다. 메인 SCSS 나 Sass 파일은 `<source>/css` 같이, 결과 파일이 생성되어야 하는 위치에 맞춰 넣습니다. 이에 대한 예시로, [Jekyll 의 Sass 기능을 사용한 예제 사이트][example-sass]를 살펴보세요.
 
-만약 Sass `@import` 선언을 사용한다면, `sass_dir` 이 Sass 파일의 들어있는 디렉토리로 설정되었는지 확인해야 합니다. 다음과 같이 할 수 있습니다:
+만약 Sass `@import` 선언을 사용한다면, 이 Sass 파일이 들어있는 디렉토리가 `sass_dir` 로 설정되었는지 확인해야 합니다. 다음과 같이 할 수 있습니다:
 
 {% highlight yaml %}
 sass:
@@ -57,4 +57,4 @@ sass:
     style: :compressed
 {% endhighlight %}
 
-이 설정은 Sass 에 전달되어, Sass 가 지원하는 어떠한 출력 스타일 옵션도 유효해지는 것이다.
+이 설정은 Sass 에 전달되므로, 여기엔 Sass 가 지원하는 모든 출력 스타일 옵션이 유효합니다.

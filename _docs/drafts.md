@@ -13,4 +13,4 @@ permalink: /docs/drafts/
 |   |-- a-draft-post.md
 {% endhighlight %}
 
-사이트의 미리보기에 초안을 포함시키려면, `jekyll serve` 나 `jekyll build` 에 `--drafts` 스위치를 추가해서 실행합니다. 초안은 해당 파일의 수정 시간이 글의 작성 시간으로 사용되기 때문에, 현재 초안이 제일 최신 포스트로 표시될 것입니다.
+사이트의 미리보기에 초안을 포함시키려면, `jekyll serve` 나 `jekyll build` 에 `--drafts` 스위치를 추가해서 실행합니다. 초안의 작성시간은 해당 파일의 수정시간이기 때문에, 제일 최신 포스트처럼 표시될 것입니다.

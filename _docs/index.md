@@ -9,7 +9,7 @@ permalink: /docs/home/
 
 ## 그래서, 정확히 Jekyll 이 뭔가요?
 
-Jekyll 은 아주 간편하고, 블로그 지향적인 정적 사이트 생성기입니다. 템플릿 디렉토리에서 다양한 포맷의 원본 텍스트 파일을 읽은 후, [Markdown](http://daringfireball.net/projects/markdown/) (또는 [Textile](http://redcloth.org/textile)) 과 [Liquid](https://github.com/Shopify/liquid/wiki) 변환 작업을 거쳐서, 당신이 즐겨 사용하는 웹 서버에 곧바로 게시할 수 있는 완전한 정적 웹사이트를 만들어냅니다. 또 Jekyll 은 [GitHub Pages](http://pages.github.com) 의 내부 엔진이 되었습니다. 이 말은, Jekyll 을 사용하여 자신의 프로젝트 페이지나 블로그, 웹사이트를 GitHub 에 **무료로** 호스팅 할 수 있다는 뜻입니다.
+Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다. 템플릿 디렉토리에서 다양한 포맷의 원본 텍스트 파일을 읽은 후, [Markdown](http://daringfireball.net/projects/markdown/) (또는 [Textile](http://redcloth.org/textile)) 과 [Liquid](https://github.com/Shopify/liquid/wiki) 변환 작업을 거쳐서, 당신이 즐겨 사용하는 웹 서버에 곧바로 게시할 수 있는 완전한 정적 웹사이트를 만들어냅니다. 또 Jekyll 은 [GitHub Pages](http://pages.github.com) 의 내부 엔진이 되었습니다. 이 말은, Jekyll 을 사용하여 자신의 프로젝트 페이지나 블로그, 웹사이트를 GitHub 에 **무료로** 호스팅 할 수 있다는 뜻입니다.
 
 ## 유용한 정보
 

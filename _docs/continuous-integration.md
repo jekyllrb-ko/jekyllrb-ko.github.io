@@ -89,7 +89,7 @@ rvm:
 - 2.1
 {% endhighlight %}
 
-RVM 은 대중적인 (rbenv, chruby, 등 과 같은) Ruby 버전 관리자입니다. 위 설정은 Travis 에게 테스트 스크립트를 실행할 때 사용할 Ruby 버전을 알려줍니다.
+RVM 은 대중적인 (rbenv, chruby 등의) Ruby 버전 관리자입니다. 위 설정은 Travis 에게 테스트 스크립트를 실행할 때 사용할 Ruby 버전을 알려줍니다.
 
 {% highlight yaml %}
 script: ./script/cibuild

@@ -6,7 +6,7 @@ next_section: posts
 permalink: /docs/frontmatter/
 ---
 
-Jekyll 의 수 많은 멋진 기능들 중 그 첫 번째는 바로 머리말입니다. Jekyll 은 [YAML](http://yaml.org/) 머리말 블록이 포함된 모든 파일을 특별한 파일로 인식하여 처리합니다. 머리말은 반드시 파일의 첫 부분에, 올바른 YAML 형식으로, 대쉬문자 3 개로 감싸서 작성해야 합니다. 기본적인 예시는 다음과 같습니다:
+Jekyll 의 수 많은 멋진 기능들 중 그 첫 번째는 바로 머리말입니다. Jekyll 은 [YAML](http://yaml.org/) 머리말 블록이 포함된 모든 파일을 특별한 파일로 인식하여 처리합니다. 머리말은 반드시 파일의 첫 부분에, 올바른 YAML 형식으로 작성하고, 3 개의 대쉬문자로 감싸야 합니다. 기본적인 예시는 다음과 같습니다:
 
 {% highlight yaml %}
 ---
@@ -15,12 +15,12 @@ title: Blogging Like a Hacker
 ---
 {% endhighlight %}
 
-사전-정의 변수 (설명은 아래를 참고하세요) 를 사용하거나, 심지어 새 변수를 정의할 수도 있습니다. 이 변수들은 해당 파일은 물론 레이아웃 또는 해당 페이지(또는 포스트)에 포함된 include 파일에서 Liquid 태그를 사용해서 접근할 수 있습니다.
+사전-정의 변수 (설명은 아래를 참고하세요) 를 사용하거나, 심지어 새 변수를 정의할 수도 있습니다. 이 변수들은 해당 파일은 물론 레이아웃 또는 해당 페이지 (또는 포스트) 에 포함된 include 파일에서 Liquid 태그를 사용해서 접근할 수 있습니다.
 
 <div class="note warning">
   <h5>UTF-8 Character Encoding Warning</h5>
   <p>
-    만일 UTF-8 인코딩을 사용한다면, BOM 헤더 문자가 포함되어 있지는 않는지 확인하세요. 그렇지 않으면 Jekyll 에 아주 아주 안좋은 일이 벌어집니다. 이 문제는 <a href="../windows/">Jekyll 을 Windows 에서 사용</a>하는 경우 해당됩니다.
+    만일 UTF-8 인코딩을 사용한다면, BOM 헤더 문자가 포함되어 있지는 않는지 확인하세요. 그렇지 않으면 Jekyll 에 아주 아주 안좋은 일이 벌어집니다. 이 문제는 <a href="../windows/">Jekyll 을 Windows 에서 사용</a>하는 경우에만 해당됩니다.
   </p>
 </div>
 

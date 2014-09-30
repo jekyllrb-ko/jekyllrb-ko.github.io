@@ -133,7 +133,7 @@ Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 이 시스템의 �
       <td>
         <p>
 
-          파일에 <a href="../frontmatter/">YAML 머리말</a> 섹션이 있다면 Jekyll 에 의해 변환됩니다. 사이트의 최상위 디렉토리나 위에 언급된 디렉토리 외에 다른 모든 디렉토리 안의 <code>.html</code> 이나 <code>.markdown</code>, <code>.md</code>, <code>.textile</code> 파일도 해당됩니다.
+          파일에 <a href="../frontmatter/">YAML 머리말</a> 섹션이 있다면 Jekyll 에 의해 변환됩니다. 사이트의 루트 디렉토리나 위에 언급된 디렉토리 외에 다른 모든 디렉토리 안의 <code>.html</code> 이나 <code>.markdown</code>, <code>.md</code>, <code>.textile</code> 파일도 해당됩니다.
 
         </p>
       </td>

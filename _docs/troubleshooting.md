@@ -53,7 +53,7 @@ sudo emerge -av dev-ruby/rubygems
 
 ### Could not find a JavaScript runtime. (ExecJS::RuntimeUnavailable)
 
-만약 적절한 javaScript 실행환경이 없다면 `jekyll-coffeescript` 설치 단계에서 이와 같은 에러 메시지가 발생할 수 있습니다. 이 문제를 해결하려면, `execjs` 와 `therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다. 더 자세한 내용은 [이슈 #2327](https://github.com/jekyll/jekyll/issues/2327)를 확인해보세요.
+만약 적절한 javaScript 실행환경이 없다면 `jekyll-coffeescript` 설치 단계에서 이와 같은 에러 메시지가 발생할 수 있습니다. 이 문제를 해결하려면, `execjs` 와 `therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다. 더 자세한 내용은 [이슈 #2327](https://github.com/jekyll/jekyll/issues/2327) 을 확인해보세요.
 
 ## Jekyll 실행 시 문제점
 

@@ -6,7 +6,7 @@ next_section: permalinks
 permalink: /docs/templates/
 ---
 
-Jekyll 은 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 사용하여 템플릿을 처리합니다. 표준 Liquid [태그](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#tags)와 [필터](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters)가 모두 지원됩니다. 뿐만 아니라, 일부 작업을 더 쉽게 할 수 있도록 도와주는 유용한 태그와 필터가 추가되어 있습니다.
+Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 사용합니다. 표준 Liquid [태그](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#tags)와 [필터](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters)가 모두 지원됩니다. 뿐만 아니라, 일부 작업을 더 쉽게 할 수 있도록 도와주는 유용한 태그와 필터가 더 추가되어 있습니다.
 
 ## 필터
 
@@ -15,7 +15,7 @@ Jekyll 은 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 
   <thead>
     <tr>
       <th>설명</th>
-      <th><span class="filter">필터</span> 와 <span class="output">결과</span></th>
+      <th><span class="filter">필터</span>와 <span class="output">결과</span></th>
     </tr>
   </thead>
   <tbody>
@@ -259,18 +259,18 @@ Jekyll 은 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 
 {% raw %}{% include footer.html %}{% endraw %}
 {% endhighlight %}
 
-조각 페이지 파일은 프로젝트의 루트 디렉토리 밑의 `_includes` 디렉토리에 넣어야 합니다. 위 코드는 해당 위치에 `<source>/_includes/footer.html` 의 내용을 삽입할 것입니다.
+삽입할 파일은 프로젝트의 루트 디렉토리 밑의 `_includes` 디렉토리에 넣어야 합니다. 위 코드는 `<source>/_includes/footer.html` 파일의 내용을 삽입할 것입니다.
 
 <div class="note">
-  <h5>ProTip™: 파일 이름으로 변수를 사용하세요</h5>
+  <h5>ProTip™: 파일 이름에 변수를 사용하세요</h5>
   <p>
 
-    삽입하고자 하는 파일의 이름은 실제 파일명을 사용할 수도 (위 예제처럼) 있고, <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code> 처럼 Liquid 스타일의 변수 문법을 사용할 수도 있습니다.
+    삽입하고자 하는 파일의 이름은 (위 예제처럼) 실제 파일명을 사용할 수도 있고, <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code> 처럼 Liquid 스타일의 변수 문법을 사용할 수도 있습니다.
 
   </p>
 </div>
 
-조각 페이지에 파라메터를 전달할 수도 있습니다:
+삽입할 파일에 파라메터를 전달할 수도 있습니다:
 
 {% highlight ruby %}
 {% raw %}{% include footer.html param="value" %}{% endraw %}
@@ -284,15 +284,15 @@ Jekyll 은 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 
 
 #### 상대 경로 사용하기
 
-현재 파일을 기준으로 한 상대경로를 사용하여 삽입할 조각 파일을 선택할 수 있습니다:
+현재 파일을 기준으로 상대경로를 사용하여 삽입할 조각 파일을 선택할 수 있습니다:
 
 {% highlight ruby %}
 {% raw %}{% include_relative somedir/footer.html %}{% endraw %}
 {% endhighlight %}
 
-삽입할 컨텐츠를 꼭 `_includes` 디렉토리에 넣을 필요가 없다. 대신 태그가 사용된 파일의 상대경로로 삽입도 가능하다. 예를 들어, `_posts/2014-09-03-my-file.markdown` 에 `include_relative` 태그를 사용했다면, 삽입될 파일은 반드시 `_posts` 디렉토리 안이나, 하위 디렉토리 중 하나에 있어야 한다. 그 밖에 다른 위치의 파일은 삽입할 수 없다.
+삽입할 컨텐츠를 꼭 `_includes` 디렉토리에 넣을 필요가 없습니다. 대신 태그가 사용된 파일에서의 상대경로로 삽입이 가능합니다. 예를 들어, `_posts/2014-09-03-my-file.markdown` 파일 안에서 `include_relative` 태그를 사용했다면, 삽입될 파일은 반드시 `_posts` 디렉토리나 그 하위 디렉토리에 있어야 합니다. 그 밖에 다른 위치의 파일은 삽입할 수 없습니다.
 
-변수 사용 등의 `include` 태그의 다른 모든 기능도 `include_relative` 태그에서 사용할 수 있다.
+변수 사용처럼 `include` 태그의 다른 모든 기능도 `include_relative` 태그에서 사용할 수 있다.
 
 ### 코드 구문 강조
 
@@ -300,7 +300,6 @@ Jekyll 은 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 
 
 그 밖에도, [Rouge](https://github.com/jayferd/rouge) 를 사용해서 구문 강조를 할 수 있습니다. Pygments 만큼 많은 언어를 지원하지는 않지만 대부분의 경우에 사용할 수 있으며 순수하게 Ruby 로 작성되었습니다 ; Python 이 필요하지 않습니다!
 
-To render a code block with syntax highlighting, surround your code as follows:
 구문 강조가 적용된 코드 블럭을 출력하려면, 코드 앞뒤에 다음과 같이 작성합니다:
 
 {% highlight text %}
@@ -331,11 +330,11 @@ end
 
 #### 구문 강조용 스타일시트
 
-강조 부분을 눈에 띄게 만들려면, 구문 강조용 스타일시트를 포함시켜야 합니다. 예를 들면 [syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css) 가 있습니다. 이 파일은 GitHub 에서 사용하는 것과 동일한 스타일이며 자신의 사이트에 마음껏 사용해도 됩니다. `linenos` 를 사용할 경우, 코드와 줄 번호를 구분하기 위해 `syntax.css` 에 `.lineno` 라는 CSS 클래스 추가가 필요할 수도 있습니다.
+강조 부분을 눈에 띄게 만들려면, 구문 강조용 스타일시트를 포함시켜야 합니다. 예를 들면 [syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css) 가 있습니다. 이 파일은 GitHub 에서 사용하는 것과 동일한 스타일이며 당신의 사이트에 마음대로 사용해도 됩니다. `linenos` 를 사용할 경우, 코드와 줄 번호를 구분하기 위해 `syntax.css` 에 `.lineno` 라는 CSS 클래스를 추가할 수도 있을 것입니다.
 
 ### 포스트 URL
 
-만약 포스트에 대한 링크를 사용해야 할 경우, `post_url` 태그를 사용하면 해당 포스트에 대한 고유주소 URL 을 생성할 수 있습니다.
+만약 사이트 안의 다른 포스트에 대한 링크를 사용해야 할 경우, `post_url` 태그를 사용하면 해당 포스트에 대한 고유주소 URL 이 생성됩니다.
 
 {% highlight text %}
 {% raw %}
@@ -343,7 +342,7 @@ end
 {% endraw %}
 {% endhighlight %}
 
-만약 포스트를 하위 디렉토리에 넣고 관리한다면, 포스트에 하위 디렉토리 경로를 포함시켜야 합니다:
+만약 포스트를 하위 디렉토리에 넣고 관리한다면, 하위 디렉토리 경로도 포함시켜야 합니다:
 
 {% highlight text %}
 {% raw %}
@@ -353,7 +352,7 @@ end
 
 `post_url` 태그를 사용할 때는 파일 확장자를 지정할 필요가 없습니다.
 
-또한, 다음과 같이 Markdown 에서도 이 태그를 사용하여 포스트 링크를 생성할 수 있습니다:
+다음과 같이 Markdown 에서도 이 태그를 사용하여 포스트 링크를 생성할 수 있습니다:
 
 {% highlight text %}
 {% raw %}
@@ -363,7 +362,7 @@ end
 
 ### Gist
 
-gist 태그를 사용하면 사이트에 GitHub Gist 를 쉽게 끼워넣을 수 있습니다. 공개/비공개에 상관없이 잘 작동합니다:
+`gist` 태그를 사용하면 사이트에 GitHub Gist 를 쉽게 삽입할 수 있습니다. 공개/비공개 gist 에 모두 사용할 수 있습니다:
 
 {% highlight text %}
 {% raw %}

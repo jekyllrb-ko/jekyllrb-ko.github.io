@@ -6,21 +6,21 @@ next_section: extras
 permalink: /docs/plugins/
 ---
 
-Jekyll 의 플러그인 시스템은 훅을 제공하여, 자신의 사이트에 꼭 맞는 컨텐츠를 생성할 수 있게 해줍니다. 따라서, Jekyll 의 소스를 직접 수정하지 않고도 자신의 코드를 실행할 수 있습니다.
+Jekyll 의 플러그인 시스템은 훅을 제공하기 때문에, 자신의 사이트에 꼭 맞는 컨텐츠를 생성할 수 있습니다. 따라서, Jekyll 의 소스코드를 직접 수정하지 않고도 자신의 코드가 실행되게 할 수 있습니다.
 
 <div class="note info">
   <h5>GitHub Pages 와 플러그인</h5>
   <p>
-    <a href="http://pages.github.com/">GitHub Pages</a> 는 Jekyll 을 사용합니다. 하지만 보안상의 이유로, 사용자 플러그인을 비활성화하는 <code>--safe</code> 옵션으로 모든 사이트를 생성합니다. 이 말은 안타깝게도, GitHub Pages 에서는 당신의 플러그인을 사용할 수 없다는 뜻입니다.<br><br>그래도 GitHub Pages 를 사용할 수 있는 방법이 있습니다. GitHub 에 소스를 직접 올리는 대신, 먼저 로컬상에서 변환한 뒤에 생성된 파일을 푸쉬하면 됩니다.
+    <a href="http://pages.github.com/">GitHub Pages</a> 는 Jekyll 을 사용합니다. 하지만 보안상의 이유로 인하여, 모든 Pages 사이트는 <code>--safe</code> 옵션으로 사용자 플러그인이 비활성화된 상태에서 생성됩니다. 이 말은 안타깝게도, GitHub Pages 에서는 당신의 플러그인을 사용할 수 없다는 뜻입니다.<br><br>그래도 GitHub Pages 와 사용자 플러그인을 함께 사용하는 방법이 있습니다. GitHub 에 소스를 직접 올리는 대신, 먼저 로컬상에서 변환한 뒤에 생성된 파일을 올리면 됩니다.
   </p>
 </div>
 
-## Installing a plugin
+## 플러그인 설치하기
 
 플러그인을 설치하는 방법은 두 가지가 있습니다:
 
-1. 사이트의 루트에 `_plugins` 디렉토리를 만드세요. 여기에 자신의 플러그인을 넣으면 됩니다. Jekyll 은 사이트를 생성하기 전에 이 디렉토리 안에 `*.rb` 로 끝나는 모든 파일을 읽어들이게 됩니다.
-2. `_config.yml` 파일에 `gems` 라는 키로 배열을 추가해서 사용하려는 플러그인들의 gem 이름을 나열하세요. 예를 들면:
+1. Site Source 루트에 `_plugins` 디렉토리를 만드세요. 여기에 자신의 플러그인을 넣습니다. Jekyll 은 사이트를 생성하기 직전에 이 디렉토리의 모든 `*.rb` 파일을 읽어들입니다.
+2. `_config.yml` 파일에 `gems` 라는 키로 배열을 추가하고 사용하려는 플러그인들의 gem 이름을 나열하세요. 예를 들면 다음과 같습니다:
 
         gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
         # This will require each of these gems automatically.
@@ -30,11 +30,11 @@ Jekyll 의 플러그인 시스템은 훅을 제공하여, 자신의 사이트에
     <code>_plugins</code> 과 <code>gems</code> 는 동시에 사용할 수 있습니다
   </h5>
   <p>
-    앞서 언급한 플러그인 옵션 두 가지는 원한다면 동시에 사용할 수 있습니다. 한 쪽을 사용한다고 해서 다른 쪽을 사용하는데 제한이 걸리지 않습니다.
+    원한다면 앞서 언급한 두 가지 플러그인 옵션을 동시에 사용할 수 있습니다. 한 쪽을 사용한다고 해서 다른 쪽을 사용하는데에 제약이 생기지 않습니다.
   </p>
 </div>
 
-플러그인은 일반적으로 세 가지 카테고리 중 하나에 속하게 됩니다:
+일반적으로, 플러그인은 세 가지 카테고리 중 하나에 속하게 됩니다:
 
 1. 생성기
 2. 변환기
@@ -42,15 +42,15 @@ Jekyll 의 플러그인 시스템은 훅을 제공하여, 자신의 사이트에
 
 ## 생성기
 
-생성기를 만들면 자신만의 규칙에 따라 부가적인 컨텐츠를 생성할 수 있습니다.
+Jekyll 이 당신의 규칙에 따라 부가적인 컨텐츠를 생성하게 하려면, 생성기를 만들면 됩니다.
 
-생성기는 `generate` 메소드가 정의되어 있는 `Jekyll::Generator` 의 하위 클래스로서 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 인스턴스를 받습니다.
+생성기는 `Jekyll::Generator` 의 하위 클래스로서, [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 인스턴스를 전달받는 `generate` 메소드 가지고 있습니다.
 
-`generate` 메소드의 안의 다른 코드에 의해서 생성 작업이 이루어지고, 메소드의 반환 값은 무시됩니다. Jekyll 은 메소드 안에서 어떤 일이 일어나는지 신경쓰지 않습니다. 단지 실행할 뿐입니다.
+생성 작업은 `generate` 메소드의 반환 값에 상관 없이, 오직 메소드 안의 다른 코드에 의해서 수행됩니다. Jekyll 은 메소드 안에서 어떤 일이 일어나는지 전혀 신경쓰지 않습니다. 단지 실행할 뿐입니다.
 
-생성기는 Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 전에 실행됩니다. YAML 머리말을 가진 페이지들은 [`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb) 인스턴스가 되고 `site.pages` 로 사용할 수 있습니다. 정적 파일들은 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb) 인스턴스가 되고 `site.static_files` 로 사용할 수 있습니다. 더 자세한 내용은 [변수 문서 페이지](/docs/variables/)와 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 를 살펴보세요.
+Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 직전에 생성기가 실행됩니다. YAML 머리말을 가진 페이지들은 [`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb) 인스턴스로 저장되어 `site.pages` 로 사용할 수 있습니다. 정적 파일들은 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb) 인스턴스가 되어 `site.static_files` 로 사용할 수 있습니다. 더 자세한 내용은 [변수 문서 페이지](/docs/variables/)와 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 를 살펴보세요.
 
-예를 들어, 빌드 시점에 생성기는 템플릿 변수에 계산된 값을 주입할 수 있습니다. 다음 예제에서 템플릿 `reading.html` 은 두 가지 변수 `ongoing` 과 `done` 를 가지고 있으며 생성기에서 값이 채워질 것입니다:
+예를 들어, 생성기는 빌드 시점에 계산된 값을 템플릿 변수에 주입할 수 있습니다. 다음 예제 생성기는 `reading.html` 템플릿의 두 변수 `ongoing` 과 `done` 에 값을 채워 넣습니다:
 
 {% highlight ruby %}
 module Reading
@@ -66,7 +66,7 @@ module Reading
 end
 {% endhighlight %}
 
-다음은 새 페이지를 생성하는, 좀 더 복잡한 생성기입니다:
+다음은 좀 더 복잡한 생성기로서, 새 페이지를 생성합니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -103,9 +103,9 @@ module Jekyll
 end
 {% endhighlight %}
 
-이 생성기는 `category_index.html` 레이아웃을 사용하여 각 카테고리 별 포스트 목록을 보여주는 파일을 `categories` 디렉토리에 만들 것입니다.
+이 생성기는 `categories` 안에 각 카테고리 별로 파일을 생성하고, `category_index.html` 레이아웃을 사용하여 각 카테고리 별 포스트 목록을 만듭니다.
 
-생성기가 필수로 구현해야 할 메소드는 하나입니다:
+생성기가 필수로 구현해야 할 메소드는 딱 하나입니다:
 
 <div class="mobile-side-scroller">
 <table>
@@ -130,16 +130,16 @@ end
 
 ## 변환기
 
-다른 마크업 언어를 사용하고 싶다면, 해당 언어를 처리할 수 있는 변환기를 직접 구현하면 됩니다. 기본으로 포함된 Markdown 과 Textile 에 대해서도 이 메소드가 구현되어 있습니다.
+다른 마크업 언어를 사용하고 싶다면, 해당 언어를 처리할 수 있는 변환기를 직접 구현하면 됩니다. 기본으로 포함된 Markdown 과 Textile 지원도 이 메소드 사용해서 구현한 것입니다.
 
 <div class="note info">
   <h5>YAML 머리말을 잊지 마세요</h5>
   <p>
-    Jekyll 은 오직 YAML 머리말로 시작하는 파일만 변환합니다. 변환기를 추가한 경우에도 마찬가지 입니다.
+    Jekyll 은 오직 YAML 머리말로 시작하는 파일만 변환합니다. 변환기 플러그인을 추가해서 사용할때도 마찬가지 입니다.
   </p>
 </div>
 
-다음은 변환기 예제입니다. `.upcase` 로 끝나는 모든 포스트를 읽어서 `UpcaseConverter` 로 처리합니다:
+아래 예제는 `.upcase` 로 끝나는 모든 포스트를 읽어서 `UpcaseConverter` 로 처리하는 변환기입니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -162,7 +162,7 @@ module Jekyll
 end
 {% endhighlight %}
 
-변환기가 반드시 구현해야 할 메소드는 3 가지 입니다:
+변환기는 최소한 아래 3 가지 메소드를 구현해야 합니다:
 
 <div class="mobile-side-scroller">
 <table>
@@ -178,7 +178,7 @@ end
         <p><code>matches</code></p>
       </td>
       <td><p>
-        이 변환기가 처리할 수 있는 확장자와 주어진 확장자가 일치하는지 확인합니다. 전달인자는 파일 확장자 (점 포함) 입니다. 일치하는 경우엔 <code>true</code> 를, 일치하지 않는 경우엔 <code>false</code> 를 반환해야 합니다.
+        주어진 확장자가 이 변환기가 처리할 수 있는 확장자 목록에 포함되어 있는가? 전달인자가 하나 필요합니다: 파일의 확장자 (점 포함). 포함되어 있다면 <code>true</code> 를, 그렇지 않다면 <code>false</code> 를 반환해야 합니다.
       </p></td>
     </tr>
     <tr>
@@ -186,7 +186,7 @@ end
         <p><code>output_ext</code></p>
       </td>
       <td><p>
-        변환된 파일의 확장자 (점 포함). 일반적으로 <code>".html"</code> 가 될 것입니다.
+        출력할 파일의 확장자 (점 포함). 일반적으로 <code>".html"</code> 가 될 것입니다.
       </p></td>
     </tr>
     <tr>
@@ -194,18 +194,18 @@ end
         <p><code>convert</code></p>
       </td>
       <td><p>
-        컨텐츠를 변환하는 로직. 전달 인자는 소스 파일 내용 (YAML 머리말 제외) 입니다. 문자열을 반환해야 합니다.
+        컨텐츠를 변환하는 로직. 전달인자가 하나 필요합니다: 변환되지 않은 파일 내용 (YAML 머리말 제외). 반드시 문자열을 반환해야 합니다.
       </p></td>
     </tr>
   </tbody>
 </table>
 </div>
 
-위 예제에서는, 확장자가 `.upcase` 인지 `UpcaseConverter#matches` 가 확인하고, 만약 그렇다면 `UpcaseConverter#convert` 를 호출하여 내용을 변환합니다. 이 변환기는 단순히 전체 내용을 대문자로 변환합니다. 마지막으로, 변환된 내용을 페이지로 저장할 때 `.html` 확장자를 사용합니다.
+위 예제에서는, `UpcaseConverter#matches` 는 확장자가 `.upcase` 인지 확인하고, 만약 그렇다면 내용을 변환하기 위해 `UpcaseConverter#convert` 를 호출합니다. 이 예제에서 변환기는 단순히 전체 내용을 대문자로 변환합니다. 마지막으로, 변환된 내용을 페이지로 저장할 때 `.html` 확장자를 사용합니다.
 
 ## 태그
 
-사이트에 자신의 Liquid 태그를 추가하려면, 태그 시스템의 훅을 사용하면 됩니다. Jekyll 에 내장된 예제로는 `highlight` 와 `include` 등이 있습니다. 다음은 페이지가 생성된 시간을 출력해주는 Liquid 태그 예제입니다:
+사이트에 자신의 Liquid 태그를 사용하고 싶다면, 태그 시스템의 훅을 사용하면 됩니다. Jekyll 에 내장된 `highlight` 와 `include` 가 바로 그 예입니다. 다음 예제는 페이지가 생성된 시간을 출력해주는 Liquid 태그입니다:
 
 {% highlight ruby %}
 module Jekyll
@@ -248,7 +248,7 @@ Liquid 태그는 최소한 다음 메소드는 구현해야 합니다:
 </table>
 </div>
 
-또, 다음과 같이 Liquid 템플릿 엔진에 태그를 등록해야 합니다:
+그리고 다음과 같이 Liquid 템플릿 엔진에 태그를 등록해야 합니다:
 
 {% highlight ruby %}
 Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
@@ -262,7 +262,7 @@ Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
 {% endraw %}
 {% endhighlight %}
 
-결과는 다음과 같이 보일 것입니다:
+그러면 다음과 같은 결과를 얻을 수 있습니다:
 
 {% highlight html %}
 <p>page rendered at: Tue June 22 23:38:47 –0500 2010</p>
@@ -270,7 +270,7 @@ Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
 
 ### Liquid 필터
 
-Liquid 템플릿 시스템에 필터를 추가하는 것은 위에 설명한 태그 추가 방법과 상당히 유사합니다. 필터는 단지 메소드를 Liquid 로 보내는 모듈일 뿐입니다. 모든 메소드는 최소한 하나의 파라메터를 가지며, 이는 필터의 입력입니다. 반환값은 필터의 출력이 될 것입니다.
+Liquid 템플릿 시스템에 필터를 추가하는 것은 위에 설명한 태그 추가 방법과 상당히 유사합니다. 필터는 단지 자신의 메소드를 Liquid 로 보내는 모듈일 뿐입니다. 모든 메소드에는 최소한 하나의 매개변수가 있어야 하며, 이것은 바로 필터의 입력입니다. 반환 값이 필터의 출력이 됩니다.
 
 {% highlight ruby %}
 module Jekyll
@@ -287,7 +287,7 @@ Liquid::Template.register_filter(Jekyll::AssetFilter)
 <div class="note">
   <h5>ProTip™: Liquid 를 사용해서 site 객체에 접근할 수 있습니다</h5>
   <p>
-    Jekyll 은 <code>context.registers[:site]</code> 와 같이 Liquid 의 <code>context.registers</code> 기능을 통해서 <code>site</code> 객체에 접근할 수 있게 해줍니다. 예를 들어, 전역 환경설정 파일인 <code>_config.yml</code> 에 접근하려면 <code>context.registers.config</code> 를 사용하면 됩니다. 예를 들어, <code>context.registers[:site].config</code> 라고 입력하여 전역 환경설정 파일 <code>_config.yml</code> 에 접근할 수 있습니다.
+    Jekyll 은 <code>context.registers[:site]</code> 와 같이 Liquid 의 <code>context.registers</code> 기능을 통해서 <code>site</code> 객체에 접근할 수 있게 해줍니다. 예를 들어, <code>context.registers[:site].config</code> 라고 입력하여 전역 환경설정 파일 <code>_config.yml</code> 에 접근할 수 있습니다.
   </p>
 </div>
 
@@ -310,7 +310,7 @@ Liquid::Template.register_filter(Jekyll::AssetFilter)
       </td>
       <td>
         <p>
-          이 플러그인이 임의의 코드가 실행되는 것이 금지된 환경에서도 안전하게 실행될 수 있다는 것을 알려주는 boolean 플래그입니다. GitHub Pages 는 실행해도 안전한 Core 플러그인을 골라내기 위해 이 플래그를 사용합니다. 플러그인이 임의의 코드 실행이 없는 환경에서 사용되어야 한다면, 이 플래그를 <code>true</code> 로 설정하세요. 그래도 GitHub Pages 에서는 자신의 플러그인을 사용할 수 없습니다. 하지만, Jekyll 프로젝트에 포함시키려는 경우에는 이게 제일 좋은 방법입니다!
+          이 플러그인이 임의의 코드가 실행되는 것이 금지된 환경에서도 안전하게 실행될 수 있다는 것을 알려주는 boolean 플래그입니다. GitHub Pages 는 실행해도 안전한 Core 플러그인을 골라내기 위해 이 플래그를 사용합니다. 플러그인이 임의의 코드 실행이 없는 환경에서 사용되어야 한다면, 이 플래그를 <code>true</code> 로 설정하세요. GitHub Pages 는 여전히 당신의 플러그인을 사용하지 않을 것입니다. 하지만, Jekyll 프로젝트에 포함시키려는 경우에는 이게 제일 좋은 방법입니다!
         </p>
       </td>
     </tr>

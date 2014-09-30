@@ -70,7 +70,7 @@ permalink: /docs/configuration/
       <td>
         <p class="name"><strong>Include</strong></p>
         <p class="description">
-          특정 디렉토리나 파일을 변환 작업에 강제로 포함시킵니다. <code>.htaccess</code> 를 포함시키는 것이 대표적인 예인데, 점으로 시작하는 파일은 기본적으로 제외되기 때문입니다.
+          특정 디렉토리나 파일을 변환 작업에 강제로 포함시킵니다. 대표적인 예로 <code>.htaccess</code> 를 포함시키는 것이 있는데, 점으로 시작하는 파일은 기본적으로 제외되기 때문입니다.
         </p>
       </td>
       <td class="align-center">
@@ -146,7 +146,7 @@ permalink: /docs/configuration/
     <tr class="setting">
       <td>
         <p class="name"><strong>Drafts</strong></p>
-        <p class="description">초안 포스트를 사용합니다.</p>
+        <p class="description">초안 기능을 사용합니다.</p>
       </td>
       <td class="align-center">
         <p><code class="flag">--drafts</code></p>
@@ -165,7 +165,7 @@ permalink: /docs/configuration/
     <tr class="setting">
       <td>
         <p class="name"><strong>LSI</strong></p>
-        <p class="description">관련 포스트 인덱스를 생성합니다.</p>
+        <p class="description">관련된 포스트들에 대한 인덱스를 생성합니다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">lsi: BOOL</code></p>
@@ -185,7 +185,7 @@ permalink: /docs/configuration/
     <tr class="setting">
       <td>
         <p class="name"><strong>Force polling</strong></p>
-        <p class="description">강제로 감시합니다.</p>
+        <p class="description">감시 기능을 강제로 활성화합니다.</p>
       </td>
       <td class="align-center">
         <p><code class="flag">--force_polling</code></p>
@@ -231,7 +231,7 @@ permalink: /docs/configuration/
     <tr class="setting">
       <td>
         <p class="name"><strong>Base URL</strong></p>
-        <p class="description">주어진 베이스 URL 에서 웹사이트를 실행합니다.</p>
+        <p class="description">주어진 URL 로 웹사이트를 작동시킵니다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">baseurl: URL</code></p>
@@ -265,7 +265,7 @@ permalink: /docs/configuration/
 
 각각의 파일에 동일한 레이아웃을 설정하거나 여러 포스트들에 동일한 카테고리 - 또는 카테고리들 - 추가하기 등, 여러개의 환경설정 옵션을 반복해서 입력하고 있는 자신을 종종 발견할 수도 있습니다. 작성자 이름처럼 블로그의 거의 모든 포스트에 동일하게 사용되곤 하는 값들은 사용자 변수로 추가할 수 있습니다.
 
-Jekyll 은 이러한 기본값들을 사이트 환경설정에 지정할 수 있는 방법을 제공하기 때문에 새 포스트나 새 페이지를 추가할 때마다 이러한 환경설정들을 반복하지 않아도 됩니다. 그러기 위해서는, 프로젝트의 최상위 디렉토리에 있는 `_config.yml` 파일에 `defaults` 라는 키를 사용하여 사이트 전반적인 기본값을 정의할 수 있습니다.
+Jekyll 은 이러한 기본값들을 사이트 환경설정에 지정할 수 있는 방법을 제공하기 때문에 새 포스트나 새 페이지를 추가할 때마다 이러한 환경설정들을 반복하지 않아도 됩니다. 그러기 위해서는, 프로젝트의 루트 디렉토리에 있는 `_config.yml` 파일에 `defaults` 라는 키를 사용하여 사이트 전반적인 기본값을 정의할 수 있습니다.
 
 `defaults` 키에 여러 쌍의 범위/값을 배열로 입력할 수 있어, 특정 경로의 파일이나 파일 종류에 사용되어야 하는 기본값을 정의할 수 있습니다.
 
