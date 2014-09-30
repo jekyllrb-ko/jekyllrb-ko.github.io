@@ -18,7 +18,7 @@ Well, lookie here! A new release of Jekyll! v2.4.0 contains lots of goodies, inc
 - Add `inspect` liquid filter ([#2867]({{ site.repository }}/issues/2867))
 - Add a `slugify` Liquid filter ([#2880]({{ site.repository }}/issues/2880))
 
-Some other wunderbar bug fixes in there as well. Check out the [full changelog]({{ site.baseurl }}/docs/history/) for the whole scoop.
+Some other wunderbar bug fixes in there as well. Check out the [full changelog](/docs/history/) for the whole scoop.
 
 As always, many thanks to our amazing contributors who made this release possible: Chris Frederick, Garen Torikian, James Smith, Ruslan Korolev, Joel Glovier, Michael Kühnel, Minn Soe, Pat Hawks, Peter deHaan, Shu Uesugi, TJ, Zhuochun, Alfred Xing, nitoyon, Anatol Broder, Faruk AYDIN, Frederic Hemberger, and Gordon Gao. Thank you!!
 

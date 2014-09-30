@@ -6,7 +6,7 @@ author: parkr
 categories: [partners]
 ---
 
-![Jekyll Sticker]({{ site.baseurl }}/img/jekyll-sticker.jpg)
+![Jekyll Sticker](/img/jekyll-sticker.jpg)
 
 You may have heard that [@cobyism](https://github.com/cobyism)'s excellent
 Jekyll logo has been made into a sticker. You may have sat idly by, wishing

@@ -101,7 +101,7 @@ collections:
         <p><code>title</code></p>
       </td>
       <td>
-        <p>알파벳과 숫자가 아닌 문자와 공백문자는 모두 하이픈으로 교체된, 문서의 (<a href="{{ site.baseurl }}/docs/frontmatter/">머리말</a>에 정의된) 소문자 제목. 만약 문서의 <a href="{{ site.baseurl }}/docs/frontmatter/">머리말</a>에 제목이 정의되어 있지 않으면, <code>name</code> 와 동일하다.</p>
+        <p>알파벳과 숫자가 아닌 문자와 공백문자는 모두 하이픈으로 교체된, 문서의 (<a href="/docs/frontmatter/">머리말</a>에 정의된) 소문자 제목. 만약 문서의 <a href="/docs/frontmatter/">머리말</a>에 제목이 정의되어 있지 않으면, <code>name</code> 와 동일하다.</p>
       </td>
     </tr>
     <tr>

@@ -15,6 +15,6 @@ To address this issue, we're releasing v1.4.1 of Jekyll so that you can
 keep on writing without any problems.
 
 As always, you can find the full list of fixes in this release in the
-[change log]({{ site.baseurl }}/docs/history/)!
+[change log](/docs/history/)!
 
 

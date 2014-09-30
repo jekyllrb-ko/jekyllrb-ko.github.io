@@ -14,4 +14,4 @@ Kramdown 은 수학 블럭 안에 [MathJax](http://www.mathjax.org/) 를 사용�
 
 ## 다른 마크다운 처리기
 
-[환경설정 페이지]({{ site.baseurl }}/docs/configuration/#markdown-options)의 마크다운 섹션에는 다른 마크다운 처리기의 설정과 사용방법뿐만 아니라 [사용자 마크다운 처리기]({{ site.baseurl }}/docs/configuration/#custom-markdown-processors)를 작성하는 방법도 설명되어 있습니다.
+[환경설정 페이지](/docs/configuration/#markdown-options)의 마크다운 섹션에는 다른 마크다운 처리기의 설정과 사용방법뿐만 아니라 [사용자 마크다운 처리기](/docs/configuration/#custom-markdown-processors)를 작성하는 방법도 설명되어 있습니다.

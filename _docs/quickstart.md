@@ -22,4 +22,4 @@ permalink: /docs/quickstart/
 
 만약 문제가 발생한다면, [준비물 설치][Installation]가 모두 올바르게 되어 있는지 확인해보세요.
 
-[Installation]: {{ site.baseurl }}/docs/installation/
+[Installation]: /docs/installation/

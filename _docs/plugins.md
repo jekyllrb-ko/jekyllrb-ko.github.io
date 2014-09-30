@@ -48,7 +48,7 @@ Jekyll 의 플러그인 시스템은 훅을 제공하여, 자신의 사이트에
 
 `generate` 메소드의 안의 다른 코드에 의해서 생성 작업이 이루어지고, 메소드의 반환 값은 무시됩니다. Jekyll 은 메소드 안에서 어떤 일이 일어나는지 신경쓰지 않습니다. 단지 실행할 뿐입니다.
 
-생성기는 Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 전에 실행됩니다. YAML 머리말을 가진 페이지들은 [`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb) 인스턴스가 되고 `site.pages` 로 사용할 수 있습니다. 정적 파일들은 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb) 인스턴스가 되고 `site.static_files` 로 사용할 수 있습니다. 더 자세한 내용은 [변수 문서 페이지]({{ site.baseurl }}/docs/variables/)와 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 를 살펴보세요.
+생성기는 Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 전에 실행됩니다. YAML 머리말을 가진 페이지들은 [`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb) 인스턴스가 되고 `site.pages` 로 사용할 수 있습니다. 정적 파일들은 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb) 인스턴스가 되고 `site.static_files` 로 사용할 수 있습니다. 더 자세한 내용은 [변수 문서 페이지](/docs/variables/)와 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 를 살펴보세요.
 
 예를 들어, 빌드 시점에 생성기는 템플릿 변수에 계산된 값을 주입할 수 있습니다. 다음 예제에서 템플릿 `reading.html` 은 두 가지 변수 `ongoing` 과 `done` 를 가지고 있으며 생성기에서 값이 채워질 것입니다:
 

@@ -22,7 +22,7 @@ Here are a few things we think you'll want to know about this release:
   processed, which can provide a rudimentary way to establish a load order for
   plugins.
 
-For a full run-down, visit our [change log]({{ site.baseurl }}/docs/history/)!
+For a full run-down, visit our [change log](/docs/history/)!
 
 As always, Jekyll wouldn't be possible without the contributions from
 others in the Jekyll community. We'd like to thank the following people

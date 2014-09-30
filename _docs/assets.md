@@ -21,7 +21,7 @@ Jekyll 은 이러한 파일들을 일반 페이지처럼 다루기 때문에, �
 
 <div class="note info">
   <h5>Jekyll 은 자료 파일의 모든 Liquid 필터와 태그를 처리합니다</h5>
-  <p>만약 <a href="{{ site.baseurl }}/docs/templates/">Liquid 템플릿 문법</a>과 충돌이 있는 <a href="http://mustache.github.io">Mustache</a> 나 다른 JavaScript 템플릿 언어를 사용하고 있다면, <code>{&#37; raw &#37;}</code> 와 <code>{&#37; endraw &#37;}</code> 태그로 코드 주변을 감싸야 할 것입니다</p>
+  <p>만약 <a href="/docs/templates/">Liquid 템플릿 문법</a>과 충돌이 있는 <a href="http://mustache.github.io">Mustache</a> 나 다른 JavaScript 템플릿 언어를 사용하고 있다면, <code>{&#37; raw &#37;}</code> 와 <code>{&#37; endraw &#37;}</code> 태그로 코드 주변을 감싸야 할 것입니다</p>
 </div>
 
 ## Sass/SCSS

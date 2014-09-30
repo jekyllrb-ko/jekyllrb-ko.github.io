@@ -19,5 +19,5 @@ examples and for compiling this list):
 
 Take a look at the [Upgrading][] page in the docs for more detailed information.
 
-[history]: {{ site.baseurl }}/docs/history/#v1-0-0
-[Upgrading]: {{ site.baseurl }}/docs/upgrading/
+[history]: /docs/history/#v1-0-0
+[Upgrading]: /docs/upgrading/

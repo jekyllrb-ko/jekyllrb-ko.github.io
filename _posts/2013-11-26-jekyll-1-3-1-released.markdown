@@ -13,7 +13,7 @@ release of 1.3.0.
 
 In addition to a couple of other smaller bug fixes, the biggest thing
 we've fixed is an issue with the `--watch` option with Ruby 1.8.7. For a
-full run-down, visit our [change log]({{ site.baseurl }}/docs/history/)!
+full run-down, visit our [change log](/docs/history/)!
 
 Thanks to all the people who have contributed to this release! They are
 (in alphabetical order): Abhi Yerra, Anatol Broder, Andreas Möller, Greg

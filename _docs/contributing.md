@@ -94,7 +94,7 @@ GitHub.com 의 Jekyll 저장소 [site]({{ site.repository }}/tree/master/site) �
 
 GitHub 의 [Jekyll 위키]({{ site.repository }}/wiki)는 Pull Request 없이 자유롭게 갱신할 수 있으며, 모든 GitHub 사용자에게 열려 있습니다.
 
-만약 [플러그인 목록]({{ site.baseurl }}/docs/plugins/#available-plugins)에 자신의 플러그인을 추가하고 싶다면, [플러그인 페이지 소스 파일]({{ site.repository }}/blob/master/site/_docs/plugins.md)를 수정해서 자신의 플러그인 타입에 맞는 소제목 아래에 플러그인에 대한 링크를 추가하고 Pull Request 를 제출해주세요.
+만약 [플러그인 목록](/docs/plugins/#available-plugins)에 자신의 플러그인을 추가하고 싶다면, [플러그인 페이지 소스 파일]({{ site.repository }}/blob/master/site/_docs/plugins.md)를 수정해서 자신의 플러그인 타입에 맞는 소제목 아래에 플러그인에 대한 링크를 추가하고 Pull Request 를 제출해주세요.
 
 Gotchas
 -------
