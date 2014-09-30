@@ -1,29 +1,26 @@
 ---
 layout: docs
-title: Sites using Jekyll
+title: Jekyll 사이트들
 prev_section: troubleshooting
 next_section: resources
 permalink: /docs/sites/
 ---
 
-It’s interesting to see what designs and features others have come up
-with. Below are some Jekyll-powered blogs which were hand-picked for
-learning purposes.
+다른 이들이 구현한 디자인과 기능을 보는 것은 흥미롭습니다. 다음은 Jekyll 로 생성한 블로그들 중에서 교육 목적으로 엄선한 것들입니다.
 
 - [Tom Preston-Werner](http://tom.preston-werner.com/)
-    ([source](https://github.com/mojombo/mojombo.github.io))
+    ([소스코드](https://github.com/mojombo/mojombo.github.io))
 - [Nick Quaranto](http://quaran.to/)
-    ([source](https://github.com/qrush/qrush.github.com))
+    ([소스코드](https://github.com/qrush/qrush.github.com))
 - [Roger Chapman](http://rogchap.com/)
-    ([source](https://github.com/rogchap/rogchap.github.com))
+    ([소스코드](https://github.com/rogchap/rogchap.github.com))
 - [GitHub Official Teaching Materials](http://training.github.com)
-    ([source](https://github.com/github/training.github.com/tree/7049d7532a6856411e34046aedfce43a4afaf424))
+    ([소스코드](https://github.com/github/training.github.com/tree/7049d7532a6856411e34046aedfce43a4afaf424))
 - [Rasmus Andersson](http://rsms.me/)
-    ([source](https://github.com/rsms/rsms.github.com))
+    ([소스코드](https://github.com/rsms/rsms.github.com))
 - [Scott Chacon](http://schacon.github.com)
-    ([source](https://github.com/schacon/schacon.github.com))
+    ([소스코드](https://github.com/schacon/schacon.github.com))
 
-If you would like to explore more examples, you can find a list of sites
-and their sources on the ["Sites" page in the Jekyll wiki][jekyll-sites].
+다른 사이트들을 더 보고싶다면, [Jekyll 위키의 "Sites" 페이지][jekyll-sites]에서 사이트와 소스코드 목록을 찾을 수 있습니다.
 
 [jekyll-sites]: {{ site.repository }}/wiki/Sites
