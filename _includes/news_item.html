@@ -11,7 +11,7 @@
   </span>
   <div class="post-meta">
     <span class="post-date">
-      {{ post.date | date_to_string }}
+      {{ post.date | date: "%F" }}
     </span>
     <a href="https://github.com/{{ post.author }}" class="post-author">
       <img src="https://github.com/{{ post.author }}.png" class="avatar" alt="{{ post.author }}" width="24" height="24">

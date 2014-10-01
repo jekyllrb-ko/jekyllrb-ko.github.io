@@ -6,7 +6,7 @@ next_section: frontmatter
 permalink: /docs/configuration/
 ---
 
-Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상상하는대로 사이트를 만드는 것이 가능합니다. 이 옵션들은 사이트 루트 디렉토리의 `_config.yml` 파일에 지정하거나, 터미널에서 실행파일 `jekyll` 에 플래그로 지정할 수 있습니다.
+당신이 상상하는 어떤 형태의 사이트든지 Jekyll 로 만들 수 있습니다. 이 모든 것은 강력하고 유연한 환경설정 옵션 덕분이죠. 옵션은 사이트 루트 디렉토리의 `_config.yml` 파일에 지정하거나, 터미널에서 실행파일 `jekyll` 에 플래그로 지정할 수 있습니다.
 
 ## 환경설정
 
@@ -20,7 +20,7 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
     <tr>
       <th>설정</th>
       <th>
-        <span class="option">옵션</span> 과 <span class="flag">플래그</span>
+        <span class="option">옵션</span>과 <span class="flag">플래그</span>
       </th>
     </tr>
   </thead>
@@ -81,7 +81,7 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
       <td>
         <p class="name"><strong>Time Zone</strong></p>
         <p class="description">
-            사이트 생성에 사용할 타임존을 지정합니다. 환경변수인 <code>TZ</code> 가 설정되며, 루비가 날짜와 시간을 생성/수정할 때 사용합니다. <a href="http://en.wikipedia.org/wiki/Tz_database">IANA Time Zone Database</a> 의 모든 항목을 사용할 수 있습니다 (예, <code>America/New_York</code>). <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">여기</a>에서 사용할 수 있는 값의 전체 목록은 찾을 수 있습니다. 기본값은 자신의 OS 에 설정된 로컬 타임존입니다.
+            사이트 생성에 사용할 타임존을 지정합니다. 환경변수인 <code>TZ</code> 가 설정되며, 루비가 날짜와 시간을 생성/수정할 때 사용합니다. <a href="http://en.wikipedia.org/wiki/Tz_database">IANA Time Zone Database</a> 의 모든 항목을 사용할 수 있습니다 (예, <code>America/New_York</code>). <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">여기</a>에서 사용할 수 있는 모든 값의 목록을 찾을 수 있습니다. 기본값은 자신의 OS 에 설정된 로컬 타임존입니다.
         </p>
       </td>
       <td class="align-center">
@@ -92,7 +92,7 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
       <td>
         <p class="name"><strong>Encoding</strong></p>
         <p class="description">
-            파일 인코딩을 지정합니다 (Ruby 1.9 또는 이후 버전에서만 사용 가능). 2.0.0 버전부터는 기본값이 <code>utf-8</code>, 2.0.0 이전 버전에서는 <code>nil</code> 이며, 이 때 사용되는 값은 Ruby 의 기본값인 <code>ASCII-8BIT</code> 입니다. 사용할 수 있는 인코딩은 <code>ruby -e 'puts Encoding::list.join("\n")'</code> 명령으로 확인할 수 있습니다.
+            파일 인코딩을 지정합니다 (Ruby 1.9 또는 이후 버전에서만 사용 가능). 2.0.0 버전부터는 기본값이 <code>utf-8</code> 이고, 2.0.0 이전 버전에서는 <code>nil</code> 이며, 이 때 사용되는 실제값은 Ruby 의 기본값인 <code>ASCII-8BIT</code> 입니다. 사용할 수 있는 인코딩은 <code>ruby -e 'puts Encoding::list.join("\n")'</code> 명령으로 확인할 수 있습니다.
         </p>
       </td>
       <td class="align-center">
@@ -121,7 +121,7 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
   <thead>
     <tr>
       <th>설정</th>
-      <th><span class="option">옵션</span> 과 <span class="flag">플래그</span></th>
+      <th><span class="option">옵션</span>과 <span class="flag">플래그</span></th>
     </tr>
   </thead>
   <tbody>
@@ -204,14 +204,14 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
   <thead>
     <tr>
       <th>설정</th>
-      <th><span class="option">옵션</span> 과 <span class="flag">플래그</span></th>
+      <th><span class="option">옵션</span>과 <span class="flag">플래그</span></th>
     </tr>
   </thead>
   <tbody>
     <tr class="setting">
       <td>
         <p class="name"><strong>Local Server Port</strong></p>
-        <p class="description">Listen on the given port.</p>
+        <p class="description">주어진 포트 번호를 Listen 합니다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">port: PORT</code></p>
@@ -221,7 +221,7 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
     <tr class="setting">
       <td>
         <p class="name"><strong>Local Server Hostname</strong></p>
-        <p class="description">주어진 호스트네임에서 LISTEN 합니다.</p>
+        <p class="description">주어진 호스트네임으로 Listen 합니다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">host: HOSTNAME</code></p>
@@ -263,7 +263,7 @@ Jekyll 의 강력하고 유연한 환경설정 옵션 덕분에, 당신이 상�
 
 페이지와 포스트에서 환경설정 값을 지정하는 방법 중 하나는 [YAML 머리말](../frontmatter/)을 사용하는 것입니다. 기본 레이아웃이나 제목 변경, 또는 더 자세한 날짜/시간 등을 페이지나 포스트의 머리말에 입력할 수 있습니다.
 
-종종, 여러 환경설정 옵션을 반복해서 입력하고 있는 자신을 발견할 수도 있습니다. 각각의 파일에 동일한 레이아웃을 설정하거나 여러 포스트들에 동일한 카테고리 - 또는 카테고리들 - 추가하기 등등. 작성자 이름처럼 블로그의 거의 모든 포스트에 동일하게 사용되곤 하는 값들은 사용자 변수로 추가할 수 있습니다.
+각각의 파일에 동일한 레이아웃을 설정하거나 여러 포스트들에 동일한 카테고리 - 또는 카테고리들 - 추가하기 등, 여러개의 환경설정 옵션을 반복해서 입력하고 있는 자신을 종종 발견할 수도 있습니다. 작성자 이름처럼 블로그의 거의 모든 포스트에 동일하게 사용되곤 하는 값들은 사용자 변수로 추가할 수 있습니다.
 
 Jekyll 은 이러한 기본값들을 사이트 환경설정에 지정할 수 있는 방법을 제공하기 때문에 새 포스트나 새 페이지를 추가할 때마다 이러한 환경설정들을 반복하지 않아도 됩니다. 그러기 위해서는, 프로젝트의 최상위 디렉토리에 있는 `_config.yml` 파일에 `defaults` 라는 키를 사용하여 사이트 전반적인 기본값을 정의할 수 있습니다.
 
@@ -292,7 +292,7 @@ defaults:
       layout: "default"
 {% endhighlight %}
 
-이제 `posts` 타입인 파일에만 레이아웃이 설정될 것입니다. 타입으로는 사이트의 어느 집합이나 `pages`, `posts`, `drafts` 를 사용할 수 있습니다. `scope/values` 쌍을 생성할 때 `type` 은 선택사항이지만 `path` 는 반드시 정의해야 합니다.
+이제 `posts` 타입인 파일에만 레이아웃이 설정될 것입니다. 타입으로는 사이트의 어느 콜렉션이나 `pages`, `posts`, `drafts` 를 사용할 수 있습니다. `scope/values` 쌍을 생성할 때 `type` 은 선택사항이지만 `path` 는 반드시 정의해야 합니다.
 
 앞서 언급했던 것처럼, `defaults` 에 여러 개의 scope/values 쌍을 설정할 수 있습니다.
 
@@ -329,7 +329,7 @@ defaults:
       layout: "default"
 {% endhighlight %}
 
-이 예제에서는 `my_collection` 이라는 이름의 [집합](../collections) 안에 `layout` 이 `default` 로 설정됩니다.
+이 예제에서는 `my_collection` 이라는 이름의 [콜렉션](../collections) 안에 `layout` 이 `default` 로 설정됩니다.
 
 ### 우선순위
 
@@ -462,9 +462,9 @@ redcloth:
   hard_breaks: true
 {% endhighlight %}
 
-## Markdown Options
+## 마크다운 옵션
 
-Jekyll 은 다양한 Markdown 엔진을 지원하며, 부가기능을 가지고 있는 것도 있습니다.
+Jekyll 은 다양한 마크다운 엔진을 지원하며, 부가기능을 가지고 있는 것도 있습니다.
 
 ### Redcarpet
 

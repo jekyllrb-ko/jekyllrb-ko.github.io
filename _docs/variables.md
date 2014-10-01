@@ -121,7 +121,7 @@ Jekyll 은 작업 대상 파일을 찾기 위해 사이트 내부를 검색합�
       <td><p><code>site.collections</code></p></td>
       <td><p>
 
-        모든 집합 목록.
+        모든 콜렉션 목록.
 
       </p></td>
     </tr>
@@ -137,7 +137,7 @@ Jekyll 은 작업 대상 파일을 찾기 위해 사이트 내부를 검색합�
       <td><p><code>site.documents</code></p></td>
       <td><p>
 
-        각 집합의 모든 문서 목록.
+        각 콜렉션의 모든 문서 목록.
 
       </p></td>
     </tr>
