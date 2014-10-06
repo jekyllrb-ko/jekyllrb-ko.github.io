@@ -6,7 +6,7 @@ next_section: sites
 permalink: /docs/troubleshooting/
 ---
 
-여기, Jekyll 설치나 사용에 문제가 생겼을 때 도움이 될 만한 몇 가지 팁이 있습니다. 아래 설명된 내용으로도 해결이 안되는 문제가 있다면, Jekyll 커뮤니티에서 조치할 수 있도록 [이슈를 등록]({{site.help_url}}/issues/new)해 주세요.
+Jekyll 설치나 사용에 문제가 생겼을 때 도움이 될 만한 몇 가지 팁이 여기 있습니다. 이 팁들로도 해결되지 않는 문제가 있다면, Jekyll 커뮤니티에서 조치할 수 있도록 [이슈를 등록]({{site.help_url}}/issues/new)해 주세요.
 
 ## 설치 시 문제점
 
@@ -37,7 +37,7 @@ OSX 에서는, RubyGems 업데이트가 필요할 수도 있습니다:
 sudo gem update --system
 {% endhighlight %}
 
-여전히 문제가 해결되지 않는다면, [XCode 의 명령행 도구를 설치](http://www.zlu.me/ruby/os%20x/gem/mountain%20lion/2012/02/21/install-native-ruby-gem-in-mountain-lion-preview.html)해야하는 것일 수 있습니다. 이 도구를 설치한 뒤, 다음 명령으로 Native Gem 을 설치합니다:
+여전히 문제가 해결되지 않는다면, [XCode 의 명령행 도구를 설치](http://www.zlu.me/ruby/os%20x/gem/mountain%20lion/2012/02/21/install-native-ruby-gem-in-mountain-lion-preview.html)해야 할 수도 있습니다. 이 도구를 설치하면, 다음 명령으로 Native Gem 을 설치할 수 있습니다:
 
 {% highlight bash %}
 sudo gem install jekyll
@@ -57,7 +57,7 @@ sudo emerge -av dev-ruby/rubygems
 
 ## Jekyll 실행 시 문제점
 
-데비안이나 우분투에서는, `jekyll` 실행파일을 터미널에서 사용하려면 `$PATH` 에 `/var/lib/gems/1.8/bin/` 을 추가해야 할 수도 있습니다.
+데비안이나 우분투에서는, 터미널에서 `jekyll` 실행파일을 사용하기 위해서 `/var/lib/gems/1.8/bin/` 을 `$PATH` 에 추가해야 할 수도 있습니다.
 
 ## Base-URL 문제점
 
@@ -67,7 +67,7 @@ sudo emerge -av dev-ruby/rubygems
 jekyll serve --baseurl '/blog'
 {% endhighlight %}
 
-… 아래 주소로 접속할 수 있는지 확인하세요:
+… 아래 주소로 접속하고 있는지 확인하세요:
 
 {% highlight bash %}
 http://localhost:4000/blog/index.html

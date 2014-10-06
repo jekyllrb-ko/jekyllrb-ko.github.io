@@ -6,7 +6,7 @@ next_section: troubleshooting
 permalink: /docs/continuous-integration/
 ---
 
-웹사이트 생성을 하나 이상의 Ruby 버전에서 테스트하는 것은 어렵지 않습니다. 이것은 [Travis][0] 와 Pull Request 로 [GitHub][1] 을 연동하여 빌드 환경을 무료료 구축하는 방법에 대한 안내서입니다. 비공개 저장소에 대해서는 유료로 구축할 수 있는 방법이 있습니다.
+여러가지 Ruby 버전 상에서 웹사이트 생성을 테스트하는 것도 어렵지 않습니다. 이 안내서에서 Pull Request 로 [GitHub][1] 을 연동한 무료 [Travis][0] 빌드환경 구성 방법을 배울 수 있습니다. 비공개 저장소에 대해서는 유료로 구축할 수 있는 다른 방법이 있습니다.
 
 [0]: https://travis-ci.org/
 [1]: https://github.com/
@@ -24,7 +24,7 @@ GitHub 저장소에 Travis 빌드를 활성화하는 것은 상당히 간단합�
 
 ## 2. 테스트 스크립트
 
-가장 단순한 테스트 스크립트는 단지 `jekyll build` 를 실행하고 Jekyll 이 성공적으로 사이트 빌드를 마쳤는지 확인합니다. 빌드 작업이 올바른지는 확인하지만, 생성된 사이트는 확인하지 않습니다.
+가장 단순한 형태의 테스트 스크립트는 그냥 `jekyll build` 를 실행하고 Jekyll 이 성공적으로 사이트 빌드를 마쳤는지만 확인합니다. 빌드 작업이 올바른지는 확인하지만, 생성된 사이트는 확인하지 않습니다.
 
 Jekyll 결과물에 대한 테스트를 수행하려면, [html-proofer][2] 라는 더 좋은 도구가 있습니다. 이 도구는 생성된 사이트의 모든 링크와 이미지가 존재하는지 확인합니다. 명령행 실행 프로그램인 `htmlproof` 를 사용하거나, 해당 gem 을 활용하는 Ruby 스크립트를 작성하세요.
 
@@ -38,7 +38,7 @@ bundle exec jekyll build
 bundle exec htmlproof ./_site
 {% endhighlight %}
 
-몇 가지 옵션은 명령행 스위치를 통해서 지정할 수 있습니다. 이 스위치에 대한 더 많은 정보는 `html-proofer` README 를 읽어보거나 `htmlproof --help` 를 실행해보면 얻을 수 있습니다.
+명령행 스위치를 통해서 지정할 수 있는 옵션이 몇 가지 있습니다. 이 스위치에 대한 더 많은 정보를 얻으려면 `html-proofer` README 를 읽어보거나 `htmlproof --help` 를 실행해보세요.
 
 ### HTML Proofer 라이브러리
 
@@ -76,7 +76,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 {% endhighlight %}
 
-좋습니다. 다음은 각 줄에 관한 설명입니다:
+좋습니다. 여기서부터는 각 줄에 관한 설명입니다:
 
 {% highlight yaml %}
 language: ruby
@@ -111,7 +111,7 @@ branches:
   - /pages-(.*)/ # test every branch which starts with "pages-"
 {% endhighlight %}
 
-Travis 빌드가 사이트를 담고있는 브랜치 또는 브랜치들에만 실행되게 하고 싶다고 생각해봅시다. 이렇게 빌드를 고립시키는 한 가지 방법은 Travis 환경설정 파일에 브랜치 화이트리스트를 넣는 것입니다. `gh-pages` 브랜치를 지정해서, (위에 설명한) 관련된 테스트 스크립트가 사이트 브랜치에 대해서만 실행되게 할 수 있습니다. 변경을 제안할 때 Pull Request 방식을 사용한다면, 특정 접두사를 포함하는 브랜치에만 빌드를 적용하도록 지시할 수 있는데, 위 예제에서는 정규 표현식 `/pages-(.*)/` 이 그 전형적인 예시입니다.
+사이트를 담고있는 브랜치 또는 브랜치들에만 Travis 빌드를 실행하는 경우를 생각해봅시다. 이렇게 빌드를 고립시키는 한 가지 방법은 Travis 환경설정 파일에 브랜치 화이트리스트를 넣는 것입니다. `gh-pages` 브랜치를 지정해서, (위에 설명한) 관련된 테스트 스크립트가 사이트 브랜치에 대해서만 실행되게 할 수 있습니다. 변경을 제안할 때 Pull Request 방식을 사용한다면, 특정 접두사를 포함하는 브랜치에만 빌드를 적용하도록 지시할 수 있는데, 위 예제의 정규 표현식 `/pages-(.*)/` 이 그 전형적인 예시입니다.
 
 `branches` 설정은 완전히 선택사항입니다.
 
@@ -121,13 +121,13 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 {% endhighlight %}
 
-`html-proofer` 를 사용하나요? 이 환경변수가 필요하게 될 것입니다. Nokogiri, 생성된 사이트의 HTML 파일을 파싱하는데에 사용합니다. 운 좋게도, 환경 변수 `NOKOGIRI_USE_SYSTEM_LIBRARIES` 를 `true` 로 설정해서 Nokogiri 의 설치 시간을 극적으로 향상시킬 수 있습니다.
+`html-proofer` 를 사용하나요? 이 환경변수가 필요할 것입니다. Nokogiri, 생성된 사이트의 HTML 파일을 파싱하는데에 사용합니다. 운 좋게도, 환경 변수 `NOKOGIRI_USE_SYSTEM_LIBRARIES` 를 `true` 로 설정해서 Nokogiri 의 설치 시간을 극적으로 향상시킬 수 있습니다.
 
 ## 4. Gotchas
 
 ### `vendor` 제외시키기
 
-Travis 는 빌드 서버의 `vendor` 디렉토리에 있는 모든 gem 들을 포함하는데, 이는 의도치 않게 Jekyll 에 의해 읽혀서 망가지게 됩니다. 그렇게 되지 않게 하려면, `_config.yml` 에서 `verdor` 를 제외시키세요:
+Travis 는 빌드 서버의 `vendor` 디렉토리에 있는 모든 gem 들을 포함하는데, 의도치 않게 Jekyll 이 읽어들여 망가질 수 있습니다. 이를 예방하려면, `_config.yml` 에서 `verdor` 를 제외시키세요:
 
 {% highlight yaml %}
 exclude: [vendor]

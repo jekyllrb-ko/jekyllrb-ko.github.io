@@ -80,7 +80,7 @@ Jekyll 사이트를 게시하는 또 다른 방법은 [Rake](https://github.com/
 
 ### rsync
 
-일단 `_site` 디렉토리가 생성되고 나면, [이 게시 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 당연히 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다. 또한, Textmate 에서 이 스크립트 실행을 도와주는 [a matching TextMate command](http://gist.github.com/214959) 도 있습니다.
+일단 `_site` 디렉토리를 생성하고 난 뒤에는, 이 [게시용 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 물론 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다. 또한, Textmate 에서 이 스크립트를 실행할 수 있게 해주는 [TextMate 명령어](http://gist.github.com/214959)도 있습니다.
 
 
 ## Rack-Jekyll

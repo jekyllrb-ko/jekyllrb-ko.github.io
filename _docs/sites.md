@@ -6,7 +6,7 @@ next_section: resources
 permalink: /docs/sites/
 ---
 
-다른 이들이 구현한 디자인과 기능을 보는 것은 흥미롭습니다. 다음은 Jekyll 로 생성한 블로그들 중에서 교육 목적으로 엄선한 것들입니다.
+다른 이들이 생각해낸 디자인과 기능을 보는 것은 재밌습니다. 다음은 Jekyll 로 생성한 블로그들 중에서 교육 목적으로 엄선한 것들입니다.
 
 - [Tom Preston-Werner](http://tom.preston-werner.com/)
     ([소스코드](https://github.com/mojombo/mojombo.github.io))
