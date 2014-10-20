@@ -191,6 +191,15 @@ permalink: /docs/configuration/
         <p><code class="flag">--force_polling</code></p>
       </td>
     </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Verbose output</strong></p>
+        <p class="description">결과를 자세하게 출력합니다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">-V, --verbose</code></p>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -246,6 +255,15 @@ permalink: /docs/configuration/
       <td class="align-center">
         <p><code class="option">detach: BOOL</code></p>
         <p><code class="flag">-B, --detach</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Skips the initial site build.</strong></p>
+        <p class="description">서버 실행 전의 사이트 빌드를 건너 뜁니다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">--skip-initial-build</code></p>
       </td>
     </tr>
   </tbody>

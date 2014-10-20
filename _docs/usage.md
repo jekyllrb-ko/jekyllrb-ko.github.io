@@ -35,14 +35,24 @@ $ jekyll build --watch
 {% highlight bash %}
 $ jekyll serve
 # => 개발용 서버가 http://localhost:4000/ 에서 구동됩니다
+# 자동-재생성: 활성화됨. 비활성화 하려면 `--no-watch` 를 사용하세요.
 
 $ jekyll serve --detach
 # => 현재 터미널에서 분리된다는 점을 제외하고는 `jekyll serve` 와 동일합니다.
 #    서버를 종료하려면, `kill -9 1234` 를 입력하면 됩니다. (PID 가 "1234" 인 경우)
 #    PID 를 모른다면, `ps aux | grep jekyll` 를 실행하고, 인스턴스를 종료시킵니다. [자세한 내용](http://unixhelp.ed.ac.uk/shell/jobz5.html).
+{% endhighlight %}
 
-$ jekyll serve --watch
-# => 변경을 감지하고 자동으로 다시 생성한다는 점을 제외하고는 `jekyll serve` 와 동일합니다.
+<div class="note info">
+  <h5>기본 방식을 알아두세요</h5>
+  <p>
+    버전 2.4 부터, <code>serve</code> 명령은 자동으로 변경사항을 감시합니다. 기존 방식을 유지하려면, <code>jekyll serve --no-watch</code> 를 사용해서 이것을 비활성화하세요.
+  </p>
+</div>
+
+{% highlight bash %}
+$ jekyll serve --no-watch
+# => `jekyll serve` 와 동일하지만 변경사항을 감시하지 않습니다.
 {% endhighlight %}
 
 이것들은 [환경설정 옵션](../configuration/)의 아주 일부일 뿐입니다. 이렇게 명령행 플래그로 다양한 환경설정 옵션들을 지정할 수 있으며, 또 다른 (그리고 더 일반적인) 방법은 루트 디렉토리의 `_config.yml` 파일에 정의하는 것입니다. Jekyll 이 작동하기 시작하면, 자동적으로 이 파일에 지정한 옵션들을 사용합니다. 예를 들어, `_config.yml` 파일에 다음과 같이 입력한다면:
