@@ -121,7 +121,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 {% endhighlight %}
 
-`html-proofer` 를 사용하나요? 이 환경변수가 필요할 것입니다. Nokogiri, 생성된 사이트의 HTML 파일을 파싱하는데에 사용합니다. 운 좋게도, 환경 변수 `NOKOGIRI_USE_SYSTEM_LIBRARIES` 를 `true` 로 설정해서 Nokogiri 의 설치 시간을 극적으로 향상시킬 수 있습니다.
+`html-proofer` 를 사용하나요? 이 환경변수가 필요할 것입니다. Nokogiri, 생성된 사이트의 HTML 파일을 파싱하는데에 사용합니다. 운 좋게도, 환경 변수 `NOKOGIRI_USE_SYSTEM_LIBRARIES` 를 `true` 로 설정해서 Nokogiri 의 설치 시간을 극적으로 절감할 수 있습니다.
 
 ## 4. Gotchas
 
