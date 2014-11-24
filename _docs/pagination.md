@@ -35,11 +35,11 @@ paginate: 5
 이렇게 나뉘어진 페이지가 생성될 위치도 지정할 수 있습니다:
 
 {% highlight yaml %}
-paginate_path: "blog/page:num"
+paginate_path: "blog/page:num/"
 {% endhighlight %}
 
 이 설정은 `blog/index.html` 에서 사용되어, `paginator` 라는 Liquid 에 나뉘어진 각 페이지를 보내고
-`blog/page:num` 에 결과물이 만들어집니다. 여기서 `:num` 은 `2` 부터 시작하는 페이지 번호입니다.
+`blog/page:num/` 에 결과물이 만들어집니다. 여기서 `:num` 은 `2` 부터 시작하는 페이지 번호입니다.
 사이트가 12 개의 포스트를 가지고 있고 `pagenate: 5` 가 설정되어 있을 경우, Jekyll 은 처음 5 개의
 포스트를 `blog/index.html` 에 만들고, `blog/page2/index.html` 에 다음 5 개의 포스트를,
 `blog/page3/index.html` 에 마지막 2 개의 포스트를 만들게 됩니다.

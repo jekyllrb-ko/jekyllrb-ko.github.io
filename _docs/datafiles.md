@@ -23,7 +23,7 @@ Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://ww
 
 [디렉토리 구조](../structure/) 페이지에서 설명했던 것처럼, `_data` 폴더는
 사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다. 이것들은
-반드시 (`.yml`, `.yaml` 이나 `.json` 을 사용하는) YAML 파일이어야 하며
+반드시 (`.yml`, `.yaml`, `.json` 이나 `csv` 확장자를 가진) YAML 파일이어야 하며
 `site.data` 를 통해 접근할 수 있습니다.
 
 ## 예제: 멤버들의 목록
@@ -42,6 +42,15 @@ Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://ww
 
 - name: Liu Fengyun
   github: liufengyun
+{% endhighlight %}
+
+또는 `_data/members.csv` 에:
+
+{% highlight text %}
+name,github
+Tom Preston-Werner,mojombo
+Parker Moore,parkr
+Liu Fengyun,liufengyun
 {% endhighlight %}
 
 `site.data.members` 로 (파일 이름이 변수 이름으로 사용되는 것에 주목) 이
