@@ -14,7 +14,8 @@ Jekyll 로 생성한 사이트는, 정적이라는 근본적인 특징 덕분에
 
 ### Glynn 을 사용한 FTP
 
-Jekyll 로 정적인 웹 사이트 파일들을 생성하고 자신의 호스트에 FTP 로 전송하는 것을 쉽게 만들어주는 [Glynn](https://github.com/dmathieu/glynn) 이라는 프로젝트가 있습니다.
+[Glynn](https://github.com/dmathieu/glynn) 이라는 프로젝트가 있는데, Jekyll 로 정적인 웹 사이트 파일들을 생성하고
+FTP 로 자신의 호스트에 전송하는 것을 편리하게 만들어주는 프로젝트입니다.
 
 ## 직접 관리하는 웹 서버
 
@@ -26,7 +27,10 @@ Jekyll 사이트 게시를 쉽게 자동화하는 방법이 여러가지 있습�
 
 ### Git 의 post-update 훅
 
-만약 [Git](http://git-scm.com/) 을 사용해서 Jekyll 사이트를 관리하고 있다면 (버전 관리 시스템 사용하고 있죠? 그렇죠?), [여기](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)처럼 Git 저장소에 post-update 훅을 설정하여 게시를 쉽게 자동화 할 수 있습니다.
+만약 [Git](http://git-scm.com/) 을 사용해서 Jekyll 사이트를 관리하고 있다면
+(버전 관리 시스템 사용하고 있죠? 그렇죠?),
+[여기](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)처럼
+Git 저장소에 post-update 훅을 설정하여 게시를 쉽게 자동화 할 수 있습니다.
 
 ### Git 의 post-receive 훅
 
@@ -41,7 +45,8 @@ server$ cp hooks/post-receive.sample hooks/post-receive
 server$ mkdir /var/www/myrepo
 {% endhighlight %}
 
-그 다음, 서버에 Jekyll 을 설치하고 hooks/post-receive 에 아래 코드를 추가합니다:
+그 다음, 서버에 Jekyll 을 설치하고 hooks/post-receive 에 아래와 같이 코드를
+추가합니다:
 
 {% highlight bash %}
 GIT_REPO=$HOME/myrepo.git
@@ -54,13 +59,15 @@ rm -Rf $TMP_GIT_CLONE
 exit
 {% endhighlight %}
 
-마지막으로, 사용자의 PC 에서 다음 명령을 실행하여 이 훅을 사용할 수 있도록 설정합니다:
+마지막으로, 사용자의 PC 에서 다음 명령을 실행하여 이 훅을 사용할 수 있도록
+설정합니다:
 
 {% highlight bash %}
 laptops$ git remote add deploy deployer@example.com:~/myrepo.git
 {% endhighlight %}
 
-이제 Apache 나 nginx 가 `/var/www/myrepo` 를 바라보도록 설정하고 다음 명령을 실행하기만 하면 게시됩니다:
+이제 Apache 나 nginx 가 `/var/www/myrepo` 를 바라보도록 설정하고 다음 명령을
+실행하기만 하면 게시됩니다:
 
 {% highlight bash %}
 laptops$ git push deploy master
@@ -68,19 +75,26 @@ laptops$ git push deploy master
 
 ### Jekyll-hook
 
-또한 jekyll-hook 서버를 사용해서, GitHub 으로부터 webhook 포스트를 기다리다가, Jekyll 로 웹사이트를 생성해서, 게시될 곳으로 옮길 수 있습니다. 이것으로 자신만의 GitHub Pages 스타일 웹 서버를 구축해보세요.
+또한 jekyll-hook 서버를 사용해서, GitHub 으로부터 webhook 포스트를 기다리다가,
+Jekyll 로 웹사이트를 생성해서, 게시될 곳으로 옮길 수 있습니다. 이것으로 자신만의
+GitHub Pages 스타일 웹 서버를 구축해보세요.
 
-이것은 방화벽 안쪽에 웹사이트를 구축해야할 필요가 있거나 HTTP 기본 인증같은 서버-레벨의 부가기능이 필요하거나 S3 같은 파일호스트나 CDN 에 직접 사이트를 호스팅하고 싶을 때 유용한 방법입니다.
+이것은 방화벽 안쪽에 웹사이트를 구축해야할 필요가 있거나 HTTP 기본 인증같은
+서버-레벨의 부가기능이 필요하거나 S3 같은 파일호스트나 CDN 에 직접 사이트를
+호스팅하고 싶을 때 유용한 방법입니다.
 
-설정 방법에 대한 전체 문서는 [`jekyll-hook` 저장소](https://github.com/developmentseed/jekyll-hook)에 있습니다.
+설정 방법에 대한 전체 문서는 [`jekyll-hook`
+저장소](https://github.com/developmentseed/jekyll-hook)에 있습니다.
 
 ### Rake
 
-Jekyll 사이트를 게시하는 또 다른 방법은 [Rake](https://github.com/jimweirich/rake) 와 [HighLine](https://github.com/JEG2/highline), [Net::SSH](https://github.com/net-ssh/net-ssh) 를 사용하는 것입니다. Rake 를 사용하여 여러 브랜치를 처리할 수 있는 복합적인 Jekyll 게시 예제는 [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile) 에서 찾을 수 있습니다.
+Jekyll 사이트를 게시하는 또 다른 방법은 [Rake](https://github.com/jimweirich/rake) 와 [HighLine](https://github.com/JEG2/highline),
+[Net::SSH](https://github.com/net-ssh/net-ssh) 를 사용하는 것입니다. Rake 를 사용하여 여러 브랜치를 처리할 수 있는 복합적인 Jekyll 게시 예제는 [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile) 에서 찾을 수 있습니다.
 
 ### rsync
 
-일단 `_site` 디렉토리를 생성하고 난 뒤에는, 이 [게시용 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 물론 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다. 또한, Textmate 에서 이 스크립트를 실행할 수 있게 해주는 [TextMate 명령어](http://gist.github.com/214959)도 있습니다.
+일단 `_site` 디렉토리를 생성하고 난 뒤에는, 이 [게시용 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 물론 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다.
+또한, Textmate 에서 이 스크립트를 실행할 수 있게 해주는 [TextMate 명령어](http://gist.github.com/214959)도 있습니다.
 
 
 ## Rack-Jekyll
@@ -95,11 +109,17 @@ Rack-Jekyll 을 사용하여 Heroku 에 게시하는 방법을 설명한 [이 �
 
 ## Amazon S3
 
-만약 Amazon S3 에 사이트를 호스팅하고 싶다면, [s3_website](https://github.com/laurilehmijoki/s3_website) 응용프로그램을 사용하세요. 거의 무한대의 트래픽까지 규모를 동적으로 조정할 수 있는 Amazon S3 를 사용할 수 있습니다. 사용하는 만큼에 대해서만 지불하기 때문에 소규모 블로그에는 이 방법을 적용하는 것이 가장 저렴할 것입니다.
+만약 Amazon S3 에 사이트를 호스팅하고 싶다면,
+[s3_website](https://github.com/laurilehmijoki/s3_website) 라는 응용프로그램을
+사용하세요.
+유동적으로 거의 무한대의 트래픽까지 규모가 조정되는 Amazon S3 에 당신의 사이트를
+서비스 해줍니다. 사용하는 만큼에 대해서만 지불하기 때문에 소규모 블로그에는 이
+방법을 적용하는 것이 가장 저렴할 것입니다.
 
 ## OpenShift
 
-만약 OpenShift gear 에 사이트를 게시하고 싶다면, [이를 위한 카트리지](https://github.com/openshift-cartridges/openshift-jekyll-cartridge)가 있습니다.
+만약 OpenShift gear 에 사이트를 게시하고 싶다면, [이를 위한
+카트리지](https://github.com/openshift-cartridges/openshift-jekyll-cartridge)도 있습니다.
 
 <div class="note">
   <h5>ProTip™: GitHub Pages 로 귀찮은 일 없이 Jekyll 을 호스팅하세요</h5>

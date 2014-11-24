@@ -36,7 +36,8 @@ collections:
 
 ### 2 단계: 컨텐츠 추가하기
 
-설정한 콜렉션 이름에 맞는 폴더 (예시, `<source>/_my_collection`) 를 생성하고 문서를 추가합니다. YAML 머리말은 원래대로 작동하며, 만약 머리말이 없다면 문서의 모든 내용은 `content` 속성에 들어갑니다.
+설정한 콜렉션 이름에 맞는 폴더 (예시, `<source>/_my_collection`) 를 생성하고 문서를 추가합니다.
+YAML 머리말은 원래대로 작동하며, 만약 머리말이 없다면 문서의 모든 내용은 `content` 속성에 들어갑니다.
 
 주의: 폴더의 이름은 반드시 `_config.yml` 파일에 정의한 콜렉션에 `_` 문자를 붙인 것이어야 합니다.
 
@@ -50,7 +51,10 @@ collections:
     output: true
 {% endhighlight %}
 
-이렇게 하면 콜렉션 안의 모든 문서가 각각 파일로 생성됩니다. 예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면, Liquid 와 Markdown 변환기를 거쳐서 `<dest>/my_collection/some_subdir/some_doc.html` 로 만들어질 것입니다.
+이렇게 하면 콜렉션 안의 모든 문서가 각각 파일로 생성됩니다.
+예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면,
+Liquid 와 Markdown 변환기를 거쳐서
+`<dest>/my_collection/some_subdir/some_doc.html` 로 만들어질 것입니다.
 
 [고유주소](../permalinks/)를 가진 포스트와 마찬가지로, 콜렉션 메타데이터에 `permalink` 설정을 하면 문서 URL 은 변경될 수도 있습니다:
 
@@ -208,7 +212,9 @@ collections:
       </td>
       <td>
         <p>
-          문서의 (변환되지 않은) 컨텐츠. 만약 YAML 머리말이 없다면, 파일 컨텐츠와 완전히 동일하다. YAML 머리말이 사용되었다면, 머리말을 제외한 컨텐츠와 동일하다.
+          문서의 (변환되지 않은) 컨텐츠. 만약 YAML 머리말이 없다면, 파일
+          컨텐츠와 완전히 동일하다. YAML 머리말이 사용되었다면, 머리말을 제외한 컨텐츠와
+          동일하다.
         </p>
       </td>
     </tr>
@@ -248,7 +254,9 @@ collections:
       </td>
       <td>
         <p>
-          변환된 콜렉션의 URL. 사이트 환경설정 파일의 <code>render</code> 키에 포함된 콜렉션만 파일로 생성된다.
+          렌더링 된 콜렉션의 URL. 파일은 자신이 속해있는 콜렉션의 이름이 사이트
+          환경설정 파일의 <code>render</code> 키에 포함되어 있을 경우에만
+          생성된다.
         </p>
       </td>
     </tr>

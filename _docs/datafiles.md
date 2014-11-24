@@ -6,21 +6,30 @@ next_section: assets
 permalink: /docs/datafiles/
 ---
 
-Jekyll 의 [내장 변수](../variables/)뿐만 아니라, 자신만의 고유 데이터를 작성해서 [Liquid 템플릿 시스템](https://wiki.github.com/shopify/liquid/liquid-for-designers)을 통해 사용할 수 있습니다.
+[내장 변수](../variables/)뿐만 아니라, 자신만의 데이터를 정의해서 [Liquid 템플릿
+시스템](https://wiki.github.com/shopify/liquid/liquid-for-designers)을 통해
+사용할 수 있습니다.
 
-Jekyll 은 `_data` 디렉토리에 있는 [YAML](http://yaml.org/) 과 [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) 파일로부터 데이터를 읽어들일 수 있습니다. 단, CSV 파일에는 *반드시* 헤더 행이 있어야 합니다.
+Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://www.json.org/),
+[CSV](https://en.wikipedia.org/wiki/Comma-separated_values) 파일로부터 데이터를
+읽어들일 수 있습니다. 단, CSV 파일에는 *반드시* 헤더 행이 있어야 합니다.
 
-이 강력한 기능 덕분에 템플릿에 뭔가를 반복해서 입력하지 않아도 되고, `_config.yml` 파일을 수정하지 않고 사이트 옵션을 설정할 수 있습니다.
+이 강력한 기능 덕분에 템플릿에 뭔가를 반복해서 입력하지 않아도 되고,
+`_config.yml` 파일을 수정하지 않고 사이트 옵션을 설정할 수 있습니다.
 
 플러그인/테마도 데이터 파일을 사용하여 환경설정 변수를 설정할 수 있습니다.
 
 ## 데이터 폴더
 
-[디렉토리 구조](../structure/) 페이지에서 설명했던 것처럼, `_data` 폴더는 사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다. 이것들은 반드시 (`.yml`, `.yaml` 이나 `.json` 을 사용하는) YAML 파일이어야 하며 `site.data` 를 통해 접근할 수 있습니다.
+[디렉토리 구조](../structure/) 페이지에서 설명했던 것처럼, `_data` 폴더는
+사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다. 이것들은
+반드시 (`.yml`, `.yaml` 이나 `.json` 을 사용하는) YAML 파일이어야 하며
+`site.data` 를 통해 접근할 수 있습니다.
 
 ## 예제: 멤버들의 목록
 
-커다란 코드 뭉치를 여러 Jekyll 템플릿에 복사-붙여넣기하지 않기 위해 데이터 파일을 활용하는 기본적인 예제입니다:
+커다란 코드 뭉치를 여러 Jekyll 템플릿에 복사-붙여넣기하지 않기 위해 데이터
+파일을 활용하는 기본적인 예제입니다:
 
 `_data/members.yml` 에:
 
@@ -35,7 +44,8 @@ Jekyll 은 `_data` 디렉토리에 있는 [YAML](http://yaml.org/) 과 [JSON](ht
   github: liufengyun
 {% endhighlight %}
 
-`site.data.members` 로 (파일 이름이 변수 이름으로 사용되는 것에 주목) 이 데이터에 접근할 수 있습니다.
+`site.data.members` 로 (파일 이름이 변수 이름으로 사용되는 것에 주목) 이
+데이터에 접근할 수 있습니다.
 
 이제 템플릿에서 멤버들 목록을 출력할 수 있습니다:
 

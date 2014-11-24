@@ -15,10 +15,12 @@ Jekyll 사용이 점점 늘어나면서 도움이 될 만한 튜토리얼과 프
   예제코드 재사용 방법과 문서를 최신상태로 유지하는 방법
 
 - [Jekyll 백엔드 양식과 웹 훅에 FormKeep 사용하기](https://formkeep.com/)
-- [Simple Form 사용해서 간단한 연락처 양식 연동하기](http://getsimpleform.com/)
+- [Simple Form 사용해서 간단한 연락처 양식
+  연동하기](http://getsimpleform.com/)
 - [JekyllBootstrap.com](http://jekyllbootstrap.com)
 
-  Jekyll 을 보다 쉽게 만들어 주는 헬퍼코드와 설명, 예제 제공
+  Jekyll 입문을 보다 쉽게 만들어 주는 헬퍼코드와 상세 설명,
+  예제를 제공함
 
 ### 튜토리얼
 

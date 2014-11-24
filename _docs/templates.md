@@ -6,7 +6,11 @@ next_section: permalinks
 permalink: /docs/templates/
 ---
 
-Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿 언어를 사용합니다. 표준 Liquid [태그](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#tags)와 [필터](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters)가 모두 지원됩니다. 뿐만 아니라, 일부 작업을 더 쉽게 할 수 있도록 도와주는 유용한 태그와 필터가 더 추가되어 있습니다.
+Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 템플릿
+언어를 사용합니다. 표준 Liquid [태그](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#tags)와
+[필터](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#standard-filters)가
+모두 지원됩니다. 뿐만 아니라, 일부 작업을 더 쉽게 할 수 있도록 도와주는 유용한
+태그와 필터가 더 추가되어 있습니다.
 
 ## 필터
 
@@ -116,7 +120,8 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
       <td>
         <p class="name"><strong>CGI Escape</strong></p>
         <p>
-          URL 에 사용되는 CGI 이스케이프 문자열. 모든 특수문자를 그에 맞는 %XX 로 변환합니다.
+          URL 에 사용되는 CGI 이스케이프 문자열. 모든 특수문자를 그에 맞는 %XX
+          로 변환합니다.
         </p>
       </td>
       <td class="align-center">
@@ -253,19 +258,24 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
 
 ### Includes
 
-만약 사이트 안의 여러 곳에 삽입해야 하는 작은 조각 페이지가 있다면, `include` 태그를 사용하세요.
+만약 사이트 안의 여러 곳에 삽입해야 하는 작은 조각 페이지가 있다면, `include`
+태그를 사용하세요.
 
 {% highlight ruby %}
 {% raw %}{% include footer.html %}{% endraw %}
 {% endhighlight %}
 
-삽입할 파일은 프로젝트의 루트 디렉토리 밑의 `_includes` 디렉토리에 넣어야 합니다. 위 코드는 `<source>/_includes/footer.html` 파일의 내용을 삽입할 것입니다.
+삽입할 파일은 프로젝트의 루트 디렉토리 밑의 `_includes` 디렉토리에 넣어야
+합니다. 위 코드는 `<source>/_includes/footer.html` 파일의 내용을 삽입할
+것입니다.
 
 <div class="note">
   <h5>ProTip™: 파일 이름에 변수를 사용하세요</h5>
   <p>
 
-    삽입하고자 하는 파일의 이름은 (위 예제처럼) 실제 파일명을 사용할 수도 있고, <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code> 처럼 Liquid 스타일의 변수 문법을 사용할 수도 있습니다.
+    삽입하고자 하는 파일의 이름은 (위 예제처럼) 실제 파일명을 사용할 수도 있고,
+    <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code> 처럼 Liquid
+    스타일의 변수 문법을 사용할 수도 있습니다.
 
   </p>
 </div>
@@ -290,15 +300,27 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
 {% raw %}{% include_relative somedir/footer.html %}{% endraw %}
 {% endhighlight %}
 
-삽입할 컨텐츠를 꼭 `_includes` 디렉토리에 넣을 필요가 없습니다. 대신 태그가 사용된 파일에서의 상대경로로 삽입이 가능합니다. 예를 들어, `_posts/2014-09-03-my-file.markdown` 파일 안에서 `include_relative` 태그를 사용했다면, 삽입될 파일은 반드시 `_posts` 디렉토리나 그 하위 디렉토리에 있어야 합니다. 그 밖에 다른 위치의 파일은 삽입할 수 없습니다.
+삽입할 컨텐츠를 꼭 `_includes` 디렉토리에 넣을 필요가 없습니다. 대신 태그가
+사용된 파일에서의 상대경로로 삽입이 가능합니다. 예를 들어,
+`_posts/2014-09-03-my-file.markdown` 파일 안에서 `include_relative` 태그를
+사용했다면, 삽입될 파일은 반드시 `_posts` 디렉토리나 그 하위 디렉토리에 있어야
+합니다. 그 밖에 다른 위치의 파일은 삽입할 수 없습니다.
 
-변수 사용처럼 `include` 태그의 다른 모든 기능도 `include_relative` 태그에서 사용할 수 있다.
+변수 사용처럼 `include` 태그의 다른 모든 기능도 `include_relative` 태그에서
+사용할 수 있습니다.
 
 ### 코드 구문 강조
 
-[Pygments](http://pygments.org/) 덕분에 Jekyll 은 [100 개 이상의 언어](http://pygments.org/languages/)에 대한 구문 강조 기능이 내장되어 있습니다. Pygments 를 사용하려면 시스템에 Python 이 설치되어 있어야 하며, 사이트 환경설정 파일에 `highlighter` 를 `pygments` 로 설정해야 합니다.
+[Pygments](http://pygments.org/) 덕분에 Jekyll 은 [100 개 이상의
+언어](http://pygments.org/languages/)에 대한 구문 강조 기능이 내장되어 있습니다.
+Pygments 를 사용하려면 시스템에 Python 이 설치되어 있어야 하며, 사이트 환경설정
+파일에 `highlighter` 를 `pygments` 로 설정해야 합니다.
 
-그 밖에도, [Rouge](https://github.com/jayferd/rouge) 를 사용해서 구문 강조를 할 수 있습니다. Pygments 만큼 많은 언어를 지원하지는 않지만 대부분의 경우에 사용할 수 있으며 순수하게 Ruby 로 작성되었습니다 ; Python 이 필요하지 않습니다!
+
+그 밖에도, [Rouge](https://github.com/jayferd/rouge) 를 사용해서 구문 강조를 할
+수 있습니다.
+Pygments 만큼 많은 언어를 지원하지는 않지만 대부분의 경우에 사용할 수 있으며
+순수하게 Ruby 로 작성되었습니다 ; Python 이 필요하지 않습니다!
 
 구문 강조가 적용된 코드 블럭을 출력하려면, 코드 앞뒤에 다음과 같이 작성합니다:
 
@@ -312,11 +334,18 @@ end
 {% endraw %}
 {% endhighlight %}
 
-`highlight` 태그에 전달한 인자 (위 예시에서는 `ruby`) 는 언어 식별자입니다. 구문 강조를 사용하려고 하는 언어의 식별자를 찾으려면, [Pygments 의 Lexers 페이지](http://pygments.org/docs/lexers/) 또는 [Rouge 위키](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers)에서 "short name" 을 살펴보세요.
+`highlight` 태그에 전달한 인자 (위 예시에서는 `ruby`) 는 언어 식별자입니다. 구문
+강조를 사용하려고 하는 언어의 식별자를 찾으려면, [Pygments 의 Lexers
+페이지](http://pygments.org/docs/lexers/) 또는 [Rouge
+위키](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers)에서
+"short name" 을 살펴보세요.
 
 #### 줄 번호
 
-`highlight` 의 두 번째 전달인자 `linenos` 는 선택사항입니다. `linenos` 를 사용하면 코드 블록에 줄 번호가 표시됩니다. 예를 들면, 다음 코드 블록에는 각 줄에 줄 번호가 표시됩니다:
+`highlight` 의 두 번째 전달인자 `linenos` 는 선택사항입니다.
+`linenos` 를 사용하면 코드 블록에 줄 번호가 표시됩니다.
+예를 들면, 다음 코드 블록에는 각 줄에 줄 번호가 표시됩니다:
+
 
 {% highlight text %}
 {% raw %}
@@ -330,11 +359,18 @@ end
 
 #### 구문 강조용 스타일시트
 
-강조 부분을 눈에 띄게 만들려면, 구문 강조용 스타일시트를 포함시켜야 합니다. 예를 들면 [syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css) 가 있습니다. 이 파일은 GitHub 에서 사용하는 것과 동일한 스타일이며 당신의 사이트에 마음대로 사용해도 됩니다. `linenos` 를 사용할 경우, 코드와 줄 번호를 구분하기 위해 `syntax.css` 에 `.lineno` 라는 CSS 클래스를 추가할 수도 있을 것입니다.
+강조 부분을 눈에 띄게 만들려면, 구문 강조용 스타일시트를 포함시켜야 합니다.
+예를 들면 [syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css)
+가 있습니다.
+이 파일은 GitHub 에서 사용하는 것과 동일한 스타일이며 당신의 사이트에 마음대로
+사용해도 됩니다.
+`linenos` 를 사용할 경우, 코드와 줄 번호를 구분하기 위해 `syntax.css` 에
+`.lineno` 라는 CSS 클래스를 추가할 수도 있을 것입니다.
 
 ### 포스트 URL
 
-만약 사이트 안의 다른 포스트에 대한 링크를 사용해야 할 경우, `post_url` 태그를 사용하면 해당 포스트에 대한 고유주소 URL 이 생성됩니다.
+만약 사이트 안의 다른 포스트에 대한 링크를 사용해야 할 경우, `post_url` 태그를
+사용하면 해당 포스트에 대한 고유주소 URL 이 생성됩니다.
 
 {% highlight text %}
 {% raw %}
@@ -342,7 +378,8 @@ end
 {% endraw %}
 {% endhighlight %}
 
-만약 포스트를 하위 디렉토리에 넣고 관리한다면, 하위 디렉토리 경로도 포함시켜야 합니다:
+만약 포스트를 하위 디렉토리에 넣고 관리한다면, 하위 디렉토리 경로도 포함시켜야
+합니다:
 
 {% highlight text %}
 {% raw %}

@@ -6,13 +6,19 @@ next_section: frontmatter
 permalink: /docs/configuration/
 ---
 
-당신이 상상하는 어떤 형태의 사이트든지 Jekyll 로 만들 수 있습니다. 이 모든 것은 강력하고 유연한 환경설정 옵션 덕분이죠. 옵션은 사이트 루트 디렉토리의 `_config.yml` 파일에 지정하거나, 터미널에서 실행파일 `jekyll` 에 플래그로 지정할 수 있습니다.
+당신이 상상하는 어떤 형태의 사이트든지 Jekyll 로 만들 수 있습니다. 이 모든 것은
+강력하고 유연한 환경설정 옵션 덕분이죠. 옵션은 사이트 루트 디렉토리의
+`_config.yml` 파일에 지정하거나, 터미널에서 실행파일 `jekyll` 에 플래그로 지정할
+수 있습니다.
+
 
 ## 환경설정
 
 ### 전역 환경설정
 
-다음 표는 Jekyll 에서 사용할 수 있는 환경설정과 그에 해당하는 <code class="option">옵션</code> (설정 파일에 사용함) 과 <code class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
+다음 표는 Jekyll 에서 사용할 수 있는 환경설정과 그에 해당하는 <code
+class="option">옵션</code> (설정 파일에 사용함) 과 <code
+class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 
 <div class="mobile-side-scroller">
 <table>
@@ -59,7 +65,9 @@ permalink: /docs/configuration/
       <td>
         <p class="name"><strong>Exclude</strong></p>
         <p class="description">
-          특정 디렉토리나 파일을 변환되지 않도록 제외시킵니다. 기준 경로는 Site Source 디렉토리이며, 이 디렉토리 바깥의 다른 경로는 지정할 수 없습니다.
+          특정 디렉토리나 파일을 변환되지 않도록 제외시킵니다. 기준 경로는 Site
+          Source 디렉토리이며, 이 디렉토리 바깥의 다른 경로는 지정할 수
+          없습니다.
         </p>
       </td>
       <td class="align-center">
@@ -70,7 +78,9 @@ permalink: /docs/configuration/
       <td>
         <p class="name"><strong>Include</strong></p>
         <p class="description">
-          특정 디렉토리나 파일을 변환 작업에 강제로 포함시킵니다. 대표적인 예로 <code>.htaccess</code> 를 포함시키는 것이 있는데, 점으로 시작하는 파일은 기본적으로 제외되기 때문입니다.
+          특정 디렉토리나 파일을 변환 작업에 강제로 포함시킵니다. 대표적인 예로
+          <code>.htaccess</code> 를 포함시키는 것이 있는데, 점으로 시작하는
+          파일은 기본적으로 제외되기 때문입니다.
         </p>
       </td>
       <td class="align-center">
@@ -81,7 +91,13 @@ permalink: /docs/configuration/
       <td>
         <p class="name"><strong>Time Zone</strong></p>
         <p class="description">
-            사이트 생성에 사용할 타임존을 지정합니다. 환경변수인 <code>TZ</code> 가 설정되며, 루비가 날짜와 시간을 생성/수정할 때 사용합니다. <a href="http://en.wikipedia.org/wiki/Tz_database">IANA Time Zone Database</a> 의 모든 항목을 사용할 수 있습니다 (예, <code>America/New_York</code>). <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">여기</a>에서 사용할 수 있는 모든 값의 목록을 찾을 수 있습니다. 기본값은 자신의 OS 에 설정된 로컬 타임존입니다.
+            사이트 생성에 사용할 타임존을 지정합니다. 환경변수인 <code>TZ</code>
+            가 설정되며, 루비가 날짜와 시간을 생성/수정할 때 사용합니다.
+            <a href="http://en.wikipedia.org/wiki/Tz_database">IANA Time Zone
+            Database</a> 의 모든 항목을 사용할 수 있습니다 (예,
+            <code>America/New_York</code>). <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones">여기</a>에서
+            사용할 수 있는 모든 값의 목록을 찾을 수 있습니다. 기본값은 자신의 OS
+            에 설정된 로컬 타임존입니다.
         </p>
       </td>
       <td class="align-center">
@@ -92,7 +108,13 @@ permalink: /docs/configuration/
       <td>
         <p class="name"><strong>Encoding</strong></p>
         <p class="description">
-            파일 인코딩을 지정합니다 (Ruby 1.9 또는 이후 버전에서만 사용 가능). 2.0.0 버전부터는 기본값이 <code>utf-8</code> 이고, 2.0.0 이전 버전에서는 <code>nil</code> 이며, 이 때 사용되는 실제값은 Ruby 의 기본값인 <code>ASCII-8BIT</code> 입니다. 사용할 수 있는 인코딩은 <code>ruby -e 'puts Encoding::list.join("\n")'</code> 명령으로 확인할 수 있습니다.
+            파일의 인코딩을 지정합니다 (Ruby 1.9 또는 이후 버전에서만 사용
+            가능).
+            2.0.0 버전부터는 기본값이 <code>utf-8</code> 이고, 2.0.0 이전
+            버전에서는 <code>nil</code> 이며, 이 때 사용되는 실제값은 Ruby 의
+            기본값인 <code>ASCII-8BIT</code> 입니다.
+            사용할 수 있는 인코딩은
+            <code>ruby -e 'puts Encoding::list.join("\n")'</code> 명령으로 확인할 수 있습니다.
         </p>
       </td>
       <td class="align-center">
@@ -103,7 +125,8 @@ permalink: /docs/configuration/
       <td>
         <p class='name'><strong>Defaults</strong></p>
         <p class='description'>
-            <a href="../frontmatter/" title="YAML Front Matter">YAML 머리말</a> 변수들의 기본값을 지정합니다.
+            <a href="../frontmatter/" title="YAML Front Matter">YAML 머리말</a>
+            변수들의 기본값을 지정합니다.
         </p>
       </td>
       <td class='align-center'>
@@ -206,7 +229,9 @@ permalink: /docs/configuration/
 
 ### Serve 명령 옵션
 
-`serve` 명령은 아래 나열된 옵션 뿐만 아니라 `build` 명령의 옵션도 사용할 수 있습니다. 먼저 `build` 작업에 해당 옵션들이 사용된 후에 `serve` 작업이 수행됩니다.
+`serve` 명령은 아래 나열된 옵션 뿐만 아니라 `build` 명령의 옵션도 사용할 수
+있습니다. 먼저 `build` 작업에 해당 옵션들이 사용된 후에 `serve` 작업이
+수행됩니다.
 
 <div class="mobile-side-scroller">
 <table>
@@ -273,7 +298,8 @@ permalink: /docs/configuration/
 <div class="note warning">
   <h5>환경설정 파일에 탭 문자를 사용하지 마세요</h5>
   <p>
-    파싱 에러가 발생하거나 기본 설정값이 사용될 것입니다. 대신 띄어쓰기를 사용하세요.
+    파싱 에러가 발생하거나 기본 설정값이 사용될 것입니다. 대신 띄어쓰기를
+    사용하세요.
   </p>
 </div>
 
@@ -310,7 +336,8 @@ defaults:
       layout: "default"
 {% endhighlight %}
 
-이제 `posts` 타입인 파일에만 레이아웃이 설정될 것입니다. 타입으로는 사이트의 어느 콜렉션이나 `pages`, `posts`, `drafts` 를 사용할 수 있습니다. `scope/values` 쌍을 생성할 때 `type` 은 선택사항이지만 `path` 는 반드시 정의해야 합니다.
+이제 `posts` 타입인 파일에만 레이아웃이 설정될 것입니다.
+타입으로는 사이트의 어느 콜렉션이나 `pages`, `posts`, `drafts` 를 사용할 수 있습니다. `scope/values` 쌍을 생성할 때 `type` 은 선택사항이지만 `path` 는 반드시 정의해야 합니다.
 
 앞서 언급했던 것처럼, `defaults` 에 여러 개의 scope/values 쌍을 설정할 수 있습니다.
 
@@ -385,12 +412,16 @@ layout: "foobar"
 
 ## 환경설정 기본값
 
-다음은 Jekyll 이 기본값으로 사용하는 환경설정 옵션들입니다. 환경설정 파일이나 명령어에 다음 옵션들이 명시적으로 지정되어 있지 않으면, 이 설정값들이 사용됩니다.
+다음은 Jekyll 이 기본값으로 사용하는 환경설정 옵션들입니다. 환경설정 파일이나
+명령어에 다음 옵션들이 명시적으로 지정되어 있지 않으면, 이 설정값들이
+사용됩니다.
 
 <div class="note warning">
   <h5>Kramdown 옵션 중 두 개는 지원하지 않습니다</h5>
   <p>
-    현재 <code>remove_block_html_tags</code> 와 <code>remove_span_html_tags</code> 는 Kramdown HTML 변환기에 포함되어 있지 않기 때문에, Jekyll 에서도 지원하지 않습니다.
+    현재 <code>remove_block_html_tags</code> 와
+    <code>remove_span_html_tags</code> 는 Kramdown HTML 변환기에 포함되어 있지
+    않기 때문에, Jekyll 에서도 지원하지 않습니다.
   </p>
 </div>
 

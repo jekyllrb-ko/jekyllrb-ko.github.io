@@ -6,7 +6,8 @@ next_section: structure
 permalink: /docs/usage/
 ---
 
-Jekyll gem 은 터미널 창에서 실행파일 `jekyll` 을 사용할 수 있게 해줍니다. 이 명령은 다양한 방식으로 사용할 수 있습니다:
+Jekyll gem 은 터미널 창에서 실행파일 `jekyll` 을 사용할 수 있게 해줍니다. 이
+명령은 다양한 방식으로 사용할 수 있습니다:
 
 {% highlight bash %}
 $ jekyll build
@@ -26,11 +27,16 @@ $ jekyll build --watch
 <div class="note warning">
   <h5>사이트 생성 시 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
   <p>
-    사이트를 생성하면 자동적으로 <code>&lt;destination&gt;</code> 안의 파일들이 지워집니다. 사이트에서 생성하지 않는 파일들은 모두 사라질 것입니다. <code>&lt;destination&gt;</code> 에는 중요한 폴더를 지정하지 마세요; 대신, 웹 서버에 복사하기 전에 임시로 파일을 넣어둘 폴더를 지정하세요.
+    사이트를 생성하면 자동적으로 <code>&lt;destination&gt;</code> 안의 파일들이
+    지워집니다.
+    사이트에서 생성하지 않는 파일들은 모두 사라질 것입니다.
+    중요한 폴더를 <code>&lt;destination&gt;</code> 으로 지정하면 안됩니다;
+    그 대신, 파일을 웹 서버에 복사하기 전에 임시로 보관할 폴더를 지정하세요.
   </p>
 </div>
 
-또한 Jekyll 에 내장된 개발용 서버를 실행하고 자신의 브라우저로 접속하면, 생성된 사이트가 어떻게 보일지 미리보기 할 수 있습니다.
+또한 Jekyll 에 내장된 개발용 서버를 실행하고 자신의 브라우저로 접속하면, 생성된
+사이트가 어떻게 보일지 미리보기 할 수 있습니다.
 
 {% highlight bash %}
 $ jekyll serve
@@ -44,9 +50,9 @@ $ jekyll serve --detach
 {% endhighlight %}
 
 <div class="note info">
-  <h5>기본 방식을 알아두세요</h5>
+  <h5>기본 작동방식을 염두해두세요</h5>
   <p>
-    버전 2.4 부터, <code>serve</code> 명령은 자동으로 변경사항을 감시합니다. 기존 방식을 유지하려면, <code>jekyll serve --no-watch</code> 를 사용해서 이것을 비활성화하세요.
+    버전 2.4 부터, <code>serve</code> 명령은 자동으로 변경사항을 감시합니다. 기존 방식을 유지하려면, <code>jekyll serve --no-watch</code> 를 사용해서 비활성화하세요.
   </p>
 </div>
 
@@ -55,7 +61,12 @@ $ jekyll serve --no-watch
 # => `jekyll serve` 와 동일하지만 변경사항을 감시하지 않습니다.
 {% endhighlight %}
 
-이것들은 [환경설정 옵션](../configuration/)의 아주 일부일 뿐입니다. 이렇게 명령행 플래그로 다양한 환경설정 옵션들을 지정할 수 있으며, 또 다른 (그리고 더 일반적인) 방법은 루트 디렉토리의 `_config.yml` 파일에 정의하는 것입니다. Jekyll 이 작동하기 시작하면, 자동적으로 이 파일에 지정한 옵션들을 사용합니다. 예를 들어, `_config.yml` 파일에 다음과 같이 입력한다면:
+이 옵션들은 [환경설정 옵션](../configuration/)의 아주 일부분일 뿐입니다.
+다양한 환경설정 옵션들을 위와 같이 명령행 플래그로 지정할 수도 있고,
+또 다른 (그리고 더 일반적인) 방법으로는 루트 디렉토리의 `_config.yml` 파일에
+정의하는 방법이 있습니다. Jekyll 이 작동하기 시작하면, 자동적으로 이 파일에
+지정한 옵션들을 사용합니다.
+예를 들어, `_config.yml` 파일에 다음과 같이 입력한다면:
 
 {% highlight yaml %}
 source:      _source
@@ -69,4 +80,5 @@ $ jekyll build
 $ jekyll build --source _source --destination _deploy
 {% endhighlight %}
 
-환경설정 옵션에 대한 더 자세한 내용은 [환경설정](../configuration/) 페이지를 참고하세요.
+환경설정 옵션에 대한 더 자세한 내용은 [환경설정](../configuration/) 페이지를
+참고하세요.
