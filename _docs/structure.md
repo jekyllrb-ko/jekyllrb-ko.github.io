@@ -69,7 +69,7 @@ HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 
       <td>
         <p>
 
-          게시하기 전, 초안을 보관하는 곳 입니다. 파일명 형식에ㅔ 날짜가 없습니다: <code>title.MARKUP</code>. <a href="../drafts/">초안 활용하기</a>를 읽어보세요.
+          초안은 게시하기 전 상태의 포스트입니다. 파일명 형식에 날짜가 없습니다: <code>title.MARKUP</code>. <a href="../drafts/">초안 활용하기</a>를 읽어보세요.
 
         </p>
       </td>
