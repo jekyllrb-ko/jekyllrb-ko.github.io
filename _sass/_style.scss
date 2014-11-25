@@ -68,7 +68,7 @@ nav {
     a {
       @include border-radius(5px);
       font-weight: 900;
-      font-size: inherited; /* font-size: 14px; */
+      font-size: 14px;
       padding: 0.5em 1em;
       text-shadow: none;
       text-transform: uppercase;
@@ -108,7 +108,7 @@ nav {
     color: #fc0;
     text-align: center;
     text-transform: uppercase;
-    font-size: 21px; /* font-size: 14px; */
+    font-size: 14px;
     font-weight: 900;
     padding: 5px;
     @include border-radius(5px);
@@ -419,7 +419,7 @@ aside {
 
   h4 {
     text-transform: uppercase;
-    font-size: inherited; /* font-size: 14px; */
+    font-size: 14px;
     font-weight: 700;
     padding: 0 0 10px 30px;
     margin-left: -30px;
