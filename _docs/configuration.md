@@ -223,6 +223,16 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p><code class="flag">-V, --verbose</code></p>
       </td>
     </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Silence Output</strong></p>
+        <p class="description">사이트 빌드 시 발생하는 일반 메시지를 출력하지
+        않습니다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">-q, --quiet</code></p>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
