@@ -89,6 +89,20 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
+        <p class="name"><strong>Keep files</strong></p>
+        <p class="description">
+          사이트 생성 전 Site Destination 을 정리할 때, 보존할 파일을
+          지정합니다. Jekyll 이 아닌 다른 빌드 환경으로부터 생성되는
+          파일들에 대해 유용하게 사용할 수 있습니다.
+          <code>destination</code> 을 기준으로 하는 상대경로를 입력합니다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">keep_files: [DIR, FILE, ...]</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
         <p class="name"><strong>Time Zone</strong></p>
         <p class="description">
             사이트 생성에 사용할 타임존을 지정합니다. 환경변수인 <code>TZ</code>
@@ -135,6 +149,17 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
   </tbody>
 </table>
+</div>
+
+<div class="note warning">
+  <h5>사이트 생성 시 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
+  <p>
+    사이트를 생성하면 자동적으로 <code>&lt;destination&gt;</code> 안의
+    파일들이 지워집니다. 사이트에서 생성하지 않는 파일들은 모두 사라질
+    것입니다. 중요한 폴더는 절대 <code>&lt;destination&gt;</code> 으로
+    지정하면 안됩니다;
+    대신, 파일을 웹 서버에 복사하기 전에 임시로 보관할 폴더를 지정하세요.
+  </p>
 </div>
 
 ### Build 명령어 옵션

@@ -39,6 +39,5 @@ Jekyll v1.3.0 부터 `listen` gem 을 사용하여, 생성이나 미리보기 �
 Gemfile 에 다음 내용을 추가합니다:
 
 {% highlight ruby %}
-require 'rbconfig'
-gem 'wdm', '~> 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
+gem 'wdm', '~> 0.1.0' if Gem.win_platform?
 {% endhighlight %}
