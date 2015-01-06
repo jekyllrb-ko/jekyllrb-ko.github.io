@@ -497,7 +497,7 @@ excerpt_separator: "\n\n"
 # 서버 작동
 detach:  false
 port:    4000
-host:    0.0.0.0
+host:    127.0.0.1
 baseurl: "" # does not include hostname
 
 # 구버전 호환성
@@ -527,12 +527,12 @@ redcarpet:
   extensions: []
 
 kramdown:
-  auto_ids:      true
-  footnote_nr:   1
-  entity_output: as_char
-  toc_levels:    1..6
-  smart_quotes:  lsquo,rsquo,ldquo,rdquo
-  use_coderay:   false
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
   coderay:
     coderay_wrap:              div

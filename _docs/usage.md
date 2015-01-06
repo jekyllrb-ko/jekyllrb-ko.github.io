@@ -82,3 +82,6 @@ $ jekyll build --source _source --destination _deploy
 
 환경설정 옵션에 대한 더 자세한 내용은 [환경설정](../configuration/) 페이지를
 참고하세요.
+
+만약 이 문서처럼 끊임없이 수정되는 최신 문서에 관심이 많다면, `jekyll-docs` gem
+을 설치하고, 터미널에서 `jekyll docs` 를 실행하세요.

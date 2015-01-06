@@ -14,7 +14,7 @@ Jekyll 의 플러그인 시스템은 훅을 제공하기 때문에, 자신의 �
   <h5>GitHub Pages 와 플러그인</h5>
   <p>
     <a href="http://pages.github.com/">GitHub Pages</a> 는 Jekyll 을 사용합니다.
-    하지만 보안상의 이유로 인하여, 모든 Pages 사이트는 <code>--safe</code>
+    하지만 모든 Pages 사이트는 보안상의 이유로 인하여, <code>--safe</code>
     옵션으로 사용자 플러그인이 비활성화된 상태에서 생성됩니다. 이 말은
     안타깝게도, GitHub Pages 에서는 당신의 플러그인을 사용할 수 없다는
     뜻입니다.<br><br>그래도 GitHub Pages 와 사용자 플러그인을 함께 사용하는
@@ -66,11 +66,8 @@ Jekyll 이 당신의 규칙에 따라 부가적인 컨텐츠를 생성하게 하
 
 생성기는 `Jekyll::Generator` 의 하위 클래스로서,
 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)
-인스턴스를 전달받는 `generate` 메소드 가지고 있습니다.
-
-생성 작업은 `generate` 메소드의 반환 값에 상관 없이, 오직 메소드 안의 다른
-코드에 의해서 수행됩니다. Jekyll 은 메소드 안에서 어떤 일이 일어나는지 전혀
-신경쓰지 않습니다. 단지 실행할 뿐입니다.
+인스턴스를 전달받는 `generate` 메소드 가지고 있습니다. `generate`
+메소드의 리턴값은 무시됩니다.
 
 Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 직전에 생성기가
 실행됩니다.
@@ -534,6 +531,7 @@ end
 - [Jekyll-Ordinal](https://github.com/PatrickC8t/Jekyll-Ordinal): Jekyll liquid filter to output a date ordinal such as "st", "nd", "rd", or "th".
 - [Deprecated articles keeper](https://github.com/kzykbys/JekyllPlugins) by [Kazuya Kobayashi](http://blog.kazuya.co/): A simple Jekyll filter which monitor how old an article is.
 - [Jekyll-jalali](https://github.com/mehdisadeghi/jekyll-jalali) by [Mehdi Sadeghi](http://mehdix.ir): A simple Gregorian to Jalali date converter filter.
+- [Jekyll Thumbnail Filter](https://github.com/matallo/jekyll-thumbnail-filter): Related posts thumbnail filter.
 
 #### 태그
 
