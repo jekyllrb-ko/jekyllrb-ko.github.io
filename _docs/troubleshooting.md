@@ -11,6 +11,12 @@ Jekyll 설치나 사용에 문제가 생겼을 때 도움이 될 만한
 Jekyll 커뮤니티에서 조치할 수 있도록 [이슈를
 등록]({{site.help_url}}/issues/new)해 주세요.
 
+- [Installation Problems](#installation-problems)
+- [Problems running Jekyll](#problems-running-jekyll)
+- [Base-URL Problems](#base-url-problems)
+- [Configuration problems](#configuration-problems)
+- [Markup Problems](#markup-problems)
+
 ## 설치 시 문제점
 
 만약 Gem 설치 시 에러가 발생한다면,
