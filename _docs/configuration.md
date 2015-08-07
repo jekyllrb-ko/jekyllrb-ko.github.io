@@ -154,11 +154,13 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 <div class="note warning">
   <h5>사이트 생성 시 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
   <p>
-    사이트를 생성하면 자동적으로 <code>&lt;destination&gt;</code> 안의
-    파일들이 지워집니다. 사이트에서 생성하지 않는 파일들은 모두 사라질
-    것입니다. 중요한 폴더는 절대 <code>&lt;destination&gt;</code> 으로
-    지정하면 안됩니다;
-    대신, 파일을 웹 서버에 복사하기 전에 임시로 보관할 폴더를 지정하세요.
+    사이트를 생성할 때, <code>&lt;destination&gt;</code> 안의 파일들을 자동으로 지웁니다 (기본 방식).
+    사이트에서 생성하지 않는 파일들은 모두 사라질 것입니다. <code>&lt;keep_files&gt;</code> 환경설정
+    옵션을 사용하여 유지할 파일들을 선택할 수 있습니다.
+  </p>
+  <p>
+    중요한 디렉토리는 절대 <code>&lt;destination&gt;</code> 으로 지정하면 안됩니다;
+    웹 서버로 옮길 파일을 임시로 보관할 경로를 입력하세요.
   </p>
 </div>
 
