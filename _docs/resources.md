@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 참고자료
-prev_section: sites
-next_section: upgrading
 permalink: /docs/resources/
 ---
 

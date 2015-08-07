@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 페이지 생성하기
-prev_section: drafts
-next_section: variables
 permalink: /docs/pages/
 ---
 

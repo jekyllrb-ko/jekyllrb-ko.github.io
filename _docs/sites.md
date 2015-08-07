@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: Jekyll 사이트들
-prev_section: troubleshooting
-next_section: resources
 permalink: /docs/sites/
 ---
 

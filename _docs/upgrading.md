@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 업그레이드
-prev_section: resources
-next_section: contributing
 permalink: /docs/upgrading/
 ---
 

@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 빠른시작 설명서
-prev_section: home
-next_section: installation
 permalink: /docs/quickstart/
 ---
 

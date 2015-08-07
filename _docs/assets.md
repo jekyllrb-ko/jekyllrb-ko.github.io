@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 자료
-prev_section: datafiles
-next_section: migrations
 permalink: /docs/assets/
 ---
 

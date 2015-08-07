@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 포스트 작성하기
-prev_section: frontmatter
-next_section: drafts
 permalink: /docs/posts/
 ---
 

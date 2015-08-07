@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 템플릿
-prev_section: migrations
-next_section: permalinks
 permalink: /docs/templates/
 ---
 

@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 설치
-prev_section: quickstart
-next_section: usage
 permalink: /docs/installation/
 ---
 

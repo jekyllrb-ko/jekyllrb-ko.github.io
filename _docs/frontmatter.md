@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 머리말
-prev_section: configuration
-next_section: posts
 permalink: /docs/frontmatter/
 ---
 

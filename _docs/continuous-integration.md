@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 지속적인 통합
-prev_section: deployment-methods
-next_section: troubleshooting
 permalink: /docs/continuous-integration/
 ---
 

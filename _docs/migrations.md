@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 블로그 옮기기
-prev_section: assets
-next_section: templates
 permalink: /docs/migrations/
 ---
 

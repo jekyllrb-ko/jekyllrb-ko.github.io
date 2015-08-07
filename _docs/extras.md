@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 부가기능
-prev_section: plugins
-next_section: github-pages
 permalink: /docs/extras/
 ---
 

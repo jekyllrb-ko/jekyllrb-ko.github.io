@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 문제해결
-prev_section: deployment-methods
-next_section: sites
 permalink: /docs/troubleshooting/
 ---
 

@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: Windows 에서 Jekyll
-prev_section: configuration
-next_section: posts
 permalink: /docs/windows/
 ---
 

@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 페이지 나누기
-prev_section: permalinks
-next_section: plugins
 permalink: /docs/pagination/
 ---
 

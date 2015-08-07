@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 초안 활용하기
-prev_section: posts
-next_section: pages
 permalink: /docs/drafts/
 ---
 

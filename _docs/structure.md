@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 디렉토리 구조
-prev_section: usage
-next_section: configuration
 permalink: /docs/structure/
 ---
 

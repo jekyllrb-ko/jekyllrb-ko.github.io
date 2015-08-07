@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 기여하기
-prev_section: upgrading
-next_section: history
 permalink: /docs/contributing/
 ---
 

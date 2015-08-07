@@ -1,7 +1,6 @@
 ---
 layout: docs
 title: 환영합니다
-next_section: quickstart
 permalink: /docs/home/
 ---
 

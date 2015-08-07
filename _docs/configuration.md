@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 환경설정
-prev_section: structure
-next_section: frontmatter
 permalink: /docs/configuration/
 ---
 
@@ -390,7 +388,7 @@ defaults:
   -
     scope:
       path: "projects"
-      type: "pages"
+      type: "pages" # 과거 Jekyll 2.2 의 `page`
     values:
       layout: "project" # 앞의 default 레이아웃을 덮어씁니다
       author: "Mr. Hyde"

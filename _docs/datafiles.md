@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 데이터 파일
-prev_section: collections
-next_section: assets
 permalink: /docs/datafiles/
 ---
 

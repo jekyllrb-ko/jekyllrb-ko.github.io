@@ -1,8 +1,6 @@
 ---
 layout: docs
 title: 고유주소
-prev_section: templates
-next_section: pagination
 permalink: /docs/permalinks/
 ---
 
