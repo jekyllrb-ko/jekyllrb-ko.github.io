@@ -149,7 +149,7 @@ Jekyll 의 사이트 URL 구성 방법은 아주 유연합니다.
 
 ## 고유주소 스타일 예시
 
-포스트 이름: `/2009-04-29-slap-chop.textile`
+포스트 이름: `/2009-04-29-slap-chop.md`
 
 <div class="mobile-side-scroller">
 <table>

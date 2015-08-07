@@ -163,9 +163,10 @@ end
 
 ## 변환기
 
-다른 마크업 언어를 사용하고 싶다면, 해당 언어를 처리할 수 있는 변환기를 직접
-구현하면 됩니다. 기본으로 포함된 Markdown 과 Textile 지원도 이 메소드 사용해서
-구현한 것입니다.
+당신의 사이트에 사용하고자 하는 다른 마크업 언어가 있다면, 해당 언어를 처리할 수
+있는 변환기를 직접 구현하면 됩니다. Markdown 과
+[Textile](https://github.com/jekyll/jekyll-textile-converter) 마크업 언어도 이
+메소드 사용해서 구현한 것입니다.
 
 <div class="note info">
   <h5>YAML 머리말을 잊지 마세요</h5>
@@ -495,6 +496,7 @@ end
 
 #### 변환기
 
+- [Textile converter](https://github.com/jekyll/jekyll-textile-converter): Convert `.textile` files into HTML. Also includes the `textilize` Liquid filter.
 - [Slim plugin](https://github.com/slim-template/jekyll-slim): Slim converter and includes for Jekyll with support for Liquid tags.
 - [Jade plugin by John Papandriopoulos](https://github.com/snappylabs/jade-jekyll-plugin): Jade converter for Jekyll.
 - [HAML plugin by Sam Z](https://gist.github.com/517556): HAML converter for Jekyll.
@@ -615,6 +617,7 @@ end
 - [A layout that compresses HTML](https://github.com/penibelst/jekyll-compress-html) by [Anatol Broder](http://penibelst.de/): Github Pages compatible, configurable way to compress HTML files on site build.
 - [Jekyll CO₂](https://github.com/wdenton/jekyll-co2): Generates HTML showing the monthly change in atmospheric CO₂ at the Mauna Loa observatory in Hawaii.
 - [remote-include](http://www.northfieldx.co.uk/remote-include/): Includes files using remote URLs
+- [jekyll-minifier](https://github.com/digitalsparky/jekyll-minifier): Minifies HTML, XML, CSS, and Javascript both inline and as separate files utilising yui-compressor and htmlcompressor.
 
 #### 편집기
 

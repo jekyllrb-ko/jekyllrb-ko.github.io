@@ -477,7 +477,6 @@ exclude:      []
 keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-textile_ext:  "textile"
 
 # 컨텐츠 필터링
 show_drafts: null
@@ -542,9 +541,6 @@ kramdown:
     coderay_tab_width:         4
     coderay_bold_every:        10
     coderay_css:               style
-
-redcloth:
-  hard_breaks: true
 {% endhighlight %}
 
 ## 마크다운 옵션

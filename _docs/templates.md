@@ -177,17 +177,6 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
     </tr>
     <tr>
       <td>
-        <p class="name"><strong>Textilize</strong></p>
-        <p>Textile 포맷 문자열을 RedCloth 포맷의 HTML 로 변환합니다.</p>
-      </td>
-      <td class="align-center">
-        <p>
-         <code class="filter">{% raw %}{{ page.excerpt | textilize }}{% endraw %}</code>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
         <p class="name"><strong>Markdownify</strong></p>
         <p>Markdown 포맷 문자열을 HTML 로 변환합니다.</p>
       </td>
@@ -212,11 +201,20 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
     <tr>
       <td>
         <p class="name"><strong>Slugify</strong></p>
-        <p>알파벳과 숫자가 아닌 문자와 공백 문자를 하이픈으로 교체하여, 문자열을 소문자 URL 슬러그로 변환합니다.</p>
+        <p>문자열을 소문자 URL "슬러그"로 변환합니다. 자세한 옵션은 아래를 참고하세요.</p>
       </td>
       <td class="align-center">
         <p>
-         <code class="filter">{% raw %}{{ page.title | slugify }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ "The _config.yml file" | slugify }}{% endraw %}</code>
+        </p>
+        <p>
+          <code class="output">the-config-yml-file</code>
+        </p>
+        <p>
+         <code class="filter">{% raw %}{{ "The _config.yml file" | slugify: 'pretty' }}{% endraw %}</code>
+        </p>
+        <p>
+          <code class="output">the-_config.yml-file</code>
         </p>
       </td>
     </tr>
@@ -251,6 +249,16 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
   </tbody>
 </table>
 </div>
+
+### `slugify` 필터의 옵션들
+
+`slugify` 필터에는 옵션이 있어서, 무엇을 필터링할 것인지 선택할 수 있습니다.
+기본값은 `default` 입니다. 옵션값(과 그에 대한 필터링 대상)은 다음과 같습니다:
+
+- `none`: 필터링 안함
+- `raw`: 공백문자
+- `default`: 알파벳, 숫자가 아닌 문자 또는 공백문자
+- `pretty`: 알파벳, 숫자가 아닌 문자 (`._~!$&'()+,;=@` 제외) 또는 공백문자
 
 ## 태그
 

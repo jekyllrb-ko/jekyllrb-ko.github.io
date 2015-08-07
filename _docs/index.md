@@ -14,14 +14,13 @@ permalink: /docs/home/
 
 Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.
 Jekyll 은 다양한 포맷의 원본 텍스트 파일을 템플릿 디렉토리로부터 읽어서,
-[Markdown](http://daringfireball.net/projects/markdown/) (또는
-[Textile](http://redcloth.org/textile)) 과
-[Liquid](https://github.com/Shopify/liquid/wiki)
-변환 작업을 수행하여, 당신이 즐겨 사용하는 웹 서버에 곧바로 게시할 수 있는,
-완전한 정적 웹사이트를 만들어냅니다. 또한 Jekyll 은 [GitHub
-Pages](http://pages.github.com) 의 내부 엔진이기도 합니다. 다시 말해, Jekyll 을
-사용하여 자신의 프로젝트 페이지나 블로그, 웹사이트를 GitHub 에 **무료로** 호스팅
-할 수 있다는 것입니다.
+([Markdown](http://daringfireball.net/projects/markdown/) 등의) 변환기와
+[Liquid](https://github.com/Shopify/liquid/wiki) 렌더러를 통해 가공하여,
+당신이 즐겨 사용하는 웹 서버에 곧바로 게시할 수 있는, 완성된 정적 웹사이트를
+만들어냅니다. 또한 Jekyll 은 [GitHub Pages](http://pages.github.com) 의 내부
+엔진이기도 합니다. 다시 말해, Jekyll 을 사용하여 자신의 프로젝트 페이지나
+블로그, 웹사이트를 GitHub 에 **무료로** 호스팅 할 수 있다는 뜻입니다.
+
 
 ## 유용한 도움말
 

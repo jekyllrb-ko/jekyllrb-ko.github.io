@@ -14,11 +14,12 @@ Jekyll 의 가장 큰 특징 중 하나는 "블로그 지향적" 이라는 것�
 ## 포스트 폴더
 
 앞서 [디렉토리 구조](../structure/) 페이지에서 설명했듯이, 블로그 포스트는
-`_posts` 폴더에 들어갑니다.
-[Markdown](http://daringfireball.net/projects/markdown/) 이나
-[Textile](http://redcloth.org/textile) 형식의 텍스트 파일이며, [YAML
-머리말](../frontmatter/)이 들어있기만 하면 HTML 페이지로 변환되어 사이트에
-포함됩니다.
+`_posts` 폴더에 들어갑니다. 이 파일들은 일반적으로
+[Markdown](http://daringfireball.net/projects/markdown/) 이나 HTML 이지만,
+적절한 변환기가 설치되어 있는 경우에는 다른 포맷일 수도 있습니다.
+모든 포스트에는 [YAML 머리말](../frontmatter/)이 들어가 있으며, 원래의
+포맷으로부터 HTML 페이지로의 변환 작업을 거쳐 당신 사이트를 일부가 됩니다.
+
 
 ### 포스트 파일 생성하기
 
@@ -52,12 +53,12 @@ YEAR-MONTH-DAY-title.MARKUP
 
 모든 블로그 포스트 파일 첫 부분에는 [YAML 머리말](../frontmatter/)을 작성해야
 합니다. 다음 할 일은 내용 작성에 사용할 포맷을 선택하는 것 입니다.
-Jekyll 은
-[Markdown](http://daringfireball.net/projects/markdown/) 과
-[Textile](http://redcloth.org/textile) 이라는 두 가지의 인기 컨텐츠 마크업
-문법을 지원합니다.
-이 두 형식은 서로 다른 고유한 특징을 가지고 있으므로, 자신에게 익숙하고 필요에
-맞는 문법을 선택해야 합니다.
+Jekyll 은 [Markdown](http://daringfireball.net/projects/markdown/) 을 기본적으로
+지원하며, 잘 알려진 [Textile](http://redcloth.org/textile) 처럼 [다른 포맷들을
+위한 수 많은 확장기능들](/docs/plugins/#converters-1)을 가지고 있습니다. 이
+포맷들은 포스트 안의 다양한 컨텐츠를 마크업할 때 각각의 고유한 방식을
+사용하므로, 이러한 특성들을 반드시 익혀서 자신의 요구사항에 들어맞는 포맷들
+선택해야 합니다.
 
 <div class="note info">
   <h5>캐릭터 세트를 주의하세요</h5>
@@ -168,6 +169,16 @@ PDF 다운로드 링크를 삽입하려면:
 `excerpt_separator` 를 `""` 로 설정합니다.
 
 또한, Liquid 태그에 의하여 생성된 결과에는 `| strip_html` 플래그를 사용하여 HTML 태그들을 제거할 수 있습니다. 이는 포스트 발췌부분을 포스트 `head` 의 `meta="description"` 태그에 사용하는 경우나 컨텐츠에 HTML 태그가 필요없는 특별한 상황에 유용합니다.
+
+그리고 포스트별로 `excerpt_separator` 를 설정할 수도 있어서, 당신이 원하는 포스트에만 별도로 사용할 수 있습니다. 단순히 `excerpt` 설정하는 것처럼, 동일한 방법으로 포스트의 YAML 머리말 안에 `excerpt_separator` 를 설정하면 됩니다:
+
+    ---
+    excerpt_separator: <!--more-->
+    ---
+
+    Excerpt
+    <!--more-->
+    Out-of-excerpt
 
 ## 코드 구문 강조
 
