@@ -172,13 +172,15 @@ PDF 다운로드 링크를 삽입하려면:
 
 그리고 포스트별로 `excerpt_separator` 를 설정할 수도 있어서, 당신이 원하는 포스트에만 별도로 사용할 수 있습니다. 단순히 `excerpt` 설정하는 것처럼, 동일한 방법으로 포스트의 YAML 머리말 안에 `excerpt_separator` 를 설정하면 됩니다:
 
-    ---
-    excerpt_separator: <!--more-->
-    ---
+{% highlight text %}
+---
+excerpt_separator: <!--more-->
+---
 
-    Excerpt
-    <!--more-->
-    Out-of-excerpt
+Excerpt
+<!--more-->
+Out-of-excerpt
+{% endhighlight %}
 
 ## 코드 구문 강조
 
