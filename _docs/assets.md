@@ -17,17 +17,19 @@ Jekyll 은 기본적으로 Sass 와 CoffeeScript 를 지원합니다. 이를 사
   font-size: 1.2em
 {% endhighlight %}
 
-Jekyll 은 이러한 파일들을 일반 페이지처럼 다루기 때문에, 원본과 동일한
+Jekyll 은 이런 파일들을 일반 페이지처럼 다루기 때문에, 원본과 동일한
 디렉토리에 출력물이 담기게 됩니다. 예를 들어, Site Source 폴더에
-`css/styles.scss` 라는 이름의 파일을 가지고 있다면, Jekyll 은 해당 파일을 처리한
-후 Site Destination 폴더의 `css/styles.css` 에 넣습니다.
+`css/styles.scss` 라는 이름의 파일을 가지고 있다면, Jekyll 은 해당 파일에 필요한
+작업을 처리한 뒤에 그 결과물을 Site Destination 폴더의 `css/styles.css` 에
+넣습니다.
 
 <div class="note info">
   <h5>Jekyll 은 자료 파일의 모든 Liquid 필터와 태그를 처리합니다</h5>
-  <p>만약 <a href="/docs/templates/">Liquid 템플릿 문법</a>과 충돌이 있는 <a
-     href="http://mustache.github.io">Mustache</a> 나 다른 JavaScript 템플릿 언어를
-     사용하고 있다면, <code>{&#37; raw &#37;}</code> 와
-     <code>{&#37; endraw &#37;}</code> 태그로 코드 주변을 감싸야 할 것입니다</p>
+  <p>만약 <a href="/docs/templates/">Liquid 템플릿 문법</a>과 충돌하는 다른
+     JavaScript 템플릿 언어 또는 <a href="http://mustache.github.io">Mustache</a>
+     를 사용하고 있다면, 해당 코드를 <code>{&#37; raw &#37;}</code> 와
+     <code>{&#37; endraw &#37;}</code> 태그 안에 넣어야만 할 것입니다.</p>
+
 </div>
 
 ## Sass/SCSS
@@ -39,15 +41,17 @@ Sass 파일은 `<source>/css` 같이, 결과 파일이 생성되어야 하는 �
 넣습니다. 이에 대한 예시로, [Jekyll 의 Sass 기능을 사용한 예제
 사이트][example-sass]를 살펴보세요.
 
-만약 Sass `@import` 선언을 사용한다면, 이 Sass 파일이 들어있는 디렉토리가
-`sass_dir` 로 설정되었는지 확인해야 합니다. 다음과 같이 할 수 있습니다:
+만약 Sass 의 `@import` 선언을 사용한다면, `sass_dir` 환경설정 옵션에 해당 Sass
+파일이 들어있는 디렉토리를 지정해야 합니다. 방법은 다음과 같습니다:
+
 
 {% highlight yaml %}
 sass:
     sass_dir: _sass
 {% endhighlight %}
 
-Sass 변환기는 `sass_dir` 환경설정 옵션의 기본값을 `_sass` 로 설정합니다.
+`sass_dir` 환경설정 옵션의 기본값은 `_sass` 입니다.
+
 
 [example-sass]: https://github.com/jekyll/jekyll-sass-converter/tree/master/example
 
@@ -64,7 +68,8 @@ Sass 변환기는 `sass_dir` 환경설정 옵션의 기본값을 `_sass` 로 설
   </p>
 </div>
 
-또한 `_config.yml` 파일에 `style` 옵션으로 출력 스타일을 지정할 수 있습니다:
+또, `_config.yml` 파일에 `style` 옵션을 설정하여 출력 스타일을 선택할 수
+있습니다:
 
 {% highlight yaml %}
 sass:

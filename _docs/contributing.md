@@ -61,7 +61,7 @@ $ bundle exec rake features
 자신의 작업 내용을 프로젝트에 반영하는 가장 직접적인 절차는 다음과 같습니다:
 
 * 프로젝트 저장소를 fork 합니다.
-* 자신의 fork 를 clone 합니다.
+* 자신의 fork 를 clone 합니다:
 
 {% highlight bash %}
 git clone git://github.com/<username>/jekyll.git

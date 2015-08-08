@@ -204,7 +204,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     <tr class="setting">
       <td>
         <p class="name"><strong>Future</strong></p>
-        <p class="description">미래 시간의 포스트를 게시합니다.</p>
+        <p class="description">미래 시간의 포스트를 게시할 수 있게 합니다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">future: BOOL</code></p>

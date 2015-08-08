@@ -161,8 +161,7 @@ collections:
       </td>
       <td>
         <p>
-          The path to the collections's source directory, relative to the site source.
-          사이트 소스 디렉토리 기준, 콜렉션의 소스 디렉토리 상대 경로
+          콜렉션 소스 디렉토리 (Site Source 디렉토리에 대한 상대 경로)
         </p>
       </td>
     </tr>
