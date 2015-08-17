@@ -20,8 +20,9 @@ Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://ww
 ## 데이터 폴더
 
 [디렉토리 구조](../structure/) 페이지에서 설명했던 것처럼, `_data` 폴더는
-사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다. 이것들은
-반드시 (`.yml`, `.yaml`, `.json` 이나 `csv` 확장자를 가진) YAML 파일이어야 하며
+사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다.
+이것들은 반드시
+(`.yml`, `.yaml`, `.json` 이나 `csv` 확장자를 가진) YAML 파일이어야 하며
 `site.data` 를 통해 접근할 수 있습니다.
 
 ## 예제: 멤버들의 목록
@@ -72,7 +73,10 @@ Liu Fengyun,liufengyun
 
 ## 예제: 단체
 
-`_data` 의 하위 폴더에도 데이터 파일을 담을 수 있습니다. 각 폴더 레벨은 변수의 네임스페이스에 영향을 줍니다. 아래는 여러 GitHub 단체를 `orgs` 폴더 안에 각각 별도의 파일로 정의하고 예제입니다:
+`_data` 의 하위 폴더에도 데이터 파일을 담을 수 있습니다. 각 폴더 레벨은 변수의
+네임스페이스에 영향을 줍니다. 아래는 여러 GitHub 단체를 `orgs` 폴더 안에 각각
+별도의 파일로 정의하고 예제입니다:
+
 
 `_data/orgs/jekyll.yml` 파일:
 
@@ -97,7 +101,8 @@ members:
     github: jdoe
 {% endhighlight %}
 
-파일 이름을 `site.data.orgs` 뒤에 적으면, 단체 정보에 접근할 수 있습니다:
+이제 `site.data.orgs` 뒤에 파일이름을 사용하면, 단체 정보에 접근할 수 있습니다:
+
 
 {% highlight html %}
 {% raw %}
@@ -112,5 +117,35 @@ members:
   </li>
 {% endfor %}
 </ul>
+{% endraw %}
+{% endhighlight %}
+
+## 예제: 특정 저자 정보 사용하기
+
+페이지나 포스트는 특정 데이터를 사용할 수 있습니다. 아래 예제는 특정 정보에 접근하는 방법을 보여줍니다:
+
+`_data/people.yml`:
+{% highlight yaml %}
+dave:
+    name: David Smith
+    twitter: DavidSilvaSmith
+{% endhighlight %}
+
+이제 페이지 변수처럼, 포스트의 머리말에 저자 정보를 입력할 수 있습니다:
+
+{% highlight html %}
+{% raw %}
+---
+title: sample post
+author: dave
+---
+
+{% assign author = site.data.people[page.author] %}
+<a rel="author"
+  href="{{ author.twitter }}"
+  title="{{ author.name }}">
+    {{ author.name }}
+</a>
+
 {% endraw %}
 {% endhighlight %}

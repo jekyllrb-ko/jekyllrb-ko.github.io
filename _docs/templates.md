@@ -286,10 +286,10 @@ Jekyll 은 템플릿 처리에 [Liquid](https://github.com/Shopify/liquid/wiki) 
   </p>
 </div>
 
-삽입할 파일에 파라메터를 전달할 수도 있습니다:
+삽입할 파일에 파라메터를 전달할 수도 있습니다. 변수의 값을 전달하려면 따옴표를 사용하지 마십시오. 여기에는 Liquid 의 중괄호를 사용할 수 없습니다:
 
 {% highlight ruby %}
-{% raw %}{% include footer.html param="value" %}{% endraw %}
+{% raw %}{% include footer.html param="value" variable-param=page.variable %}{% endraw %}
 {% endhighlight %}
 
 전달된 파라메터는 Liquid 를 통해 사용할 수 있습니다:
@@ -324,9 +324,9 @@ Pygments 를 사용하려면 시스템에 Python 이 설치되어 있어야 하�
 
 
 그 밖에도, [Rouge](https://github.com/jayferd/rouge) 를 사용해서 구문 강조를 할
-수 있습니다.
-Pygments 만큼 많은 언어를 지원하지는 않지만 대부분의 경우에 사용할 수 있으며
-순수하게 Ruby 로 작성되었습니다 ; Python 이 필요하지 않습니다!
+수 있습니다. Pygments 만큼 많은 언어를 지원하지는 않지만, 대부분의 상황에 충분할
+것입니다. 또한, [Rouge](https://github.com/jayferd/rouge) 는 순수하게 Ruby 로
+작성되었기 때문에, Python 이 필요하지 않습니다!
 
 구문 강조가 적용된 코드 블럭을 출력하려면, 코드 앞뒤에 다음과 같이 작성합니다:
 
@@ -405,7 +405,8 @@ end
 
 ### Gist
 
-`gist` 태그를 사용하면 사이트에 GitHub Gist 를 쉽게 삽입할 수 있습니다. 공개/비공개 gist 에 모두 사용할 수 있습니다:
+`gist` 태그를 사용하면 사이트에 GitHub Gist 를 쉽게 삽입할 수 있습니다.
+공개/비공개 gist 에 모두 사용할 수 있습니다:
 
 {% highlight text %}
 {% raw %}

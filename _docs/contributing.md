@@ -7,17 +7,19 @@ permalink: /docs/contributing/
 Jekyll 에 추가할 좋은 아이디어가 떠오르셨군요. 좋습니다! 이것만 기억해주시기
 바랍니다:
 
+* **Jekyll 에 직접 관련되었거나 기술적인 질문이 아니라면 https://talk.jekyllrb.com 을 이용하세요.**
+* **관련된 문서를 갱신하지 않았거나 테스트가 되지 않은 기여는 수용하지 않습니다.**
 * 이미 존재하는 기능에 대한 작은 수정이나 패치를 만드는 거라면, 간단히 테스트를
   해주세요. 현재 사용중인 테스트 환경을 벗어나지 말고
   [Shoulda](https://github.com/thoughtbot/shoulda/tree/master) 와
-  [RR](https://github.com/btakita/rr/tree/master)) 를 사용해 주시기 바랍니다.
+  [RSpec-Mocks](https://github.com/rspec/rspec-mocks) 를 사용해 주시기 바랍니다.
 * 만약 완전히 새로운 기능을 만들고 있다면, 새
   [Cucumber](https://github.com/cucumber/cucumber/) 기능을 만들고 각 단계를
   그대로 따라해주세요. 또, fork 한 저장소의 `site` 에 문서를 추가해 주시면
   고맙겠습니다. 기능이 merge 될 때 메인 `site` 인 jekyllrb.com 으로 이동될
   것입니다.
 * Jekyll 의 작동방식을 변경하는 경우, 문서 내용을 갱신해 주세요. 문서는
-  `site/docs` 에 있습니다. 문서에 누락된 정보가 있다면, 언제든지 추가해주세요.
+  `site/_docs` 에 있습니다. 문서에 누락된 정보가 있다면, 언제든지 추가해주세요.
   좋은 문서가 좋은 프로젝트를 만든답니다!
 * 루비 코드를 수정할 경우에는, [GitHub Ruby
   Styleguide](https://github.com/styleguide/ruby) 를 준수해주시기 바랍니다.
@@ -36,24 +38,30 @@ Jekyll 에 추가할 좋은 아이디어가 떠오르셨군요. 좋습니다! �
   </p>
 </div>
 
+
 Test 의존요소
 -----------------
 
 테스트 도구 실행과 gem 생성을 위해서는 Jekyll 의 의존요소들을 설치해야 합니다.
-Jekyll 은 Bundler 를 사용하므로, `bundle` 을 실행하기만 하면 모든 준비가
-끝납니다!
+단순히 이 명령어만 실행하면 모든 설정이 끝납니다:
 
-{% highlight bash %}
-$ bundle
-{% endhighlight %}
+    $ script/bootstrap
 
 시작하기 전, 테스트를 실행하고 잘 통과되는지 확인해주세요 (환경설정이 올바른지
-확인하기 위해서 입니다):
+확인하기 위한 것입니다):
 
-{% highlight bash %}
-$ bundle exec rake test
-$ bundle exec rake features
-{% endhighlight %}
+    $ script/cibuild
+
+오직 `test/` 안의 파일만 업데이트 한다면, 이 명령어를 사용하세요:
+
+    $ script/test test/blah_test.rb
+
+오직 `.feature` 파일만 업데이트 한다면, 이 명령어를 사용하세요:
+
+    $ script/cucumber features/blah.feature
+
+`script/test` 와 `script/cucumber` 를 전달인자 없이 실행하면, 관련된 파일 전체에
+대하여 실행됩니다.
 
 작업흐름
 --------
@@ -61,29 +69,13 @@ $ bundle exec rake features
 자신의 작업 내용을 프로젝트에 반영하는 가장 직접적인 절차는 다음과 같습니다:
 
 * 프로젝트 저장소를 fork 합니다.
-* 자신의 fork 를 clone 합니다:
-
-{% highlight bash %}
-git clone git://github.com/<username>/jekyll.git
-{% endhighlight %}
-
-* 작업을 진행할 토픽 브랜치를 생성합니다:
-
-{% highlight bash %}
-git checkout -b my_awesome_feature
-{% endhighlight %}
-
-
+* 자신의 fork 를 clone 합니다 ( `git clone git@github.com:[username]/jekyll.git` ).
+* 작업을 진행할 토픽 브랜치를 생성합니다 ( `git checkout -b my_awesome_feature` ).
 * 마음껏 뜯어 고치고, 테스트하세요. 순서도 꼭 지킬 필요는 없습니다.
-* `rake` 를 실행하여 모든 테스트가 잘 통과되는지 확인하세요.
+* `script/cibuild` 를 실행하여 모든 테스트가 잘 통과되는지 확인하세요.
 * 필요하다면, 커밋을 논리적인 단위로 rebase 해주세요. 에러가 나지 않게 말이죠.
-* 해당 브랜치를 push 합니다:
-
-{% highlight bash %}
-git push origin my_awesome_feature
-{% endhighlight %}
-
-* jekyll/jekyll:master 에 Pull Request 를 생성하여 변경사항에 대한 설명과
+* 해당 브랜치를 push 합니다 ( `git push origin my_awesome_feature` ).
+* jekyll/jekyll 에 Pull Request 를 생성하여 변경사항에 대한 설명과
   프로젝트에 merge 하면 어떤점이 좋은지 설명해주시기 바랍니다.
 
 문서 내용 갱신하기
@@ -100,9 +92,8 @@ GitHub.com 의 Jekyll 저장소 안에 [site]({{ site.repository }}/tree/master/
 문서에 대한 Pull Request 는 모두 `master` 브랜치를 가리킵니다. 다른 브랜치에
 대한 Pull Request 는 모두 거절될 것입니다.
 
-GitHub 의 [Jekyll 위키]({{ site.repository }}/wiki)는
-모든 GitHub 사용자에게 열려있기 때문에 Pull Request 없이도
-자유롭게 내용을 갱신할 수 있습니다.
+GitHub 의 [Jekyll 위키]({{ site.repository }}/wiki)는 모든 GitHub 사용자에게
+열려있기 때문에 Pull Request 없이도 자유롭게 내용을 갱신할 수 있습니다.
 
 만약 [플러그인 목록](/docs/plugins/#available-plugins)에 자신의 플러그인을 추가하고
 싶다면, [플러그인 페이지 소스 파일]({{ site.repository }}/blob/master/site/_docs/plugins.md)를
@@ -112,13 +103,15 @@ GitHub 의 [Jekyll 위키]({{ site.repository }}/wiki)는
 Gotchas
 -------
 
-* gem 버전을 올리는 경우에는, 별도의 커밋으로 추가해주세요. 이렇게 하면,
-  관리자가 gem 의 릴리스 시점을 수월하게 관리할 수 있습니다.
+* gem 버전을 변경한 것은 Pull Request 하지 말아주시기 바랍니다.
 * 되도록이면 jekyll/jekyll 의 최신 커밋을 기반으로 패치를 생성하세요. 작업
   내용을 반영하기 쉽고, 관리자가 할일이 적어집니다. 어떤 경우에도 항상 옳은
   방법입니다.
-* [fix] 나 [feature] 등의 태그를 사용하지 마세요. 관리자가 적극적으로 issue 를
-  확인하고 태그를 붙일 것입니다.
+* [fix] 나 [feature] 등의 태그를 사용하지 마세요. 관리자가 issue 를 확인하고
+  직접 태그를 붙일 것입니다.
+
+마지막으로...
+----------
 
 <div class="note">
   <h5>더 좋은 방법을 알려주세요!</h5>

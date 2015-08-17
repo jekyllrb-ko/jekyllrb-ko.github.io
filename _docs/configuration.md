@@ -180,7 +180,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p class="description">파일이 수정되었을 때 자동으로 사이트를 다시 생성합니다.</p>
       </td>
       <td class="align-center">
-        <p><code class="flag">-w, --watch</code></p>
+        <p><code class="flag">-w, --[no-]watch</code></p>
       </td>
     </tr>
     <tr class="setting">
@@ -410,7 +410,7 @@ defaults:
       layout: "default"
 {% endhighlight %}
 
-이 예제에서는 `my_collection` 이라는 이름의 [콜렉션](../collections) 안에 `layout` 이 `default` 로 설정됩니다.
+이 예제에서는 `my_collection` 이라는 이름의 [콜렉션](../collections/) 안에 `layout` 이 `default` 로 설정됩니다.
 
 ### 우선순위
 
@@ -444,20 +444,22 @@ layout: "foobar"
 포스트 내용이 들어가는 자리...
 {% endhighlight %}
 
-이제 사이트를 구축하면 `projects/foo_project.md` 는 `layout` 으로 `project` 대신 `foobar` 를, `author` 로는 `Mr. Hyde` 대신 `John Smith` 를 갖게 됩니다.
+이제 사이트를 구축하면 `projects/foo_project.md` 는 `layout` 으로 `project` 대신
+`foobar` 를, `author` 로는 `Mr. Hyde` 대신 `John Smith` 를 갖게 됩니다.
+
 
 ## 환경설정 기본값
 
-다음은 Jekyll 이 기본값으로 사용하는 환경설정 옵션들입니다. 환경설정 파일이나
-명령어에 다음 옵션들이 명시적으로 지정되어 있지 않으면, 이 설정값들이
-사용됩니다.
+다음은 Jekyll 이 기본값으로 사용하는 환경설정 옵션들입니다.
+환경설정 파일이나 명령어를 사용하여 이 옵션들의 설정값을 명시적으로 변경할 수
+있습니다.
 
 <div class="note warning">
-  <h5>Kramdown 옵션 중 두 개는 지원하지 않습니다</h5>
+  <h5>지원하지 않는 두 개의 Kramdown 옵션이 있습니다</h5>
   <p>
-    현재 <code>remove_block_html_tags</code> 와
-    <code>remove_span_html_tags</code> 는 Kramdown HTML 변환기에 포함되어 있지
-    않기 때문에, Jekyll 에서도 지원하지 않습니다.
+    현재, <code>remove_block_html_tags</code> 와
+    <code>remove_span_html_tags</code> 는 Kramdown HTML 변환기에 포함되어 있지 않기
+    때문에, Jekyll 에서도 지원하지 않습니다.
   </p>
 </div>
 
@@ -490,7 +492,7 @@ gems:      []
 
 # 변환
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 lsi:         false
 excerpt_separator: "\n\n"
 
@@ -499,9 +501,6 @@ detach:  false
 port:    4000
 host:    127.0.0.1
 baseurl: "" # does not include hostname
-
-# 구버전 호환성
-relative_permalinks: false
 
 # 출력 방식
 permalink:     date
@@ -512,14 +511,6 @@ quiet:    false
 defaults: []
 
 # 마크다운 처리기
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
-  fenced_code_blocks: true
-
 rdiscount:
   extensions: []
 
@@ -547,35 +538,55 @@ kramdown:
 
 Jekyll 은 다양한 마크다운 엔진을 지원하며, 부가기능을 가지고 있는 것도 있습니다.
 
+
 ### Redcarpet
 
-Redcarpet 을 사용하려면 `extensions` 설정에 문자열을 배열 형식으로 지정하면 됩니다. 배열 안에 들어갈 값은 `Redcarpet::Markdown` 클래스의 확장기능 이름이며, 배열 안에 지정된 각각의 확장기능이 `true` 로 설정됩니다.
+Redcarpet 을 사용하려면 `extensions` 설정에 문자열을 배열 형식으로 지정하면
+됩니다. 배열 안에 들어갈 값은 `Redcarpet::Markdown` 클래스의 확장기능 이름이며,
+배열 안에 지정된 각각의 확장기능이 `true` 로 설정됩니다.
+
 
 Jekyll 이 처리할 수 있는 두 가지의 특별한 Redcarpet 확장기능이 있습니다:
 
-- `no_fenced_code_blocks` --- Jekyll 의  `fenced_code_blocks` 확장기능 (틸데나 백틱문자 3 개로 코드 블록을 구분하는 기능) 기본값은 `true` 인데, GitHub 에 이 기능이 오래전부터 채택되어 있어서 점점 필수요소가 되어가고 있습니다. Redcarpet 자체적으로는 `fenced_code_blocks` 확장기능이 비활성화 되어 있습니다; 반대로 되어 있는 이 버전을 대신 사용해서 코드 테두리를 비활성화 해도 됩니다.
+- `no_fenced_code_blocks` --- Jekyll 의  `fenced_code_blocks` 확장기능 (틸데나
+백틱문자 3 개로 코드 블록을 구분하는 기능) 기본값은 `true` 인데, GitHub 에 이
+기능이 오래전부터 채택되어 있어서 점점 필수요소가 되어가고 있습니다. Redcarpet
+자체적으로는 `fenced_code_blocks` 확장기능이 비활성화 되어 있습니다; 반대로
+되어있는 이 버전을 대신 사용해서 코드 테두리를 비활성화 해도 됩니다.
+
 
 또한, 첫 번째 구분자 바로 뒤에 언어를 명시하여 구문강조를 사용할 수도 있습니다:
+
 
         ```ruby
         # ...ruby code
         ```
 
-코드 블록 테두리와 구문 강조기를 모두 활성화하면, 정적인 구문 강조가 가능합니다; 구문 강조기를 전혀 쓰지 않으면, 여러 자바스크립트 기반 코드 구문 강조 라이브러리 작동에 도움이 되는 `class="LANGUAGE"` 속성이 `<code>` 요소에 추가됩니다.
+코드 블록 테두리와 구문 강조기를 모두 활성화하면, 정적인 구문 강조가 가능합니다;
+구문 강조기를 전혀 쓰지 않으면, 여러 자바스크립트 기반 코드 구문 강조 라이브러리
+작동에 도움이 되는 `class="LANGUAGE"` 속성이 `<code>` 요소에 추가됩니다.
 
-- `smart` --- 이 의사(pseudo) 확장기능은 SmartyPants 를 활성화하여, 따옴표를 인쇄용 따옴표로 변환하고 긴 줄표 (`---`) 와 작은 줄표 (`--`) 를 사용할 수 있게 해줍니다.
 
-이 외의 다른 확장기능들은 Redcarpet 의 확장기능과 이름이 동일하며, `smart` 를 제외한 다른 모든 렌더링 옵션들은 사용할 수 없습니다. [확장기능 목록은 Redcarpet 의 README 파일을 확인하세요][redcarpet_extensions]. 이 README 파일은 현재 버전의 Redcarpet 에 대한 내용입니다: Jekyll 은 현재 v2.2.x 를 사용하고 있으며, `footnotes` 와 `highlight` 같은 확장기능들은 버전 3.0.0 이후부터 추가 되었습니다. 가장 많이 사용되는 확장기능들은 다음과 같습니다:
+- `smart` --- 이 의사(pseudo) 확장기능은 SmartyPants 를 활성화하여, 따옴표를
+인쇄용 따옴표로 변환하고 긴 줄표 (`---`) 와 작은 줄표 (`--`) 를 사용할 수 있게 해줍니다.
+
+이 외의 다른 확장기능들은 Redcarpet 의 확장기능과 이름이 동일하며, `smart` 를
+제외한 다른 모든 렌더링 옵션들은 사용할 수 없습니다. [확장기능 목록은 Redcarpet
+의 README 파일을 확인하세요][redcarpet_extensions]. Redcarpet 의 README 파일을
+읽어보려면 올바른 버전인지 확인하세요: Jekyll 은 현재 v3.2.x 를 사용하고 있습니다.
+가장 많이 사용되는 확장기능들은 다음과 같습니다:
+
 
 - `tables`
 - `no_intra_emphasis`
 - `autolink`
 
-[redcarpet_extensions]: https://github.com/vmg/redcarpet/blob/v2.2.2/README.markdown#and-its-like-really-simple-to-use
+[redcarpet_extensions]: https://github.com/vmg/redcarpet/blob/v3.2.2/README.markdown#and-its-like-really-simple-to-use
 
 ### Kramdown
 
-앞서 언급된 기본값 기능뿐만 아니라, `input` 옵션의 값을 "GFM" 으로 지정해서 Github Flavored Markdown 인식 기능을 켤 수 있습니다.
+앞서 언급된 기본값 기능뿐만 아니라, `input` 옵션의 값을 "GFM" 으로 지정해서
+Github Flavored Markdown 인식 기능을 켤 수 있습니다.
 
 예를 들면, `_config.yml` 파일에 이렇게 입력합니다:
 
@@ -603,7 +614,8 @@ class Jekyll::Converters::Markdown::MyCustomProcessor
 end
 {% endhighlight %}
 
-자신의 클래스를 생성한 후, `_plugins` 폴더에 플러그인으로 설정하거나 gem 으로 올바르게 설정했다면, `_config.yml` 에 다음과 같이 지정합니다:
+자신의 클래스를 생성한 후, `_plugins` 폴더에 플러그인으로 설정하거나 gem 으로
+올바르게 설정했다면, `_config.yml` 에 다음과 같이 지정합니다:
 
 {% highlight yaml %}
 markdown: MyCustomProcessor

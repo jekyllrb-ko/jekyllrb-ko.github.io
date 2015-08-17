@@ -12,6 +12,8 @@ Windows 가 공식적으로 지원되는 플랫폼은 아니지만, 몇 가지�
 
 Julian Thilo 가 작성한 [Jekyll 을 Windows 에서 실행][windows-installation]하는
 방법은 대체적으로 잘 동작하는 것으로 보입니다.
+사용 안내서는 Ruby 2.0.0 을 기준으로 작성되었지만, [2.2 이후][hitimes-issue]의
+상위 버전에서도 작동합니다.
 
 ## 인코딩
 
@@ -28,6 +30,7 @@ $ chcp 65001
 {% endhighlight %}
 
 [windows-installation]: http://jekyll-windows.juthilo.com/
+[hitimes-issue]: https://github.com/copiousfreetime/hitimes/issues/40
 
 ## 자동-재생성
 

@@ -34,6 +34,8 @@ Jekyll 결과물에 대한 테스트를 수행하려면, [html-proofer][2] 라�
 명령행 실행 프로그램인 `htmlproof` 를 사용하거나, 해당 gem 을 활용하는 Ruby
 스크립트를 작성하세요.
 
+실행하려는 명령어를 `./script/cibuild` 파일에 저장해두세요.
+
 ### HTML Proofer 실행파일
 
 {% highlight bash %}
@@ -47,6 +49,12 @@ bundle exec htmlproof ./_site
 명령행 스위치를 통해서 지정할 수 있는 옵션이 몇 가지 있습니다. 이 스위치에 대한
 더 많은 정보를 얻으려면 `html-proofer` README 를 읽어보거나 `htmlproof --help`
 를 실행해보세요.
+
+예를 들어, 외부 사이트에 대한 테스트는 제외시키려면, 이 명령어를 사용하세요:
+
+{% highlight bash %}
+$ bundle exec htmlproof ./_site --disable-external
+{% endhighlight %}
 
 ### HTML Proofer 라이브러리
 
@@ -72,13 +80,30 @@ HTML::Proofer.new("./_site").run
 환경을 사용합니다. 아래는 샘플 `.travis.yml` 파일이며, 그 뒤는 각 설정에 대한
 설명입니다.
 
+**중요:** Gem 파일이 필요할 수도 있으며, Travis 는 참조 gem 을 가지고 필요한 모든 의존성을 [자동으로 설치합니다](http://docs.travis-ci.com/user/languages/ruby/#Dependency-Management).
+
+{% highlight ruby %}
+source "https://rubygems.org"
+
+gem "jekyll"
+gem "html-proofer"
+{% endhighlight %}
+
+`.travis.yml` 파일 내용은 이렇게 되어야 합니다:
+
 {% highlight yaml %}
 language: ruby
 rvm:
 - 2.1
 script: ./script/cibuild
 
-# branch whitelist
+before_script:
+ - chmod +x ./script/cibuild # or do this locally and commit
+
+# Assume bundler is being used, therefore
+# the `install` step will run `bundle install` by default.
+
+# branch whitelist, only for GitHub Pages
 branches:
   only:
   - gh-pages     # test the gh-pages branch
@@ -108,6 +133,16 @@ RVM 은 (rbenv, chruby 등과 같은) 대중적인 Ruby 버전 관리자입니�
 합니다.
 
 {% highlight yaml %}
+before_script:
+ - chmod +x ./script/cibuild
+{% endhighlight %}
+
+빌드 스크립트 파일에 *실행가능* 속성이 설정되어 있지 않으면 권한 거부 에러가
+발생하여 Travis 가 올바르게 실행되지 않습니다. 로컬에서 실행하여 권한을 직접
+설정할 수도 있으며, 그럴 경우 이 단계는 필요하지 않습니다.
+
+
+{% highlight yaml %}
 script: ./script/cibuild
 {% endhighlight %}
 
@@ -115,16 +150,17 @@ Travis 는 임의의 쉘 스크립트를 사용해서 사이트를 테스트하�
 한가지 규약은 프로젝트에 관련된 모든 스크립트를 `script` 디렉토리에 넣어야 하고,
 `cibuild` 라는 테스트 스크립트를 호출해야 한다는 것입니다. 이 줄은 완전히 다르게
 수정할 수 있습니다. 만약 스크립트가 많이 바뀌지 않는다면 테스트 명령어를 여기에
-직접 적을 수도 잇습니다:
+직접 적을 수도 있습니다:
 
 {% highlight yaml %}
+install: gem install jekyll html-proofer
 script: jekyll build && htmlproof ./_site
 {% endhighlight %}
 
 `script` 설정은 올바른 쉘 명령어라면 어떤 것이든 사용할 수 있습니다.
 
 {% highlight yaml %}
-# branch whitelist
+# branch whitelist, only for GitHub Pages
 branches:
   only:
   - gh-pages     # test the gh-pages branch
@@ -140,7 +176,8 @@ branches:
 브랜치에만 빌드를 적용하도록 지시할 수 있는데, 위 예제의 정규 표현식
 `/pages-(.*)/` 이 그 전형적인 예시입니다.
 
-`branches` 설정은 완전히 선택사항입니다.
+`branches` 설정은 완전히 선택사항입니다. 이 설정을 하지 않으면 Travis 는 어떤
+브랜치든지 push 될 때마다 빌드를 수행합니다.
 
 {% highlight yaml %}
 env:
@@ -154,17 +191,26 @@ Nokogiri, 생성된 사이트의 HTML 파일을 파싱하는데에 사용합니�
 `NOKOGIRI_USE_SYSTEM_LIBRARIES` 를 `true` 로 설정해서 Nokogiri 의 설치 시간을
 극적으로 절감할 수 있습니다.
 
-## 4. Gotchas
-
-### `vendor` 제외시키기
-
-Travis 는 빌드 서버의 `vendor` 디렉토리에 있는 모든 gem 들을 포함하는데, 의도치
-않게 Jekyll 이 읽어들여 망가질 수 있습니다. 이를 예방하려면, `_config.yml` 에서
-`verdor` 를 제외시키세요:
+<div class="note warning">
+  <h5><code>_config.yml</code> 에서 <code>vendor</code> 를 제외하는 것을 잊지
+  마세요</h5>
+  <p>Travis 는 빌드 서버의 `vendor` 디렉토리에 있는 모든 gem 들을 포함하는데,
+  의도치 않게 Jekyll 이 읽어들여 망가질 수 있습니다.</p>
+</div>
 
 {% highlight yaml %}
 exclude: [vendor]
 {% endhighlight %}
+
+### 문제해결
+
+**Travis 에러:** *"You are trying to install in deployment mode after changing
+your Gemfile. Run bundle install elsewhere and add the updated Gemfile.lock
+to version control."*
+
+**대안:** 로컬에서 `bundle install` 을 실행하고 `Gemfile.lock` 을 커밋하거나,
+저장소의 `Gemfile.lock` 을 지우고 `.gitignore` 파일에 추가하여 더 이상 등록되지
+않게 하세요.
 
 ### 질문?
 
@@ -172,4 +218,4 @@ exclude: [vendor]
 [수정][3]하거나, 문제가 발생하여 도움이 필요하다면 [도움을 요청][4]하세요.
 
 [3]: https://github.com/jekyll/jekyll/edit/master/site/_docs/continuous-integration.md
-[4]: https://github.com/jekyll/jekyll-help#how-do-i-ask-a-question
+[4]: http://jekyllrb.com/help/

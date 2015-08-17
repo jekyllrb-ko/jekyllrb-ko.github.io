@@ -14,7 +14,8 @@ permalink: /docs/quickstart/
 # => Now browse to http://localhost:4000
 {% endhighlight %}
 
-현재 디렉토리에 Jekyll 을 구성하려면, 새 디렉토리 이름 대신 `jekyll new .` 을 실행하세요.
+현재 디렉토리에 Jekyll 을 구성하려면, 새 디렉토리 이름 대신 `jekyll new .` 을
+실행하세요.
 
 여기까진 별로 특별한 것이 없습니다. 하지만, 블로그 포스트를 생성하거나 템플릿과
 레이아웃을 다룰 때, 머리말을 사용하거나 Jekyll 의 다양한 환경설정 옵션들을

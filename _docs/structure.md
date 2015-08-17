@@ -32,6 +32,7 @@ HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 
 ├── _data
 |   └── members.yml
 ├── _site
+├── .jekyll-metadata
 └── index.html
 {% endhighlight %}
 
@@ -67,7 +68,9 @@ HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 
       <td>
         <p>
 
-          초안은 게시하기 전 상태의 포스트입니다. 파일명 형식에 날짜가 없습니다: <code>title.MARKUP</code>. <a href="../drafts/">초안 활용하기</a>를 읽어보세요.
+          초안은 게시하기 전 상태의 포스트입니다. 파일명 형식에 날짜가 없습니다:
+          <code>title.MARKUP</code>. <a href="../drafts/">초안 활용하기</a>를
+          읽어보세요.
 
         </p>
       </td>
@@ -95,11 +98,12 @@ HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 
       <td>
         <p>
 
-          이 템플릿들이 포스트 주위를 감쌉니다. 다음 섹션에서 설명하는
-          <a href="../frontmatter/">YAML 머리말</a>에 의하여 각 포스트 별로
+          이 템플릿들이 포스트 주위를 감쌉니다. 다음 섹션에서 설명하는 <a
+          href="../frontmatter/">YAML 머리말</a>에 의하여 각 포스트 별로
           레이아웃이 선택됩니다. 페이지에 컨텐츠를 주입할 때는
           <code>{% raw %}{{ content }}{% endraw %}</code> 라는 Liquid 태그를
           사용합니다.
+
 
         </p>
       </td>
@@ -129,9 +133,11 @@ HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 
         <p>
 
           여기에는 올바르게 형식화된 사이트 데이터를 보관합니다. Jekyll 엔진은
-          이 디렉토리에 있는 모든 YAML 파일 (확장자가 <code>.yml</code> 또는 <code>.yaml</code>) 을 자동으로 읽어들입니다.
-          만약 이 디렉토리에 <code>members.yml</code> 파일이 있다면,
-          <code>site.data.members</code> 라고 입력하여 그 컨텐츠에 접근할 수 있습니다.
+          이 디렉토리에 있는 모든 YAML 파일 (확장자가 <code>.yml</code> 또는
+          <code>.yaml</code>) 을 자동으로 읽어들입니다. 만약 이 디렉토리에
+          <code>members.yml</code> 파일이 있다면, <code>site.data.members</code>
+          라고 입력하여 그 컨텐츠에 접근할 수 있습니다.
+
 
         </p>
       </td>
@@ -146,6 +152,22 @@ HTML) 로 작성된 문서를 Jekyll 에 전달하면, Jekyll 은 이 문서를 
           Jekyll 이 변환을 마치고 나서 생성된 사이트가 저장되는 (기본값)
           위치입니다. 아마도 <code>.gitignore</code> 파일에 이 디렉토리를
           추가하는 것이 좋을 것입니다.
+
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>.jekyll-metadata</code></p>
+      </td>
+      <td>
+        <p>
+
+          Jekyll 은 이 파일을 사용하여 마지막 빌드 시점 이후에 어떤 파일이
+          수정되지 않았는지, 또 다음 빌드 때 어떤 파일을 다시 생성해야 하는지
+          판단할 수 있습니다. 이 파일은 생성된 사이트에는 포함되지 않습니다.
+          <code>.gitignore</code> 에 이 파일을 추가하는 것이 좋을 수도 있습니다.
+
 
         </p>
       </td>

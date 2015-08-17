@@ -84,16 +84,82 @@ GitHub Pages 스타일 웹 서버를 구축해보세요.
 설정 방법에 대한 전체 문서는 [`jekyll-hook`
 저장소](https://github.com/developmentseed/jekyll-hook)에 있습니다.
 
+### Static Publisher
+
+GitHub 에 적용되어 있지는 않지만, 웹훅이 설정된 서버를 사용한 [Static Publisher](https://github.com/static-publisher/static-publisher) 라는 다른 게시법도 있습니다. 한 번의 클릭으로 Heroku 게시가 가능하고, 한 서버에서 여러 프로젝트를 감시할 수 있으며, 직관적인 관리자 인터페이스를 가지고 있고 S3 와 git 저장소 (예, gh-pages) 에 게시할 수 있습니다.
+
 ### Rake
 
 Jekyll 사이트를 게시하는 또 다른 방법은 [Rake](https://github.com/jimweirich/rake) 와 [HighLine](https://github.com/JEG2/highline),
 [Net::SSH](https://github.com/net-ssh/net-ssh) 를 사용하는 것입니다. Rake 를 사용하여 여러 브랜치를 처리할 수 있는 복합적인 Jekyll 게시 예제는 [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile) 에서 찾을 수 있습니다.
 
+
+### scp
+
+한번 `_site` 디렉토리를 생성하고 난 뒤에는 [이 게시 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/script/deploy) 와 유사한 `tasks/deploy` 쉘 스크립트를 사용하여 쉽게 scp 가 가능하다. 물론 자신의 사이트에 맞게 약간 수정해야 한다. 게다가 Textmate 에서 이 스크립트를 실행할 수 있게 해주는 [Textmate 명령어](http://gist.github.com/214959)도 있다.
+
 ### rsync
 
-일단 `_site` 디렉토리를 생성하고 난 뒤에는, 이 [게시용 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 물론 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다.
-또한, Textmate 에서 이 스크립트를 실행할 수 있게 해주는 [TextMate 명령어](http://gist.github.com/214959)도 있습니다.
+일단 `_site` 디렉토리를 생성하고 난 뒤에는, 이 [게시용 스크립트](https://github.com/vitalyrepin/vrepinblog/blob/master/transfer.sh)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 물론 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다.
 
+#### 1 단계: 홈 폴더에 rrsync 설치 (서버-사이드)
+
+게시 작업을 단순하게 만들기 위해서 인증서를 사용해서 인증 작업을 합니다. 이는 rsync 가 동기화를 해야하는 디렉토리에만 접근 권한을 가질 수 있게 하기 때문에 당연히 필요한 절차입니다.
+
+그렇게 때문에 rrsync wrapper 를 설치해야 하는 것입니다. 호스트에 설치되어 있지 않다면 자신이 직접 설치할 수 있습니다:
+
+- [rrsync 를 다운로드 한다](http://ftp.samba.org/pub/unpacked/rsync/support/rrsync)
+- 홈 폴더의 bin 디렉토리에 저장한다 (```~/bin```)
+- 실행 권한을 부여한다 (```chmod +x```)
+
+#### 2 단계: 인증서-기반 ssh 접속 설정 (서버 사이드)
+
+[설정 방법에 대하여 설명한 글이 많이 있으니 검색해보도록 합니다](https://wiki.gentoo.org/wiki/SSH#Passwordless_Authentication). 여기선 설명하지 않습니다. 유일한 차이점이라면 인증서-기반 인증을 ```~/.ssh/authorized_keys``` 에 제한한다는 것입니다). ```rrsync``` 유틸리티를 실행하고 읽기-쓰기 권한을 가질 폴더를 지정합니다:
+
+```
+command="$HOME/bin/rrsync <folder>",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa <cert>
+```
+
+```<folder>``` 는 자신의 사이트 경로입니다. 예, ```~/public_html/you.org/blog-html/```.
+
+#### 3 단계: Rsync! (클라이언트 사이드)
+
+웹 사이트 소스 디렉토리에 ```deploy``` 스크립트를 추가합니다:
+
+{% highlight bash %}
+#!/bin/sh
+
+rsync -avr --rsh='ssh -p2222' --delete-after --delete-excluded   <folder> <user>@<site>:
+{% endhighlight %}
+
+아래는 전달인자 목록입니다:
+
+- ```--rsh='ssh -p2222'``` 는 호스트가 기본값이 아닌 다른 ssh 포트 번호를 사용하는 경우 필요합니다 (예, hostgator 가 이런 방식을 사용합니다)
+- ```<folder>``` 는 생성된 웹 컨텐츠가 있는 로컬 디렉토리 이름입니다. Jekyll 에서 기본값은 ```_site/``` 입니다
+- ```<user>``` &mdash; 호스트에 접속하는 ssh 계정 사용자 이름
+- ```<site>``` &mdash; 호스트 서버
+
+예시는 다음과 같습니다:
+
+{% highlight bash %}
+rsync -avr --rsh='ssh -p2222' --delete-after --delete-excluded   _site/ hostuser@vrepin.org:
+{% endhighlight %}
+
+서버명 뒤에 ':' 를 잊지 마세요!
+
+#### 4 단계 (선택사항): Jekyll 의 출력 디렉토리에 복사되지 않도록 transfer.sh 제외시키기
+
+Jekyll-기반 웹 사이트에 게시하는 경우에는 이 단계를 따르길 권장합니다.  ```deploy``` 스크립트를 자신의 프로젝트 루트 디렉토리에 넣어둔 경우, Jekyll 에 의해 출력 디렉토리에 복사될 것입니다.
+```_config.yml``` 을 수정해서 이를 바꿀 수 있습니다. 다음 코드를 추가합니다:
+
+{% highlight yaml %}
+# 이 파일들은 출력 디렉토리에 복사하지 않는다
+exclude: ["deploy"]
+{% endhighlight %}
+
+#### 끝났습니다!
+
+이제 ```deploy``` 스크립트를 실행해서 웹 사이트를 게시할 수 있습니다. ssh 인증서에  [패스프레이즈-보안](https://martin.kleppmann.com/2013/05/24/improving-security-of-ssh-private-keys.html)이 설정되어 있으면, 비밀번호를 입력해야 합니다.
 
 ## Rack-Jekyll
 
@@ -113,6 +179,7 @@ Rack-Jekyll 을 사용하여 Heroku 에 게시하는 방법을 설명한 [이 �
 유동적으로 거의 무한대의 트래픽까지 규모가 조정되는 Amazon S3 에 당신의 사이트를
 서비스 해줍니다. 사용하는 만큼에 대해서만 지불하기 때문에 소규모 블로그에는 이
 방법을 적용하는 것이 가장 저렴할 것입니다.
+
 
 ## OpenShift
 

@@ -43,7 +43,7 @@ YEAR-MONTH-DAY-title.MARKUP
 <div class="note">
   <h5>ProTip™: 다른 포스트로 링크하기</h5>
   <p>
-    <a href="../templates#post-url"><code>post_url</code></a> 태그를 사용하면
+    <a href="../templates/#post-url"><code>post_url</code></a> 태그를 사용하면
     사이트 고유주소 스타일이 바뀌는 경우에도 URL 이 잘못될 걱정을 할 필요가
     없습니다.
   </p>
@@ -158,19 +158,17 @@ PDF 다운로드 링크를 삽입하려면:
 {% endhighlight %}
 
 발췌된 부분을 일부러 `p` 태그로 감쌀 필요가 없습니다. Jekyll 이 첫 문단을
-잡아내어 대신 해주기 때문이죠. 원한다면 다음과 같이 입력하여 태그를 제거할 수도 있습니다:
+잡아내어 대신 해주기 때문이죠. 원한다면 다음과 같이 입력하여 태그를 제거할 수도
+있습니다:
 
 {% highlight html %}
 {% raw %}{{ post.excerpt | remove: '<p>' | remove: '</p>' }}{% endraw %}
 {% endhighlight %}
 
-자동으로 생성되는 포스트 발췌가 맘에 들지 않는다면, 포스트의 YAML 머리말에
-`excerpt` 를 추가하여 원하는 값으로 덮어쓸 수 있습니다. 완전히 비활성화 하려면
-`excerpt_separator` 를 `""` 로 설정합니다.
+자동으로 생성되는 포스트 발췌가 마음에 들지 않는다면, 포스트의 YAML 머리말에
+`excerpt` 를 추가하여 원하는 값을 명시적으로 덮어쓸 수 있습니다. 아니면,
+포스트의 YAML 머리말에 고유한 값의 `excerpt_separator` 를 정의할 수도 있습니다:
 
-또한, Liquid 태그에 의하여 생성된 결과에는 `| strip_html` 플래그를 사용하여 HTML 태그들을 제거할 수 있습니다. 이는 포스트 발췌부분을 포스트 `head` 의 `meta="description"` 태그에 사용하는 경우나 컨텐츠에 HTML 태그가 필요없는 특별한 상황에 유용합니다.
-
-그리고 포스트별로 `excerpt_separator` 를 설정할 수도 있어서, 당신이 원하는 포스트에만 별도로 사용할 수 있습니다. 단순히 `excerpt` 설정하는 것처럼, 동일한 방법으로 포스트의 YAML 머리말 안에 `excerpt_separator` 를 설정하면 됩니다:
 
 {% highlight text %}
 ---
@@ -181,6 +179,17 @@ Excerpt
 <!--more-->
 Out-of-excerpt
 {% endhighlight %}
+
+자신의 환경설정 파일 `_config.yml` 에 전역적으로 `excerpt_separator` 를
+설정하는것도 가능합니다.
+
+`excerpt_separator` 를 `""` 로 설정하면 발췌를 완전히 비활성화합니다.
+
+또한, `| strip_html` 를 추가하여 Liquid 태그로 생성된 결과물에 포함된 모든 html
+태그를 제거할 수 있습니다. 이것은 `head` 의 `meta="description"` 태그 또는
+포스트 내용이 들어가는 것이 부적절한 HTML 태그에 포스트 발췌를 집어넣는 경우에
+유용합니다.
+
 
 ## 코드 구문 강조
 
@@ -225,3 +234,4 @@ end
 무엇이 가능한지 좀 더 파고들 준비가 되었다면, [포스트 고유주소
 수정하기](../permalinks/)나 사이트에 [사용자 변수](../variables/)를 사용하는 것
 등을 살펴보세요.
+

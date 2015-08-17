@@ -78,9 +78,9 @@ title: Blogging Like a Hacker
       <td>
         <p>
 
-          생성된 블로그 포스트의 기본 URL 인
-          <code>/year/month/day/title.html</code>을 사용하지 않고 다른 URL 을
-          입력하면, 이것이 최종 URL 로 사용됩니다.
+          생성된 블로그 포스트의 URL 을 사이트 스타일(기본값
+          <code>/year/month/day/title.html</code>)이 아닌 다른 스타일로 만드려면, 이
+          변수를 사용하여 최종 URL 을 설정하면 됩니다.
 
         </p>
       </td>
@@ -170,7 +170,9 @@ title: Blogging Like a Hacker
       <td>
         <p>
           포스트 이름에 지정한 날짜보다 이 변수에 지정한 날짜가 우선시됩니다.
-          포스트를 올바르게 정렬하기 위해 사용할 수 있습니다.
+          포스트를 올바르게 정렬하기 위해 사용할 수 있습니다. 날짜 형식은
+          <code>YYYY-MM-DD HH:MM:SS +/-TTTT</code> 입니다; 시간, 분, 초와 타임존
+          오프셋은 선택사항입니다.
         </p>
       </td>
     </tr>

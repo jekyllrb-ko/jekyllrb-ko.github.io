@@ -12,9 +12,11 @@ permalink: /docs/pagination/
 <div class="note info">
   <h5>페이지 나누기는 오직 HTML 파일에서만 작동합니다</h5>
   <p>
-    페이지 나누기는 Markdown 이나 Textile 파일에서는 작동하지 않습니다. 오직
-    HTML 파일 안에서 사용될 때에만 작동합니다. 보통 이 기능은 포스트 목록에
-    사용하기 때문에, 큰 문제가 되지는 않을 것입니다.
+    페이지 나누기는 Markdown 이나 Textile 파일 안에서 작동하지 않습니다. 페이지
+    나누기는 파일명이 <code>index.html</code> 인 HTML 파일 안에서 호출되거나
+    환경설정 <code>paginate_path</code> 로 설정된 하위 디렉토리 안에서 동작합니다.
+
+
   </p>
 </div>
 
@@ -27,20 +29,29 @@ permalink: /docs/pagination/
 paginate: 5
 {% endhighlight %}
 
-한 페이지에 표시하고자 하는 최대 포스트 수를 입력하면 됩니다.
-
+생성된 사이트의 한 페이지 당 표시하고자 하는 포스트의 최대 개수를 입력하면
+됩니다.
 
 이렇게 나뉘어진 페이지가 생성될 위치도 지정할 수 있습니다:
 
 {% highlight yaml %}
-paginate_path: "blog/page:num/"
+paginate_path: "/blog/page:num/"
 {% endhighlight %}
 
-이 설정은 `blog/index.html` 에서 사용되어, `paginator` 라는 Liquid 에 나뉘어진 각 페이지를 보내고
-`blog/page:num/` 에 결과물이 만들어집니다. 여기서 `:num` 은 `2` 부터 시작하는 페이지 번호입니다.
-사이트가 12 개의 포스트를 가지고 있고 `pagenate: 5` 가 설정되어 있을 경우, Jekyll 은 처음 5 개의
-포스트를 `blog/index.html` 에 만들고, `blog/page2/index.html` 에 다음 5 개의 포스트를,
+이 설정은 `blog/index.html` 에서 사용되어, `paginator` 라는 Liquid 에 나뉘어진
+각 페이지를 보내고 `blog/page:num/` 에 결과물이 만들어집니다. 여기서 `:num` 은
+`2` 부터 시작하는 페이지 번호입니다. 사이트가 12 개의 포스트를 가지고 있고
+`pagenate: 5` 가 설정되어 있을 경우, Jekyll 은 처음 5 개의 포스트를
+`blog/index.html` 에 만들고, `blog/page2/index.html` 에 다음 5 개의 포스트를,
 `blog/page3/index.html` 에 마지막 2 개의 포스트를 만들게 됩니다.
+
+<div class="note warning">
+  <h5>고유주소 설정은 하지 마세요</h5>
+  <p>
+    블로그 페이지의 머리말에 고유주소를 설정하면 페이지 나누기가 동작하지
+    않습니다. 고유주소는 설정하지 마세요.
+  </p>
+</div>
 
 ## 사용가능한 Liquid 속성
 
@@ -128,9 +139,9 @@ paginate_path: "blog/page:num/"
 ## 페이지로 나눠진 포스트 렌더링
 
 그 다음 해야 일은 `paginator` 변수를 사용하여 목록에 들어있는 포스트를 실제로
-출력하는 것입니다.
-보통은 사이트의 메인 페이지에 이 작업을 하게 될 것입니다.
+출력하는 것입니다. 보통은 사이트의 메인 페이지에 이 작업을 하게 될 것입니다.
 이것은 페이지로 나뉘어진 포스트를 HTML 파일에 표시하는 간단한 예제입니다:
+
 
 {% highlight html %}
 {% raw %}
@@ -193,7 +204,7 @@ title: My Blog
     {% if page == paginator.page %}
       <em>{{ page }}</em>
     {% elsif page == 1 %}
-      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
     {% else %}
       <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
     {% endif %}

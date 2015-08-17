@@ -103,10 +103,10 @@ Jekyll 은 [Liquid 템플릿 시스템](https://github.com/Shopify/liquid/wiki)�
       <td><p>
 
         포스트인 경우에, 최대 10 개의 관련 포스트가 이 변수에 담겨 있습니다.
-        기본적으로는, 처리속도가 빠른 대신 결과의 질이 낮은 방식을 사용합니다.
-        느린 속도를 감수하고 좋은 결과를 얻으려면,
-        <code>jekyll</code>명령을 <code>--lsi</code> (잠재적 시맨틱 색인) 옵션과
-        함께 실행합니다.
+        기본적으로, 가장 최근의 포스트 10 개를 가리킵니다. 느린 속도를 감수하고
+        좋은 결과를 얻으려면, <code>jekyll</code>명령을 <code>--lsi</code>
+        (잠재적 시맨틱 색인) 옵션과 함께 실행합니다. 그리고 Github pages 는
+        사이트를 생성할 때 <code>lsi</code> 옵션을 지원하지 않는다는 사실을 기억하시기 바랍니다.
 
       </p></td>
     </tr>
@@ -114,9 +114,10 @@ Jekyll 은 [Liquid 템플릿 시스템](https://github.com/Shopify/liquid/wiki)�
       <td><p><code>site.static_files</code></p></td>
       <td><p>
 
-        정적 파일 (다시 말해, Jekyll 의 변환기나 Liquid 렌더러가 처리하지 않는
-        파일들) 전체 목록. 모든 파일은 세 가지 속성을 갖습니다:
-        <code>path</code> 와 <code>modified_time</code>, <code>extname</code>.
+        <a href="/docs/static-files/">정적 파일</a> (다시 말해, Jekyll 의
+        변환기나 Liquid 렌더러가 처리하지 않는 파일들) 전체 목록. 모든 파일은 세
+        가지 속성을 갖습니다: <code>path</code> 와 <code>modified_time</code>,
+        <code>extname</code>.
 
       </p></td>
     </tr>
@@ -124,7 +125,15 @@ Jekyll 은 [Liquid 템플릿 시스템](https://github.com/Shopify/liquid/wiki)�
       <td><p><code>site.html_pages</code></p></td>
       <td><p>
 
-        모든 HTML 페이지 목록.
+        `.html` 로 끝나는 `site.pages` 목록의 하위 세트.
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.html_files</code></p></td>
+      <td><p>
+
+        `.html` 로 끝나는 `site.static_files` 목록의 하위 세트.
 
       </p></td>
     </tr>

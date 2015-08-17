@@ -7,17 +7,22 @@ permalink: /docs/collections/
 <div class="note warning">
   <h5>콜렉션 기능은 안정적이지 않고 변경될 수도 있습니다</h5>
   <p>
-    실험적인 기능으로서, 안정화가 될 때까지 API 가 자주 변경될 수 있습니다.
+    실험 단계의 기능으로서, 안정화 되기 전까지 API 가 변경될 수도 있습니다.
   </p>
 </div>
 
-페이지나 포스트만 있는 것은 아닙니다. 예를 들면, 프로젝트 내의 다양한 메소드라던지 팀의 멤버 목록, 아니면 컨퍼런스의 대화같은 것들을 문서화하고 싶을 수도 있습니다. 콜렉션 기능을 사용하면 기본적으로는 페이지나 포스트처럼 동작하지만, 고유한 네임스페이스와 속성을 가진 새로운 종류의 문서를 정의할 수 있습니다.
+페이지나 포스트만 있는 것은 아닙니다. 예를 들면, 프로젝트 내의 다양한
+메소드라던지 팀의 멤버 목록, 아니면 컨퍼런스의 대화같은 것들을 문서화하고 싶을
+수도 있습니다. 콜렉션 기능을 사용하면 기본적으로는 페이지나 포스트처럼
+동작하지만, 고유한 네임스페이스와 속성을 가진 새로운 종류의 문서를 정의할 수
+있습니다.
 
 ## 콜렉션 사용하기
 
 ### 1 단계: Jekyll 에게 콜렉션을 읽도록 지시하기
 
-`_config.yml` 파일에 아래처럼 `my_collection` 부분은 자신의 콜렉션 이름으로 바꿔서 입력하세요:
+`_config.yml` 파일에 아래처럼 `my_collection` 부분은 자신의 콜렉션 이름으로
+바꿔서 입력하세요:
 
 {% highlight yaml %}
 collections:
@@ -32,16 +37,37 @@ collections:
     foo: bar
 {% endhighlight %}
 
+콜렉션 속성들에 대한 기본값을 설정할 수도 있습니다:
+
+{% highlight yaml %}
+defaults:
+  - scope:
+      path: ""
+      type: my_collection
+    values:
+      layout: page
+{% endhighlight %}
+
 ### 2 단계: 컨텐츠 추가하기
 
-설정한 콜렉션 이름에 맞는 폴더 (예시, `<source>/_my_collection`) 를 생성하고 문서를 추가합니다.
-YAML 머리말은 문서의 부가정보로서 입력하고, 이후의 모든 내용은 문서의 `content` 속성에 들어갑니다. YAML Front Matter 가 없는 경우에는, Jekyll 이 콜렉션에 파일을 생성하지 않습니다.
+설정한 콜렉션 이름에 맞는 폴더 (예시, `<source>/_my_collection`) 를 생성하고
+문서를 추가합니다. YAML 머리말은 문서의 부가정보로서 입력하고, 이후의 모든
+내용은 문서의 `content` 속성에 들어갑니다. YAML Front Matter 가 없는 경우에는,
+Jekyll 이 콜렉션에 파일을 생성하지 않습니다.
 
-주의: 폴더의 이름은 반드시 `_config.yml` 파일에 정의한 콜렉션에 `_` 문자를 붙인 것이어야 합니다.
+<div class="note info">
+  <h5>디렉토리 이름이 올바른지 확인하세요</h5>
+  <p>
+폴더의 이름은 반드시 `_config.yml` 파일에 정의한 콜렉션에 <code>_</code> 문자를
+붙인 것이어야 합니다.
+  </p>
+</div>
 
 ### 3 단계: 콜렉션 내 문서를 독립적인 파일로 출력하기 (선택사항)
 
-만약 콜렉션에 포함된 각각의 문서가 독립적인 버전으로 생성되게 하고 싶다면, `_config.yml` 파일의 콜렉션 정의부분에 `output` 키를 추가하고 `true` 라는 값을 설정합니다:
+만약 콜렉션에 포함된 각각의 문서가 독립적인 버전으로 생성되게 하고 싶다면,
+`_config.yml` 파일의 콜렉션 정의부분에 `output` 키를 추가하고 `true` 라는 값을
+설정합니다:
 
 {% highlight yaml %}
 collections:
@@ -54,7 +80,8 @@ collections:
 Liquid 와 Markdown 변환기를 거쳐서
 `<dest>/my_collection/some_subdir/some_doc.html` 로 만들어질 것입니다.
 
-[고유주소](../permalinks/)를 가진 포스트와 마찬가지로, 콜렉션 메타데이터에 `permalink` 설정을 하면 문서 URL 은 변경될 수도 있습니다:
+[고유주소](../permalinks/)를 가진 포스트와 마찬가지로, 콜렉션 메타데이터에
+`permalink` 를 설정해서 문서 URL 을 변경할 수 있습니다:
 
 {% highlight yaml %}
 collections:
@@ -63,7 +90,17 @@ collections:
     permalink: /awesome/:path/
 {% endhighlight %}
 
-예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면, 생성되는 파일의 경로는 `<dest>/awesome/some_subdir/some_doc/index.html` 가 됩니다.
+예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면, 생성되는
+파일의 경로는 `<dest>/awesome/some_subdir/some_doc/index.html` 가 됩니다.
+
+<div class="note info">
+  <h5>페이지 변환이 필요하다면 YAML 을 잊지 마세요</h5>
+  <p>
+  콜렉션 내의 파일 중 머리말이 없는 파일은
+  <a href="/docs/static-files">정적 파일</a> 로 취급되어, 아무런 처리가 되지
+  않고 출력 경로에 단순 복사됩니다.
+  </p>
+</div>
 
 <div class="mobile-side-scroller">
 <table>
@@ -95,7 +132,8 @@ collections:
         <p><code>name</code></p>
       </td>
       <td>
-        <p>알파벳과 숫자가 아닌 문자와 공백문자는 모두 하이픈으로 교체된, 문서의 기본 파일명.</p>
+        <p>알파벳과 숫자가 아닌 문자와 공백문자는 모두 하이픈으로 교체된, 문서의
+        기본 파일명.</p>
       </td>
     </tr>
     <tr>
@@ -122,9 +160,14 @@ collections:
 
 ### 콜렉션
 
-모든 콜렉션은 Liquid 변수인 `site` 로 접근할 수 있습니다. 예를 들어, `_albums` 에 있는 `albums` 콜렉션에 접근하려고 한다면, `site.albums` 를 사용하면 됩니다. 모든 콜렉션은 여러 문서들에 대한 배열입니다 (예시, `site.albums` 는 `site.pages` 와 `site.posts` 거의 유사함). 이 문서들의 속성에 접근하는 방법은 아래를 참고하세요.
+모든 콜렉션은 Liquid 변수인 `site` 로 접근할 수 있습니다. 예를 들어, `_albums`
+에 있는 `albums` 콜렉션에 접근하려고 한다면, `site.albums` 를 사용하면 됩니다.
+모든 콜렉션은 여러 문서들에 대한 배열입니다 (예시, `site.albums` 는 `site.pages`
+와 `site.posts` 거의 유사함). 이 문서들의 속성에 접근하는 방법은 아래를
+참고하세요.
 
-콜렉션은 `site.collections` 로도 접근할 수 있으며, `_config.yml` 파일에 정의한 메타데이터와 다음 정보들도 사용할 수 있다:
+콜렉션은 `site.collections` 로도 접근할 수 있으며, `_config.yml` 파일에 정의한
+메타데이터와 다음 정보들도 사용할 수 있다:
 
 <div class="mobile-side-scroller">
 <table>
@@ -157,11 +200,22 @@ collections:
     </tr>
     <tr>
       <td>
+        <p><code>files</code></p>
+      </td>
+      <td>
+        <p>
+          콜렉션 내의 정적 파일 배열.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p><code>relative_directory</code></p>
       </td>
       <td>
         <p>
-          콜렉션 소스 디렉토리 (Site Source 디렉토리에 대한 상대 경로)
+          콜렉션 소스 디렉토리
+          (Site Source 디렉토리를 기준으로 한 상대 경로)
         </p>
       </td>
     </tr>
@@ -181,7 +235,8 @@ collections:
       </td>
       <td>
         <p>
-          콜렉션의 문서들이 독립적인 파일로 출력될 것인지 여부
+          콜렉션의 문서들이 독립적인 파일로 출력될 것인지에 대한
+          여부
         </p>
       </td>
     </tr>
@@ -192,7 +247,8 @@ collections:
 
 ### 문서
 
-파일에 지정된 YAML 머리말뿐만 아니라, 각 문서는 다음과 같은 속성을 가지고 있습니다:
+모든 문서는 파일에 지정된 YAML 머리말뿐만 아니라 다음과 같은 속성들도 가지고
+있습니다:
 
 <div class="mobile-side-scroller">
 <table>
@@ -209,8 +265,10 @@ collections:
       </td>
       <td>
         <p>
-          문서의 (변환되지 않은) 컨텐츠. YAML 머리말이 없다면, Jekyll 은 콜렉션에 파일을 생성하지 않는다.
-          YAML 머리말이 사용되었다면, 이 변수에 머리말의 종료표시인 `---` 이후의 모든 내용이 담긴다.
+          문서의 (변환되지 않은) 컨텐츠.
+          YAML 머리말이 없다면, Jekyll 은 콜렉션에 어떠한 파일도 생성하지 않는다.
+          YAML 머리말이 사용되었다면, 머리말의 종료표시인 `---` 이후의 모든
+          내용이 이 변수에 담긴다.
 
         </p>
       </td>
@@ -221,7 +279,8 @@ collections:
       </td>
       <td>
         <p>
-          <code>content</code> 를 기준으로, 변환된 문서
+          <code>content</code> 로부터
+          생성/변환된 출력 문서
         </p>
       </td>
     </tr>
@@ -251,9 +310,10 @@ collections:
       </td>
       <td>
         <p>
-          렌더링 된 콜렉션의 URL. 파일은 자신이 속해있는 콜렉션의 이름이 사이트
-          환경설정 파일의 <code>render</code> 키에 포함되어 있을 경우에만
-          생성된다.
+          렌더링 된 콜렉션의 URL.
+          환경설정 파일의 <code>render</code> 키에 설정된 콜렉션의 파일들만 Site
+          Destination 에 생성된다.
+
         </p>
       </td>
     </tr>
@@ -270,3 +330,51 @@ collections:
   </tbody>
 </table>
 </div>
+
+## 콜렉션 속성 사용하기
+
+YAML 머리말에 있는 속성들은 데이터로서 사이트 어느곳에서든 사용할 수 있습니다.
+콜렉션을 `site.albums` 로 설정하는 위 예제를 사용할 때, 다음과 같은 구조의
+머리말을 가진 개별 파일이 있을 수 있습니다 (반드시 지원하는 마크업 언어로
+작성해야 하며, `.yaml` 확장자가 아니어야 합니다):
+
+
+{% highlight yaml %}
+title: "Josquin: Missa De beata virgine and Missa Ave maris stella"
+artist: "The Tallis Scholars"
+director: "Peter Phillips"
+works:
+  - title: "Missa De beata virgine"
+    composer: "Josquin des Prez"
+    tracks:
+      - title: "Kyrie"
+        duration: "4:25"
+      - title: "Gloria"
+        duration: "9:53"
+      - title: "Credo"
+        duration: "9:09"
+      - title: "Sanctus & Benedictus"
+        duration: "7:47"
+      - title: "Agnus Dei I, II & III"
+        duration: "6:49"
+{% endhighlight %}
+
+다음 템플릿을 사용하면 콜렉션 내의 모든 앨범을 한 페이지에 출력할 수 있습니다:
+
+{% highlight html %}
+{% raw %}
+{% for album in site.albums %}
+  <h2>{{ album.title }}</h2>
+  <p>Performed by {{ album.artist }}{% if album.director %}, directed by {{ album.director }}{% endif %}</p>
+  {% for work in album.works %}
+    <h3>{{ work.title }}</h3>
+    <p>Composed by {{ work.composer }}</p>
+    <ul>
+    {% for track in work.tracks %}
+      <li>{{ track.title }} ({{ track.duration }})</li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+{% endfor %}
+{% endraw %}
+{% endhighlight %}

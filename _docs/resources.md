@@ -42,5 +42,7 @@ Jekyll 로 태그 클라우드와 태그 페이지를 구현하는 방법 안내
 - gem 코드를 수정하거나 fork 하지 않고 [Jekyll 을 확장](https://github.com/rfelix/jekyll_ext)하는 방법과 재사용 가능한 몇 가지 [비설치형 Jekyll 확장](https://wiki.github.com/rfelix/jekyll_ext/extensions)
 
 - [Jekyll 에서 자신의 Rails 레이아웃 사용하기](http://numbers.brighterplanet.com/2010/08/09/sharing-rails-views-with-jekyll)
-- [Jekyll 에 Ajax 페이지 나누기 추가하기](http://eduardoboucas.com/blog/2014/11/10/adding-ajax-pagination-to-jekyll.html)
-- [Jekyll 의 Data 파일들을 사용해서 동적인 탐색막대 구축하기](http://www.jordanthornque.st/blog/building-dynamic-navbars-with-jekyll/)
+
+- [Adding Ajax pagination to Jekyll](https://eduardoboucas.com/blog/2014/11/10/adding-ajax-pagination-to-jekyll.html)
+
+- [Using Jekyll’s Data Files to build a dynamic navbar](http://blog.jordanthornquest.com/post/119506660470/building-dynamic-navbars-in-jekyll)
