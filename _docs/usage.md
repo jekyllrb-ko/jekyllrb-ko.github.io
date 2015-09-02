@@ -4,7 +4,7 @@ title: 기본 사용법
 permalink: /docs/usage/
 ---
 
-Jekyll gem 은 터미널 창에서 실행파일 `jekyll` 을 사용할 수 있게 해줍니다. 이
+Jekyll gem 은 터미널 창에서 사용할 수 있는 실행파일 `jekyll` 을 만들어줍니다. 이
 명령은 다양한 방식으로 사용할 수 있습니다:
 
 {% highlight bash %}
@@ -23,13 +23,13 @@ $ jekyll build --watch
 {% endhighlight %}
 
 <div class="note warning">
-  <h5>사이트 생성 시 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
+  <h5>사이트를 빌드하면 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
   <p>
-    사이트를 생성할 때, <code>&lt;destination&gt;</code> 안의 파일들을 자동으로
-    지웁니다 (기본 방식). 사이트에서 생성하지 않는 파일들은 모두 사라질
-    것입니다. <code>&lt;keep_files&gt;</code> 환경설정 옵션을 사용하여
-    <code>&lt;destination&gt;</code> 안에 그대로 유지시키려는 파일이나 폴더를 선택할
-    수 있습니다.
+    사이트 빌드 시에 자동으로 <code>&lt;destination&gt;</code> 안의 파일들을
+    지우는 것이 디폴트로 설정되어 있습니다. 사이트에서 생성하지 않는 파일들은
+    모두 사라질 것입니다. 환경설정 옵션 <code>&lt;keep_files&gt;</code> 를
+    사용하면 <code>&lt;destination&gt;</code> 에 그대로 유지시키려는 파일이나
+    폴더를 선택할 수 있습니다.
   </p>
   <p>
     중요한 디렉토리는 절대 <code>&lt;destination&gt;</code> 으로 지정하면 안됩니다;
@@ -37,8 +37,8 @@ $ jekyll build --watch
   </p>
 </div>
 
-또한 Jekyll 에 내장된 개발용 서버를 실행하고 자신의 브라우저로 접속하면, 생성된
-사이트가 어떻게 보일지 미리보기 할 수 있습니다.
+Jekyll 은 개발 서버도 내장하고 있어서, 로컬상에서 브라우저로 접속하여 사이트가
+어떻게 생성될지 미리 살펴볼 수 있습니다.
 
 {% highlight bash %}
 $ jekyll serve
@@ -47,28 +47,28 @@ $ jekyll serve
 
 $ jekyll serve --detach
 # => 현재 터미널에서 분리된다는 점을 제외하고는 `jekyll serve` 와 동일합니다.
-#    서버를 종료하려면, `kill -9 1234` 를 입력하면 됩니다. (PID 가 "1234" 인 경우)
-#    PID 를 모른다면, `ps aux | grep jekyll` 를 실행하고, 인스턴스를 종료시킵니다. [자세한 내용](http://unixhelp.ed.ac.uk/shell/jobz5.html).
+#    서버를 종료하려면, `kill -9 1234` 를 입력하면 됩니다. (여기서 "1234" 는 PID 입니다.)
+#    PID 를 모른다면, `ps aux | grep jekyll` 라고 입력하세요. 그 다음, 인스턴스를 종료시킵니다. [자세한 내용](http://unixhelp.ed.ac.uk/shell/jobz5.html).
 {% endhighlight %}
 
 <div class="note info">
-  <h5>기본 작동방식을 염두해두세요</h5>
+  <h5>디폴트 설정을 알아두세요</h5>
   <p>
-    버전 2.4 부터, <code>serve</code> 명령은 자동으로 변경사항을 감시합니다. 기존 방식을 유지하려면, <code>jekyll serve --no-watch</code> 를 사용해서 비활성화하세요.
+    버전 2.4 부터, <code>serve</code> 명령은 자동으로 변경사항을 감시합니다. 기존 방식을 유지하려면, <code>jekyll serve --no-watch</code> 를 사용해서 비활성화 하세요.
   </p>
 </div>
 
 {% highlight bash %}
 $ jekyll serve --no-watch
-# => `jekyll serve` 와 동일하지만 변경사항을 감시하지 않습니다.
+# => `jekyll serve` 와 동일하지만 변경사항은 감시하지 않습니다.
 {% endhighlight %}
 
-이 옵션들은 [환경설정 옵션](../configuration/)의 아주 일부분일 뿐입니다.
-다양한 환경설정 옵션들을 위와 같이 명령행 플래그로 지정할 수도 있고,
-또 다른 (그리고 더 일반적인) 방법으로는 루트 디렉토리의 `_config.yml` 파일에
-정의하는 방법이 있습니다. Jekyll 이 작동하기 시작하면, 자동적으로 이 파일에
-지정한 옵션들을 사용합니다.
-예를 들어, `_config.yml` 파일에 다음과 같이 입력한다면:
+이것들은 [환경설정 옵션](../configuration/)의 극히 일부분만 보여준 것입니다.
+다양한 환경설정 옵션들을 위와 같이 명령행에 플래그로 지정할 수 있고 또 다른
+(그리고 더 일반적인) 방법으로, 루트 디렉토리의 `_config.yml` 파일에 지정할 수
+있습니다. Jekyll 이 작동하기 시작하면, 자동적으로 이 파일에 지정한 옵션들을
+사용합니다. 예를 들어, `_config.yml` 파일에 다음과 같이 입력한다면:
+
 
 {% highlight yaml %}
 source:      _source
