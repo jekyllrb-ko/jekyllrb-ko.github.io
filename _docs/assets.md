@@ -73,7 +73,7 @@ sass:
 
 {% highlight yaml %}
 sass:
-    style: :compressed
+    style: compressed
 {% endhighlight %}
 
 이 설정은 Sass 에 전달되므로, 여기엔 Sass 가 지원하는 모든 출력 스타일 옵션이

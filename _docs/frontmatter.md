@@ -107,9 +107,9 @@ title: Blogging Like a Hacker
           포스트를 특정 폴더에 넣지 않고, 포스트가 속해야 하는 카테고리를 하나
           또는 그 이상 지정할 수 있습니다. 사이트가 생성될 때, 포스트는 그냥
           평범하게 이 카테고리들에 속한 것처럼 동작합니다.
-          이 categories (복수형) 은 <a
-          href="http://en.wikipedia.org/wiki/YAML#Lists">YAML 리스트</a> 또는 공백으로
-          구분된 문자열로 지정할 수 있습니다.
+          이 카테고리들 (복수형) 은 <a
+          href="http://en.wikipedia.org/wiki/YAML#Lists">YAML 리스트</a> 또는
+          쉼표로 구분된 문자열로 지정할 수 있습니다.
 
         </p>
       </td>
@@ -122,8 +122,8 @@ title: Blogging Like a Hacker
         <p>
 
           카테고리와 유사하게, 하나 이상의 태그를 포스트에 추가할 수 있습니다.
-          또한, YAML 리스트 또는 공백문자로 구분하여 여러 태그를 지정할 수
-          있습니다.
+          또한 카테고리와 동일하게, YAML 리스트 또는 쉼표로 구분된 문자열로
+          지정할 수 있습니다.
 
         </p>
       </td>

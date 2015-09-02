@@ -133,9 +133,9 @@ Markdown 이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마
         <p>
 
           사이트에 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리.
-          Jekyll 엔진은 이 디렉토리 안에서, (확장자와 포맷이 <code>.yml</code>
+          Jekyll 엔진은 이 디렉토리에 있는 (확장자와 포맷이 <code>.yml</code>
           또는 <code>.yaml</code>, <code>.json</code>, <code>.csv</code> 인)
-          모든 YAML 파일을 자동으로 읽어들여서 `site.data` 로 사용할 수 있도록
+          모든 YAML 파일을 자동으로 읽어들여 `site.data` 로 사용할 수 있도록
           만든다. 만약 이 디렉토리에 <code>members.yml</code> 라는 파일이
           있다면, <code>site.data.members</code> 라고 입력하여 그 컨텐츠를
           사용할 수 있다.
