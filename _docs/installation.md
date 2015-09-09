@@ -15,11 +15,12 @@ Jekyll 설치는 아주 쉽고 직관적이지만, 시작하기 전에 먼저 �
 준비물이 있습니다.
 
 - [Ruby](http://www.ruby-lang.org/en/downloads/)
-  (개발 패키지 포함)
+  (Jekyll 2 사용 시 v1.9.3 이상, Jekyll 3 사용 시 v2 이상의 개발 패키지 포함)
 - [RubyGems](http://rubygems.org/pages/download)
 - 리눅스, 유닉스, 또는 맥 OS X
-- [NodeJS](http://nodejs.org), 또는 다른 JavaScript 실행환경 (CoffeeScript
-  지원에 필요함).
+- [NodeJS](http://nodejs.org), 또는 다른 JavaScript 실행환경 (Jekyll 2 와 그
+  이전 버전에서, CoffeeScript 지원에 필요함).
+- Python (Jekyll 2 와 그 이전 버전에만 해당됨)
 
 <div class="note info">
   <h5>Windows 에서 Jekyll 실행하기</h5>
