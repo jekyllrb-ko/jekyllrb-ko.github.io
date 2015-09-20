@@ -4,20 +4,20 @@ title: 플러그인
 permalink: /docs/plugins/
 ---
 
-Jekyll 의 플러그인 시스템은 훅을 제공하기 때문에, 자신의 사이트에 꼭 맞는
-컨텐츠를 생성할 수 있습니다. 따라서, Jekyll 의 소스코드를 직접 수정하지 않고도
-자신의 코드가 실행되게 할 수 있습니다.
+Jekyll 은 Hook 을 제공하는 플러그인 시스템을 갖추고 있어서 자신의 사이트에 꼭
+맞는 컨텐츠를 생성할 수 있습니다. 따라서, Jekyll 의 소스코드를 직접 수정하지
+않고도 자신의 코드가 실행되게 할 수 있습니다.
 
 <div class="note info">
   <h5>GitHub Pages 와 플러그인</h5>
   <p>
     <a href="http://pages.github.com/">GitHub Pages</a> 는 Jekyll 을 사용합니다.
-    하지만 모든 Pages 사이트는 보안상의 이유로 인하여, <code>--safe</code>
+    하지만 보안상의 이유로 인해, 모든 Pages 사이트는 <code>--safe</code>
     옵션으로 사용자 플러그인이 비활성화된 상태에서 생성됩니다. 이 말은
     안타깝게도, GitHub Pages 에서는 당신의 플러그인을 사용할 수 없다는
     뜻입니다.<br><br>그래도 GitHub Pages 와 사용자 플러그인을 함께 사용하는
-    방법이 있습니다. GitHub 에 소스를 직접 올리는 대신, 먼저 로컬상에서 변환한
-    뒤에 생성된 파일을 올리면 됩니다.
+    방법이 있습니다. GitHub 에 소스를 직접 올리는 대신, 로컬 시스템에서 변환을
+    먼저 한 후 생성된 파일을 올리면 됩니다.
   </p>
 </div>
 
@@ -42,13 +42,13 @@ gem 이름을 나열하세요. 예를 들면 다음과 같습니다:
 
 <div class="note info">
   <h5>
-    <code>_plugins</code>, <code>_config.yml</code> 과 <code>Gemfile</code> 은
+    <code>_plugins</code> 와 <code>_config.yml</code>, <code>Gemfile</code> 은
     동시에 사용할 수 있습니다
   </h5>
   <p>
-    원한다면 앞서 언급한 두 가지 플러그인 옵션을 동시에 사용할 수 있습니다. 한
-    옵션을 사용한다고 해서 다른 옵션을 사용하는데에 제약이 생기는 것은 아닙니다.
-
+    원한다면 앞서 언급한 플러그인 옵션들을 한 사이트에 동시에 사용할 수
+    있습니다. 어떤 옵션을 사용한다고 해서 다른 옵션을 사용하는데에 제약이 생기는
+    것은 아닙니다.
   </p>
 </div>
 
@@ -61,15 +61,15 @@ gem 이름을 나열하세요. 예를 들면 다음과 같습니다:
 
 ## 생성기
 
-Jekyll 이 당신의 규칙에 따라 부가적인 컨텐츠를 생성하게 하려면, 생성기를 만들면
-됩니다.
+생성기를 만들어 Jekyll 로 하여금 당신이 정한 규칙에 따라 부가적인 컨텐츠를
+생성하도록 할 수 있습니다.
 
 생성기는 `Jekyll::Generator` 의 하위 클래스로서,
 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)
-인스턴스를 전달받는 `generate` 메소드 가지고 있습니다. `generate`
-메소드의 리턴값은 무시됩니다.
+인스턴스를 전달받는 `generate` 메소드 가지고 있습니다. `generate` 메소드의
+리턴값은 무시됩니다.
 
-Jekyll 이 컨텐츠 목록을 파악하고 난 뒤, 사이트가 생성되기 직전에 생성기가
+생성기는 Jekyll 이 컨텐츠 목록을 파악하고 난 후, 그리고 사이트가 생성되기 직전에
 실행됩니다.
 YAML 머리말을 가진 페이지들은
 [`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb)
@@ -315,7 +315,7 @@ end
 ## 태그
 
 사이트에 자신의 Liquid 태그를 사용하고 싶다면,
-태그 시스템의 훅을 사용하면 됩니다.
+태그 시스템의 Hook 을 사용하면 됩니다.
 Jekyll 에 내장된 `highlight` 와 `include` 가 바로 그 예입니다.
 다음 예제는 페이지가 생성된 시간을 출력해주는 Liquid 태그입니다:
 
@@ -470,24 +470,24 @@ module Jekyll
 end
 {% endhighlight %}
 
-## 후크
+## Hook
 
 <div class="note unreleased">
-  <h5>후크 기능은 아직 릴리스되지 않았습니다.</h5>
+  <h5>Hook 기능은 아직 릴리스되지 않았습니다.</h5>
   <p>
     이 기능을 사용하려면, <a href="/docs/installation/#pre-releases"> Jekyll 의
     최신 개발 버전을 설치하세요</a>.
   </p>
 </div>
 
-후크를 사용하면, 당신의 플러그인이 사이트 빌드에 다방면으로 정교한 작업을 수행할
-수 있습니다. 당신의 플러그인에 후크가 포함되어 있으면, Jekyll 은 정해진 시점에
-해당 후크를 호출합니다.
+Hook 을 사용하면, 당신의 플러그인이 사이트 빌드에 다방면으로 정교한 작업을
+수행할 수 있습니다. 당신의 플러그인에 Hook 이 포함되어 있으면, Jekyll 은 정해진
+시점에 해당 Hook 을 호출합니다.
 
-후크는 이벤트 이름과 컨테이너에 등록됩니다. 등록하는 방법은,
-Jekyll::Hooks.register 를 호출하고 컨테이너, 이벤트 이름과 후크가 실행될 때
+Hook 은 이벤트 이름과 컨테이너에 등록됩니다. 등록하는 방법은,
+Jekyll::Hooks.register 를 호출하고 컨테이너, 이벤트 이름과 Hook 이 실행될 때
 호출할 코드를 연결하는 것입니다. 예를 들어, Jekyll 이 포스트를 생성할 때마다
-특정 코드를 실행하도록 하려면, 다음과 같이 후크를 등록하면 됩니다:
+특정 코드를 실행하도록 하려면, 다음과 같이 Hook 을 등록하면 됩니다:
 
 
 {% highlight ruby %}
@@ -497,13 +497,13 @@ end
 {% endhighlight %}
 
 Jekyll 은 <code>:site</code>, <code>:page</code>, <code>:post</code> 와
-<code>:document</code> 에 관련된 후크를 제공합니다. 어떤 상황에서든, Jekyll 은
-후크를 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨줍니다. 하지만
+<code>:document</code> 에 관련된 Hook 을 제공합니다. 어떤 상황에서든, Jekyll 은
+Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨줍니다. 하지만
 <code>:pre_render</code> 의 경우에는 두 번째 매개변수로 페이로드 해시도
 제공하는데, 이로 인해 렌더링 중 사용할 수 있는 변수들에 대해 완벽한 관리 권한을
 얻을 수 있습니다.
 
-사용 가능한 후크들의 전체 목록은 다음과 같습니다:
+사용 가능한 Hook 들의 전체 목록은 다음과 같습니다:
 
 <div class="mobile-side-scroller">
 <table>
