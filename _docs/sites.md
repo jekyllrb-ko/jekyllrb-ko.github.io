@@ -20,6 +20,8 @@ permalink: /docs/sites/
     ([소스코드](https://github.com/rsms/rsms.github.com))
 - [Scott Chacon](http://schacon.github.com)
     ([소스코드](https://github.com/schacon/schacon.github.com))
+- [Leonard Lamprecht](http://leo.im)
+    ([소스코드](https://github.com/leo/leo.github.io))
 
 다른 사이트들을 더 보고싶다면, [Jekyll 위키의 "Sites" 페이지][jekyll-sites]에서
 사이트와 소스코드 목록을 찾을 수 있습니다.

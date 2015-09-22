@@ -40,19 +40,31 @@ export PATH=$PATH:/home/private/gems/bin
 export RB_USER_INSTALL='true'
 {% endhighlight %}
 
-맥 OSX 에서는, RubyGems 업데이트가 필요할 수도 있습니다:
+맥 OSX 에서는, RubyGems 를 업데이트해야 할 수도 있습니다 (반드시 필요한 경우에만 `sudo` 와 함께 실행함):
 
 {% highlight bash %}
 sudo gem update --system
 {% endhighlight %}
 
-여전히 문제가 해결되지 않는다면, [Xcode 의 명령행 도구를
-설치](http://www.zlu.me/ruby/os%20x/gem/mountain%20lion/2012/02/21/install-native-ruby-gem-in-mountain-lion-preview.html)해야
-할 수도 있습니다. 이 도구를 설치하면, 다음 명령으로 Native Gem 을 설치할 수 있습니다:
+여전히 문제가 해결되지 않는다면, 이 명령으로 (`gcc` 같은) 새 명령행 도구를
+다운로드하고 설치할 수 있으며,
+
+{% highlight bash %}
+xcode-select --install
+{% endhighlight %}
+
+그 다음, 이 명령으로 Native Gem 을 설치할 수 있게 됩니다
+(반드시 필요한 경우에만 `sudo` 와 함께 실행함):
 
 {% highlight bash %}
 sudo gem install jekyll
 {% endhighlight %}
+
+MacOS X 를 업그레이드 한다고 해서 Xcode 까지 자동으로 업그레이드 되지는 않는다는
+것과 (Xcode 업그레이드는 App Store 에서 별도로 수행합니다), 최신 버전이 아닌
+Xcode.app 은 앞서 설명한 명령행 도구와 충돌을 일으킬 수 있다는 점에 주의하기
+바랍니다. 이런 문제가 발생한다면, Xcode 를 업그레이드 하고 최신 명령행 도구를
+설치하세요.
 
 Gentoo 에 RubyGems 를 설치하려면 다음 명령을 실행합니다:
 
