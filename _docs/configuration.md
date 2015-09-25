@@ -355,23 +355,23 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 
 예를 들어, 당신의 코드에 이런 조건문이 있다고 가정합시다:
 
-```liquid
- {% raw %}
- {% if jekyll.environment == "production" %}
-   {% include disqus.html %} 
- {% endif %}
- {% endraw %}
-```
+{% highlight liquid %}
+{% raw %}
+{% if jekyll.environment == "production" %}
+   {% include disqus.html %}
+{% endif %}
+{% endraw %}
+{% endhighlight %}
 
 Jekyll 사이트를 빌드할 때, 다음과 같이 빌드 명령에 환경변수 `production` 을 정의하지 않으면 `if` 절 안에 들어있는 코드는 실행되지 않습니다:
 
-```bash
+{% highlight sh %}
 JEKYLL_ENV=production jekyll build 
-```
+{% endhighlight %}
 
 환경변수 값을 설정함으로써 특정 환경에서만 사용되는 컨텐츠를 만들 수 있습니다.
 
-`JEKYLL_ENV` 의 디폴트 값은 `development` 입니다. 따라서 `build` 의 전달인자에 `JEKYLL_ENV` 를 생략하면, `JEKYLL_ENV=development` 가 디폴트 값으로 사용됩니다. 빌드 시 `{% raw %}{% if jekyll.environment == "development" %}{% raw %}` 태그 안의 모든 컨텐츠가 출력될 것입니다.
+`JEKYLL_ENV` 의 디폴트 값은 `development` 입니다. 따라서 `build` 의 전달인자에 `JEKYLL_ENV` 를 생략하면, `JEKYLL_ENV=development` 가 디폴트 값으로 사용됩니다. 빌드 시 `{% raw %}{% if jekyll.environment == "development" %}{% endraw %}` 태그 안의 모든 컨텐츠가 출력될 것입니다.
 
 당신이 원하는 어떤 것이든 환경변수 값으로 사용할 수 있습니다 (꼭 `development` 나 `production` 이지 않아도 됩니다). Disqus 댓글란이나 Google Analytics 처럼 개발환경에서는 표시하고 싶지 않은 요소들이 있을 수 있습니다. 반대로, "GitHub 에서 수정" 버튼은 개발환경에서 노출시키고 운영환경에는 포함시키지 않을 수도 있습니다.
 

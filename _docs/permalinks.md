@@ -75,6 +75,36 @@ Jekyll 에 내장된 스타일을 사용해도 되고 자신만의 스타일을 
     </tr>
     <tr>
       <td>
+        <p><code>hour</code></p>
+      </td>
+      <td>
+        <p>
+          24 시간제, 두 자리 형식인, 포스트 파일 이름에 기재된 시간. (00..23)
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>minute</code></p>
+      </td>
+      <td>
+        <p>
+          포스트 파일 이름에 기재된 분. (00..59)
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>second</code></p>
+      </td>
+      <td>
+        <p>
+          포스트 파일 이름에 기재된 초. (00..60)
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p><code>title</code></p>
       </td>
       <td>
