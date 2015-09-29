@@ -4,35 +4,35 @@ title: 게시 방법
 permalink: /docs/deployment-methods/
 ---
 
-Jekyll 로 생성한 사이트는, 정적이라는 근본적인 특징 덕분에 아주 다양한 방법으로 게시할 수 있습니다. 그 중 가장 일반적인 게시 방법 몇 가지를 소개합니다.
+Jekyll 로 생성한 사이트는, 정적이라는 그 근본적인 특징 덕분에 아주 다양한 방법으로 게시할 수 있습니다. 이 중 가장 자주 사용하는 게시 방법 몇 가지를 여기에 소개합니다.
 
 ## 웹 호스팅 제공자 (FTP)
 
-거의 모든 웹 호스팅 제공자들이 FTP 로 서버에 파일을 업로드하는 것을 허용합니다. FTP 를 사용해서 웹 호스트 서버에 Jekyll 사이트를 업로드하려면, 그냥 `jekyll` 명령을 실행 한 뒤에 생성된 `_site` 폴더를 호스팅 계정의 루트 폴더에 복사하면 됩니다. 보통 이 경로는 `httpdocs` 또는 `public_html` 폴더입니다.
+거의 모든 웹 호스팅 제공자들이 FTP 로 서버에 파일을 업로드하는 것을 허용합니다. FTP 를 이용해서 Jekyll 사이트를 웹 호스트 서버에 업로드하는 방법은, 단지 `jekyll` 명령을 실행 한 뒤에 생성된 `_site` 폴더를 호스팅 계정의 루트 폴더에 복사하는 것입니다. 대부분의 경우 이 루트 폴더의 이름은 `httpdocs` 나 `public_html` 입니다.
 
 ### Glynn 을 사용한 FTP
 
-[Glynn](https://github.com/dmathieu/glynn) 이라는 프로젝트가 있는데, Jekyll 로 정적인 웹 사이트 파일들을 생성하고
-FTP 로 자신의 호스트에 전송하는 것을 편리하게 만들어주는 프로젝트입니다.
+[Glynn](https://github.com/dmathieu/glynn) 이라는 프로젝트가 있는데, Jekyll 로 웹 사이트 파일들을 생성한 후 FTP 로 호스트에 전송하는 작업을 쉽게
+도와주는 프로젝트입니다.
 
 ## 직접 관리하는 웹 서버
 
-게시할 웹 서버에 직접 접속할 권한이 있는 경우, 파일을 옮기는 방법에 몇 가지 다른 선택사항(`scp` 또는 파일 시스템에 직접 접근)이 생기지만, 근본적으로는 동일합니다. 생성된 `_site` 폴더 내용을 웹 서버 내의 적절한 위치에 넣어야 한다는 것만 기억하세요.
+게시할 웹 서버에 직접 접속할 권한이 있다면, 해야할 작업 내용은 근본적으로 동일하지만, 파일을 옮기는 방법에 몇 가지 다른 선택사항 (`scp` 또는 파일 시스템에 직접 접근) 이 생깁니다. 생성된 `_site` 폴더 내용을 옮길 때 반드시 웹 서버의 올바른 웹 루트 디렉토리에 저장해야 한다는 것만 기업하면 됩니다.
 
 ## 자동적인 방법
 
-Jekyll 사이트 게시를 쉽게 자동화하는 방법이 여러가지 있습니다. 아래 설명된 방법 외에 다른 방법을 알고 있다면, 그 편리함을 다른이들도 이용할 수 있도록 [기여](../contributing/)에 참여해주시기 바랍니다.
+쉽게 Jekyll 사이트 게시를 자동화해주는 방법들도 많이 있습니다. 아래 설명되지 않은 다른 방법을 알고 있다면, 다른 이들도 그 편리함을 누릴 수 있도록 [기여](../contributing/)해주시기 바랍니다.
 
 ### Git 의 post-update 훅
 
 만약 [Git](http://git-scm.com/) 을 사용해서 Jekyll 사이트를 관리하고 있다면
 (버전 관리 시스템 사용하고 있죠? 그렇죠?),
-[여기](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)처럼
-Git 저장소에 post-update 훅을 설정하여 게시를 쉽게 자동화 할 수 있습니다.
+[이것](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)처럼
+Git 저장소에 post-update 훅을 설정하여 쉽게 게시를 자동화 할 수 있습니다.
 
 ### Git 의 post-receive 훅
 
-Git 으로 변경사항을 푸쉬할 때마다 자동으로 게시 작업을 수행하는 원격 서버를 구성하려면, 일단 새 계정을 만들어 게시작업 인증에 사용되는 공개키를 `authorized_keys` 파일에 모두 등록합니다. 다음, 아래와 같이 post-receive 훅을 설정합니다:
+Git 으로 변경사항을 푸쉬할 때마다 원격 서버가 자동으로 게시 작업을 수행하도록 구성하려면, 일단 새 계정을 만들어 `authorized_keys` 파일에 게시작업 인증 시 사용되는 공개키를 모두 등록합니다. 그 다음, 아래와 같이 post-receive 훅을 설정합니다:
 
 {% highlight bash %}
 laptop$ ssh deployer@example.com
@@ -43,7 +43,7 @@ server$ cp hooks/post-receive.sample hooks/post-receive
 server$ mkdir /var/www/myrepo
 {% endhighlight %}
 
-그 다음, 서버에 Jekyll 을 설치하고 hooks/post-receive 에 아래와 같이 코드를
+이제, 서버에 Jekyll 을 설치하고 hooks/post-receive 에 아래와 같이 코드를
 추가합니다:
 
 {% highlight bash %}
@@ -86,21 +86,21 @@ GitHub Pages 스타일 웹 서버를 구축해보세요.
 
 ### Static Publisher
 
-GitHub 에 적용되어 있지는 않지만, 웹훅이 설정된 서버를 사용한 [Static Publisher](https://github.com/static-publisher/static-publisher) 라는 다른 게시법도 있습니다. 한 번의 클릭으로 Heroku 게시가 가능하고, 한 서버에서 여러 프로젝트를 감시할 수 있으며, 직관적인 관리자 인터페이스를 가지고 있고 S3 와 git 저장소 (예, gh-pages) 에 게시할 수 있습니다.
+GitHub 과 연관성은 없지만, Webhook 포스트를 감시하는 서버를 사용한 [Static Publisher](https://github.com/static-publisher/static-publisher) 라는 게시방법도 있습니다. 한 번의 클릭으로 Heroku 에 게시가 가능하고, 한 서버에서 여러 프로젝트를 감시할 수 있으며, 직관적인 관리자 인터페이스를 가지고 있고 S3 와 git 저장소 (예, gh-pages) 에 게시할 수 있습니다.
 
 ### Rake
 
 Jekyll 사이트를 게시하는 또 다른 방법은 [Rake](https://github.com/jimweirich/rake) 와 [HighLine](https://github.com/JEG2/highline),
-[Net::SSH](https://github.com/net-ssh/net-ssh) 를 사용하는 것입니다. Rake 를 사용하여 여러 브랜치를 처리할 수 있는 복합적인 Jekyll 게시 예제는 [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile) 에서 찾을 수 있습니다.
+[Net::SSH](https://github.com/net-ssh/net-ssh) 를 사용하는 것입니다. Rake 를 사용하여 여러 브랜치를 처리하는, 좀 더 복잡한 Jekyll 게시 예제를 [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile) 에서 찾을 수 있습니다.
 
 
 ### scp
 
-한번 `_site` 디렉토리를 생성하고 난 뒤에는 [이 게시 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/script/deploy) 와 유사한 `tasks/deploy` 쉘 스크립트를 사용하여 쉽게 scp 가 가능하다. 물론 자신의 사이트에 맞게 약간 수정해야 한다. 게다가 Textmate 에서 이 스크립트를 실행할 수 있게 해주는 [Textmate 명령어](http://gist.github.com/214959)도 있다.
+`_site` 디렉토리 생성이 끝나면, [이 게시용 스크립트](https://github.com/henrik/henrik.nyh.se/blob/master/script/deploy)와 유사한 쉘 스크립트인 `tasks/deploy` 를 사용하여 scp 를 쉽게 할 수 있습니다. 물론 자신의 사이트에 맞게 일부는 수정해서 사용해야 합니다. 게다가 이 스크립트를 Textmate 에서 실행할 수 있게 해주는 [Textmate 명령어](http://gist.github.com/214959)도 있습니다.
 
 ### rsync
 
-일단 `_site` 디렉토리를 생성하고 난 뒤에는, 이 [게시용 스크립트](https://github.com/vitalyrepin/vrepinblog/blob/master/transfer.sh)와 유사한 쉘 스크립트 `tasks/deploy` 를 사용하여 쉽게 rsync 할 수 있습니다. 물론 자신의 사이트 정보에 맞게 일부를 수정해서 사용해야 합니다.
+`_site` 디렉토리 생성이 끝나면, [이 게시용 스크립트](https://github.com/vitalyrepin/vrepinblog/blob/master/transfer.sh)와 유사한 쉘 스크립트인 `tasks/deploy` 를 사용하여 rsync 를 쉽게 할 수 있습니다. 물론 자신의 사이트에 맞게 일부는 수정해서 사용해야 합니다.
 
 #### 1 단계: 홈 폴더에 rrsync 설치 (서버-사이드)
 
@@ -114,7 +114,7 @@ Jekyll 사이트를 게시하는 또 다른 방법은 [Rake](https://github.com/
 
 #### 2 단계: 인증서-기반 ssh 접속 설정 (서버 사이드)
 
-[설정 방법에 대하여 설명한 글이 많이 있으니 검색해보도록 합니다](https://wiki.gentoo.org/wiki/SSH#Passwordless_Authentication). 여기선 설명하지 않습니다. 유일한 차이점이라면 인증서-기반 인증을 ```~/.ssh/authorized_keys``` 에 제한한다는 것입니다). ```rrsync``` 유틸리티를 실행하고 읽기-쓰기 권한을 가질 폴더를 지정합니다:
+[인터넷 상에 이 설정 방법에 대한 글이 많이 있습니다](https://wiki.gentoo.org/wiki/SSH#Passwordless_Authentication). 여기선 설명하지 않겠습니다. 유일한 차이점이라면 인증서-기반 인증을 ```~/.ssh/authorized_keys``` 에 제한한다는 것입니다). ```rrsync``` 유틸리티를 실행하고 읽기-쓰기 권한을 가질 폴더를 지정합니다:
 
 ```
 command="$HOME/bin/rrsync <folder>",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-rsa <cert>
@@ -134,7 +134,7 @@ rsync -avr --rsh='ssh -p2222' --delete-after --delete-excluded   <folder> <user>
 
 아래는 전달인자 목록입니다:
 
-- ```--rsh='ssh -p2222'``` 는 호스트가 기본값이 아닌 다른 ssh 포트 번호를 사용하는 경우 필요합니다 (예, hostgator 가 이런 방식을 사용합니다)
+- ```--rsh='ssh -p2222'``` 는 SSH 접근을 위해 호스트가 제공하는 SSH 포트 번호가 기본값이 아닌 다른 번호일 경우 필요합니다 (예, hostgator 가 이런 방식을 사용합니다)
 - ```<folder>``` 는 생성된 웹 컨텐츠가 있는 로컬 디렉토리 이름입니다. Jekyll 에서 기본값은 ```_site/``` 입니다
 - ```<user>``` &mdash; 호스트에 접속하는 ssh 계정 사용자 이름
 - ```<site>``` &mdash; 호스트 서버
@@ -147,9 +147,9 @@ rsync -avr --rsh='ssh -p2222' --delete-after --delete-excluded   _site/ hostuser
 
 서버명 뒤에 ':' 를 잊지 마세요!
 
-#### 4 단계 (선택사항): Jekyll 의 출력 디렉토리에 복사되지 않도록 transfer.sh 제외시키기
+#### 4 단계 (선택사항): transfer.sh 가 Jekyll 의 Site Destination 에 복사되지 않도록 제외시키기
 
-Jekyll-기반 웹 사이트에 게시하는 경우에는 이 단계를 따르길 권장합니다.  ```deploy``` 스크립트를 자신의 프로젝트 루트 디렉토리에 넣어둔 경우, Jekyll 에 의해 출력 디렉토리에 복사될 것입니다.
+Jekyll-기반 웹 사이트에 게시하는 경우에는 이 단계를 따르길 권장합니다. 프로젝트 루트 디렉토리에 ```deploy``` 스크립트를 넣어두면, Jekyll 은 이 파일을 Site Destination 에 복사할 것입니다.
 ```_config.yml``` 을 수정해서 이를 바꿀 수 있습니다. 다음 코드를 추가합니다:
 
 {% highlight yaml %}
@@ -175,18 +175,18 @@ Rack-Jekyll 을 사용하여 Heroku 에 게시하는 방법을 설명한 [이 �
 
 만약 Amazon S3 에 사이트를 호스팅하고 싶다면,
 [s3_website](https://github.com/laurilehmijoki/s3_website) 라는 응용프로그램을
-사용하세요.
-유동적으로 거의 무한대의 트래픽까지 규모가 조정되는 Amazon S3 에 당신의 사이트를
-서비스 해줍니다. 사용하는 만큼에 대해서만 지불하기 때문에 소규모 블로그에는 이
-방법을 적용하는 것이 가장 저렴할 것입니다.
-
+사용하세요. 이 응용프로그램은 거의 무한대의 트래픽까지 유동적으로 규모가
+조정되면서,
+다른 웹 서버들처럼 서비스되는 Amazon S3 에 당신의 사이트를 업로드 해줍니다.
+사용하는 만큼에 대해서만 비용을 지불하기 때문에 소규모 블로그에는 이 방법을
+적용하는 것이 가장 저렴할 것입니다.
 
 ## OpenShift
 
-만약 OpenShift gear 에 사이트를 게시하고 싶다면, [이를 위한
-카트리지](https://github.com/openshift-cartridges/openshift-jekyll-cartridge)도 있습니다.
+만약 OpenShift gear 에 사이트를 게시하고자 한다면, [이를 위한
+카트리지](https://github.com/openshift-cartridges/openshift-jekyll-cartridge)를 사용해 보세요.
 
 <div class="note">
   <h5>ProTip™: GitHub Pages 로 귀찮은 일 없이 Jekyll 을 호스팅하세요</h5>
-  <p>GitHub Pages 는 내부적으로 Jekyll 을 사용합니다. GitHub Pages 는 <a href="../github-pages/">Jekyll 웹사이트를 호스팅</a>하는 최고의 방법으로, 귀찮은 일도 없고 비용도 들지 않습니다.</p>
+  <p>GitHub Pages 는 내부적으로 Jekyll 을 사용합니다. GitHub Pages 는 <a href="../github-pages/">Jekyll 웹사이트를 호스팅</a>하는 최고의 방법으로써, 귀찮은 일도 없고 비용도 들지 않습니다.</p>
 </div>

@@ -5,29 +5,29 @@ permalink: /docs/github-pages/
 ---
 
 [GitHub Pages](http://pages.github.com) 는 개인이나 단체 또는 저장소를 위한 공개
-웹 페이지로서, 무료로 제공되는 GitHub 의 `github.io` 도메인이나 자신만의
-도메인에 호스팅할 수 있습니다. GitHub Pages 는 내부적으로 Jekyll 에 의해
-작동하고 있기 때문에 일반적인 HTML 지원뿐만 아니라, Jekyll 로 생성한 웹사이트를
-무료로 호스팅할 수 있는 가장 좋은 방법입니다.
+웹 페이지로서, GitHub 이 제공하는 `github.io` 도메인이나 자신만의 도메인에
+자유롭게 호스팅할 수 있습니다. GitHub Pages 는 내부적으로 Jekyll 에 의해
+작동되고 있기 때문에 단순한 HTML 컨텐츠를 지원하는 것 뿐만 아니라, Jekyll 기반의
+웹사이트를 무료로 호스팅하기에 탁월한 방법이기도 합니다.
 
 ## GitHub Pages 에 Jekyll 사용하기
 
 GitHub Pages 는 GitHub 에 있는 저장소들의 특정 브랜치를 검색하여 작동합니다.
-페이지의 종류는 두 가지인데 사용자/단체 페이지와 프로젝트 페이지입니다. 사이트
-사용 방법은 종류별로 아주 약간의 차이점이 있을 뿐 거의 동일합니다.
-
+지원하는 방식은 두 가지: 사용자/단체 페이지와 프로젝트 페이지가 있습니다.
+이 두 가지 사이트 게시 방법은 아주 조그만 차이점 몇 가지를 제외하고는 거의
+동일합니다.
 
 <div class="note protip">
-  <h5><code>github-pages</code> gem 을 사용하세요</h5>
+  <h5><code>github-pages</code> Gem 을 사용하세요</h5>
   <p>
-    GitHub 에 있는 우리 친구들이 Jekyll 과 GitHub Pages 에 관련된 의존요소를
-    관리할 때 사용하는
-    <a href="https://github.com/github/pages-gem">github-pages</a> gem 을
-    제공해주었습니다.
-    당신의 프로젝트에 이 gem 을 사용하면, GitHub Pages 에 사이트를 게시할 때
-    만날수도 있는, 여러가지 gem 들의 버전 불일치 문제를 피할 수 있습니다. 당신의
-    프로젝트에 현재 운영중인 버전의 gem 을 사용하려면, <code>Gemfile</code> 에
-    다음과 같이 설정하세요:
+    GitHub 에 있는 우리 친구들이 제공해 준
+    <a href="https://github.com/github/pages-gem">github-pages</a>
+    Gem 으로 GitHub Pages 에서 사용하는 Jekyll 과 그 의존요소들을 관리할 수
+    있습니다. GitHub Pages 에 사이트를 게시할 때, 예상치 못하게 여러 Gem 들에
+    대한 버전 불일치 문제를 마주칠수도 있는데, 당신의 프로젝트에 이 Gem 을
+    사용해서 이러한 문제들을 피할 수 있습니다. 당신의 프로젝트에서 현재 운영중인
+    것과 동일한 버전의 Gem 을 사용하려면, <code>Gemfile</code> 에 아래 내용을
+    추가하세요:
 
 {% highlight ruby %}
 source 'https://rubygems.org'
@@ -40,7 +40,7 @@ gem 'github-pages', versions['github-pages']
 {% endhighlight %}
 
     이로서 <code>bundle install</code> 을 실행하면 올바른 버전의
-    <code>github-pages</code> gem 을 사용할 수 있습니다.
+    <code>github-pages</code> Gem 을 사용할 수 있습니다.
   </p>
 </div>
 
@@ -49,8 +49,8 @@ gem 'github-pages', versions['github-pages']
 사용자 페이지와 단체 페이지는 오로지 GitHub Pages 에 관련된 파일만을 위한 특별한
 GitHub 저장소를 필요로 합니다. 저장소의 이름은 반드시 계정명으로 시작해야
 합니다. 예를 들어, [@mojombo 의 사용자 페이지
-저장소](https://github.com/mojombo/mojombo.github.io) 이름은 `mojombo.github.io`
-입니다.
+저장소](https://github.com/mojombo/mojombo.github.io)의 이름은
+`mojombo.github.io` 입니다.
 
 저장소의 `master` 브랜치를 가지고 GitHub Pages 사이트를 구성하고 게시하기
 때문에, 반드시 해당 브랜치에 Jekyll 사이트 컨텐츠를 저장하세요.
@@ -66,23 +66,23 @@ GitHub 저장소를 필요로 합니다. 저장소의 이름은 반드시 계정
 
 ### 프로젝트 페이지
 
-사용자/단체 페이지와는 다르게, 프로젝트 페이지는 해당 프로젝트의 저장소에 함께
-저장되어 있습니다. 하지만 `gh-pages` 라는 특별한 이름의 브랜치에 따로
-저장됩니다. 이 브랜치의 컨텐츠는 Jekyll 을 통해서 처리되고 난 후
-`username.github.io/project` (커스텀 도메인을 사용하지 않았을 때 기준 - 아래
-참조) 와 같이 사용자 페이지의 하위 경로에 결과물이 만들어집니다.
+사용자/단체 페이지와는 다르게, 프로젝트 페이지는 해당 프로젝트의 실제 저장소에
+함께 보관하는데, 단, `gh-pages` 라는 특별한 이름의 브랜치에 저장한다는 차이점이
+있습니다. 이 브랜치의 내용은 Jekyll 에 의해 처리된 후,
+`username.github.io/project` (커스텀 도메인을 사용하지 않았을 때 기준—아래 참조)
+와 같이 사용자 페이지 서브도메인의 하위 경로에 결과물이 만들어집니다.
 
 
-Jekyll 프로젝트의 저장소 자체가 이러한 브랜치 구조에 대한 완벽한 예시입니다.
-[master 브랜치]({{ site.repository }})에는 실제 Jekyll 소프트웨어가 담겨 있지만,
-(지금 보고있는) Jekyll 웹 사이트는 동일한 저장소의 [gh-pages
-브랜치]({{ site.repository }}/tree/gh-pages)에 들어 있습니다.
-
+Jekyll 프로젝트의 저장소 자체가 이러한 브랜치 구조에 대한 완벽한
+예시입니다—[master 브랜치]({{ site.repository }})에는 실제 Jekyll
+소프트웨어 프로젝트가 담겨 있지만, (바로 지금 보고있는) Jekyll 웹 사이트는
+동일한 저장소의 [gh-pages 브랜치]({{ site.repository }}/tree/gh-pages)에 들어
+있습니다.
 
 <div class="note warning">
   <h5>소스 파일은 반드시 루트 디렉토리에 있어야 합니다</h5>
   <p>
-GitHub Pages 는 <a href="http://jekyllrb.com/docs/configuration/#global-configuration">“Site Source”</a> 환경설정을 <a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting">덮어쓰기</a>때문에, 루트 디렉토리가 아닌 다른 디렉토리에 파일을 넣어두면 사이트가 올바르게 구성되지 않을 수 있습니다.
+GitHub Pages 는 <a href="http://jekyllrb.com/docs/configuration/#global-configuration">“Site Source”</a> 환경설정을 <a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting">덮어쓰기</a> 때문에, 루트 디렉토리가 아닌 다른 디렉토리에 파일을 넣어두면 사이트가 올바르게 구성되지 않을 수 있습니다.
   </p>
 </div>
 
@@ -115,10 +115,10 @@ GitHub 이 gh-pages 브랜치에서 페이지를 생성할 때에는 모든 URL 
 <div class="note">
   <h5>GitHub Pages 문서와 도움말, 지원</h5>
   <p>
-    GitHub Pages 에 대한 더 많은 정보와 문제해결 안내서가 필요하다면
-    <a href="https://help.github.com/categories/20/articles">GitHub’s Pages
-    도움말 섹션</a>을 확인하세요.
-    또 다른 문제가 있다면 <a href="https://github.com/contact">GitHub
-    Support</a> 에 연락하세요.
+    문제해결 안내서와 더불어, GitHub Pages 로 할 수 있는 일에 관련된 더 많은
+    정보가 필요하다면, <a
+    href="https://help.github.com/categories/20/articles">GitHub’s Pages 도움말
+    섹션</a>을 확인하세요. 이걸로도 해결되지 않는 문제가 있다면 <a
+    href="https://github.com/contact">GitHub Support</a> 에 연락하세요.
   </p>
 </div>
