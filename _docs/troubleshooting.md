@@ -4,27 +4,27 @@ title: 문제해결
 permalink: /docs/troubleshooting/
 ---
 
-Jekyll 설치나 사용에 문제가 생겼을 때 도움이 될 만한
-몇 가지 팁이 여기 있습니다. 이 팁들로도 해결되지 않는 문제가 있다면,
-**[도움말 자료](/help/)**도 확인해보시기 바랍니다.
+여기 Jekyll 설치나 사용에 문제가 생겼을 때 도움이 될 만한 팁이 몇 가지 있습니다.
+이 팁들로도 해결되지 않는 문제가 있다면, **[도움말 자료](/help/)**도
+확인해보시기 바랍니다.
 
-- [Installation Problems](#installation-problems)
-- [Problems running Jekyll](#problems-running-jekyll)
-- [Base-URL Problems](#base-url-problems)
-- [Configuration problems](#configuration-problems)
-- [Markup Problems](#markup-problems)
+- [설치 관련 문제점](#installation-problems)
+- [Jekyll 실행 관련 문제점](#problems-running-jekyll)
+- [Base-URL 관련 문제점](#base-url-problems)
+- [환경설정 관련 문제점](#configuration-problems)
+- [마크업 관련 문제점](#markup-problems)
 
-## 설치 시 문제점
+## 설치 관련 문제점
 
-만약 Gem 설치 시 에러가 발생한다면,
-Ruby 2.0.0 컴파일 확장기능 모듈의 헤더 파일이 필요한 것일 수 있습니다.
-우분투 또는 데비안에서는 다음 명령을 실행합니다:
+만약 Gem 설치 도중에 에러가 발생한다면, Ruby 2.0.0 확장 모듈의 컴파일링에 필요한
+헤더파일들이 설치되어있지 않기 때문일 수 있습니다. Ubuntu 또는 Debian 에서의
+설치 명령은 다음과 같습니다:
 
 {% highlight bash %}
 sudo apt-get install ruby2.0.0-dev
 {% endhighlight %}
 
-레드햇이나 CentOS, 페도라에서는 다음과 같이 실행합니다:
+Red Hat 이나 CentOS, Fedora 에서는 다음과 같습니다:
 
 {% highlight bash %}
 sudo yum install ruby-devel
@@ -40,7 +40,7 @@ export PATH=$PATH:/home/private/gems/bin
 export RB_USER_INSTALL='true'
 {% endhighlight %}
 
-맥 OSX 에서는, RubyGems 를 업데이트해야 할 수도 있습니다 (반드시 필요한 경우에만 `sudo` 와 함께 실행함):
+맥 OS X 에서는, RubyGem 들을 업데이트해야 할 수도 있습니다 (반드시 필요한 경우에만 `sudo` 와 함께 실행함):
 
 {% highlight bash %}
 sudo gem update --system
@@ -60,19 +60,19 @@ xcode-select --install
 sudo gem install jekyll
 {% endhighlight %}
 
-MacOS X 를 업그레이드 한다고 해서 Xcode 까지 자동으로 업그레이드 되지는 않는다는
+맥 OS X 을 업그레이드 한다고 해서 Xcode 까지 자동으로 업그레이드 되지는 않는다는
 것과 (Xcode 업그레이드는 App Store 에서 별도로 수행합니다), 최신 버전이 아닌
 Xcode.app 은 앞서 설명한 명령행 도구와 충돌을 일으킬 수 있다는 점에 주의하기
 바랍니다. 이런 문제가 발생한다면, Xcode 를 업그레이드 하고 최신 명령행 도구를
 설치하세요.
 
-Gentoo 에 RubyGems 를 설치하려면 다음 명령을 실행합니다:
+Gentoo 에 RubyGem 들을 설치하려면 다음 명령을 실행합니다:
 
 {% highlight bash %}
 sudo emerge -av dev-ruby/rubygems
 {% endhighlight %}
 
-윈도우즈에서는 [RubyInstaller
+Windows 에서는 [RubyInstaller
 DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 을 설치해야 할 수도 있습니다.
 
 ### Could not find a JavaScript runtime. (ExecJS::RuntimeUnavailable)
@@ -82,12 +82,12 @@ DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 을 설�
 `therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다. 더 자세한 내용은
 [이슈 #2327](https://github.com/jekyll/jekyll/issues/2327) 을 확인해보세요.
 
-## Jekyll 실행 시 문제점
+## Jekyll 실행 관련 문제점
 
-데비안이나 우분투에서는, 터미널에서 `jekyll` 실행파일을 사용하기 위해서
+Debian 이나 Ubuntu 에서는, 터미널에서 `jekyll` 실행파일을 사용하기 위해
 `/var/lib/gems/1.8/bin/` 을 `$PATH` 에 추가해야 할 수도 있습니다.
 
-## Base-URL 문제점
+## Base-URL 관련 문제점
 
 다음과 같이 base-url 옵션을 사용할 경우:
 
@@ -107,29 +107,29 @@ http://localhost:4000/blog/index.html
 http://localhost:4000/blog
 {% endhighlight %}
 
-## 환경설정 문제점
+## 환경설정 관련 문제점
 
-[환경설정](../configuration/)의 우선순위는 다음과 같습니다:
+[환경설정](../configuration/)이 충돌하는 경우의 우선순위는 다음과 같습니다:
 
 
 1. 명령행 플래그
 2. 환경설정 파일
-3. 기본값
+3. 디폴트값
 
-다시 말해: `_config.yml` 에 설정된 옵션이 기본값 대신 사용되고,
-명령행에 사용된 플래그들이 다른 모든 설정들보다 우선순위가 높습니다.
+한 마디로 정리하면 이런 뜻입니다: 환경설정 파일 `_config.yml` 에 설정된 옵션이
+디폴트값 대신 사용되고, 명령행에 사용된 플래그들은 다른 모든 설정들보다
+우선순위가 높습니다.
 
+## 마크업 관련 문제점
 
-## 마크업 문제점
-
-다양한 마크업 엔진들이 Jekyll 에 사용되고 있으며, 각 엔진만의 문제점이 있을 수
-있습니다. 동일한 문제를 겪고 있는 이들에게 도움이 될 만한 정보를 이 페이지에
-모아두었습니다.
+Jekyll 에 사용된 마크업 엔진들의 종류는 다양하고, 각 엔진에는 저마다의
+특이사항이 있을 수 있습니다. 동일한 문제를 겪고 있는 이들에게 도움이 될 만한
+정보를 여기에 모아두었습니다.
 
 ### Liquid
 
-최신 버전인 2.0 에서는, 템플릿 안의 `{{ "{{" }}` 가 고장난 것 같습니다. 이전
-버전과는 다르게, 2.0 에서 `{{ "{{" }}` 를 사용하면 다음과 같은 에러가
+최신 버전인 2.0 에서는, 템플릿에 사용하는 `{{ "{{" }}` 가 고장난 것 같습니다.
+이전 버전과는 다르게, 2.0 에서 `{{ "{{" }}` 를 사용하면 다음과 같은 에러가
 발생합니다:
 
 {% highlight bash %}
