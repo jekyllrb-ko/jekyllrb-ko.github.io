@@ -40,7 +40,16 @@ export PATH=$PATH:/home/private/gems/bin
 export RB_USER_INSTALL='true'
 {% endhighlight %}
 
-맥 OS X 에서는, RubyGem 들을 업데이트해야 할 수도 있습니다 (반드시 필요한 경우에만 `sudo` 와 함께 실행함):
+Gentoo 에 RubyGems 를 설치하려면 다음 명령을 실행합니다:
+
+{% highlight bash %}
+sudo emerge -av dev-ruby/rubygems
+{% endhighlight %}
+
+Windows 에서는, [RubyInstaller
+DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 설치가 필요할 수도 있습니다.
+
+맥 OS X 에서는, RubyGems 를 업데이트해야 할 수도 있습니다 (반드시 필요한 경우에만 `sudo` 와 함께 실행함):
 
 {% highlight bash %}
 sudo gem update --system
@@ -66,14 +75,51 @@ Xcode.app 은 앞서 설명한 명령행 도구와 충돌을 일으킬 수 있�
 바랍니다. 이런 문제가 발생한다면, Xcode 를 업그레이드 하고 최신 명령행 도구를
 설치하세요.
 
-Gentoo 에 RubyGem 들을 설치하려면 다음 명령을 실행합니다:
+### Jekyll &amp; 맥 OS X 10.11
+
+시스템 무결성 보호 (System Integrity Protection) 기능의 도입으로 인해, 쓰기
+권한이 있었던 몇몇 디렉토리들이 이제부터는 시스템 디렉토리로 인식되어 더 이상
+사용할 수 없게 되었습니다. 이를 고려했을 때, 이제 Jekyll 을 설치하는 가장 쉬운
+방법은 Homebrew 를 사용해 Ruby 를 관리하는 것입니다. Homebrew 설치 명령은 다음과
+같습니다:
 
 {% highlight bash %}
-sudo emerge -av dev-ruby/rubygems
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 {% endhighlight %}
 
-Windows 에서는 [RubyInstaller
-DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 을 설치해야 할 수도 있습니다.
+Homebrew 설치가 끝났으면, 나머지는 간단합니다:
+
+{% highlight bash %}
+brew install ruby
+{% endhighlight %}
+
+(더 많은 기능을 원하는) 고급 사용자들에게 도움이 될 만한 Jekyll 설치 방법은 Ruby
+버전 관리자 ([RVM][], [rbenv][], [chruby][] 및 [기타][etc]) 를 하나 선택해 사용하는
+것입니다.
+
+[RVM]: https://rvm.io
+[rbenv]: http://rbenv.org
+[chruby]: https://github.com/postmodern/chruby
+[etc]: https://github.com/rvm/rvm/blob/master/docs/alt.md
+
+이 방법으로 Ruby 를 설치했다면, 다음과 같이 `$PATH` 변수를 수정하는 작업이
+필요할 수도 있습니다:
+
+{% highlight bash %}
+export PATH=/usr/local/bin:$PATH
+{% endhighlight %}
+
+GUI 앱에서 `$PATH` 를 수정하는 방법은 다음과 같습니다:
+
+{% highlight bash %}
+launchctl setenv PATH "/usr/local/bin:$PATH"
+{% endhighlight %}
+
+이 방법들은 `/usr/local` 을 SIP 가 활성화 된 "안전한" 위치로 인식하여, Apple 에
+내장된 Ruby 버전과의 충돌을 피하고, Jekyll 과 그 의존요소들을 샌드박스 환경에서
+사용할 수 있게 해줍니다. 또 하나의 장점은 Gem 을 추가하거나 삭제할 때 `sudo` 를
+입력할 필요가 없다는 것입니다.
+
 
 ### Could not find a JavaScript runtime. (ExecJS::RuntimeUnavailable)
 

@@ -41,6 +41,16 @@ gem 'github-pages', versions['github-pages']
 
     이로서 <code>bundle install</code> 을 실행하면 올바른 버전의
     <code>github-pages</code> Gem 을 사용할 수 있습니다.
+
+    이 방법이 제대로 작동하지 않으면, Gemfile 내용을:
+
+{% highlight ruby %}
+source 'https://rubygems.org'
+
+gem 'github-pages'
+{% endhighlight %}
+
+    처럼 단순하게 정리하고 <code>bundle update</code> 를 자주 실행해주세요.
   </p>
 </div>
 
