@@ -31,14 +31,22 @@ Jekyll 은 Hook 을 제공하는 플러그인 시스템을 갖추고 있어서 �
 2. `_config.yml` 파일에 `gems` 라는 키로 배열을 추가하고 사용하려는 플러그인들의
 gem 이름을 나열하세요. 예를 들면 다음과 같습니다:
 
+
         gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
         # This will require each of these gems automatically.
+
+    다음 `gem install jekyll-test-plugin jekyll-jsonify jekyll-assets` 라고 실행하여 해당 플러그인들을 설치합니다.
+
 3. `Gemfile` 의 Bundler 그룹에 관련 플러그인을 추가합니다. 예를 들면 다음과
     같습니다:
 
         group :jekyll_plugins do
           gem "my-jekyll-plugin"
+          gem "another-jekyll-plugin"
         end
+
+    이제 `bundle install` 명령만 한 번 실행해주면 Bundler 그룹에 있는 모든 플러그인이 설치됩니다.
+
 
 <div class="note info">
   <h5>
@@ -736,6 +744,7 @@ LESS.js files during generation.
 - [Customized Kramdown Converter](https://github.com/mvdbos/kramdown-with-pygments): Enable Pygments syntax highlighting for Kramdown-parsed fenced code blocks.
 - [Bigfootnotes Plugin](https://github.com/TheFox/jekyll-bigfootnotes): Enables big footnotes for Kramdown.
 - [AsciiDoc Plugin](https://github.com/asciidoctor/jekyll-asciidoc): AsciiDoc convertor for Jekyll using [Asciidoctor](http://asciidoctor.org/).
+- [Lazy Tweet Embedding](https://github.com/takuti/jekyll-lazy-tweet-embedding): Automatically convert tweet urls into twitter cards.
 
 #### 필터
 
