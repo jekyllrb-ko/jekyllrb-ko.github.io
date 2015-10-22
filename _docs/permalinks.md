@@ -234,7 +234,7 @@ Jekyll 에 내장된 스타일을 사용해도 되고 자신만의 스타일을 
         <p><code>pretty</code></p>
       </td>
       <td>
-        <p><code>/2009/04/29/slap-chop/index.html</code></p>
+        <p><code>/2009/04/29/slap-chop/</code></p>
       </td>
     </tr>
     <tr>

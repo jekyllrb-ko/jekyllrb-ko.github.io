@@ -22,6 +22,18 @@ $ jekyll build --watch
 #    변경사항을 감지하면 자동으로 다시 생성합니다.
 {% endhighlight %}
 
+<div class="note info">
+  <h5>자동으로 다시 생성할 때, _config.yml 의 변경사항은 반영되지 않습니다.</h5>
+  <p>
+    주 환경설정 파일인 <code>_config.yml</code> 에는 전역 환경설정과 변수들이 정의되어 있으며,
+    실행 시점에 한 번만 읽어들입니다. 자동 재생성을 사용하는 중이라도, 완전히 새로 실행하기 전까지는
+    <code>_config.yml</code> 의 변경사항을 읽어들이지 않습니다.
+  </p>
+  <p>
+    <a href="../datafiles">데이터 파일</a>들은 자동 재생성에 포함됩니다.
+  </p>
+</div>
+
 <div class="note warning">
   <h5>사이트를 빌드하면 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
   <p>

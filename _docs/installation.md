@@ -20,7 +20,7 @@ Jekyll 설치는 아주 쉽고 직관적이지만, 시작하기 전에 먼저 �
 - 리눅스, 유닉스, 또는 맥 OS X
 - [NodeJS](http://nodejs.org), 또는 다른 JavaScript 실행환경 (Jekyll 2 와 그
   이전 버전에서, CoffeeScript 지원에 필요함).
-- Python (Jekyll 2 와 그 이전 버전에만 해당됨)
+- [Python 2.7](https://www.python.org/downloads/) (Jekyll 2 나 그 이전 버전일 경우)
 
 <div class="note info">
   <h5>Windows 에서 Jekyll 실행하기</h5>
