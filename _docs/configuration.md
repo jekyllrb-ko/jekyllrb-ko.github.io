@@ -243,7 +243,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     <tr class="setting">
       <td>
         <p class="name"><strong>Force polling</strong></p>
-        <p class="description">감시 기능을 강제로 활성화합니다.</p>
+        <p class="description">감시 기능을 강제로 활성화한다.</p>
       </td>
       <td class="align-center">
         <p><code class="flag">--force_polling</code></p>
