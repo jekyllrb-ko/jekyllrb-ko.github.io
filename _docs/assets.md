@@ -6,7 +6,7 @@ permalink: /docs/assets/
 
 Jekyll 은 기본적으로 Sass 와 CoffeeScript 를 지원합니다. 이를 사용하기 위해서는,
 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중 하나) 로 파일을 생성하고 파일의
-시작부분에 3 개의 대쉬문자 두 줄을 입력해야 합니다. 이렇게 말이죠:
+시작부분에 3 개의 대시문자 두 줄을 입력해야 합니다. 이렇게 말이죠:
 
 {% highlight sass %}
 ---
