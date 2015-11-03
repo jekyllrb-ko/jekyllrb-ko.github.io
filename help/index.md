@@ -18,7 +18,7 @@ Jekyll Talk 는 우리의 공식 토론장입니다. 여기서는 사용자나 �
 
 모든 개발자들의 공통된 습관 중 하나는 StackOverflow 를 확인하는 것이죠.
 StackOverflow 에서 당신의 질문에 관련된 Jekyll 태그를 확인해보세요. 없는것
-같다구요? 그럼 새로 질문을 등록하세요!
+같다고요? 그럼 새로 질문을 등록하세요!
 
 ### [Jekyll IRC 채널](irc:irc.freenode.net/jekyll)
 
@@ -27,7 +27,7 @@ Jekyll 의 공식 IRC 채널인 **irc.freenode.new** 의 **#jekyll** 에서 실�
 
 ### [jekyll/jekyll](https://github.com/jekyll/jekyll/issues)
 
-Jekyll 개발에 관련된 이슈들을 검색해보세요. 버그를 발견한 것 같다구요? 이슈로
+Jekyll 개발에 관련된 이슈들을 검색해보세요. 버그를 발견한 것 같다고요? 이슈로
 등록해주세요.
 
 ### [Twitter 의 @jekyllrb](https://twitter.com/jekyllrb)

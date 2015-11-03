@@ -4,7 +4,7 @@ title: 업그레이드
 permalink: /docs/upgrading/
 ---
 
-Jekyll 을 업그레이드 하려구요? 먼저, 1.0 에서 바뀐 점을 몇 가지 알아두어야
+Jekyll 을 업그레이드 하려고요? 먼저, 1.0 에서 바뀐 점을 몇 가지 알아두어야
 합니다.
 
 변경내용을 살펴보기 전에, 먼저 Jekyll 을 최신 버전으로 업그레이드 하세요:
@@ -15,7 +15,7 @@ $ gem update jekyll
 
 <div class="note feature">
   <h5 markdown="1">뛰어들기</h5>
-  <p markdown="1">당장 Jekyll 사이트를 만들어보고 싶다구요? 그냥
+  <p markdown="1">당장 Jekyll 사이트를 만들어보고 싶다고요? 그냥
    <code>jekyll new 사이트이름</code> 을 실행하기만 하면 Jekyll 사이트의 골격이
    담긴 새 디렉토리가 만들어집니다.</p>
 </div>
@@ -92,7 +92,7 @@ Jekyll v1.0 에서, 하위 디렉토리의 페이지에 대한 절대적 고유�
   <h5>config 플래그는 환경설정 파일(들)을 명시적으로 지정합니다</h5>
   <p markdown="1">`--config` 플래그를 사용하면, `_config.yml` 파일이 자동으로
     읽히지 않습니다. 별도로 만든 환경설정 파일과 기본 환경설정 파일을 함께
-    사용하고 싶다구요? 가능합니다. 하나 이상의 환경설정 파일을 Jekyll 에 전달할
+    사용하고 싶다고요? 가능합니다. 하나 이상의 환경설정 파일을 Jekyll 에 전달할
     수 있습니다. 환경설정 파일은 오른쪽에서 왼쪽으로 단계적으로 적용되는데, 만약
     `jekyll serve --config _config.yml,_config-dev.yml` 이라고 실행하고 두
     파일에 동일한 키가 들어있을 경우, 오른쪽 환경설정 파일 (`_config-dev.yml`)
