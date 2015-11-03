@@ -106,13 +106,13 @@ GitHub Pages 는 <a href="http://jekyllrb.com/docs/configuration/#global-configu
 (`username.github.io/project-name/`) 를 활용하는 방법이 있습니다.
 
 1. `_config.yml` 의 `baseurl` 옵션을 `/project-name` 으로 지정한다 -- 맨 앞에는
-   슬래쉬가 있고, 끝에는 슬래쉬가 **없음**
+   슬래시가 있고, 끝에는 슬래시가 **없음**
 2. JS 또는 CSS 파일을 사용할 때는 이렇게 한다:
-   `{% raw %}{{ site.baseurl }}/path/to/css.css{% endraw %}` -- 슬래쉬가 변수
+   `{% raw %}{{ site.baseurl }}/path/to/css.css{% endraw %}` -- 슬래시가 변수
    다음에 바로 이어짐 ("path" 바로 앞).
 3. 고유주소나 내부 링크를 사용할 때는 이렇게 한다:
    `{% raw %}{{ site.baseurl }}{{ post.url }}{% endraw %}` -- 두 변수 사이에는
-   슬래쉬가 **없음**
+   슬래시가 **없음**
 4. 마지막으로, 커밋/게시 전에 `jekyll serve` 를 사용하여 사이트를 미리보기
    하려면, `--baseurl` 옵션에 **빈 문자열** 을 전달해야지만 `localhost:4000`
    에서 모든 것을 볼 수 있다 (시작 부분에 `/project-name` 없음):
