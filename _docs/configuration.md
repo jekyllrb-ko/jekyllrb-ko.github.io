@@ -268,6 +268,21 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p><code class="flag">-q, --quiet</code></p>
       </td>
     </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>증분 빌드</strong></p>
+        <p class="description">
+            실험 기능인 증분 빌드를 활성화한다. 증분 빌드란 변경된 페이지나
+            포스트만을 다시 빌드하는 기능으로서, 규모가 큰 사이트에서 눈에 띄는
+            성능 향상을 가져올 수 있다. 하지만 특정한 상황에서는 사이트 생성에
+            문제가 생길 수도 있다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">incremental: BOOL</code></p>
+        <p><code class="flag">-I, --incremental</code></p>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -534,6 +549,7 @@ markdown:    kramdown
 highlighter: rouge
 lsi:         false
 excerpt_separator: "\n\n"
+incremental: false
 
 # 서버 작동
 detach:  false

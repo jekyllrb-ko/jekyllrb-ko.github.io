@@ -45,20 +45,20 @@ Test 의존요소
 Jekyll 의 모든 의존요소들을 설치해야지만 테스트 도구 실행과 Gem 생성이
 가능합니다. 이 명령어만 실행하면 모든 설정이 끝납니다:
 
-    $ script/bootstrap
+<figure class="highlight"><pre><code>$ script/bootstrap</code></pre></figure>
 
 시작하기 전, 테스트를 실행하고 잘 통과되는지 확인해주세요 (환경설정이 올바른지
 확인하기 위한 것입니다):
 
-    $ script/cibuild
+<figure class="highlight"><pre><code>$ script/cibuild</code></pre></figure>
 
 오직 `test/` 안의 파일만 업데이트하는 경우에는, 이 명령어를 사용하세요:
 
-    $ script/test test/blah_test.rb
+<figure class="highlight"><pre><code>$ script/test test/blah_test.rb</code></pre></figure>
 
 오직 `.feature` 파일만 업데이트하는 경우에는, 이 명령어를 사용하세요:
 
-    $ script/cucumber features/blah.feature
+<figure class="highlight"><pre><code>$ script/cucumber features/blah.feature</code></pre></figure>
 
 `script/test` 와 `script/cucumber` 를 전달인자 없이 실행하면, 관련된 파일 전체에
 대하여 실행됩니다.

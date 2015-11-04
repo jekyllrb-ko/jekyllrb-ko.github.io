@@ -480,14 +480,6 @@ end
 
 ## Hook
 
-<div class="note unreleased">
-  <h5>Hook 기능은 아직 릴리스되지 않았습니다.</h5>
-  <p>
-    이 기능을 사용하려면, <a href="/docs/installation/#pre-releases"> Jekyll 의
-    최신 개발 버전을 설치하세요</a>.
-  </p>
-</div>
-
 Hook 을 사용하면, 당신의 플러그인이 사이트 빌드에 다방면으로 정교한 작업을
 수행할 수 있습니다. 당신의 플러그인에 Hook 이 포함되어 있으면, Jekyll 은 정해진
 시점에 해당 Hook 을 호출합니다.
@@ -504,8 +496,8 @@ Jekyll::Hooks.register :post, :post_render do |post|
 end
 {% endhighlight %}
 
-Jekyll 은 <code>:site</code>, <code>:page</code>, <code>:post</code> 와
-<code>:document</code> 에 관련된 Hook 을 제공합니다. 어떤 상황에서든, Jekyll 은
+Jekyll 은 <code>:site</code>, <code>:pages</code>, <code>:posts</code> 와
+<code>:documents</code> 에 관련된 Hook 을 제공합니다. 어떤 상황에서든, Jekyll 은
 Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨줍니다. 하지만
 <code>:pre_render</code> 의 경우에는 두 번째 매개변수로 페이로드 해시도
 제공하는데, 이로 인해 렌더링 중 사용할 수 있는 변수들에 대해 완벽한 관리 권한을
@@ -569,7 +561,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:page</code></p>
+        <p><code>:pages</code></p>
       </td>
       <td>
         <p><code>:post_init</code></p>
@@ -580,7 +572,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:page</code></p>
+        <p><code>:pages</code></p>
       </td>
       <td>
         <p><code>:pre_render</code></p>
@@ -591,7 +583,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:page</code></p>
+        <p><code>:pages</code></p>
       </td>
       <td>
         <p><code>:post_render</code></p>
@@ -602,7 +594,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:page</code></p>
+        <p><code>:pages</code></p>
       </td>
       <td>
         <p><code>:post_write</code></p>
@@ -613,7 +605,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:post</code></p>
+        <p><code>:posts</code></p>
       </td>
       <td>
         <p><code>:post_init</code></p>
@@ -624,7 +616,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:post</code></p>
+        <p><code>:posts</code></p>
       </td>
       <td>
         <p><code>:pre_render</code></p>
@@ -635,7 +627,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:post</code></p>
+        <p><code>:posts</code></p>
       </td>
       <td>
         <p><code>:post_render</code></p>
@@ -646,7 +638,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:post</code></p>
+        <p><code>:posts</code></p>
       </td>
       <td>
         <p><code>:post_write</code></p>
@@ -657,7 +649,18 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:document</code></p>
+        <p><code>:documents</code></p>
+      </td>
+      <td>
+        <p><code>:post_init</code></p>
+      </td>
+      <td>
+        <p>문서가 초기화될 때마다</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:documents</code></p>
       </td>
       <td>
         <p><code>:pre_render</code></p>
@@ -668,7 +671,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:document</code></p>
+        <p><code>:documents</code></p>
       </td>
       <td>
         <p><code>:post_render</code></p>
@@ -679,7 +682,7 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
     </tr>
     <tr>
       <td>
-        <p><code>:document</code></p>
+        <p><code>:documents</code></p>
       </td>
       <td>
         <p><code>:post_write</code></p>
@@ -854,7 +857,7 @@ LESS.js files during generation.
 - [Jekyll CO₂](https://github.com/wdenton/jekyll-co2): Generates HTML showing the monthly change in atmospheric CO₂ at the Mauna Loa observatory in Hawaii.
 - [remote-include](http://www.northfieldx.co.uk/remote-include/): Includes files using remote URLs
 - [jekyll-minifier](https://github.com/digitalsparky/jekyll-minifier): Minifies HTML, XML, CSS, and Javascript both inline and as separate files utilising yui-compressor and htmlcompressor.
-- [Jekyll views router](https://bitbucket.org/nyufac/jekyll-views-router): Simple router between generator plugins and templates. 
+- [Jekyll views router](https://bitbucket.org/nyufac/jekyll-views-router): Simple router between generator plugins and templates.
 
 #### 편집기
 
