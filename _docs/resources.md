@@ -44,5 +44,3 @@ Jekyll 로 태그 클라우드와 태그 페이지를 구현하는 방법 안내
 - [Jekyll 에 자신의 Rails 레이아웃 사용하기](http://numbers.brighterplanet.com/2010/08/09/sharing-rails-views-with-jekyll)
 
 - [Jekyll 에 Ajax 페이지 나누기 기능 추가하기](https://eduardoboucas.com/blog/2014/11/10/adding-ajax-pagination-to-jekyll.html)
-
-- [Jekyll 의 데이터 파일을 사용해서 동적인 네비게이션 막대 만들기](http://blog.jordanthornquest.com/post/119506660470/building-dynamic-navbars-in-jekyll)

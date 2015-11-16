@@ -491,7 +491,7 @@ Jekyll::Hooks.register 를 호출하고 컨테이너, 이벤트 이름과 Hook �
 
 
 {% highlight ruby %}
-Jekyll::Hooks.register :post, :post_render do |post|
+Jekyll::Hooks.register :posts, :post_render do |post|
   # Jekyll 이 포스트를 생성한 뒤 호출할 코드
 end
 {% endhighlight %}
@@ -524,6 +524,17 @@ Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨�
       </td>
       <td>
         <p>사이트가 초기화된 후</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:site</code></p>
+      </td>
+      <td>
+        <p><code>:post_read</code></p>
+      </td>
+      <td>
+        <p>디스크로부터 사이트 데이터를 읽어들인 후</p>
       </td>
     </tr>
     <tr>
@@ -724,6 +735,7 @@ LESS.js files during generation.
 - [Jekyll Auto Image by Merlos](https://github.com/merlos/jekyll-auto-image): Gets the first image of a post. Useful to list your posts with images or to add [twitter cards](https://dev.twitter.com/cards/overview) to your site.
 - [Jekyll Portfolio Generator by Shannon Babincsak](https://github.com/codeinpink/jekyll-portfolio-generator): Generates project pages and computes related projects out of project data files.
 - [Jekyll-Umlauts by Arne Gockeln](https://github.com/webchef/jekyll-umlauts): This generator replaces all german umlauts (äöüß) case sensitive with html.
+- [Jekyll Flickr Plugin](https://github.com/lawmurray/indii-jekyll-flickr) by [Lawrence Murray](http://www.indii.org): Generates posts for photos uploaded to a Flickr photostream.
 
 #### 변환기
 
@@ -823,6 +835,7 @@ LESS.js files during generation.
 - [Fetch remote file content](https://github.com/dimitri-koenig/jekyll-plugins) by [Dimitri König](https://www.dimitrikoenig.net/): Using `remote_file_content` tag you can fetch the content of a remote file and include it as if you would put the content right into your markdown file yourself. Very useful for including code from github repo's to always have a current repo version.
 - [jekyll-asciinema](https://github.com/mnuessler/jekyll-asciinema): A tag for embedding asciicasts recorded with [asciinema](https://asciinema.org) in your Jekyll pages.
 - [Jekyll-Youtube](https://github.com/dommmel/jekyll-youtube)  A Liquid tag that embeds Youtube videos. The default emded markup is responsive but you can also specify your own by using an include/partial.
+- [Jekyll Flickr Plugin](https://github.com/lawmurray/indii-jekyll-flickr) by [Lawrence Murray](http://www.indii.org): Embeds Flickr photosets (albums) as a gallery of thumbnails, with lightbox links to larger images.
 
 #### 콜렉션
 

@@ -421,3 +421,5 @@ Gist 의 공개/비공개 상태에 상관없이 사용할 수 있습니다:
 {% gist parkr/931c1c8d465a04042403 jekyll-private-gist.markdown %}
 {% endraw %}
 {% endhighlight %}
+
+`gist` 태그를 사용하기 위해서는, [jekyll-gist](https://github.com/jekyll/jekyll-gist) Gem 을 프로젝트에 추가해야 합니다.
