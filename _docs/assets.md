@@ -4,9 +4,10 @@ title: 재료
 permalink: /docs/assets/
 ---
 
-Jekyll 은 기본적으로 Sass 와 CoffeeScript 를 지원합니다. 이를 사용하기 위해서는,
-적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중 하나) 로 파일을 생성하고 파일의
-시작부분에 3 개의 대시문자 두 줄을 입력해야 합니다. 이렇게 말이죠:
+Jekyll 은 Sass 를 기본적으로 지원하고 Ruby gem 을 통해 CoffeeScript 와 연동할 수 
+있습니다. 사용 방법은, 일단 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중 
+하나) 로 파일을 생성하고 파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야 
+합니다. 이렇게 말이죠:
 
 {% highlight sass %}
 ---
@@ -78,3 +79,15 @@ sass:
 
 이 설정은 Sass 에 그대로 전달되므로, Sass 가 지원하는 출력 스타일 옵션이라면
 무엇이든 여기에 사용할 수 있습니다.
+
+
+## Coffeescript
+
+Jekyll 3.0 과 그 이후 버전에서 Coffeescript 를 활성화하려면 
+ * `jekyll-coffeescript` gem 을 설치하고
+ * `_config.yml` 이 최신 상태이고 아래 내용을 포함하고 있는지 확인해야 합니다.
+
+{% highlight yaml %}
+gems:
+ - jekyll-coffeescript
+{% endhighlight %}
