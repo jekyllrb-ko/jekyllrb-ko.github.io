@@ -52,7 +52,7 @@ Parker Moore,parkr
 Liu Fengyun,liufengyun
 {% endhighlight %}
 
-`site.data.members` 로 (파일 이름이 변수 이름으로 사용되는 것에 주목) 이
+`site.data.members` 로 (파일명이 변수 이름으로 사용되는 것에 주목) 이
 데이터에 접근할 수 있습니다.
 
 이제 템플릿에서 멤버들 목록을 출력할 수 있습니다:
@@ -101,7 +101,7 @@ members:
     github: jdoe
 {% endhighlight %}
 
-이제 `site.data.orgs` 뒤에 파일이름을 사용하면, 단체 정보에 접근할 수 있습니다:
+이제 `site.data.orgs` 뒤에 파일명을 사용하면, 단체 정보에 접근할 수 있습니다:
 
 
 {% highlight html %}

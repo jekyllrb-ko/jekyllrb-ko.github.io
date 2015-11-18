@@ -276,7 +276,7 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://github.com/Shopify
 내용이 삽입됩니다.
 
 <div class="note">
-  <h5>ProTip™: 파일 이름에 변수를 사용하세요</h5>
+  <h5>ProTip™: 파일명에 변수를 사용하세요</h5>
   <p>
 
     삽입하고자 하는 파일의 이름은 (위 예제처럼) 실제 파일명을 사용할 수도 있고,
@@ -414,7 +414,7 @@ Gist 의 공개/비공개 상태에 상관없이 사용할 수 있습니다:
 {% endraw %}
 {% endhighlight %}
 
-원한다면 파일 이름을 표시할 수도 있습니다:
+원한다면 파일명을 표시할 수도 있습니다:
 
 {% highlight text %}
 {% raw %}
