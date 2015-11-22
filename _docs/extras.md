@@ -9,7 +9,13 @@ Jekyll 이 추가적으로 지원하는 기능 (선택사항) 이 몇 가지 있
 
 ## 수학 지원
 
-Kramdown 은 LaTeX 를 지원하기 때문에 수식 블록에 [MathJax](http://www.mathjax.org/) 를 사용해서 PNG 렌더링이 가능합니다. 더 자세한 내용은 Kramdown 문서의 [Math Blocks](http://kramdown.gettalong.org/syntax.html#math-blocks) 와 [Math Support](http://kramdown.gettalong.org/converter/html.html#math-support) 를 살펴보세요.
+Kramdown 은 LaTeX 를 지원하기 때문에 수식 블록에 [MathJax](http://www.mathjax.org/) 를 사용해서 PNG 렌더링이 가능합니다. 더 자세한 내용은 Kramdown 문서의 [Math Blocks](http://kramdown.gettalong.org/syntax.html#math-blocks) 와 [Math Support](http://kramdown.gettalong.org/converter/html.html#math-support) 를 살펴보세요. MathJax 는 LaTeX 렌더링을 위해 JavaScript 나 CSS 를 필요로 하는데, 아래는 그 예시입니다.
+
+{% highlight html %}
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+{% endhighlight %}
+
+MathJax 입문에 관련된 더 많은 정보를 담고있는 [훌륭한 블로그 게시물](http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html)이 있으니 참고하세요.
 
 ## 다른 마크다운 처리기
 
