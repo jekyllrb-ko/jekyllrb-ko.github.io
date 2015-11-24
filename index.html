@@ -14,12 +14,8 @@ overview: true
 <section class="comment">
   <div class="grid">
     <div class="unit whole center-on-mobiles">
-      <p>※ 이 사이트는 <a href="https://github.com/jekyll/jekyll">Jekyll</a>
-      프로젝트의 2015년 11월 18일자
-      <code><a href="https://github.com/jekyll/jekyll/tree/2b4a3c008ddbdc6d7d8381f2ba6a031ec5efdc45">2b4a3c0</a></code>
-      커밋에 해당하는 내용을 번역한 것입니다. 번역에 관련된 이슈나 PR 은
-      <a href="https://github.com/jekyllrb-ko/jekyllrb-ko.github.io">jekyllrb-ko</a>
-      로 부탁드립니다.</p>
+      {% assign bc = site.data.ko.base-commits[0] %}
+      <p>※ 이 사이트는 <a href="{{ site.repository }}/tree/{{ bc.hash }}">{{ bc.date | date: "%Y년 %-m월 %-d일자 " }}문서</a>의 번역본입니다. 번역에 관련된 이슈나 PR 은 <a href="https://github.com/jekyllrb-ko/jekyllrb-ko.github.io">jekyllrb-ko</a> 로 부탁드립니다.</p>
     </div>
   </div>
 </section>
