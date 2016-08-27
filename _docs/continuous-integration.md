@@ -43,11 +43,11 @@ Jekyll 의 출력 결과물을 테스트한다면, [html-proofer][2] 보다 좋�
 set -e # 에러 발생 시 스크립트 중단
 
 bundle exec jekyll build
-bundle exec htmlproof ./_site
+bundle exec htmlproofer ./_site
 {% endhighlight %}
 
 몇몇 옵션은 명령행 스위치를 통해서 지정할 수 있습니다. 스위치들에 관한 더 많은
-정보는 `html-proofer` README 를 읽어보거나, `htmlproof --help` 를 실행하면
+정보는 `html-proofer` README 를 읽어보거나, `htmlproofer --help` 를 실행하면
 확인할 수 있습니다.
 
 외부 사이트 테스트를 생략하는 방법을 예로 들면, 이렇게 실행합니다:
