@@ -381,7 +381,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 Jekyll 사이트를 빌드할 때, 다음과 같이 빌드 명령에 환경변수 `production` 을 정의하지 않으면 `if` 절 안에 들어있는 코드는 실행되지 않습니다:
 
 {% highlight sh %}
-JEKYLL_ENV=production jekyll build 
+JEKYLL_ENV=production jekyll build
 {% endhighlight %}
 
 환경변수 값을 설정함으로써 특정 환경에서만 사용되는 컨텐츠를 만들 수 있습니다.
@@ -447,7 +447,7 @@ defaults:
       author: "Mr. Hyde"
 {% endhighlight %}
 
-이 디폴트 값들로 인하여, 모든 포스트는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `project` 라는 카테고리에 속하게 될 뿐만 아니라, `Mr.  Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
+이 디폴트 값들로 인하여, 모든 포스트는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `Mr.  Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
 
 {% highlight yaml %}
 collections:
