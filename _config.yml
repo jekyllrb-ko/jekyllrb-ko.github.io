@@ -14,7 +14,7 @@ collections:
     output: true
 
 name: Jekyll • 심플하고 블로그 지향적인 정적 사이트
-description: 순수한 텍스트 파일을 웹사이트와 블로그래 변신시켜 보세요
+description: 순수한 텍스트 파일을 웹사이트와 블로그로 변신시켜 보세요
 url: http://jekyllrb-ko.github.io
 
 gems:
