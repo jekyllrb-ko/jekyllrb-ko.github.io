@@ -1,0 +1,17 @@
+<div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+<!--
+    <option value="">Navigate the blog…</option>
+-->
+    <option value="">소식을 선택하세요…</option>
+<!--
+    <option value="/news/">Home</option>
+-->
+    <option value="/news/">홈으로</option>
+    <optgroup label="v1.x">
+      {% for post in site.posts %}
+      <option value="{{ post.url }}">{{ post.title }}</option>
+      {% endfor %}
+    </optgroup>
+  </select>
+</div>
