@@ -39,8 +39,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
   <tbody>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Relative URL</strong></p>
         <p>Prepend the <code>baseurl</code> value to the input. Useful if your site is hosted at a subpath rather than the root of the domain.</p>
+-->
+        <p class="name"><strong>Relative URL</strong></p>
+        <p>입력값 앞에 <code>baseurl</code> 값을 추가한다. 사이트가 최상위 경로가 아닌 하위 경로에서 호스팅 될 경우 유용하다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -53,8 +57,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Absolute URL</strong></p>
         <p>Prepend the <code>url</code> and <code>baseurl</code> value to the input.</p>
+-->
+        <p class="name"><strong>Absolute URL</strong></p>
+        <p>입력값 앞에 <code>url</code> 과 <code>baseurl</code> 값을 추가한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -121,8 +129,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Date to String in ordinal US style</strong></p>
         <p>Format a date to ordinal, US, short format.</p>
+-->
+        <p class="name"><strong>Date to String in ordinal US style</strong></p>
+        <p>날짜를 미국형 짧은 서수식으로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -153,8 +165,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Date to Long String in ordinal UK style</strong></p>
         <p>Format a date to ordinal, UK, long format.</p>
+-->
+        <p class="name"><strong>Date to Long String in ordinal UK style</strong></p>
+        <p>날짜를 영국형 긴 서수식으로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -182,8 +198,13 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Where Expression</strong></p>
         <p>Select all the objects in an array where the expression is true.
+        {% include docs_version_badge.html version="3.2.0" %}</p>
+-->
+        <p class="name"><strong>Where Expression</strong></p>
+        <p>배열 안에서 표현식이 참인 객체들을 선택한다.
         {% include docs_version_badge.html version="3.2.0" %}</p>
       </td>
       <td class="align-center">
@@ -218,8 +239,13 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Group By Expression</strong></p>
         <p>Group an array's items using a Liquid expression.
+        {% include docs_version_badge.html version="3.4.0" %}</p>
+-->
+        <p class="name"><strong>Group By Expression</strong></p>
+        <p>배열 안의 항목들을 Liquid 표현식을 사용해 그룹 짓는다.
         {% include docs_version_badge.html version="3.4.0" %}</p>
       </td>
       <td class="align-center">
@@ -259,8 +285,8 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
 -->
         <p class="name"><strong>CGI Escape</strong></p>
         <p>
-          URL 에 사용되는 CGI 이스케이프 문자열. 모든 특수문자를 그에 맞는 <code>%XX</code>
-          로 변환한다. CGI escape normally replaces a space with a plus <code>+</code> sign.
+          URL 에 사용되는 CGI 이스케이프 문자열. 모든 특수문자를 그에 맞는
+          <code>%XX</code> 로 변환한다. 일반적으로 CGI 이스케이프에서는 공백이 <code>+</code> 문자로 교체된다.
         </p>
       </td>
       <td class="align-center">
@@ -274,9 +300,15 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>URI Escape</strong></p>
         <p>
           Percent encodes any special characters in a URI. URI escape normally replaces a space with <code>%20</code>. <a href="https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters">Reserved characters</a> will not be escaped.
+        </p>
+-->
+        <p class="name"><strong>URI Escape</strong></p>
+        <p>
+          URI 에 있는 특수 문자들에 퍼센트 문자 인코딩을 한다. 일반적으로 URI 이스케이프에서는 공백이 <code>%20</code> 로 교체된다. <a href="https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters">예약 문자들</a>은 이스케이프되지 않는다.
         </p>
       </td>
       <td class="align-center">
@@ -347,8 +379,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Smartify</strong></p>
         <p>Convert "quotes" into &ldquo;smart quotes.&rdquo;</p>
+-->
+        <p class="name"><strong>Smartify</strong></p>
+        <p>"일반 따옴표" 를 &ldquo;세련된 따옴표&rdquo;로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -425,8 +461,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Normalize Whitespace</strong></p>
         <p>Replace any occurrence of whitespace with a single space.</p>
+-->
+        <p class="name"><strong>Normalize Whitespace</strong></p>
+        <p>모든 공백문자를 하나의 공백으로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -457,8 +497,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Sample</strong></p>
         <p>Pick a random value from an array. Optional: pick multiple values.</p>
+-->
+        <p class="name"><strong>Sample</strong></p>
+        <p>배열 안에서 무작위로 선택한 값 하나. 선택사항: 값을 여러 개 선택한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -471,8 +515,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>To Integer</strong></p>
         <p>Convert a string or boolean to integer.</p>
+-->
+        <p class="name"><strong>To Integer</strong></p>
+        <p>문자열 또는 부울 값을 정수형으로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -482,9 +530,14 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Array Filters</strong></p>
         <p>Push, pop, shift, and unshift elements from an Array.</p>
         <p>These are <strong>NON-DESTRUCTIVE</strong>, i.e. they do not mutate the array, but rather make a copy and mutate that.</p>
+-->
+        <p class="name"><strong>Array Filters</strong></p>
+        <p>배열에 항목을 삽입, 추출, 순환시킨다.</p>
+        <p>이 필터는 <strong>비파괴적</strong>이다. 예시, 해당 배열을 직접 변경하지 않고, 복사본을 만든 후 변경한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -515,8 +568,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
     </tr>
     <tr>
       <td>
+<!--
         <p class="name"><strong>Inspect</strong></p>
         <p>Convert an object into its String representation for debugging.</p>
+-->
+        <p class="name"><strong>Inspect</strong></p>
+        <p>디버깅을 위해 객체를 문자열로 표시한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -555,10 +612,10 @@ The default is `default`. They are as follows (with what they filter):
 - `ascii`: 알파벳, 숫자, ASCII 가 아닌 문자 또는 공백문자
 - `latin`: like `default`, except Latin characters are first transliterated (e.g. `àèïòü` to `aeiou`) {%- include docs_version_badge.html version="3.7.0" -%}
 
+## 태그
 <!--
 ## Tags
 -->
-## 태그
 
 <!--
 * [Includes](#includes)
@@ -566,17 +623,20 @@ The default is `default`. They are as follows (with what they filter):
 * [Linking to pages, collections and posts (the new and improved way)](#links)
 * [Linking to posts (the old way)](#linking-to-posts)
 -->
-* [Includes](#includes)
+* [조각 파일](#includes)
 * [코드 구문 강조](#code-snippet-highlighting)
-* [페이지나 콜렉션, 포스트에 연결하기 (개선된 새로운 기법)](#links)
-* [Linking to posts (the old way)](#linking-to-posts)
+* [페이지나 콜렉션, 게시물에 연결하기 (개선된 새로운 방식)](#links)
+* [게시물에 연결하기 (기존 방식)](#linking-to-posts)
 
+<!--
 ### Includes
+-->
+### 조각 파일
 
 <!--
 If you have small page snippets that you want to include in multiple places on your site, save the snippets as *include files* and insert them where required, by using the `include` tag:
 -->
-사이트의 여기저기에 삽입시키고자 하는 작은 페이지 조각들이 있다면, *include 파일* 로 저장하고 `include` 태그를 사용해 필요한 곳에 삽입하세요:
+사이트의 여기저기에 삽입시키고자 하는 작은 페이지 조각들이 있다면, *조각 파일* 로 저장하고 `include` 태그를 사용해 필요한 곳에 삽입하세요:
 
 {% raw %}
 ```liquid
@@ -587,12 +647,12 @@ If you have small page snippets that you want to include in multiple places on y
 <!--
 Jekyll expects all *include files* to be placed in an `_includes` directory at the root of your source directory. In the above example, this will embed the contents of `_includes/footer.html` into the calling file.
 -->
-*include 파일*은 프로젝트 Site Source 디렉토리 안의 `_includes` 디렉토리에 넣어야 합니다. 위 예제의 경우, 이 코드를 포함하고 있는 파일에는 `_includes/footer.html` 의 내용이 삽입됩니다.
+*조각 파일* 은 프로젝트 Site Source 디렉토리 안의 `_includes` 디렉토리에 넣어야 합니다. 위 예제의 경우, 이 코드를 포함하고 있는 파일에는 `_includes/footer.html` 의 내용이 삽입됩니다.
 
 <!--
 For more advanced information on using includes, see [Includes](../includes).
 -->
-includes 사용법에 대한 더 자세한 설명에 대해서는, [Includes](../includes) 를 살펴보세요.
+조각 파일 사용법에 대한 더 자세한 설명에 대해서는, [조각 파일](../includes)을 살펴보세요.
 
 <!--
 ### Code snippet highlighting
@@ -649,14 +709,20 @@ or the [Pygments' Lexers page](http://pygments.org/docs/lexers/).
 `highlight` 태그에 전달한 인자 (위 예시에서는 `ruby`) 는 언어 식별자입니다.
 각 언어에 해당하는 구문 강조용 식별자를 찾으려면, [Rouge
 위키](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexers)
-또는 [Pygments 의 Lexer 페이지](http://pygments.org/docs/lexers/) 에서
+또는 [Pygments 의 Lexer 페이지](http://pygments.org/docs/lexers/)에서
 “short name” 을 살펴보세요.
 
 <div class="note info">
+<!--
   <h5>Jekyll processes all Liquid filters in code blocks</h5>
   <p>If you are using a language that contains curly braces, you
     will likely need to place <code>{&#37; raw &#37;}</code> and
     <code>{&#37; endraw &#37;}</code> tags around your code.</p>
+-->
+  <h5>Jekyll 은 코드 블록 안에서도 Liquid 필터를 처리합니다</h5>
+  <p>만약 당신이 사용하려는 언어에 중괄호가 포함되어 있다면, 당신의
+    코드 앞 뒤를 <code>{&#37; raw &#37;}</code> 와
+    <code>{&#37; endraw &#37;}</code> 태그로 감싸야 할 것입니다.</p>
 </div>
 
 <!--
@@ -718,9 +784,15 @@ numbers from the highlighted code.
 -->
 ### 페이지에 연결하기 {#link}
 
+<!--
 To link to a post, a page, collection item, or file, the `link` tag will generate the correct permalink URL for the path you specify. For example, if you use the `link` tag to link to `mypage.html`, even if you change your permalink style to include the file extension or omit it, the URL formed by the `link` tag will always be valid.
+-->
+게시물, 페이지, 콜렉션 항목 또는 파일에 연결하기 위해, `link` 태그가 당신이 지정한 경로에 대해 올바른 고유주소 URL 을 생성할 것입니다. 예를 들어, ₩mypage.html` 에 연결하기 위해 `link` 태그를 사용하면, 당신이 고유주소 스타일에 파일 확장자를 포함하도록 또는 포함하지 않도록 변경하더라도, `link` 태그는 언제나 올바른 URL 을 생성할 것입니다.
 
+<!--
 You must include the file's original extension when using the `link` tag. Here are some examples:
+-->
+`link` 태그를 사용할 때에는 반드시 파일을 실제 확장자를 명시해야 합니다. 여기 예시가 몇 개 있습니다:
 
 {% raw %}
 ```liquid
@@ -731,7 +803,10 @@ You must include the file's original extension when using the `link` tag. Here a
 ```
 {% endraw %}
 
+<!--
 You can also use the `link` tag to create a link in Markdown as follows:
+-->
+다음과 같이 Markdown 안에서도 `link` 태그를 사용해 링크를 생성할 수 있습니다:
 
 {% raw %}
 ```liquid
@@ -742,19 +817,40 @@ You can also use the `link` tag to create a link in Markdown as follows:
 ```
 {% endraw %}
 
+<!--
 (Including `{% raw %}{{ site.baseurl }}{% endraw %}` is optional &mdash; it depends on whether you want to preface the page URL with the `baseurl` value.)
+-->
+(`{% raw %}{{ site.baseurl }}{% endraw %}` 을 사용하는 것은 선택사항입니다 &mdash; 페이지의 URL 에 `baseurl` 값을 포함시킬지 말지 당신의 결정에 달려있습니다.)
 
+<!--
 The path to the post, page, or collection is defined as the path relative to the root directory (where your config file is) to the file, not the path from your existing page to the other page.
+-->
+게시물, 페이지 또는 콜렉션의 경로는 현재 페이지로부터 다른 페이지로의 상대 경로가 아니라, 최상위 디렉토리(환경설정 파일이 있는 위치)에서 해당 파일에 대한 상대 경로로 결정됩니다.
 
+<!--
 For example, suppose you're creating a link in `page_a.md` (stored in `pages/folder1/folder2`) to `page_b.md` (stored in  `pages/folder1`). Your path in the link would not be `../page_b.html`. Instead, it would be `/pages/folder1/page_b.md`.
+-->
+예를 들어, `page_a.md` (`pages/folder1/folder2` 에 저장되어 있음) 에 `page_b.md` (`pages/folder1` 에 저장되어 있음) 로의 링크를 생성한다고 생각해봅시다. 이 링크의 경로는 `../page_b.html` 이 아닙니다. 경로는 `/pages/folder1/page_b.md` 입니다.
 
+<!--
 If you're unsure of the path, add `{% raw %}{{ page.path }}{% endraw %}` to the page and it will display the path.
+-->
+정확한 경로를 모르겠다면, 해당 페이지에 `{% raw %}{{ page.path }}{% endraw %}` 를 추가해서 경로를 표시할 수 있습니다.
 
+<!--
 One major benefit of using the `link` or `post_url` tag is link validation. If the link doesn't exist, Jekyll won't build your site. This is a good thing, as it will alert you to a broken link so you can fix it (rather than allowing you to build and deploy a site with broken links).
+-->
+이 `link` 나 `post_url` 태그를 사용하는 가장 큰 장점은 링크 유효성 검사입니다. 해당 링크가 존재하지 않는다면, Jekyll 은 사이트를 빌드하지 않을 것입니다. 이는 깨진 링크에 대한 경고를 주어 고칠 기회를 얻을 수 있으므로 장점이라고 할 수 있습니다 (그렇지 않으면 깨진 링크를 가진 사이트를 배포하게 될 것입니다).
 
+<!--
 Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}`. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques.
+-->
+`link` 태그에는 필터를 추가할 수 없다는 것을 알아두세요. 예를 들어, `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}` 처럼 Liquid 필터를 사용해 문자열을 추가할 수 없습니다. 페이지의 특정 부분에 링크하기 위해서는, 기본 HTML 링크나 Markdown 링크 방식을 사용해야 합니다.
 
+<!--
 The name of the file you want to link can be specified as a variable instead of an actual file name. For example, suppose you defined a variable in your page's front matter like this:
+-->
+링크하고자 하는 파일의 이름을 지정할 때 실제 파일 이름 대신 변수를 사용할 수 있습니다. 예를 들어, 다음과 같이 페이지의 머리말에 변수를 정의했다고 생각해봅시다:
 
 ```yaml
 ---
@@ -763,17 +859,29 @@ my_variable: footer_company_a.html
 ---
 ```
 
+<!--
 You could then reference that variable in your link:
+-->
+그럼 링크에서 이 변수를 참조할 수 있습니다:
 
 ```liquid
 {% raw %}{% link {{ page.my_variable }} %}{% endraw %}
 ```
 
+<!--
 In this example, the link would add link to the file `footer_company_a.html`.
+-->
+이 예제에서는, `footer_company_a.html` 파일에 대한 링크가 추가됩니다.
 
+<!--
 ### Linking to posts
+-->
+### 게시물에 연결하기
 
+<!--
 If you want to include a link to a post on your site, the `post_url` tag will generate the correct permalink URL for the post you specify.
+-->
+당신의 사이트 내 게시물에 대한 링크가 필요한 경우, `post_url` 태그를 사용하면 원하는 게시물에 대한 올바른 고유주소를 만들 수 있습니다.
 
 {% raw %}
 ```liquid
@@ -784,7 +892,7 @@ If you want to include a link to a post on your site, the `post_url` tag will ge
 <!--
 If you organize your posts in subdirectories, you need to include subdirectory path to the post:
 -->
-만약 포스트를 하위 디렉토리에 넣고 관리한다면, 하위 디렉토리 경로도 포함시켜야 합니다:
+만약 게시물을 하위 디렉토리에 넣고 관리한다면, 하위 디렉토리 경로도 포함시켜야 합니다:
 
 {% raw %}
 ```liquid
@@ -800,7 +908,7 @@ There is no need to include the file extension when using the `post_url` tag.
 <!--
 You can also use this tag to create a link to a post in Markdown as follows:
 -->
-다음과 같이 Markdown 에서도 이 태그를 사용하여 포스트 링크를 생성할 수 있습니다:
+다음과 같이 Markdown 에서도 이 태그를 사용하여 게시물 링크를 생성할 수 있습니다:
 
 {% raw %}
 ```liquid

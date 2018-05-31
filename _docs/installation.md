@@ -5,19 +5,29 @@ description: Official guide to install Jekyll on macOS, GNU/Linux or Windows.
 permalink: /docs/installation/
 ---
 
+<!--
 Jekyll is a [Ruby Gem](http://guides.rubygems.org/rubygems-basics/), and can be
 installed on most systems.
+-->
+Jekyll 은 단순히 하나의 [Ruby Gem](http://guides.rubygems.org/rubygems-basics/) 일 뿐이고, 거의 모든 시스템에 설치가 가능합니다.
 
+<!--
 - [Requirements](#requirements)
 - [Install Jekyll on macOS](#macOS)
 - [Install Jekyll on Ubuntu Linux](#ubuntu)
 - [Install Jekyll on Windows](../windows/)
 - [Upgrade Jekyll](#upgrade-jekyll)
+-->
+- [준비물](#requirements)
+- [맥OS 에 설치하기](#macOS)
+- [우분투 리눅스에 설치하기](#ubuntu)
+- [윈도우즈에 설치하기](../windows/)
+- [업그레이드 하기](#upgrade-jekyll)
 
 <!--
 ## Requirements
 -->
-## 준비물
+## 준비물 {#requirements}
 
 <!--
 Before you start, make sure your system has the following:
@@ -29,9 +39,9 @@ Before you start, make sure your system has the following:
 - [RubyGems](https://rubygems.org/pages/download) (which you can check by running `gem -v`)
 - [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) (in case your system doesn't have them installed, which you can check by running `gcc -v`,`g++ -v`  and `make -v` in your system's command line interface)
 -->
-- [Ruby](https://www.ruby-lang.org/en/downloads/) 2.2.5 또는 그 위 버전. 모든 개발환경 헤더 포함 (Ruby 설치정보는 `ruby -v` 로 확인할 수 있습니다)
+- [Ruby](https://www.ruby-lang.org/en/downloads/) 버전 2.2.5 또는 그 이상. 모든 개발환경 헤더 포함 (Ruby 설치정보는 `ruby -v` 로 확인할 수 있습니다)
 - [RubyGems](https://rubygems.org/pages/download) (명령어 `gem -v` 로 확인할 수 있습니다)
-- [GCC](https://gcc.gnu.org/install/) 와 [Make](https://www.gnu.org/software/make/) (명령줄 인터페이스에서 `gcc -v` 와 `g++ -v`, `make -v` 로 확인할 수 있습니다)
+- [GCC](https://gcc.gnu.org/install/) 와 [Make](https://www.gnu.org/software/make/) (명령행 인터페이스에서 `gcc -v` 와 `g++ -v`, `make -v` 로 확인할 수 있습니다)
 
 <!--
 ## Install on macOS {#macOS}
@@ -135,7 +145,6 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
 <!--
 Yay! Now you have a shiny Ruby on your system!
 -->
-Yay! Now you have a shiny Ruby on your system!
 야호! 시스템에 아주 반짝반짝한 Ruby 가 준비되었네요!
 
 <!--
@@ -146,7 +155,7 @@ Yay! Now you have a shiny Ruby on your system!
 <!--
 Developers often use [rbenv](https://github.com/rbenv/rbenv) to manage multiple Ruby versions. This can be useful if you want to run the same Ruby version used by [GitHub Pages](https://pages.github.com/versions/) or [Netlify](https://www.netlify.com/docs/#ruby) for instance.
 -->
-개발자들은 여러 버전의 Ruby 를 관리하기 위해 보통 [rbenv](https://github.com/rbenv/rbenv) 를 사용합니다. 이게 어떤 경우에 유용하냐면, [GitHub Pages](https://pages.github.com/versions/) 나 [Netlify](https://www.netlify.com/docs/#ruby) 에서 사용하는 Ruby 와 동일한 버전을 사용하고 싶을 때 같은 경우를 예로 들 수 있을 것입니다.
+개발자들은 여러 버전의 Ruby 관리를 위해 보통 [rbenv](https://github.com/rbenv/rbenv) 를 사용합니다. 하나 예를 들어보면, [GitHub Pages](https://pages.github.com/versions/) 나 [Netlify](https://www.netlify.com/docs/#ruby) 에서 사용되는 Ruby 와 동일한 버전을 사용하고자 하는 경우 이게 아주 유용합니다.
 
 <!--
 ```sh
@@ -188,7 +197,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
 <!--
 That's it! Head over [rbenv command references](https://github.com/rbenv/rbenv#command-reference) to learn how to use different versions of Ruby in your projects.
 -->
-이게 다입니다! [rbenv 명령어 참고서](https://github.com/rbenv/rbenv#command-reference) 를 한 번 잘 읽어보면 다양한 버전의 Ruby 를 어떻게 프로젝트 별로 관리하는지 알 수 있습니다.
+끝입니다! [rbenv 명령어 참고서](https://github.com/rbenv/rbenv#command-reference)를 한 번 잘 읽어보면 다양한 버전의 Ruby 를 어떻게 프로젝트 별로 관리하는지 알 수 있습니다.
 
 <div class="note info" markdown="1">
 
@@ -243,7 +252,7 @@ source ~/.bashrc
 <!--
 Finally, install Jekyll:
 -->
-끝으로, Jekyll 을 설치합니다:
+마지막으로, Jekyll 을 설치합니다:
 
 ```sh
 gem install jekyll bundler
@@ -257,34 +266,49 @@ That's it! You're ready to start using Jekyll.
 <!--
 ## Upgrade Jekyll
 -->
-## Jekyll 업그레이드 하기
+## 업그레이드 하기 {#upgrade-jekyll}
 
+<!--
 Before you start developing with Jekyll, you may want to check that you're up to date with the latest version. To find the currently installed version of Jekyll, run one of these commands:
+-->
+Jekyll 개발에 참여하기 전에, 자신이 현재 최신 버전을 사용하고 있는지 확인하고 싶을 수도 있습니다. 현재 설치된 Jekyll 의 버전을 확인하려면, 이 명령어들 중 하나를 실행하세요:
 
 ```sh
 jekyll --version
 gem list jekyll
 ```
 
+<!--
 You can use RubyGems to find [the current version of Jekyll](https://rubygems.org/gems/jekyll). Another way to check if you have the latest version is to run the command `gem outdated`. This will provide a list of all the gems on your system that need to be updated. If you aren't running the latest version, run this command:
+-->
+RubyGems 를 사용해서 [Jekyll 의 최신 버전](https://rubygems.org/gems/jekyll)을 확인할 수 있습니다. 다른 방법으로는 `gem outdated` 명령을 실행해볼 수도 있습니다. 이 명령은 당신의 시스템에 설치된 gem 들 중 업데이트가 필요한 것들의 목록을 보여줍니다. 가지고 있는 버전이 최신 버전이 아니라면, 이 명령을 실행하세요:
 
 ```sh
 bundle update jekyll
 ```
 
+<!--
 Alternatively, if you don't have Bundler installed run:
+-->
+Bundler 가 설치되어있지 않은 경우에는, 대신 다음과 같이 실행하세요:
 
 ```sh
 gem update jekyll
 ```
 
+<!--
 To upgrade to latest Rubygems, run:
+-->
+최신 버전의 Rubygems 로 업그레이드 하려면, 이렇게 실행하세요:
 
 ```
 gem update --system
 ```
 
+<!--
 Refer to our [upgrading section](../upgrading/) to upgrade from Jekyll 2.x or 1.x.
+-->
+Jekyll 2.x 나 1.x 에서부터 업그레이드하는 경우에는 우리 [업그레이드 문서](../upgrading/)를 참고하세요.
 
 <!--
 ## Pre-releases
@@ -318,9 +342,9 @@ If you'd like to install a development version of Jekyll, the process is a bit
 more involved. This gives you the advantage of having the latest and greatest,
 but may be unstable.
 -->
-만약 개발 버전의 Jekyll 을 설치하고 싶다면, 약간의 절차가 더 추가됩니다.
-이것으로 불안정할지도 모르지만 가장 최신의, 가장 뛰어난 기능을 사용할 수
-있습니다.
+만약 개발 버전의 Jekyll 을 설치해보고 싶다면, 몇 가지 절차가 좀 더 필요합니다.
+이를 통해 가장 뛰어난 최신의 기능들을 사용할 수 있게 됩니다만, 불안정할지도
+모릅니다.
 
 
 ```sh

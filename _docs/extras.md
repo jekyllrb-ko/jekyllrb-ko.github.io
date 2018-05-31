@@ -11,15 +11,24 @@ may want to install, depending on how you plan to use Jekyll.
 Jekyll 이 추가적으로 지원하는 기능 (선택사항) 이 몇 가지 있습니다. 당신이 Jekyll
 을 어떻게 사용할 것인지 그 계획에 따라 원하는 기능을 골라 설치하면 됩니다.
 
+<!--
 ## Web Highlights and Commenting 
+-->
+## 웹상에서 강조표시와 댓글
 
+<!--
 Register your site with [txtpen](https://txtpen.com). Then append 
+-->
+당신의 사이트를 [txtpen](https://txtpen.com) 에 등록하세요. 다음 아래 내용을
 
 ```html
 <script src="https://txtpen.com/embed.js?site=<your site name>"></script>
 ```
 
+<!--
 to your template files in `/_layout` folder.
+-->
+사이트의 `_layout` 폴더에 있는 템플릿 파일에 추가하세요.
 
 <!--
 ## Math Support

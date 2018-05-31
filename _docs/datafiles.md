@@ -9,9 +9,9 @@ In addition to the [built-in variables](../variables/) available from Jekyll,
 you can specify your own custom data that can be accessed via the [Liquid
 templating system](https://wiki.github.com/shopify/liquid/liquid-for-designers).
 -->
-[기본 변수](../variables/)뿐만 아니라, 자신만의 데이터를 정의해서 [Liquid 템플릿
+[기본 변수](../variables/)뿐만 아니라, [Liquid 템플릿
 시스템](https://wiki.github.com/shopify/liquid/liquid-for-designers)을 통해
-사용할 수 있습니다.
+접근할 수 있는 자신만의 데이터를 정의할 수도 있습니다.
 
 <!--
 Jekyll supports loading data from [YAML](http://yaml.org/), [JSON](http://www.json.org/),
@@ -118,7 +118,10 @@ You can now render the list of members in a template:
 {% endraw %}
 
 {: .note .info }
+<!--
 If your Jekyll site has a lot of pages, such as with documentation websites, see the detailed examples in [how to build robust navigation for your site]({% link _tutorials/navigation.md %}).
+-->
+당신의 Jekyll 사이트가 설명서 웹사이트처럼 페이지가 많은 사이트라면, [당신의 사이트를 위한 탄탄한 탐색기능 구축방법]({% link _tutorials/navigation.md %})에 있는 상세 예제를 살펴보세요.
 
 <!--
 ## Example: Organizations
@@ -227,4 +230,7 @@ author: dave
 ```
 {% endraw %}
 
+<!--
 For information on how to build robust navigation for your site (especially if you have a documentation website or another type of Jekyll site with a lot of pages to organize), see [Navigation](/tutorials/navigation).
+-->
+당신의 사이트에 어울리는 탄탄한 탐색기능 구축방법에 대해서는(특히 설명서 웹사이트거나 정리해야할 페이지가 아주 많은 Jekyll 사이트인 경우), [탐색](/tutorials/navigation)을 살펴보세요.

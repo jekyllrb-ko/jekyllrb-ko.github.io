@@ -79,18 +79,28 @@ defaults:
 ```
 
 <div class="note">
-  <h5>Gather your collections {%- include docs_version_badge.html version="3.7.0" -%}</h5>
+  <h5>콜렉션을 한 곳에 모으세요 {%- include docs_version_badge.html version="3.7.0" -%}</h5>
 
+<!--
   <p>You can optionally specify a directory to store all your collections in the same place with <code>collections_dir: my_collections</code>.</p>
+-->
+  <p>선택사항으로서, 당신의 모든 콜렉션을 한 곳에 보관하기 위해 <code>collections_dir: my_collections</code> 로 디렉토리를 지정할 수 있습니다.</p>
 
+<!--
   <p>Then Jekyll will look in <code>my_collections/_books</code> for the <code>books</code> collection, and
   in <code>my_collections/_recipes</code> for the <code>recipes</code> collection.</p>
+-->
+  <p>그럼 Jekyll 은 <code>books</code> 콜렉션에 대해서는 <code>my_collections/_books</code> 를,
+  <code>recipes</code> 콜렉션에 대해서는 <code>my_collections/_recipes</code> 를 참고합니다.</p>
 </div>
 
 <div class="note warning">
   <h5>Be sure to move posts into custom collections directory</h5>
 
+<!--
   <p>If you specify a directory to store all your collections in the same place with <code>collections_dir: my_collections</code>, then you will need to move your <code>_posts</code> directory to <code>my_collections/_posts</code>. Note that, the name of your collections directory cannot start with an underscore (`_`).</p>
+-->
+  <p>모든 콜렉션을 한 곳에 보관하려고 <code>collections_dir: my_collections</code> 로 디렉토리를 지정한 후에는, <code>_posts</code> 디렉토리를 <code>my_collections/_posts</code> 로 옮겨야 합니다. 한 가지 기억해야할 것은, 콜렉션을 보관하는 디렉토리 이름은 밑줄(`_`)로 시작할 수 없다는 것입니다.</p>
 </div>
 
 <!--
@@ -191,10 +201,16 @@ To list items from the collection, on that page or any other, you can use:
   </p>
 </div>
 
+<!--
 ## Configuring permalinks for collections {#permalinks}
+-->
+## 콜렉션에 고유주소 설정하기 {#permalinks}
 
+<!--
 If you wish to specify a custom pattern for the URLs where your Collection pages
 will reside, you may do so with the [`permalink` property](../permalinks/):
+-->
+콜렉션 페이지들이 갖게될 URL 에 자신만의 패턴을 지정하고 싶은 경우, [`permalink` 속성](../permalinks/)을 사용할 수 있습니다:
 
 ```yaml
 collections:
@@ -203,9 +219,15 @@ collections:
     permalink: /:collection/:name
 ```
 
+<!--
 ### Examples
+-->
+### 예시
 
+<!--
 For a collection with the following source file structure,
+-->
+다음과 같은 소스 파일 구조에서,
 
 ```
 _my_collection/
@@ -213,10 +235,14 @@ _my_collection/
     └── some_doc.md
 ```
 
+<!--
 each of the following `permalink` configurations will produce the document structure shown below it.
+-->
+환경설정 `permalink` 의 값과 그에 따라 생성되는 문서 구조는 다음과 같습니다.
 
-* **Default**
-  Same as `permalink: /:collection/:path`.
+
+* **기본값**
+  `permalink: /:collection/:path` 와 동일.
 
   ```
   _site/
@@ -226,7 +252,7 @@ each of the following `permalink` configurations will produce the document struc
   ...
   ```
 * `permalink: pretty`
-  Same as `permalink: /:collection/:path/`.
+  `permalink: /:collection/:path/` 와 동일.
 
   ```
   _site/
@@ -261,7 +287,10 @@ each of the following `permalink` configurations will produce the document struc
   ...
   ```
 
+<!--
 ### Template Variables
+-->
+### 템플릿 변수
 
 <div class="mobile-side-scroller">
 <table>
@@ -494,27 +523,59 @@ you specified in your `_config.yml` (if present) and the following information:
 </div>
 
 <div class="note info">
+<!--
   <h5>A Hard-Coded Collection</h5>
+-->
+  <h5>고정된 콜렉션</h5>
+<!--
   <p>In addition to any collections you create yourself, the
   <code>posts</code> collection is hard-coded into Jekyll. It exists whether
   you have a <code>_posts</code> directory or not. This is something to note
   when iterating through <code>site.collections</code> as you may need to
   filter it out.</p>
+-->
+  <p>당신이 직접 생성한 콜렉션 외에, Jekyll 에는 <code>posts</code>
+  라는 고정된 콜렉션이 있습니다. 이 콜렉션은 <code>_posts</code> 디렉토리와
+  관계 없이 항상 존재합니다. 이를 기억해두어야 하는 이유는
+  <code>site.collections</code> 값을 순회하는 경우 걸러내야 할 필요가 있을지도
+  모르기 때문입니다.</p>
+<!--
   <p>You may wish to use filters to find your collection:
+  <code>{% raw %}{{ site.collections | where: "label", "myCollection" | first }}{% endraw %}</code></p>
+-->
+  <p>원하는 콜렉션을 찾기위해 필터를 사용하는 방법입니다:
   <code>{% raw %}{{ site.collections | where: "label", "myCollection" | first }}{% endraw %}</code></p>
 </div>
 
 <div class="note info">
+<!--
   <h5>Collections and Time</h5>
+-->
+  <h5>콜렉션과 시간</h5>
+<!--
   <p>Except for documents in hard-coded default collection <code>posts</code>, all documents in collections
     you create, are accessible via Liquid irrespective of their assigned date, if any, and therefore renderable.
   </p>
+-->
+  <p>고정된 기본 콜렉션 <code>posts</code> 의 문서를 제외한, 당신이 직접 생성한 콜렉션의 모든 문서는
+  날짜가 지정되어 있는 경우에도 그와 관계없이 Liquid 변수로 접근이 가능합니다. 따라서 모든 문서가 생성됩니다.
+  </p>
+<!--
   <p>However documents are attempted to be written to disk only if the concerned collection
     metadata has <code>output: true</code>. Additionally, future-dated documents are only written if
     <code>site.future</code> <em>is also true</em>.
   </p>
+-->
+  <p>하지만 메타데이터에 <code>output: true</code> 를 가진 콜렉션의 문서들만 생성됩니다.
+  또한, 미래-시간의 문서들은 <code>site.future</code> 가 <em>참</em> 인 경우에만 생성됩니다.
+  </p>
+<!--
   <p>More fine-grained control over documents being written to disk can be exercised by setting
     <code>published: false</code> (<em><code>true</code> by default</em>) in the document's front matter.
+  </p>
+-->
+  <p>문서 생성에 대한 더 세밀한 조정은 문서의 머리말에
+  <code>published: false</code> 설정(<em>기본값 <code>true</code></em>)으로 가능합니다.
   </p>
 </div>
 

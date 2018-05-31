@@ -13,18 +13,18 @@ the site URLs to look, what data gets displayed in the layout, and more. This
 is all done through editing text files; the static web site is the final
 product.
 -->
-Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템 배경 컨셉은 이렇습니다:
-Markdown 이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로
-문서를 작성하면, Jekyll 은 이 문서들을 다양한 레이아웃으로 포장합니다. 당신은
-사이트 URL 구성 방식이나 데이터가 레이아웃에 배치되는 방식 등, 변환 과정에
-포함된 다양한 동작들을 원하는대로 조정할 수 있습니다. 단지 텍스트 파일을
+Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템 배경 컨셉은 다음과 같습니다:
+당신이 Markdown 이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로
+문서를 작성하면, Jekyll 은 이 문서들을 하나 또는 여러 겹의 레이아웃으로 포장합니다.
+사이트 URL 구성 방식이나 어떤 데이터를 레이아웃에 표시할 것인지 등, 변환 과정에
+포함된 다양한 동작들은 당신이 원하는대로 조정할 수 있습니다. 단지 텍스트 파일을
 수정하는 것만으로 이 모든 일들이 가능합니다. 그 결과로 정적 웹 사이트가
 만들어집니다.
 
 <!--
 A basic Jekyll site usually looks something like this:
 -->
-가장 기초적인 Jekyll 사이트는 보통 이렇게 생겼습니다:
+가장 기본적인 Jekyll 사이트는 일반적으로 이렇게 생겼습니다:
 
 ```sh
 .
@@ -51,6 +51,7 @@ A basic Jekyll site usually looks something like this:
 └── index.html # can also be an 'index.md' with valid YAML Frontmatter
 ```
 
+<!--
 <div class="note info">
   <h5>Directory structure of Jekyll sites using gem-based themes</h5>
   <p>
@@ -59,6 +60,17 @@ A basic Jekyll site usually looks something like this:
   <br />
   <p>
      <a href="https://github.com/jekyll/minima">minima</a> is the current default theme, and <code>bundle show minima</code> will show you where minima theme's files are stored on your computer.
+  </p>
+</div>
+-->
+<div class="note info">
+  <h5>gem 기반 테마를 사용하는 Jekyll 사이트의 디렉토리 구조</h5>
+  <p>
+    <strong>Jekyll 3.2</strong> 버전부터, <code>jekyll new</code> 명령으로 생성된 Jekyll 프로젝트는 <a href="../themes/">gem 기반 테마</a>를 사용하여 사이트의 외관을 구성합니다. 이로 인해, 테마 gem 에 기본적으로 포함된 경량 디렉토리 구조 : <code>_layouts</code>, <code>_includes</code>, <code>_sass</code> 를 갖게 됩니다.
+  </p>
+  <br />
+  <p>
+     현재의 기본 테마는 <a href="https://github.com/jekyll/minima">minima</a> 이며, <code>bundle show minima</code> 명령으로 minima 테마의 파일들이 어디에 저장되어 있는지 볼 수 있습니다.
   </p>
 </div>
 
@@ -183,7 +195,7 @@ An overview of what each of these does:
 -->
         <p>
           한마디로 말하면, 당신의 컨텐츠다. 중요한 것은 파일들의 명명규칙인데,
-          반드시 다음 형식을 따라야 한다:
+          반드시 이 형식을 따라야 한다:
           <code>YEAR-MONTH-DAY-title.MARKUP</code>.
           <a href="../permalinks/">고유주소</a>는 포스트 별로 각각 정의할 수
           있지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해
@@ -224,9 +236,9 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-          These are sass partials that can be imported into your <code>main.scss</code>
-          which will then be processed into a single stylesheet
-          <code>main.css</code> that defines the styles to be used by your site.
+          sass 조각 파일들로, 프로젝트의 <code>main.scss</code> 에 임포트할 수 있으며
+          임포트 후에는 다시 하나의 스타일시트(<code>main.scss</code>)로 가공되어
+          사이트에 사용되는 스타일들을 정의한다.
         </p>
       </td>
     </tr>

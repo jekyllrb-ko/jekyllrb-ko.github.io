@@ -57,7 +57,7 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
         matter</a>. Custom variables set via the YAML Front Matter will be
         available here. See below for details.
 -->
-        해당 페이지 고유 정보 + <a href="../frontmatter/">YAML 머리말</a>. YAML
+        페이지 관련 정보 + <a href="../frontmatter/">YAML 머리말</a>. YAML
         머리말에 설정한 사용자 변수도 여기에 포함된다. 더 자세한 내용은 아래를
         참조하시오.
 
@@ -67,9 +67,13 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
       <td><p><code>layout</code></p></td>
       <td><p>
 
+<!--
         Layout specific information + the <a href="../frontmatter/">YAML front
         matter</a>. Custom variables set via the YAML Front Matter in
         layouts will be available here.
+-->
+        레이아웃 관련 정보 + <a href="../frontmatter/">YAML 머리말</a>.
+        레이아웃의 머리말에 설정한 사용자 변수도 여기에 포함된다.
 
       </p></td>
     </tr>
@@ -169,7 +173,7 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
         처리중인 파일이 포스트인 경우에, 최대 10 개의 연관 포스트 목록이 이
         변수에 할당된다. 디폴트로 가장 최신 포스트 10 개를 가리킨다. 느린 속도를
         감수하고 고품질의 결과를 얻으려면, <code>jekyll</code>명령을
-        <code>--lsi</code> (<a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis#Latent_semantic_indexing">latent semantic indexing</a>) 옵션과 함께 실행하시오.
+        <code>--lsi</code> (<a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis#Latent_semantic_indexing">Latent Semantic Indexing</a>) 옵션과 함께 실행하시오.
         단, GitHub Pages 가 사이트를 생성할 때는 <code>lsi</code> 옵션을 지원하지 않는다.
 
       </p></td>
@@ -272,6 +276,7 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
       <td><p><code>site.url</code></p></td>
       <td><p>
 
+<!--
         Contains the url of your site as it is configured in the <code>_config.yml</code>.
         For example, if you have <code>url: http://mysite.com</code>
         in your configuration file, then it will be accessible in Liquid as
@@ -281,6 +286,16 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
         <code>site.url</code> will be set to the value of <code>host</code>,
         <code>port</code>, and SSL-related options. This defaults to
         <code>url: http://localhost:4000</code>.
+-->
+        <code>_config.yml</code> 에 설정한 사이트의 URL.
+        예를 들어, 환경설정 파일에 <code>url: http://mysite.com</code> 라는
+        내용이 있으면, Liquid 변수 <code>site.url</code> 로 이 값에 접근할 수
+        있다. 개발 환경에서는 한 가지 <a
+        href="/news/#3-siteurl-is-set-by-the-development-server">예외</a>가
+        있는데, 개발 환경에서 <code>jekyll serve</code> 를 실행하면
+        <code>site.url</code> 는 <code>host</code> 와 <code>port</code>, SSL
+        관련 옵션으로 설정된다. 기본값은
+        <code>url:http://localhost:4000</code> 이다.
 
       </p></td>
     </tr>
@@ -491,18 +506,16 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
 <div class="note">
 <!--
   <h5>ProTip™: Use Custom Front Matter</h5>
-  <p>
-
-    Any custom front matter that you specify will be available under
-    <code>page</code>. For example, if you specify <code>custom_css: true</code>
-    in a page’s front matter, that value will be available as
-    <code>page.custom_css</code>.
-
-  </p>
 -->
   <h5>ProTip™: 사용자 머리말을 사용하세요</h5>
   <p>
 
+<!--
+    Any custom front matter that you specify will be available under
+    <code>page</code>. For example, if you specify <code>custom_css: true</code>
+    in a page’s front matter, that value will be available as
+    <code>page.custom_css</code>.
+-->
     모든 사용자 머리말은 <code>page</code> 로 사용할 수 있습니다.
     예를 들어,
     페이지 머리말에 <code>custom_css: true</code> 를 설정한 경우,
@@ -511,10 +524,16 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
   </p>
   <p>
 
+<!--
     If you specify front matter in a layout, access that via <code>layout</code>.
     For example, if you specify <code>class: full_page</code>
     in a layout’s front matter, that value will be available as
     <code>layout.class</code> in the layout and its parents.
+-->
+    레이아웃에 머리말을 지정했다면, <code>layout</code> 로 접근할 수 있습니다.
+    예를 들어, 레이아웃의 머리말에 <code>class: full_page</code>
+    라고 설정했다면, 해당 레이아웃과 그 부모 레이아웃에서
+    <code>layout.class</code> 로 사용할 수 있습니다.
 
   </p>
 </div>

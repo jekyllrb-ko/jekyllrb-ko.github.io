@@ -52,7 +52,7 @@ directory. How you name files in this folder is important. Jekyll requires blog
 post files to be named according to the following format:
 -->
 새 포스트를 생성하려면, `_posts` 디렉토리에 파일을 생성하기만 하면 됩니다.
-이 때 중요한 것은 생성하는 파일의 이름입니다. Jekyll 로 하여금 이 파일을 블로그
+이 때 중요한 것은 생성하는 파일의 이름입니다. Jekyll 이 이 파일을 블로그
 포스트로 인식하게 하려면 파일명을 다음 형식에 맞춰야 합니다:
 
 ```
@@ -201,9 +201,15 @@ PDF 다운로드 링크를 삽입하려면:
 
 </div>
 
+<!--
 ## A typical post
+-->
+## 일반 포스트
 
+<!--
 Jekyll can handle many different iterations of the idea you might associate with a "post," however a standard blog style post, including a Title, Layout, Publishing Date, and Categories might look like this:
+-->
+이미 Jekyll 은 당신이 "포스트"에 관해 떠올릴 수 있을만한 다양한 아이디어들을 처리할 수 있는 능력을 가지고 있지만, 제목과 레이아웃, 게시일자, 카테고리를 가진 보편화된 블로그 스타일 포스트는 이렇게 생겼습니다:
 
 ```markdown
 ---
@@ -218,7 +224,10 @@ You’ll find this post in your `_posts` directory. Go ahead and edit it and re-
 To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
 ```
 
+<!--
 Everything in between the first and second `---` are part of the YAML Front Matter, and everything after the second `---` will be rendered with Markdown and show up as "Content".
+-->
+처음 두 `---` 사이에 있는 모든 내용은 YAML 머리말에 속하고, 두 번째 `---` 이후의 모든 내용은 Markdown 으로 처리되어 "컨텐츠"로서 출력될 것입니다.
 
 <!--
 ## Displaying an index of posts
@@ -270,21 +279,41 @@ variable instead.
 포스트/페이지의 변수) 에 접근하고자 한다면, `post` 대신 `page` 변수를
 사용하세요.
 
+<!--
 ## Displaying post categories or tags
+-->
+## 포스트의 카테고리와 태그 표시하기
 
+<!--
 Hey, that's pretty neat, but what about showing just some of your posts that are
 related to each other? For that you can use any of the [variables definable in
 Front Matter](https://jekyllrb.com/docs/frontmatter/). In the "typical post"
 section you can see how to define categories. Simply add the categories to your
 Front Matter as a [yaml
 list](https://en.wikipedia.org/wiki/YAML#Basic_components).
+-->
+어때요, 꽤나 근사하긴 한데, 만약 다른 포스트에 연관된 몇몇 포스트들을 함께
+표시해야 하는 경우는 어떻게 할까요? 이와 같은 경우엔 [머리말에 정의할 수 있는
+변수들](https://jekyllrb.com/docs/frontmatter/)을 사용하면 됩니다.
+이미 "일반 포스트" 섹션에서 카테고리를 지정하는 방법을 보았습니다.
+단순히 머리말에 [YAML 목록](https://en.wikipedia.org/wiki/YAML#Basic_components)으로
+카테고리를 추가하는 것입니다.
 
+<!--
 Now that your posts have a category or multiple categories, you can make a page
 or a template displaying just the posts in those categories you specify. Here's
 a basic example of how to create a list of posts from a specific category.
+-->
+이제 하나 또는 여러 개의 카테고리가 할당된 포스트가 있으니, 당신이 지정한
+카테고리에 속한 포스트들만 표시하는 페이지 또는 템플릿을 만들 수 있습니다. 여기
+특정한 카테고리의 포스트 목록을 만드는 방법을 보여주는 간단한 예제가 있습니다.
 
+<!--
 First, in the `_layouts` directory create a new file called `category.html` - in
 that file put (at least) the following:
+-->
+먼저, `_layouts` 디렉토리에 `category.html` 이라는 이름의 새 파일을 만듭니다 - 이
+파일은 (최소한) 다음 내용을 가지고 있어야 합니다:
 
 {% raw %}
 ```liquid
@@ -300,10 +329,16 @@ layout: page
 ```
 {% endraw %}
 
+<!--
 Next, in the root directory of your Jekyll install, create a new directory
 called `category` and then create a file for each category you want to list. For
 example, if you have a category `blog` then create a file in the new directory
 called `blog.html` with at least
+-->
+다음, Jekyll 프로젝트의 최상위 디렉토리에, `category` 라는 이름의
+새 디렉토리를 만들고 표시하고자 하는 카테고리별로 파일을 만듭니다.
+예를 들어, `blog` 라는 카테고리가 있으면 새 디렉토리에 `blog.html`
+이라는 파일을 만들고 다음 내용을 넣습니다.
 
 ```yaml
 ---
@@ -313,12 +348,20 @@ category: blog
 ---
 ```
 
+<!--
 In this case, the listing pages will be accessible at `{baseurl}/category/blog.html`
+-->
+지금과 같은 경우, `{baseurl}/category/blog.html` 로 목록 페이지에 접근할 수 있습니다.
 
+<!--
 Although categories and tags are very similar, they are used to group posts,
 there are a few differences between them.  Categories and sub-categories create
 hierarchies that, by default, are reflected in the directory structure of your
 site.  A post with the following header
+-->
+포스트를 그룹화한다는 점에서 카테고리와 태그는 매우 닮아있지만, 몇 가지 차이점
+이 있습니다. 카테고리와 하위 카테고리는, 기본적으로, 계층을 형성해 사이트의
+디렉토리 구조에 영향을 줍니다. 다음과 같은 헤더를 가진 포스트는
 ```yaml
 ---
 layout: post
@@ -326,8 +369,12 @@ title: A Trip
 category: [ blog, travel ]
 ---
 ```
+<!--
 will be accessible at `{baseurl}/blog/travel/year/month/day/A-Trip.html`.  On
 the other hand, a tagged post
+-->
+`{baseurl}/blog/travel/year/month/day/A-Trip.html` 로 접근할 수 있습니다.
+이와는 다르게, 태그된 포스트
 ```yaml
 ---
 layout: post
@@ -335,12 +382,19 @@ title: A Trip
 tags: [ blog, travel ]
 ---
 ```
+<!--
 will be saved as `{baseurl}/year/month/day/A-Trip.html`.  It is up to you to
 create `{baseurl}/tag/blog.html` and `{baseurl}/tag/travel.html` the same way as
 described above for categories.
+-->
+는 `{baseurl}/year/month/day/A-Trip.html` 에 저장됩니다. 위에 카테고리에 관한 설명처럼 `{baseurl}/tag/blog.html` 를 만들지 `{baseurl}/tag/travel.html` 를 만들지는 당신의 결정에 달려있습니다.
 
+<!--
 While this example is done with tags and categories, you can easily extend your
 lists to filter by any other variable created with extensions.
+-->
+이 예제로 태그와 카테고리에 관한 모든 설명이 끝났지만, 목록의 기능을 확장하기
+위해서는 당신이 직접 만든 어떠한 변수든지 사용할 수 있습니다.
 
 <!--
 ## Post excerpts

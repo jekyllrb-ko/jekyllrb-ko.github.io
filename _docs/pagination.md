@@ -106,10 +106,17 @@ directory.
 </div>
 
 <div class="note info">
+<!--
   <h5>Pagination for categories, tags and collections</h5>
   <p>
     The more recent <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin supports more features. See the <a href="https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples">pagination examples</a> in the repository.
     <strong>This plugin is not supported by GitHub Pages</strong>.
+  </p>
+-->
+  <h5>카테고리와 태그, 콜렉션의 페이지 나누기</h5>
+  <p>
+    최신 버전의 <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> 플러그인은 더 많은 기능을 지원합니다. 저장소에서 <a href="https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples">페이지 나누기 예제</a>를 살펴보세요.
+    <strong>GitHub Pages 에서는 이 플러그인을 지원하지 않습니다</strong>.
   </p>
 </div>
 

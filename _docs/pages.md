@@ -21,8 +21,8 @@ that as the homepage. Unless the web server you’re using is configured to look
 for some different filename as the default, this file will turn into the
 homepage of your Jekyll-generated site.
 -->
-당신이 접하는 거의 모든 웹 서버 환경설정이 사이트의 루트 폴더에서 파일명이
-(관례상) `index.html` 인 HTML 파일을 찾아 홈페이지로 보여줍니다. 웹 서버가 다른
+당신이 접하는 거의 모든 웹 서버 환경설정이 사이트의 루트 폴더에서 (관례상)
+파일명이 `index.html` 인 HTML 파일을 찾아 홈페이지로 보여줍니다. 웹 서버가 다른
 파일을 찾도록 설정되어 있지 않는 한, 이 파일이 당신의 Jekyll 사이트 홈페이지가
 됩니다.
 
@@ -101,11 +101,20 @@ contact 페이지가 있을 때, 루트 디렉토리의 내용과 각각에 해�
 └── contact.html  # => http://example.com/contact.html
 ```
 
+<!--
 If you have a lot of pages, you can organize those pages into subfolders. The same subfolders that are used to group your pages in our project's source will exist in the `_site` folder when your site builds.
+-->
+페이지가 많이 있는 경우에는, 하위 폴더로 페이지들을 정리할 수 있습니다. 사이트가 생성되면 사이트 소스에 있는 페이지 그룹화에 사용된 하위 디렉토리와 동일한 디렉토리가 `_site` 폴더 안에 존재하게 됩니다.
 
+<!--
 ## Flattening pages from subfolders into the root directory
+-->
+## 하위 폴더의 페이지들을 최상위 디렉토리로 옮기기
 
+<!--
 If you have pages organized into subfolders in your source folder and want to flatten them in the root folder on build, you must add the [permalink]({% link _docs/permalinks.md %}) property directly in your page's front matter like this:
+-->
+소스 폴더 안에 하위 폴더로 페이지들이 정리되어 있고 사이트 생성 시 페이지들을 최상위 디렉토리에 위치시키고 싶다면, 다음과 같이 페이지의 머리말에 직접 [고유주소]({% link _docs/permalinks.md %}) 속성을 추가해야 합니다:
 
 ```yaml
 ---
@@ -119,6 +128,12 @@ permalink: mypageurl.html
 -->
 ### 디렉토리에 이름을 짓고 인덱스 HTML 파일 넣기
 
+<!--
 If you don't want file extensions (`.html`) to appear in your page URLs (file extensions are the default), you can choose a [permalink style](../permalinks/#builtinpermalinkstyles) that has a trailing slash instead of a file extension.
+-->
+페이지 URL 에 파일 확장자(`.html`)가 표시되지 않길 원한다면 (기본적으로 표시됨), 끝에 파일 확장자가 아닌 슬래시가 있는 [고유주소 스타일](../permalinks/#builtinpermalinkstyles)을 사용할 수 있습니다.
 
+<!--
 Note if you want to view your site offline *without the Jekyll preview server*, your browser will need the file extension to display the page, and all assets will need to be relative links that function without the server baseurl.
+-->
+한 가지 기억해야할 것은, *Jekyll 미리보기 서버를 사용하지 않고* 오프라인에서 사이트를 보려는 경우엔 페이지를 표시하기 위해 파일 확장자가 필요하며, 모든 자원들이 상대경로로 지정되어 서버의 기본 URL 이 없어도 작동할 수 있어야 합니다.

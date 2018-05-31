@@ -78,6 +78,7 @@ Jekyll 에 추가할 좋은 아이디어가 떠오르셨군요. 좋습니다! �
 <!--
 Test Dependencies
 -->
+
 Test 의존요소
 -----------------
 
@@ -123,6 +124,7 @@ run its entire respective suite.
 <!--
 Workflow
 -->
+
 작업흐름
 --------
 
@@ -155,6 +157,7 @@ Here's the most direct way to get your work merged into the project:
 <!--
 Updating Documentation
 -->
+
 문서 내용 갱신하기
 ----------------------
 
@@ -222,6 +225,7 @@ Gotchas
 <!--
 Finally...
 -->
+
 마지막으로...
 ----------
 

@@ -1,5 +1,6 @@
 ---
 title: Includes
+#title: 조각 파일
 permalink: /docs/includes/
 ---
 

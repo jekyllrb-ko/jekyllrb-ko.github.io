@@ -23,22 +23,22 @@ Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기
 <!--
 You create your content as text files ([Markdown](https://daringfireball.net/projects/markdown/)), and organize them into folders. Then, you build the shell of your site using [Liquid](https://shopify.github.io/liquid/)-enhanced HTML templates. Jekyll automatically stitches the content and templates together, generating a website made entirely of static assets, suitable for uploading to any server.
 -->
-당신은 텍스트 파일 ([Markdown](https://daringfireball.net/projects/markdown/) 로 내용을 작성하고, 폴더로 정리합니다.  그 후, [Liquid](https://shopify.github.io/liquid/) 기능이 추가된 HTML 템플릿으로 사이트의 형태를 구성합니다.  Jekyll 이 자동으로 이 내용물과 템플릿을 함께 합쳐서, 어느 서버에 업로드해도 작동하는, 완전한 정적 웹사이트를 생성합니다.
+텍스트 파일([Markdown](https://daringfireball.net/projects/markdown/))로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, [Liquid](https://shopify.github.io/liquid/) 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
 
 <!--
 Jekyll happens to be the engine behind [GitHub Pages](https://pages.github.com), so you can host your project’s Jekyll page/blog/website on GitHub’s servers **for free**.
 -->
-Jekyll 은 [GitHub Pages](https://pages.github.com) 의 내부 엔진이기 때문에, 자신의 프로젝트의 Jekyll 페이지나 블로그, 웹사이트를 **무료로** GitHub 서버에 호스팅 할 수 있습니다.
+Jekyll 은 [GitHub Pages](https://pages.github.com) 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 **무료료** 호스팅 할 수 있습니다.
 
 <!--
 ## Navigating the Guide
 -->
-## 올바르게 설명서 사용하기
+## 본 설명서 사용법
 
 <!--
 Throughout this guide, you'll see these special sections that help you get the most out of Jekyll:
 -->
-당신이 Jekyll 의 모든 기능을 사용할 수 있게 돕기 위한 특별한 섹션들을 이 설명서 곳곳에서 찾을 수 있을 것입니다.
+당신이 Jekyll 의 모든 기능을 사용할 수 있도록 도와주는 특별한 섹션들이 설명서 이곳 저곳에 붙어 있습니다:
 
 <div class="note">
 <!--
@@ -54,7 +54,7 @@ Throughout this guide, you'll see these special sections that help you get the m
   <h5>Notes</h5>
   <p>Extra tidbits that are sometimes necessary to understand Jekyll.</p>
 -->
-  <h5>노트</h5>
+  <h5>메모</h5>
   <p>이 토막정보들은 때때로 Jekyll 을 이해하는데 필요합니다.</p>
 </div>
 
@@ -63,8 +63,8 @@ Throughout this guide, you'll see these special sections that help you get the m
   <h5>Warnings</h5>
   <p>Common pitfalls to avoid.</p>
 -->
-  <h5>주의</h5>
-  <p>피해야하는 일반적인 실수들</p>
+  <h5>주의사항</h5>
+  <p>자주 있는 실수들이므로 주의하세요.</p>
 </div>
 
 <div class="note unreleased">
@@ -73,10 +73,10 @@ Throughout this guide, you'll see these special sections that help you get the m
   <p>Features planned for future versions of Jekyll, but not available yet.</p>
 -->
   <h5>미공개</h5>
-  <p>이 후 버전의 Jekyll 에 계획된, 아직 사용할 수 없는,기능들</p>
+  <p>이 후 버전의 Jekyll 에 계획된, 아직 사용할 수 없는 기능들</p>
 </div>
 
 <!--
 If you find anything we haven’t covered, or would like to share a tip that others might find handy, please [file an issue]({{ site.repository }}/issues/new) and we’ll see about adding it to the guide.
 -->
-만약 우리가 다루지 않은 것을 발견한다거나, 다른 이들에게도 도움이 될 만한 팁을 공유하고 싶은 경우에, [이슈로 등록]({{ site.repository }}/issues/new)해 주시면 설명서에 포함시키도록 검토해보겠습니다.
+만약 우리가 다루지 않은 것을 발견한다거나, 다른 이들에게도 도움이 될 만한 팁을 공유하고 싶은 경우, [이슈로 등록]({{ site.repository }}/issues/new)해 주시면 설명서에 포함시키도록 검토해보겠습니다.

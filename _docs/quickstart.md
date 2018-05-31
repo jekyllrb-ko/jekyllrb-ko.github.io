@@ -101,7 +101,7 @@ Jekyll 프로젝트에 Bundler 를 사용하는 방법에 관하여 더 자세�
 <!--
 When in doubt, use the <code>help</code> command to remind you of all available options and usage, it also works with the <code>new</code>, <code>build</code> and <code>serve</code> subcommands, e.g. <code>jekyll help new</code> or <code>jekyll help build</code>.
 -->
-언제든지, <code>help</code> 명령을 사용해서 이용 가능한 모든 옵션과 사용법을 확인할 수 있으며, 이 명령은 <code>new</code>, <code>build</code> 와 <code>serve</code> 같은 하위 명령어와 함께 사용할 수도 있습니다. 예시, <code>jekyll help new</code> 또는 <code>jekyll help build</code>.
+언제든지, <code>help</code> 명령을 사용해서 이용 가능한 모든 옵션과 사용법을 확인할 수 있으며, 이 명령은 하위 명령어인 <code>new</code>, <code>build</code>, <code>serve</code> 와 함께 사용할 수도 있습니다. 예시, <code>jekyll help new</code> 또는 <code>jekyll help build</code>.
 {: .note .info }
 
 <!--

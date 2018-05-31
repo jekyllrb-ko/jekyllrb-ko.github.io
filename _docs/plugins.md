@@ -52,15 +52,39 @@ You have 3 options for installing plugins:
 1. In your site source root, make a `_plugins` directory. Place your plugins
    here. Any file ending in `*.rb` inside this directory will be loaded before
    Jekyll generates your site.
+
+2. In your `_config.yml` file, add a new array with the key `plugins` (or `gems` for Jekyll < `3.5.0`) and the
+   values of the gem names of the plugins you'd like to use. An example:
+
+   ```yaml
+   # This will require each of these plugins automatically.
+   plugins:
+     - jekyll-gist
+     - jekyll-coffeescript
+     - jekyll-assets
+     - another-jekyll-plugin
+   ```
+
+   Then install your plugins using `gem install jekyll-gist jekyll-coffeescript jekyll-assets another-jekyll-plugin`
+
+3. Add the relevant plugins to a Bundler group in your `Gemfile`. An
+   example:
+
+   ```ruby
+    group :jekyll_plugins do
+      gem "jekyll-gist"
+      gem "jekyll-coffeescript"
+      gem "jekyll-assets"
+      gem "another-jekyll-plugin"
+    end
+   ```
+
+   Now you need to install all plugins from your Bundler group by running single command `bundle install`.
 -->
 1. Site Source 루트에 `_plugins` 디렉토리를 만드세요. 여기에 자신의 플러그인을
 넣습니다. Jekyll 은 사이트를 생성하기 직전에 이 디렉토리의 모든 `*.rb` 파일을
 읽어들입니다.
 
-<!--
-2. In your `_config.yml` file, add a new array with the key `plugins` (or `gems` for Jekyll < `3.5.0`) and the
-   values of the gem names of the plugins you'd like to use. An example:
--->
 2. `_config.yml` 파일에 `plugins` (또는 `3.5.0` 버전 이전의 Jekyll 에서는 `gems`) 라는 키로 배열을 추가하고
    사용하려는 플러그인들의 gem 이름을 나열하세요. 예를 들면 다음과 같습니다:
 
@@ -73,16 +97,9 @@ You have 3 options for installing plugins:
      - another-jekyll-plugin
    ```
 
-<!--
-   Then install your plugins using `gem install jekyll-gist jekyll-coffeescript jekyll-assets another-jekyll-plugin`
--->
-    다음 `gem install jekyll-gist jekyll-coffeescript jekyll-assets another-jekyll-plugin` 라고 실행하여 해당 플러그인들을 설치합니다.
+    그리고 다음 명령을 실행하여 해당 플러그인들을 설치합니다. `gem install jekyll-gist jekyll-coffeescript jekyll-assets another-jekyll-plugin`
 
-<!--
-3. Add the relevant plugins to a Bundler group in your `Gemfile`. An
-   example:
--->
-3. `Gemfile` 의 Bundler 그룹에 관련 플러그인을 추가합니다. 예를 들면 다음과
+3. 관련 플러그인을 `Gemfile` 의 Bundler 그룹에 추가합니다. 예를 들면 다음과
     같습니다:
 
    ```ruby
@@ -94,9 +111,6 @@ You have 3 options for installing plugins:
     end
    ```
 
-<!--
-   Now you need to install all plugins from your Bundler group by running single command `bundle install`.
--->
     이제 `bundle install` 명령만 한 번 실행해주면 Bundler 그룹에 있는 모든 플러그인이 설치됩니다.
 
 <div class="note info">
@@ -113,7 +127,7 @@ You have 3 options for installing plugins:
 -->
   <h5>
     <code>_plugins</code> 와 <code>_config.yml</code>, <code>Gemfile</code> 은
-    동시에 사용할 수 있습니다
+    동시에 함께 사용할 수 있습니다
   </h5>
   <p>
     원한다면 앞서 언급한 플러그인 옵션들을 한 사이트에 동시에 사용할 수
@@ -122,20 +136,37 @@ You have 3 options for installing plugins:
   </p>
 </div>
 
+<!--
 ### The jekyll_plugins group
+-->
+### jekyll_plugins 그룹
 
+<!--
 Jekyll gives this particular group of gems in your `Gemfile` a different
 treatment. Any gem included in this group is loaded before Jekyll starts
 processing the rest of your source directory.
+-->
+당신의 `Gemfile` 에 정의된 이 그룹은, 조금 다른 방식으로 처리됩니다.
+Jekyll 은 작업을 시작하기 전에 먼저 이 그룹에 속해있는 gem 들을
+불러들입니다.
 
+<!--
 A gem included here will be activated even if its not explicitly listed under
 the `plugins:` key in your site's config file.
+-->
+심지어 사이트 환경설정 파일의 `plugins:` 키에 정의되어 있지 않더라도, 이
+안에 있는 gem 들은 활성화됩니다.
 
 <div class="note warning">
   <p>
+<!--
     Gems included in the <code>:jekyll-plugins</code> group are activated
     regardless of the <code>--safe</code> mode setting. Be aware of what
     gems are included under this group!
+-->
+    그룹 <code>:jekyll-plugins</code> 에 포함되어 있는 gem 들은
+    <code>--safe</code> 모드 설정에 관계없이 활성화됩니다. 어떤 gem 들을
+    이 그룹에 포함시킬 것인지 주의를 기울이세요!
   </p>
 </div>
 
@@ -158,11 +189,20 @@ In general, plugins you make will fall broadly into one of five categories:
 4. [태그](#tags)
 5. [훅](#hooks)
 
+<!--
 See the bottom of the page for a [list of available plugins](#available-plugins).
+-->
+이 페이지 뒷 부분에 [사용할 수 있는 플러그인 목록](#available-plugins)이 있습니다.
 
+<!--
 For further information on how to develop your own plugins, check out the [Liquid documentation](https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers) as well.
+-->
+자신만의 플러그인을 개발하는 방법에 대한 더 자세한 내용이 필요하면, [Liquid 문서](https://github.com/Shopify/liquid/wiki/Liquid-for-Programmers)도 살펴보시기 바랍니다.
 
+<!--
 If you never developed a Jekyll plugin [check this useful wrap-up](https://ayastreb.me/writing-a-jekyll-plugin/) by @ayastreb to get started.
+-->
+Jekyll 플러그인 개발에 대해 @ayastreb 이 작성한 [요약본](https://ayastreb.me/writing-a-jekyll-plugin/)이 Jekyll 플러그인 개발 경험이 전혀 없는 분들에게 도움이 될 것입니다.
 
 <!--
 ## Generators
@@ -325,9 +365,9 @@ include it by implementing your own converter. Both the Markdown and
 languages are implemented using this method.
 -->
 당신의 사이트에 사용하고자 하는 다른 마크업 언어가 있다면, 해당 언어를 처리할 수
-있는 변환기를 직접 구현하면 됩니다. Markdown 과
-[Textile](https://github.com/jekyll/jekyll-textile-converter) 마크업 언어도 이
-메소드 사용해서 구현한 것입니다.
+있는 변환기를 직접 구현하면 됩니다. 마크업 언어 Markdown 과
+[Textile](https://github.com/jekyll/jekyll-textile-converter) 도 이
+메소드를 사용해서 구현한 것입니다.
 
 <div class="note info">
 <!--
@@ -511,8 +551,12 @@ Commands should implement this single class method:
 <table>
   <thead>
     <tr>
+<!--
       <th>Method</th>
       <th>Description</th>
+-->
+      <th>메소드</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
@@ -729,12 +773,12 @@ There are two flags to be aware of when writing a plugin:
 -->
         <p>
           이 플러그인이 임의의 코드가 실행되는 것이 금지된 환경에서도 안전하게
-          실행될 수 있다는 것을 알려주는 boolean 플래그입니다. GitHub Pages 는
-          실행해도 안전한 Core 플러그인을 골라내기 위해 이 플래그를 사용합니다.
+          실행될 수 있다는 것을 알려주는 boolean 플래그이다. GitHub Pages 는
+          이 플래그를 사용해서 실행해도 안전한 Core 플러그인을 골라낸다.
           플러그인이 임의의 코드 실행이 없는 환경에서 사용되어야 한다면, 이
-          플래그를 <code>true</code> 로 설정하세요. GitHub Pages 는 여전히
-          당신의 플러그인을 사용하지 않을 것입니다. 하지만, Jekyll 프로젝트에
-          포함시키려는 경우에는 이게 제일 좋은 방법입니다!
+          플래그를 <code>true</code> 로 설정한다. GitHub Pages 는 그래도
+          당신의 플러그인을 사용하지 않을 것이지만, Jekyll 프로젝트에
+          포함시키려는 경우에는 이게 최선이 방법이다.
         </p>
       </td>
     </tr>
@@ -752,10 +796,10 @@ There are two flags to be aware of when writing a plugin:
         </p>
 -->
         <p>
-          플러그인을 읽어들이는 순서를 결정하는 플래그입니다. 사용할 수 있는
+          플러그인을 읽어들이는 순서를 결정하는 플래그이다. 사용할 수 있는
           값은 <code>:lowest</code> 와 <code>:low</code>, <code>:normal</code>,
-          <code>:high</code>, <code>:highest</code> 입니다. 우선순위가 높은
-          플러그인이 먼저 적용되고, 우선순위가 낮은 플러그인이 나중에 적용됩니다.
+          <code>:high</code>, <code>:highest</code> 이다. 우선순위가 높은
+          플러그인이 먼저 적용되고, 우선순위가 낮은 플러그인이 나중에 적용된다.
         </p>
       </td>
     </tr>
@@ -780,7 +824,10 @@ module Jekyll
 end
 ```
 
+<!--
 ## Hooks
+-->
+## Hook
 
 <!--
 Using hooks, your plugin can exercise fine-grained control over various aspects
@@ -852,8 +899,12 @@ The complete list of available hooks is below:
         <p><code>:after_init</code></p>
       </td>
       <td>
+<!--
         <p>Just after the site initializes, but before setup & render. Good
         for modifying the configuration of the site.</p>
+-->
+        <p>사이트 초기화 직후, 환경설정과 렌더링 작업 전. 사이트 환경설정을
+        조정하기에 적절한 시점이다.</p>
       </td>
     </tr>
     <tr>

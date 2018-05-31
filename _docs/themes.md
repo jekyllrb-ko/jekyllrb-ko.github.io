@@ -1,5 +1,6 @@
 ---
 title: Themes
+#title: 테마
 permalink: /docs/themes/
 ---
 

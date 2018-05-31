@@ -10,29 +10,54 @@ Sites built using Jekyll can be deployed in a large number of ways due to the st
 Jekyll 로 생성한 사이트는, 정적이라는 그 근본적인 특징 덕분에 아주 다양한 방법으로 게시할 수 있습니다. 이 중 가장 자주 사용하는 게시 방법 몇 가지를 여기에 소개합니다.
 
 <div class="note">
+<!--
   <h5>ProTip™: Use GitHub Pages for zero-hassle Jekyll hosting</h5>
   <p>GitHub Pages are powered by Jekyll behind the scenes, so if you’re looking for a zero-hassle, zero-cost solution, GitHub Pages are a great way to <a href="../github-pages/">host your Jekyll-powered website for free</a>.</p>
+-->
+  <h5>ProTip™: 번거로운 일 없이 GitHub Pages 로 Jekyll 사이트 호스팅하기</h5>
+  <p>GitHub Pages 의 내부는 Jekyll 로 동작합니다. 따라서 번거로운 작업이나 시간과 노력이 들지 않는 방법이라면, GitHub Pages 가 <a href="../github-pages/">Jekyll 기반의 웹사이트를 무료로 호스팅</a>하는 최선의 방법입니다.</p>
 </div>
 
 ## Netlify
 
+<!--
 Netlify provides Global CDN, Continuous Deployment, one click HTTPS and [much more](https://www.netlify.com/features/), providing developers the most robust toolset available for modern web projects, without added complexity. Netlify supports custom plugins for Jekyll and has a free plan for open source projects.
+-->
+Netlify 는 범세계적인 CDN 과 지속적인 서비스, 손쉬운 HTTPS 설정과 [그 밖의 많은 기능](https://www.netlify.com/features/)으로, 개발자들에게 현대식 웹 프로젝트에 사용할 수 있는 가장 강력한, 하지만 복잡하지 않은, 도구를 제공합니다.
 
+<!--
 Read this [Jekyll step-by-step guide](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/) to setup your Jekyll site on Netlify.
+-->
+Netlify 에 Jekyll 사이트를 구성하려면 [단계적 Jekyll 설정방법](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/)을 읽어보세요.
 
 ## Aerobatic
 
+<!--
 [Aerobatic](https://www.aerobatic.com) has custom domains, global CDN distribution, basic auth, CORS proxying, and a growing list of plugins all included.
+-->
+[Aerobatic](https://www.aerobatic.com) 은 커스텀 도메인, 범세계적 CDN, 기본 인증, CORS 프록시를 제공하고, 점점 더 많은 플러그인을 지원하고 있습니다.
 
+<!--
 Automating the deployment of a Jekyll site is simple. See their [Jekyll docs](https://www.aerobatic.com/docs/static-site-generators/#jekyll) for more details. Your built `_site` folder is deployed to their highly-available, globally distributed hosting service.
+-->
+간단히 Jekyll 사이트 게시를 자동화할 수 있습니다. 더 자세한 내용은 [Jekyll 관련 문서](https://www.aerobatic.com/docs/static-site-generators/#jekyll)를 참고하세요. 중단 없는, 전세계적인 그들의 호스팅 서버에 당신이 생성한 `_site` 를 게시할 수 있습니다. 
 
 ## Kickster
 
+<!--
 Use [Kickster](http://kickster.nielsenramon.com/) for easy (automated) deploys to GitHub Pages when using unsupported plugins on GitHub Pages.
+-->
+[Kickster](http://kickster.nielsenramon.com/) 를 사용하면 GitHub Pages 에서 지원하지 않는 플러그인을 사용하는 경우에도 쉽게 (자동으로) GitHub Pages 에 게시할 수 있습니다.
 
+<!--
 Kickster provides a basic Jekyll project setup packed with web best practises and useful optimization tools increasing your overall project quality. Kickster ships with automated and worry-free deployment scripts for GitHub Pages.
+-->
+Kickster 가 제공하는 기본 Jekyll 프로젝트의 기본설정은 아주 모범적이며 프로젝트의 전반적인 질을 향상시키는데 유용한 최적화 도구도 포함되어 있습니다. Kickster 는 아무 걱정없이 사용할 수 있는 자동화된 GiHub Pages 용 배포 스크립트를 제공합니다.
 
+<!--
 Setting up Kickster is very easy, just install the gem and you are good to go. More documentation can here found [here](https://github.com/nielsenramon/kickster#kickster). If you do not want to use the gem or start a new project you can just copy paste the deployment scripts for [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) or [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci).
+-->
+Kickster 설정은 관련 gem 을 설치하는 것이 전부라서 아주 간단합니다. 관련 문서는 [여기](https://github.com/nielsenramon/kickster#kickster)서 찾을 수 있습니다. 만약 관련 gem 을 설치하거나 새 프로젝트를 만들고 싶지 않다면 [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) 나 [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci) 용 배포 스크립트만 복사해 사용할 수 있습니다.
 
 <!--
 ## Web hosting providers (FTP)
@@ -57,7 +82,7 @@ If you have direct access to the deployment web server, the process is essential
 <!--
 ## Automated methods
 -->
-## 자동화 된 방법
+## 자동화 방법
 
 <!--
 There are also a number of ways to easily automate the deployment of a Jekyll site. If you’ve got another method that isn’t listed below, we’d love it if you [contributed](../contributing/) so that everyone else can benefit too.
@@ -79,7 +104,7 @@ this](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/0
 만약 [Git](https://git-scm.com/) 을 사용해서 Jekyll 사이트를 관리하고
 있다면 (버전 관리 시스템 사용하고 있죠? 그렇죠?),
 [이것](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)처럼
-Git 저장소에 post-update 훅을 설정하여 쉽게 게시를 자동화 할 수
+Git 저장소에 post-update 훅을 설정하여 쉽게 게시를 자동화할 수
 있습니다.
 
 <!--
@@ -168,10 +193,10 @@ Once you’ve generated the `_site` directory, you can easily scp its content us
 need to change the values to reflect your site’s details. There is even [a
 matching TextMate command][] that will help you run this script.
 -->
-`_site` 디렉토리 생성이 끝나면, [이 게시용 스크립트][]와 유사한 쉘 스크립트인
-`tasks/deploy` 를 사용하여 손쉽게 그 내용을 scp 로 복사할 수 있습니다. 물론 자신의
-사이트에 맞게 일부는 수정해서 사용해야 합니다. 게다가 이 스크립트를 실행하는
-[Textmate 명령어][]도 있습니다.
+`_site` 디렉토리 생성이 끝나면, 이 [게시용 스크립트][this deploy script]와 유사한
+쉘 스크립트인 `tasks/deploy` 를 사용하여 손쉽게 그 내용을 scp 로 복사할 수
+있습니다. 물론 자신의 사이트에 맞게 일부는 수정해서 사용해야 합니다. 게다가 이
+스크립트를 실행하는 [Textmate 명령어][a matching TextMate command]도 있습니다.
 
 [this deploy script]: https://github.com/henrik/henrik.nyh.se/blob/master/script/deploy
 
@@ -182,10 +207,14 @@ matching TextMate command][] that will help you run this script.
 <!--
 Once you’ve generated the `_site` directory, you can easily rsync its content using a `tasks/deploy` shell script similar to [this deploy script here](https://github.com/vitalyrepin/vrepinblog/blob/master/transfer.sh). You’d obviously need to change the values to reflect your site’s details.
 -->
-`_site` 디렉토리 생성이 끝나면, [이 게시용 스크립트](https://github.com/vitalyrepin/vrepinblog/blob/master/transfer.sh)와 유사한 쉘 스크립트인 `tasks/deploy` 를 사용하여 손쉽게 그 내용을 rsync 할 수 있습니다. 물론 자신의 사이트에 맞게 일부는 수정해서 사용해야 합니다.
+`_site` 디렉토리 생성이 끝나면, 이 [게시용 스크립트](https://github.com/vitalyrepin/vrepinblog/blob/master/transfer.sh)와 유사한 쉘 스크립트인 `tasks/deploy` 를 사용하여 손쉽게 그 내용을 rsync 할 수 있습니다. 물론 자신의 사이트에 맞게 일부는 수정해서 사용해야 합니다.
 
+<!--
 Certificate-based authorization is another way to simplify the publishing
 process. It makes sense to restrict rsync access only to the directory which it is supposed to sync. This can be done using rrsync.
+-->
+게시 작업을 편하게 만드는 또 다른 방법으로는 인증서 기반 인증이 있습니다.
+rsync 가 접근할 필요가 있는 디렉토리에만 접근 권한을 허용하는 것이 합리적입니다. 이는 rrsync 를 사용하면 가능합니다.
 
 <!--
 #### Step 1: Install rrsync to your home folder (server-side)
@@ -305,7 +334,10 @@ Just add the following line:
 exclude: ["deploy"]
 ```
 
+<!--
 Alternatively, you can use an `rsync-exclude.txt` file to control which files will be transferred to your server.
+-->
+아니면, `rsync-exclude.txt` 파일을 사용해서 서버에 전송될 파일을 관리할 수 있습니다.
 
 <!--
 #### Done!

@@ -13,7 +13,7 @@ file with two lines of triple dashes***, like this:
 Jekyll 은 Sass 를 기본적으로 지원하고 Ruby gem 을 통해 CoffeeScript 와 연동할 수
 있습니다. 사용 방법은, 일단 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중
 하나) 로 파일을 생성하고 ***파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야
-하세요***. 이렇게 말이죠:
+합니다***. 이렇게 말이죠:
 
 ```sass
 ---

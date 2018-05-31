@@ -55,23 +55,36 @@ Red Hat 이나 CentOS, Fedora 에서는 다음과 같습니다:
 sudo yum install ruby-devel
 ```
 
+<!--
 If you installed the above - specifically on Fedora 23 - but the extensions would still not compile, you are probably running a Fedora image that misses the `redhat-rpm-config` package. To solve this, simply run:
+-->
+위 내용대로 모두 설치했지만 - 특히 Fedora 23 에서 - 확장기능이 여전히 컴파일되지 않는다면, 아마도 `redhat-rpm-config` 패키지가 포함되지 않은 Fedora 이미지를 사용하고 있는 것일 수 있습니다. 이를 해결하려면, 아래와 같이 실행하세요:
 
 ```sh
 sudo dnf install redhat-rpm-config
 ```
 
+<!--
 On Arch Linux you need to run:
+-->
+Arch Linux 에서는 이렇게 실행해야 합니다:
 
 ```sh
 sudo pacman -S ruby-ffi
 ```
 
+<!--
 On Ubuntu if you get stuck after `bundle exec jekyll serve` and see error
 messages like `Could not locate Gemfile` or `.bundle/ directory`, it's likely
 because all requirements have not been fully met. Recent stock Ubuntu
 distributions require the installation of both the `ruby` and `ruby-all-dev`
 packages:
+-->
+Ubuntu 에서 `bundle exec jekyll serve` 를 실행한 후
+`Could not locate Gemfile or .bundle/ directory` 라는 에러 메시지가 나온다면,
+모든 필요조건이 만족되지 않았을 가능성이 높습니다.
+최근의 Ubuntu 배포판들은 `ruby` 와 `ruby-all-dev` 패키지를 모두
+필요로 합니다:
 
 ```sh
 sudo apt-get install ruby ruby-all-dev
@@ -81,8 +94,8 @@ sudo apt-get install ruby ruby-all-dev
 On [NearlyFreeSpeech](https://www.nearlyfreespeech.net/) you need to run the
 following commands before installing Jekyll:
 -->
-[NearlyFreeSpeech](https://www.nearlyfreespeech.net/) 에서는 Jekyll 을 설치하기 전에
-다음 명령어를 실행해야 합니다:
+[NearlyFreeSpeech](https://www.nearlyfreespeech.net/) 에서는
+Jekyll 을 설치하기 전에 다음 명령어를 실행해야 합니다:
 
 ```sh
 export GEM_HOME=/home/private/gems
@@ -105,9 +118,12 @@ On Windows, you may need to install [RubyInstaller
 DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit).
 -->
 Windows 에서는, [RubyInstaller
-DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 설치가 필요할 수도 있습니다.
+DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 를 설치해야할 수도 있습니다.
 
+<!--
 On Android (with Termux) you can install all requirements by running:
+-->
+안드로이드(의 Termux 환경)에서는 다음 명령으로 필요한 모든 것을 설치할 수 있습니다:
 
 ```sh
 apt update && apt install libffi-dev clang ruby-dev make
@@ -157,13 +173,22 @@ Xcode.app 은 앞서 설명한 명령행 도구와 충돌을 일으킬 수 있�
 바랍니다. 이런 문제가 발생한다면, Xcode 를 업그레이드 하고 최신 명령행 도구를
 설치하세요.
 
+<!--
 ### Running Jekyll as Non-Superuser (no sudo!) 
+-->
+### 관리자 권한 없이 Jekyll 실행하기 (No sudo!) 
 {: #no-sudo}
 
+<!--
 On most flavors of Linux, macOS, and Bash on Ubuntu on Windows, it is
 possible to run Jekyll as a non-superuser and without having to install
 gems to system-wide locations by adding the following lines to the end 
 of your `.bashrc` file:
+-->
+Ubuntu 와 윈도우즈의 Bash 환경과 Linux, 맥OS 에서 가장 매력적인 점을
+꼽아보면, `.bashrc` 파일에 다음 내용을 추가하면 시스템 관련 디렉토리에
+gem 을 설치하지 않고 관리자가 아닌 일반 계정으로 Jekyll 을 실행할 수
+있다는 사실입니다:
 
 ```
 # Ruby exports
@@ -172,20 +197,39 @@ export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 ```
 
+<!--
 This tells `gem` to place its gems within the user's home folder, 
 not in a system-wide location, and adds the local `jekyll` command to the 
 user's `PATH` ahead of any system-wide paths.
+-->
+이 설정으로 인해 `gem` 명령어는 시스템 관련 디렉토리가 아닌 사용자의 홈 폴더
+내에 gem 들을 설치하게 되고, 시스템 전역이 아닌 로컬의 실행파일 `jekyll` 이
+우선적으로 선택되도록 사용자 `PATH` 를 구성합니다.
 
+<!--
 This is also useful for many shared webhosting services, where user accounts
 have only limited privileges. Adding these exports to `.bashrc` before running 
 `gem install jekyll bundler` allows a complete non-`sudo` install of Jekyll.
+-->
+많은 공개 웹호스팅에서도, 그들이 제공하는 사용자 계정은 제한된 권한만을 가지고
+있기 때문에, 이 설정이 유용하게 쓰입니다. 이 내용을 `.bashrc` 에 추가한 후
+`gem install jekyll bundler` 를 실행하면 완전 `sudo` 없이 Jekyll 을 설치할 수 있습니다.
 
+<!--
 To activate the new exports, either close and restart Bash, logout and 
 log back into your shell account, or run `. .bashrc` in the 
 currently-running shell.
+-->
+이 설정을 적용하려면, Bash 를 종료하고 다시 실행하거나
+자신의 쉘 계정으로 다시 로그인하거나
+아니면 현재 실행중인 쉘 환경에서 `. .bashrc` 를 실행하세요.
 
+<!--
 If you see the following error when running the `jekyll new` command,
 you can solve it by using the above-described procedure:
+-->
+만약 `jekyll new` 명령을 실행할 때 다음과 같은 에러가 발생한다면,
+위에 설명한 내용으로 해결할 수 있습니다:
 
 ```sh
 jekyll new test
@@ -203,8 +247,12 @@ and install the bundled gems to RubyGems using sudo.
 Password:
 ```
 
+<!--
 Once this is done, the `jekyll new` command should work properly for
 your user account.
+-->
+모든 절차를 끝마쳤다면, `jekyll new` 명령은 사용자 계정에서도 올바르게
+작동할 것입니다.
 
 <!--
 ### Jekyll &amp; Mac OS X 10.11
@@ -306,7 +354,7 @@ you don't have a proper JavaScript runtime. To solve this, either install
 만약 적절한 javaScript 실행환경이 없다면 `jekyll-coffeescript` 설치 단계에서
 이와 같은 에러 메시지가 발생할 수 있습니다. 이 문제를 해결하려면, `execjs` 와
 `therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다. 더 자세한 내용은
-[이슈 #2327](https://github.com/jekyll/jekyll/issues/2327) 을 확인해보세요.
+[2327번 이슈](https://github.com/jekyll/jekyll/issues/2327)를 확인해보세요.
 
 <!--
 ## Problems running Jekyll
@@ -382,7 +430,10 @@ specified elsewhere.
 디폴트값 대신 사용되고, 명령행에 사용된 플래그들은 다른 모든 설정들보다
 우선순위가 높습니다.
 
+<!--
 **Note: From v3.3.0 onward, Jekyll does not process `node_modules` and certain subdirectories within `vendor`, by default. But, by having an `exclude:` array defined explicitly in the config file overrides this default setting, which results in some users to encounter an error in building the site, with the following error message:**
+-->
+**메모: 버전 v3.3.0 부터는, `node_modules` 와 `vendor` 안의 몇몇 하위 디렉토리들은 처리하지 않는 것이 Jekyll 의 기본 동작방식입니다. 하지만 환경설정 파일에 `exclude:` 배열을 명시적으로 설정하여 이 기본 동작방식을 조정할 수 있는데, 이로 인해 몇몇 사용자들에게는 사이트 생성 시 다음과 같은 내용의 에러가 발생할 수도 있습니다:
 
 ```sh
     ERROR: YOUR SITE COULD NOT BE BUILT:
@@ -392,12 +443,21 @@ specified elsewhere.
     does not have a valid date in the YAML front matter.
 ```
 
+<!--
 Simply adding `vendor/bundle` to the `exclude:` list will solve this problem but will lead to having other sub-directories under `/vendor/` (and also `/node_modules/`, if present) be processed to the destination folder `_site`.
+-->
+단순히 `vendor/bundle` 을 `exclude:` 목록에 추가하는 것만으로 이 문제를 해결할 수 있지만, `/vendor/` 의 하위 디렉토리들(존재하는 경우 `/node_modules/` 포함)이 최종 결과물 경로인 `_site` 안에도 생성됩니다.
 
 
+<!--
 The proper solution is to incorporate the default setting for `exclude:` rather than override it completely:
+-->
+자신의 설정에 기본 `exclude:` 설정을 포함시키는 쪽이 완전히 덮어쓰는 방법보다 더 낫습니다:
 
+<!--
 For versions upto `v3.4.3`, the `exclude:` setting must look like following:
+-->
+버전 `v3.4.3` 까지, `exclude:` 설정은 다음과 같습니다:
 
 ```yaml
 exclude:
@@ -411,7 +471,10 @@ exclude:
   - any_additional_item # any user-specific listing goes at the end
 ```
 
+<!--
 From `v3.5` onward, `Gemfile` and `Gemfile.lock` are also excluded by default. So, in most cases there is no need to define another `exclude:` array in the config file. So an existing definition can either be modified as above, or removed completely, or simply commented out to enable easy edits in future.
+-->
+버전 `v3.5` 부터, 기본 설정으로 `Gemfile` 과 `Gemfile.lock` 도 제외됩니다. 따라서, 특별한 경우가 아닌 이상 환경설정 파일에 추가로 `exclude:` 배열을 정의할 필요가 없습니다. 또한 기본 설정에 이미 정의된 내용도 위와 같이 수정하거나, 아니면 완전히 제거하거나, 나중을 위해 단순히 주석 처리할 수 있습니다.
 
 
 <!--
@@ -464,10 +527,16 @@ v1.0.0 이후부터, Jekyll 에 자동으로 생성된 포스트 발췌 기능�
 -->
 ## 운영상 문제점
 
+<!--
 If you run into an issue that a static file can't be found in your
 production environment during build since v3.2.0 you should set your
 [environment to `production`](../configuration/#specifying-a-jekyll-environment-at-build-time).
 The issue is caused by trying to copy a non-existing symlink.
+-->
+버전 v3.2.0 이상에서 운영 환경을 구성할 때 파일이 제대로 생성되지
+않는 이슈를 겪는다면
+[환경설정을 `production`](../configuration/#specifying-a-jekyll-environment-at-build-time) 으로 지정해야 합니다.
+이것은 존재하지 않는 심볼릭 링크를 복사하려하기 때문에 발생하는 이슈입니다.
 
 <div class="note">
 <!--

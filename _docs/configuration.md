@@ -621,9 +621,15 @@ before your site is served.
   </p>
 </div>
 
+<!--
 ## Custom WEBrick Headers
+-->
+## WEBrick 커스텀 헤더
 
+<!--
 You can provide custom headers for your site by adding them to `_config.yml`
+-->
+자신의 사이트에 커스텀 헤더를 사용하려면 `_config.yml` 에 추가하면 됩니다
 
 ```yaml
 # File: _config.yml
@@ -633,12 +639,21 @@ webrick:
     My-Other-Header: My-Other-Value
 ```
 
+<!--
 ### Defaults
+-->
+### 기본설정
 
+<!--
 We provide by default `Content-Type` and `Cache-Control` response headers: one
 dynamic in order to specify the nature of the data being served, the other
 static in order to disable caching so that you don't have to fight with Chrome's
 aggressive caching when you are in development mode.
+-->
+기본적으로 응답 헤더 `Content-Type` 과 `Cache-Control` 가 제공됩니다:
+전자는 데이터가 처리되는 방식을 결정하기 위한 동적 헤더이고,
+후자는 캐시를 비활성화하는 정적 헤더로서
+크롬 개발자 모드에서 사용되는 공격적인 캐시 방식에 신경쓸 필요가 없습니다.
 
 <!--
 ## Specifying a Jekyll environment at build time
@@ -725,6 +740,7 @@ defaults:
 ```
 
 <div class="note info">
+<!--
   <h5>Please stop and rerun `jekyll serve` command.</h5>
   <p>
     The <code>_config.yml</code> master configuration file contains global configurations
@@ -733,6 +749,16 @@ defaults:
   </p>
   <p>
     Note <a href="../datafiles">Data Files</a> are included and reloaded during automatic regeneration.
+  </p>
+-->
+  <h5>종료하고 `jekyll serve` 명령을 다시 실행해주세요.</h5>
+  <p>
+    환경설정 파일인 <code>_config.yml</code> 에는 전역 환경설정과 전역 변수가 설정되어 있으며
+    이것들은 실행 시 최초 한 번만 읽어들여집니다. 자동 재생성 모드에서도 <code>_config.yml</code>
+    파일의 변경사항은 다시 실행하기 전까지는 반영되지 않습니다.
+  </p>
+  <p>
+    <a href="../datafiles">데이터 파일</a>의 변경사항은 반영됩니다.
   </p>
 </div>
 
@@ -799,12 +825,23 @@ defaults:
       layout: "default"
 ```
 
+<!--
 In this example, the `layout` is set to `default` inside the
 [collection](../collections/) with the name `my_collection`.
+-->
+이 예제에서, `my_collection` 이라는 이름의 [콜렉션](../collections/)
+안에서는 `layout` 이 `default` 로 설정됩니다.
 
+<!--
 ### Glob patterns in Front Matter defaults
+-->
+### 머리말 기본값에 글로브 패턴 사용
 
+<!--
 It is also possible to use glob patterns (currently limited to patterns that contain `*`) when matching defaults. For example, it is possible to set specific layout for each `special-page.html` in any subfolder of `section` folder. {%- include docs_version_badge.html version="3.7.0" -%}
+-->
+머리말 기본값에 글로브(glob) 패턴 (현재는 `*` 만 사용 가능함) 을 사용하는 것도 가능합니다.
+예를 들면, `section` 폴더 아래 모든 하위 디렉토리 안에 있는 `special-page.html` 파일에 특정 레이아웃을 설정할 수 있습니다. {%- include docs_version_badge.html version="3.7.0" -%}
 
 ```yaml
 collections:
@@ -820,12 +857,21 @@ defaults:
 ```
 
 <div class="note warning">
+<!--
   <h5>Globbing and Performance</h5>
   <p>
     Please note that globbing a path is known to have a negative effect on
     performance and is currently not optimized, especially on Windows.
     Globbing a path will increase your build times in proportion to the size
     of the associated collection directory.
+  </p>
+-->
+  <h5>글로브 패턴과 성능</h5>
+  <p>
+    글로브 패턴을 사용하는 것은 성능에 부정적인 영향을 미친다고 알려져 있고
+    현재 이 기능은, 특히 윈도우즈에, 최적화 되어있지 않습니다.
+    글로브 패턴을 사용하면 관련된 콜렉션 디렉토리의 크기에 비례해서 빌드 시간이
+    증가할 것입니다.
   </p>
 </div>
 
@@ -990,22 +1036,44 @@ kramdown:
   show_warnings: false
 ```
 
+<!--
 ## Liquid Options
+-->
+## Liquid 옵션
 
+<!--
 Liquid's response to errors can be configured by setting `error_mode`. The
 options are
+-->
+Liquid 의 에러 처리 방식은 `error_mode` 로 설정할 수 있습니다. 옵션은
+다음과 같습니다.
 
+<!--
 - `lax` --- Ignore all errors.
 - `warn` --- Output a warning on the console for each error.
 - `strict` --- Output an error message and stop the build.
+-->
+- `lax` --- 모든 에러 무시
+- `warn` --- 모든 에러에 대한 경고를 콘솔에 출력
+- `strict` --- 에러 메시지를 출력하고 빌드를 종료
 
+<!--
 You can also configure Liquid's renderer to catch non-assigned variables and
 non-existing filters by setting `strict_variables` and / or `strict_filters`
 to `true` respectively. {% include docs_version_badge.html version="3.8.0" %}
+-->
+또한 Liquid 렌더러가 정의되지 않은 변수와 존재하지 않는 필터를 잡아내게 하려면
+`strict_variables` 와 / 또는 `strict_filters` 를 `true` 로 설정하면 됩니다.
+{% include docs_version_badge.html version="3.8.0" %}
 
+<!--
 Do note that while `error_mode` configures Liquid's parser, the `strict_variables`
 and `strict_filters` options configure Liquid's renderer and are consequently,
 mutually exclusive.
+-->
+한 가지, `error_mode` 는 Liquid 파서에 대한 설정이고
+`strict_variables` 와 `strict_filters` 옵션은 Liquid 렌더러에 대한 설정이기 때문에,
+서로 연관성이 없다는 것을 알아두어야 합니다.
 
 <!--
 ## Markdown Options
@@ -1140,8 +1208,12 @@ in the `_plugins` folder or as a gem, specify it in your `_config.yml`:
 markdown: MyCustomProcessor
 ```
 
+<!--
 ## Incremental Regeneration
+-->
+## 증분 재생성
 <div class="note warning">
+<!--
   <h5>Incremental regeneration is still an experimental feature</h5>
   <p>
     While incremental regeneration will work for the most common cases, it will
@@ -1149,25 +1221,57 @@ markdown: MyCustomProcessor
     using the feature, and report any problems not listed below by
     <a href="https://github.com/jekyll/jekyll/issues/new">opening an issue on GitHub</a>.
   </p>
+-->
+  <h5>증분 재생성은 여전히 개발 진행중인 기능입니다</h5>
+  <p>
+    비록 증분 재생성이 대부분의 경우에 잘 작동하긴 하지만, 모든 상황에서 올바르게
+    작동할 것이라고 말할 수는 없습니다. 이 기능을 사용할 때에는 부디 주의를
+    기울여주시기 바라며, 아래 언급되지 않은 새로운 문제점이 있다면
+    <a href="https://github.com/jekyll/jekyll/issues/new">GitHub 에 이슈를 등록</a>해주세요.
+  </p>
 </div>
 
+<!--
 Incremental regeneration helps shorten build times by only generating documents
 and pages that were updated since the previous build. It does this by keeping
 track of both file modification times and inter-document dependencies in the
 `.jekyll-metadata` file.
+-->
+증분 재생성은 마지막으로 빌드한 시점 이후에 갱신된 문서와 페이지만
+재생성하여 빌드 시간을 줄여줍니다. `.jekyll-metadata` 파일에 문서
+사이의 의존관계와 수정시간 정보의 변화를 기록해서 변경된 파일을
+감지합니다.
 
+<!--
 Under the current implementation, incremental regeneration will only generate a
 document or page if either it, or one of its dependencies, is modified. Currently,
 the only types of dependencies tracked are includes (using the
 {% raw %}`{% include %}`{% endraw %} tag) and layouts. This means that plain
 references to other documents (for example, the common case of iterating over
 `site.posts` in a post listings page) will not be detected as a dependency.
+-->
+현재 구현 상으로, 이 기능은 문서나 페이지 혹은 그 의존관계가 변경되었을 때만
+파일을 다시 생성합니다. 현재, 감지할 수 있는 의존관계 종류는 조각파일
+({% raw %}`{% include %}`{% endraw %} 태그 사용) 과 레이아웃 뿐입니다.
+다른 문서에 대한 일반적인 참조는 의존관계로서 감지되지 않는다는 뜻입니다.
+(예를 들면, 게시물 목록 페이지에서 `site.posts` 를 순환하는 것)
 
+<!--
 To remedy some of these shortfalls, putting `regenerate: true` in the front-matter
 of a document will force Jekyll to regenerate it regardless of whether it has been
 modified. Note that this will generate the specified document only; references
 to other documents' contents will not work since they won't be re-rendered.
+-->
+이에 대한 해결책으로, 문서의 머리말에 `regenerate: true` 를 추가해 문서의 수정 여부에
+관계없이 강제로 Jekyll 이 해당 문서를 재생성하게 하는 방법이 있습니다. 오로지 해당
+문서만 다시 생성된다는 점을 기억하세요; 다른 문서의 내용에 대한 참조는 해당되지
+않습니다.
 
+<!--
 Incremental regeneration can be enabled via the `--incremental` flag (`-I` for
 short) from the command-line or by setting `incremental: true` in your
 configuration file.
+-->
+증분 재생성 기능을 활성화하는 방법으로는 명령행에서 `--incremental` 플래그
+(짧게는 `-I`) 를 사용하는 것과 환경설정 파일에 `incremental: true` 를
+설정하는 방법이 있습니다.

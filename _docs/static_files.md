@@ -64,7 +64,10 @@ following metadata:
       <td><p><code>file.name</code></p></td>
       <td><p>
 
+<!--
         The string name of the file e.g. <code>image.jpg</code> for <code>image.jpg</code>
+-->
+        파일 이름. 예시, <code>image.jpg</code> 의 경우 <code>image.jpg</code>
 
       </p></td>
     </tr>
@@ -72,7 +75,10 @@ following metadata:
       <td><p><code>file.basename</code></p></td>
       <td><p>
 
+<!--
         The string basename of the file e.g. <code>image</code> for <code>image.jpg</code>
+-->
+        확장자를 제외한 파일 이름. 예시, <code>image.jpg</code> 의 경우 <code>image</code>
 
       </p></td>
     </tr>
@@ -84,8 +90,8 @@ following metadata:
         The extension name for the file, e.g.
         <code>.jpg</code> for <code>image.jpg</code>
 -->
-        파일의 확장자 이름. 예를 들어,
-        <code>image.jpg</code> 의 경우 <code>.jpg</code>.
+        파일의 확장자 이름. 예시,
+        <code>image.jpg</code> 의 경우 <code>.jpg</code>
 
       </p></td>
     </tr>
