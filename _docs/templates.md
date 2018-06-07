@@ -22,7 +22,7 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
 <!--
 ## Filters
 -->
-## 필터
+## 필터 {#filters}
 
 <div class="mobile-side-scroller">
 <table>
@@ -787,7 +787,7 @@ numbers from the highlighted code.
 <!--
 To link to a post, a page, collection item, or file, the `link` tag will generate the correct permalink URL for the path you specify. For example, if you use the `link` tag to link to `mypage.html`, even if you change your permalink style to include the file extension or omit it, the URL formed by the `link` tag will always be valid.
 -->
-게시물, 페이지, 콜렉션 항목 또는 파일에 연결하기 위해, `link` 태그가 당신이 지정한 경로에 대해 올바른 고유주소 URL 을 생성할 것입니다. 예를 들어, ₩mypage.html` 에 연결하기 위해 `link` 태그를 사용하면, 당신이 고유주소 스타일에 파일 확장자를 포함하도록 또는 포함하지 않도록 변경하더라도, `link` 태그는 언제나 올바른 URL 을 생성할 것입니다.
+게시물, 페이지, 콜렉션 항목 또는 파일에 연결하기 위해, `link` 태그가 당신이 지정한 경로에 대해 올바른 고유주소 URL 을 생성할 것입니다. 예를 들어, `mypage.html` 에 연결하기 위해 `link` 태그를 사용하면, 당신이 고유주소 스타일에 파일 확장자를 포함하도록 또는 포함하지 않도록 변경하더라도, `link` 태그는 언제나 올바른 URL 을 생성할 것입니다.
 
 <!--
 You must include the file's original extension when using the `link` tag. Here are some examples:

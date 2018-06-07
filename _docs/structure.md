@@ -13,7 +13,7 @@ the site URLs to look, what data gets displayed in the layout, and more. This
 is all done through editing text files; the static web site is the final
 product.
 -->
-Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템 배경 컨셉은 다음과 같습니다:
+Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템의 컨셉은 다음과 같습니다:
 당신이 Markdown 이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로
 문서를 작성하면, Jekyll 은 이 문서들을 하나 또는 여러 겹의 레이아웃으로 포장합니다.
 사이트 URL 구성 방식이나 어떤 데이터를 레이아웃에 표시할 것인지 등, 변환 과정에
@@ -146,7 +146,7 @@ An overview of what each of these does:
 -->
         <p>
           재사용하기 위한 파일을 담는 디렉토리로서, 필요에 따라 포스트나
-          레이아웃에 손쉽게 삽입할 수 있다.
+          레이아웃에 쉽게 삽입할 수 있다.
           <code>{% raw %}{% include file.ext %}{% endraw %}</code> 와 같이
           Liquid 태그를 사용하면 <code>_includes/file.ext</code> 파일에 담긴
           코드가 삽입된다.

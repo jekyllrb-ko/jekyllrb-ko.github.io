@@ -109,7 +109,7 @@ decide which one best suits your needs.
 합니다. 다음 할 일은 내용 작성에 사용할 포맷을 선택하는 것입니다. Jekyll 은
 [Markdown](http://daringfireball.net/projects/markdown/) 을 기본적으로 지원하며,
 [Textile](http://redcloth.org/textile) 처럼 유명한 포맷 뿐만 아니라 [다른
-포맷들을 위한 수 많은 확장기능들](/docs/plugins/#converters-1)을 가지고
+포맷들을 위한 수많은 확장기능들](/docs/plugins/#converters-1)을 가지고
 있습니다. 이 포맷들은 포스트 안의 다양한 컨텐츠를 마크업할 때 각각의 고유한
 방식을 사용하므로, 이러한 특징들을 반드시 익혀서 자신의 요구사항에 들어맞는
 포맷을 선택해야 합니다.
@@ -294,7 +294,7 @@ list](https://en.wikipedia.org/wiki/YAML#Basic_components).
 -->
 어때요, 꽤나 근사하긴 한데, 만약 다른 포스트에 연관된 몇몇 포스트들을 함께
 표시해야 하는 경우는 어떻게 할까요? 이와 같은 경우엔 [머리말에 정의할 수 있는
-변수들](https://jekyllrb.com/docs/frontmatter/)을 사용하면 됩니다.
+변수들](../frontmatter/)을 사용하면 됩니다.
 이미 "일반 포스트" 섹션에서 카테고리를 지정하는 방법을 보았습니다.
 단순히 머리말에 [YAML 목록](https://en.wikipedia.org/wiki/YAML#Basic_components)으로
 카테고리를 추가하는 것입니다.
@@ -387,14 +387,14 @@ will be saved as `{baseurl}/year/month/day/A-Trip.html`.  It is up to you to
 create `{baseurl}/tag/blog.html` and `{baseurl}/tag/travel.html` the same way as
 described above for categories.
 -->
-는 `{baseurl}/year/month/day/A-Trip.html` 에 저장됩니다. 위에 카테고리에 관한 설명처럼 `{baseurl}/tag/blog.html` 를 만들지 `{baseurl}/tag/travel.html` 를 만들지는 당신의 결정에 달려있습니다.
+는 `{baseurl}/year/month/day/A-Trip.html` 에 저장됩니다. 위에 카테고리에 관한 설명처럼 `{baseurl}/tag/blog.html` 을 만들지 `{baseurl}/tag/travel.html` 을 만들지는 당신의 결정에 달려있습니다.
 
 <!--
 While this example is done with tags and categories, you can easily extend your
 lists to filter by any other variable created with extensions.
 -->
 이 예제로 태그와 카테고리에 관한 모든 설명이 끝났지만, 목록의 기능을 확장하기
-위해서는 당신이 직접 만든 어떠한 변수든지 사용할 수 있습니다.
+위해서 당신이 직접 만든 어떠한 변수든지 사용할 수 있습니다.
 
 <!--
 ## Post excerpts

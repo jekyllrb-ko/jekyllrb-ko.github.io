@@ -26,7 +26,7 @@ Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://ww
 This powerful feature allows you to avoid repetition in your templates and to
 set site specific options without changing `_config.yml`.
 -->
-이 강력한 기능 덕분에 템플릿에 무언가를 반복 입력하는 일을 피할 수 있고,
+이 강력한 기능 덕분에 무언가를 반복해서 템플릿에 입력하는 일을 피할 수 있고,
 `_config.yml` 파일을 수정하지 않고도 사이트 옵션을 설정할 수 있습니다.
 
 <!--
@@ -54,7 +54,7 @@ accessible via `site.data`.
 <!--
 ## Example: List of members
 -->
-## 예제: 멤버들의 목록
+## 예제: 구성원 목록
 
 <!--
 Here is a basic example of using Data Files to avoid copy-pasting large chunks

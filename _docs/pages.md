@@ -84,9 +84,9 @@ a homepage, an about page, and a contact page, here’s what the root directory
 and associated URLs might look like:
 -->
 페이지를 추가하는 가장 간단한 방법은 루트 디렉토리에 생성하고자 하는 페이지
-이름을 가진 HTML 파일을 추가하는 것입니다. 예를 들어 홈페이지와 about 페이지,
-contact 페이지가 있을 때, 루트 디렉토리의 내용과 각각에 해당하는 URL 은 다음과
-같습니다:
+이름을 가진 HTML 파일을 추가하는 것입니다. 예를 들어 홈페이지와 소개 페이지 (About),
+연락처 페이지 (Contact) 가 있을 때, 루트 디렉토리의 내용과 각각에 해당하는
+URL 은 다음과 같습니다:
 
 ```sh
 .

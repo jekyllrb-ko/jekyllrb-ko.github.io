@@ -57,4 +57,4 @@ MathJax 입문에 관련된 더 많은 정보를 담고있는 [훌륭한 블로�
 <!--
 See the Markdown section on the [configuration page](/docs/configuration/#markdown-options) for instructions on how to use and configure alternative Markdown processors, as well as how to create [custom processors](/docs/configuration/#custom-markdown-processors).
 -->
-[환경설정 페이지](/docs/configuration/#markdown-options)의 마크다운 섹션을 참고하세요. 다른 마크다운 처리기의 설정과 사용방법 뿐만 아니라 [사용자 고유의 마크다운 처리기](/docs/configuration/#custom-markdown-processors)를 만드는 방법도 설명되어 있습니다.
+[환경설정 페이지](/docs/configuration/#markdown-options)의 마크다운 섹션을 참고하세요. 다른 마크다운 처리기의 설정과 사용방법 뿐만 아니라 [커스텀 마크다운 처리기](/docs/configuration/#custom-markdown-processors)를 만드는 방법도 설명되어 있습니다.

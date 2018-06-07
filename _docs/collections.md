@@ -95,7 +95,10 @@ defaults:
 </div>
 
 <div class="note warning">
+<!--
   <h5>Be sure to move posts into custom collections directory</h5>
+-->
+  <h5>포스트를 콜렉션 디렉토리로 옮기세요</h5>
 
 <!--
   <p>If you specify a directory to store all your collections in the same place with <code>collections_dir: my_collections</code>, then you will need to move your <code>_posts</code> directory to <code>my_collections/_posts</code>. Note that, the name of your collections directory cannot start with an underscore (`_`).</p>
@@ -129,7 +132,7 @@ your <code>_config.yml</code> file, with the addition of the preceding <code>_</
 -->
   <h5>디렉토리 이름이 올바른지 확인하세요</h5>
   <p>
-폴더의 이름은 반드시 `_config.yml` 파일에 정의한 콜렉션 이름 앞에 <code>_</code>
+폴더의 이름은 반드시 <code>_config.yml</code> 파일에 정의한 콜렉션 이름 앞에 <code>_</code>
 문자를 붙인 것이어야 합니다.
   </p>
 </div>
@@ -355,7 +358,7 @@ each of the following `permalink` configurations will produce the document struc
         </p>
 -->
         <p>
-          만약 문서에 <a href="/docs/frontmatter/">머리말</a> 이 존재한다면
+          만약 문서에 <a href="/docs/frontmatter/">머리말</a>이 존재한다면
           머리말 변수 <code>slug</code> 의 값이 템플릿 변수
           <code>:title</code> 에 사용된다; 아무것도 정의되지 않았다면,
           파일명으로부터 slug 가 생성되듯이, <code>:title</code> 은
@@ -583,7 +586,7 @@ you specified in your `_config.yml` (if present) and the following information:
 <!--
 ### Documents
 -->
-### 문서
+### 문서 {#documents}
 
 <!--
 In addition to any YAML Front Matter provided in the document's corresponding

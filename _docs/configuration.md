@@ -25,7 +25,7 @@ Jekyll 을 사용하면 당신이 상상할 수 있는 어떤 형태의 사이�
 <!--
 ### Global Configuration
 -->
-### 전역 환경설정
+### 전역 환경설정 {#global-configuration}
 
 <!--
 The table below lists the available settings for Jekyll, and the various <code
@@ -153,7 +153,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
           사이트 생성 전 Site Destination 을 초기화 때, 그대로 보관할 파일을
           지정한다. Jekyll 이 아닌 다른 빌드 시스템에서 생성하는 파일이나
           데이터에 유용하게 쓰이는 옵션이다.
-          <code>destination</code> 기준으로 하여 상대경로로 입력한다.
+          <code>destination</code> 기준의 상대경로로 입력한다.
         </p>
       </td>
       <td class="align-center">
@@ -178,8 +178,8 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p class="description">
             사이트 생성에 사용할 타임존을 지정한다. 이 옵션은 루비가 날짜와
             시간을 생성/수정할 때 사용하는 환경변수인 <code>TZ</code> 를
-            설정한다. <a href="https://en.wikipedia.org/wiki/Tz_database">IANA Time Zone Database</a>
-            의 모든 항목을 사용할 수 있다 (예, <code>America/New_York</code>).
+            설정한다. <a href="https://en.wikipedia.org/wiki/Tz_database">IANA 타임존 데이터베이스</a>의
+            모든 항목을 사용할 수 있다 (예, <code>America/New_York</code>).
             사용할 수 있는 모든 설정값들의 목록은 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">
             여기</a>에서 찾을 수 있다. 로컬 장비에서 서비스 될 때, 타임존의 기본값은 자신의 OS 에 의해 설정된다.
             하지만 원격 호스트/서버에서 서비스될 때, 타임존 기본값은 서버 환경설정이나 장소에 따라 다르다.
@@ -237,7 +237,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 <!--
         <p>see <a href="#front-matter-defaults" title="details">below</a></p>
 -->
-        <p><a href="#front-matter-defaults" title="details">아래 내용</a> 참조</p>
+        <p><a href="#front-matter-defaults" title="details">아래</a> 내용 참조</p>
       </td>
     </tr>
   </tbody>
@@ -258,12 +258,12 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     a staging area and copy files from there to your web server.
   </p>
 -->
-  <h5>사이트 생성 시 Site Destination 폴더가 정리됩니다</h5>
+  <h5>Site Destination 폴더는 사이트 빌드 시 초기화됩니다</h5>
   <p>
-    사이트를 생성할 때, <code>&lt;destination&gt;</code> 안의 파일들을 자동으로
-    지웁니다 (디폴트). 사이트에서 생성하지 않는 파일들은 모두 사라질 것입니다.
-    <code>&lt;keep_files&gt;</code> 환경설정 옵션을 사용하여 유지할 파일들을
-    선택할 수 있습니다.
+    사이트 빌드 시에 자동으로 <code>&lt;destination&gt;</code> 안의 파일들을
+    지우는 것이 디폴트로 설정되어 있습니다. 사이트에서 생성하지 않는 파일들은
+    모두 사라질 것입니다. 환경설정 옵션 <code>&lt;keep_files&gt;</code> 를
+    사용해 그대로 옮길 파일들을 지정할 수 있습니다.
   </p>
   <p>
     중요한 디렉토리는 절대 <code>&lt;destination&gt;</code> 으로 지정하면 안됩니다;
@@ -274,7 +274,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 <!--
 ### Build Command Options
 -->
-### Build 명령어 옵션
+### 빌드 명령어 옵션
 
 <div class="mobile-side-scroller">
 <table>
@@ -291,11 +291,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
   <tbody>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Regeneration</strong></p>
+<!--
         <p class="description">Enable auto-regeneration of the site when files are modified.</p>
 -->
-        <p class="name"><strong>Regeneration</strong></p>
         <p class="description">파일이 수정되었을 때 사이트를 자동으로 다시 생성한다.</p>
       </td>
       <td class="align-center">
@@ -304,11 +303,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Configuration</strong></p>
+<!--
         <p class="description">Specify config files instead of using <code>_config.yml</code> automatically. Settings in later files override settings in earlier files.</p>
 -->
-        <p class="name"><strong>Configuration</strong></p>
         <p class="description"><code>_config.yml</code> 대신 사용할 환경설정 파일을 직접 선택한다. 여러 파일에 동일한 옵션이 설정되어 있으면, 마지막 설정파일의 내용을 사용한다.</p>
       </td>
       <td class="align-center">
@@ -317,11 +315,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Drafts</strong></p>
+<!--
         <p class="description">Process and render draft posts.</p>
 -->
-        <p class="name"><strong>Drafts</strong></p>
         <p class="description">초안 기능을 사용한다.</p>
       </td>
       <td class="align-center">
@@ -331,11 +328,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Environment</strong></p>
+<!--
         <p class="description">Use a specific environment value in the build.</p>
 -->
-        <p class="name"><strong>Environment</strong></p>
         <p class="description">빌드 시 임의의 환경변수 값을 사용한다.</p>
       </td>
       <td class="align-center">
@@ -344,12 +340,11 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Future</strong></p>
+<!--
         <p class="description">Publish posts or collection documents with a future date.</p>
 -->
-        <p class="name"><strong>Future</strong></p>
-        <p class="description">포스트 또는 콜렉션 문서의 게시 시간을 현재 시간 이후로 설정할 수 있다.</p>
+        <p class="description">현재시간 이후의 포스트나 콜렉션 문서를 게시한다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">future: BOOL</code></p>
@@ -359,7 +354,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     <tr class="setting">
       <td>
         <p class="name"><strong>Unpublished</strong></p>
+<!--
         <p class="description">Render posts that were marked as unpublished.</p>
+-->
+        <p class="description">미개시로 지정된 포스트를 처리한다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">unpublished: BOOL</code></p>
@@ -368,11 +366,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>LSI</strong></p>
+<!--
         <p class="description">Produce an index for related posts. Requires the <a href="http://www.classifier-reborn.com/">classifier-reborn</a> plugin.</p>
 -->
-        <p class="name"><strong>LSI</strong></p>
         <p class="description">관련된 포스트들에 대한 인덱스를 생성한다. <a href="http://www.classifier-reborn.com/">classifier-reborn</a> 플러그인이 필요하다.</p>
       </td>
       <td class="align-center">
@@ -382,11 +379,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Limit Posts</strong></p>
+<!--
         <p class="description">Limit the number of posts to parse and publish.</p>
 -->
-        <p class="name"><strong>Limit Posts</strong></p>
         <p class="description">포스트의 수를 제한한다.</p>
       </td>
       <td class="align-center">
@@ -396,11 +392,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Force polling</strong></p>
+<!--
         <p class="description">Force watch to use polling.</p>
 -->
-        <p class="name"><strong>Force polling</strong></p>
         <p class="description">감시 기능을 강제로 활성화한다.</p>
       </td>
       <td class="align-center">
@@ -409,11 +404,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Verbose output</strong></p>
+<!--
         <p class="description">Print verbose output.</p>
 -->
-        <p class="name"><strong>Verbose output</strong></p>
         <p class="description">결과를 자세하게 출력한다.</p>
       </td>
       <td class="align-center">
@@ -422,14 +416,13 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Silence Output</strong></p>
+<!--
         <p class="description">Silence the normal output from Jekyll
         during a build</p>
 -->
-        <p class="name"><strong>Silence Output</strong></p>
-        <p class="description">사이트 빌드 시 발생하는 일반 메시지를 출력하지
-        않는다.</p>
+        <p class="description">사이트 빌드 시 발생하는 일반 메시지를
+        출력하지 않는다</p>
       </td>
       <td class="align-center">
         <p><code class="flag">-q, --quiet</code></p>
@@ -437,8 +430,8 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Incremental build</strong></p>
+<!--
         <p class="description">
             Enable the experimental incremental build feature. Incremental build only
             re-builds posts and pages that have changed, resulting in significant performance
@@ -446,7 +439,6 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
             cases.
         </p>
 -->
-        <p class="name"><strong>증분 빌드</strong></p>
         <p class="description">
             실험 기능인 증분 빌드를 활성화한다. 증분 빌드란 변경된 페이지나
             포스트만을 다시 빌드하는 기능으로서, 규모가 큰 사이트에서 눈에 띄는
@@ -463,7 +455,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
       <td>
         <p class="name"><strong>Liquid profiler</strong></p>
         <p class="description">
+<!--
             Generate a Liquid rendering profile to help you identify performance bottlenecks.
+-->
+            병목현상이 발생하는 원인을 찾을 수 있게 도와주는 Liquid 렌더링 프로파일을 생성한다.
         </p>
       </td>
       <td class="align-center">
@@ -475,7 +470,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
       <td>
         <p class="name"><strong>Strict Front Matter</strong></p>
         <p class="description">
+<!--
             Cause a build to fail if there is a YAML syntax error in a page's front matter.
+-->
+            페이지의 머리말에 YAML 문법 에러가 있으면 빌드를 중단한다.
         </p>
       </td>
       <td class="align-center">
@@ -491,7 +489,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 <!--
 ### Serve Command Options
 -->
-### Serve 명령 옵션
+### 미리보기 명령 옵션
 
 <!--
 In addition to the options below, the `serve` sub-command can accept any of the options
@@ -517,11 +515,10 @@ before your site is served.
   <tbody>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Local Server Port</strong></p>
+<!--
         <p class="description">Listen on the given port.</p>
 -->
-        <p class="name"><strong>Local Server Port</strong></p>
         <p class="description">Listen 포트 번호를 설정한다.</p>
       </td>
       <td class="align-center">
@@ -531,11 +528,10 @@ before your site is served.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Local Server Hostname</strong></p>
+<!--
         <p class="description">Listen at the given hostname.</p>
 -->
-        <p class="name"><strong>Local Server Hostname</strong></p>
         <p class="description">Listen 호스트명을 설정한다.</p>
       </td>
       <td class="align-center">
@@ -545,11 +541,10 @@ before your site is served.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Base URL</strong></p>
+<!--
         <p class="description">Serve the website from the given base URL</p>
 -->
-        <p class="name"><strong>Base URL</strong></p>
         <p class="description">주어진 URL 로 웹사이트를 작동시킨다.</p>
       </td>
       <td class="align-center">
@@ -559,11 +554,10 @@ before your site is served.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Detach</strong></p>
+<!--
         <p class="description">Detach the server from the terminal</p>
 -->
-        <p class="name"><strong>Detach</strong></p>
         <p class="description">터미널에서 서버를 분리한다.</p>
       </td>
       <td class="align-center">
@@ -573,11 +567,10 @@ before your site is served.
     </tr>
     <tr class="setting">
       <td>
-<!--
         <p class="name"><strong>Skips the initial site build.</strong></p>
+<!--
         <p class="description">Skips the initial site build which occurs before the server is started.</p>
 -->
-        <p class="name"><strong>Skips the initial site build.</strong></p>
         <p class="description">사이트 빌드를 건너뛰고 서버를 실행한다.</p>
       </td>
       <td class="align-center">
@@ -587,7 +580,10 @@ before your site is served.
     <tr class="setting">
       <td>
         <p class="name"><strong>X.509 (SSL) Private Key</strong></p>
+<!--
         <p class="description">SSL Private Key.</p>
+-->
+        <p class="description">SSL 개인 키.</p>
       </td>
       <td class="align-center">
         <p><code class="flag">--ssl-key</code></p>
@@ -596,7 +592,10 @@ before your site is served.
     <tr class="setting">
       <td>
         <p class="name"><strong>X.509 (SSL) Certificate</strong></p>
+<!--
         <p class="description">SSL Public certificate.</p>
+-->
+        <p class="description">SSL 공인 인증서.</p>
       </td>
       <td class="align-center">
         <p><code class="flag">--ssl-cert</code></p>
@@ -652,13 +651,13 @@ aggressive caching when you are in development mode.
 -->
 기본적으로 응답 헤더 `Content-Type` 과 `Cache-Control` 가 제공됩니다:
 전자는 데이터가 처리되는 방식을 결정하기 위한 동적 헤더이고,
-후자는 캐시를 비활성화하는 정적 헤더로서
-크롬 개발자 모드에서 사용되는 공격적인 캐시 방식에 신경쓸 필요가 없습니다.
+후자는 캐시를 비활성화하는 정적 헤더로서 크롬
+개발자 모드에서 사용되는 공격적인 캐시 방식에 신경을 쓸 필요가 없어집니다.
 
 <!--
 ## Specifying a Jekyll environment at build time
 -->
-## 빌드 시점에 Jekyll 환경변수 설정하기
+## 빌드 시점에 Jekyll 환경변수 지정하기 {#specifying-a-jekyll-environment-at-build-time}
 
 <!--
 In the build (or serve) arguments, you can specify a Jekyll environment and value. The build will then apply this value in any conditional statements in your content.
@@ -700,14 +699,14 @@ By specifying the option in the build command, you avoid having to change values
 
 `JEKYLL_ENV` 의 디폴트 값은 `development` 입니다. 따라서 `build` 의 전달인자에 `JEKYLL_ENV` 를 생략하면, `JEKYLL_ENV=development` 가 디폴트 값으로 사용됩니다. 빌드 시 `{% raw %}{% if jekyll.environment == "development" %}{% endraw %}` 태그 안의 모든 컨텐츠가 출력될 것입니다.
 
-당신이 원하는 어떤 것이든 환경변수 값으로 사용할 수 있습니다 (꼭 `development` 나 `production` 이지 않아도 됩니다). Disqus 댓글란이나 Google Analytics 처럼 개발환경에서는 표시하고 싶지 않은 요소들이 있을 수 있습니다. 반대로, "GitHub 에서 수정" 버튼은 개발환경에서 노출시키고 운영환경에는 포함시키지 않을 수도 있습니다.
+당신이 원하는 어떤 것이든 환경변수 값으로 사용할 수 있습니다 (반드시 `development` 나 `production` 일 필요는 없습니다). Disqus 댓글란이나 Google Analytics 처럼 개발환경에서는 표시하고 싶지 않은 요소들이 있을 수 있습니다. 반대로, "GitHub 에서 수정" 버튼은 개발환경에서 노출시키고 운영환경에는 포함시키지 않을 수도 있습니다.
 
-환경설정 파일의 값을 수정하지 않고도, 빌드 명령에 이 옵션을 사용함으로써 한 환경에서 다른 환경으로 이동할 수 있습니다.
+빌드 명령에 옵션을 정의함으로써, 한 환경에서 다른 환경으로 환경설정 파일의 값을 수정하지 않고 이동할 수 있습니다.
 
 <!--
 ## Front Matter defaults
 -->
-## 머리말 기본값
+## 머리말 기본값 {#front-matter-defaults}
 
 <!--
 Using [YAML Front Matter](../frontmatter/) is one way that you can specify configuration in the pages and posts for your site. Setting things like a default layout, or customizing the title, or specifying a more precise date/time for the post can all be added to your page or post front matter.
@@ -765,7 +764,7 @@ defaults:
 <!--
 Here, we are scoping the `values` to any file that exists in the path `scope`. Since the path is set as an empty string, it will apply to **all files** in your project. You probably don't want to set a layout on every file in your project - like css files, for example - so you can also specify a `type` value under the `scope` key.
 -->
-여기서 우리는 `values` 의 범위를 경로 `scope` 에 존재하는 모든 파일로 제한하고 있습니다. 하지만 경로에 빈 문자열을 설정했기 때문에, 프로젝트 내의 **모든 파일** 에 적용될 것입니다. 프로젝트 내의 모든 파일에 한 레이아웃을 적용하길 원치 않을 수도 있습니다 - 예를 들자면, css 파일같이 말이죠 - 이런 경우엔 `scope` 키에 `type` 값을 지정할 수 있습니다.
+여기서 우리는 `values` 의 범위를 경로 `scope` 에 존재하는 모든 파일로 제한하고 있습니다. 하지만 경로에 빈 문자열을 설정했기 때문에, 프로젝트 내의 **모든 파일** 에 적용될 것입니다. 프로젝트 내의 모든 파일에 한 레이아웃을 적용하길 원치 않을 수도 있습니다 - 예를 들자면, CSS 파일같이 말이죠 - 이런 경우엔 `scope` 키에 `type` 값을 지정할 수 있습니다.
 
 ```yaml
 defaults:
@@ -809,7 +808,7 @@ defaults:
 <!--
 With these defaults, all pages would use the `my-site` layout. Any html files that exist in the `projects/` folder will use the `project` layout, if it exists. Those files will also have the `page.author` [liquid variable](../variables/) set to `Mr. Hyde`.
 -->
-이 디폴트 값들로 인하여, 모든 페이지는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `Mr.  Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
+이 디폴트 값들로 인하여, 모든 페이지는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `Mr. Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
 
 ```yaml
 collections:
@@ -841,7 +840,7 @@ In this example, the `layout` is set to `default` inside the
 It is also possible to use glob patterns (currently limited to patterns that contain `*`) when matching defaults. For example, it is possible to set specific layout for each `special-page.html` in any subfolder of `section` folder. {%- include docs_version_badge.html version="3.7.0" -%}
 -->
 머리말 기본값에 글로브(glob) 패턴 (현재는 `*` 만 사용 가능함) 을 사용하는 것도 가능합니다.
-예를 들면, `section` 폴더 아래 모든 하위 디렉토리 안에 있는 `special-page.html` 파일에 특정 레이아웃을 설정할 수 있습니다. {%- include docs_version_badge.html version="3.7.0" -%}
+예를 들면, `section` 폴더의 모든 하위 디렉토리 안에 있는 `special-page.html` 파일에 특정 레이아웃을 설정할 수 있습니다. {%- include docs_version_badge.html version="3.7.0" -%}
 
 ```yaml
 collections:
@@ -1078,7 +1077,7 @@ mutually exclusive.
 <!--
 ## Markdown Options
 -->
-## 마크다운 옵션
+## 마크다운 옵션 {#markdown-options}
 
 <!--
 The various Markdown renderers supported by Jekyll sometimes have extra options
@@ -1173,12 +1172,12 @@ extensions are:
 <!--
 ### Custom Markdown Processors
 -->
-### 사용자 마크다운 처리기
+### 커스텀 마크다운 처리기 {#custom-markdown-processors}
 
 <!--
 If you're interested in creating a custom markdown processor, you're in luck! Create a new class in the `Jekyll::Converters::Markdown` namespace:
 -->
-새로운 마크다운 처리기 제작방법에 관심이 있다면, 운이 좋군요! `Jekyll::Converters::Markdown` 네임스페이스에 새 클래스를 생성하세요:
+커스텀 마크다운 처리기를 만드는 방법에 관심이 있다면, 참 운이 좋으시네요! `Jekyll::Converters::Markdown` 네임스페이스에 새 클래스를 생성하세요:
 
 ```ruby
 class Jekyll::Converters::Markdown::MyCustomProcessor

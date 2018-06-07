@@ -165,8 +165,8 @@ the `plugins:` key in your site's config file.
     gems are included under this group!
 -->
     그룹 <code>:jekyll-plugins</code> 에 포함되어 있는 gem 들은
-    <code>--safe</code> 모드 설정에 관계없이 활성화됩니다. 어떤 gem 들을
-    이 그룹에 포함시킬 것인지 주의를 기울이세요!
+    <code>--safe</code> 모드 설정에 관계없이 활성화됩니다. 이 그룹에
+    어떤 gem 들을 포함시킬 것인지 주의를 기울이세요!
   </p>
 </div>
 
@@ -773,7 +773,7 @@ There are two flags to be aware of when writing a plugin:
 -->
         <p>
           이 플러그인이 임의의 코드가 실행되는 것이 금지된 환경에서도 안전하게
-          실행될 수 있다는 것을 알려주는 boolean 플래그이다. GitHub Pages 는
+          실행될 수 있다는 것을 알려주는 이진값 플래그이다. GitHub Pages 는
           이 플래그를 사용해서 실행해도 안전한 Core 플러그인을 골라낸다.
           플러그인이 임의의 코드 실행이 없는 환경에서 사용되어야 한다면, 이
           플래그를 <code>true</code> 로 설정한다. GitHub Pages 는 그래도
@@ -1152,7 +1152,7 @@ The complete list of available hooks is below:
 <!--
 ## Available Plugins
 -->
-## 사용가능한 플러그인
+## 사용가능한 플러그인 {#available-plugins}
 
 <!--
 You can find a few useful plugins at the following locations:

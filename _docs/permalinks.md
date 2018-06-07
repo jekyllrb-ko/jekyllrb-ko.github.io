@@ -338,7 +338,7 @@ Note that all template variables relating to time or categories are available to
 <!--
 ## Built-in permalink styles {#builtinpermalinkstyles}
 -->
-## 내장된 고유주소 스타일
+## 내장된 고유주소 스타일 {#builtinpermalinkstyles}
 
 <!--
 Although you can specify a custom permalink pattern using [template variables](#template-variables), Jekyll also provides the following built-in styles for convenience.

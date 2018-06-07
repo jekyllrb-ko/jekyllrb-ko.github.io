@@ -7,7 +7,7 @@ permalink: /docs/windows/
 <!--
 While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to collect some of the general knowledge and lessons that have been unearthed by Windows users.
 -->
-Windows 가 공식적으로 지원되는 플랫폼은 아니지만, 몇 가지만 손보면 Jekyll 을 실행할 수 있습니다. 이 페이지의 목적은 Windows 사용자에 의해서 발굴된 정보들을 수집하는 것입니다.
+Windows 가 공식적으로 지원되는 플랫폼은 아니지만, 몇 가지만 손보면 Jekyll 을 실행할 수 있습니다. 이 페이지의 목적은 Windows 사용자에 의해서 발굴된 정보들을 모아두는 것입니다.
 
 
 <!--
@@ -29,7 +29,7 @@ The easiest way to run Jekyll is by using the [RubyInstaller][] for Windows.
 We only cover RubyInstaller-2.4 and newer here, older versions need to [install the Devkit][Devkit-install] manually.
 -->
 [RubyInstaller][] 는 윈도우즈 기반으로 Ruby 언어와 실행 환경, 중요 문서 등등을 포함하고 있습니다.
-여기서는 RubyInstaller-2.4 또는 그 이상의 버전을 다루고 있으며, 예전 버전은 따로 [Devkit 을 설치][Devkit-install]를 필요로 합니다.
+여기서는 RubyInstaller-2.4 또는 그 이상의 버전을 다루고 있으며, 예전 버전은 따로 [Devkit 설치][Devkit-install]를 필요로 합니다.
 
 <!--
 1. Download and Install a **Ruby+Devkit** version from [RubyInstaller Downloads][RubyInstaller-downloads].
@@ -63,7 +63,7 @@ If you use UTF-8 encoding, make sure that no `BOM` header characters exist in yo
 Jekyll. This is especially relevant when you're running Jekyll on Windows.
 -->
 만약 UTF-8 인코딩을 사용한다면, 문서 안에 `BOM` 헤더를 사용하지 않아야 합니다. 그렇지 않으면 Jekyll 에 아주, 아주 안 좋은 일이 벌어집니다.
-이 문제는 Windows 에서 Jekyll 을 실행하는 경우에만 해당됩니다.
+이 문제는 윈도우즈에서 Jekyll 을 실행하는 경우에만 해당됩니다.
 
 <!--
 Additionally, you might need to change the code page of the console window to UTF-8 in case you get a "Liquid Exception: Incompatible character encoding" error during the site generation process. It can be done with the following command:
@@ -85,7 +85,7 @@ Since Windows doesn't have a native source of zoneinfo data, the Ruby Interprete
 Though Windows users could alternatively define their blog's timezone by setting the key to use POSIX format of defining timezones, it wasn't as user-friendly when it came to having the clock altered to changing DST-rules.
 -->
 윈도우즈에서는 Ruby 인터프리터가 IANA 타임존 정보를 처리하는데 필요한 정보 원천이 없기 때문에, 대신 환경변수 `TZ` 를 사용하며 그 기본값은 UTC/GMT 00:00 입니다.
-이 대신 윈도우즈 사용자들은 POSIX 형식의 타임존 설정을 통해 블로그의 타임존을 지정할 수 있었지만, DST 규칙에 따라 시간을 조정해야한다는 점이 사용자 친화적이지 못했습니다.
+윈도우즈 사용자들도 POSIX 형식의 타임존 설정을 통해 블로그의 타임존을 지정할 수 있었지만, DST 규칙에 따라 시간을 조정해야한다는 부분이 사용자 친화적이지 않았습니다.
 
 <!--
 Jekyll now uses a rubygem to internally configure Timezone based on established [IANA Timezone Database][IANA-database].
@@ -109,7 +109,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 <!--
 Jekyll uses the `listen` gem to watch for changes when the `--watch` switch is specified during a build or serve. While `listen` has built-in support for UNIX systems, it may require an extra gem for compatibility with Windows.
 -->
-Jekyll 은 `listen` gem 을 사용하여, 생성이나 미리보기 시에 `--watch` 스위치가 설정되면, 변경사항을 감시하게 되었습니다. UNIX 시스템에는 `listen` 이 기본 지원되지만, Windows 에서 호환되려면 다른 gem 이 더 필요할 수도 있습니다.
+생성이나 미리보기 시에 `--watch` 스위치를 설정하면 Jekyll 은 `listen` gem 을 사용하여 변경사항을 감지합니다. UNIX 시스템에는 `listen` 이 기본 지원되지만, Windows 에서도 호환되려면 추가로 다른 gem 이 더 필요할 수 있습니다.
 
 <!--
 Add the following to the Gemfile for your site if you have issues with auto-regeneration on Windows alone:
@@ -140,7 +140,7 @@ If you are using Windows 10 version 1607 or later, another option to run Jekyll 
 <!--
 *Note:* You must have [Windows Subsystem for Linux][BASH-WSL] enabled.
 -->
-*중요:* 반드시 [Windows Subsystem for Linux][BASH-WSL] 이 활성화되어 있어야 합니다.
+*중요:* 반드시 [Windows Subsystem for Linux][BASH-WSL] 가 활성화되어 있어야 합니다.
 
 <!--
 First let's make sure all our packages / repositories are up to date. Open a new Command Prompt instance, and type the following:
@@ -236,7 +236,7 @@ You can make sure time management is working properly by inspecting your `_posts
 <!--
 **Note:** Bash on Ubuntu on Windows is still under development, so you may run into issues.
 -->
-**중요:** 윈도우즈에서 사용하는 Ubuntu 용 Bash 는 현재 개발이 진행중인 관계로, 문제가 발생할 가능성이 있습니다.
+**중요:** 윈도우즈에서 사용하는 Ubuntu 용 Bash 는 지금도 개발이 진행중인 관계로, 문제가 발생할 가능성이 있습니다.
 
 [WSL-Guide]: https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
 [BASH-WSL]: https://msdn.microsoft.com/en-us/commandline/wsl/about

@@ -308,7 +308,7 @@ gem update --system
 <!--
 Refer to our [upgrading section](../upgrading/) to upgrade from Jekyll 2.x or 1.x.
 -->
-Jekyll 2.x 나 1.x 에서부터 업그레이드하는 경우에는 우리 [업그레이드 문서](../upgrading/)를 참고하세요.
+Jekyll 2.x 나 1.x 에서부터 업그레이드하는 경우에는 [업그레이드 페이지](../upgrading/)를 참고하세요.
 
 <!--
 ## Pre-releases
@@ -343,8 +343,8 @@ more involved. This gives you the advantage of having the latest and greatest,
 but may be unstable.
 -->
 만약 개발 버전의 Jekyll 을 설치해보고 싶다면, 몇 가지 절차가 좀 더 필요합니다.
-이를 통해 가장 뛰어난 최신의 기능들을 사용할 수 있게 됩니다만, 불안정할지도
-모릅니다.
+이를 통해 가장 뛰어난 최신의 기능들을 사용할 수 있게 됩니다만, 불안정할 수도
+있습니다.
 
 
 ```sh

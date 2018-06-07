@@ -102,17 +102,17 @@ If you want to build for your production environment:
     instead, use it as a staging area and copy files from there to your web server.
   </p>
 -->
-  <h5>사이트를 빌드하면 <code>&lt;destination&gt;</code> 폴더가 정리됩니다</h5>
+  <h5>Site Destination 폴더는 사이트 빌드 시 초기화됩니다</h5>
   <p>
     사이트 빌드 시에 자동으로 <code>&lt;destination&gt;</code> 안의 파일들을
     지우는 것이 디폴트로 설정되어 있습니다. 사이트에서 생성하지 않는 파일들은
     모두 사라질 것입니다. 환경설정 옵션 <code>&lt;keep_files&gt;</code> 를
-    사용하면 <code>&lt;destination&gt;</code> 에 그대로 유지시키려는 파일이나
-    폴더를 선택할 수 있습니다.
+    사용해 <code>&lt;destination&gt;</code> 에 그대로 옮길 파일이나 폴더를
+    지정할 수 있습니다.
   </p>
   <p>
     중요한 디렉토리는 절대 <code>&lt;destination&gt;</code> 으로 지정하면 안됩니다;
-    웹 서버로 옮길 파일을 임시로 보관할 경로를 입력하세요.
+    웹 서버로 옮기기 전에 임시로 파일들을 보관할 경로를 입력하세요.
   </p>
 </div>
 

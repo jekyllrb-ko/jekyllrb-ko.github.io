@@ -34,7 +34,7 @@ relies on.
 이 대시문자 사이에 사전-정의 변수(설명은 아래를 참고하세요)를
 사용할 수 있고, 심지어 자신만의 고유 변수를 정의하는 것도
 가능합니다. 해당 파일은 물론 해당 페이지 또는 포스트에 연결된
-레이아웃이나 include 파일에서도 Liquid 태그를 사용하여 이 변수들에
+레이아웃이나 조각 파일에서도 Liquid 태그를 사용하여 이 변수들에
 접근할 수 있습니다.
 
 <div class="note warning">
@@ -70,7 +70,7 @@ relies on.
   <p>
     만약 <a href="../variables/">Liquid 태그와 변수</a>는 사용하고 싶은데
     머리말에는 넣을만한 내용이 하나도 없다면, 그냥 비워두세요!
-    3 중 대시 사이에 아무 내용이 없어도, Jekyll 은 해당 파일을
+    삼중 대시 행 사이에 아무 내용이 없어도, Jekyll 은 해당 파일을
     처리합니다. (CSS 나 RSS 피드같은 파일에 유용합니다!)
   </p>
 </div>
@@ -210,7 +210,7 @@ front matter of a page or post.
   <p>
     미개시 페이지들에 대한 미리보기는, `jekyll serve` 또는 `jekyll build` 를 실행할 때
     `--unpublished` 스위치를 추가하기만 하면 됩니다. 또한 Jekyll 에는 블로그 포스트만을
-    위해 특별히 제작된 <a href="../drafts/">drafts</a> 라는 기능이 있어 좀 더 편리하게 사용할 수 있습니다.
+    위해 특별히 제작된 <a href="../drafts/">초안</a> 기능이 있어 좀 더 편리하게 사용할 수 있습니다.
   </p>
 </div>
 
@@ -356,7 +356,7 @@ These are available out-of-the-box to be used in the front matter for a post.
   <h5>ProTip™: 같은 일을 반복하지 마세요</h5>
   <p>
     자주 사용하는 머리말 변수를 계속 반복해서 입력하고 싶지 않으면, 해당 변수에
-    대한 <a href="../configuration/#front-matter-defaults" title="Front Matter defaults">기본값</a>을
+    대한 <a href="../configuration/#front-matter-defaults" title="Front Matter defaults">디폴트 값</a>을
     정의하고, 필요한 곳에서만 다른 값으로 덮어쓰세요. 사전-정의 변수와
     사용자-정의 변수 모두 이 방법을 적용할 수 있습니다.
   </p>

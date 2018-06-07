@@ -63,8 +63,8 @@ Gem 으로 [GitHub Pages 에서 사용하는 Jekyll 과 그 의존요소들](htt
 Note that GitHub Pages runs in `safe` mode and only allows [a set of whitelisted
 plugins](https://help.github.com/articles/configuring-jekyll-plugins/#default-plugins).
 -->
-GitHub Pages 는 `safe` 모드로 작동하며 오직 [허용목록에 포함된
-플러그인](https://help.github.com/articles/configuring-jekyll-plugins/#default-plugins)만 허용합니다.
+GitHub Pages 는 `safe` 모드로 작동하며 오직 [허용 목록에 포함된
+플러그인](https://help.github.com/articles/configuring-jekyll-plugins/#default-plugins)만 사용할 수 있습니다.
 
 <!--
 To use the currently-deployed version of the gem in your project, add the
@@ -219,7 +219,7 @@ looking at right now is contained in the [docs
 folder]({{ site.repository }}/tree/master/docs) of the same repository.
 -->
 Jekyll 프로젝트의 저장소 자체가 이러한 브랜치 구조에 대한 완벽한
-예시입니다—[master 브랜치]({{ site.repository }})에는 실제 Jekyll
+예시입니다—[마스터 브랜치]({{ site.repository }})에는 실제 Jekyll
 소프트웨어 프로젝트가 담겨 있고, 바로 지금 보고있는 Jekyll 웹 사이트는
 동일한 저장소의 [docs 폴더]({{ site.repository }}/tree/master/docs)에 들어
 있습니다.
@@ -229,9 +229,9 @@ Please refer to GitHub official documentation on
 [user, organization and project pages](https://help.github.com/articles/user-organization-and-project-pages/)
 to see more detailed examples.
 -->
-GitHub 의 공식 문서 중
-[사용자와 단체, 프로젝트 페이지](https://help.github.com/articles/user-organization-and-project-pages/)
-에서 더 자세한 예시를 확인할 수 있습니다.
+GitHub 의 공식 문서 중 [사용자와 단체, 프로젝트
+페이지](https://help.github.com/articles/user-organization-and-project-pages/)에서
+더 자세한 예시를 확인할 수 있습니다.
 
 <div class="note warning">
 <!--

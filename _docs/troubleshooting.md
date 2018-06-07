@@ -31,7 +31,7 @@ that might be of help. If the problem you’re experiencing isn’t covered belo
 <!--
 ## Installation Problems
 -->
-## 설치 관련 문제점
+## 설치 관련 문제점 {#installation-problems}
 
 <!--
 If you encounter errors during gem installation, you may need to install
@@ -351,15 +351,15 @@ you don't have a proper JavaScript runtime. To solve this, either install
 `execjs` and `therubyracer` gems, or install `nodejs`. Check out
 [issue #2327](https://github.com/jekyll/jekyll/issues/2327) for more info.
 -->
-만약 적절한 javaScript 실행환경이 없다면 `jekyll-coffeescript` 설치 단계에서
-이와 같은 에러 메시지가 발생할 수 있습니다. 이 문제를 해결하려면, `execjs` 와
-`therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다. 더 자세한 내용은
-[2327번 이슈](https://github.com/jekyll/jekyll/issues/2327)를 확인해보세요.
+적절한 자바스크립트 런타임이 없으면 `jekyll-coffeescript` 설치 단계에서
+이와 같은 에러 메시지가 발생할 수 있습니다. 이를 해결하기 위해서는,
+`execjs` 와 `therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다.
+더 자세한 내용은 [2327번 이슈](https://github.com/jekyll/jekyll/issues/2327)를 확인해보세요.
 
 <!--
 ## Problems running Jekyll
 -->
-## Jekyll 실행 관련 문제점
+## Jekyll 실행 관련 문제점 {#problems-running-jekyll}
 
 <!--
 On Debian or Ubuntu, you may need to add `/var/lib/gems/1.8/bin/` to your path
@@ -371,7 +371,7 @@ Debian 이나 Ubuntu 에서는, 터미널에서 `jekyll` 실행파일을 사용�
 <!--
 ## Base-URL Problems
 -->
-## Base-URL 관련 문제점
+## Base-URL 관련 문제점 {#base-url-problems}
 
 <!--
 If you are using base-url option like:
@@ -403,7 +403,7 @@ http://localhost:4000/blog
 <!--
 ## Configuration problems
 -->
-## 환경설정 관련 문제점
+## 환경설정 관련 문제점 {#configuration-problems}
 
 <!--
 The order of precedence for conflicting [configuration settings](../configuration/)
@@ -433,7 +433,7 @@ specified elsewhere.
 <!--
 **Note: From v3.3.0 onward, Jekyll does not process `node_modules` and certain subdirectories within `vendor`, by default. But, by having an `exclude:` array defined explicitly in the config file overrides this default setting, which results in some users to encounter an error in building the site, with the following error message:**
 -->
-**메모: 버전 v3.3.0 부터는, `node_modules` 와 `vendor` 안의 몇몇 하위 디렉토리들은 처리하지 않는 것이 Jekyll 의 기본 동작방식입니다. 하지만 환경설정 파일에 `exclude:` 배열을 명시적으로 설정하여 이 기본 동작방식을 조정할 수 있는데, 이로 인해 몇몇 사용자들에게는 사이트 생성 시 다음과 같은 내용의 에러가 발생할 수도 있습니다:
+**메모: 버전 v3.3.0 부터는, `node_modules` 와 `vendor` 안의 몇몇 하위 디렉토리들은 처리하지 않는 것이 Jekyll 의 기본 동작방식입니다. 하지만 환경설정 파일에 `exclude:` 배열을 명시적으로 설정하여 이 기본 동작방식을 조정할 수 있는데, 이로 인해 몇몇 사용자들에게는 사이트 생성 시 다음과 같은 내용의 에러가 발생할 수도 있습니다:**
 
 ```sh
     ERROR: YOUR SITE COULD NOT BE BUILT:
@@ -480,7 +480,7 @@ From `v3.5` onward, `Gemfile` and `Gemfile.lock` are also excluded by default. S
 <!--
 ## Markup Problems
 -->
-## 마크업 관련 문제점
+## 마크업 관련 문제점 {#markup-problems}
 
 <!--
 The various markup engines that Jekyll uses may have some issues. This
@@ -525,7 +525,7 @@ v1.0.0 이후부터, Jekyll 에 자동으로 생성된 포스트 발췌 기능�
 <!--
 ## Production Problems
 -->
-## 운영상 문제점
+## 운영상 문제점 {#production-problems}
 
 <!--
 If you run into an issue that a static file can't be found in your
