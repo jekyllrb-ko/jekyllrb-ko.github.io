@@ -28,7 +28,7 @@ The easiest way to run Jekyll is by using the [RubyInstaller][] for Windows.
 [RubyInstaller][] is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.
 We only cover RubyInstaller-2.4 and newer here, older versions need to [install the Devkit][Devkit-install] manually.
 -->
-[RubyInstaller][] 는 윈도우즈 기반으로 Ruby 언어와 실행 환경, 중요 문서 등등을 포함하고 있습니다.
+[RubyInstaller][] 는 윈도우즈 기반으로 루비 언어와 실행 환경, 중요 문서 등등을 포함하고 있습니다.
 여기서는 RubyInstaller-2.4 또는 그 이상의 버전을 다루고 있으며, 예전 버전은 따로 [Devkit 설치][Devkit-install]를 필요로 합니다.
 
 <!--
@@ -84,14 +84,14 @@ chcp 65001
 Since Windows doesn't have a native source of zoneinfo data, the Ruby Interpreter would not understand IANA Timezones and hence using them had the `TZ` environment variable default to UTC/GMT 00:00.
 Though Windows users could alternatively define their blog's timezone by setting the key to use POSIX format of defining timezones, it wasn't as user-friendly when it came to having the clock altered to changing DST-rules.
 -->
-윈도우즈에서는 Ruby 인터프리터가 IANA 타임존 정보를 처리하는데 필요한 정보 원천이 없기 때문에, 대신 환경변수 `TZ` 를 사용하며 그 기본값은 UTC/GMT 00:00 입니다.
+윈도우즈에서는 루비 인터프리터가 IANA 타임존 정보를 처리하는데 필요한 정보 원천이 없기 때문에, 대신 환경변수 `TZ` 를 사용하며 그 기본값은 UTC/GMT 00:00 입니다.
 윈도우즈 사용자들도 POSIX 형식의 타임존 설정을 통해 블로그의 타임존을 지정할 수 있었지만, DST 규칙에 따라 시간을 조정해야한다는 부분이 사용자 친화적이지 않았습니다.
 
 <!--
 Jekyll now uses a rubygem to internally configure Timezone based on established [IANA Timezone Database][IANA-database].
 While 'new' blogs created with Jekyll v3.4 and greater, will have the following added to their 'Gemfile' by default, existing sites *will* have to update their 'Gemfile' (and installed) to enable development on Windows:
 -->
-이제 Jekyll 은 공식적으로 인정된 [IANA 타임존 데이터베이스][IANA-database]에 근거하여 타임존을 자체적으로 설정하는 Ruby Gem 을 사용합니다.
+이제 Jekyll 은 공식적으로 인정된 [IANA 타임존 데이터베이스][IANA-database]에 근거하여 타임존을 자체적으로 설정하는 루비 젬을 사용합니다.
 Jekyll v3.4 또는 그 이상의 버전에서 **새** 블로그를 생성할 때, 기본적으로 `Gemfile` 에 다음과 같은 내용이 추가되며, 이전에 생성된 사이트에서는 `Gemfile` 을 수정할 필요가 있습니다:
 
 ```ruby
@@ -109,7 +109,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 <!--
 Jekyll uses the `listen` gem to watch for changes when the `--watch` switch is specified during a build or serve. While `listen` has built-in support for UNIX systems, it may require an extra gem for compatibility with Windows.
 -->
-생성이나 미리보기 시에 `--watch` 스위치를 설정하면 Jekyll 은 `listen` gem 을 사용하여 변경사항을 감지합니다. UNIX 시스템에는 `listen` 이 기본 지원되지만, Windows 에서도 호환되려면 추가로 다른 gem 이 더 필요할 수 있습니다.
+생성이나 미리보기 시에 `--watch` 스위치를 설정하면 Jekyll 은 `listen` 루비 젬을 사용하여 변경사항을 감지합니다. UNIX 시스템에는 `listen` 이 기본 지원되지만, Windows 에서도 호환되려면 추가로 다른 루비 젬이 더 필요할 수 있습니다.
 
 <!--
 Add the following to the Gemfile for your site if you have issues with auto-regeneration on Windows alone:
@@ -161,7 +161,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 <!--
 Now we can install Ruby. To do this we will use a repository from [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/), which hosts optimized versions of Ruby for Ubuntu.
 -->
-이제 Ruby 를 설치할 수 있습니다. 여기서 우리는 Ubutu 에 최적화된 버전의 Ruby 를 제공하는 [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/) 의 저장소를 사용할 것입니다.
+이제 루비를 설치할 수 있습니다. 여기서 우리는 우분투에 최적화된 버전의 루비를 제공하는 [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/) 의 저장소를 사용할 것입니다.
 
 ```sh
 sudo apt-add-repository ppa:brightbox/ruby-ng
@@ -172,7 +172,7 @@ sudo apt-get install ruby2.3 ruby2.3-dev build-essential dh-autoreconf
 <!--
 Next let's update our Ruby gems:
 -->
-그 다음엔 Ruby gem 들을 업데이트합시다:
+그 다음엔 루비 젬들을 업데이트합시다:
 
 ```sh
 sudo gem update
@@ -199,7 +199,7 @@ jekyll -v
 <!--
 Configure the bundler/gem path so bundle doesn't prompt for sudo
 -->
-관리자 권한을 필요로 하는 일이 발생하지 않도록 bundler 와 gem 의 경로를 설정합니다:
+관리자 권한을 필요로 하는 일이 발생하지 않도록 bundler 와 루비 젬의 경로를 설정합니다:
 
 ```sh
 bundle config path vendor/bundle
@@ -222,7 +222,7 @@ jekyll new my_blog
 <!--
 You can make sure time management is working properly by inspecting your `_posts` folder. You should see a markdown file with the current date in the filename.
 -->
-생성된 `_posts` 폴더를 확인해보면 타임존 관리가 올바르게 작동하고 있는지 확인할 수 있습니다. 파일명에 현재시간이 들어가 있는 Markdown 파일이 있을 것입니다.
+생성된 `_posts` 폴더를 확인해보면 타임존 관리가 올바르게 작동하고 있는지 확인할 수 있습니다. 파일명에 현재시간이 들어가 있는 마크다운 파일이 있을 것입니다.
 
 <div class="note info">
 <!--
@@ -236,7 +236,7 @@ You can make sure time management is working properly by inspecting your `_posts
 <!--
 **Note:** Bash on Ubuntu on Windows is still under development, so you may run into issues.
 -->
-**중요:** 윈도우즈에서 사용하는 Ubuntu 용 Bash 는 지금도 개발이 진행중인 관계로, 문제가 발생할 가능성이 있습니다.
+**중요:** 윈도우즈에서 사용하는 우분투용 Bash 는 지금도 개발이 진행중인 관계로, 문제가 발생할 가능성이 있습니다.
 
 [WSL-Guide]: https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
 [BASH-WSL]: https://msdn.microsoft.com/en-us/commandline/wsl/about

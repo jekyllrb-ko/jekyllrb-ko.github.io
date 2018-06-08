@@ -7,7 +7,7 @@ You can easily test your website build against one or more versions of Ruby.
 The following guide will show you how to set up a free build environment on
 [Travis][travis], with [GitHub][github] integration for pull requests.
 -->
-여러가지 버전의 Ruby 에서 웹사이트 생성 테스트를 하는 것도 어렵지 않습니다.
+여러가지 버전의 루비에서 웹사이트 생성 테스트를 하는 것도 어렵지 않습니다.
 다음 안내서들은 [Travis][travis] 에 무료 빌드환경을 구성하고 Pull Request 를
 사용하여 [GitHub][github] 과 연동하는 방법을 설명하고 있습니다.
 
@@ -60,7 +60,7 @@ or write a Ruby script which utilizes the gem.
 -->
 Jekyll 의 출력 결과물을 테스트한다면, [html-proofer][html-proofer] 보다 좋은 도구는
 없습니다. 이것을 사용하면 생성된 사이트의 모든 링크와 이미지가 존재하는지 확인할
-수 있습니다. 해당 Gem 을 활용하는 Ruby 스크립트를 작성하거나, `htmlproofer` 라는
+수 있습니다. 해당 루비 젬을 활용하는 루비 스크립트를 작성하거나, `htmlproofer` 라는
 편리한 명령행 실행 프로그램으로 이 도구의 기능을 활용할 수 있습니다.
 
 <!--
@@ -107,7 +107,7 @@ bundle exec htmlproofer ./_site --disable-external
 <!--
 You can also invoke `html-proofer` in Ruby scripts (e.g. in a Rakefile):
 -->
-또한 Ruby 스크립트에서 `html-proofer` 를 호출할 수도 있습니다 (예시, Rakefile 안에서 호출):
+또한 루비 스크립트에서 `html-proofer` 를 호출할 수도 있습니다 (예시, Rakefile 안에서 호출):
 
 ```ruby
 #!/usr/bin/env ruby
@@ -121,7 +121,7 @@ Options are given as a second argument to `.new`, and are encoded in a
 symbol-keyed Ruby Hash. For more information about the configuration options,
 check out `html-proofer`'s README file.
 -->
-옵션은 `.new` 의 두 번째 전달인자이며, 심볼-키 Ruby 해시로 인코딩 됩니다.
+옵션은 `.new` 의 두 번째 전달인자이며, 심볼-키 루비 해시로 인코딩 됩니다.
 환경설정 옵션에 관련된 더 많은 정보는 `html-proofer` 의 README 파일을 확인해
 보세요.
 
@@ -138,15 +138,15 @@ with Ruby and requires RubyGems to install, we use the Ruby language build
 environment. Below is a sample `.travis.yml` file, followed by
 an explanation of each line.
 -->
-이 파일은 Travis 빌드 환경설정에 사용됩니다. Jekyll 은 Ruby 로 작성되었고
-몇 가지 RubyGem 들의 설치를 필요로 하기 때문에, Ruby 언어 빌드 환경을
-선택했습니다. 아래는 샘플 `.travis.yml` 파일이며, 그 뒤는 각 설정에 대한
+이 파일은 Travis 빌드 환경설정에 사용됩니다. Jekyll 은 루비로 작성되었고
+RubyGems 설치를 필요로 하기 때문에, 루비 언어 빌드 환경을 선택했습니다.
+아래는 샘플 `.travis.yml` 파일이며, 그 뒤는 각 설정에 대한
 설명입니다.
 
 <!--
 **Note:** You will need a Gemfile as well, [Travis will automatically install](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management) the dependencies based on the referenced gems:
 -->
-**중요:** Travis 가 필요한 모든 의존성을 [자동으로 설치](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management)할 수 있도록, Gem 참조목록인 Gemfile 이 필요합니다.
+**중요:** Travis 가 필요한 모든 의존성을 [자동으로 설치](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management)할 수 있도록, 루비 젬 참조목록인 Gemfile 이 필요합니다.
 
 ```ruby
 source "https://rubygems.org"
@@ -198,8 +198,8 @@ language: ruby
 This line tells Travis to use a Ruby build container. It gives your script
 access to Bundler, RubyGems, and a Ruby runtime.
 -->
-Travis 에게 Ruby 빌드 컨테이너를 사용하도록 지시하는 내용입니다. 이 컨테이너는
-Bundler, RubyGem, Ruby 실행환경의 스크립트 접근 권한을 제공합니다.
+Travis 에게 루비 빌드 컨테이너를 사용하도록 지시하는 내용입니다. 이
+컨테이너는 Bundler, RubyGems, 루비 런타임에 접근하는 스크립트를 제공합니다.
 
 ```yaml
 rvm:
@@ -211,8 +211,8 @@ RVM is a popular Ruby Version Manager (like rbenv, chruby, etc). This
 directive tells Travis the Ruby version to use when running your test
 script.
 -->
-RVM 은 (rbenv, chruby 등과 같은) 대중적인 Ruby 버전 관리자입니다. 이 설정은
-테스트 스크립트를 실행할 때 사용할 Ruby 버전을 Travis 에게 알려주는 역할을
+RVM 은 (rbenv, chruby 등과 같은) 대중적인 루비 버전 관리자입니다. 이 설정은
+테스트 스크립트를 실행할 때 사용할 루비 버전을 Travis 에게 알려주는 역할을
 합니다.
 
 ```yaml
@@ -320,7 +320,7 @@ environment variable `NOKOGIRI_USE_SYSTEM_LIBRARIES` to `true`.
 -->
   <h5><code>_config.yml</code> 에서 <code>vendor</code> 를 제외하는 것을 잊지
    마세요</h5>
-  <p>Travis 는 빌드 서버의 <code>vendor</code> 디렉토리에 있는 모든 gem 들을 포함하는데,
+  <p>Travis 는 빌드 서버의 <code>vendor</code> 디렉토리에 있는 모든 루비 젬들을 포함하는데,
    의도치 않게 Jekyll 이 읽어들여 망가질 수 있습니다.</p>
 </div>
 

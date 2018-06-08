@@ -369,7 +369,7 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
         <p>Convert a Markdown-formatted string into HTML.</p>
 -->
         <p class="name"><strong>Markdownify</strong></p>
-        <p>Markdown 포맷 문자열을 HTML 로 변환한다.</p>
+        <p>마크다운 포맷 문자열을 HTML 로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -669,7 +669,7 @@ and ensure the `rouge` gem is installed properly.
 대한 구문 강조 기능을 내장하고 있습니다.
 Jekyll 3 와 그 이상의 버전에서는 Rouge 가 기본 구문 강조기입니다.
 Jekyll 2 에서 사용하기 위해서는, `highlighter` 를 `rouge` 로 설정하고
-`rouge` gem 이 제대로 설치되어 있는지 확인하세요.
+`rouge` 루비 젬이 제대로 설치되어 있는지 확인하세요.
 
 <!--
 Alternatively, you can use [Pygments](http://pygments.org) to highlight
@@ -680,7 +680,7 @@ languages](http://pygments.org/languages/)
 -->
 다른 방법으로는, [Pygments](http://pygments.org) 를 사용해 코드 조각에
 구문 강조를 할 수 있습니다. Pygments 를 사용하기 위해서는, 시스템에
-Python 과 `pygments.rb` gem 이 설치되어 있어야 하고, 사이트 환경설정 파일에
+Python 과 `pygments.rb` 루비 젬이 설치되어 있어야 하고, 사이트 환경설정 파일에
 `highlighter` 를 `pygments` 로 설정해야 합니다. Pygments 는
 [100 개 이상의 언어](http://pygments.org/languages/)를 지원합니다.
 
@@ -806,7 +806,7 @@ You must include the file's original extension when using the `link` tag. Here a
 <!--
 You can also use the `link` tag to create a link in Markdown as follows:
 -->
-다음과 같이 Markdown 안에서도 `link` 태그를 사용해 링크를 생성할 수 있습니다:
+다음과 같이 마크다운 안에서도 `link` 태그를 사용해 링크를 생성할 수 있습니다:
 
 {% raw %}
 ```liquid
@@ -845,7 +845,7 @@ One major benefit of using the `link` or `post_url` tag is link validation. If t
 <!--
 Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}`. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques.
 -->
-`link` 태그에는 필터를 추가할 수 없다는 것을 알아두세요. 예를 들어, `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}` 처럼 Liquid 필터를 사용해 문자열을 추가할 수 없습니다. 페이지의 특정 부분에 링크하기 위해서는, 기본 HTML 링크나 Markdown 링크 방식을 사용해야 합니다.
+`link` 태그에는 필터를 추가할 수 없다는 것을 알아두세요. 예를 들어, `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}` 처럼 Liquid 필터를 사용해 문자열을 추가할 수 없습니다. 페이지의 특정 부분에 링크하기 위해서는, 기본 HTML 링크나 마크다운 링크 방식을 사용해야 합니다.
 
 <!--
 The name of the file you want to link can be specified as a variable instead of an actual file name. For example, suppose you defined a variable in your page's front matter like this:
@@ -908,7 +908,7 @@ There is no need to include the file extension when using the `post_url` tag.
 <!--
 You can also use this tag to create a link to a post in Markdown as follows:
 -->
-다음과 같이 Markdown 에서도 이 태그를 사용하여 게시물 링크를 생성할 수 있습니다:
+다음과 같이 마크다운에서도 이 태그를 사용하여 게시물 링크를 생성할 수 있습니다:
 
 {% raw %}
 ```liquid

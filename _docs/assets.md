@@ -10,7 +10,7 @@ a Ruby gem. In order to use them, you must first create a file with the
 proper extension name (one of `.sass`, `.scss`, or `.coffee`) and ***start the
 file with two lines of triple dashes***, like this:
 -->
-Jekyll 은 Sass 를 기본적으로 지원하고 Ruby gem 을 통해 CoffeeScript 와 연동할 수
+Jekyll 은 Sass 를 기본적으로 지원하고 루비 젬을 통해 CoffeeScript 와 연동할 수
 있습니다. 사용 방법은, 일단 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중
 하나) 로 파일을 생성하고 ***파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야
 합니다***. 이렇게 말이죠:
@@ -151,7 +151,7 @@ Jekyll 3.0 과 그 이후 버전에서 Coffeescript 를 활성화하려면
 * Install the `jekyll-coffeescript` gem
 * Ensure that your `_config.yml` is up-to-date and includes the following:
 -->
-* `jekyll-coffeescript` gem 을 설치하고
+* `jekyll-coffeescript` 루비 젬을 설치하고
 * `_config.yml` 이 최신 상태이고 아래 내용을 포함하고 있어야 합니다:
 
 ```yaml

@@ -35,7 +35,7 @@ Jekyll 3 에서는, Gemfile 과 `_config.yml` 의 `plugins` 에 `jekyll-paginate
 -->
   <h5>페이지 나누기는 오직 HTML 파일에서만 작동합니다</h5>
   <p>
-    페이지 나누기는 Markdown 이나 Textile 파일 안에서 작동하는 것이 아닙니다. 페이지
+    페이지 나누기는 마크다운이나 Textile 파일 안에서 작동하는 것이 아닙니다. 페이지
     나누기는 파일명이 <code>index.html</code> 인 HTML 파일 안에서 호출되거나
     환경설정 <code>paginate_path</code> 로 설정된 하위 디렉토리 안에서 동작합니다.
 

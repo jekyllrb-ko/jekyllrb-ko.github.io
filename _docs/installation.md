@@ -9,7 +9,7 @@ permalink: /docs/installation/
 Jekyll is a [Ruby Gem](http://guides.rubygems.org/rubygems-basics/), and can be
 installed on most systems.
 -->
-Jekyll 은 단순히 하나의 [Ruby Gem](http://guides.rubygems.org/rubygems-basics/) 일 뿐이고, 거의 모든 시스템에 설치가 가능합니다.
+Jekyll 은 단순히 하나의 [루비 젬](http://guides.rubygems.org/rubygems-basics/)일 뿐이고, 거의 모든 시스템에 설치가 가능합니다.
 
 <!--
 - [Requirements](#requirements)
@@ -39,7 +39,7 @@ Before you start, make sure your system has the following:
 - [RubyGems](https://rubygems.org/pages/download) (which you can check by running `gem -v`)
 - [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) (in case your system doesn't have them installed, which you can check by running `gcc -v`,`g++ -v`  and `make -v` in your system's command line interface)
 -->
-- [Ruby](https://www.ruby-lang.org/en/downloads/) 버전 2.2.5 또는 그 이상. 모든 개발환경 헤더 포함 (Ruby 설치정보는 `ruby -v` 로 확인할 수 있습니다)
+- [루비](https://www.ruby-lang.org/en/downloads/) 버전 2.2.5 또는 그 이상. 모든 개발환경 헤더 포함 (루비 설치정보는 `ruby -v` 로 확인할 수 있습니다)
 - [RubyGems](https://rubygems.org/pages/download) (명령어 `gem -v` 로 확인할 수 있습니다)
 - [GCC](https://gcc.gnu.org/install/) 와 [Make](https://www.gnu.org/software/make/) (명령행 인터페이스에서 `gcc -v` 와 `g++ -v`, `make -v` 로 확인할 수 있습니다)
 
@@ -51,7 +51,7 @@ Before you start, make sure your system has the following:
 <!--
 We only cover macOS High Sierra 10.13 here, which comes with Ruby 2.3.3, older systems will need to [install a more recent Ruby version via Homebrew](#homebrew).
 -->
-여기서는 Ruby 2.3.3 이 함께 제공되는 맥OS High Sierra 10.13 를 기준으로 설명하며, 이전 버전의 시스템에서는 [Homebrew 로 상위버전 Ruby 를 설치](#homebrew)할 필요가 있습니다.
+여기서는 루비 2.3.3 이 함께 제공되는 맥OS High Sierra 10.13 를 기준으로 설명하며, 이전 버전의 시스템에서는 [Homebrew 로 상위버전 루비를 설치](#homebrew)할 필요가 있습니다.
 
 <!--
 First, you need to install the command-line tools to be able to compile native extensions, open a terminal and run:
@@ -65,12 +65,12 @@ xcode-select --install
 <!--
 ### Set up Ruby included with the OS
 -->
-### Ruby 환경 설정하기
+### 루비 환경 설정하기
 
 <!--
 Check your Ruby version meet our requirements:
 -->
-가지고 있는 Ruby 버전이 요구조건을 충족하는지 확인하세요:
+가지고 있는 루비 버전이 요구조건을 충족하는지 확인하세요:
 
 ```sh
 ruby -v
@@ -116,7 +116,7 @@ bundle init
 # Jekyll 추가
 bundle add jekyll
 
-# gem 설치
+# 루비 젬 설치
 bundle install
 ```
 
@@ -128,12 +128,12 @@ Great, from there you can now either use a [theme](../themes/) or [create your o
 <!--
 ### Install a newer Ruby version via Homebrew {#homebrew}
 -->
-### Homebrew 로 상위버전 Ruby 설치하기 {#homebrew}
+### Homebrew 로 상위버전 루비 설치하기 {#homebrew}
 
 <!--
 If you wish to install the latest version of Ruby and get faster builds, we recommend to do it via [Homebrew](https://brew.sh) a handy package manager for macOS.
 -->
-빌드 속도가 더 빠른 최신 버전의 Ruby 를 설치하고자 한다면, 편리한 맥OS 용 패키지 관리자인 [Homebrew](https://brew.sh) 를 사용하길 권합니다.
+빌드 속도가 더 빠른 최신 버전의 루비를 설치하고자 한다면, 편리한 맥OS 용 패키지 관리자인 [Homebrew](https://brew.sh) 를 사용하길 권합니다.
 
 ```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -145,17 +145,17 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
 <!--
 Yay! Now you have a shiny Ruby on your system!
 -->
-야호! 시스템에 아주 반짝반짝한 Ruby 가 준비되었네요!
+야호! 시스템에 아주 반짝반짝한 루비가 준비되었네요!
 
 <!--
 ### Install multiple Ruby versions with rbenv {#rbenv}
 -->
-### rbenv 로 여러 버전의 Ruby 설치하기 {#rbenv}
+### rbenv 로 여러 버전의 루비 설치하기 {#rbenv}
 
 <!--
 Developers often use [rbenv](https://github.com/rbenv/rbenv) to manage multiple Ruby versions. This can be useful if you want to run the same Ruby version used by [GitHub Pages](https://pages.github.com/versions/) or [Netlify](https://www.netlify.com/docs/#ruby) for instance.
 -->
-개발자들은 여러 버전의 Ruby 관리를 위해 보통 [rbenv](https://github.com/rbenv/rbenv) 를 사용합니다. 하나 예를 들어보면, [GitHub Pages](https://pages.github.com/versions/) 나 [Netlify](https://www.netlify.com/docs/#ruby) 에서 사용되는 Ruby 와 동일한 버전을 사용하고자 하는 경우 이게 아주 유용합니다.
+개발자들은 여러 버전의 루비를 관리하기 위해 보통 [rbenv](https://github.com/rbenv/rbenv) 를 사용합니다. 하나 예를 들어보면, [GitHub Pages](https://pages.github.com/versions/) 나 [Netlify](https://www.netlify.com/docs/#ruby) 에서 사용되는 루비와 동일한 버전을 사용하고자 하는 경우 이게 아주 유용합니다.
 
 <!--
 ```sh
@@ -185,7 +185,7 @@ Restart your terminal for changes to take effect.
 Now we can install the Ruby version of our choice, let's go with Ruby 2.5.1 here:
 -->
 터미널을 재시작하면 변경사항이 적용됩니다.
-이제 원하는 버전의 Ruby 를 설치할 수 있습니다. 아래처럼 Ruby 2.5.1 로 시작해봅시다:
+이제 원하는 버전의 루비를 설치할 수 있습니다. 아래처럼 루비 2.5.1 로 시작해봅시다:
 
 ```sh
 rbenv install 2.5.1
@@ -197,7 +197,7 @@ ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin17]
 <!--
 That's it! Head over [rbenv command references](https://github.com/rbenv/rbenv#command-reference) to learn how to use different versions of Ruby in your projects.
 -->
-끝입니다! [rbenv 명령어 참고서](https://github.com/rbenv/rbenv#command-reference)를 한 번 잘 읽어보면 다양한 버전의 Ruby 를 어떻게 프로젝트 별로 관리하는지 알 수 있습니다.
+끝입니다! [rbenv 명령어 참고서](https://github.com/rbenv/rbenv#command-reference)를 한 번 잘 읽어보면 다양한 버전의 루비를 어떻게 프로젝트 별로 관리하는지 알 수 있습니다.
 
 <div class="note info" markdown="1">
 
@@ -237,9 +237,9 @@ set up a gem installation directory for your user account. The following
 commands will add environment variables to your `~/.bashrc` file to configure
 the gem installation path. Run them now:
 -->
-Ruby gem 은 root 사용자로 설치하지 않는게 좋습니다. 그러므로, 일반
-사용자 계정에 gem 설치 디렉토리를 따로 설정해주어야 합니다. 아래
-명령어는 gem 설치 경로를 가리키는 환경설정 변수를 `~/.bashrc` 파일에
+루비 젬은 root 사용자로 설치하지 않는게 좋습니다. 그러므로, 일반
+사용자 계정에 루비 젬 설치 디렉토리를 따로 설정해주어야 합니다. 아래
+명령어는 루비 젬 설치 경로를 가리키는 환경설정 변수를 `~/.bashrc` 파일에
 추가할 것입니다. 실행해보세요:
 
 ```sh
@@ -281,7 +281,7 @@ gem list jekyll
 <!--
 You can use RubyGems to find [the current version of Jekyll](https://rubygems.org/gems/jekyll). Another way to check if you have the latest version is to run the command `gem outdated`. This will provide a list of all the gems on your system that need to be updated. If you aren't running the latest version, run this command:
 -->
-RubyGems 를 사용해서 [Jekyll 의 최신 버전](https://rubygems.org/gems/jekyll)을 확인할 수 있습니다. 다른 방법으로는 `gem outdated` 명령을 실행해볼 수도 있습니다. 이 명령은 당신의 시스템에 설치된 gem 들 중 업데이트가 필요한 것들의 목록을 보여줍니다. 가지고 있는 버전이 최신 버전이 아니라면, 이 명령을 실행하세요:
+RubyGems 를 사용해서 [Jekyll 의 최신 버전](https://rubygems.org/gems/jekyll)을 확인할 수 있습니다. 다른 방법으로는 `gem outdated` 명령을 실행해볼 수도 있습니다. 이 명령은 당신의 시스템에 설치된 루비 젬들 중 업데이트가 필요한 것들의 목록을 보여줍니다. 가지고 있는 버전이 최신 버전이 아니라면, 이 명령을 실행하세요:
 
 ```sh
 bundle update jekyll
@@ -299,7 +299,7 @@ gem update jekyll
 <!--
 To upgrade to latest Rubygems, run:
 -->
-최신 버전의 Rubygems 로 업그레이드 하려면, 이렇게 실행하세요:
+Rubygems 를 최신 버전으로 업그레이드 하려면, 이렇게 실행하세요:
 
 ```
 gem update --system

@@ -86,7 +86,7 @@ You have 3 options for installing plugins:
 읽어들입니다.
 
 2. `_config.yml` 파일에 `plugins` (또는 `3.5.0` 버전 이전의 Jekyll 에서는 `gems`) 라는 키로 배열을 추가하고
-   사용하려는 플러그인들의 gem 이름을 나열하세요. 예를 들면 다음과 같습니다:
+   사용하려는 플러그인들의 루비 젬 이름을 나열하세요. 예를 들면 다음과 같습니다:
 
    ```yaml
    # This will require each of these plugins automatically.
@@ -147,7 +147,7 @@ treatment. Any gem included in this group is loaded before Jekyll starts
 processing the rest of your source directory.
 -->
 당신의 `Gemfile` 에 정의된 이 그룹은, 조금 다른 방식으로 처리됩니다.
-Jekyll 은 작업을 시작하기 전에 먼저 이 그룹에 속해있는 gem 들을
+Jekyll 은 작업을 시작하기 전에 먼저 이 그룹에 속해있는 루비 젬들을
 불러들입니다.
 
 <!--
@@ -155,7 +155,7 @@ A gem included here will be activated even if its not explicitly listed under
 the `plugins:` key in your site's config file.
 -->
 심지어 사이트 환경설정 파일의 `plugins:` 키에 정의되어 있지 않더라도, 이
-안에 있는 gem 들은 활성화됩니다.
+안에 있는 루비 젬들은 활성화됩니다.
 
 <div class="note warning">
   <p>
@@ -164,9 +164,9 @@ the `plugins:` key in your site's config file.
     regardless of the <code>--safe</code> mode setting. Be aware of what
     gems are included under this group!
 -->
-    그룹 <code>:jekyll-plugins</code> 에 포함되어 있는 gem 들은
+    그룹 <code>:jekyll-plugins</code> 에 포함되어 있는 루비 젬들은
     <code>--safe</code> 모드 설정에 관계없이 활성화됩니다. 이 그룹에
-    어떤 gem 들을 포함시킬 것인지 주의를 기울이세요!
+    어떤 루비 젬들을 포함시킬 것인지 주의를 기울이세요!
   </p>
 </div>
 
@@ -365,7 +365,7 @@ include it by implementing your own converter. Both the Markdown and
 languages are implemented using this method.
 -->
 당신의 사이트에 사용하고자 하는 다른 마크업 언어가 있다면, 해당 언어를 처리할 수
-있는 변환기를 직접 구현하면 됩니다. 마크업 언어 Markdown 과
+있는 변환기를 직접 구현하면 됩니다. 마크업 언어 마크다운과
 [Textile](https://github.com/jekyll/jekyll-textile-converter) 도 이
 메소드를 사용해서 구현한 것입니다.
 

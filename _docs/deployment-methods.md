@@ -57,7 +57,7 @@ Kickster 가 제공하는 기본 Jekyll 프로젝트의 기본설정은 아주 �
 <!--
 Setting up Kickster is very easy, just install the gem and you are good to go. More documentation can here found [here](https://github.com/nielsenramon/kickster#kickster). If you do not want to use the gem or start a new project you can just copy paste the deployment scripts for [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) or [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci).
 -->
-Kickster 설정은 관련 gem 을 설치하는 것이 전부라서 아주 간단합니다. 관련 문서는 [여기](https://github.com/nielsenramon/kickster#kickster)서 찾을 수 있습니다. 만약 관련 gem 을 설치하거나 새 프로젝트를 만들고 싶지 않다면 [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) 나 [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci) 용 배포 스크립트만 복사해 사용할 수 있습니다.
+Kickster 환경 구성은, 루비 젬을 설치하는 것이 전부입니다. 관련 문서는 [여기](https://github.com/nielsenramon/kickster#kickster)서 찾을 수 있습니다. 만약 루비 젬을 설치하거나 새 프로젝트를 만들고 싶지 않다면 [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) 나 [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci) 용 배포 스크립트만 복사해 사용할 수 있습니다.
 
 <!--
 ## Web hosting providers (FTP)

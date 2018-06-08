@@ -8,7 +8,7 @@ permalink: /docs/quickstart/
 <!--
 If you already have a full [Ruby](https://www.ruby-lang.org/en/downloads/) development environment with all headers and [RubyGems](https://rubygems.org/pages/download) installed (see Jekyll's [requirements](/docs/installation/#requirements)), you can create a new Jekyll site by doing the following:
 -->
-모든 헤더와 [RubyGems](https://rubygems.org/pages/download) 가 포함된 완전한 [Ruby](https://www.ruby-lang.org/en/downloads/) 개발 환경이 이미 준비되었다면(Jekyll 에 [필요한 것들](/docs/installation/#requirements) 참고), 다음 명령으로 새 Jekyll 사이트를 생성할 수 있습니다:
+모든 헤더와 [RubyGems](https://rubygems.org/pages/download) 가 포함된 완전한 [루비](https://www.ruby-lang.org/en/downloads/) 개발 환경이 이미 준비되었다면(Jekyll 에 [필요한 것들](/docs/installation/#requirements) 참고), 다음 명령으로 새 Jekyll 사이트를 생성할 수 있습니다:
 
 <!--
 ```sh
@@ -56,19 +56,19 @@ If you encounter any unexpected errors during the above, please refer to the [tr
 <!--
 `gem install bundler` installs the [bundler](https://rubygems.org/gems/bundler) gem through [RubyGems](https://rubygems.org/). You only need to install it once &mdash; not every time you create a new Jekyll project. Here are some additional details:
 -->
-`gem install bundler` 명령은 [RubyGems](https://rubygems.org/) 를 사용해 [bundler](https://rubygems.org/gems/bundler) gem 을 설치합니다. 이 명령은 gem 을 설치하기 위한 것으로 한 번만 실행하면 됩니다 &mdash; 매번 새 Jekyll 프로젝트를 만들 때마다가 아닙니다. 자세한 내용은 다음을 참고하세요:
+`gem install bundler` 명령은 [RubyGems](https://rubygems.org/) 를 사용해 [bundler](https://rubygems.org/gems/bundler) 루비 젬을 설치합니다. 이 명령은 루비 젬을 설치하기 위한 것으로 한 번만 실행하면 됩니다 &mdash; 매번 새 Jekyll 프로젝트를 만들 때마다가 아닙니다. 자세한 내용은 다음을 참고하세요:
 
 <!--
 * `bundler` is a gem that manages other Ruby gems. It makes sure your gems and gem versions are compatible, and that you have all necessary dependencies each gem requires.
 * The `Gemfile` and `Gemfile.lock` files inform Bundler about the gem requirements in your site. If your site doesn't have these Gemfiles, you can omit `bundle exec` and just run `jekyll serve`.
 -->
-* `bundler` 는 다른 Ruby gem 들을 관리하는 gem 입니다. 각각의 gem 들이 작동하기 위한 필수 의존요소들을 설치해주기 때문에 언제나 당신은 호환되는 버전의 gem 들을 가지고 있게 됩니다.
-* `Gemfile` 과 `Gemfile.lock` 은 당신의 사이트에 필요한 gem 들을 Bundler 에게 알려주는 역할을 합니다. 만약 사이트에 이 파일들이 없다면, `bundle exec` 를 생략하고 `jekyll serve` 만 실행해도 됩니다.
+* `bundler` 는 다른 루비 젬들을 관리하는 루비 젬입니다. 각각의 루비 젬들이 작동하기 위한 필수 의존요소들을 설치해주기 때문에 언제나 당신은 호환되는 버전의 루비 젬들을 가지고 있게 됩니다.
+* `Gemfile` 과 `Gemfile.lock` 은 당신의 사이트에 필요한 루비 젬들을 Bundler 에게 알려주는 역할을 합니다. 만약 사이트에 이 파일들이 없다면, `bundle exec` 를 생략하고 `jekyll serve` 만 실행해도 됩니다.
 
 <!--
 * When you run `bundle exec jekyll serve`, Bundler uses the gems and versions as specified in `Gemfile.lock` to ensure your Jekyll site builds with no compatibility or dependency conflicts.
 -->
-* `bundle exec jekyll serve` 라고 실행하면, Bundler 는 `Gemfile.lock` 에 명시된 버전의 gem 을 사용해 Jekyll 사이트를 생성하기 때문에 의존성과 호환성에 어떠한 충돌도 발생하지 않습니다.
+* `bundle exec jekyll serve` 라고 실행하면, Bundler 는 `Gemfile.lock` 에 명시된 버전의 루비 젬을 사용해 Jekyll 사이트를 생성하기 때문에 의존성과 호환성에 어떠한 충돌도 발생하지 않습니다.
 
 <!--
 For more information about how to use Bundler in your Jekyll project, this [tutorial](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/) should provide answers to the most common questions and explain how to get up and running quickly.
@@ -93,9 +93,9 @@ Jekyll 프로젝트에 Bundler 를 사용하는 방법에 관하여 더 자세�
 * To learn about other parameters you can include with `jekyll new`, type `jekyll new --help`.
 -->
 * 현재 디렉토리에 Jekyll 사이트를 만드려면, `jekyll new .` 을 실행하세요. 만약 디렉토리가 비어있지 않은 경우에는, `--force` 옵션을 넣어서 `jekyll new . --force` 라고 실행하면 됩니다.
-* `jekyll new` 명령은 자동으로 `bundle install` 을 실행해서 의존관계의 gem 들을 설치합니다. (만약 Bundler 를 통한 gem 설치를 원하지 않는다면, `jekyll new myblog --skip-bundle` 이라고 입력하세요.)
-* 기본적으로, `jekyll new` 명령으로 설치된 Jekyll 사이트는 [Minima](https://github.com/jekyll/minima) 라는 gem 기반의 테마를 사용합니다. [gem 기반 테마들](../themes)의 일부 디렉토리나 파일은 감춰져서 보이지 않을 수도 있습니다.
-* 저희가 권장하는 Jekyll 설정법은 gem 기반 테마를 사용하는 것이지만 백지 상태로 시작하고자 한다면, `jekyll new myblog --blank` 명령을 사용하세요.
+* `jekyll new` 명령은 자동으로 `bundle install` 을 실행해서 의존관계의 루비 젬들을 설치합니다. (만약 Bundler 를 통한 루비 젬 설치를 원하지 않는다면, `jekyll new myblog --skip-bundle` 이라고 입력하세요.)
+* 기본적으로, `jekyll new` 명령으로 설치된 Jekyll 사이트는 [Minima](https://github.com/jekyll/minima) 라는 루비 젬 기반의 테마를 사용합니다. [루비 젬 기반 테마들](../themes)의 일부 디렉토리나 파일은 감춰져서 보이지 않을 수도 있습니다.
+* 저희가 권장하는 Jekyll 설정법은 루비 젬 기반 테마를 사용하는 것이지만 백지 상태로 시작하고자 한다면, `jekyll new myblog --blank` 명령을 사용하세요.
 * `jekyll new` 에 사용할 수 있는 다른 파라미터들을 더 알고 싶다면, `jekyll new --help` 라고 입력하세요.
 
 <!--

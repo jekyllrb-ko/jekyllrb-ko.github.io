@@ -165,7 +165,7 @@ choice and written out to `<dest>/my_collection/some_subdir/some_doc.html`.
 -->
 이렇게 하면 콜렉션 안의 모든 문서가 각각 파일로 생성됩니다.
 예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면,
-당신이 선택한 Markdown 변환기와 Liquid 를 거쳐서
+당신이 선택한 마크다운 변환기와 Liquid 를 거쳐서
 `<dest>/my_collection/some_subdir/some_doc.html` 로 만들어질 것입니다.
 
 <!--

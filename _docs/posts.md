@@ -35,7 +35,7 @@ static site.
 -->
 앞서 [디렉토리 구조](../structure/) 페이지에서 설명했듯이, 블로그 포스트는
 `_posts` 폴더에 들어갑니다. 이 파일들은 일반적으로
-[Markdown](https://daringfireball.net/projects/markdown/) 이나 HTML 이지만,
+[마크다운](https://daringfireball.net/projects/markdown/)이나 HTML 이지만,
 적절한 변환기가 설치되어 있는 경우에는 다른 포맷일 수도 있습니다.
 모든 포스트는 [YAML 머리말](../frontmatter/)을 포함해야만 하고, 최종적으로
 원래의 포맷으로부터 변환 작업을 거쳐 당신의 사이트를 구성하는 HTML 페이지가
@@ -107,7 +107,7 @@ decide which one best suits your needs.
 -->
 모든 블로그 포스트 파일 첫 부분에는 [YAML 머리말](../frontmatter/)을 작성해야만
 합니다. 다음 할 일은 내용 작성에 사용할 포맷을 선택하는 것입니다. Jekyll 은
-[Markdown](http://daringfireball.net/projects/markdown/) 을 기본적으로 지원하며,
+[마크다운](http://daringfireball.net/projects/markdown/)을 기본적으로 지원하며,
 [Textile](http://redcloth.org/textile) 처럼 유명한 포맷 뿐만 아니라 [다른
 포맷들을 위한 수많은 확장기능들](/docs/plugins/#converters-1)을 가지고
 있습니다. 이 포맷들은 포스트 안의 다양한 컨텐츠를 마크업할 때 각각의 고유한
@@ -149,7 +149,7 @@ these resources differs between Markdown and Textile, the problem of working
 out where to store these files in your site is something everyone will face.
 -->
 때때로 글 중간에 이미지, 다운로드 또는 그 밖에 다른 종류의 자원을 삽입해야할
-때가 있습니다. 사용하는 포맷이 Markdown 인지 Textile 인지에 따라 자원을 링크하는
+때가 있습니다. 사용하는 포맷이 마크다운인지 Textile 인지에 따라 자원을 링크하는
 문법에 차이가 있지만, 이 파일을 사이트 어디에 저장할 것인지 결정하는 것은 공통된
 문제입니다.
 
@@ -171,7 +171,7 @@ filter in a post.
 디렉토리를 만들고, 이미지와 파일, 그 밖의 다른 자원들을 보관하는 것입니다.
 그 다음, 어느 포스트에서든지 링크하는 자원의 경로에 사이트 루트 경로를 포함시키면
 됩니다. 다시 한 번 말하지만, 이것은 사이트의 (서브)도메인과 경로의 설정에 따라 각각 방법이 다릅니다. 하지만, 포스트의
-`absolute_url` 필터를 사용하여 이 작업을 수행하는 Markdown 예제가 여기
+`absolute_url` 필터를 사용하여 이 작업을 수행하는 마크다운 예제가 여기
 있습니다.
 
 <!--
@@ -227,7 +227,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 <!--
 Everything in between the first and second `---` are part of the YAML Front Matter, and everything after the second `---` will be rendered with Markdown and show up as "Content".
 -->
-처음 두 `---` 사이에 있는 모든 내용은 YAML 머리말에 속하고, 두 번째 `---` 이후의 모든 내용은 Markdown 으로 처리되어 "컨텐츠"로서 출력될 것입니다.
+처음 두 `---` 사이에 있는 모든 내용은 YAML 머리말에 속하고, 두 번째 `---` 이후의 모든 내용은 마크다운으로 처리되어 "컨텐츠"로서 출력될 것입니다.
 
 <!--
 ## Displaying an index of posts

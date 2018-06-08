@@ -23,7 +23,7 @@ Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기
 <!--
 You create your content as text files ([Markdown](https://daringfireball.net/projects/markdown/)), and organize them into folders. Then, you build the shell of your site using [Liquid](https://shopify.github.io/liquid/)-enhanced HTML templates. Jekyll automatically stitches the content and templates together, generating a website made entirely of static assets, suitable for uploading to any server.
 -->
-텍스트 파일([Markdown](https://daringfireball.net/projects/markdown/))로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, [Liquid](https://shopify.github.io/liquid/) 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
+텍스트([마크다운](https://daringfireball.net/projects/markdown/)) 파일로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, [Liquid](https://shopify.github.io/liquid/) 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
 
 <!--
 Jekyll happens to be the engine behind [GitHub Pages](https://pages.github.com), so you can host your project’s Jekyll page/blog/website on GitHub’s servers **for free**.

@@ -50,8 +50,8 @@ Jekyll 에 추가할 좋은 아이디어가 떠오르셨군요. 좋습니다! �
 * Jekyll 의 작동방식을 변경하는 경우, 문서 내용을 갱신해 주세요. 문서는
   `site/_docs` 에 있습니다. 문서에 누락된 정보가 있다면, 언제든지 추가해주세요.
   좋은 문서가 좋은 프로젝트를 만든답니다!
-* 루비 코드를 수정할 경우에는, [GitHub Ruby
-  Styleguide](https://github.com/styleguide/ruby) 를 준수해주시기 바랍니다.
+* 루비 코드를 수정할 경우에는, [GitHub 루비
+  스타일가이드](https://github.com/styleguide/ruby)를 준수해주시기 바랍니다.
 * 최선을 다해서 **작은 Pull Request** 를 제출해 주시기 바랍니다. 리뷰하기
   쉬울수록 merge 하기도 쉽습니다.
 * Pull Request 를 제출할 때에는 본문을 신중하게 작성해 주세요. 수정하게 된
@@ -86,8 +86,8 @@ Test 의존요소
 To run the test suite and build the gem you'll need to install Jekyll's
 dependencies. Simply run this command to get all setup:
 -->
-Jekyll 의 모든 의존요소들을 설치해야지만 테스트 도구 실행과 Gem 생성이
-가능합니다. 이 명령어만 실행하면 모든 설정이 끝납니다:
+Jekyll 의 모든 의존요소들을 설치해야지만 테스트 도구를 실행할 수 있고
+루비 젬을 생성할 수 있습니다. 이 명령어만 실행하면 모든 설정이 끝납니다:
 
 <figure class="highlight"><pre><code>$ script/bootstrap</code></pre></figure>
 
@@ -215,7 +215,7 @@ Gotchas
 * Please don't tag your GitHub issue with [fix], [feature], etc. The maintainers
   actively read the issues and will label it once they come across it.
 -->
-* Gem 버전을 변경한 것은 Pull Request 하지 말아주시기 바랍니다.
+* 루비 젬 버전을 변경한 것은 Pull Request 하지 말아주시기 바랍니다.
 * 되도록이면 jekyll/jekyll 의 최신 커밋을 기반으로 패치를 생성하세요. 작업
   내용을 반영하기 쉽고, 관리자가 할일이 적어집니다. 어떤 경우에도 항상 옳은
   방법입니다.

@@ -38,9 +38,9 @@ If you encounter errors during gem installation, you may need to install
 the header files for compiling extension modules for Ruby 2.x This
 can be done on Ubuntu or Debian by running:
 -->
-만약 Gem 설치 도중에 에러가 발생한다면, Ruby 2.x 확장 모듈의 컴파일링에 필요한
-헤더파일들이 설치되어있지 않기 때문일 수 있습니다. Ubuntu 또는 Debian 에서의
-설치 명령은 다음과 같습니다:
+만약 루비 젬을 설치하는 도중에 에러가 발생한다면, 루비 2.x 확장 모듈의
+컴파일링에 필요한 헤더파일들이 설치되어있지 않기 때문일 수 있습니다.
+우분투 또는 데비안 계열에서의 설치 명령은 다음과 같습니다:
 
 ```sh
 sudo apt-get install ruby2.3-dev
@@ -49,7 +49,7 @@ sudo apt-get install ruby2.3-dev
 <!--
 On Red Hat, CentOS, and Fedora systems you can do this by running:
 -->
-Red Hat 이나 CentOS, Fedora 에서는 다음과 같습니다:
+레드햇이나 CentOS, 페도라에서는 다음과 같습니다:
 
 ```sh
 sudo yum install ruby-devel
@@ -58,7 +58,7 @@ sudo yum install ruby-devel
 <!--
 If you installed the above - specifically on Fedora 23 - but the extensions would still not compile, you are probably running a Fedora image that misses the `redhat-rpm-config` package. To solve this, simply run:
 -->
-위 내용대로 모두 설치했지만 - 특히 Fedora 23 에서 - 확장기능이 여전히 컴파일되지 않는다면, 아마도 `redhat-rpm-config` 패키지가 포함되지 않은 Fedora 이미지를 사용하고 있는 것일 수 있습니다. 이를 해결하려면, 아래와 같이 실행하세요:
+위 내용대로 모두 설치했지만 - 특히 페도라 23 에서 - 확장기능이 여전히 컴파일되지 않는다면, 아마도 `redhat-rpm-config` 패키지가 포함되지 않은 페도라 이미지를 사용하고 있는 것일 수 있습니다. 이를 해결하려면, 아래와 같이 실행하세요:
 
 ```sh
 sudo dnf install redhat-rpm-config
@@ -67,7 +67,7 @@ sudo dnf install redhat-rpm-config
 <!--
 On Arch Linux you need to run:
 -->
-Arch Linux 에서는 이렇게 실행해야 합니다:
+아치 리눅스에서는 이렇게 실행해야 합니다:
 
 ```sh
 sudo pacman -S ruby-ffi
@@ -80,10 +80,10 @@ because all requirements have not been fully met. Recent stock Ubuntu
 distributions require the installation of both the `ruby` and `ruby-all-dev`
 packages:
 -->
-Ubuntu 에서 `bundle exec jekyll serve` 를 실행한 후
+우분투에서 `bundle exec jekyll serve` 를 실행한 후
 `Could not locate Gemfile or .bundle/ directory` 라는 에러 메시지가 나온다면,
 모든 필요조건이 만족되지 않았을 가능성이 높습니다.
-최근의 Ubuntu 배포판들은 `ruby` 와 `ruby-all-dev` 패키지를 모두
+최근의 우분투 배포판들은 `ruby` 와 `ruby-all-dev` 패키지를 모두
 필요로 합니다:
 
 ```sh
@@ -107,7 +107,7 @@ export RB_USER_INSTALL='true'
 <!--
 To install RubyGems on Gentoo:
 -->
-Gentoo 에 RubyGems 를 설치하려면 다음 명령을 실행합니다:
+젠투에 RubyGems 를 설치하려면 다음 명령을 실행합니다:
 
 ```sh
 sudo emerge -av dev-ruby/rubygems
@@ -117,7 +117,7 @@ sudo emerge -av dev-ruby/rubygems
 On Windows, you may need to install [RubyInstaller
 DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit).
 -->
-Windows 에서는, [RubyInstaller
+윈도우즈에서는, [RubyInstaller
 DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit) 를 설치해야할 수도 있습니다.
 
 <!--
@@ -153,7 +153,7 @@ xcode-select --install
 which may allow you to install native gems using this command (again, using
 `sudo` only if necessary):
 -->
-그 다음, 이 명령으로 Native Gem 을 설치할 수 있게 됩니다
+그 다음, 이 명령으로 Native 루비 젬을 설치할 수 있게 됩니다
 (반드시 필요한 경우에만 `sudo` 와 함께 실행함):
 
 ```sh
@@ -185,13 +185,16 @@ possible to run Jekyll as a non-superuser and without having to install
 gems to system-wide locations by adding the following lines to the end 
 of your `.bashrc` file:
 -->
-Ubuntu 와 윈도우즈의 Bash 환경과 Linux, 맥OS 에서 가장 매력적인 점을
+우분투와 윈도우즈의 Bash 환경과 리눅스, 맥OS 에서 가장 매력적인 점을
 꼽아보면, `.bashrc` 파일에 다음 내용을 추가하면 시스템 관련 디렉토리에
-gem 을 설치하지 않고 관리자가 아닌 일반 계정으로 Jekyll 을 실행할 수
+루비 젬을 설치하지 않고 관리자가 아닌 일반 계정으로 Jekyll 을 실행할 수
 있다는 사실입니다:
 
 ```
+<!--
 # Ruby exports
+-->
+# 루비 export 환경설정
 
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
@@ -203,8 +206,8 @@ not in a system-wide location, and adds the local `jekyll` command to the
 user's `PATH` ahead of any system-wide paths.
 -->
 이 설정으로 인해 `gem` 명령어는 시스템 관련 디렉토리가 아닌 사용자의 홈 폴더
-내에 gem 들을 설치하게 되고, 시스템 전역이 아닌 로컬의 실행파일 `jekyll` 이
-우선적으로 선택되도록 사용자 `PATH` 를 구성합니다.
+내에 루비 젬들을 설치하게 되고, 시스템 전역이 아닌 로컬의 실행파일
+`jekyll` 이 우선적으로 선택되도록 사용자 `PATH` 를 구성합니다.
 
 <!--
 This is also useful for many shared webhosting services, where user accounts
@@ -269,7 +272,7 @@ installed (again, using `sudo` only if necessary):
 시스템 무결성 보호 (System Integrity Protection) 기능의 도입으로 인해, 쓰기
 권한이 있었던 몇몇 디렉토리들이 이제부터는 시스템 디렉토리로 인식되어 더 이상
 사용할 수 없게 되었습니다. 이를 고려했을 때, 간편한 Jekyll 설치방법은 딱 두
-가지로 정리됩니다. 첫 번째는 Gem 이 설치되는 위치를 변경하는 것입니다 (반드시
+가지로 정리됩니다. 첫 번째는 루비 젬이 설치되는 위치를 변경하는 것입니다 (반드시
 필요한 경우에만 `sudo` 와 함께 실행함):
 
 ```sh
@@ -280,7 +283,7 @@ gem install -n /usr/local/bin jekyll
 Alternatively, Homebrew can be installed and used to set up Ruby. This can be
 done as follows:
 -->
-다른 방법은, Homebrew 를 설치해서 Ruby 를 관리하는 것입니다. Homebrew 설치
+다른 방법은, Homebrew 를 설치해서 루비를 관리하는 것입니다. Homebrew 설치
 명령은 다음과 같습니다:
 
 ```sh
@@ -301,9 +304,9 @@ Advanced users (with more complex needs) may find it helpful to choose one of a
 number of Ruby version managers ([RVM][], [rbenv][], [chruby][], [etc][].) in
 which to install Jekyll.
 -->
-(더 많은 기능을 원하는) 고급 사용자들에게 도움이 될 만한 Jekyll 설치 방법은 Ruby
-버전 관리자 ([RVM][], [rbenv][], [chruby][] 및 [기타][etc]) 를 하나 선택해 사용하는
-것입니다.
+(더 많은 기능을 원하는) 고급 사용자들에게 도움이 될 만한 Jekyll 설치
+방법은 루비 버전 관리자 ([RVM][], [rbenv][], [chruby][] 및 [기타][etc])
+를 하나 선택해 사용하는 것입니다.
 
 [RVM]: https://rvm.io
 [rbenv]: http://rbenv.org
@@ -314,7 +317,7 @@ which to install Jekyll.
 If you elect to use one of the above methods to install Ruby, it might be
 necessary to modify your `$PATH` variable using the following command:
 -->
-이 방법으로 Ruby 를 설치했다면, 다음과 같이 `$PATH` 변수를 수정하는 작업이
+이 방법으로 루비를 설치했다면, 다음과 같이 `$PATH` 변수를 수정하는 작업이
 필요할 수도 있습니다:
 
 ```sh
@@ -338,9 +341,9 @@ its dependencies in a sandboxed environment. This also has the added
 benefit of not requiring `sudo` when you want to add or remove a gem.
 -->
 이 방법들은 `/usr/local` 을 SIP 가 활성화 된 "안전한" 위치로 인식하여,
-Apple 에 내장된 Ruby 버전과의 충돌을 피하고,
+Apple 에 내장된 루비 버전과의 충돌을 피하고,
 Jekyll 과 그 의존요소들을 샌드박스 환경에서 사용할 수 있게 해줍니다.
-또 하나의 장점은 Gem 을 추가하거나 삭제할 때 `sudo` 를 입력할 필요가
+또 하나의 장점은 루비 젬을 추가하거나 삭제할 때 `sudo` 를 입력할 필요가
 없다는 것입니다.
 
 ### Could not find a JavaScript runtime. (ExecJS::RuntimeUnavailable)
@@ -353,7 +356,7 @@ you don't have a proper JavaScript runtime. To solve this, either install
 -->
 적절한 자바스크립트 런타임이 없으면 `jekyll-coffeescript` 설치 단계에서
 이와 같은 에러 메시지가 발생할 수 있습니다. 이를 해결하기 위해서는,
-`execjs` 와 `therubyracer` gem 을 설치하거나 `nodejs` 를 설치해야 합니다.
+`execjs` 와 `therubyracer` 루비 젬을 설치하거나 `nodejs` 를 설치해야 합니다.
 더 자세한 내용은 [2327번 이슈](https://github.com/jekyll/jekyll/issues/2327)를 확인해보세요.
 
 <!--
@@ -365,7 +368,7 @@ you don't have a proper JavaScript runtime. To solve this, either install
 On Debian or Ubuntu, you may need to add `/var/lib/gems/1.8/bin/` to your path
 in order to have the `jekyll` executable be available in your Terminal.
 -->
-Debian 이나 Ubuntu 에서는, 터미널에서 `jekyll` 실행파일을 사용하기 위해
+데비안 계열이나 우분투에서는, 터미널에서 `jekyll` 실행파일을 사용하기 위해
 `/var/lib/gems/1.8/bin/` 을 `$PATH` 에 추가해야 할 수도 있습니다.
 
 <!--

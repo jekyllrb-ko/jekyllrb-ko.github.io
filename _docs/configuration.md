@@ -205,10 +205,10 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 -->
         <p class="name"><strong>Encoding</strong></p>
         <p class="description">
-            파일의 인코딩을 지정한다. Ruby 1.9 또는 이후 버전에서만 사용
+            파일의 인코딩을 지정한다. 루비 1.9 또는 이후 버전에서만 사용
             가능하다).
             디폴트값은 2.0.0 버전부터 <code>utf-8</code> 이고, 2.0.0 이전
-            버전에서는 Ruby 디폴트값인 <code>ASCII-8BIT</code> 를 사용하는
+            버전에서는 루비 디폴트값인 <code>ASCII-8BIT</code> 를 사용하는
             <code>nil</code> 이었다.
             사용할 수 있는 인코딩 목록을 확인하는 명령어는
             <code>ruby -e 'puts Encoding::list.join("\n")'</code> 이다.
@@ -1200,8 +1200,8 @@ end
 Once you've created your class and have it properly set up either as a plugin
 in the `_plugins` folder or as a gem, specify it in your `_config.yml`:
 -->
-클래스를 생성한 후, `_plugins` 폴더에 있는 플러그인으로 설정하거나 gem 으로
-설정하는 작업을 올바르게 끝마쳤다면, 해당 클래스를 `_config.yml` 에 명시하세요:
+클래스를 생성한 후, 루비 젬이나 `_plugins` 폴더에 플러그인으로 설정하는
+작업을 올바르게 끝마쳤다면, 해당 클래스를 `_config.yml` 에 명시하세요:
 
 ```yaml
 markdown: MyCustomProcessor

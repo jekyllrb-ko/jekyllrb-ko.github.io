@@ -53,7 +53,7 @@ homepage of your Jekyll-generated site.
 Where you put HTML or [Markdown](https://daringfireball.net/projects/markdown/)
 files for pages depends on how you want the pages to work. There are two main ways of creating pages:
 -->
-HTML 이나 [Markdown](https://daringfireball.net/projects/markdown/)
+HTML 이나 [마크다운](https://daringfireball.net/projects/markdown/)
 파일을 생성하는 위치에 따라 페이지 작동 방식이 달라집니다. 페이지를 생성하는 방법은 두 가지가 있습니다:
 
 <!--
@@ -61,7 +61,7 @@ HTML 이나 [Markdown](https://daringfireball.net/projects/markdown/)
 files for each page in your site's root folder.
 - Place pages inside folders and subfolders named whatever you want.
 -->
-- 사이트의 루트 폴더에 각 페이지 별로 HTML 이나 [Markdown](https://daringfireball.net/projects/markdown/)
+- 사이트의 루트 폴더에 각 페이지 별로 HTML 이나 [마크다운](https://daringfireball.net/projects/markdown/)
 파일을 만든다.
 - 원하는 이름으로 폴더나 그 안에 하위 폴더를 만들고 페이지를 넣는다.
 

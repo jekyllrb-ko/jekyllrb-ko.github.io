@@ -14,7 +14,7 @@ is all done through editing text files; the static web site is the final
 product.
 -->
 Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템의 컨셉은 다음과 같습니다:
-당신이 Markdown 이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로
+당신이 마크다운이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로
 문서를 작성하면, Jekyll 은 이 문서들을 하나 또는 여러 겹의 레이아웃으로 포장합니다.
 사이트 URL 구성 방식이나 어떤 데이터를 레이아웃에 표시할 것인지 등, 변환 과정에
 포함된 다양한 동작들은 당신이 원하는대로 조정할 수 있습니다. 단지 텍스트 파일을
@@ -291,7 +291,7 @@ An overview of what each of these does:
         Markdown, Textile files</p>
 -->
         <p><code>index.html</code> 또는 <code>index.md</code> 및 다른 HTML,
-        Markdown, Textile 파일</p>
+        마크다운, Textile 파일</p>
       </td>
       <td>
 <!--
