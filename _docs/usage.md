@@ -8,7 +8,7 @@ permalink: /docs/usage/
 The Jekyll gem makes a `jekyll` executable available to you in your Terminal
 window. You can use this command in a number of ways:
 -->
-Jekyll gem 은 터미널 창에서 사용할 수 있는 실행파일 `jekyll` 을 만들어줍니다. 이
+루비 젬 Jekyll 은 터미널 창에서 사용할 수 있는 실행파일 `jekyll` 을 만들어줍니다. 이
 명령은 다양한 방식으로 사용할 수 있습니다:
 
 <!--
@@ -123,6 +123,7 @@ preview what the generated site will look like in your browser locally.
 Jekyll 은 개발 서버도 내장하고 있어서, 로컬상에서 브라우저로 접속하여 사이트가
 어떻게 생성될지 미리 살펴볼 수 있습니다.
 
+<!--
 ```sh
 jekyll serve
 # => A development server will run at http://localhost:4000/
@@ -139,10 +140,33 @@ jekyll serve --detach
 #    If you need to kill the server, you can `kill -9 1234` where "1234" is the PID.
 #    If you cannot find the PID, then do, `ps aux | grep jekyll` and kill the instance.
 ```
+-->
+```sh
+jekyll serve
+# => 개발서버가 실행됩니다. http://localhost:4000/
+# 자동 재생성: 활성화. 비활성화하려면 `--no-watch` 를 사용하세요.
 
+jekyll serve --livereload
+# 변경사항이 발생했을 때 LiveReload 기능이 브라우저를 새로고침합니다.
+
+jekyll serve --incremental
+# 재생성 소요시간을 줄이기 위해 증분 재생성 기능으로 부분 빌드를 합니다.
+
+jekyll serve --detach
+# => `jekyll serve` 와 동일하지만 현재 터미널에 독립적으로 실행됩니다.
+#    서버를 종료하려면, `kill -9 1234` 를 실행하세요. "1234" 는 PID 입니다.
+#    PID 를 모르겠다면, `ps aux | grep jekyll` 를 실행하고 해당 인스턴스를 종료하세요.
+```
+
+<!--
 ```sh
 jekyll serve --no-watch
 # => Same as `jekyll serve` but will not watch for changes.
+```
+-->
+```sh
+jekyll serve --no-watch
+# => `jekyll serve` 와 동일하지만 변경사항을 감시하지 않습니다.
 ```
 
 <!--

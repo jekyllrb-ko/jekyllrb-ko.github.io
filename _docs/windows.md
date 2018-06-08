@@ -1,13 +1,13 @@
 ---
 #title: Jekyll on Windows
-title: Windows 에서 Jekyll
+title: 윈도우즈에서의 Jekyll
 permalink: /docs/windows/
 ---
 
 <!--
 While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to collect some of the general knowledge and lessons that have been unearthed by Windows users.
 -->
-Windows 가 공식적으로 지원되는 플랫폼은 아니지만, 몇 가지만 손보면 Jekyll 을 실행할 수 있습니다. 이 페이지의 목적은 Windows 사용자에 의해서 발굴된 정보들을 모아두는 것입니다.
+윈도우즈가 공식적으로 지원되는 플랫폼은 아니지만, 몇 가지만 손보면 Jekyll 을 실행할 수 있습니다. 이 페이지의 목적은 윈도우즈 사용자에 의해서 발굴된 정보들을 모아두는 것입니다.
 
 
 <!--
@@ -28,7 +28,7 @@ The easiest way to run Jekyll is by using the [RubyInstaller][] for Windows.
 [RubyInstaller][] is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.
 We only cover RubyInstaller-2.4 and newer here, older versions need to [install the Devkit][Devkit-install] manually.
 -->
-[RubyInstaller][] 는 윈도우즈 기반으로 루비 언어와 실행 환경, 중요 문서 등등을 포함하고 있습니다.
+[RubyInstaller][] 는 윈도우즈 기반으로 루비 언어와 실행 환경, 중요 문서 등을 포함하고 있습니다.
 여기서는 RubyInstaller-2.4 또는 그 이상의 버전을 다루고 있으며, 예전 버전은 따로 [Devkit 설치][Devkit-install]를 필요로 합니다.
 
 <!--
@@ -109,12 +109,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 <!--
 Jekyll uses the `listen` gem to watch for changes when the `--watch` switch is specified during a build or serve. While `listen` has built-in support for UNIX systems, it may require an extra gem for compatibility with Windows.
 -->
-생성이나 미리보기 시에 `--watch` 스위치를 설정하면 Jekyll 은 `listen` 루비 젬을 사용하여 변경사항을 감지합니다. UNIX 시스템에는 `listen` 이 기본 지원되지만, Windows 에서도 호환되려면 추가로 다른 루비 젬이 더 필요할 수 있습니다.
+생성이나 미리보기 시에 `--watch` 스위치를 설정하면 Jekyll 은 루비 젬 `listen` 을 사용하여 변경사항을 감지합니다. 유닉스 시스템에는 `listen` 이 기본 지원되지만, 윈도우즈에서도 호환되려면 추가로 다른 루비 젬이 더 필요할 수 있습니다.
 
 <!--
 Add the following to the Gemfile for your site if you have issues with auto-regeneration on Windows alone:
 -->
-Windows 에서 자동 재생성 기능에 무언가 문제가 있다면, 사이트의 Gemfile 에 다음 내용을 추가합니다:
+윈도우즈에서 자동 재생성 기능에 무언가 문제가 있다면, 사이트의 Gemfile 에 다음 내용을 추가합니다:
 
 ```ruby
 gem 'wdm', '~> 0.1.1' if Gem.win_platform?

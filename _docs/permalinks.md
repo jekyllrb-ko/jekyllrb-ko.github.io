@@ -84,7 +84,7 @@ When you use permalinks that omit the `.html` file extension (called "pretty URL
 <!--
 With a URL such as `/mypageurl/`, servers automatically load the index.html file inside the folder, so users can simply navigate to `http://somedomain.com/mypageurl/` to get to `mypageurl/index.html`.
 -->
-`/mypageurl/` 과 같은 URL 에서는, 서버가 자동으로 해당 폴더에 있는 index.html 파일을 읽으므로, 사용자는 그냥 `http://somedomain.com/mypageurl/` 에 접근해서 `mypageurl/index.html` 를 볼 수 있습니다.
+`/mypageurl/` 과 같은 URL 에서는, 서버가 자동으로 해당 폴더에 있는 index.html 파일을 읽으므로, 사용자는 그냥 `http://somedomain.com/mypageurl/` 에 접근해서 `mypageurl/index.html` 을 볼 수 있습니다.
 
 <!--
 ## Template variables for permalinks {#template-variables}

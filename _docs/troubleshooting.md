@@ -206,7 +206,7 @@ not in a system-wide location, and adds the local `jekyll` command to the
 user's `PATH` ahead of any system-wide paths.
 -->
 이 설정으로 인해 `gem` 명령어는 시스템 관련 디렉토리가 아닌 사용자의 홈 폴더
-내에 루비 젬들을 설치하게 되고, 시스템 전역이 아닌 로컬의 실행파일
+내에 루비 젬을 설치하게 되고, 시스템 전역이 아닌 로컬의 실행파일
 `jekyll` 이 우선적으로 선택되도록 사용자 `PATH` 를 구성합니다.
 
 <!--
@@ -356,7 +356,7 @@ you don't have a proper JavaScript runtime. To solve this, either install
 -->
 적절한 자바스크립트 런타임이 없으면 `jekyll-coffeescript` 설치 단계에서
 이와 같은 에러 메시지가 발생할 수 있습니다. 이를 해결하기 위해서는,
-`execjs` 와 `therubyracer` 루비 젬을 설치하거나 `nodejs` 를 설치해야 합니다.
+루비 젬 `execjs` 와 `therubyracer` 를 설치하거나 `nodejs` 를 설치해야 합니다.
 더 자세한 내용은 [2327번 이슈](https://github.com/jekyll/jekyll/issues/2327)를 확인해보세요.
 
 <!--

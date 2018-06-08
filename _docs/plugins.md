@@ -127,7 +127,7 @@ You have 3 options for installing plugins:
 -->
   <h5>
     <code>_plugins</code> 와 <code>_config.yml</code>, <code>Gemfile</code> 은
-    동시에 함께 사용할 수 있습니다
+    동시에 사용할 수 있습니다
   </h5>
   <p>
     원한다면 앞서 언급한 플러그인 옵션들을 한 사이트에 동시에 사용할 수
@@ -246,7 +246,7 @@ YAML 머리말을 가진 페이지들은
 인스턴스로 저장되어 `site.pages` 로 사용할 수 있습니다. 정적 파일들은
 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)
 인스턴스가 되어 `site.static_files` 로 사용할 수 있습니다.
-더 자세한 내용은 [변수 문서 페이지](/docs/variables/)와
+더 자세한 내용은 [변수 페이지](/docs/variables/)와
 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb) 를
 살펴보세요.
 

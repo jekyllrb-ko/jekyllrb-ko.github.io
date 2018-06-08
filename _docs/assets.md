@@ -151,7 +151,7 @@ Jekyll 3.0 과 그 이후 버전에서 Coffeescript 를 활성화하려면
 * Install the `jekyll-coffeescript` gem
 * Ensure that your `_config.yml` is up-to-date and includes the following:
 -->
-* `jekyll-coffeescript` 루비 젬을 설치하고
+* 루비 젬 `jekyll-coffeescript` 를 설치하고
 * `_config.yml` 이 최신 상태이고 아래 내용을 포함하고 있어야 합니다:
 
 ```yaml

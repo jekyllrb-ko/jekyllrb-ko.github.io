@@ -52,7 +52,7 @@ relies on.
     인코딩으로 UTF-8 을 사용중이라면, 절대로 파일에 <code>BOM</code> 헤더
     문자가 있으면 안됩니다. 그렇지 않으면 Jekyll 에 아주, 아주 안 좋은
     일이 벌어집니다.
-    <a href="../windows/">Jekyll 을 Windows 에서 사용</a>할 때에만 발생하는 문제입니다.
+    <a href="../windows/">Jekyll 을 윈도우즈에서 사용</a>할 때에만 발생하는 문제입니다.
   </p>
 </div>
 

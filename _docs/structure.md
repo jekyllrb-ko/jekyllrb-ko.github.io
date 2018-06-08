@@ -24,8 +24,9 @@ Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템의 컨�
 <!--
 A basic Jekyll site usually looks something like this:
 -->
-가장 기본적인 Jekyll 사이트는 일반적으로 이렇게 생겼습니다:
+가장 기본적인 Jekyll 사이트는 보통 이렇게 생겼습니다:
 
+<!--
 ```sh
 .
 ├── _config.yml
@@ -50,6 +51,31 @@ A basic Jekyll site usually looks something like this:
 ├── .jekyll-metadata
 └── index.html # can also be an 'index.md' with valid YAML Frontmatter
 ```
+-->
+```sh
+.
+├── _config.yml
+├── _data
+|   └── members.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _sass
+|   ├── _base.scss
+|   └── _layout.scss
+├── _site
+├── .jekyll-metadata
+└── index.html # 'index.md' 이어도 되지만 올바른 YAML 머리말이 필요합니다
+```
 
 <!--
 <div class="note info">
@@ -64,13 +90,13 @@ A basic Jekyll site usually looks something like this:
 </div>
 -->
 <div class="note info">
-  <h5>gem 기반 테마를 사용하는 Jekyll 사이트의 디렉토리 구조</h5>
+  <h5>루비 젬 기반 테마를 사용하는 Jekyll 사이트의 디렉토리 구조</h5>
   <p>
-    <strong>Jekyll 3.2</strong> 버전부터, <code>jekyll new</code> 명령으로 생성된 Jekyll 프로젝트는 <a href="../themes/">gem 기반 테마</a>를 사용하여 사이트의 외관을 구성합니다. 이로 인해, 테마 gem 에 기본적으로 포함된 경량 디렉토리 구조 : <code>_layouts</code>, <code>_includes</code>, <code>_sass</code> 를 갖게 됩니다.
+    <strong>Jekyll 3.2</strong> 버전부터, <code>jekyll new</code> 명령으로 생성된 Jekyll 프로젝트는 <a href="../themes/">루비 젬 기반 테마</a>를 사용하여 사이트의 외관을 구성합니다. 이로 인해, 테마 루비 젬에 기본적으로 포함된 경량 디렉토리 구조 : <code>_layouts</code>, <code>_includes</code>, <code>_sass</code> 를 갖게 됩니다.
   </p>
   <br />
   <p>
-     현재의 기본 테마는 <a href="https://github.com/jekyll/minima">minima</a> 이며, <code>bundle show minima</code> 명령으로 minima 테마의 파일들이 어디에 저장되어 있는지 볼 수 있습니다.
+     현재의 기본 테마는 <a href="https://github.com/jekyll/minima">minima</a> 이며, <code>bundle show minima</code> 명령으로 Minima 테마의 파일들이 어디에 저장되어 있는지 볼 수 있습니다.
   </p>
 </div>
 
@@ -236,7 +262,7 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-          sass 조각 파일들로, 프로젝트의 <code>main.scss</code> 에 임포트할 수 있으며
+          Sass 조각 파일들로, 프로젝트의 <code>main.scss</code> 에 임포트할 수 있으며
           임포트 후에는 다시 하나의 스타일시트(<code>main.scss</code>)로 가공되어
           사이트에 사용되는 스타일들을 정의한다.
         </p>

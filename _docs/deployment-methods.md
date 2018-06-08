@@ -115,7 +115,7 @@ Git 저장소에 post-update 훅을 설정하여 쉽게 게시를 자동화할 �
 <!--
 To have a remote server handle the deploy for you every time you push changes using Git, you can create a user account which has all the public keys that are authorized to deploy in its `authorized_keys` file. With that in place, setting up the post-receive hook is done as follows:
 -->
-Git 으로 변경사항을 푸쉬할 때마다 원격 서버가 자동으로 게시 작업을 수행하도록 구성하려면, 일단 새 계정을 만들어 `authorized_keys` 파일에 게시작업 인증 시 사용되는 공개키를 모두 등록합니다. 그 다음, 아래와 같이 post-receive 훅을 설정합니다:
+Git 으로 변경사항을 push 할 때마다 원격 서버가 자동으로 게시 작업을 수행하도록 구성하려면, 일단 새 계정을 만들어 `authorized_keys` 파일에 게시작업 인증 시 사용되는 공개키를 모두 등록합니다. 그 다음, 아래와 같이 post-receive 훅을 설정합니다:
 
 ```sh
 laptop$ ssh deployer@example.com

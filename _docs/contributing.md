@@ -176,7 +176,7 @@ You can find the documentation for jekyllrb.com in the
 Jekyll's repo on GitHub.com.
 -->
 jekyllrb.com 의 모든 문서는
-GitHub.com 의 Jekyll 저장소 안에 [site]({{ site.repository }}/tree/master/site)
+GitHub.com 의 Jekyll 저장소의 [site]({{ site.repository }}/tree/master/site)
 디렉토리에서 찾을 수 있습니다.
 
 <!--

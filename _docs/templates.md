@@ -610,7 +610,7 @@ The default is `default`. They are as follows (with what they filter):
 - `default`: 알파벳, 숫자가 아닌 문자 또는 공백문자
 - `pretty`: 알파벳, 숫자가 아닌 문자 (`._~!$&'()+,;=@` 제외) 또는 공백문자
 - `ascii`: 알파벳, 숫자, ASCII 가 아닌 문자 또는 공백문자
-- `latin`: like `default`, except Latin characters are first transliterated (e.g. `àèïòü` to `aeiou`) {%- include docs_version_badge.html version="3.7.0" -%}
+- `latin`: `default` 와 동일하나, 라틴 문자를 우선적으로 변환한다 (예, `àèïòü` 를 `aeiou` 로) {%- include docs_version_badge.html version="3.7.0" -%}
 
 ## 태그
 <!--
@@ -669,7 +669,7 @@ and ensure the `rouge` gem is installed properly.
 대한 구문 강조 기능을 내장하고 있습니다.
 Jekyll 3 와 그 이상의 버전에서는 Rouge 가 기본 구문 강조기입니다.
 Jekyll 2 에서 사용하기 위해서는, `highlighter` 를 `rouge` 로 설정하고
-`rouge` 루비 젬이 제대로 설치되어 있는지 확인하세요.
+루비 젬 `rouge` 가 제대로 설치되어 있는지 확인하세요.
 
 <!--
 Alternatively, you can use [Pygments](http://pygments.org) to highlight
@@ -680,7 +680,7 @@ languages](http://pygments.org/languages/)
 -->
 다른 방법으로는, [Pygments](http://pygments.org) 를 사용해 코드 조각에
 구문 강조를 할 수 있습니다. Pygments 를 사용하기 위해서는, 시스템에
-Python 과 `pygments.rb` 루비 젬이 설치되어 있어야 하고, 사이트 환경설정 파일에
+Python 과 루비 젬 `pygments.rb` 가 설치되어 있어야 하고, 사이트 환경설정 파일에
 `highlighter` 를 `pygments` 로 설정해야 합니다. Pygments 는
 [100 개 이상의 언어](http://pygments.org/languages/)를 지원합니다.
 

@@ -52,9 +52,9 @@ Using it in your projects means that when you deploy your site to GitHub Pages,
 you will not be caught by unexpected differences between various versions of the
 gems.
 -->
-GitHub 에 있는 우리 친구들이 제공해 준
+GitHub 에 있는 우리 친구들이 제공해 준 루비 젬
 [github-pages](https://github.com/github/pages-gem)
-루비 젬으로 [GitHub Pages 에서 사용하는 Jekyll 과 그 의존요소들](https://pages.github.com/versions/)을 관리할 수
+로 [GitHub Pages 에서 사용하는 Jekyll 과 그 의존요소들](https://pages.github.com/versions/)을 관리할 수
 있습니다. GitHub Pages 에 사이트를 게시할 때, 예상치 못하게 여러 루비 젬들에
 대한 버전 불일치 문제를 마주칠수도 있는데, 당신의 프로젝트에 이 루비 젬을
 사용해서 이러한 문제들을 피할 수 있습니다.
@@ -112,7 +112,7 @@ branch to GitHub. However, the subdirectory-like URL structure GitHub uses for
 Project Pages complicates the proper resolution of URLs. In order to assure your
 site builds properly, use the handy [URL filters](../templates/#filters):
 -->
-때론 GitHub 의 `gh-pages` 브랜치에 푸시하기 전에 당신의 Jekyll 사이트를
+때론 GitHub 의 `gh-pages` 브랜치에 push 하기 전에 당신의 Jekyll 사이트를
 미리보기해보는 것이 좋을 때가 있습니다. 다만, GitHub 이 프로젝트 페이지에
 사용하는 하위 디렉토리 형식의 URL 구조가 문제가 될 수 있습니다. [URL
 필터](../templates/#filters)가 이것을 확인하는데에 유용합니다.
@@ -267,7 +267,7 @@ GitHub 의 공식 문서 중 [사용자와 단체, 프로젝트
 
   <p>
     공식적으로 윈도우즈를 지원하지는 않지만, 윈도우즈에
-    <code>github-pages</code> 루비 젬을 설치할 수 있습니다.
+    루비 젬 <code>github-pages</code> 를 설치할 수 있습니다.
     <a href="../windows/#installation">윈도우즈 관련문서 페이지</a>에
     그 방법이 설명되어 있습니다.
   </p>

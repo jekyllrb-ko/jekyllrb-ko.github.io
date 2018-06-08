@@ -766,12 +766,23 @@ Here, we are scoping the `values` to any file that exists in the path `scope`. S
 -->
 여기서 우리는 `values` 의 범위를 경로 `scope` 에 존재하는 모든 파일로 제한하고 있습니다. 하지만 경로에 빈 문자열을 설정했기 때문에, 프로젝트 내의 **모든 파일** 에 적용될 것입니다. 프로젝트 내의 모든 파일에 한 레이아웃을 적용하길 원치 않을 수도 있습니다 - 예를 들자면, CSS 파일같이 말이죠 - 이런 경우엔 `scope` 키에 `type` 값을 지정할 수 있습니다.
 
+<!--
 ```yaml
 defaults:
   -
     scope:
       path: "" # an empty string here means all files in the project
       type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "default"
+```
+-->
+```yaml
+defaults:
+  -
+    scope:
+      path: "" # 이 빈 문자열은 프로젝트의 모든 파일을 의미함
+      type: "posts" # 이전 Jekyll 2.2 에서는 `post`
     values:
       layout: "default"
 ```
@@ -788,6 +799,7 @@ As mentioned earlier, you can set multiple scope/values pairs for `defaults`.
 -->
 앞서 언급했던 것처럼, `defaults` 에 여러 개의 범위/값 쌍을 설정할 수 있습니다.
 
+<!--
 ```yaml
 defaults:
   -
@@ -804,12 +816,30 @@ defaults:
       layout: "project" # overrides previous default layout
       author: "Mr. Hyde"
 ```
+-->
+```yaml
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "my-site"
+  -
+    scope:
+      path: "projects"
+      type: "pages" # 이전 Jekyll 2.2 에서는 `page` 
+    values:
+      layout: "project" # 이전 디폴트 레이아웃 설정을 덮어씀
+      author: "Mr. Hyde"
+```
 
 <!--
 With these defaults, all pages would use the `my-site` layout. Any html files that exist in the `projects/` folder will use the `project` layout, if it exists. Those files will also have the `page.author` [liquid variable](../variables/) set to `Mr. Hyde`.
 -->
 이 디폴트 값들로 인하여, 모든 페이지는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `Mr. Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
 
+<!--
 ```yaml
 collections:
   my_collection:
@@ -820,6 +850,20 @@ defaults:
     scope:
       path: ""
       type: "my_collection" # a collection in your site, in plural form
+    values:
+      layout: "default"
+```
+-->
+```yaml
+collections:
+  my_collection:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "my_collection" # 사이트의 콜렉션들
     values:
       layout: "default"
 ```
@@ -893,6 +937,7 @@ Jekyll 은 `_config.yml` 파일의 `defaults` 섹션에 설정된 환경설정 �
 
 마지막으로, `_config.yml` 파일에 `defaults` 섹션을 추가해서 사이트 환경설정 디폴트 값을 정의했어도, 페이지나 포스트에서 값을 덮어쓸 수 있습니다. 페이지나 포스트의 머리말에서 다시 해당 환경설정 값을 정의하면 됩니다. 예를 들면 다음과 같습니다:
 
+<!--
 ```yaml
 # In _config.yml
 ...
@@ -907,7 +952,23 @@ defaults:
       category: "project"
 ...
 ```
+-->
+```yaml
+# _config.yml 파일
+...
+defaults:
+  -
+    scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "project"
+      author: "Mr. Hyde"
+      category: "project"
+...
+```
 
+<!--
 ```yaml
 # In projects/foo_project.md
 ---
@@ -915,6 +976,15 @@ author: "John Smith"
 layout: "foobar"
 ---
 The post text goes here...
+```
+-->
+```yaml
+# projects/foo_project.md 파일
+---
+author: "John Smith"
+layout: "foobar"
+---
+여기부터는 포스트 내용입니다...
 ```
 
 <!--

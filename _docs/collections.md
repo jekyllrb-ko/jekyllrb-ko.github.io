@@ -361,7 +361,7 @@ each of the following `permalink` configurations will produce the document struc
           만약 문서에 <a href="/docs/frontmatter/">머리말</a>이 존재한다면
           머리말 변수 <code>slug</code> 의 값이 템플릿 변수
           <code>:title</code> 에 사용된다; 아무것도 정의되지 않았다면,
-          파일명으로부터 slug 가 생성되듯이, <code>:title</code> 은
+          파일명으로부터 슬러그가 생성되듯이, <code>:title</code> 은
           <code>:name</code> 과 동일하다.
         </p>
       </td>
