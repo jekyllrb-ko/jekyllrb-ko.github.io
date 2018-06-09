@@ -662,7 +662,7 @@ aggressive caching when you are in development mode.
 <!--
 In the build (or serve) arguments, you can specify a Jekyll environment and value. The build will then apply this value in any conditional statements in your content.
 -->
-`build` (혹은 `serve`) 전달인자로, Jekyll 환경변수와 그 값을 설정할 수 있습니다.  이 환경변수는 빌드 시에 사이트의 모든 조건문에서 사용됩니다.
+`build` (혹은 `serve`) 파라메터로, Jekyll 환경변수와 그 값을 설정할 수 있습니다.  이 환경변수는 빌드 시에 사이트의 모든 조건문에서 사용됩니다.
 
 <!--
 For example, suppose you set this conditional statement in your code:
@@ -697,7 +697,7 @@ By specifying the option in the build command, you avoid having to change values
 -->
 환경변수 값을 설정함으로써 특정 환경에서만 사용되는 컨텐츠를 만들 수 있습니다.
 
-`JEKYLL_ENV` 의 디폴트 값은 `development` 입니다. 따라서 `build` 의 전달인자에 `JEKYLL_ENV` 를 생략하면, `JEKYLL_ENV=development` 가 디폴트 값으로 사용됩니다. 빌드 시 `{% raw %}{% if jekyll.environment == "development" %}{% endraw %}` 태그 안의 모든 컨텐츠가 출력될 것입니다.
+`JEKYLL_ENV` 의 디폴트 값은 `development` 입니다. 따라서 `build` 의 파라메터에 `JEKYLL_ENV` 를 생략하면, `JEKYLL_ENV=development` 가 디폴트 값으로 사용됩니다. 빌드 시 `{% raw %}{% if jekyll.environment == "development" %}{% endraw %}` 태그 안의 모든 컨텐츠가 출력될 것입니다.
 
 당신이 원하는 어떤 것이든 환경변수 값으로 사용할 수 있습니다 (반드시 `development` 나 `production` 일 필요는 없습니다). Disqus 댓글란이나 Google Analytics 처럼 개발환경에서는 표시하고 싶지 않은 요소들이 있을 수 있습니다. 반대로, "GitHub 에서 수정" 버튼은 개발환경에서 노출시키고 운영환경에는 포함시키지 않을 수도 있습니다.
 

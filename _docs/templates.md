@@ -481,7 +481,7 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
         <p>Sort an array. Optional arguments for hashes: 1.&nbsp;property name 2.&nbsp;nils order (<em>first</em> or <em>last</em>).</p>
 -->
         <p class="name"><strong>Sort</strong></p>
-        <p>배열을 정렬한다. 해시에 사용하는 선택적 전달인자: 1.&nbsp;속성 이름 2.&nbsp;nils 순서 (<em>first</em> 또는 <em>last</em>).</p>
+        <p>배열을 정렬한다. 해시에 사용하는 선택적 파라메터: 1.&nbsp;속성 이름 2.&nbsp;nils 순서 (<em>first</em> 또는 <em>last</em>).</p>
       </td>
       <td class="align-center">
         <p>
@@ -736,8 +736,8 @@ Including the `linenos` argument will force the highlighted code to include line
 numbers. For instance, the following code block would include line numbers next
 to each line:
 -->
-`highlight` 의 두 번째 전달인자인 `linenos` 는 선택사항입니다.
-전달인자 `linenos` 를 추가하면 구문 강조된 코드에 줄 번호를
+`highlight` 의 두 번째 파라메터인 `linenos` 는 선택사항입니다.
+파라메터 `linenos` 를 추가하면 구문 강조된 코드에 줄 번호를
 표시합니다. 예를 들어, 다음 코드 블록에는 각 줄에 줄 번호가
 표시됩니다:
 

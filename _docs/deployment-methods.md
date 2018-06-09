@@ -281,7 +281,7 @@ rsync -crvz --rsh='ssh -p2222' --delete-after --delete-excluded   <folder> <user
 <!--
 Command line parameters are:
 -->
-아래는 전달인자 목록입니다:
+아래는 파라메터 목록입니다:
 
 <!--
 - `--rsh=ssh -p2222` &mdash; The port for SSH access. It is required if
@@ -299,7 +299,7 @@ your host uses a different port than the default (e.g, HostGator)
 <!--
 Using this setup, you might run the following command:
 -->
-이 전달인자들을 사용하는 명령어 예시입니다:
+이 파라메터들을 사용하는 명령어 예시입니다:
 
 ```sh
 rsync -crvz --rsh='ssh -p2222' --delete-after --delete-excluded _site/ hostuser@example.org:

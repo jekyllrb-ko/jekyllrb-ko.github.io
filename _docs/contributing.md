@@ -118,7 +118,7 @@ If you are only updating a `.feature` file, you can use the command:
 Both `script/test` and `script/cucumber` can be run without arguments to
 run its entire respective suite.
 -->
-`script/test` 와 `script/cucumber` 를 전달인자 없이 실행하면, 관련된 파일 전체에
+`script/test` 와 `script/cucumber` 를 파라메터 없이 실행하면, 관련된 파일 전체에
 대하여 실행됩니다.
 
 <!--

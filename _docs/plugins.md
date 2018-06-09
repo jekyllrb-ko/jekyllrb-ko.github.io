@@ -444,7 +444,7 @@ Converters should implement at a minimum 3 methods:
 -->
       <td><p>
         주어진 확장자가 이 변환기가 처리할 수 있는 확장자 목록에 포함되어
-        있는가? 전달인자가 하나 필요합니다: 파일의 확장자 (점 포함). 포함되어
+        있는가? 파라메터가 하나 필요합니다: 파일의 확장자 (점 포함). 포함되어
         있다면 <code>true</code> 를, 그렇지 않다면 <code>false</code> 를
         반환해야 합니다.
       </p></td>
@@ -475,7 +475,7 @@ Converters should implement at a minimum 3 methods:
       </p></td>
 -->
       <td><p>
-        컨텐츠를 변환하는 로직. 전달인자가 하나 필요합니다: 변환되지 않은 파일
+        컨텐츠를 변환하는 로직. 파라메터가 하나 필요합니다: 변환되지 않은 파일
         내용 (YAML 머리말 제외). 반드시 문자열을 반환해야 합니다.
       </p></td>
     </tr>

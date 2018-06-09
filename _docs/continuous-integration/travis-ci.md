@@ -121,7 +121,7 @@ Options are given as a second argument to `.new`, and are encoded in a
 symbol-keyed Ruby Hash. For more information about the configuration options,
 check out `html-proofer`'s README file.
 -->
-옵션은 `.new` 의 두 번째 전달인자이며, 심볼-키 루비 해시로 인코딩 됩니다.
+옵션은 `.new` 의 두 번째 파라메터이며, 심볼-키 루비 해시로 인코딩 됩니다.
 환경설정 옵션에 관련된 더 많은 정보는 `html-proofer` 의 README 파일을 확인해
 보세요.
 
