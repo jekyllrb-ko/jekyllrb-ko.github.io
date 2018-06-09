@@ -262,7 +262,7 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-          Sass 조각 파일들로, 프로젝트의 <code>main.scss</code> 에 임포트할 수 있으며
+          Sass 조각파일들로, 프로젝트의 <code>main.scss</code> 에 임포트할 수 있으며
           임포트 후에는 다시 하나의 스타일시트(<code>main.scss</code>)로 가공되어
           사이트에 사용되는 스타일들을 정의한다.
         </p>

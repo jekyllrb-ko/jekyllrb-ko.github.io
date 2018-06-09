@@ -623,7 +623,7 @@ The default is `default`. They are as follows (with what they filter):
 * [Linking to pages, collections and posts (the new and improved way)](#links)
 * [Linking to posts (the old way)](#linking-to-posts)
 -->
-* [조각 파일](#includes)
+* [조각파일](#includes)
 * [코드 구문 강조](#code-snippet-highlighting)
 * [페이지나 콜렉션, 게시물에 연결하기 (개선된 새로운 방식)](#links)
 * [게시물에 연결하기 (기존 방식)](#linking-to-posts)
@@ -631,12 +631,12 @@ The default is `default`. They are as follows (with what they filter):
 <!--
 ### Includes
 -->
-### 조각 파일
+### 조각파일
 
 <!--
 If you have small page snippets that you want to include in multiple places on your site, save the snippets as *include files* and insert them where required, by using the `include` tag:
 -->
-사이트의 여기저기에 삽입시키고자 하는 작은 페이지 조각들이 있다면, *조각 파일* 로 저장하고 `include` 태그를 사용해 필요한 곳에 삽입하세요:
+사이트의 여기저기에 삽입시키고자 하는 작은 페이지 조각들이 있다면, *조각파일* 로 저장하고 `include` 태그를 사용해 필요한 곳에 삽입하세요:
 
 {% raw %}
 ```liquid
@@ -647,12 +647,12 @@ If you have small page snippets that you want to include in multiple places on y
 <!--
 Jekyll expects all *include files* to be placed in an `_includes` directory at the root of your source directory. In the above example, this will embed the contents of `_includes/footer.html` into the calling file.
 -->
-*조각 파일* 은 프로젝트 Site Source 디렉토리 안의 `_includes` 디렉토리에 넣어야 합니다. 위 예제의 경우, 이 코드를 포함하고 있는 파일에는 `_includes/footer.html` 의 내용이 삽입됩니다.
+*조각파일* 은 프로젝트 Site Source 디렉토리 안의 `_includes` 디렉토리에 넣어야 합니다. 위 예제의 경우, 이 코드를 포함하고 있는 파일에는 `_includes/footer.html` 의 내용이 삽입됩니다.
 
 <!--
 For more advanced information on using includes, see [Includes](../includes).
 -->
-조각 파일 사용법에 대한 더 자세한 설명에 대해서는, [조각 파일](../includes)을 살펴보세요.
+조각파일 사용법에 대한 더 자세한 설명에 대해서는, [조각파일](../includes)을 살펴보세요.
 
 <!--
 ### Code snippet highlighting
