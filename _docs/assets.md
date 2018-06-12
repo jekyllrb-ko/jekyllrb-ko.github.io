@@ -31,7 +31,7 @@ have a file named `css/styles.scss` in your site's source folder, Jekyll
 will process it and put it in your site's destination folder under
 `css/styles.css`.
 -->
-Jekyll 은 이런 파일들을 일반 페이지와 동일하게 다루기 때문에, 해당 파일에 대한
+Jekyll 은 이 파일들을 일반 페이지와 동일하게 다루기 때문에, 해당 파일에 대한
 결과물은 원본과 동일한 디렉토리에 저장됩니다. 예를 들어, Site Source 폴더에
 `css/styles.scss` 라는 파일을 가지고 있는 경우, Jekyll 은 해당 파일에 필요한
 작업을 처리한 후 Site Destination 폴더의 `css/styles.css` 에 그 결과물을
@@ -67,7 +67,7 @@ Place all your partials in your `sass_dir`, which defaults to
 them to be in the output file, such as `<source>/css`. For an example, take
 a look at [this example site using Sass support in Jekyll][example-sass].
 -->
-관련된 파일들을 `sass_dir` (디폴트: `<source>/_sass`) 에 넣습니다. 메인 SCSS 나
+관련된 파일을 `sass_dir` (디폴트: `<source>/_sass`) 에 넣습니다. 메인 SCSS 나
 Sass 파일은 `<source>/css` 처럼 결과 파일이 생성되어야 하는 위치에 맞춰
 넣습니다. 이에 대한 예시로, [Jekyll 의 Sass 기능을 사용한 예제
 사이트][example-sass]를 살펴보세요.
@@ -111,11 +111,11 @@ Sass 변환기가 사용하는 환경설정 옵션 `sass_dir` 의 디폴트 값�
   <h5>오직 Sass 만이 <code>sass_dir</code> 을 사용합니다</h5>
   <p>
 
-    <code>sass_dir</code> 은 오로지 Sass 의 import 대상 경로일 뿐이며, 그 이상도
-    이하도 아닙니다. 이것은 Jekyll 이 이 파일들에 대하여 직접적으로 알지
-    못한다는 뜻이며, 따라서 이 안의 모든 파일은 YAML 머리말을 가지고 있어서는
-    안되고, 그렇지 않으면 앞서 설명한 것과 같이 변환 작업을 거치게 될 것입니다.
-    이 폴더에는 import 로 사용할 파일들만 있어야 합니다.
+    <code>sass_dir</code> 은 Sass 의 import 대상 경로 그 이상도 그 이하도
+    아닙니다. 이것은 Jekyll 이 이 파일들에 대하여 직접적으로 알지 못한다는
+    뜻으로, 따라서 이 안의 모든 파일은 YAML 머리말을 가지고 있어서는
+    안되고, 그렇지 않으면 앞서 설명한 것과 같이 변환 작업을 거치게 될
+    것입니다. 이 폴더 안에는 import 로 사용할 파일만 있어야 합니다.
 
   </p>
 </div>

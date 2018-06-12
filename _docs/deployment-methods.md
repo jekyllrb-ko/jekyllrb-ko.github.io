@@ -87,7 +87,7 @@ If you have direct access to the deployment web server, the process is essential
 <!--
 There are also a number of ways to easily automate the deployment of a Jekyll site. If you’ve got another method that isn’t listed below, we’d love it if you [contributed](../contributing/) so that everyone else can benefit too.
 -->
-쉽게 Jekyll 사이트 게시를 자동화해주는 방법들도 많이 있습니다. 아래 설명되지 않은 다른 방법을 알고 있다면, 다른 이들도 그 편리함을 누릴 수 있도록 [기여](../contributing/)해주시기 바랍니다.
+Jekyll 사이트 게시를 쉽게 자동화해주는 방법도 많이 있습니다. 아래 설명되지 않은 다른 방법을 알고 있다면, 다른 이들도 그 편리함을 누릴 수 있도록 [기여](../contributing/)해주시기 바랍니다.
 
 <!--
 ### Git post-update hook

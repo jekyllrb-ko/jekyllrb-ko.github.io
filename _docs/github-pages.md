@@ -22,10 +22,10 @@ simply because Jekyll treats files without YAML front matter as static assets.
 So if you only need to push generated HTML, you're good to go without any
 further setup.
 -->
-당신이 소스파일을 푸시하면 GitHub Pages 에 의해 자동으로 사이트가 생성됩니다.
+당신이 소스파일을 push 하면 GitHub Pages 에 의해 자동으로 사이트가 생성됩니다.
 GitHub Pages 는 일반 HTML 문서에 대해서도 동일하세 잘 작동한다는 것을 알아두시기
 바랍니다. 왜냐하면 Jekyll 은 단순히 YAML 머리말이 없는 파일을 정적 자원으로
-처리하기 때문입니다. 따라서 HTML 파일만 푸시하는 경우에는, 다른 추가작업이
+처리하기 때문입니다. 따라서 HTML 파일만 push 하는 경우에는, 다른 추가작업이
 필요하지 않습니다.
 
 <!--

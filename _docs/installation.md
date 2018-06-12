@@ -281,7 +281,7 @@ gem list jekyll
 <!--
 You can use RubyGems to find [the current version of Jekyll](https://rubygems.org/gems/jekyll). Another way to check if you have the latest version is to run the command `gem outdated`. This will provide a list of all the gems on your system that need to be updated. If you aren't running the latest version, run this command:
 -->
-RubyGems 를 사용해서 [Jekyll 의 최신 버전](https://rubygems.org/gems/jekyll)을 확인할 수 있습니다. 다른 방법으로는 `gem outdated` 명령을 실행해볼 수도 있습니다. 이 명령은 당신의 시스템에 설치된 루비 젬들 중 업데이트가 필요한 것들의 목록을 보여줍니다. 가지고 있는 버전이 최신 버전이 아니라면, 이 명령을 실행하세요:
+RubyGems 를 사용해서 [Jekyll 의 최신 버전](https://rubygems.org/gems/jekyll)을 확인할 수 있습니다. 다른 방법으로는 `gem outdated` 명령을 실행해볼 수도 있습니다. 이 명령은 당신의 시스템에 설치된 루비 젬들 중 업데이트가 준비물의 목록을 보여줍니다. 가지고 있는 버전이 최신 버전이 아니라면, 이 명령을 실행하세요:
 
 ```sh
 bundle update jekyll

@@ -86,7 +86,7 @@ Some options can be specified via command-line switches. Check out the
 `html-proofer` README for more information about these switches, or run
 `htmlproofer --help` locally.
 -->
-몇몇 옵션은 명령행 스위치를 통해서 지정할 수 있습니다. 스위치들에 관한 더 많은
+몇몇 옵션은 명령행 스위치를 통해서 지정할 수 있습니다. 스위치에 관한 더 많은
 정보는 `html-proofer` README 를 읽어보거나, `htmlproofer --help` 를 실행하면
 확인할 수 있습니다.
 
@@ -243,7 +243,7 @@ customizable. If your script won't change much, you can write your test
 incantation here directly:
 -->
 Travis 는 사이트 테스트에 임의의 쉘 스크립트를 사용하는 것도 허용합니다.
-프로젝트에 관련된 모든 스크립트들은 `script` 디렉토리에 있어야 하고, `cibuild`
+프로젝트에 관련된 모든 스크립트는 `script` 디렉토리에 있어야 하고, `cibuild`
 라는 테스트 스크립트를 호출한다는 단 하나의 규약만 지키면 됩니다. 이 줄은
 자유롭게 수정할 수 있습니다. 스크립트에서 하는 일이 많지 않다면, 테스트 내용을
 여기에 직접 적을 수도 있습니다:

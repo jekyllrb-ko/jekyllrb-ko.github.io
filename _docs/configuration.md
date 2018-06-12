@@ -13,7 +13,7 @@ in the terminal.
 -->
 Jekyll 을 사용하면 당신이 상상할 수 있는 어떤 형태의 사이트든지 만들 수
 있습니다. 이 모든 것은 Jekyll 의 강력하고 유연한 환경설정 옵션 덕분이죠.
-이 옵션들을 정의하는 방법은 두 가지로, 사이트 루트 디렉토리의 `_config.yml`
+옵션을 정의하는 방법은 두 가지로, 사이트 루트 디렉토리의 `_config.yml`
 파일에 정의하는 방법과 터미널에서 `jekyll` 을 실행할 때 플래그로 지정하는 방법이
 있습니다.
 
@@ -32,9 +32,9 @@ The table below lists the available settings for Jekyll, and the various <code
 class="option">options</code> (specified in the configuration file) and <code
 class="flag">flags</code> (specified on the command-line) that control them.
 -->
-다음 표는 Jekyll 에서 사용할 수 있는 환경설정과 그에 해당하는 <code
-class="option">옵션</code> (설정 파일에 사용함) 과 <code
-class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
+다음 표는 Jekyll 에서 사용할 수 있는 환경설정과 그에 해당하는
+<code class="option">옵션</code> (설정 파일에 사용) 과
+<code class="flag">플래그</code> (명령어에 사용) 의 목록입니다.
 
 <div class="mobile-side-scroller">
 <table>
@@ -60,7 +60,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p class="description">Change the directory where Jekyll will read files</p>
 -->
         <p class="name"><strong>Site Source</strong></p>
-        <p class="description">Jekyll 이 읽어들일 파일들의 경로를 변경한다.</p>
+        <p class="description">Jekyll 이 읽어들일 파일의 경로를 변경한다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">source: DIR</code></p>
@@ -74,7 +74,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p class="description">Change the directory where Jekyll will write files</p>
 -->
         <p class="name"><strong>Site Destination</strong></p>
-        <p class="description">Jekyll 이 생성할 파일들의 경로를 변경한다.</p>
+        <p class="description">Jekyll 이 생성할 파일의 경로를 변경한다.</p>
       </td>
       <td class="align-center">
         <p><code class="option">destination: DIR</code></p>
@@ -230,7 +230,7 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
         <p class='name'><strong>Defaults</strong></p>
         <p class='description'>
             <a href="../frontmatter/" title="YAML Front Matter">YAML 머리말</a>
-            변수들의 디폴트 값을 설정한다.
+            변수의 디폴트 값을 설정한다.
         </p>
       </td>
       <td class='align-center'>
@@ -260,8 +260,8 @@ class="flag">플래그</code> (명령어에 사용함) 들의 목록입니다.
 -->
   <h5>Site Destination 폴더는 사이트 빌드 시 초기화됩니다</h5>
   <p>
-    사이트 빌드 시에 자동으로 <code>&lt;destination&gt;</code> 안의 파일들을
-    지우는 것이 디폴트로 설정되어 있습니다. 사이트에서 생성하지 않는 파일들은
+    사이트 빌드 시에 자동으로 <code>&lt;destination&gt;</code> 안의 파일을
+    지우는 것이 디폴트로 설정되어 있습니다. 사이트에서 생성하지 않는 파일은
     모두 사라질 것입니다. 환경설정 옵션 <code>&lt;keep_files&gt;</code> 를
     사용해 그대로 옮길 파일들을 지정할 수 있습니다.
   </p>
@@ -497,7 +497,7 @@ for the `build` sub-command, which are then applied to the site build which occu
 before your site is served.
 -->
 `serve` 명령은 아래 나열된 옵션 뿐만 아니라 `build` 명령의 옵션도 사용할 수
-있습니다. 먼저 `build` 작업에 해당 옵션들이 사용된 후에 `serve` 작업이
+있습니다. 먼저 `build` 작업에 해당 옵션이 사용된 후에 `serve` 작업이
 수행됩니다.
 
 <div class="mobile-side-scroller">
@@ -699,7 +699,7 @@ By specifying the option in the build command, you avoid having to change values
 
 `JEKYLL_ENV` 의 디폴트 값은 `development` 입니다. 따라서 `build` 의 파라메터에 `JEKYLL_ENV` 를 생략하면, `JEKYLL_ENV=development` 가 디폴트 값으로 사용됩니다. 빌드 시 `{% raw %}{% if jekyll.environment == "development" %}{% endraw %}` 태그 안의 모든 컨텐츠가 출력될 것입니다.
 
-당신이 원하는 어떤 것이든 환경변수 값으로 사용할 수 있습니다 (반드시 `development` 나 `production` 일 필요는 없습니다). Disqus 댓글란이나 Google Analytics 처럼 개발환경에서는 표시하고 싶지 않은 요소들이 있을 수 있습니다. 반대로, "GitHub 에서 수정" 버튼은 개발환경에서 노출시키고 운영환경에는 포함시키지 않을 수도 있습니다.
+당신이 원하는 어떤 것이든 환경변수 값으로 사용할 수 있습니다 (반드시 `development` 나 `production` 일 필요는 없습니다). Disqus 댓글란이나 Google Analytics 처럼 개발환경에서는 표시하고 싶지 않은 요소가 있을 수 있습니다. 반대로, "GitHub 에서 수정" 버튼은 개발환경에서 노출시키고 운영환경에는 포함시키지 않을 수도 있습니다.
 
 빌드 명령에 옵션을 정의함으로써, 한 환경에서 다른 환경으로 환경설정 파일의 값을 수정하지 않고 이동할 수 있습니다.
 
@@ -710,23 +710,27 @@ By specifying the option in the build command, you avoid having to change values
 
 <!--
 Using [YAML Front Matter](../frontmatter/) is one way that you can specify configuration in the pages and posts for your site. Setting things like a default layout, or customizing the title, or specifying a more precise date/time for the post can all be added to your page or post front matter.
-
-Often times, you will find that you are repeating a lot of configuration options. Setting the same layout in each file, adding the same category - or categories - to a post, etc. You can even add custom variables like author names, which might be the same for the majority of posts on your blog.
-
-Instead of repeating this configuration each time you create a new post or page, Jekyll provides a way to set these defaults in the site configuration. To do this, you can specify site-wide defaults using the `defaults` key in the `_config.yml` file in your project's root directory.
-
-The `defaults` key holds an array of scope/values pairs that define what defaults should be set for a particular file path, and optionally, a file type in that path.
-
-Let's say that you want to add a default layout to all pages and posts in your site. You would add this to your `_config.yml` file:
 -->
 페이지와 포스트에서 환경설정 값을 조정하는 방법 중 하나는 [YAML 머리말](../frontmatter/)을 사용하는 것입니다. 기본 레이아웃 설정이나 제목 수정, 또는 더 자세한 날짜/시간 지정 등을 페이지나 포스트의 머리말에 입력할 수 있습니다.
 
+<!--
+Often times, you will find that you are repeating a lot of configuration options. Setting the same layout in each file, adding the same category - or categories - to a post, etc. You can even add custom variables like author names, which might be the same for the majority of posts on your blog.
+-->
 종종, 같은 내용의 환경설정들을 계속해서 반복 입력하고 있는 자신을 발견할 지도 모릅니다. 각각의 파일에 동일한 레이아웃을 설정하거나 여러 개의 포스트를 동일한 카테고리(들)에 추가하는 것 말이죠. 심지어는 작성자 이름처럼 블로그의 거의 모든 포스트에 동일하게 사용되는 값을 사용자 변수로 일일히 추가하게 될 수도 있습니다.
 
+<!--
+Instead of repeating this configuration each time you create a new post or page, Jekyll provides a way to set these defaults in the site configuration. To do this, you can specify site-wide defaults using the `defaults` key in the `_config.yml` file in your project's root directory.
+-->
 Jekyll 은 사이트 환경설정에 변수들의 기본값을 지정하는 방법을 제공하기 때문에, 새 포스트나 페이지를 추가할 때마다 이러한 환경설정들을 반복하지 않아도 됩니다.  그러기 위해서는, 프로젝트의 루트 디렉토리에 있는 `_config.yml` 파일에 `defaults` 라는 키를 사용하여 사이트에 전체에 사용되는 기본값을 정의할 수 있습니다.
 
+<!--
+The `defaults` key holds an array of scope/values pairs that define what defaults should be set for a particular file path, and optionally, a file type in that path.
+-->
 `defaults` 키에 여러 쌍의 범위/값(scope/values)을 배열로 입력할 수 있어, 특정 경로의 파일이나 파일 종류에 사용되어야 하는 디폴트 값을 정의할 수 있습니다.
 
+<!--
+Let's say that you want to add a default layout to all pages and posts in your site. You would add this to your `_config.yml` file:
+-->
 사이트의 모든 포스트와 페이지에 기본 레이아웃을 추가하는 경우를 생각해 봅시다. `_config.yml` 파일에 아래 내용을 추가하면 됩니다:
 
 ```yaml
@@ -837,7 +841,7 @@ defaults:
 <!--
 With these defaults, all pages would use the `my-site` layout. Any html files that exist in the `projects/` folder will use the `project` layout, if it exists. Those files will also have the `page.author` [liquid variable](../variables/) set to `Mr. Hyde`.
 -->
-이 디폴트 값들로 인하여, 모든 페이지는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `Mr. Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
+이 디폴트 값으로 인하여, 모든 페이지는 `my-site` 레이아웃을 사용하게 됩니다. `projects/` 폴더 안에 있는 모든 HTML 파일들은 `project` 레이아웃을 사용하게 됩니다. 또한 이 파일들은 `Mr. Hyde` 라는 값을 가진 [Liquid 변수](../variables/) `page.author` 도 갖게 됩니다.
 
 <!--
 ```yaml
@@ -863,7 +867,7 @@ defaults:
   -
     scope:
       path: ""
-      type: "my_collection" # 사이트의 콜렉션들
+      type: "my_collection" # 사이트의 콜렉션"들"
     values:
       layout: "default"
 ```
@@ -931,9 +935,9 @@ You can see that in the second to last example above. First, we set the default 
 
 Finally, if you set defaults in the site configuration by adding a `defaults` section to your `_config.yml` file, you can override those settings in a post or page file. All you need to do is specify the settings in the post or page front matter. For example:
 -->
-Jekyll 은 `_config.yml` 파일의 `defaults` 섹션에 설정된 환경설정 값들을 모두 적용합니다. 하지만, 범위에 더 자세한 경로를 사용하면 선택적으로 다른 범위/값을 덮어쓸 수 있습니다.
+Jekyll 은 `_config.yml` 파일의 `defaults` 섹션에 설정된 환경설정 값을 모두 적용합니다. 하지만, 범위에 더 자세한 경로를 사용하면 선택적으로 다른 범위/값을 덮어쓸 수 있습니다.
 
-끝에서 두 번째 예제의 내용처럼 말이죠. 먼저, 우리는 페이지 레이아웃 기본값을 `my-site` 로 설정했습니다. 그 다음, 더 자세한 경로를 사용해서, `projects/` 경로에 있는 페이지들에 대해서만 레이아웃을 `project` 로 설정했습니다. 페이지나 포스트의 머리말에 사용하는 어떤 설정에든지 이 방법을 사용할 수 있습니다.
+끝에서 두 번째 예제의 내용처럼 말이죠. 먼저, 우리는 페이지 레이아웃 기본값을 `my-site` 로 설정했습니다. 그 다음, 더 자세한 경로를 사용해서, `projects/` 경로에 있는 페이지에 대해서만 레이아웃을 `project` 로 설정했습니다. 페이지나 포스트의 머리말에 사용하는 어떤 설정에든지 이 방법을 사용할 수 있습니다.
 
 마지막으로, `_config.yml` 파일에 `defaults` 섹션을 추가해서 사이트 환경설정 디폴트 값을 정의했어도, 페이지나 포스트에서 값을 덮어쓸 수 있습니다. 페이지나 포스트의 머리말에서 다시 해당 환경설정 값을 정의하면 됩니다. 예를 들면 다음과 같습니다:
 
@@ -1006,7 +1010,7 @@ Jekyll runs with the following configuration options by default. Alternative
 settings for these options can be explicitly specified in the configuration
 file or on the command-line.
 -->
-다음은 Jekyll 의 환경설정 옵션들에 대한 디폴트 값 목록입니다. 명령행이나
+다음은 Jekyll 의 환경설정 옵션에 대한 디폴트 값 목록입니다. 명령행이나
 환경설정 파일에 명시적으로 지정하여 환경설정 옵션의 값을 변경할 수
 있습니다.
 
@@ -1209,7 +1213,7 @@ hint by various JavaScript code highlighting libraries.
 코드 블록 테두리와 구문 강조기를 모두 활성화하면, 완전한 코드 구문 강조가
 가능합니다; 구문 강조기능을 전혀 사용하지 않으면, `<code>` 요소에
 `class="LANGUAGE"` 속성이 추가되어 자바스크립트 기반으로 작성된, 다양한 코드
-구문 강조 라이브러리들의 작동에 도움이 됩니다.
+구문 강조 라이브러리의 작동에 도움이 됩니다.
 
 <!--
 - `smart` --- This pseudo-extension turns on SmartyPants, which converts
@@ -1226,8 +1230,8 @@ Make sure you're looking at the README for the right version of
 Redcarpet: Jekyll currently uses v3.2.x. The most commonly used
 extensions are:
 -->
-이 외의 다른 확장기능들은 Redcarpet 의 확장기능과 동일한 이름을 갖고 있으며,
-렌더러 옵션들 중 `smart` 를 제외한 다른 모든 옵션들은 사용할 수 없습니다.
+이 외의 다른 확장기능은 Redcarpet 의 확장기능과 동일한 이름을 갖고 있으며,
+렌더러의 옵션 중 `smart` 를 제외한 다른 모든 옵션은 사용할 수 없습니다.
 [사용할 수 있는 확장기능 목록은 Redcarpet 의 README 파일을
 확인하세요][redcarpet_extensions].  올바른 버전의 Redcarpet README 파일을
 읽고있는 것인지 반드시 확인하세요: Jekyll 은 현재 v3.2.x 를 사용하고 있습니다.

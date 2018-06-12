@@ -48,8 +48,8 @@ accessible via `site.data`.
 -->
 [디렉토리 구조](../structure/) 페이지에서 설명했던 것처럼, `_data` 폴더는
 사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다.
-이것들은 반드시 YAML 이나 JSON, CSV 파일 (확장자가 `.yml`, `.yaml` 이나
-`.json`, `.csv`) 이어야 하며, `site.data` 를 통해 이 데이터들을 사용할 수 있습니다.
+이 파일들은 반드시 YAML 이나 JSON, CSV 파일 (확장자가 `.yml`, `.yaml` 이나
+`.json`, `.csv`) 이어야 하며, `site.data` 를 통해 이 데이터를 사용할 수 있습니다.
 
 <!--
 ## Example: List of members

@@ -12,7 +12,7 @@ like Pages or Posts do normally, but also have their own unique properties and
 namespace.
 -->
 페이지나 포스트가 전부는 아닙니다. 자신의 오픈 소스 프로젝트에 포함된 다양한
-메소드나 팀 멤버들의 목록, 또는 컨퍼런스 대화 내역들을 문서화하려는 경우도
+메소드나 팀 멤버들의 목록, 또는 컨퍼런스 대화 내용을 문서화하려는 경우도
 생각해볼 수 있습니다. 콜렉션 기능을 사용하면 기본적으로는 페이지나 포스트처럼
 동작하지만, 고유한 네임스페이스와 속성이 추가된 새로운 종류의 문서를 정의할 수
 있습니다.
@@ -213,7 +213,7 @@ To list items from the collection, on that page or any other, you can use:
 If you wish to specify a custom pattern for the URLs where your Collection pages
 will reside, you may do so with the [`permalink` property](../permalinks/):
 -->
-콜렉션 페이지들이 갖게될 URL 에 자신만의 패턴을 지정하고 싶은 경우, [`permalink` 속성](../permalinks/)을 사용할 수 있습니다:
+콜렉션 페이지가 갖게될 URL 에 자신만의 패턴을 지정하고 싶은 경우, [`permalink` 속성](../permalinks/)을 사용할 수 있습니다:
 
 ```yaml
 collections:
@@ -403,16 +403,15 @@ you want to access the `albums` collection found in `_albums`, you'd use
 Each collection is itself an array of documents (e.g., `site.albums` is an array of documents, much like `site.pages` and
 `site.posts`). See the table below for how to access attributes of those documents.
 -->
-모든 콜렉션은 여러 문서들에 대한 배열입니다 (예시, `site.albums` 는 `site.pages`
-와 `site.posts` 거의 유사함). 이 문서들의 속성에 접근하는 방법은 아래 표를
-참고하세요.
+콜렉션 그 자체는 문서들에 대한 배열입니다 (예시, `site.albums` 는 `site.pages` 와 `site.posts` 거의 유사함).
+이 문서들의 속성에 접근하는 방법은 아래 표를 참고하세요.
 
 <!--
 The collections are also available under `site.collections`, with the metadata
 you specified in your `_config.yml` (if present) and the following information:
 -->
-콜렉션은 `site.collections` 로도 접근할 수 있으며, `_config.yml` 파일에 정의한
-메타데이터와 다음 정보들도 사용할 수 있습니다:
+콜렉션은 `site.collections` 로도 접근할 수 있으며, `_config.yml` 파일에
+정의한 메타데이터와 다음 정보들도 사용할 수 있습니다:
 
 <div class="mobile-side-scroller">
 <table>
@@ -570,7 +569,7 @@ you specified in your `_config.yml` (if present) and the following information:
   </p>
 -->
   <p>하지만 메타데이터에 <code>output: true</code> 를 가진 콜렉션의 문서들만 생성됩니다.
-  또한, 미래-시간의 문서들은 <code>site.future</code> 가 <em>참</em> 인 경우에만 생성됩니다.
+  또한, 미래-시간의 문서는 <code>site.future</code> 가 <em>참</em> 인 경우에만 생성됩니다.
   </p>
 <!--
   <p>More fine-grained control over documents being written to disk can be exercised by setting
@@ -592,7 +591,7 @@ you specified in your `_config.yml` (if present) and the following information:
 In addition to any YAML Front Matter provided in the document's corresponding
 file, each document has the following attributes:
 -->
-모든 문서는 파일에 지정된 YAML 머리말뿐만 아니라, 다음과 같은 속성들도 가지고
+모든 문서는 파일에 지정된 YAML 머리말뿐만 아니라, 다음과 같은 속성도 가지고
 있습니다:
 
 <div class="mobile-side-scroller">
@@ -739,7 +738,7 @@ you might have front matter in an individual file structured as follows (which
 must use a supported markup format, and cannot be saved with a `.yaml`
 extension):
 -->
-YAML 머리말에 있는 속성들은 데이터로서 사이트 내 어느 곳에서든 사용할 수
+YAML 머리말에 있는 속성은 데이터로서 사이트 내 어느 곳에서든 사용할 수
 있습니다. 위 예제를 사용하여 `site.albums` 라는 콜렉션을 설정하는 경우,
 개별 파일로 된 다음과 같은 구조의 머리말을 생각해볼 수 있습니다. (반드시
 지원하는 마크업 언어로 작성해야 하며, `.yaml` 확장자가 아니어야

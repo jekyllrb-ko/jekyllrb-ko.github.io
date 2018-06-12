@@ -8,7 +8,7 @@ permalink: /docs/quickstart/
 <!--
 If you already have a full [Ruby](https://www.ruby-lang.org/en/downloads/) development environment with all headers and [RubyGems](https://rubygems.org/pages/download) installed (see Jekyll's [requirements](/docs/installation/#requirements)), you can create a new Jekyll site by doing the following:
 -->
-모든 헤더와 [RubyGems](https://rubygems.org/pages/download) 가 포함된 완전한 [루비](https://www.ruby-lang.org/en/downloads/) 개발 환경이 이미 준비되었다면(Jekyll 에 [필요한 것들](/docs/installation/#requirements) 참고), 다음 명령으로 새 Jekyll 사이트를 생성할 수 있습니다:
+모든 헤더와 [RubyGems](https://rubygems.org/pages/download) 가 포함된 완전한 [루비](https://www.ruby-lang.org/en/downloads/) 개발 환경이 이미 준비되었다면(Jekyll [준비물](/docs/installation/#requirements) 참고), 다음 명령으로 새 Jekyll 사이트를 생성할 수 있습니다:
 
 <!--
 ```sh
@@ -46,7 +46,7 @@ bundle exec jekyll serve
 <!--
 If you encounter any unexpected errors during the above, please refer to the [troubleshooting](/docs/troubleshooting/#configuration-problems) page or the already-mentioned [requirements](/docs/installation/#requirements) page, as you might be missing development headers or other prerequisites.
 -->
-만약 위 명령을 실행하다가 예기치 않은 문제가 발생했다면, [문제해결](/docs/troubleshooting/) 페이지를 참고하거나 앞서 언급된 [필요한 것들](/docs/installation/#requirements) 페이지를 참고하세요, 개발 헤더나 기타 전제 조건이 누락되었을 수 있습니다.
+만약 위 명령을 실행하다가 예기치 않은 문제가 발생했다면, [문제해결](/docs/troubleshooting/) 페이지를 참고하거나 앞서 언급된 [준비물](/docs/installation/#requirements) 페이지를 참고하세요, 개발 헤더나 기타 전제 조건이 누락되었을 수 있습니다.
 
 <!--
 ## About Bundler
