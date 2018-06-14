@@ -17,7 +17,7 @@ While Windows is not an officially-supported platform, it can be used to run Jek
 <!--
 The easiest way to run Jekyll is by using the [RubyInstaller][] for Windows.
 -->
-가장 쉬운 방법은 윈도우즈용 [RubyInstaller][] 를 사용하는 것입니다.
+가장 쉬운 방법은 [RubyInstaller][] for Windows 를 사용하는 것입니다.
 
 <!--
 ### Installation via RubyInstaller
@@ -63,7 +63,7 @@ If you use UTF-8 encoding, make sure that no `BOM` header characters exist in yo
 Jekyll. This is especially relevant when you're running Jekyll on Windows.
 -->
 만약 UTF-8 인코딩을 사용한다면, 문서 안에 `BOM` 헤더를 사용하지 않아야 합니다. 그렇지 않으면 Jekyll 에 아주, 아주 안 좋은 일이 벌어집니다.
-이 문제는 윈도우즈에서 Jekyll 을 실행하는 경우에만 해당됩니다.
+이는 특히, 윈도우즈에서 Jekyll 을 사용하는 것에 연관된 문제입니다.
 
 <!--
 Additionally, you might need to change the code page of the console window to UTF-8 in case you get a "Liquid Exception: Incompatible character encoding" error during the site generation process. It can be done with the following command:
