@@ -227,7 +227,7 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 <!--
 Everything in between the first and second `---` are part of the YAML Front Matter, and everything after the second `---` will be rendered with Markdown and show up as "Content".
 -->
-처음 두 `---` 사이에 있는 모든 내용은 YAML 머리말에 속하고, 두 번째 `---` 이후의 모든 내용은 마크다운으로 처리되어 "컨텐츠"로서 출력될 것입니다.
+처음 두 `---` 사이에 있는 모든 내용은 YAML 머리말에 속하고, 두 번째 `---` 이후의 모든 내용은 마크다운으로 렌더링되어 "컨텐츠"로서 출력될 것입니다.
 
 <!--
 ## Displaying an index of posts

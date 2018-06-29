@@ -206,9 +206,9 @@ will become available under a subpath of your user pages subdomain, such as
 -->
 사용자/단체 페이지와는 다르게, 프로젝트 페이지는 해당 프로젝트의 실제 저장소에
 함께 보관하는데, 단, `gh-pages` 라는 특별한 이름의 브랜치나 `master` 브랜치의
-`docs` 폴더에 저장한다는 차이점이 있습니다. Jekyll 에 의해서 내용물이 처리된 후,
+`docs` 폴더에 저장한다는 차이점이 있습니다. Jekyll 에 의해 컨텐츠가 렌더링된 후,
 `username.github.io/project` (커스텀 도메인을 사용하지 않았을 때 기준)
-와 같이 사용자 페이지 서브도메인의 하위 경로에 결과물이 만들어집니다.
+와 같이 사용자 페이지 서브 도메인의 하위 경로에 결과물이 만들어집니다.
 
 
 <!--

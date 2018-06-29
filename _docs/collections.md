@@ -147,8 +147,8 @@ If you'd like Jekyll to create a public-facing, rendered version of each
 document in your collection, set the `output` key to `true` in your collection
 metadata in your `_config.yml`:
 -->
-만약 콜렉션에 포함된 각각의 문서가 독립적인 버전으로 생성되게 하고 싶다면,
-`_config.yml` 파일의 콜렉션 정의부분에 `output` 키를 추가하고 그 값을 `true` 로
+콜렉션에 포함된 모든 문서를 생성하고 싶다면, `_config.yml` 파일의 콜렉션
+정의부분에 `output` 키를 추가하고 그 값을 `true` 로
 설정합니다:
 
 ```yaml
@@ -166,7 +166,7 @@ choice and written out to `<dest>/my_collection/some_subdir/some_doc.html`.
 이렇게 하면 콜렉션 안의 모든 문서가 각각 파일로 생성됩니다.
 예를 들어, `_my_collection/some_subdir/some_doc.md` 라는 파일이 있다면,
 당신이 선택한 마크다운 변환기와 Liquid 를 거쳐서
-`<dest>/my_collection/some_subdir/some_doc.html` 로 만들어질 것입니다.
+`<dest>/my_collection/some_subdir/some_doc.html` 로 렌더링될 것입니다.
 
 <!--
 If you wish a specific page to be shown when accessing `/my_collection/`,
@@ -559,8 +559,8 @@ you specified in your `_config.yml` (if present) and the following information:
     you create, are accessible via Liquid irrespective of their assigned date, if any, and therefore renderable.
   </p>
 -->
-  <p>고정된 기본 콜렉션 <code>posts</code> 의 문서를 제외한, 당신이 직접 생성한 콜렉션의 모든 문서는
-  날짜가 지정되어 있는 경우에도 그와 관계없이 Liquid 변수로 접근이 가능합니다. 따라서 모든 문서가 생성됩니다.
+  <p>고정된 기본 콜렉션 <code>posts</code> 의 문서를 제외한, 당신이 생성한 콜렉션의 모든 문서는
+    날짜가 지정되어 있는 경우에도 그와 관계없이, Liquid 변수로 접근이 가능합니다. 따라서 모든 문서가 생성됩니다.
   </p>
 <!--
   <p>However documents are attempted to be written to disk only if the concerned collection
@@ -622,7 +622,7 @@ file, each document has the following attributes:
         </p>
 -->
         <p>
-          문서의 (변환되지 않은) 컨텐츠.
+          문서의 (렌더링되지 않은) 컨텐츠.
           YAML 머리말이 없다면, Jekyll 은 콜렉션에 어떠한 파일도 생성하지 않는다.
           YAML 머리말이 사용되었다면, 이 변수는 머리말의 종료표시인 `---`
           이후의 모든

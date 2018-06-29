@@ -101,7 +101,7 @@ determines the variable name).
 <!--
 You can now render the list of members in a template:
 -->
-이제 템플릿에서 멤버들 목록을 출력할 수 있습니다:
+이제 템플릿에 멤버들 목록을 출력할 수 있습니다:
 
 {% raw %}
 ```liquid

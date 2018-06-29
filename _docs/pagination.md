@@ -281,7 +281,7 @@ attributes:
 <!--
 ## Render the paginated Posts
 -->
-## 페이지로 나눠진 포스트 렌더링
+## 페이지로 나눠진 포스트 렌더링하기
 
 <!--
 The next thing you need to do is to actually display your posts in a list using

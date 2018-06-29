@@ -85,8 +85,8 @@ Jekyll 은 작업이 필요한 파일을 찾아 사이트 내부를 이리저리
         In layout files, the rendered content of the Post or Page being wrapped.
         Not defined in Post or Page files.
 -->
-        레이아웃에 포함된 포스트 또는 페이지 컨텐츠. 포스트나 페이지 파일에는
-        정의되어 있지 않다.
+        레이아웃 파일 내, 포스트 또는 페이지로 감싸진 렌더링된 컨텐츠.
+        포스트나 페이지 파일에는 정의되어 있지 않다.
 
       </p></td>
     </tr>

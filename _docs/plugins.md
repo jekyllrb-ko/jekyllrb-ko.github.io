@@ -599,7 +599,7 @@ will output the time the page was rendered:
 사이트에 자신의 Liquid 태그를 사용하고 싶다면,
 태그 시스템의 Hook 을 사용하면 됩니다.
 Jekyll 에 내장된 `highlight` 와 `include` 가 바로 그 예입니다.
-다음 예제는 페이지가 생성된 시간을 출력해주는 Liquid 태그입니다:
+다음 예제는 페이지가 렌더링된 시간을 출력해주는 Liquid 태그입니다:
 
 ```ruby
 module Jekyll
@@ -847,7 +847,7 @@ hook like this:
 -->
 Hook 은 이벤트 이름과 컨테이너에 등록됩니다. 등록하는 방법은,
 Jekyll::Hooks.register 를 호출하고 컨테이너, 이벤트 이름과 Hook 이 실행될 때
-호출할 코드를 연결하는 것입니다. 예를 들어, Jekyll 이 포스트를 생성할 때마다
+호출할 코드를 연결하는 것입니다. 예를 들어, Jekyll 이 포스트를 렌더링할 때마다
 특정 코드를 실행하도록 하려면, 다음과 같이 Hook 을 등록하면 됩니다:
 
 ```ruby

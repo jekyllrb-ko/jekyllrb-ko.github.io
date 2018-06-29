@@ -17,17 +17,17 @@ Jekyll 의 테마 시스템은 확장성이 뛰어나서 공개 프로젝트 템
 <!--
 When you [create a new Jekyll site](/docs/quickstart) (by running the `jekyll new <PATH>` command), Jekyll installs a site that uses a gem-based theme called [Minima](https://github.com/jekyll/minima).
 -->
-당신이 [새 Jekyll 사이트를 생성](/docs/quickstart)하면 (`jekyll new <PATH>` 명령을 사용), Jekyll 은 [Minima](https://github.com/jekyll/minima) 라고 하는 루비 젬 기반 테마가 적용된 사이트를 생성합니다.
+당신이 [새 Jekyll 사이트를 생성](/docs/quickstart)하면 (`jekyll new <PATH>` 명령 사용), Jekyll 은 [Minima](https://github.com/jekyll/minima) 라고 하는 루비 젬 기반 테마가 적용된 사이트를 생성합니다.
 
 <!--
 With gem-based themes, some of the site's directories (such as the `assets`, `_layouts`, `_includes`, and `_sass` directories) are stored in the theme's gem, hidden from your immediate view. Yet all of the necessary directories will be read and processed during Jekyll's build process.
 -->
-루비 젬 기반 테마로, 사이트의 몇몇 (`assets` 와 `_layouts`, `_includes`, `_sass` 와 같은) 디렉토리들은 테마 젬 안에 저장되어 있어, 실제로 볼 수 없습니다. 그래도 Jekyll 은 빌드작업에 필요한 모든 디렉토리를 읽고 처리합니다.
+루비 젬 기반 테마로, 사이트의 몇몇 (`assets`, `_layouts`, `_includes`, `_sass` 와 같은) 디렉토리들은 테마 젬 안에 저장되어 있어, 실제로 볼 수 없습니다. 그래도 Jekyll 은 빌드작업에 필요한 모든 디렉토리를 읽고 처리합니다.
 
 <!--
 In the case of Minima, you see only the following files in your Jekyll site directory:
 -->
-Minima 의 경우에, 당신의 Jekyll 디렉토리에서 볼 수 있는 파일은 다음과 같습니다:
+Minima 의 경우, 당신의 Jekyll 사이트 디렉토리에서 볼 수 있는 파일은 다음과 같습니다:
 
 ```
 ├── Gemfile
@@ -47,17 +47,17 @@ The `Gemfile` and `Gemfile.lock` files are used by Bundler to keep track of the 
 <!--
 Gem-based themes make it easy for theme developers to make updates available to anyone who has the theme gem. When there's an update, theme developers push the update to RubyGems.
 -->
-루비 젬 기반 테마는 테마 개발자로 하여금 해당 테마 젬 사용자들에게 쉽게 업데이트를 제공할 수 있게 해줍니다.
+루비 젬 기반 테마는 개발자가 해당 테마 사용자들에게 쉽게 업데이트를 제공할 수 있게 해줍니다.
 
 <!--
 If you have the theme gem, you can (if you desire) run `bundle update` to update all gems in your project. Or you can run `bundle update <THEME>`, replacing `<THEME>` with the theme name, such as `minima`, to just update the theme gem. Any new files or updates the theme developer has made (such as to stylesheets or includes) will be pulled into your project automatically.
 -->
-테마 젬을 사용중인 경우, 당신은 (원한다면) `bundle update` 를 실행해서 당신의 프로젝트에 있는 모든 젬을 업데이트할 수 있습니다. 또는 `bundle update <THEME>` 로, `<THEME>` 에 테마 이름을 넣어서, 예를 들면 `minima`, 특정 테마 젬만 업데이트할 수 있습니다.
+테마 젬을 사용중인 경우, 당신은 (원한다면) `bundle update` 를 실행해서 당신의 프로젝트에 있는 모든 젬을 업데이트할 수 있습니다. 또는 `bundle update <THEME>` 로, 예를 들어 `minima` 처럼 `<THEME>` 에 테마 이름을 넣어서, 특정 테마 젬만 업데이트할 수 있습니다.
 
 <!--
 The goal of gem-based themes is to allow you to get all the benefits of a robust, continually updated theme without having all the theme's files getting in your way and over-complicating what might be your primary focus: creating content.
 -->
-루비 젬 기반 테마의 목적은 지속적으로 업데이트되는 강력한 테마의 모든 장점을 제공하는 것과 동시에, 테마의 여러 파일들로 인해 필요 이상으로 복잡해지는 것을 방지하여 당신이 해야하는 일에 집중할 수 있게 하는 것입니다: 컨텐츠 작성말이죠.
+루비 젬 기반 테마의 목적은 지속적으로 업데이트되는 강력한 테마의 장점을 모두 제공하는 것과 동시에, 테마의 여러 파일들로 인해 필요 이상으로 복잡해지는 것을 방지하여 당신이 해야하는 일에 집중할 수 있게 하는 것입니다: 컨텐츠 작성말이죠.
 
 <!--
 ## Overriding theme defaults
@@ -613,4 +613,4 @@ Themes are published via [RubyGems.org](https://rubygems.org). You will need a R
    gem push jekyll-theme-awesome-*.gem
    ```
 
-4. 테마의 새 버전을 배포할 때에는, gemspec 파일 (이 예제에서는 `jekyll-theme-awesome.gemspec`) 에 버전정보를 업데이트하고, 위의 1 - 3 단계를 다시 수행합니다. 테마의 버전정보를 변경할 때는 [유의적 버전](http://semver.org/) 규칙을 따르기를 권장합니다.
+4. 테마의 새 버전을 배포할 때에는, gemspec 파일 (이 예제에서는 `jekyll-theme-awesome.gemspec`) 에 버전정보를 업데이트하고, 위의 1 - 3 단계를 다시 수행합니다. 테마의 버전정보를 변경할 때는 [유의적 버전 명세](http://semver.org/)를 따르기를 권장합니다.

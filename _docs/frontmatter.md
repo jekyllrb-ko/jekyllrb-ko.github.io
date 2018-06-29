@@ -206,7 +206,7 @@ front matter of a page or post.
     feature tailored specifically for blog posts.
   </p>
 -->
-  <h5>ProTip™: 미개시로 표시된 포스트 게시하기</h5>
+  <h5>ProTip™: 미개시로 표시된 포스트 렌더링하기</h5>
   <p>
     미개시 페이지에 대한 미리보기는, `jekyll serve` 또는 `jekyll build` 를 실행할 때
     `--unpublished` 스위치를 추가하기만 하면 됩니다. 또한 Jekyll 에는 블로그 포스트만을
