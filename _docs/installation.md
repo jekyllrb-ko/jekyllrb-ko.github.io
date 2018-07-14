@@ -9,7 +9,7 @@ permalink: /docs/installation/
 Jekyll is a [Ruby Gem](http://guides.rubygems.org/rubygems-basics/), and can be
 installed on most systems.
 -->
-Jekyll 은 단순히 하나의 [루비 젬](http://guides.rubygems.org/rubygems-basics/)일 뿐이고, 거의 모든 시스템에 설치가 가능합니다.
+Jekyll 은 단순히 하나의 [루비 젬](http://guides.rubygems.org/rubygems-basics/)일 뿐이며, 거의 모든 시스템에 설치가 가능합니다.
 
 <!--
 - [Requirements](#requirements)
@@ -19,10 +19,10 @@ Jekyll 은 단순히 하나의 [루비 젬](http://guides.rubygems.org/rubygems-
 - [Upgrade Jekyll](#upgrade-jekyll)
 -->
 - [준비물](#requirements)
-- [맥OS 에 설치하기](#macOS)
-- [우분투 리눅스에 설치하기](#ubuntu)
-- [윈도우즈에 설치하기](../windows/)
-- [업그레이드 하기](#upgrade-jekyll)
+- [맥OS 에 설치](#macOS)
+- [우분투 리눅스에 설치](#ubuntu)
+- [윈도우즈에 설치](../windows/)
+- [업그레이드](#upgrade-jekyll)
 
 <!--
 ## Requirements
@@ -46,7 +46,7 @@ Before you start, make sure your system has the following:
 <!--
 ## Install on macOS {#macOS}
 -->
-## 맥OS 에 설치하기 {#macOS}
+## 맥OS 에 설치 {#macOS}
 
 <!--
 We only cover macOS High Sierra 10.13 here, which comes with Ruby 2.3.3, older systems will need to [install a more recent Ruby version via Homebrew](#homebrew).
@@ -65,7 +65,7 @@ xcode-select --install
 <!--
 ### Set up Ruby included with the OS
 -->
-### 루비 환경 설정하기
+### OS 의 루비 환경설정 {#set-up-ruby-included-with-the-os}
 
 <!--
 Check your Ruby version meet our requirements:
@@ -218,7 +218,7 @@ Check out the [troubleshooting](../troubleshooting/) page or
 <!--
 ## Install on Ubuntu Linux {#ubuntu}
 -->
-## 우분투 리눅스에 설치하기 {#ubuntu}
+## 우분투 리눅스에 설치 {#ubuntu}
 
 <!--
 Before we install Jekyll, we need to make sure we have all the required
@@ -266,7 +266,7 @@ That's it! You're ready to start using Jekyll.
 <!--
 ## Upgrade Jekyll
 -->
-## 업그레이드 하기 {#upgrade-jekyll}
+## 업그레이드 {#upgrade-jekyll}
 
 <!--
 Before you start developing with Jekyll, you may want to check that you're up to date with the latest version. To find the currently installed version of Jekyll, run one of these commands:

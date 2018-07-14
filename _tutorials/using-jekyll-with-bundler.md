@@ -2,7 +2,7 @@
 layout: tutorials
 permalink: /tutorials/using-jekyll-with-bundler/
 #title: Using Jekyll with Bundler
-title: Bundler 와 함께 Jekyll 사용하기
+title: Bundler 로 Jekyll 사용하기
 ---
 
 <!--

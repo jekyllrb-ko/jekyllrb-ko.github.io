@@ -28,7 +28,7 @@ You create your content as text files ([Markdown](https://daringfireball.net/pro
 <!--
 Jekyll happens to be the engine behind [GitHub Pages](https://pages.github.com), so you can host your project’s Jekyll page/blog/website on GitHub’s servers **for free**.
 -->
-Jekyll 은 [GitHub Pages](https://pages.github.com) 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 **무료료** 호스팅 할 수 있습니다.
+Jekyll 은 [GitHub Pages](https://pages.github.com) 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 **무료로** 호스팅 할 수 있습니다.
 
 <!--
 ## Navigating the Guide
