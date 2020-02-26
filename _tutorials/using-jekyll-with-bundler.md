@@ -171,7 +171,7 @@ If you're storing your new site in version control, you'll want to ignore the
 `./vendor/` and `./.bundle/` folders since they contain user- or
 platform-specific information. New users will be able to install the correct
 dependencies based on `Gemfile` and `Gemfile.lock`, which should both be checked
-in. You can use this `.gitigonre` to get started, if you want.
+in. You can use this `.gitignore` to get started, if you want.
 -->
 당신의 새 사이트를 버전 관리 시스템으로 관리중이라면, `./vendor/` 와 `./.bundle/`
 폴더에는 사용자 또는 플랫폼 관련 정보들을 담고 있기 때문에 제외시키는 것이 좋습니다.

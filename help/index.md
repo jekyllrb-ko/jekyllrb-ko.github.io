@@ -57,6 +57,16 @@ Jekyll 의 공식 IRC 채널인 **irc.freenode.new** 의 **#jekyll** 에서 실�
 받을 수 있습니다.
 
 <!--
+### [The Dev community](https://dev.to/)
+-->
+### [DEV 커뮤니티](https://dev.to/)
+
+<!--
+[DEV’s jekyll tag](https://dev.to/t/jekyll) is a place to share Jekyll projects, articles and tutorials as well as start discussions and ask for feedback on Jekyll-related topics. Developers of all skill-levels are welcome to take part.
+-->
+[DEV 의 jekyll 태그](https://dev.to/t/jekyll) 는 Jekyll 프로젝트와 기사, 튜토리얼을 공유하는 것 뿐만 아니라 Jekyll 에 관련된 내용에 대해 질문하고 토론하는 장소입니다.
+
+<!--
 ### View source
 -->
 ### 소스코드 살펴보기

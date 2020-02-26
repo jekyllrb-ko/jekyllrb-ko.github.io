@@ -56,7 +56,8 @@ Note that you cannot use the `../` syntax to specify an include location that re
 All the other capabilities of the `include` tag are available to the `include_relative` tag,
 such as variables.
 -->
-이 외에 `include` 태그의 모든 기능 (예를 들면, 변수같은) 을 `include_relative` 태그에서 사용할 수 있습니다.
+예를 들면, 변수 같은 `include` 태그의 다른 모든 기능을 `include_relative` 태그에서도
+사용할 수 있습니다.
 
 <!--
 ### Using variables names for the include file
@@ -141,6 +142,7 @@ For example, suppose you have a special image syntax with complex formatting, an
    <a href="http://jekyllrb.com">
    <img src="logo.png" style="max-width: 200px;"
       alt="Jekyll logo" />
+   </a>
    <figcaption>This is the Jekyll logo</figcaption>
 </figure>
 ```
@@ -156,6 +158,7 @@ You could templatize this content in your include and make each value available 
    <a href="{{ include.url }}">
    <img src="{{ include.file }}" style="max-width: {{ include.max-width }};"
       alt="{{ include.alt }}"/>
+   </a>
    <figcaption>{{ include.caption }}</figcaption>
 </figure>
 ```

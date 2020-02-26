@@ -5,12 +5,12 @@ permalink: /docs/drafts/
 ---
 
 <!--
-Drafts are posts without a date. They're posts you're still working on and
+Drafts are posts without a date in the filename. They're posts you're still working on and
 don't want to publish yet. To get up and running with drafts, create a
 `_drafts` folder in your site's root (as described in the [site structure](/docs/structure/) section) and create your
 first draft:
 -->
-초안이란 날짜 정보가 없는 포스트입니다. 현재 작성중이기 때문에 아직은 온라인에
+초안이란 파일명에 날짜가 없는 포스트입니다. 현재 작성중이기 때문에 아직은 온라인에
 게시하고 싶지 않은 포스트를 의미합니다. 초안 기능을 사용하려면, 사이트의 루트
 디렉토리에 `_drafts` 폴더를 만들고 ([디렉토리 구조](/docs/structure/) 참고)
 초안을 생성하면 됩니다:

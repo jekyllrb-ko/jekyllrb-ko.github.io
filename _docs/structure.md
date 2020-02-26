@@ -7,15 +7,17 @@ permalink: /docs/structure/
 <!--
 Jekyll is, at its core, a text transformation engine. The concept behind the
 system is this: you give it text written in your favorite markup language, be
-that Markdown, Textile, or just plain HTML, and it churns that through a layout
+that Markdown, [Textile](https://github.com/jekyll/jekyll-textile-converter)
+, or just plain HTML, and it churns that through a layout
 or a series of layout files. Throughout that process you can tweak how you want
 the site URLs to look, what data gets displayed in the layout, and more. This
 is all done through editing text files; the static web site is the final
 product.
 -->
 Jekyll 의 핵심 역할은 텍스트 변환 엔진입니다. 시스템의 컨셉은 다음과 같습니다:
-당신이 마크다운이나 Textile 또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로
-문서를 작성하면, Jekyll 은 이 문서들을 하나 또는 여러 겹의 레이아웃으로 포장합니다.
+당신이 마크다운이나 [Textile](https://github.com/jekyll/jekyll-textile-converter)
+또는 일반 HTML 등 자신이 즐겨 사용하는 마크업 언어로 문서를 작성하면, Jekyll 은
+이 문서들을 하나 또는 여러 겹의 레이아웃으로 포장합니다.
 사이트 URL 구성 방식이나 어떤 데이터를 레이아웃에 표시할 것인지 등, 변환 과정에
 포함된 다양한 동작들은 당신이 원하는대로 조정할 수 있습니다. 단지 텍스트 파일을
 수정하는 것만으로 이 모든 일들이 가능합니다. 그 결과로 정적 웹 사이트가
@@ -238,9 +240,9 @@ An overview of what each of these does:
         <p>
           Well-formatted site data should be placed here. The Jekyll engine
           will autoload all data files (using either the <code>.yml</code>,
-          <code>.yaml</code>, <code>.json</code> or <code>.csv</code>
-          formats and extensions) in this directory, and they will be
-          accessible via `site.data`. If there's a file
+          <code>.yaml</code>, <code>.json</code>, <code>.csv</code> or
+          <code>.tsv</code> formats and extensions) in this directory,
+          and they will be accessible via `site.data`. If there's a file
           <code>members.yml</code> under the directory, then you can access
           contents of the file through <code>site.data.members</code>.
         </p>
@@ -248,11 +250,11 @@ An overview of what each of these does:
         <p>
           사이트에 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리.
           Jekyll 엔진은 이 디렉토리에 있는 (확장자와 포맷이 <code>.yml</code>
-          또는 <code>.yaml</code>, <code>.json</code>, <code>.csv</code> 인)
-          모든 데이터 파일을 자동으로 읽어들여 `site.data` 로 사용할 수 있도록
-          만든다. 만약 이 디렉토리에 <code>members.yml</code> 라는 파일이
-          있다면, <code>site.data.members</code> 라고 입력하여 그 컨텐츠를
-          사용할 수 있다.
+          또는 <code>.yaml</code>, <code>.json</code>, <code>.csv</code>,
+          <code>.tsv</code> 인) 모든 데이터 파일을 자동으로 읽어들여
+          `site.data` 로 사용할 수 있도록 만든다. 만약 이 디렉토리에
+          <code>members.yml</code> 라는 파일이 있다면,
+          <code>site.data.members</code> 라고 입력하여 그 컨텐츠를 사용할 수 있다.
         </p>
       </td>
     </tr>
@@ -261,10 +263,17 @@ An overview of what each of these does:
         <p><code>_sass</code></p>
       </td>
       <td>
+<!--
         <p>
-          Sass 조각파일들로, 프로젝트의 <code>main.scss</code> 에 임포트할 수 있으며
-          임포트 후에는 다시 하나의 스타일시트(<code>main.scss</code>)로 가공되어
-          사이트에 사용되는 스타일들을 정의한다.
+          These are sass partials that can be imported into your <code>main.scss</code>
+          which will then be processed into a single stylesheet
+          <code>main.css</code> that defines the styles to be used by your site.
+        </p>
+-->
+        <p>
+          이것은 당신의 <code>main.scss</code> 에 임포트할 수 있는 Sass 조각들로서,
+          하나의 스타일시트 파일 <code>main.css</code> 로 가공되어 당신의 사이트에서
+          사용하는 스타일들을 정의한다.
         </p>
       </td>
     </tr>
@@ -314,10 +323,10 @@ An overview of what each of these does:
       <td>
 <!--
         <p><code>index.html</code> or <code>index.md</code> and other HTML,
-        Markdown, Textile files</p>
+        Markdown files</p>
 -->
         <p><code>index.html</code> 또는 <code>index.md</code> 및 다른 HTML,
-        마크다운, Textile 파일</p>
+        마크다운 파일</p>
       </td>
       <td>
 <!--

@@ -35,8 +35,8 @@ Minima 의 경우, 당신의 Jekyll 사이트 디렉토리에서 볼 수 있는 
 ├── _config.yml
 ├── _posts
 │   └── 2016-12-04-welcome-to-jekyll.markdown
-├── about.md
-└── index.md
+├── about.markdown
+└── index.markdown
 ```
 
 <!--
@@ -96,6 +96,8 @@ To locate a theme's files on your computer:
    open $(bundle show minima)
    # On Windows
    explorer /usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0
+   # On Linux
+   xdg-open $(bundle show minima)
    ```
 
    A Finder or Explorer window opens showing the theme's files and directories. The Minima theme gem contains these files:
@@ -135,10 +137,12 @@ To locate a theme's files on your computer:
 2. Finder 나 탐색기로 테마 디렉토리를 엽니다:
 
    ```sh
-   # 맥OS 일 경우
+   # 맥OS 인 경우
    open $(bundle show minima)
-   # 윈도우즈일 경우
+   # 윈도우즈인 경우
    explorer /usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0
+   # 리눅스인 경우
+   xdg-open $(bundle show minima)
    ```
 
    Finder 나 익스플로러 창이 열려 테마의 파일과 디렉토리를 보여줍니다. Minima 테마 젬에는 다음 파일들이 포함되어 있습니다:
@@ -319,20 +323,21 @@ To install a gem-based theme:
 루비 젬 기반 테마를 설치하려면:
 
 <!--
-1. Add the theme to your site's `Gemfile`:
+1. Add the theme gem to your site's `Gemfile`:
 
    ```ruby
    # ./Gemfile
 
-   gem "jekyll-theme-awesome"
+   # This is an example, declare the theme gem you want to use here
+   gem "jekyll-theme-minimal"
    ```
-  Or if you've started with the `jekyll new` command, replace `gem "minima", "~> 2.0"` with your theme-gem:
+  Or if you've started with the `jekyll new` command, replace `gem "minima", "~> 2.0"` with the gem you want, e.g:
 
    ```diff
    # ./Gemfile
 
    - gem "minima", "~> 2.0"
-   + gem "jekyll-theme-awesome"
+   + gem "jekyll-theme-minimal"
    ```
 
 2. Install the theme:
@@ -344,7 +349,7 @@ To install a gem-based theme:
 3. Add the following to your site's `_config.yml` to activate the theme:
 
    ```yaml
-   theme: jekyll-theme-awesome
+   theme: jekyll-theme-minimal
    ```
 
 4. Build your site:
@@ -353,20 +358,21 @@ To install a gem-based theme:
    bundle exec jekyll serve
    ```
 -->
-1. 사이트의 `Gemfile` 에 테마를 추가합니다:
+1. 사이트의 `Gemfile` 에 테마 젬을 추가합니다:
 
    ```ruby
    # ./Gemfile
 
-   gem "jekyll-theme-awesome"
+   # 이것은 하나의 예제로, 자신이 원하는 테마 젬을 여기에 선언한다.
+   gem "jekyll-theme-minimal"
    ```
-  아니면 처음에 `jekyll new` 명령으로 생성한 경우에는, `gem "minima", "~> 2.0"` 를 원하는 테마 젬으로 변경합니다:
+  처음에 `jekyll new` 명령으로 시작한 경우에는, `gem "minima", "~> 2.0"` 부분을 원하는 젬으로 변경합니다:
 
    ```diff
    # ./Gemfile
 
    - gem "minima", "~> 2.0"
-   + gem "jekyll-theme-awesome"
+   + gem "jekyll-theme-minimal"
    ```
 
 2. 테마를 설치합니다:
@@ -378,7 +384,7 @@ To install a gem-based theme:
 3. 다음 내용을 사이트의 `_config.yml` 에 추가하여 테마를 활성화합니다:
 
    ```yaml
-   theme: jekyll-theme-awesome
+   theme: jekyll-theme-minimal
    ```
 
 4. 사이트를 빌드합니다:
@@ -394,9 +400,9 @@ You can have multiple themes listed in your site's `Gemfile`, but only one theme
 {: .note .info }
 
 <!--
-If you're publishing your Jekyll site on [GitHub Pages](https://pages.github.com/), note that GitHub Pages supports only some gem-based themes. See [Supported Themes](https://pages.github.com/themes/) in GitHub's documentation to see which themes are supported.
+If you're publishing your Jekyll site on [GitHub Pages](https://pages.github.com/), note that GitHub Pages supports only [some gem-based themes](https://pages.github.com/themes/). GitHub Pages also supports [using any theme hosted on GitHub](https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/#adding-a-jekyll-theme-in-your-sites-_configyml-file) using the `remote_theme` configuration as if it were a gem-based theme.
 -->
-당신의 사이트를 [GitHub Pages](https://pages.github.com/) 에 게시하는 경우, 모든 루비 젬 기반 테마가 지원되는건 아니라는 것을 알아두세요. GitHub 문서 중 [Supported Themes](https://pages.github.com/themes/) 를 보면 어떤 테마를 지원하는지 알 수 있습니다.
+당신의 사이트를 [GitHub Pages](https://pages.github.com/) 에 게시하는 경우, GitHub Pages 는 [일부 젬 기반 테마들](https://pages.github.com/themes/)만 지원한다는 것을 기억하세요. GitHub Pages 는 환경설정 `remote-themes` 사용으로 [GitHub 에서 호스팅하는 모든 테마](https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/#adding-a-jekyll-theme-in-your-sites-_configyml-file)들도 마치 젬 기반 테마인 것 처럼 지원합니다.
 
 <!--
 ## Creating a gem-based theme

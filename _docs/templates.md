@@ -131,10 +131,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
       <td>
 <!--
         <p class="name"><strong>Date to String in ordinal US style</strong></p>
-        <p>Format a date to ordinal, US, short format.</p>
+        <p>Format a date to ordinal, US, short format.
+        {% include docs_version_badge.html version="3.8.0" %}</p>
 -->
         <p class="name"><strong>Date to String in ordinal US style</strong></p>
-        <p>날짜를 미국형 짧은 서수식으로 변환한다.</p>
+        <p>날짜를 미국식 짧은 서수형으로 변환한다.
+        {% include docs_version_badge.html version="3.8.0" %}</p>
       </td>
       <td class="align-center">
         <p>
@@ -167,10 +169,12 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
       <td>
 <!--
         <p class="name"><strong>Date to Long String in ordinal UK style</strong></p>
-        <p>Format a date to ordinal, UK, long format.</p>
+        <p>Format a date to ordinal, UK, long format.
+        {% include docs_version_badge.html version="3.8.0" %}</p>
 -->
         <p class="name"><strong>Date to Long String in ordinal UK style</strong></p>
-        <p>날짜를 영국형 긴 서수식으로 변환한다.</p>
+        <p>날짜를 영국식 긴 서수형으로 변환한다.
+        {% include docs_version_badge.html version="3.8.0" %}</p>
       </td>
       <td class="align-center">
         <p>
@@ -327,7 +331,7 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
         <p>Count the number of words in some text.</p>
 -->
         <p class="name"><strong>Number of Words</strong></p>
-        <p>텍스트 안의 단어 수.</p>
+        <p>텍스트 안의 단어 수를 센다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -369,7 +373,7 @@ Jekyll 은 템플릿 처리 작업을 위해 [Liquid](https://shopify.github.io/
         <p>Convert a Markdown-formatted string into HTML.</p>
 -->
         <p class="name"><strong>Markdownify</strong></p>
-        <p>마크다운 포맷 문자열을 HTML 로 변환한다.</p>
+        <p>마크다운 형식 문자열을 HTML 로 변환한다.</p>
       </td>
       <td class="align-center">
         <p>
@@ -612,10 +616,10 @@ The default is `default`. They are as follows (with what they filter):
 - `ascii`: 알파벳, 숫자, ASCII 가 아닌 문자 또는 공백문자
 - `latin`: `default` 와 동일하나, 라틴 문자를 우선적으로 변환한다 (예, `àèïòü` 를 `aeiou` 로) {%- include docs_version_badge.html version="3.7.0" -%}
 
-## 태그
 <!--
 ## Tags
 -->
+## 태그
 
 <!--
 * [Includes](#includes)
@@ -846,32 +850,6 @@ One major benefit of using the `link` or `post_url` tag is link validation. If t
 Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}`. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques.
 -->
 `link` 태그에는 필터를 추가할 수 없다는 것을 알아두세요. 예를 들어, `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}` 처럼 Liquid 필터를 사용해 문자열을 추가할 수 없습니다. 페이지의 특정 부분에 링크하기 위해서는, 기본 HTML 링크나 마크다운 링크 방식을 사용해야 합니다.
-
-<!--
-The name of the file you want to link can be specified as a variable instead of an actual file name. For example, suppose you defined a variable in your page's front matter like this:
--->
-링크하고자 하는 파일의 이름을 지정할 때 실제 파일 이름 대신 변수를 사용할 수 있습니다. 예를 들어, 다음과 같이 페이지의 머리말에 변수를 정의했다고 생각해봅시다:
-
-```yaml
----
-title: My page
-my_variable: footer_company_a.html
----
-```
-
-<!--
-You could then reference that variable in your link:
--->
-그럼 링크에서 이 변수를 참조할 수 있습니다:
-
-```liquid
-{% raw %}{% link {{ page.my_variable }} %}{% endraw %}
-```
-
-<!--
-In this example, the link would add link to the file `footer_company_a.html`.
--->
-이 예제에서는, `footer_company_a.html` 파일에 대한 링크가 추가됩니다.
 
 <!--
 ### Linking to posts

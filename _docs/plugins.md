@@ -490,11 +490,11 @@ In our example, `UpcaseConverter#matches` checks if our filename extension is
 simply uppercasing the entire content string. Finally, when it saves the page,
 it will do so with a `.html` extension.
 -->
-위 예제에서는, `UpcaseConverter#matches` 는 확장자가 `.upcase` 인지 확인하고,
-만약 그렇다면 내용을 변환하기 위해 `UpcaseConverter#convert` 를 호출합니다.
-이 예제에서 변환기는 단순히 전체 내용을 대문자로 변환합니다.
-마지막으로, 변환된 내용을 페이지로 저장할 때 `.html` 확장자를 사용합니다.
-
+위 예제에서, `UpcaseConverter#matches` 는 확장자가 `.upcase` 인지 확인하고,
+만약 그렇다면 변환기를 사용해 렌더링을 수행합니다. 변환기는 내용을 처리하기 위해
+`UpcaseConverter#convert` 를 호출합니다. 이 예제의 변환기는 단순히 전체 내용을
+대문자로 변환합니다. 마지막으로, 변환된 내용을 페이지로 저장할 때
+`.html` 확장자를 사용합니다.
 
 <!--
 ## Commands
@@ -858,18 +858,22 @@ end
 
 <!--
 Jekyll provides hooks for <code>:site</code>, <code>:pages</code>,
-<code>:posts</code>, and <code>:documents</code>. In all cases, Jekyll calls your
-hooks with the container object as the first callback parameter. But in the
-case of <code>:pre_render</code>, your hook will also receive a payload hash as
-a second parameter which allows you full control over the variables that are
-available while rendering.
+<code>:posts</code>, and <code>:documents</code>. In all cases, Jekyll calls
+your hooks with the container object as the first callback parameter. However,
+all `:pre_render` hooks and the`:site, :post_render` hook will also provide a
+payload hash as a second parameter. In the case of `:pre_render`, the payload
+gives you full control over the variables that are available while rendering.
+In the case of `:site, :post_render`, the payload contains final values after
+rendering all the site (useful for sitemaps, feeds, etc).
 -->
 Jekyll 은 <code>:site</code>, <code>:pages</code>, <code>:posts</code> 와
 <code>:documents</code> 에 관련된 Hook 을 제공합니다. 어떤 상황에서든, Jekyll 은
-Hook 을 호출하며 첫 번째 매개변수로 컨테이너 객체를 넘겨줍니다. 하지만
-<code>:pre_render</code> 의 경우에는 두 번째 매개변수로 페이로드 해시도
-제공하는데, 이로 인해 렌더링 중 사용할 수 있는 변수들에 대해 완벽한 관리 권한을
-얻을 수 있습니다.
+컨테이너 객체를 첫 번째 매개변수로 사용해 당신의 Hook 을 호출합니다. 하지만,
+모든 `:pre_render` 와 `:site`, `:post_render` Hook 은 두 번째 매개변수로
+페이로드 해시 또한 전달합니다. `:pre_render` 의 경우, 페이로드 해시는
+렌더링 중 사용할 수 있는 변수들에 대한 완전한 권한을 제공합니다.
+`:site`, `:post_render` 의 경우, 페이로드에는 전체 사이트 렌더링이 끝난 후의
+최종 값을 가지고 있다 (사이트맵이나 피드 등에 유용하다).
 
 <!--
 The complete list of available hooks is below:
@@ -1194,6 +1198,8 @@ You can find a few useful plugins at the following locations:
 - [Jekyll::Paginate::Content](https://github.com/ibrado/jekyll-paginate-content): Content paginator in the style of jekyll-paginator-v2 that splits pages, posts, and collection entries into several pages. Specify a separator or use HTML &lt;h1&gt; etc. headers. Automatic splitting, single-page view, pager/trail, self-adjusting links, multipage TOC, SEO support.
 - [Premonition](https://github.com/amedia/premonition): Adds block-styled side content to your page. For example summary, notes, hints or warning boxes.
 - [jekyll-fontello](https://github.com/ericcornelissen/jekyll-fontello): A Jekyll plugin that automatically downloads your webfont from Fontello.
+- [Target Blank](https://github.com/keithmifsud/jekyll-target-blank): A Jekyll plugin to automatically open external links in a new browser tab or window.
+- [jekyll-info](https://github.com/swestmoreland/jekyll-info): A plugin to provide information about your Jekyll site’s configuration.
 
 <!--
 #### Converters
@@ -1239,6 +1245,7 @@ You can find a few useful plugins at the following locations:
 - [replace_regex](https://github.com/sparanoid/replace_regex): A Liquid filter to perform regex replace.
 - [Jekyll Money](https://rubygems.org/gems/jekyll-money): A Jekyll plugin for dealing with money. Because we all have to at some point.
 - [jekyll-random](https://github.com/codecalm/jekyll-random) by [codecalm](https://nodecalm.net): A Jekyll plugin that generates pseudo-random data. Very useful when you want to generate a large amount of random data.
+- [jekyll-firstimage](https://github.com/nhoizey/jekyll-firstimage) adds a Liquid filter finding the first image in a HTML content string, including responsive images srcset.
 
 <!--
 #### Tags
@@ -1303,6 +1310,7 @@ You can find a few useful plugins at the following locations:
 - [jekyll-onebox](https://github.com/rriemann/jekyll-onebox): Liquid tag for displaying HTML previews (embeds) for links to popular domains. Plugin is based on [Onebox](https://github.com/discourse/onebox) that powers link previews in [Discourse](http://github.com/discourse/discourse) forums.
 - [jekyll-w2m](https://github.com/kacperduras/jekyll-w2m): A Jekyll plugin to liberate content from Microsoft Word documents (powered by [word-to-markdown](https://github.com/benbalter/word-to-markdown)).
 - [jekyll-flickr](https://github.com/rriemann/jekyll-flickr): Liquid tag for responsive Flickr images using HTML5 srcset. Subtitles and automatic license notices are supported.
+- [CAT](https://github.com/binfalse/jekyll-cat): Include the contents of any file (like the `include` command, but also for files outside of `_include`). Similar to Unix' `cat` tool; useful for including source code etc. in posts and pages.
 
 <!--
 #### Collections
@@ -1358,6 +1366,8 @@ You can find a few useful plugins at the following locations:
 - [jekyll-pre-commit](https://github.com/mpchadwick/jekyll-pre-commit): A framework for running checks against your posts using a git pre-commit hook before you publish them.
 - [jekyll-pwa-plugin](https://github.com/lavas-project/jekyll-pwa): A plugin provides PWA support for Jekyll. It generates a service worker in Jekyll build process and makes precache and runtime cache available in the runtime with Google Workbox.
 - [jekyll-algolia](https://community.algolia.com/jekyll-algolia/): Add fast and relevant search to your Jekyll site through the Algolia API.
+- [jekyll-get](https://github.com/18F/jekyll-get): Download data from external JSON API sources to use in generating a site.
+- [jekyll-xml-source](https://github.com/mcred/jekyll-xml-source): Download XML and RSS from external sites for use in site data.
 
 <div class="note info">
 <!--
