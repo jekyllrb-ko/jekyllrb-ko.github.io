@@ -10,14 +10,29 @@ Jekyll has an extensive theme system that allows you to leverage community-maint
 Jekyll 의 테마 시스템은 확장성이 뛰어나서 공개 프로젝트 템플릿과 스타일을 활용하여 사이트의 외관을 꾸밀 수 있습니다. Jekyll 테마는 몇 가지 플러그인과 레이아웃, 조각파일, 스타일시트, 기타 자원들을 하나로 묶은 일종의 패키지이며, 그 안에 사이트의 컨텐츠를 집어넣을 수 있습니다.
 
 <!--
+## Pick up a theme
+-->
+## 테마 정하기
+
+<!--
+You can find and preview themes on different galleries:
+-->
+테마를 검색하고 미리보기 해볼 수 있는 갤러리가 여럿 있습니다:
+
+- [jamstackthemes.dev](https://jamstackthemes.dev/ssg/jekyll/)
+- [jekyllthemes.org](http://jekyllthemes.org/)
+- [jekyllthemes.io](https://jekyllthemes.io/)
+- [jekyll-themes.com](https://jekyll-themes.com/)
+
+<!--
 ## Understanding gem-based themes
 -->
 ## 루비 젬 기반 테마 이해하기
 
 <!--
-When you [create a new Jekyll site](/docs/quickstart) (by running the `jekyll new <PATH>` command), Jekyll installs a site that uses a gem-based theme called [Minima](https://github.com/jekyll/minima).
+When you [create a new Jekyll site](/docs/) (by running the `jekyll new <PATH>` command), Jekyll installs a site that uses a gem-based theme called [Minima](https://github.com/jekyll/minima).
 -->
-당신이 [새 Jekyll 사이트를 생성](/docs/quickstart)하면 (`jekyll new <PATH>` 명령 사용), Jekyll 은 [Minima](https://github.com/jekyll/minima) 라고 하는 루비 젬 기반 테마가 적용된 사이트를 생성합니다.
+당신이 [새 Jekyll 사이트를 생성](/docs/)하면 (`jekyll new <PATH>` 명령 사용), Jekyll 은 [Minima](https://github.com/jekyll/minima) 라고 하는 루비 젬 기반 테마가 적용된 사이트를 생성합니다.
 
 <!--
 With gem-based themes, some of the site's directories (such as the `assets`, `_layouts`, `_includes`, and `_sass` directories) are stored in the theme's gem, hidden from your immediate view. Yet all of the necessary directories will be read and processed during Jekyll's build process.
@@ -45,7 +60,7 @@ The `Gemfile` and `Gemfile.lock` files are used by Bundler to keep track of the 
 `Gemfile` 과 `Gemfile.lock` 은 Bundler 관련 파일로서, 당신의 Jekyll 사이트를 빌드하기 위해 필요한 루비 젬과 그 버전을 기록하는데 사용합니다.
 
 <!--
-Gem-based themes make it easy for theme developers to make updates available to anyone who has the theme gem. When there's an update, theme developers push the update to RubyGems.
+Gem-based themes make it easier for theme developers to make updates available to anyone who has the theme gem. When there's an update, theme developers push the update to RubyGems.
 -->
 루비 젬 기반 테마는 개발자가 해당 테마 사용자들에게 쉽게 업데이트를 제공할 수 있게 해줍니다.
 
@@ -85,19 +100,27 @@ To locate a theme's files on your computer:
 자신의 컴퓨터에서 테마파일의 위치를 찾으려면:
 
 <!--
-1. Run `bundle show` followed by the name of the theme's gem, e.g., `bundle show minima` for Jekyll's default theme.
+1. Run `bundle info --path` followed by the name of the theme's gem, e.g., `bundle info --path minima` for Jekyll's default theme.
 
-   This returns the location of the gem-based theme files. For example, the Minima theme's files might be located in `/usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0` on macOS.
+   This returns the location of the gem-based theme files. For example, the Minima theme's files might be located in `/usr/local/lib/ruby/gems/2.6.0/gems/minima-2.5.1` on macOS.
 
 2. Open the theme's directory in Finder or Explorer:
 
    ```sh
    # On MacOS
-   open $(bundle show minima)
+   open $(bundle info --path minima)
+
    # On Windows
-   explorer /usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0
+   # First get the gem's installation path:
+   #
+   #   bundle info --path minima
+   #   => C:/Ruby26-x64/lib/ruby/gems/{{ site.data.ruby.current_version }}/gems/minima-2.5.1
+   #
+   # then invoke explorer with above path, substituting `/` with `\`
+   explorer C:\Ruby26-x64\lib\ruby\gems\{{ site.data.ruby.current_version}}\gems\minima-2.5.1
+
    # On Linux
-   xdg-open $(bundle show minima)
+   xdg-open $(bundle info --path minima)
    ```
 
    A Finder or Explorer window opens showing the theme's files and directories. The Minima theme gem contains these files:
@@ -130,19 +153,27 @@ To locate a theme's files on your computer:
         └── main.scss
      ```
 -->
-1. 테마의 젬 이름과 함께 `bundle show` 를 실행합니다. 예, Jekyll 기본 테마의 경우 `bundle show minima`.
+1. 테마의 젬 이름과 함께 `bundle info --path` 를 실행합니다. 예, Jekyll 기본 테마의 경우 `bundle info --path minima`.
 
-   이 명령은 루비 젬 기반 테마 파일의 위치를 보여줍니다. 예를 들어, 맥OS 에서 Minima 테마 파일의 위치는 `/usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0` 입니다.
+   이 명령은 루비 젬 기반 테마 파일의 위치를 보여줍니다. 예를 들어, 맥OS 에서 Minima 테마 파일의 위치는 `/usr/local/lib/ruby/gems/2.6.0/gems/minima-2.5.1` 입니다.
 
 2. Finder 나 탐색기로 테마 디렉토리를 엽니다:
 
    ```sh
    # 맥OS 인 경우
-   open $(bundle show minima)
+   open $(bundle info --path minima)
+
    # 윈도우즈인 경우
-   explorer /usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0
+   # 먼저 젬의 설치 경로를 확인한다:
+   #
+   #   bundle info --path minima
+   #   => C:/Ruby26-x64/lib/ruby/gems/{{ site.data.ruby.current_version }}/gems/minima-2.5.1
+   #
+   # 그 다음 `/` 를 `\` 로 바꿔서 위의 경로를 탐색기로 연다
+   explorer C:\Ruby26-x64\lib\ruby\gems\{{ site.data.ruby.current_version}}\gems\minima-2.5.1
+
    # 리눅스인 경우
-   xdg-open $(bundle show minima)
+   xdg-open $(bundle info --path minima)
    ```
 
    Finder 나 익스플로러 창이 열려 테마의 파일과 디렉토리를 보여줍니다. Minima 테마 젬에는 다음 파일들이 포함되어 있습니다:
@@ -232,8 +263,8 @@ Then you must tell Jekyll about the plugins that were referenced by the theme. Y
 그 다음 테마가 참조하고 있던 플러그인들을 Jekyll 에 알려주어야 합니다. 이 플러그인들은 테마 gemspec 파일의 런타임 종속성 (Runtime Dependency) 을 보면 알 수 있습니다. Minima 테마로부터 변환하는 상황을 예로 들어보면, 다음과 같은 내용이 있을 것입니다:
 
 ```
-spec.add_runtime_dependency "jekyll-feed", "~> 0.9"
-spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.1"
+spec.add_runtime_dependency "jekyll-feed", "~> 0.12"
+spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.6"
 ```
 
 <!--
@@ -249,8 +280,8 @@ You could list them individually in both `Gemfile` and `_config.yml`.
 ```ruby
 # ./Gemfile
 
-gem "jekyll-feed", "~> 0.9"
-gem "jekyll-seo-tag", "~> 2.1"
+gem "jekyll-feed", "~> 0.12"
+gem "jekyll-seo-tag", "~> 2.6"
 ```
 
 ```yaml
@@ -270,8 +301,8 @@ Or you could list them explicitly as Jekyll plugins in your Gemfile, and not upd
 # ./Gemfile
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.9"
-  gem "jekyll-seo-tag", "~> 2.1"
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag", "~> 2.6"
 end
 ```
 
@@ -281,9 +312,9 @@ Either way, don't forget to `bundle update`.
 어떤 방법이든지, `bundle update` 하는 것을 잊지 마세요.
 
 <!--
-However, if you're publishing on GitHub Pages you should update only your `_config.yml` as GitHub Pages doesn't load plugins via Bundler.
+If you're publishing on GitHub Pages you should update only your `_config.yml` as GitHub Pages doesn't load plugins via Bundler.
 -->
-하지만, GitHub Pages 는 Bundler 로 플러그인을 불러오지 않기 때문에 GitHub Pages 에 게시하는 경우에는 오직 `_config.yml` 만 수정해야 합니다.
+GitHub Pages 는 Bundler 로 플러그인을 불러오지 않기 때문에 GitHub Pages 에 게시하는 경우에는 오직 `_config.yml` 만 수정해야 합니다.
 
 <!--
 Finally, remove references to the theme gem in `Gemfile` and configuration. For example, to remove `minima`:
@@ -291,10 +322,10 @@ Finally, remove references to the theme gem in `Gemfile` and configuration. For 
 마지막으로, 환경설정 파일과 `Gemfile` 에서 테마 젬에 대한 참조를 제거합니다. 예를 들어, `minima` 를 제거하려면:
 
 <!--
-- Open `Gemfile` and remove `gem "minima", "~> 2.0"`.
+- Open `Gemfile` and remove `gem "minima", "~> 2.5"`.
 - Open `_config.yml` and remove `theme: minima`.
 -->
-- `Gemfile` 을 열고 `gem "minima", "~> 2.0"` 를 제거합니다.
+- `Gemfile` 을 열고 `gem "minima", "~> 2.5"` 를 제거합니다.
 - `_config.yml` 을 열고 `theme: minima` 를 제거합니다.
 
 <!--
@@ -336,7 +367,7 @@ To install a gem-based theme:
    ```diff
    # ./Gemfile
 
-   - gem "minima", "~> 2.0"
+   - gem "minima", "~> 2.5"
    + gem "jekyll-theme-minimal"
    ```
 
@@ -371,7 +402,7 @@ To install a gem-based theme:
    ```diff
    # ./Gemfile
 
-   - gem "minima", "~> 2.0"
+   - gem "minima", "~> 2.5"
    + gem "jekyll-theme-minimal"
    ```
 
@@ -410,7 +441,7 @@ If you're publishing your Jekyll site on [GitHub Pages](https://pages.github.com
 ## 루비 젬 기반 테마 만들기
 
 <!--
-If you're a Jekyll theme developer (rather than just a consumer of themes), you can package up your theme in RubyGems and allow users to install it through Bundler.
+If you're a Jekyll theme developer (rather than a consumer of themes), you can package up your theme in RubyGems and allow users to install it through Bundler.
 -->
 당신이 만약 (단순히 테마를 사용하는 것이 아닌) Jekyll 테마 개발자라면, 자신의 테마를 RubyGems 로 패키지화 하여 다른 사용자들이 Bundler 로 설치할 수 있게 만들 수 있습니다.
 
@@ -458,9 +489,9 @@ Theme layouts and includes work just like they work in any Jekyll site. Place la
 테마의 레이아웃과 조각파일은 사이트에 있는 것과 동일한 방식으로 동작합니다. 레이아웃은 테마의 `/_layouts` 폴더에, 조각파일은 테마의 `/_includes` 폴더에 저장하세요.
 
 <!--
-For example, if your theme has a `/_layouts/page.html` file, and a page has `layout: page` in its YAML front matter, Jekyll will first look to the site's `_layouts` folder for the `page` layout, and if none exists, will use your theme's `page` layout.
+For example, if your theme has a `/_layouts/page.html` file, and a page has `layout: page` in its front matter, Jekyll will first look to the site's `_layouts` folder for the `page` layout, and if none exists, will use your theme's `page` layout.
 -->
-예를 들어, 당신의 테마에 `/_layouts/page.html` 파일이 있고, YAML 머리말에 `layout: page` 가 적힌 페이지가 있다면, Jekyll 은 먼저 사이트의 `_layouts` 폴더에서 `page` 레이아웃을 찾아보고, 만약 없다면, 테마에 들어있는 `page` 레이아웃을 사용할 것입니다.
+예를 들어, 당신의 테마에 `/_layouts/page.html` 파일이 있고, 머리말에 `layout: page` 가 적힌 페이지가 있다면, Jekyll 은 먼저 사이트의 `_layouts` 폴더에서 `page` 레이아웃을 찾아보고, 만약 없다면, 테마에 들어있는 `page` 레이아웃을 사용할 것입니다.
 
 <!--
 ### Assets
@@ -473,11 +504,11 @@ Any file in `/assets` will be copied over to the user's site upon build unless t
 동일한 상대경로를 가진 파일이 없다면 `/assets` 에 있는 모든 파일은 빌드 시 사용자의 사이트에 복사될 것입니다. 여기에 보관할 수 있는 자원의 종류는 제한이 없습니다: SCSS, 이미지, 웹 폰트, 등등. 이 파일들은 Jekyll 의 페이지나 정적 파일과 동일하게 동작합니다:
 
 <!--
-- If the file has [YAML front matter](/docs/frontmatter/) at the top, it will be rendered.
-- If the file does not have YAML front matter, it will simply be copied over into the resulting site.
+- If the file has [front matter](/docs/front-matter/) at the top, it will be rendered.
+- If the file does not have front matter, it will simply be copied over into the resulting site.
 -->
-- 파일의 첫 부분에 [YAML 머리말](/docs/frontmatter/)이 있다면, 렌더링 과정을 거칩니다.
-- 파일에 YAML 머리말이 없다면, Site Destination 으로 단순 복사됩니다.
+- 파일의 첫 부분에 [머리말](/docs/front-matter/)이 있다면, 렌더링 과정을 거칩니다.
+- 파일에 머리말이 없다면, Site Destination 으로 단순 복사됩니다.
 
 <!--
 This allows theme creators to ship a default `/assets/styles.scss` file which their layouts can depend on as `/assets/styles.css`.
@@ -529,6 +560,33 @@ Jekyll will automatically require all whitelisted `runtime_dependencies` of your
 With this, the end-user need not keep track of the plugins required to be included in their config file for their theme-gem to work as intended.
 -->
 이것으로, 최종 사용자는 자신이 사용하는 테마 젬을 올바르게 작동시키기 위해 필요한 플러그인들을 찾아 환경설정 파일에 넣을 필요가 없습니다.
+
+<!--
+### Pre-configuring Theme-gems {%- include docs_version_badge.html version="4.0" -%}
+-->
+### 테마-젬 사전-환경설정 {%- include docs_version_badge.html version="4.0" -%}
+
+<!--
+Jekyll will read-in a `_config.yml` at the root of the theme-gem and merge its data into the site's existing configuration data.
+-->
+Jekyll 은 테마-젬의 루트 디렉토리에서 `_config.yml` 을 읽어들여 사이트의 기존 환경설정 데이터에 병합시킬것 입니다.
+
+<!--
+But unlike other entities loaded from within the theme, loading the config file comes with a few restrictions, as summarized below:
+  * Jekyll's default settings cannot be overridden by a theme-config. That *ball is still in the user's court.*
+  * The theme-config-file cannot be a symlink, irrespective of `safe mode` and whether the file pointed to by the symlink is a legitimate file within the theme-gem.
+  * The theme-config should be a set of key-value pairs. An empty config file, a config file that simply *lists items* under a key, or a config file with just a simple string of text will simply be ignored silently. Users will not get a warning or any log output regarding this discrepancy.
+  * Any settings defined by the theme-config can be overridden by the user.
+-->
+하지만 테마로부터 불러오는 다른 엔티티들과는 다르게, 환경설정 파일을 읽어들이는 것은 몇 가지 제약을 가지고 있습니다. 요약하면 다음과 같습니다:
+  * Jekyll 의 디폴트 설정들은 테마-환경설정으로 덮어쓰여지지 않습니다. *주도권은 여전히 사용자측에 있습니다.*
+  * 테마-환경설정-파일은 심볼릭 링크일 수 없습니다. 혹여 `safe mode` 이거나 심볼링 링크가 테마-젬 안에 있는 일반 파일을 가리키는 경우에도 불가능합니다.
+  * 테마-환경설정은 키-값 쌍들의 묶음이어야 합니다. 비어있는 환경설정 파일이나 단순히 키 아래에 *항목을 나열하는* 환경설정 파일, 단지 문자열이 들어있는 환경설정 파일등은 아무런 경고도 없이 조용히 무시됩니다.
+  * 테마-환경설정에서 정의된 모든 설정은 사용자가 덮어쓸 수 있습니다.
+
+While this feature is to enable easier adoption of a theme, the restrictions ensure that a theme-config cannot affect the build in a concerning manner. Any plugins required by the theme will have to be listed manually by the user or provided by the theme's `gemspec` file.
+
+This feature will let the theme-gem to work with *theme-specific config variables* out-of-the-box.
 
 <!--
 ### Documenting your theme

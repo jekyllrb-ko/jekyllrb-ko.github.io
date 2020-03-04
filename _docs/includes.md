@@ -83,7 +83,9 @@ You could then reference that variable in your include:
 
 {% raw %}
 ```liquid
-{% include {{ page.my_variable }} %}
+{% if page.my_variable %}
+  {% include {{ page.my_variable }} %}
+{% endif %}
 ```
 {% endraw %}
 
@@ -199,9 +201,9 @@ To safeguard situations where users don't supply a value for the parameter, you 
 사용자가 파라메터를 사용하지 않았을 때를 대비한 안전장치로서, [Liquid 디폴트 필터](https://shopify.github.io/liquid/filters/default/)를 사용할 수 있습니다.
 
 <!--
-Overall, you can create includes that act as templates for a variety of uses &mdash; inserting audio or video clips, alerts, special formatting, and more. However, note that you should avoid using too many includes, as this will slow down the build time of your site. For example, don't use includes every time you insert an image. (The above technique shows a use case for special images.)
+Overall, you can create includes that act as templates for a variety of uses &mdash; inserting audio or video clips, alerts, special formatting, and more. Note that you should avoid using too many includes, as this will slow down the build time of your site. For example, don't use includes every time you insert an image. (The above technique shows a use case for special images.)
 -->
-정리하자면, 템플릿같은 역할을 하는 조각파일을 만들어 다양한 방식으로 사용할 수 있습니다 &mdash; 음성이나 영상, 경고문구, 특별한 코드 등의 삽입. 하지만, 조각파일을 너무 많이 사용하는 것은, 사이트의 빌드 시간을 느리게 만드므로, 가급적 피해야 합니다. 예를 들어, 이미지를 삽입할 때마다 매번 조각파일을 사용하는 것은 좋지 않습니다. (위의 예시는 특별취급해야하는 일부 이미지에 사용할만한 기법입니다.)
+정리하자면, 템플릿같은 역할을 하는 조각파일을 만들어 다양한 방식으로 사용할 수 있습니다 &mdash; 음성이나 영상, 경고문구, 특별한 코드 등의 삽입. 조각파일을 너무 많이 사용하는 것은, 사이트의 빌드 시간을 느리게 만드므로, 가급적 피해야 합니다. 예를 들어, 이미지를 삽입할 때마다 매번 조각파일을 사용하는 것은 좋지 않습니다. (위의 예시는 특별취급해야하는 일부 이미지에 사용할만한 기법입니다.)
 
 <!--
 ### Passing parameter variables to includes
@@ -241,59 +243,3 @@ Then pass this captured variable into the parameter for the include. Omit the qu
 {% include note.html content=download_note %}
 ```
 {% endraw %}
-
-<!--
-### Passing references to YAML files as parameter values
--->
-### YAML 파일의 참조를 파라메터로 전달하기
-
-<!--
-Instead of passing string variables to the include, you can pass a reference to a YAML data file stored in the `_data` folder.
--->
-조각파일에 문자열 변수를 전달하는 대신, `_data` 폴더의 YAML 데이터 파일에 대한 참조를 전달할 수 있습니다.
-
-<!--
-Here's an example. In the `_data` folder, suppose you have a YAML file called `profiles.yml`. Its content looks like this:
--->
-여기 예제가 있습니다. `_data` 폴더에, `profiles.yml` 이라는 YAML 파일을 가지고 있다고 가정해봅시다. 그 내용은 다음과 같습니다:
-
-```yaml
-- name: John Doe
-  login_age: old
-  image: johndoe.jpg
-
-- name: Jane Doe
-  login_age: new
-  image: janedoe.jpg
-```
-
-<!--
-In the `_includes` folder, assume you have a file called `spotlight.html` with this code:
--->
-`_includes` 폴더에는, 다음과 같은 내용을 가진 `spotlight.html` 이라는 파일도 있습니다:
-
-{% raw %}
-```liquid
-{% for person in include.participants %}
-{% if person.login_age == "new" %}
-{{ person.name }}
-{% endif %}
-{% endfor %}
-```
-{% endraw %}
-
-<!--
-Now when you insert the `spotlight.html` include file, you can submit the YAML file as a parameter:
--->
-이제 조각파일 `spotlight.html` 을 삽입할 때, YAML 파일을 파라메터로 전달할 수 있습니다:
-
-{% raw %}
-```liquid
-{% include spotlight.html participants=site.data.profiles %}
-```
-{% endraw %}
-
-<!--
-In this instance, `site.data.profiles` gets inserted in place of {% raw %}`include.participants`{% endraw %} in the include file, and the Liquid logic processes. The result will be `Jane Doe`.
--->
-이 예제에서, 조각파일의 {% raw %}`include.participants`{% endraw %} 위치에 `site.data.profiles` 가 삽입된 후 Liquid 코드가 처리됩니다. 결과는 `Jane Doe`입니다.

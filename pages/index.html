@@ -1,0 +1,134 @@
+---
+layout: default
+overview: true
+permalink: /
+---
+
+<section class="intro">
+  <div class="grid">
+    <div class="unit whole center-on-mobiles">
+<!--
+      <p class="first">Transform your plain text into static&nbsp;websites and&nbsp;blogs.</p>
+-->
+      <p class="first">평범한 텍스트 파일을 정적 웹사이트 또는 블로그로 변신시켜 보세요.</p>
+    </div>
+  </div>
+</section>
+<section class="comment">
+  <div class="grid">
+    <div class="unit whole center-on-mobiles">
+      {% assign commit = site.data.ko.origin-commits[0] %}
+      <p>※ 이 사이트는 <a href="{{ site.repository }}/commit/{{ commit.hash }}">{{ commit.date | date: "%Y년 %-m월 %-d일" }} 기준 내용</a>의 번역본입니다. 번역에 관련된 이슈나 PR 은 <a href="https://github.com/jekyllrb-ko/jekyllrb-ko.github.io">jekyllrb-ko</a> 로 부탁드립니다.</p>
+    </div>
+  </div>
+</section>
+<section class="features">
+  <div class="grid">
+    <div class="unit one-third">
+<!--
+      <h2>Simple</h2>
+      <p>
+        No more databases, comment moderation, or pesky updates to install—just <em>your content</em>.
+      </p>
+      <a href="/docs/usage/">How Jekyll works &rarr;</a>
+-->
+      <h2>심플함</h2>
+      <p>
+        데이터베이스도 댓글 관리도 성가신 업데이트도 없습니다 - 오직 <em>당신의 컨텐츠</em> 뿐입니다.
+      </p>
+      <a href="/docs/usage/">Jekyll 작동 방법 &rarr;</a>
+    </div>
+    <div class="unit one-third">
+<!--
+      <h2>Static</h2>
+      <p><a href="https://daringfireball.net/projects/markdown/">Markdown</a>, <a href="https://github.com/Shopify/liquid/wiki">Liquid</a>, HTML <span class="amp">&amp;</span> CSS go in. Static sites come out ready for deployment.</p>
+      <a href="/docs/templates/">Jekyll template guide &rarr;</a>
+-->
+      <h2>정적</h2>
+      <p><a href="https://daringfireball.net/projects/markdown/">마크다운</a>, <a href="https://github.com/Shopify/liquid/wiki">Liquid</a>, HTML <span class="amp">&amp;</span> CSS 를 넣으면, 바로 게시할 수 있는 사이트가 완성됩니다.</p>
+      <a href="/docs/templates/">Jekyll 템플릿 설명서 &rarr;</a>
+    </div>
+    <div class="unit one-third">
+<!--
+      <h2>Blog-aware</h2>
+      <p>
+        Permalinks, categories, pages, posts, and custom layouts are all first-class citizens here.
+      </p>
+      <a href="http://import.jekyllrb.com">Migrate your blog &rarr;</a>
+-->
+      <h2>블로그 지향적</h2>
+      <p>
+        고유주소, 카테고리, 페이지, 포스트, 사용자 레이아웃 등의 기능이 기본적으로 포함되어 있습니다.
+      </p>
+      <a href="http://import.jekyllrb.com">블로그 마이그레이션 &rarr;</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="quickstart">
+  <div class="grid">
+    <div class="unit golden-small center-on-mobiles">
+<!--
+      <h3>Get up and running <em>in&nbsp;seconds</em>.</h3>
+-->
+      <h3>준비에서 실행까지 단 <em>몇 초</em> 만에 끝</h3>
+    </div>
+    <div class="unit golden-large code">
+<!--
+      <p class="title">Quick-start Instructions</p>
+-->
+      <p class="title">빠른 시작 방법</p>
+      <div class="shell">
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">gem install bundler jekyll</span>
+        </p>
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">jekyll new my-awesome-site</span>
+        </p>
+        <p class="line">
+          <span class="path">~</span>
+          <span class="prompt">$</span>
+          <span class="command">cd my-awesome-site</span>
+        </p>
+        <p class="line">
+          <span class="path">~/my-awesome-site</span>
+          <span class="prompt">$</span>
+          <span class="command">bundle exec jekyll serve</span>
+        </p>
+        <p class="line">
+<!--
+          <span class="output"># => Now browse to http://localhost:4000</span>
+-->
+          <span class="output"># => 브라우저로 http://localhost:4000 에 접속</span>
+        </p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<section class="free-hosting">
+  <div class="grid">
+    <div class="unit whole">
+      <div class="grid pane">
+        <div class="unit whole center-on-mobiles">
+          <img src="img/octojekyll.png" width="300" height="251" alt="Free Jekyll hosting on GitHub Pages">
+          <div class="pane-content">
+<!--
+            <h2 class="center-on-mobiles"><strong>Free hosting</strong> with GitHub Pages</h2>
+            <p>Sick of dealing with hosting companies? <a href="https://pages.github.com/">GitHub Pages</a> are <em>powered by Jekyll</em>, so you can easily deploy your site using GitHub for free&mdash;<a href="https://help.github.com/articles/about-supported-custom-domains/">custom domain name</a> and&nbsp;all.</p>
+            <a href="https://pages.github.com/">Learn more about GitHub Pages &rarr;</a>
+-->
+            <h2 class="center-on-mobiles">GitHub Pages 로 <strong>무료 호스팅</strong></h2>
+            <p>호스팅 업체와의 실랑이에 지쳤나요? <a href="https://pages.github.com/">GitHub Pages</a> 는 <em>Jekyll 로 작동</em> 하기 때문에, GitHub 을 사용하여 쉽게, 무료로 자신의 사이트를 게시할 수 있습니다&mdash;<a href="https://help.github.com/articles/about-supported-custom-domains/">사용자 도메인</a> 및 기타 등등.</p>
+            <a href="https://pages.github.com/">GitHub Pages 에 대해 더 자세히 알아보세요 &rarr;</a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</section>

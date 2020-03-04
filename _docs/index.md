@@ -1,82 +1,84 @@
 ---
-#title: Welcome
-title: 환영합니다
-permalink: /docs/home/
-redirect_from: /docs/index.html
+#title: Quickstart
+title: 빠른 시작
+permalink: /docs/
+redirect_from:
+  - /docs/home/
+  - /docs/quickstart/
+  - /docs/extras/
 ---
+<!--
+Jekyll is a static site generator. You give it text written in your
+favorite markup language and it uses layouts to create a static website. You can
+tweak how you want the site URLs to look, what data gets displayed on the
+site, and more.
+-->
+Jekyll 은 정적 사이트 생성기입니다. 당신이 즐겨 사용하는 마크업 언어로
+작성된 텍스트를 Jekyll 에 넘겨주면 레이아웃을 사용해 정적 웹사이트를 생성합니다.
+사이트 URL 의 형식이나 어떤 데이터를 사이트에 표시할 것인지 등, 여러 동작을
+조정할 수 있습니다.
 
 <!--
-This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing content, customizing your build, and deploying.
+## Prerequisites
 -->
-이 사이트의 목표는 Jekyll 에 관한 종합 설명서를 제공하는 것입니다. 지금부터, 사이트 구성과 실행, 컨텐츠 작성과 관리, 사이트 생성방식 변경과 설치 방법에 대해 다룰 것 입니다.
+## 전제조건 {#prerequisites}
 
 <!--
-## What is Jekyll, exactly?
+See [requirements](/docs/installation/#requirements).
 -->
-## Jekyll 이란게 뭐죠, 한 마디로?
+[준비물](/docs/installation/#requirements) 섹션을 읽어보세요.
 
 <!--
-Jekyll is a simple, blog-aware, static site generator.
+## Instructions
 -->
-Jekyll 은 아주 심플하고 블로그 지향적인 정적 사이트 생성기입니다.
+## 절차 {#instructions}
 
 <!--
-You create your content as text files ([Markdown](https://daringfireball.net/projects/markdown/)), and organize them into folders. Then, you build the shell of your site using [Liquid](https://shopify.github.io/liquid/)-enhanced HTML templates. Jekyll automatically stitches the content and templates together, generating a website made entirely of static assets, suitable for uploading to any server.
+1. Install a full [Ruby development environment](/docs/installation/).
+2. Install Jekyll and [bundler](/docs/ruby-101/#bundler) [gems](/docs/ruby-101/#gems).
+```
+gem install jekyll bundler
+```
+3. Create a new Jekyll site at `./myblog`.
+```
+jekyll new myblog
+```
+4. Change into your new directory.
+```
+cd myblog
+```
+5. Build the site and make it available on a local server.
+```
+bundle exec jekyll serve
+```
+6. Browse to [http://localhost:4000](http://localhost:4000){:target="_blank"}
 -->
-텍스트([마크다운](https://daringfireball.net/projects/markdown/)) 파일로 컨텐츠를 작성하고, 폴더로 그 파일들을 정리합니다. 다음, [Liquid](https://shopify.github.io/liquid/) 기능이 추가된 HTML 템플릿을 사용해 사이트의 모양을 만듭니다. Jekyll 은 자동으로 내용물과 템플릿들을 함께 합쳐서, 어떤 서버에서도 올바르게 작동하는, 완전한 정적 웹사이트를 생성합니다.
+1. 완전한 [루비 개발환경](/docs/installation/)을 설치한다.
+2. Jekyll 과 [Bundler](/docs/ruby-101/#bundler) [젬](/docs/ruby-101/#gems)을 설치한다.
+```
+gem install jekyll bundler
+```
+3. `./myblog` 에 새 Jekyll 사이트를 생성한다.
+```
+jekyll new myblog
+```
+4. 생성된 디렉토리로 이동한다.
+```
+cd myblog
+```
+5. 사이트를 빌드하고 로컬 서버에 적용한다.
+```
+bundle exec jekyll serve
+```
+6. 이제 브라우저로 [http://localhost:4000](http://localhost:4000){:target="_blank"} 에 접속한다.
 
 <!--
-Jekyll happens to be the engine behind [GitHub Pages](https://pages.github.com), so you can host your project’s Jekyll page/blog/website on GitHub’s servers **for free**.
+If you encounter any errors during this process, see the
+[troubleshooting](/docs/troubleshooting/#configuration-problems) page. Also,
+make sure you've installed the development headers and other prerequisites as
+mentioned on the [requirements](/docs/installation/#requirements) page.
 -->
-Jekyll 은 [GitHub Pages](https://pages.github.com) 의 내부 엔진이기 때문에, 당신의 프로젝트에 있는 Jekyll 페이지/블로그/웹사이트를 GitHub 서버에 **무료로** 호스팅 할 수 있습니다.
-
-<!--
-## Navigating the Guide
--->
-## 본 설명서 사용법
-
-<!--
-Throughout this guide, you'll see these special sections that help you get the most out of Jekyll:
--->
-당신이 Jekyll 의 모든 기능을 사용할 수 있도록 도와주는 특별한 섹션들이 설명서 이곳 저곳에 붙어 있습니다:
-
-<div class="note">
-<!--
-  <h5>ProTips™</h5>
-  <p>Tips and tricks that'll make you a Jekyll wizard!</p>
--->
-  <h5>ProTips™</h5>
-  <p>이 팁들은 당신을 Jekyll 의 달인으로 만들어 줄 것입니다!</p>
-</div>
-
-<div class="note info">
-<!--
-  <h5>Notes</h5>
-  <p>Extra tidbits that are sometimes necessary to understand Jekyll.</p>
--->
-  <h5>메모</h5>
-  <p>이 토막정보들은 때때로 Jekyll 을 이해하는데 필요합니다.</p>
-</div>
-
-<div class="note warning">
-<!--
-  <h5>Warnings</h5>
-  <p>Common pitfalls to avoid.</p>
--->
-  <h5>주의사항</h5>
-  <p>자주 있는 실수들이므로 주의하세요.</p>
-</div>
-
-<div class="note unreleased">
-<!--
-  <h5>Unreleased</h5>
-  <p>Features planned for future versions of Jekyll, but not available yet.</p>
--->
-  <h5>미공개</h5>
-  <p>이 후 버전의 Jekyll 에 계획된, 아직 사용할 수 없는 기능들</p>
-</div>
-
-<!--
-If you find anything we haven’t covered, or would like to share a tip that others might find handy, please [file an issue]({{ site.repository }}/issues/new) and we’ll see about adding it to the guide.
--->
-만약 우리가 다루지 않은 것을 발견한다거나, 다른 이들에게도 도움이 될 만한 팁을 공유하고 싶은 경우, [이슈로 등록]({{ site.repository }}/issues/new)해 주시면 설명서에 포함시키도록 검토해보겠습니다.
+만약 위 과정 중 문제가 발생한다면,
+[문제해결](/docs/troubleshooting/) 페이지를 살펴보세요. 또한,
+[준비물](/docs/installation/#requirements) 페이지에서 설명하는
+개발 헤더나 기타 전제 조건이 설치되었는지도 확인해보세요.

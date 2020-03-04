@@ -1,5 +1,5 @@
 ---
-#title: Blog migrations
+#title: Blog Migrations
 title: 블로그 옮기기
 permalink: /docs/migrations/
 ---

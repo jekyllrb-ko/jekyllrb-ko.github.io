@@ -26,7 +26,7 @@ Jekyll 3 에서는, Gemfile 과 `_config.yml` 의 `plugins` 에 `jekyll-paginate
 <!--
   <h5>Pagination only works within HTML files</h5>
   <p>
-    Pagination does not work from within Markdown or Textile files from
+    Pagination does not work from within Markdown files from
     your Jekyll site. Pagination works when called from within the HTML
     file, named <code>index.html</code>, which optionally may reside in and
     produce pagination from within a subdirectory, via the
@@ -35,10 +35,10 @@ Jekyll 3 에서는, Gemfile 과 `_config.yml` 의 `plugins` 에 `jekyll-paginate
 -->
   <h5>페이지 나누기는 오직 HTML 파일에서만 작동합니다</h5>
   <p>
-    페이지 나누기는 마크다운이나 Textile 파일 안에서 작동하는 것이 아닙니다. 페이지
-    나누기는 파일명이 <code>index.html</code> 인 HTML 파일 안에서 호출되거나
-    환경설정 <code>paginate_path</code> 로 설정된 하위 디렉토리 안에서 동작합니다.
-
+    페이지 나누기는 마크다운 파일 안에서 작동하는 것이 아닙니다.
+    페이지 나누기는 파일명이 <code>index.html</code> 인 HTML 파일
+    안에서 호출되거나 환경설정 <code>paginate_path</code> 로 설정된
+    하위 디렉토리 안에서 동작합니다.
 
   </p>
 </div>
@@ -78,17 +78,18 @@ paginate_path: "/blog/page:num/"
 <!--
 This will read in `blog/index.html`, send it each pagination page in Liquid as
 `paginator` and write the output to `blog/page:num/`, where `:num` is the
-pagination page number, starting with `2`. If a site has 12 posts and specifies
-`paginate: 5`, Jekyll will write `blog/index.html` with the first 5 posts, `blog/page2/index.html` with the next 5 posts
-and `blog/page3/index.html` with the last 2 posts into the destination
+pagination page number, starting with `2`. <br/>
+If a site has 12 posts and specifies `paginate: 5`, Jekyll will write `blog/index.html`
+with the first 5 posts, `blog/page2/index.html` with the next 5 posts and
+`blog/page3/index.html` with the last 2 posts into the destination directory.
 directory.
 -->
 이 설정은 `blog/index.html` 에서 사용되어, 나뉘어진 각 페이지는 이 값을
 `paginator` 라는 Liquid 로 받게 되며 결과물은 `blog/page:num/` 에 만들어집니다.
-여기서 `:num` 은 `2` 부터 시작하는 페이지 번호입니다. 사이트가 12 개의 포스트를
-가지고 있고 `pagenate: 5` 라고 설정되어 있는 경우, Jekyll 은 처음 5 개의
-포스트로 `blog/index.html` 을 만들고, 다음 5 개의 포스트로 `blog/page2/index.html` 을,
-마지막 2 개의 포스트로는 `blog/page3/index.html` 을 만들게 됩니다.
+여기서 `:num` 은 `2` 부터 시작하는 페이지 번호입니다. <br/>
+사이트에 12 개의 포스트가 있고 `pagenate: 5` 라고 설정되어 있는 경우, Jekyll 은 목적지
+디렉토리에 처음 5 개의 포스트로 `blog/index.html` 을 만들고, 다음 5 개의
+포스트로 `blog/page2/index.html` 을, 마지막 2 개의 포스트로는 `blog/page3/index.html` 을 만들게 됩니다.
 
 <div class="note warning">
 <!--
@@ -109,14 +110,20 @@ directory.
 <!--
   <h5>Pagination for categories, tags and collections</h5>
   <p>
-    The more recent <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> plugin supports more features. See the <a href="https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples">pagination examples</a> in the repository.
-    <strong>This plugin is not supported by GitHub Pages</strong>.
+    The more recent <a href="https://github.com/sverrirs/jekyll-paginate-v2">
+    jekyll-paginate-v2</a> plugin supports more features. See the
+    <a href="https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples">
+    pagination examples</a> in the repository. <strong>This plugin is not
+    supported by GitHub Pages</strong>.
   </p>
 -->
-  <h5>카테고리와 태그, 콜렉션의 페이지 나누기</h5>
+  <h5>카테고리와 태그, 컬렉션의 페이지 나누기</h5>
   <p>
-    최신 버전의 <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> 플러그인은 더 많은 기능을 지원합니다. 저장소에서 <a href="https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples">페이지 나누기 예제</a>를 살펴보세요.
-    <strong>GitHub Pages 에서는 이 플러그인을 지원하지 않습니다</strong>.
+    최신 버전의 <a href="https://github.com/sverrirs/jekyll-paginate-v2">
+    jekyll-paginate-v2</a> 플러그인은 더 많은 기능을 지원합니다. 저장소에서
+    <a href="https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples">
+    페이지 나누기 예제</a>를 살펴보세요. <strong>GitHub Pages 에서는 이
+    플러그인을 지원하지 않습니다</strong>.
   </p>
 </div>
 
@@ -132,150 +139,23 @@ attributes:
 페이지 나누기 플러그인이 제공하는 Liquid 객체 `paginator` 의 속성은 다음과
 같습니다:
 
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-<!--
-      <th>Attribute</th>
-      <th>Description</th>
--->
-      <th>속성</th>
-      <th>설명</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-<!--
-      <td><p><code>page</code></p></td>
-      <td><p>current page number</p></td>
--->
-      <td><p><code>page</code></p></td>
-      <td><p>현재 페이지 번호</p></td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>per_page</code></p></td>
-      <td><p>number of posts per page</p></td>
--->
-      <td><p><code>per_page</code></p></td>
-      <td><p>페이지 당 포스트 개수</p></td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>posts</code></p></td>
-      <td><p>a list of posts for the current page</p></td>
--->
-      <td><p><code>posts</code></p></td>
-      <td><p>현재 페이지의 포스트 목록</p></td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>total_posts</code></p></td>
-      <td><p>total number of posts in the site</p></td>
--->
-      <td><p><code>total_posts</code></p></td>
-      <td><p>사이트의 전체 포스트 개수</p></td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>total_pages</code></p></td>
-      <td><p>number of pagination pages</p></td>
--->
-      <td><p><code>total_pages</code></p></td>
-      <td><p>전체 페이지 수</p></td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>previous_page</code></p></td>
-      <td>
-          <p>
-              page number of the previous pagination page,
-              or <code>nil</code> if no previous page exists
-          </p>
-      </td>
--->
-      <td><p><code>previous_page</code></p></td>
-      <td>
-          <p>
-              이전 페이지 번호,
-              없으면 <code>nil</code>
-          </p>
-      </td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>previous_page_path</code></p></td>
-      <td>
-          <p>
-              path of previous pagination page,
-              or <code>nil</code> if no previous page exists
-          </p>
-      </td>
--->
-      <td><p><code>previous_page_path</code></p></td>
-      <td>
-          <p>
-              이전 페이지 경로,
-              없으면 <code>nil</code>
-          </p>
-      </td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>next_page</code></p></td>
-      <td>
-          <p>
-              page number of the next pagination page,
-              or <code>nil</code> if no subsequent page exists
-          </p>
-      </td>
--->
-      <td><p><code>next_page</code></p></td>
-      <td>
-          <p>
-              다음 페이지 번호,
-              없으면 <code>nil</code>
-          </p>
-      </td>
-    </tr>
-    <tr>
-<!--
-      <td><p><code>next_page_path</code></p></td>
-      <td>
-          <p>
-              path of next pagination page,
-              or <code>nil</code> if no subsequent page exists
-          </p>
-      </td>
--->
-      <td><p><code>next_page_path</code></p></td>
-      <td>
-          <p>
-              다음 페이지 경로,
-              없으면 <code>nil</code>
-          </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
+{% include docs_variables_table.html scope=site.data.jekyll_variables.paginator %}
 
 <div class="note info">
 <!--
   <h5>Pagination does not support tags or categories</h5>
   <p>Pagination pages through every post in the <code>posts</code>
-  variable unless a post has <code>hidden: true</code> in its YAML Front Matter.
+  variable unless a post has <code>hidden: true</code> in its front matter.
   It does not currently allow paging over groups of posts linked
   by a common tag or category. It cannot include any collection of
   documents because it is restricted to posts.</p>
 -->
   <h5>페이지 나누기는 태그나 카테고리를 지원하지 않습니다</h5>
-  <p>페이지 나누기는 각 포스트의 YAML 머리말에
+  <p>페이지 나누기는 각 포스트의 머리말에
   <code>hidden: true</code> 가 없는 한 <code>posts</code> 변수 안의 모든 포스트를 나눕니다.
   태그나 카테고리로 구분된 포스트 묶음을 페이지로 나누는 것은
   현재 허용되지 않습니다.  포스트에만 국한되기 때문에
-  문서 콜렉션에도 적용할 수 없습니다.</p>
+  문서 컬렉션에도 적용할 수 없습니다.</p>
 </div>
 
 <!--
@@ -315,11 +195,15 @@ title: My Blog
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      Previous
+    </a>
   {% else %}
     <span class="previous">Previous</span>
   {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <span class="page_number ">
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="next">Next</a>
   {% else %}
@@ -358,7 +242,7 @@ page with links to all but the current page.
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
   {% else %}
     <span>&laquo; Prev</span>
   {% endif %}
@@ -367,14 +251,14 @@ page with links to all but the current page.
     {% if page == paginator.page %}
       <em>{{ page }}</em>
     {% elsif page == 1 %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+      <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
     {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
 
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
   {% else %}
     <span>Next &raquo;</span>
   {% endif %}

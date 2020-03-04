@@ -43,7 +43,7 @@ can be done on Ubuntu or Debian by running:
 우분투 또는 데비안 계열에서의 설치 명령은 다음과 같습니다:
 
 ```sh
-sudo apt-get install ruby2.3-dev
+sudo apt-get install ruby2.6-dev
 ```
 
 <!--
@@ -56,7 +56,7 @@ sudo yum install ruby-devel
 ```
 
 <!--
-If you installed the above - specifically on Fedora 23 - but the extensions would still not compile, you are probably running a Fedora image that misses the `redhat-rpm-config` package. To solve this, simply run:
+If you installed the above - specifically on Fedora 23 - but the extensions would still not compile, you are probably running a Fedora image that misses the `redhat-rpm-config` package. To solve this, run:
 -->
 위 내용대로 모두 설치했지만 - 특히 페도라 23 에서 - 확장기능이 여전히 컴파일되지 않는다면, 아마도 `redhat-rpm-config` 패키지가 포함되지 않은 페도라 이미지를 사용하고 있는 것일 수 있습니다. 이를 해결하려면, 아래와 같이 실행하세요:
 
@@ -174,15 +174,15 @@ Xcode.app 은 앞서 설명한 명령행 도구와 충돌을 일으킬 수 있�
 설치하세요.
 
 <!--
-### Running Jekyll as Non-Superuser (no sudo!) 
+### Running Jekyll as Non-Superuser (no sudo!)
 -->
-### 관리자 권한 없이 Jekyll 실행하기 (No sudo!) 
+### 관리자 권한 없이 Jekyll 실행하기 (No sudo!)
 {: #no-sudo}
 
 <!--
 On most flavors of Linux, macOS, and Bash on Ubuntu on Windows, it is
 possible to run Jekyll as a non-superuser and without having to install
-gems to system-wide locations by adding the following lines to the end 
+gems to system-wide locations by adding the following lines to the end
 of your `.bashrc` file:
 -->
 우분투와 윈도우즈의 Bash 환경과 리눅스, 맥OS 에서 가장 매력적인 점을
@@ -201,8 +201,8 @@ export PATH=$HOME/gems/bin:$PATH
 ```
 
 <!--
-This tells `gem` to place its gems within the user's home folder, 
-not in a system-wide location, and adds the local `jekyll` command to the 
+This tells `gem` to place its gems within the user's home folder,
+not in a system-wide location, and adds the local `jekyll` command to the
 user's `PATH` ahead of any system-wide paths.
 -->
 이 설정으로 인해 `gem` 명령어는 시스템 관련 디렉토리가 아닌 사용자의 홈 폴더
@@ -211,7 +211,7 @@ user's `PATH` ahead of any system-wide paths.
 
 <!--
 This is also useful for many shared webhosting services, where user accounts
-have only limited privileges. Adding these exports to `.bashrc` before running 
+have only limited privileges. Adding these exports to `.bashrc` before running
 `gem install jekyll bundler` allows a complete non-`sudo` install of Jekyll.
 -->
 많은 공개 웹호스팅에서도, 그들이 제공하는 사용자 계정은 제한된 권한만을 가지고
@@ -219,8 +219,8 @@ have only limited privileges. Adding these exports to `.bashrc` before running
 `gem install jekyll bundler` 를 실행하면 완전 `sudo` 없이 Jekyll 을 설치할 수 있습니다.
 
 <!--
-To activate the new exports, either close and restart Bash, logout and 
-log back into your shell account, or run `. .bashrc` in the 
+To activate the new exports, either close and restart Bash, logout and
+log back into your shell account, or run `. .bashrc` in the
 currently-running shell.
 -->
 이 설정을 적용하려면, Bash 를 종료하고 다시 실행하거나
@@ -239,10 +239,10 @@ jekyll new test
 
 Running bundle install in /home/user/test...
 
-Your user account isn't allowed to install to the system RubyGems.
+Your user account is not allowed to install to the system RubyGems.
 You can cancel this installation and run:
 
-      bundle install --path vendor/bundle
+    bundle install --path vendor/bundle
 
 to install the gems into ./vendor/bundle/, or you can enter your password
 and install the bundled gems to RubyGems using sudo.
@@ -258,18 +258,18 @@ your user account.
 작동할 것입니다.
 
 <!--
-### Jekyll &amp; Mac OS X 10.11
+### Jekyll &amp; macOS
 -->
-### Jekyll &amp; 맥 OS X 10.11
+### Jekyll &amp; 맥OS
 
 <!--
-With the introduction of System Integrity Protection, several directories
+With the introduction of System Integrity Protection in v10.11, several directories
 that were previously writable are now considered system locations and are no
 longer available. Given these changes, there are a couple of simple ways to get
 up and running. One option is to change the location where the gem will be
 installed (again, using `sudo` only if necessary):
 -->
-시스템 무결성 보호 (System Integrity Protection) 기능의 도입으로 인해, 쓰기
+맥OS 10.11 버전부터 시스템 무결성 보호 (System Integrity Protection) 기능이 도입되어, 쓰기
 권한이 있었던 몇몇 디렉토리들이 이제부터는 시스템 디렉토리로 인식되어 더 이상
 사용할 수 없게 되었습니다. 이를 고려했을 때, 간편한 Jekyll 설치방법은 딱 두
 가지로 정리됩니다. 첫 번째는 루비 젬이 설치되는 위치를 변경하는 것입니다 (반드시
@@ -291,9 +291,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 
 <!--
-Once Homebrew is installed, the second step is easy:
+Once Homebrew is installed, the second step is to run:
 -->
-Homebrew 설치가 끝났으면, 나머지는 간단합니다:
+Homebrew 설치가 끝났으면, 다음과 같이 실행합니다:
 
 ```sh
 brew install ruby
@@ -409,10 +409,10 @@ http://localhost:4000/blog
 ## 환경설정 관련 문제점 {#configuration-problems}
 
 <!--
-The order of precedence for conflicting [configuration settings](../configuration/)
+The order of precedence for conflicting [configuration settings](/docs/configuration/)
 is as follows:
 -->
-[환경설정](../configuration/)이 충돌하는 경우의 우선순위는 다음과
+[환경설정](/docs/configuration/)이 충돌하는 경우의 우선순위는 다음과
 같습니다:
 
 <!--
@@ -443,13 +443,13 @@ specified elsewhere.
     ------------------------------------
     Invalid date '<%= Time.now.strftime('%Y-%m-%d %H:%M:%S %z') %>':
     Document 'vendor/bundle/gems/jekyll-3.4.3/lib/site_template/_posts/0000-00-00-welcome-to-jekyll.markdown.erb'
-    does not have a valid date in the YAML front matter.
+    does not have a valid date in front matter.
 ```
 
 <!--
-Simply adding `vendor/bundle` to the `exclude:` list will solve this problem but will lead to having other sub-directories under `/vendor/` (and also `/node_modules/`, if present) be processed to the destination folder `_site`.
+Adding `vendor/bundle` to the `exclude:` list will solve this problem but will lead to having other sub-directories under `/vendor/` (and also `/node_modules/`, if present) be processed to the destination folder `_site`.
 -->
-단순히 `vendor/bundle` 을 `exclude:` 목록에 추가하는 것만으로 이 문제를 해결할 수 있지만, `/vendor/` 의 하위 디렉토리들(존재하는 경우 `/node_modules/` 포함)이 최종 결과물 경로인 `_site` 안에도 생성됩니다.
+그저 `vendor/bundle` 을 `exclude:` 목록에 추가하는 것만으로 이 문제를 해결할 수 있지만, `/vendor/` 의 하위 디렉토리들(존재하는 경우, `/node_modules/` 포함)도 최종 결과물 경로인 `_site` 안에 생성됩니다.
 
 
 <!--
@@ -458,7 +458,7 @@ The proper solution is to incorporate the default setting for `exclude:` rather 
 자신의 설정에 기본 `exclude:` 설정을 포함시키는 쪽이 완전히 덮어쓰는 방법보다 더 낫습니다:
 
 <!--
-For versions upto `v3.4.3`, the `exclude:` setting must look like following:
+For versions up to `v3.4.3`, the `exclude:` setting must look like following:
 -->
 버전 `v3.4.3` 까지, `exclude:` 설정은 다음과 같습니다:
 
@@ -475,9 +475,9 @@ exclude:
 ```
 
 <!--
-From `v3.5` onward, `Gemfile` and `Gemfile.lock` are also excluded by default. So, in most cases there is no need to define another `exclude:` array in the config file. So an existing definition can either be modified as above, or removed completely, or simply commented out to enable easy edits in future.
+From `v3.5` onward, `Gemfile` and `Gemfile.lock` are also excluded by default. So, in most cases there is no need to define another `exclude:` array in the config file. So an existing definition can either be modified as above, or removed completely, or commented out to enable easy edits in future.
 -->
-버전 `v3.5` 부터, 기본 설정으로 `Gemfile` 과 `Gemfile.lock` 도 제외됩니다. 따라서, 특별한 경우가 아닌 이상 환경설정 파일에 추가로 `exclude:` 배열을 정의할 필요가 없습니다. 또한 기본 설정에 이미 정의된 내용도 위와 같이 수정하거나, 아니면 완전히 제거하거나, 나중을 위해 단순히 주석 처리할 수 있습니다.
+버전 `v3.5` 부터, 기본 설정으로 `Gemfile` 과 `Gemfile.lock` 도 제외됩니다. 따라서, 특별한 경우가 아닌 이상 환경설정 파일에 추가로 `exclude:` 배열을 정의할 필요가 없습니다. 또한 기본 설정에 이미 정의된 내용도 위와 같이 수정하거나, 아니면 완전히 제거하거나, 나중을 위해 주석 처리할 수 있습니다.
 
 
 <!--
@@ -533,12 +533,12 @@ v1.0.0 이후부터, Jekyll 에 자동으로 생성된 포스트 발췌 기능�
 <!--
 If you run into an issue that a static file can't be found in your
 production environment during build since v3.2.0 you should set your
-[environment to `production`](../configuration/#specifying-a-jekyll-environment-at-build-time).
+[environment to `production`](/docs/configuration/environments/).
 The issue is caused by trying to copy a non-existing symlink.
 -->
 버전 v3.2.0 이상에서 운영 환경을 구성할 때 파일이 제대로 생성되지
 않는 이슈를 겪는다면
-[환경설정을 `production`](../configuration/#specifying-a-jekyll-environment-at-build-time) 으로 지정해야 합니다.
+[환경설정을 `production`](/docs/configuration/environments/) 으로 지정해야 합니다.
 이것은 존재하지 않는 심볼릭 링크를 복사하려하기 때문에 발생하는 이슈입니다.
 
 <div class="note">

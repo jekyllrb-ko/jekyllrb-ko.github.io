@@ -1,0 +1,640 @@
+---
+#title: Configuration Options
+title: 환경설정 옵션
+permalink: "/docs/configuration/options/"
+---
+
+<!--
+The tables below list the available settings for Jekyll, and the various <code
+class="option">options</code> (specified in the configuration file) and <code
+class="flag">flags</code> (specified on the command-line) that control them.
+-->
+다음 표는 Jekyll 에서 사용할 수 있는 환경설정과 그에 해당하는 <code
+class="option">옵션</code> (설정 파일에 사용) 과 <code
+class="flag">플래그</code> (명령어에 사용) 의 목록입니다.
+
+<!--
+### Global Configuration
+-->
+### 전역 환경설정 {#global-configuration}
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+<!--
+      <th>Setting</th>
+      <th>
+        <span class="option">Options</span> and <span class="flag">Flags</span>
+      </th>
+-->
+      <th>설정</th>
+      <th>
+        <span class="option">옵션</span>과 <span class="flag">플래그</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Site Source</strong></p>
+        <p class="description">Change the directory where Jekyll will read files</p>
+-->
+        <p class="name"><strong>Site Source</strong></p>
+        <p class="description">Jekyll 이 읽어들일 파일의 경로를 변경한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">source: DIR</code></p>
+        <p><code class="flag">-s, --source DIR</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Site Destination</strong></p>
+        <p class="description">Change the directory where Jekyll will write files</p>
+-->
+        <p class="name"><strong>Site Destination</strong></p>
+        <p class="description">Jekyll 이 생성할 파일의 경로를 변경한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">destination: DIR</code></p>
+        <p><code class="flag">-d, --destination DIR</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Safe</strong></p>
+        <p class="description">
+          Disable <a href="/docs/plugins/">custom plugins</a>, caching to disk
+          and ignore symbolic links.
+        </p>
+-->
+        <p class="name"><strong>Safe</strong></p>
+        <p class="description">
+          <a href="/docs/plugins/">사용자 플러그인</a>을 비활성화하고 디스크에 캐쉬하며,
+          심볼릭 링크를 무시한다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">safe: BOOL</code></p>
+        <p><code class="flag">--safe</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name">
+          <strong>Disable Disk Cache</strong>
+          <span class="version-badge" title="Introduced in v4.1.0">4.1.0</span>
+        </p>
+        <p class="description">
+          Disable caching of content to disk in order to skip creating a
+          <code>.jekyll-cache</code> or similar directory at the source
+          to avoid interference with virtual environments and third-party
+          directory watchers.
+          Caching to disk is always disabled in <code>safe</code> mode.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">disable_disk_cache: BOOL</code></p>
+        <p><code class="flag">--disable-disk-cache</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Exclude</strong></p>
+        <p class="description">
+          Exclude directories and/or files from the
+          conversion. These exclusions are relative to the site's
+          source directory and cannot be outside the source directory.
+        </p>
+-->
+        <p class="name"><strong>Exclude</strong></p>
+        <p class="description">
+          특정 디렉토리나 파일을 변환되지 않도록 제외시킨다. Site Source 를
+          기준으로 한 상대경로로 정의하며, Site Source 디렉토리 바깥의 다른
+          경로는 지정할 수 없다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">exclude: [DIR, FILE, ...]</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Include</strong></p>
+        <p class="description">
+          Force inclusion of directories and/or files in the conversion.
+          <code>.htaccess</code> is a good example since dotfiles are excluded
+          by default.
+        </p>
+-->
+        <p class="name"><strong>Include</strong></p>
+        <p class="description">
+          특정 디렉토리나 파일을 변환 작업에 강제로 포함시킨다. 대표적인 예로는
+          <code>.htaccess</code> 가 있는데, 점으로 시작하는 파일은 제외하는 것이
+          디폴트 방식이기 때문이다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">include: [DIR, FILE, ...]</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Keep files</strong></p>
+        <p class="description">
+          When clobbering the site destination, keep the selected files.
+          Useful for files that are not generated by jekyll; e.g. files or
+          assets that are generated by your build tool.
+          The paths are relative to the <code>destination</code>.
+        </p>
+-->
+        <p class="name"><strong>Keep files</strong></p>
+        <p class="description">
+          사이트 생성 전 Site Destination 을 초기화 때, 그대로 보관할 파일을
+          지정한다. Jekyll 이 아닌 다른 빌드 시스템에서 생성하는 파일이나
+          데이터에 유용하게 쓰이는 옵션이다.
+          <code>destination</code> 기준의 상대경로로 입력한다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">keep_files: [DIR, FILE, ...]</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Time Zone</strong></p>
+        <p class="description">
+            Set the time zone for site generation. This sets the <code>TZ</code>
+            environment variable, which Ruby uses to handle time and date
+            creation and manipulation. Any entry from the
+            <a href="https://en.wikipedia.org/wiki/Tz_database">IANA Time Zone
+            Database</a> is valid, e.g. <code>America/New_York</code>. A list of all
+            available values can be found <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">
+            here</a>. When serving on a local machine, the default time zone is set by your operating system. But when served on a remote host/server, the default time zone depends on the server's setting or location.
+        </p>
+-->
+        <p class="name"><strong>Time Zone</strong></p>
+        <p class="description">
+            사이트 생성에 사용할 타임존을 지정한다. 이 옵션은 루비가 날짜와
+            시간을 생성/수정할 때 사용하는 환경변수인 <code>TZ</code> 를
+            설정한다. <a href="https://en.wikipedia.org/wiki/Tz_database">IANA 타임존 데이터베이스</a>의
+            모든 항목을 사용할 수 있다 (예, <code>America/New_York</code>).
+            사용할 수 있는 모든 설정값들의 목록은 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">
+            여기</a>에서 찾을 수 있다. 로컬 장비에서 서비스 될 때, 타임존의 기본값은 자신의 OS 에 의해 설정된다.
+            하지만 원격 호스트/서버에서 서비스될 때, 타임존 기본값은 서버 환경설정이나 장소에 따라 다르다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">timezone: TIMEZONE</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+<!--
+        <p class="name"><strong>Encoding</strong></p>
+        <p class="description">
+            Set the encoding of files by name (only available for Ruby
+            1.9 or later).
+            The default value is <code>utf-8</code> starting in 2.0.0,
+            and <code>nil</code> before 2.0.0, which will yield the Ruby
+            default of <code>ASCII-8BIT</code>.
+            Available encodings can be shown by the
+            command <code>ruby -e 'puts Encoding::list.join("\n")'</code>.
+        </p>
+-->
+        <p class="name"><strong>Encoding</strong></p>
+        <p class="description">
+            파일의 인코딩을 지정한다. 루비 1.9 또는 이후 버전에서만 사용
+            가능하다).
+            디폴트값은 2.0.0 버전부터 <code>utf-8</code> 이고, 2.0.0 이전
+            버전에서는 루비 디폴트값인 <code>ASCII-8BIT</code> 를 사용하는
+            <code>nil</code> 이었다.
+            사용할 수 있는 인코딩 목록을 확인하는 명령어는
+            <code>ruby -e 'puts Encoding::list.join("\n")'</code> 이다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">encoding: ENCODING</code></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+<!--
+        <p class='name'><strong>Defaults</strong></p>
+        <p class='description'>
+            Set defaults for <a href="/docs/front-matter/" title="front matter">front matter</a>
+            variables.
+        </p>
+-->
+        <p class='name'><strong>Defaults</strong></p>
+        <p class='description'>
+            <a href="/docs/front-matter/" title="front matter">머리말</a>
+            변수의 디폴트 값을 설정한다.
+        </p>
+      </td>
+      <td class='align-center'>
+<!--
+        <p>see <a href="/docs/configuration/front-matter-defaults/" title="details">below</a></p>
+-->
+        <p><a href="/docs/configuration/front-matter-defaults/" title="details">아래</a> 내용 참조</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warning">
+<!--
+  <h5>Destination folders are cleaned on site builds</h5>
+-->
+  <h5>Site Destination 폴더는 사이트 빌드 시 초기화됩니다</h5>
+  <p>
+<!--
+    The contents of <code>&lt;destination&gt;</code> are automatically
+    cleaned, by default, when the site is built. Files or folders that are not
+    created by your site will be removed. Some files could be retained
+    by specifying them within the <code>&lt;keep_files&gt;</code> configuration directive.
+-->
+    사이트 빌드 시에 자동으로 <code>&lt;destination&gt;</code> 안의 파일을
+    지우는 것이 디폴트로 설정되어 있습니다. 사이트에서 생성하지 않는 파일은
+    모두 사라질 것입니다. 환경설정 옵션 <code>&lt;keep_files&gt;</code> 를
+    사용해 그대로 옮길 파일들을 지정할 수 있습니다.
+  </p>
+  <p>
+<!--
+    Do not use an important location for <code>&lt;destination&gt;</code>; instead, use it as
+    a staging area and copy files from there to your web server.
+    중요한 디렉토리는 절대 <code>&lt;destination&gt;</code> 으로 지정하면 안됩니다;
+    웹 서버로 옮길 파일을 임시로 보관할 경로를 입력하세요.
+-->
+  </p>
+</div>
+
+<!--
+### Build Command Options
+-->
+### 빌드 명령어 옵션
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+<!--
+      <th>Setting</th>
+      <th><span class="option">Options</span> and <span class="flag">Flags</span></th>
+-->
+      <th>설정</th>
+      <th><span class="option">옵션</span>과 <span class="flag">플래그</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Regeneration</strong></p>
+<!--
+        <p class="description">Enable auto-regeneration of the site when files are modified.</p>
+-->
+        <p class="description">파일이 수정되었을 때 사이트를 자동으로 다시 생성한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">-w, --[no-]watch</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Configuration</strong></p>
+<!--
+        <p class="description">Specify config files instead of using <code>_config.yml</code> automatically. Settings in later files override settings in earlier files.</p>
+-->
+        <p class="description"><code>_config.yml</code> 대신 사용할 환경설정 파일을 직접 선택한다. 여러 파일에 동일한 옵션이 설정되어 있으면, 마지막 설정파일의 내용을 사용한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">--config FILE1[,FILE2,...]</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Drafts</strong></p>
+<!--
+        <p class="description">Process and render draft posts.</p>
+-->
+        <p class="description">초안 기능을 사용한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">show_drafts: BOOL</code></p>
+        <p><code class="flag">--drafts</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Environment</strong></p>
+<!--
+        <p class="description">Use a specific environment value in the build.</p>
+-->
+        <p class="description">빌드 시 임의의 환경변수 값을 사용한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">JEKYLL_ENV=production</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Future</strong></p>
+<!--
+        <p class="description">Publish posts or collection documents with a future date.</p>
+-->
+        <p class="description">현재시간 이후의 포스트나 컬렉션 문서를 게시한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">future: BOOL</code></p>
+        <p><code class="flag">--future</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Unpublished</strong></p>
+<!--
+        <p class="description">Render posts that were marked as unpublished.</p>
+-->
+        <p class="description">미개시로 지정된 포스트를 처리한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">unpublished: BOOL</code></p>
+        <p><code class="flag">--unpublished</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>LSI</strong></p>
+<!--
+        <p class="description">Produce an index for related posts. Requires the <a href="http://www.classifier-reborn.com/">classifier-reborn</a> plugin.</p>
+-->
+        <p class="description">관련된 포스트들에 대한 인덱스를 생성한다. <a href="http://www.classifier-reborn.com/">classifier-reborn</a> 플러그인이 필요하다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">lsi: BOOL</code></p>
+        <p><code class="flag">--lsi</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Limit Posts</strong></p>
+<!--
+        <p class="description">Limit the number of posts to parse and publish.</p>
+-->
+        <p class="description">포스트의 수를 제한한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">limit_posts: NUM</code></p>
+        <p><code class="flag">--limit_posts NUM</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Force polling</strong></p>
+<!--
+        <p class="description">Force watch to use polling.</p>
+-->
+        <p class="description">감시 기능을 강제로 활성화한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">force_polling: BOOL</code></p>
+        <p><code class="flag">--force_polling</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Verbose output</strong></p>
+<!--
+        <p class="description">Print verbose output.</p>
+-->
+        <p class="description">결과를 자세하게 출력한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">-V, --verbose</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Silence Output</strong></p>
+<!--
+        <p class="description">Silence the normal output from Jekyll
+        during a build</p>
+-->
+        <p class="description">사이트 빌드 시 발생하는 일반 메시지를
+        출력하지 않는다</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">-q, --quiet</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Incremental build</strong></p>
+        <p class="description">
+<!--
+            Enable the experimental incremental build feature. Incremental build only
+            re-builds posts and pages that have changed, resulting in significant performance
+            improvements for large sites, but may also break site generation in certain
+            cases.
+-->
+            실험 기능인 증분 빌드를 활성화한다. 증분 빌드란 변경된 페이지나
+            포스트만을 다시 빌드하는 기능으로서, 규모가 큰 사이트에서 눈에 띄는
+            성능 향상을 가져올 수 있다. 하지만 특정한 상황에서는 사이트 생성에
+            문제가 생길 수도 있다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">incremental: BOOL</code></p>
+        <p><code class="flag">-I, --incremental</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Liquid profiler</strong></p>
+        <p class="description">
+<!--
+            Generate a Liquid rendering profile to help you identify performance bottlenecks.
+-->
+            병목현상이 발생하는 원인을 찾을 수 있게 도와주는 Liquid 렌더링 프로파일을 생성한다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">profile: BOOL</code></p>
+        <p><code class="flag">--profile</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Strict Front Matter</strong></p>
+        <p class="description">
+<!--
+            Cause a build to fail if there is a YAML syntax error in a page's front matter.
+-->
+            페이지의 머리말에 YAML 문법 에러가 있으면 빌드를 중단한다.
+        </p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">strict_front_matter: BOOL</code></p>
+        <p><code class="flag">--strict_front_matter</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Base URL</strong></p>
+<!--
+        <p class="description">Serve the website from the given base URL.</p>
+-->
+        <p class="description">주어진 URL 로 웹사이트를 작동시킨다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">baseurl: URL</code></p>
+        <p><code class="flag">--baseurl URL</code></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!--
+### Serve Command Options
+-->
+### 미리보기 명령 옵션
+
+<!--
+In addition to the options below, the `serve` sub-command can accept any of the options
+for the `build` sub-command, which are then applied to the site build which occurs right
+before your site is served.
+-->
+`serve` 명령은 아래 나열된 옵션 뿐만 아니라 `build` 명령의 옵션도 사용할 수
+있습니다. 먼저 `build` 작업에 해당 옵션이 사용된 후에 `serve` 작업이
+수행됩니다.
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+<!--
+      <th>Setting</th>
+      <th><span class="option">Options</span> and <span class="flag">Flags</span></th>
+-->
+      <th>설정</th>
+      <th><span class="option">옵션</span>과 <span class="flag">플래그</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Local Server Port</strong></p>
+<!--
+        <p class="description">Listen on the given port.</p>
+-->
+        <p class="description">Listen 포트 번호를 설정한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">port: PORT</code></p>
+        <p><code class="flag">--port PORT</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Local Server Hostname</strong></p>
+<!--
+        <p class="description">Listen at the given hostname.</p>
+-->
+        <p class="description">Listen 호스트명을 설정한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">host: HOSTNAME</code></p>
+        <p><code class="flag">--host HOSTNAME</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Live Reload</strong></p>
+<!--
+        <p class="description">Reload a page automatically on the browser when its content is edited.</p>
+-->
+        <p class="description">컨텐츠가 수정되었을 때 자동으로 브라우저에서 페이지를 다시 불러온다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">livereload: true</code></p>
+        <p><code class="flag">-l, --livereload</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Detach</strong></p>
+<!--
+        <p class="description">Detach the server from the terminal.</p>
+-->
+        <p class="description">터미널에서 서버를 분리한다.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="option">detach: BOOL</code></p>
+        <p><code class="flag">-B, --detach</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Skips the initial site build</strong></p>
+<!--
+        <p class="description">Skips the initial site build which occurs before the server is started.</p>
+-->
+        <p class="description">사이트 빌드를 건너뛰고 서버를 실행한다</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">--skip-initial-build</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>X.509 (SSL) Private Key</strong></p>
+<!--
+        <p class="description">SSL Private Key, stored or symlinked in the site source.</p>
+-->
+        <p class="description">사이트 코드에 포함되어 있거나 심볼릭 링크되어 있는 SSL 개인 키.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">--ssl-key</code></p>
+      </td>
+    </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>X.509 (SSL) Certificate</strong></p>
+<!--
+        <p class="description">SSL Public certificate, stored or symlinked in the site source.</p>
+-->
+        <p class="description">사이트 코드에 포함되어 있거나 심볼릭 링크되어 있는 SSL 공인 인증서.</p>
+      </td>
+      <td class="align-center">
+        <p><code class="flag">--ssl-cert</code></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note warning">
+<!--
+  <h5>Do not use tabs in configuration files</h5>
+-->
+  <h5>환경설정 파일에 탭 문자를 사용하지 마세요</h5>
+  <p>
+<!--
+    This will either lead to parsing errors, or Jekyll will revert to the
+    default settings. Use spaces instead.
+-->
+    파싱 에러가 발생하거나 기본 설정값이 사용될 것입니다. 대신 띄어쓰기를
+    사용하세요.
+  </p>
+</div>

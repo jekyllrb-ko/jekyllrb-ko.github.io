@@ -3,11 +3,11 @@ title: "Travis CI"
 ---
 
 <!--
-You can easily test your website build against one or more versions of Ruby.
+You can test your website build against one or more versions of Ruby.
 The following guide will show you how to set up a free build environment on
 [Travis][travis], with [GitHub][github] integration for pull requests.
 -->
-여러가지 버전의 루비에서 웹사이트 생성 테스트를 하는 것도 어렵지 않습니다.
+웹사이트 빌드 테스트는 여러 버전의 루비에 대해서도 가능합니다.
 다음 안내서들은 [Travis][travis] 에 무료 빌드환경을 구성하고 Pull Request 를
 사용하여 [GitHub][github] 과 연동하는 방법을 설명하고 있습니다.
 
@@ -20,9 +20,9 @@ The following guide will show you how to set up a free build environment on
 ## 1. Travis 와 GitHub 활성화
 
 <!--
-Enabling Travis builds for your GitHub repository is pretty simple:
+To enable Travis builds for your GitHub repository:
 -->
-GitHub 저장소에 Travis 빌드를 활성화하는 것은 상당히 간단합니다:
+GitHub 저장소에 Travis 빌드를 활성화하려면:
 
 <!--
 1. Go to your profile on travis-ci.org: https://travis-ci.org/profile/username
@@ -44,11 +44,11 @@ GitHub 저장소에 Travis 빌드를 활성화하는 것은 상당히 간단합�
 ## 2. 테스트 스크립트
 
 <!--
-The simplest test script simply runs `jekyll build` and ensures that Jekyll
+The simplest test script runs `jekyll build` and ensures that Jekyll
 doesn't fail to build the site. It doesn't check the resulting site, but it
 does ensure things are built properly.
 -->
-가장 단순한 형태의 테스트 스크립트는 그냥 `jekyll build` 를 실행하고 Jekyll 이
+가장 단순한 형태의 테스트 스크립트는 `jekyll build` 를 실행하고 Jekyll 이
 성공적으로 사이트 빌드를 마쳤는지만 확인합니다. 빌드 작업이 올바른지는
 확인하지만, 생성된 사이트는 확인하지 않습니다.
 
@@ -144,9 +144,9 @@ RubyGems 설치를 필요로 하기 때문에, 루비 언어 빌드 환경을 �
 설명입니다.
 
 <!--
-**Note:** You will need a Gemfile as well, [Travis will automatically install](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management) the dependencies based on the referenced gems:
+**Note:** You will need a Gemfile as well, [Travis will automatically install](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management) the dependencies based on the referenced gems. Here is an example `Gemfile` with two referenced gems, "jekyll" and "html-proofer":
 -->
-**중요:** Travis 가 필요한 모든 의존성을 [자동으로 설치](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management)할 수 있도록, 루비 젬 참조목록인 Gemfile 이 필요합니다.
+**중요:** Travis 가 필요한 모든 의존성을 [자동으로 설치](https://docs.travis-ci.com/user/languages/ruby/#Dependency-Management)할 수 있도록, 루비 젬 참조목록인 Gemfile 이 필요합니다. 다음은 두 개의 젬 ("jekyll" 과 "html-proofer") 을 의존요소로 가진 `Gemfile` 예시입니다.
 
 ```ruby
 source "https://rubygems.org"
@@ -163,7 +163,7 @@ Your `.travis.yml` file should look like this:
 ```yaml
 language: ruby
 rvm:
-- 2.3.3
+  - 2.6.3
 
 before_script:
  - chmod +x ./script/cibuild # or do this locally and commit
@@ -182,7 +182,18 @@ env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev
+
 sudo: false # route your build to the container-based infrastructure for a faster build
+
+cache: bundler # caching bundler gem packages will speed up build
+
+# Optional: disable email notifications about the outcome of your builds
+notifications:
+  email: false
 ```
 
 <!--
@@ -203,17 +214,19 @@ Travis 에게 루비 빌드 컨테이너를 사용하도록 지시하는 내용�
 
 ```yaml
 rvm:
-- 2.3.3
+  - 2.6.3
 ```
 
 <!--
 RVM is a popular Ruby Version Manager (like rbenv, chruby, etc). This
 directive tells Travis the Ruby version to use when running your test
-script.
+script. Use a [version which is pre-installed on the Travis build docker][5]
+image to speed up the build.
 -->
 RVM 은 (rbenv, chruby 등과 같은) 대중적인 루비 버전 관리자입니다. 이 설정은
 테스트 스크립트를 실행할 때 사용할 루비 버전을 Travis 에게 알려주는 역할을
-합니다.
+합니다. [Travis 빌드 도커에 포함된 버전][5]
+이미지를 사용하면 빌드 속도가 향상됩니다.
 
 ```yaml
 before_script:
@@ -338,6 +351,23 @@ does need `sudo` access, modify the line to `sudo: required`.
 sudo: false
 ```
 
+To speed up the build, you should cache the gem packages created by `bundler`.
+Travis has a pre-defined [cache strategy for this tool][6] which should have
+all the default configs to do exactly that.
+
+```yaml
+cache: bundler
+```
+
+Optionally, if you are not interested in the build email notifications you
+can disable them with this configuration. Travis supports a wide array of
+notification services, you may find [another one more useful (e.g. slack)][7].
+
+```yaml
+notifications:
+  email: false
+```
+
 <!--
 ### Troubleshooting
 -->
@@ -375,3 +405,6 @@ fix or [ask for help][4] if you run into trouble and need some help.
 
 [3]: https://github.com/jekyll/jekyll/edit/master/docs/_docs/continuous-integration/travis-ci.md
 [4]: https://jekyllrb.com/help/
+[5]: https://docs.travis-ci.com/user/languages/ruby/#Specifying-Ruby-versions-and-implementations
+[6]: https://docs.travis-ci.com/user/caching/#Caching-directories-(Bundler%2C-dependencies)
+[7]: https://docs.travis-ci.com/user/notifications/

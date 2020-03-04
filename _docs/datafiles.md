@@ -7,20 +7,18 @@ permalink: /docs/datafiles/
 <!--
 In addition to the [built-in variables](../variables/) available from Jekyll,
 you can specify your own custom data that can be accessed via the [Liquid
-templating system](https://wiki.github.com/shopify/liquid/liquid-for-designers).
+templating system](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers).
 -->
 [기본 변수](../variables/)뿐만 아니라, [Liquid 템플릿
-시스템](https://wiki.github.com/shopify/liquid/liquid-for-designers)을 통해
+시스템](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)을 통해
 접근할 수 있는 자신만의 데이터를 정의할 수도 있습니다.
 
 <!--
-Jekyll supports loading data from [YAML](http://yaml.org/), [JSON](http://www.json.org/),
-and [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) files located in the `_data` directory.
-Note that CSV files *must* contain a header row.
+Jekyll supports loading data from [YAML](http://yaml.org/), [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), and [TSV](https://en.wikipedia.org/wiki/Tab-separated_values) files located in the `_data` directory.
+Note that CSV and TSV files *must* contain a header row.
 -->
-Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://www.json.org/),
-[CSV](https://en.wikipedia.org/wiki/Comma-separated_values) 파일로부터 데이터를
-읽어들일 수 있습니다. 단, CSV 파일에는 *반드시* 헤더 행이 있어야 합니다.
+Jekyll 은 `_data` 디렉토리의 [YAML](http://yaml.org/) 과 [JSON](http://www.json.org/), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [TSV](https://en.wikipedia.org/wiki/Tab-separated_values) 파일로부터 데이터를 읽어들일 수 있습니다.
+단, CSV 와 TSV 파일에는 *반드시* 헤더 행이 있어야 합니다.
 
 <!--
 This powerful feature allows you to avoid repetition in your templates and to
@@ -40,16 +38,15 @@ Plugins/themes can also leverage Data Files to set configuration variables.
 ## 데이터 폴더
 
 <!--
-As explained on the [directory structure](../structure/) page, the `_data`
-folder is where you can store additional data for Jekyll to use when generating
-your site. These files must be YAML, JSON, or CSV files (using either
+The `_data` folder is where you can store additional data for Jekyll to use when
+generating your site. These files must be YAML, JSON, or CSV files (using either
 the `.yml`, `.yaml`, `.json` or `.csv` extension), and they will be
 accessible via `site.data`.
 -->
-[디렉토리 구조](../structure/) 페이지에서 설명했던 것처럼, `_data` 폴더는
-사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는 공간입니다.
-이 파일들은 반드시 YAML 이나 JSON, CSV 파일 (확장자가 `.yml`, `.yaml` 이나
-`.json`, `.csv`) 이어야 하며, `site.data` 를 통해 이 데이터를 사용할 수 있습니다.
+`_data` 폴더는 사이트를 생성할 때 사용하는 부가적인 데이터를 저장하는
+공간입니다. 이 파일들은 반드시 YAML 이나 JSON, CSV 파일 (확장자가 `.yml`,
+`.yaml` 이나 `.json`, `.csv`) 이어야 하며, `site.data` 를 통해 이
+데이터를 사용할 수 있습니다.
 
 <!--
 ## Example: List of members
@@ -117,16 +114,10 @@ You can now render the list of members in a template:
 ```
 {% endraw %}
 
-{: .note .info }
 <!--
-If your Jekyll site has a lot of pages, such as with documentation websites, see the detailed examples in [how to build robust navigation for your site]({% link _tutorials/navigation.md %}).
+## Subfolders
 -->
-당신의 Jekyll 사이트가 설명서 웹사이트처럼 페이지가 많은 사이트라면, [당신의 사이트를 위한 탄탄한 탐색기능 구축방법]({% link _tutorials/navigation.md %})에 있는 상세 예제를 살펴보세요.
-
-<!--
-## Example: Organizations
--->
-## 예제: 단체
+## 하위 폴더
 
 <!--
 Data files can also be placed in sub-folders of the `_data` folder. Each folder
@@ -210,7 +201,7 @@ dave:
 ```
 
 <!--
-The author can then be specified as a page variable in a post's frontmatter:
+The author can then be specified as a page variable in a post's front matter:
 -->
 이제 포스트의 머리말에 페이지 변수처럼 저자 정보를 정의할 수 있습니다:
 

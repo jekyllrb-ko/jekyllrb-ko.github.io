@@ -3,19 +3,11 @@
 title: 정적 파일
 permalink: /docs/static-files/
 ---
-
 <!--
-In addition to renderable and convertible content, we also have **static
-files**.
--->
-Jekyll 에는 변환이나 렌더링되는 컨텐츠뿐만 아니라, **정적 파일**이라는 것도
-있습니다.
-
-<!--
-A static file is a file that does not contain any YAML front matter. These
+A static file is a file that does not contain any front matter. These
 include images, PDFs, and other un-rendered content.
 -->
-정적 파일은 YAML 머리말이 없는 파일을 뜻합니다. 이미지나 PDF 들, 그 밖에
+정적 파일은 머리말이 없는 파일을 뜻합니다. 이미지나 PDF 들, 그 밖에
 렌더링되지 않는 컨텐츠들이 여기에 속합니다.
 
 <!--
@@ -98,3 +90,60 @@ following metadata:
   </tbody>
 </table>
 </div>
+
+<!--
+Note that in the above table, `file` can be anything. It's an arbitrarily set variable used in your own logic (such as in a for loop). It isn't a global site or page variable.
+-->
+위의 표에서, 무엇이든 `file` 이 될 수 있습니다. 이는 (for 루프 같은) 당신의 로직에서 사용되는 변수를 임의로 설정합니다. 이는 글로벌 사이트 변수나 페이지 변수가 아닙니다.
+
+<!--
+## Add front matter to static files
+-->
+## 정적 파일에 머리말 넣기
+
+<!--
+Although you can't directly add front matter values to static files, you can set front matter values through the [defaults property](/docs/configuration/front-matter-defaults/) in your configuration file. When Jekyll builds the site, it will use the front matter values you set.
+-->
+정적 파일에 머리말을 직접 넣을 수는 없지만, 환경설정 파일의 [디폴트 프로퍼티](/docs/configuration/front-matter-defaults/)를 통해서 머리말 값들을 설정할 수 있습니다. Jekyll 은 사이트를 생성할 때, 당신이 설정한 머리말 값을 사용할 것입니다.
+
+<!--
+Here's an example:
+-->
+여기 예시가 있습니다:
+
+<!--
+In your `_config.yml` file, add the following values to the `defaults` property:
+-->
+당신의 `_config.yml` 파일에, `defaults` 프로퍼티 값으로 다음 내용을 추가하세요:
+
+```yaml
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+```
+
+<!--
+This assumes that your Jekyll site has a folder path of `assets/img` where  you have images (static files) stored. When Jekyll builds the site, it will treat each image as if it had the front matter value of `image: true`.
+-->
+이 설정은 당신의 Jekyll 사이트에 이미지 (정적 파일) 들이 저장된 폴더가 `assets/img` 라는 경로에 있다고 가정합니다. Jekyll 은 사이트를 생성할 때, 이 경로의 이미지들이 `image: true` 라는 머리말 값을 가지고 있는 것처럼 취급합니다.
+
+<!--
+Suppose you want to list all your image assets as contained in `assets/img`. You could use this for loop to look in the `static_files` object and get all static files that have this front matter property:
+-->
+당신의 `assets/img` 에 들어있는 모든 이미지 자원을 나열하는 경우를 가정해봅시다. 이 for 루프를 사용하면 `static_files` 객체를 확인하여 이 머리말 프로퍼티를 가지고 있는 모든 정적 파일을 얻을 수 있습니다:
+
+{% raw %}
+```liquid
+{% assign image_files = site.static_files | where: "image", true %}
+{% for myimage in image_files %}
+  {{ myimage.path }}
+{% endfor %}
+```
+{% endraw %}
+
+<!--
+When you build your site, the output will list the path to each file that meets this front matter condition.
+-->
+사이트를 생성할 때, 이 머리말 조건을 만족하는 모든 파일의 경로를 나열하게될 것입니다.

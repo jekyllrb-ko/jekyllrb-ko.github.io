@@ -5,96 +5,89 @@ permalink: /docs/permalinks/
 ---
 
 <!--
-Permalinks refer to the URLs (excluding the domain name or directory folder) for your pages, posts, or collections.
-Jekyll supports a flexible way to build permalinks, allowing you to leverage various template variables or choose built-in permalink styles (such as `date`) that automatically use a template-variable pattern.
+Permalinks are the output path for your pages, posts, or collections. They
+allow you to structure the directories of your source code different from the
+directories in your output.
 -->
-고유주소는 (도메인명이나 디렉토리를 제외한) 페이지나 포스트, 콜렉션의 URL 을 나타냅니다.
-Jekyll 이 지원하는 고유주소 생성 방식은 유연합니다. 다양한 템플릿 변수들을 활용하거나 자동으로 템플릿-변수 패턴을 사용하는 (`date` 와 같은) 내장된 고유주소 스타일을 사용할 수 있게 해줍니다.
+고유주소는 페이지나 포스트, 컬렉션의 결과물 경로입니다. 이는
+소스코드의 디렉토리 구조를 결과물 디렉토리와 다르게 구성할 수
+있도록 해줍니다.
 
 <!--
-You construct permalinks by creating a template URL where dynamic elements are represented by colon-prefixed keywords. The default template permalink is `/:categories/:year/:month/:day/:title:output_ext`. Each of the colon-prefixed keywords is a template variable.
+## Front Matter
 -->
-고유주소를 만들기 위해서는 키워드 앞에 콜론을 붙여 나타내는 동적 요소들을 사용하여 템플릿 URL 을 생성합니다. 고유주소의 템플릿 기본값은 `/:categories/:year/:month/:day/:title:output_ext` 입니다. 콜론으로 시작하는 키워드들은 템플릿 변수입니다.
+## 머리말 {#frontmatter}
 
 <!--
-## Where to configure permalinks
+The simplest way to set a permalink is using front matter. You set the
+`permalink` variable in front matter to the output path you'd like.
 -->
-## 고유주소를 설정하는 위치
+고유주소를 설정하는 가장 간단한 방법은 머리말을 사용하는 것입니다. 머리말에
+`permalink` 변수를 설정해 원하는 결과물 경로를 지정합니다.
 
 <!--
-You can configure your site's permalinks through the [Configuration]({% link _docs/configuration.md %}) file or in the [Front Matter]({% link _docs/frontmatter.md %}) for each post, page, or collection.
+For example, you might have a page on your site located at
+`/my_pages/about-me.html` and you want the output url to be `/about/`. In
+front matter of the page you would set:
 -->
-[환경설정]({% link _docs/configuration.md %}) 파일 또는 각각의 포스트나 페이지, 콜렉션의 [머리말]({% link _docs/frontmatter.md %})에 고유주소를 설정할 수 있습니다.
+예를 들어, 페이지 소스 코드의 경로가
+`/my_pages/about-me.html` 이고 url 을 `/about/` 으로 만드려고 합니다. 페이지의
+머리말에 다음과 같이 설정합니다:
+
+```
+---
+permalink: /about/
+---
+```
 
 <!--
-Setting permalink styles in your configuration file applies the setting globally in your project. You configure permalinks in your `_config.yml` file like this:
+## Global
 -->
-환경설정 파일에 고유주소 스타일을 설정하면 프로젝트 전체에 영향을 미칩니다. `_config.yml` 파일에 고유주소를 설정하는 것은 다음과 같습니다:
+## 글로벌 {#global}
+
+<!--
+Setting a permalink in front matter for every page on your site is no fun.
+Luckily, Jekyll lets you set the permalink structure globally in your `_config.yml`.
+-->
+소스 코드의 모든 페이지에 머리말로 고유주소를 설정하는 것은 즐겁지 않습니다.
+다행하게도, Jekyll 은 `_config.yml` 에 글로벌 고유주소 구조를 설정할 수 있게 해줍니다.
+
+<!--
+To set a global permalink, you use the `permalink` variable in `_config.yml`.
+You can use placeholders to your desired output. For example:
+-->
+글로벌 고유주소를 설정하려면, `_config.yml` 에 `permalink` 변수를 사용합니다.
+Placeholder 를 사용할 수 있습니다. 예를 들면:
 
 ```yaml
 permalink: /:categories/:year/:month/:day/:title:output_ext
 ```
 
 <!--
-If you don't specify any permalink setting, Jekyll uses the above pattern as the default.
+Note that pages and collections (excluding `posts` and `drafts`) don't have time
+and categories (for pages, the above `:title` is equivalent to `:basename`), these
+aspects of the permalink style are ignored for the output.
 -->
-아무런 고유주소 설정이 없다면, Jekyll 은 이 패턴을 기본값으로 사용합니다.
+페이지와 컬렉션 (`posts` 와 `drafts` 제외) 은 시간과 카테고리 정보가 없어서
+(페이지에서, 위 `:title` 에 상응하는 것은 `:basename` 이다), 이러한 내용들은
+결과물에서 무시됩니다.
 
 <!--
-The permalink can also be set using a built-in permalink style:
+For example, a permalink style of
+`/:categories/:year/:month/:day/:title:output_ext` for the `posts` collection becomes
+`/:title.html` for pages and collections (excluding `posts` and `drafts`).
 -->
-내장된 고유주소 스타일을 사용할 수도 있습니다:
+예를 들어, `posts` 컬렉션의 고유주소 스타일이
+`/:categories/:year/:month/:day/:title:output_ext` 일 때, 페이지와 컬렉션 (`posts` 와 `drafts` 제외) 에서는
+`/:title.html` 이 됩니다.
 
-```yaml
-permalink: date
-```
+### Placeholders
 
 <!--
-`date` is the same as `:categories/:year/:month/:day/:title:output_ext`, the default. See [Built-in Permalink Styles](#builtinpermalinkstyles) below for more options.
+Here's the full list of placeholders available:
 -->
-`date` 는 `:categories/:year/:month/:day/:title:output_ext` 와 동일하게 기본으로 설정되어 있습니다. 더 많은 옵션에 관해서는 [내장된 고유주소 스타일](#builtinpermalinkstyles)을 참고하세요.
+다음은 사용할 수 있는 Placeholder 의 전체 목록입니다:
 
-<!--
-Setting the permalink in your post, page, or collection's front matter overrides any global settings. Here's an example:
--->
-포스트나 페이지, 콜렉션의 머리말에 설정된 고유주소는 전역 설정보다 우선시됩니다. 여기 그 예시가 있습니다:
-
-```yaml
----
-title: My page title
-permalink: /mypageurl/
----
-```
-
-<!--
-Even if your configuration file specifies the `date` style, the URL for this page would be `http://somedomain.com/mypageurl/`.
--->
-환경설정파일에 `date` 스타일을 사용하도록 설정했더라도, 이 페이지의 URL 은 `http://somedomain.com/mypageurl/` 이 됩니다.
-
-<!--
-When you use permalinks that omit the `.html` file extension (called "pretty URLs") Jekyll builds the file as index.html placed inside a folder with the page's name. For example:
--->
-만약 `.html` 파일 확장자를 제거한 고유주소("Pretty URL" 이라고 함)를 사용하면 Jekyll 은 페이지의 이름으로 폴더를 만들고 그 안에 파일을 index.html 이라는 이름으로 저장합니다. 예시:
-
-```
-├── mypageurl
-│   └── index.html
-```
-
-<!--
-With a URL such as `/mypageurl/`, servers automatically load the index.html file inside the folder, so users can simply navigate to `http://somedomain.com/mypageurl/` to get to `mypageurl/index.html`.
--->
-`/mypageurl/` 과 같은 URL 에서는, 서버가 자동으로 해당 폴더에 있는 index.html 파일을 읽으므로, 사용자는 그냥 `http://somedomain.com/mypageurl/` 에 접근해서 `mypageurl/index.html` 을 볼 수 있습니다.
-
-<!--
-## Template variables for permalinks {#template-variables}
--->
-## 고유주소 관련 템플릿 변수 {#template-variables}
-
-<!--
-The following table lists the template variables available for permalinks. You can use these variables in the `permalink` property in your config file.
--->
-다음 테이블에 고유주소에 사용할 수 있는 템플릿 변수가 나열되어 있습니다. 환경설정 파일의 `permalink` 속성에 이 변수들을 사용할 수 있습니다.
 
 <div class="mobile-side-scroller">
 <table>
@@ -114,15 +107,28 @@ The following table lists the template variables available for permalinks. You c
         <p><code>year</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Year from the post's filename. May be overridden via the document’s
-          <code>date</code> YAML front matter
-        </p>
+          Year from the post’s filename with four digits.
+          May be overridden via the document’s <code>date</code> front matter.
 -->
+          포스트 파일명 날짜의 연도 전체 네 자리.
+          머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>short_year</code></p>
+      </td>
+      <td>
         <p>
-          파일명에 명시된 포스트 게시일시의 연도. YAML 머리말의
-          <code>date</code> 를 통해 값을 덮어쓸 수 있다
+<!--
+          Year from the post’s filename without the century. (00..99)
+          May be overridden via the document’s <code>date</code> front matter.
+-->
+          포스트 파일명 날짜의 연도 끝 두 자리. (00..99)
+          머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다.
         </p>
       </td>
     </tr>
@@ -131,15 +137,13 @@ The following table lists the template variables available for permalinks. You c
         <p><code>month</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Month from the post's filename. May be overridden via the document’s
-          <code>date</code> YAML front matter
-        </p>
+          Month from the post’s filename. (01..12)
+          May be overridden via the document’s <code>date</code> front matter.
 -->
-        <p>
-          파일명에 명시된 포스트 게시일시의 월. YAML 머리말의
-          <code>date</code> 를 통해 값을 덮어쓸 수 있다
+          포스트 파일명 날짜의 월. (01..12)
+          머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다.
         </p>
       </td>
     </tr>
@@ -148,16 +152,37 @@ The following table lists the template variables available for permalinks. You c
         <p><code>i_month</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Month without leading zeros from the post's filename. May be
-          overridden via the document’s <code>date</code> YAML front matter
-        </p>
+          Month without leading zeros from the post’s filename. May be
+          overridden via the document’s <code>date</code> front matter.
 -->
-        <p>
-          파일명에 명시된 포스트 게시일시의 월 (한 자리일 경우 앞에 0 이 없음).
-          YAML 머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다
+          포스트 파일명 날짜의 월. 자리수 채우기 없음. 머리말의
+          <code>date</code> 를 통해 값을 덮어쓸 수 있다.
         </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>short_month</code></p>
+      </td>
+      <td>
+<!--
+        <p>Three-letter month abbreviation, e.g. “Jan”.</p>
+-->
+        <p>세 자리 월 축약형. 예시, “Jan”.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>long_month</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
+      </td>
+      <td>
+<!--
+        <p>Full month name, e.g. “January”.</p>
+-->
+        <p>전체 월. 예시, “January”.</p>
       </td>
     </tr>
     <tr>
@@ -165,15 +190,13 @@ The following table lists the template variables available for permalinks. You c
         <p><code>day</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Day from the post's filename. May be overridden via the document’s
-          <code>date</code> YAML front matter
-        </p>
+          Day of the month from the post’s filename. (01..31)
+          May be overridden via the document’s <code>date</code> front matter.
 -->
-        <p>
-          파일명에 명시된 포스트 게시일시의 일. YAML 머리말의
-          <code>date</code> 를 통해 값을 덮어쓸 수 있다
+          포스트 파일명 날짜의 일. (01..31)
+          머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다.
         </p>
       </td>
     </tr>
@@ -182,44 +205,79 @@ The following table lists the template variables available for permalinks. You c
         <p><code>i_day</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Day without leading zeros from the post's filename. May be overridden
-          via the document’s <code>date</code> YAML front matter
-        </p>
+          Day of the month without leading zeros from the post’s filename.
+          May be overridden via the document’s <code>date</code> front matter.
 -->
-        <p>
-          파일명에 명시된 포스트 게시일시의 일 (한 자리일 경우 앞에 0 이 없음).
-          YAML 머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다
+          포스트 파일명 날짜의 일. 자리수 채우기 없음.
+          머리말의 <code>date</code> 를 통해 값을 덮어쓸 수 있다.
         </p>
       </td>
     </tr>
     <tr>
       <td>
         <p><code>y_day</code></p>
-      </td>_
+      </td>
       <td>
 <!--
-        <p>Day of the year from the post's filename, with leading zeros.</p>
+        <p>Ordinal day of the year from the post’s filename, with leading zeros. (001..366)</p>
 -->
-        <p>파일명에 명시된 포스트 게시일시의 일 (한 자리일 경우 앞에 0 이 있음).</p>
+        <p>포스트 파일명 날짜의 서수일. 자리수 채우기 포함. (001..366)</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>short_year</code></p>
+        <p><code>w_year</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
+      </td>
+      <td>
+        <p>Week year which may differ from the month year for up to three days at the start of January and end of December</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>week</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
+      </td>
+      <td>
+        <p>Week number of the current year, starting with the first week having a majority of its days in January. (01..53)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>w_day</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
 <!--
-        <p>
-          Year without the century from the post's filename. May be overridden
-          via the document’s <code>date</code> YAML front matter
-        </p>
+        <p>Day of the week, starting with Monday. (1..7)</p>
 -->
-        <p>
-          파일명에 명시된 포스트 게시일시의 연도 (두 자리). YAML 머리말의
-          <code>date</code> 를 통해 값을 덮어쓸 수 있다
-        </p>
+        <p>숫자로 표현된 요일. 월요일부터 시작. (1..7)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>short_day</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
+      </td>
+      <td>
+<!--
+        <p>Three-letter weekday abbreviation, e.g. “Sun”.</p>
+-->
+        <p>세 자리 요일 축약형. 예시, “Sun”.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>long_day</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
+      </td>
+      <td>
+<!--
+        <p>Weekday name, e.g. “Sunday”.</p>
+-->
+        <p>요일명. 예시, “Sunday”.</p>
       </td>
     </tr>
     <tr>
@@ -227,15 +285,13 @@ The following table lists the template variables available for permalinks. You c
         <p><code>hour</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Hour of the day, 24-hour clock, zero-padded from the post's
+          Hour of the day, 24-hour clock, zero-padded from the post’s
           <code>date</code> front matter. (00..23)
-        </p>
 -->
-        <p>
-          24 시간제, 두 자리 형식으로 된
-          포스트의 머리말 <code>date</code> 의 시간값. (00..23)
+          포스트 머리말 <code>date</code> 의 24 시간제, 두 자리 형식
+          시간값. (00..23)
         </p>
       </td>
     </tr>
@@ -244,13 +300,11 @@ The following table lists the template variables available for permalinks. You c
         <p><code>minute</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Minute of the hour from the post's <code>date</code> front matter. (00..59)
-        </p>
+          Minute of the hour from the post’s <code>date</code> front matter. (00..59)
 -->
-        <p>
-          포스트의 머리말 <code>date</code> 의 분값. (00..59)
+          포스트 머리말 <code>date</code> 의 분값. (00..59)
         </p>
       </td>
     </tr>
@@ -259,13 +313,11 @@ The following table lists the template variables available for permalinks. You c
         <p><code>second</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
-          Second of the minute from the post's <code>date</code> front matter. (00..59)
-        </p>
+          Second of the minute from the post’s <code>date</code> front matter. (00..59)
 -->
-        <p>
-          포스트의 머리말 <code>date</code> 의 초값. (00..59)
+          포스트 머리말 <code>date</code> 의 초값. (00..59)
         </p>
       </td>
     </tr>
@@ -274,15 +326,13 @@ The following table lists the template variables available for permalinks. You c
         <p><code>title</code></p>
       </td>
       <td>
+        <p>
 <!--
-        <p>
             Title from the document’s filename. May be overridden via
-            the document’s <code>slug</code> YAML front matter.
-        </p>
+            the document’s <code>slug</code> front matter.
 -->
-        <p>
-            파일명에 명시된 문서의 제목. YAML 머리말의 <code>slug</code>
-            를 통해 값을 덮어쓸 수 있다.
+            파일명에 명시된 문서의 제목. 머리말의
+            <code>slug</code> 를 통해 값을 덮어쓸 수 있다.
         </p>
       </td>
     </tr>
@@ -291,16 +341,14 @@ The following table lists the template variables available for permalinks. You c
         <p><code>slug</code></p>
       </td>
       <td>
-<!--
         <p>
+<!--
             Slugified title from the document’s filename (any character
             except numbers and letters is replaced as hyphen). May be
-            overridden via the document’s <code>slug</code> YAML front matter.
-        </p>
+            overridden via the document’s <code>slug</code> front matter.
 -->
-        <p>
             파일명에 명시된 문서 제목의 슬러그화 결과 (숫자와 글자가 아닌
-            모든 문자를 하이픈으로 변경함). YAML 머리말의 <code>slug</code> 로
+            모든 문자를 하이픈으로 변경함). 머리말의 <code>slug</code> 로
             값을 덮어쓸 수 있다.
         </p>
       </td>
@@ -310,15 +358,13 @@ The following table lists the template variables available for permalinks. You c
         <p><code>categories</code></p>
       </td>
       <td>
-<!--
         <p>
+<!--
           The specified categories for this post. If a post has multiple
           categories, Jekyll will create a hierarchy (e.g. <code>/category1/category2</code>).
           Also Jekyll automatically parses out double slashes in the URLs,
           so if no categories are present, it will ignore this.
-        </p>
 -->
-        <p>
           해당 포스트에 지정된 카테고리들. 만약 포스트가 여러 카테고리에
           속해있다면, 계층 구조로 URL 이 생성된다 (예시. <code>/category1/category2</code>).
           또한, Jekyll 은 URL 을 분석해서 연속된 슬래시를 자동으로 제거하기
@@ -331,19 +377,14 @@ The following table lists the template variables available for permalinks. You c
 </div>
 
 <!--
-Note that all template variables relating to time or categories are available to posts only.
+### Built-in formats
 -->
-시간이나 카테고리와 관련된 템플릿 변수들은 포스트에서만 사용할 수 있습니다.
+### 기본 제공 형식 {#builtinformats}
 
 <!--
-## Built-in permalink styles {#builtinpermalinkstyles}
+For posts, Jekyll also provides the following built-in styles for convenience:
 -->
-## 내장된 고유주소 스타일 {#builtinpermalinkstyles}
-
-<!--
-Although you can specify a custom permalink pattern using [template variables](#template-variables), Jekyll also provides the following built-in styles for convenience.
--->
-[템플릿 변수](#template-variables)를 사용하여 고유주소 패턴을 지정할 수 있지만, 편의를 위해 Jekyll 에서 기본으로 제공하는 고유주소 스타일도 있다.
+편의를 위해 Jekyll 은 포스트에 사용할 수 있는 내장된 스타일을 제공합니다:
 
 <div class="mobile-side-scroller">
 <table>
@@ -384,6 +425,15 @@ Although you can specify a custom permalink pattern using [template variables](#
     </tr>
     <tr>
       <td>
+        <p><code>weekdate</code></p>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
+      </td>
+      <td>
+        <p><code>/:categories/:year/W:week/:short_day/:title:output_ext</code></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <p><code>none</code></p>
       </td>
       <td>
@@ -401,87 +451,121 @@ Rather than typing `permalink: /:categories/:year/:month/:day/:title/`, you can 
 
 <div class="note info">
 <!--
-<h5>Specifying permalinks through the YAML Front Matter</h5>
-<p>Built-in permalink styles are not recognized in YAML Front Matter. As a result, <code>permalink: pretty</code> will not work.</p>
+<h5>Specifying permalinks through the front matter</h5>
 -->
-<h5>YAML 머리말에서 고유주소 사용</h5>
-<p>내장된 고유주소 스타일은 YAML 머리말에서는 인식되지 않습니다. 따라서, <code>permalink: pretty</code> 는 작동하지 않을 것입니다.</p>
+<h5>머리말에서 고유주소 사용</h5>
+<!--
+<p>Built-in permalink styles are not recognized in front matter. As a result, <code>permalink: pretty</code> will not work.</p>
+-->
+<p>내장된 고유주소 스타일은 머리말에서는 인식되지 않습니다. 따라서, <code>permalink: pretty</code> 는 작동하지 않을 것입니다.</p>
 </div>
 
 <!--
-## Permalink style examples with posts {#permalink-style-examples}
+### Collections
 -->
-## 포스트의 고유주소 스타일 예시 {#permalink-style-examples}
+### 컬렉션
 
 <!--
-Here are a few examples to clarify how permalink styles get applied with posts.
+For collections (including `posts` and `drafts`), you have the option to override
+the global permalink in the collection configuration in `_config.yml`:
 -->
-여기 고유주소 스타일이 포스트에 어떤식으로 적용되는지를 명확하게 보여주는 예제들이 있습니다.
+컬렉션 (`posts` 와 `drafts` 포함) 의 경우, `_config.yml` 에 설정된 컬렉션
+환경설정의 글로벌 고유주소를 덮어쓸 수 있는 방법이 있습니다:
+
+```yaml
+collections:
+  my_collection:
+    output: true
+    permalink: /:collection/:name
+```
 
 <!--
-Given a post named: `/2009-04-29-slap-chop.md`
+Collections have the following placeholders available:
 -->
-포스트 이름: `/2009-04-29-slap-chop.md`
+컬렉션에서 사용할 수 있는 Placeholder 는 다음과 같습니다:
 
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
 <!--
-      <th>URL Template</th>
-      <th>Resulting Permalink URL</th>
+      <th>Variable</th>
+      <th>Description</th>
 -->
-      <th>URL 템플릿</th>
-      <th>고유주소 URL 결과</th>
+      <th>변수</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
-<!--
-        <p>None specified, or <code>permalink: date</code></p>
--->
-        <p>설정하지 않음, 또는 <code>permalink: date</code></p>
+        <p><code>:collection</code></p>
       </td>
-      <td>
-        <p><code>/2009/04/29/slap-chop.html</code></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>pretty</code></p>
-      </td>
-      <td>
-        <p><code>/2009/04/29/slap-chop/</code></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>/:month-:day-:year/:title:output_ext</code></p>
-      </td>
-      <td>
-        <p><code>/04-29-2009/slap-chop.html</code></p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>/blog/:year/:month/:day/:title/</code></p>
-      </td>
-      <td>
-        <p><code>/blog/2009/04/29/slap-chop/</code></p>
-      </td>
-    </tr>
-    <tr>
       <td>
 <!--
-        <p><code>/:year/:month/:title</code></p>
-        <p>See <a href="#extensionless-permalinks">Extensionless permalinks with no trailing slashes</a> for details.</p>
+        <p>Label of the containing collection.</p>
 -->
-        <p><code>/:year/:month/:title</code></p>
-        <p>자세한 사항은 <a href="#extensionless-permalinks">끝에 슬래시가 붙지 않은 확장자 없는 고유주소</a>를 참고하시오.</p>
+        <p>컬렉션의 레이블.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:path</code></p>
       </td>
       <td>
-        <p><code>/2009/04/slap-chop</code></p>
+        <p>
+<!--
+          Path to the document relative to the collection's directory,
+          including base filename of the document.
+-->
+          컬렉션 디렉토리에 따른,
+          파일명을 포함한 문서의 경로
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:name</code></p>
+      </td>
+      <td>
+<!--
+        <p>The document's base filename, with every sequence of spaces
+        and non-alphanumeric characters replaced by a hyphen.</p>
+-->
+        <p>모든 공백과 비-알파벳 문자를 하이픈으로 교체한
+        문서의 파일명.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:title</code></p>
+      </td>
+      <td>
+        <p>
+<!--
+          The <code>:title</code> template variable will take the
+          <code>slug</code> <a href="/docs/front-matter/">front matter</a>
+          variable value if any is present in the document; if none is
+          defined then <code>:title</code> will be equivalent to
+          <code>:name</code>, aka the slug generated from the filename.
+-->
+          만약 문서의 <a href="/docs/front-matter/">머리말</a>에
+          <code>slug</code> 가 있다면, <code>:title</code> 템플릿 변수는
+          이 값을 사용한다; 만약 존재하지 않으면
+          <code>:title</code> 는 <code>:name</code> 와
+          동일하며, 슬러그는 파일명으로부터 생성된다.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:output_ext</code></p>
+      </td>
+      <td>
+<!--
+        <p>Extension of the output file. (Included by default and usually unnecessary.)</p>
+-->
+        <p>결과물 파일의 확장자. (기본적으로 포함되어 있으며 보통 불필요하다.)</p>
       </td>
     </tr>
   </tbody>
@@ -489,144 +573,77 @@ Given a post named: `/2009-04-29-slap-chop.md`
 </div>
 
 <!--
-## Permalink settings for pages and collections {#pages-and-collections}
--->
-## 페이지와 콜렉션 관련 고유주소 설정 {#pages-and-collections}
-
-<!--
-The permalink setting in your configuration file specifies the permalink style used for posts, pages, and collections. However, because pages and collections don't have time or categories, these aspects of the permalink style are ignored with pages and collections.
--->
-환경설정 파일의 고유주소 설정은 포스트, 페이지, 콜렉션의 고유주소 스타일을 결정합니다.  하지만, 페이지와 콜렉션에는 시간이나 카테고리 정보가 없는 관계로, 페이지와 콜렉션에서는 이러한 고유주소 스타일이 무시됩니다.
-
-<!--
-For example:
--->
-예를 들어:
-
-<!--
-* A permalink style of `/:categories/:year/:month/:day/:title:output_ext` for posts becomes `/:title.html` for pages and collections.
-* A permalink style of `pretty` (or `/:categories/:year/:month/:day/:title/`), which omits the file extension and contains a trailing slash, will update page and collection permalinks to also omit the file extension and contain a trailing slash: `/:title/`.
-* A permalink style of `date`, which contains a trailing file extension, will update page permalinks to also contain a trailing file extension: `/:title.html`. But no time or category information will be included.
--->
-* 고유주소 스타일 `/:categories/:year/:month/:day/:title:output_ext` 은 페이지나 콜렉션에 적용되면 `/:title.html` 입니다.
-* 고유주소 스타일 `pretty` (또는 `/:categories/:year/:month/:day/:title/`) 는, 확장자는 없고 끝에 슬래쉬가 붙으므로, 페이지나 콜렉션의 고유주소도 확장자는 없고 끝에 슬래시가 붙습니다: `/:title/`.
-* 고유주소 스타일 `date` 는, 확장자를 포함하고 있으므로, 페이지의 고유주소도 확장자를 포함합니다: `/:title.html`. 하지만 카테고리나 시간정보는 포함되지 않습니다.
-
-<!--
-## Permalinks and default paths
--->
-## 고유주소와 경로 기본값
-
-<!--
-The path to the post or page in the built site differs for posts, pages, and collections:
--->
-사이트가 생성되고 난 후 포스트나 페이지, 콜렉션의 경로는 각각의 경우에 따라 다릅니다:
-
-<!--
-### Posts
--->
-### 포스트
-
-<!--
-The subfolders into which you may have organized your posts inside the `_posts` directory will not be part of the permalink.
--->
-포스트를 `_posts` 디렉토리의 하위 폴더에 정리한 경우 이 하위 폴더들은 고유주소에 포함되지 않습니다.
-
-<!--
-If you use a permalink style that omits the `.html` file extension, each post is rendered as an `index.html` file inside a folder with the post's name (for example, `categoryname/2016/12/01/mypostname/index.html`).
--->
-만약 `.html` 파일 확장자가 없는 고유주소 스타일을 사용하면, 각 포스트는 `index.html` 파일로 생성되고 포스트의 이름으로 된 폴더에 저장됩니다 (예시, `categoryname/2016/12/01/mypostname/index.html`).
-
-<!--
 ### Pages
 -->
 ### 페이지
 
 <!--
-Unlike posts, pages by default mimic the source directory structure exactly. (The only exception is if your page has a `permalink` declared its front matter &mdash; in that case, the structure honors the permalink setting instead of the source folder structure.)
+For pages, you have to use front matter to override the global permalink,
+and if you set a permalink via front matter defaults in `_config.yml`,
+it will be ignored.
 -->
-포스트와는 다르게, 페이지는 기본적으로 소스 디렉토리 구조를 그대로 따르게 되어 있습니다. (한 가지 예외는 페이지의 머리말에 `permalink` 를 정의한 경우입니다 &mdash; 이 경우에는, 소스 폴더 구조 대신에 고유주소 설정에 따라 구조가 결정됩니다.)
+페이지에서는, 글로벌 고유주소를 덮어쓰려면 머리말을 사용해야만 합니다.
+그리고 `_config.yml` 에 머리말 기본값이 설정된 상태에서는
+무시됩니다.
 
 <!--
-As with posts, if you use a permalink style that omits the `.html` file extension, each page is rendered as an `index.html` file inserted inside a folder with the page's name (for example, `mypage/index.html`).
+Pages have the following placeholders available:
 -->
-포스트와 마찬가지로, `.html` 파일 확장자가 없는 고유주소 스타일을 사용하면, 페이지는 `index.html` 파일로 생성되고 페이지의 이름으로 된 폴더 안에 저장됩니다 (예시, `mypage/index.html`).
+페이지에서 사용할 수 있는 Placeholder 는 다음과 같습니다:
 
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
 <!--
-### Collections
+      <th>Variable</th>
+      <th>Description</th>
 -->
-### 콜렉션
-
+      <th>변수</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>:path</code></p>
+      </td>
+      <td>
+        <p>
 <!--
-By default, collections follow a similar structure in the `_site` folder as pages, except that the path is prefaced by the collection name. For example: `collectionname/mypage.html`. For permalink settings that omit the file extension, the path would be `collection_name/mypage/index.html`.
+          Path to the page relative to the site's source directory, excluding
+          base filename of the page.
 -->
-경로 맨 앞에 콜렉션의 이름이 추가된다는 점을 제외하면, 콜렉션은 페이지처럼 `_site` 폴더의 구조를 따르도록 기본 설정되어 있습니다. 예시: `collectionname/mypage.html`. 파일 확장자를 포함하지 않는 고유주소 설정이면, 경로는 `collection_name/mypage/index.html` 이 됩니다.
-
+          사이트 소스 디렉토리에서의 파일명을 제외한 페이지 경로
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:basename</code></p>
+      </td>
+      <td>
 <!--
-Collections have their own way of setting permalinks. Additionally, collections have unique template variables available (such as `path` and `output_ext`). See the [Configuring permalinks for collections](../collections/#permalinks) in Collections for more information.
+        <p>The page's base filename</p>
 -->
-콜렉션은 콜렉션만의 고유주소 설정법이 따로 있습니다. 또, 콜렉션에서만 사용할 수 있는 템플릿 변수들도 있습니다 (예, `path` 와 `output_ext`). 더 자세한 정보는 콜렉션 페이지의 [콜렉션에 고유주소 설정하기](../collections/#permalinks)를 참고하세요.
-
+        <p>페이지의 파일명</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:output_ext</code></p>
+      </td>
+      <td>
+        <p>
 <!--
-## Flattening pages in \_site on build
+          Extension of the output file. (Included by default and usually
+          unnecessary.)
 -->
-## 빌드 시 \_site 에 페이지 생성하기
-
-<!--
-If you want to flatten your pages (pull them out of subfolders) in the `_site` directory when your site builds (similar to posts), add the `permalink` property to the front matter of each page, with no path specified:
--->
-페이지들을 (포스트처럼) 하위 폴더를 무시하고 `_site` 디렉토리에 생성하고 싶다면, 각 페이지의 머리말에 `permalink` 속성을 추가하고, 디렉토리 경로를 제거하세요:
-
-```yaml
----
-title: My page
-permalink: mypageurl.html
----
-```
-
-<!--
-## Extensionless permalinks with no trailing slashes {#extensionless-permalinks}
--->
-## 끝에 슬래시가 붙지 않은 확장자 없는 고유주소 {#extensionless-permalinks}
-
-<!--
-Jekyll supports permalinks that contain neither a trailing slash nor a file extension, but this requires additional support from the web server to properly serve. When using these types of permalinks, output files written to disk will still have the proper file extension (typically `.html`), so the web server must be able to map requests without file extensions to these files.
--->
-Jekyll 은 끝부분에 슬래시나 파일 확장자를 포함하지 않는 고유주소를 지원하지만, 올바르게 작동하려면 추가적으로 웹 서버의 지원을 필요로 합니다. 이런 종류의 고유주소를 사용할 때, 생성되는 사이트 파일은 여전히 파일 확장자를 가지고 있기 때문에 (일반적으로 `.html`), 확장자가 없는 요청을 이 파일들에 연결하는 작업을 웹 서버가 해줘야만 합니다.
-
-<!--
-Both [GitHub Pages](../github-pages/) and the Jekyll's built-in WEBrick server handle these requests properly without any additional work.
--->
-[Github Pages](../github-pages/) 와 Jekyll 에 내장되어 있는 WEBrick 서버는 추가 작업 없이 이러한 요청을 처리할 수 있습니다.
-
-### Apache
-
-<!--
-The Apache web server has extensive support for content negotiation and can handle extensionless URLs by setting the [multiviews](https://httpd.apache.org/docs/current/content-negotiation.html#multiviews) option in your `httpd.conf` or `.htaccess` file:
--->
-Apache 웹 서버는 컨텐츠 선택에 관련된 지원을 광범위하게 제공하며, `httpd.conf` 또는 `.htaccess` 파일에 [multiviews](https://httpd.apache.org/docs/current/content-negotiation.html#multiviews) 옵션을 설정해서 확장자 없는 URL 을 처리할 수 있습니다:
-
-{% highlight apache %}
-Options +MultiViews
-{% endhighlight %}
-
-### Nginx
-
-<!--
-The [try_files](http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files) directive allows you to specify a list of files to search for to process a request. The following configuration will instruct nginx to search for a file with an `.html` extension if an exact match for the requested URI is not found.
--->
-[try_files](http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files) 설정을 사용하면 요청을 처리할 때 검색할 파일들의 목록을 정의할 수 있습니다. 다음과 같이 환경설정을 하면, 요청받은 URI 에 해당하는 파일을 찾을 수 없는 경우 `.html` 확장자를 가진 파일을 검색합니다.
-
-{% highlight nginx %}
-try_files $uri $uri.html $uri/ =404;
-{% endhighlight %}
-
-<!--
-## Linking without regard to permalink styles
--->
-## 고유주소 스타일에 관계없이 링크 생성하기
-
-<!--
-You can create links in your topics to other posts, pages, or collection items in a way that is valid no matter what permalink configuration you choose. By using the `link` tag, if you change your permalinks, your links won't break. See [Linking to pages](../templates#link) in Templates for more details.
--->
-포스트나 페이지, 콜렉션 항목에 대한 링크를 고유주소 환경설정에 영향을 받지 않고 항상 올바르게 생성하는 방법이 있습니다. `link` 태그를 사용하면, 당신이 고유주소를 변경하는 경우에도, 링크가 깨지지 않습니다. 더 자세한 정보는 템플릿 페이지의 [페이지에 연결하기](../templates#link)를 참고하세요.
+          결과물 파일의 확장자. (기본적으로 포함되어 있으며 보통
+          불필요하다.)
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

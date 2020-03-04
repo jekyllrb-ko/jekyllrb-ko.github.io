@@ -1,19 +1,21 @@
 ---
 #title: Assets
-title: 재료
+title: 에셋
 permalink: /docs/assets/
 ---
 
 <!--
-Jekyll provides built-in support for Sass and can work with CoffeeScript via
-a Ruby gem. In order to use them, you must first create a file with the
-proper extension name (one of `.sass`, `.scss`, or `.coffee`) and ***start the
-file with two lines of triple dashes***, like this:
+Jekyll provides built-in support for [Sass](https://sass-lang.com/)
+and can work with [CoffeeScript](https://coffeescript.org/) via a Ruby gem.
+In order to use them, you must first create a file with the proper extension
+name (one of `.sass`, `.scss`, or `.coffee`) and
+***start the file with two lines of triple dashes***, like this:
 -->
-Jekyll 은 Sass 를 기본적으로 지원하고 루비 젬을 통해 CoffeeScript 와 연동할 수
-있습니다. 사용 방법은, 일단 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중
-하나) 로 파일을 생성하고 ***파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야
-합니다***. 이렇게 말이죠:
+Jekyll 은 [Sass](https://sass-lang.com/) 를 기본적으로 지원하고
+루비 젬을 통해 [CoffeeScript](https://coffeescript.org/) 와 연동할 수 있습니다.
+사용 방법은, 일단 적절한 확장자 (`.sass` 나 `.scss`, `.coffee` 중 하나) 로
+파일을 생성하고
+***파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야 합니다***. 이렇게 말이죠:
 
 ```sass
 ---
@@ -46,7 +48,7 @@ Jekyll 은 이 파일들을 일반 페이지와 동일하게 다루기 때문에
      will need to place <code>{&#37; raw &#37;}</code> and
      <code>{&#37; endraw &#37;}</code> tags around your code.</p>
 -->
-  <h5>Jekyll 은 재료 파일의 모든 Liquid 필터와 태그를 처리합니다</h5>
+  <h5>Jekyll 은 에셋 파일의 모든 Liquid 필터와 태그를 처리합니다</h5>
   <p>만약 <a href="https://mustache.github.io">Mustache</a> 를 사용하거나
      <a href="/docs/templates/">Liquid 템플릿 문법</a>과 충돌하는 다른
      JavaScript 템플릿 언어를 사용하고 있다면, 해당 코드 앞뒤에
@@ -74,12 +76,10 @@ Sass 파일은 `<source>/css` 처럼 결과 파일이 생성되어야 하는 위
 
 <!--
 If you are using Sass `@import` statements, you'll need to ensure that your
-`sass_dir` is set to the base directory that contains your Sass files. You
-can do that thusly:
+`sass_dir` is set to the base directory that contains your Sass files:
 -->
 만약 Sass 의 `@import` 선언을 사용한다면, 환경설정 옵션 `sass_dir` 에 Sass
-파일이 들어있는 디렉토리를 지정해야 합니다.
-그 방법은 다음과 같습니다:
+파일이 들어있는 디렉토리를 지정해야 합니다:
 
 ```yaml
 sass:
@@ -102,8 +102,8 @@ Sass 변환기가 사용하는 환경설정 옵션 `sass_dir` 의 디폴트 값�
 
     Note that the <code>sass_dir</code> becomes the load path for Sass imports,
     nothing more. This means that Jekyll does not know about these files
-    directly, so any files here should not contain the YAML Front Matter as
-    described above nor will they be transformed as described above. This
+    directly. Any files here should not contain the empty front matter as
+    described above. If they do, they'll not be transformed as described above. This
     folder should only contain imports.
 
   </p>
@@ -113,9 +113,9 @@ Sass 변환기가 사용하는 환경설정 옵션 `sass_dir` 의 디폴트 값�
 
     <code>sass_dir</code> 은 Sass 의 import 대상 경로 그 이상도 그 이하도
     아닙니다. 이것은 Jekyll 이 이 파일들에 대하여 직접적으로 알지 못한다는
-    뜻으로, 따라서 이 안의 모든 파일은 YAML 머리말을 가지고 있어서는
-    안되고, 그렇지 않으면 앞서 설명한 것과 같이 변환 작업을 거치게 될
-    것입니다. 이 폴더 안에는 import 로 사용할 파일만 있어야 합니다.
+    뜻입니다. 이 안의 모든 파일은 앞서 설명한 것과 같은 빈 머리말을 가지고
+    있어서는 안됩니다. 그렇지 않으면 변환 작업을 거치게 되지 않을것입니다. 이
+    폴더 안에는 import 로 사용할 파일만 있어야 합니다.
 
   </p>
 </div>
@@ -156,5 +156,5 @@ Jekyll 3.0 과 그 이후 버전에서 Coffeescript 를 활성화하려면
 
 ```yaml
 plugins:
- - jekyll-coffeescript
+  - jekyll-coffeescript
 ```

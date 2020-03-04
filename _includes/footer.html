@@ -1,45 +1,23 @@
 <footer>
   <div class="grid">
     <div class="unit one-third center-on-mobiles">
-<!--
+      <p>Jekyll is lovingly maintained by the <a href="/team/">core team</a> of volunteers. </p>
       <p>The contents of this website are <br />&copy;&nbsp;{{ site.time | date: '%Y' }} under the terms of the <a href="{{ site.repository }}/blob/master/LICENSE">MIT&nbsp;License</a>.</p>
--->
-      <p>&copy;&nbsp;{{ site.time | date: '%Y' }}<br /> 이 웹사이트의 자료는 <a href="{{ site.repository }}/blob/master/LICENSE">MIT&nbsp;라이선스</a>를 따릅니다.</p>
     </div>
     <div class="unit two-thirds align-right center-on-mobiles">
-<!--
       <p>
         Proudly hosted by
         <a href="https://github.com">
           <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
         </a>
       </p>
--->
-      <p>
-        <a href="https://github.com">
-          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
-        </a>
-        에서 호스팅
-      </p>
     </div>
     <div class="unit two-thirds align-right center-on-mobiles">
-<!--
       <p>
-        Sponsored by
-        {% for sponsor in site.data.sponsors %}
-          <a href="{{ sponsor.url }}" style="margin-left: 10px;">
-            <img src="{{ sponsor.image }}" height="{{ sponsor.height }}" width="{{ sponsor.width }}" alt="{{ sponsor.name }}">
-          </a>
-        {% endfor %}
-      </p>
--->
-      <p>
-        스폰서
-        {% for sponsor in site.data.sponsors %}
-          <a href="{{ sponsor.url }}" style="margin-left: 10px;">
-            <img src="{{ sponsor.image }}" height="{{ sponsor.height }}" width="{{ sponsor.width }}" alt="{{ sponsor.name }}">
-          </a>
-        {% endfor %}
+        Jekyll is funded thanks to its
+        <a href="https://github.com/jekyll/jekyll#sponsors">
+          sponsors!
+        </a>
       </p>
     </div>
   </div>
