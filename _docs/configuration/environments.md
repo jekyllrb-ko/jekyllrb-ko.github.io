@@ -78,11 +78,14 @@ values in your configuration files when moving from one environment to another.
 빌드 명령에 옵션을 정의함으로써, 한 환경에서 다른 환경으로
 환경설정 파일의 값을 수정하지 않고 이동할 수 있습니다.
 
-<div class="note info">
-  <p>
+{: .note}
 <!--
-    To switch part of your config settings depending on the environment, use the <a href="/docs/configuration/options/#build-command-options">build command option</a>, for example <code>--config _config.yml,_config_development.yml</code>. Settings in later files override settings in earlier files.
+To switch part of your config settings depending on the environment, use the
+<a href="/docs/configuration/options/#build-command-options">build command option</a>,
+for example <code>--config _config.yml,_config_development.yml</code>. Settings
+in later files override settings in earlier files.
 -->
-    환경설정의 일부분을 원하는 환경에 따라 전환하려면, <a href="/docs/configuration/options/#build-command-options">빌드 명령어 옵션</a>을 사용하세요. 예, <code>--config _config.yml,_config_development.yml</code>. 설정들의 적용 우선순위는 설정파일 순서의 역순입니다.
-  </p>
-</div>
+환경설정의 일부분을 원하는 환경에 따라 전환하려면,
+<a href="/docs/configuration/options/#build-command-options">빌드 명령어 옵션</a>을
+사용하세요. 예, <code>--config _config.yml,_config_development.yml</code>. 설정들의
+적용 우선순위는 설정파일 순서의 역순입니다.

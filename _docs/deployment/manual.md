@@ -57,7 +57,6 @@ If you have direct access to the deployment web server, the process is essential
 -->
 게시하려는 웹 서버에 접속할 권한이 있다면, 해야할 작업 내용은 근본적으로 동일하지만, 파일을 옮기는 방법에 몇 가지 다른 선택사항 (`scp` 또는 파일 시스템에 직접 접근) 이 생깁니다. 기억해야할 것은 생성된 `_site` 폴더 내용을 옮길 때 반드시 웹 서버의 올바른 웹 루트 디렉토리에 저장해야 한다는 점입니다.
 
-
 ## Rack-Jekyll
 
 <!--

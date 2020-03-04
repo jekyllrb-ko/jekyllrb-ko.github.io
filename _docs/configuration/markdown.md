@@ -69,7 +69,7 @@ Kramdown 은 Jekyll 의 기본 마크다운 렌더러입니다. 다음은 현재
 </div>
 
 <!--
-For more details about these options have a look at the [Kramdown configuration documentation](https://kramdown.gettalong.org/options.html). 
+For more details about these options have a look at the [Kramdown configuration documentation](https://kramdown.gettalong.org/options.html).
 -->
 이 옵션에 관련된 더 자세한 내용은 [Kramdown 환경설정 문서](https://kramdown.gettalong.org/options.html)를 살펴보세요.
 
@@ -125,9 +125,9 @@ delimiter:
 또한, 첫 번째 구분자 바로 뒤에 언어를 명시하면 구문강조가 가능하다는 것도
 알아두세요:
 
-        ```ruby
-        # ...ruby code
-        ```
+    ```ruby
+    # ...ruby code
+    ```
 
 <!--
 With both fenced code blocks and highlighter enabled, this will statically

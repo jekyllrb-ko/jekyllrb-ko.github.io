@@ -38,7 +38,6 @@ A gem is code you can include in Ruby projects. It allows you to package up func
 [jekyll-archives](https://github.com/jekyll/jekyll-archives)
 같은 Jekyll 플러그인과 마찬가지로 하나의 젬이다.
 
-
 ## Gemfile
 
 <!--

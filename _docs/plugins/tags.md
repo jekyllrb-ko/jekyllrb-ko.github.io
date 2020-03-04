@@ -85,7 +85,7 @@ pages:
 있습니다:
 
 {% raw %}
-```ruby
+```liquid
 <p>{% render_time page rendered at: %}</p>
 ```
 {% endraw %}
@@ -105,7 +105,7 @@ And we would get something like this on the page:
 ## 태그 블록
 
 <!--
-The `render_time` tag seen above can also be rewritten as a tag block by 
+The `render_time` tag seen above can also be rewritten as a tag block by
 inheriting the `Liquid::Block` class. Look at the example below:
 -->
 위 예시에 있는 `render_time` 태그는 `Liquid::Block` 클래스를 상속받아
@@ -148,15 +148,14 @@ And we would still get the same output as above on the page:
 <p>page rendered at: Tue June 22 23:38:47 –0500 2010</p>
 ```
 
-<div class="note info">
+{: .note .info}
 <!--
-  <p>In the above example, the tag block and the tag are both registered with 
-  the name <code>render_time</code> but to register a tag and a tag block using 
-  the same name in the same project is not recommended as this may lead to 
-  conflicts.</p>
+In the above example, the tag block and the tag are both registered with
+the name <code>render_time</code>, but to register a tag and a tag block using
+the same name in the same project is not recommended as this may lead to
+conflicts.
 -->
-  <p>위 예시에서, 태그 블록과 태그 모두가 <code>render_time</code> 라는 이름으로
-  정의되었는데, 하나의 프로젝트에서 태그와 태그 블록을 같은 이름으로 정의하는
-  것은 충돌을 야기할 수 있으므로 권장하지
-  않습니다.</p>
-</div>
+위 예시에서, 태그 블록과 태그 모두가 <code>render_time</code> 이라는 이름으로
+정의되었는데, 하나의 프로젝트에서 태그와 태그 블록을 같은 이름으로 정의하는
+것은 충돌을 야기할 수 있으므로 권장하지
+않습니다.

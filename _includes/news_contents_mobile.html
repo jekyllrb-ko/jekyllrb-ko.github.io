@@ -6,9 +6,9 @@
     <option value="">포스트를 선택하세요…</option>
     <option value="/news/">Home</option>
     <optgroup label="posts">
-      {% for post in site.posts %}
+      {% for post in site.posts -%}
       <option value="{{ post.url }}">{{ post.title }}</option>
-      {% endfor %}
+      {% endfor -%}
     </optgroup>
   </select>
 </div>

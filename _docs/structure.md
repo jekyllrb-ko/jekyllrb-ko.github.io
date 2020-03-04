@@ -9,66 +9,66 @@ A basic Jekyll site usually looks something like this:
 가장 기본적인 Jekyll 사이트는 보통 이렇게 생겼습니다:
 
 <!--
-```sh
+```
 .
 ├── _config.yml
 ├── _data
-|   └── members.yml
+│   └── members.yml
 ├── _drafts
-|   ├── begin-with-the-crazy-ideas.md
-|   └── on-simplicity-in-technology.md
+│   ├── begin-with-the-crazy-ideas.md
+│   └── on-simplicity-in-technology.md
 ├── _includes
-|   ├── footer.html
-|   └── header.html
+│   ├── footer.html
+│   └── header.html
 ├── _layouts
-|   ├── default.html
-|   └── post.html
+│   ├── default.html
+│   └── post.html
 ├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
-|   └── 2009-04-26-barcamp-boston-4-roundup.md
+│   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+│   └── 2009-04-26-barcamp-boston-4-roundup.md
 ├── _sass
-|   ├── _base.scss
-|   └── _layout.scss
+│   ├── _base.scss
+│   └── _layout.scss
 ├── _site
 ├── .jekyll-metadata
 └── index.html # can also be an 'index.md' with valid front matter
 ```
 -->
-```sh
+```
 .
 ├── _config.yml
 ├── _data
-|   └── members.yml
+│   └── members.yml
 ├── _drafts
-|   ├── begin-with-the-crazy-ideas.md
-|   └── on-simplicity-in-technology.md
+│   ├── begin-with-the-crazy-ideas.md
+│   └── on-simplicity-in-technology.md
 ├── _includes
-|   ├── footer.html
-|   └── header.html
+│   ├── footer.html
+│   └── header.html
 ├── _layouts
-|   ├── default.html
-|   └── post.html
+│   ├── default.html
+│   └── post.html
 ├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
-|   └── 2009-04-26-barcamp-boston-4-roundup.md
+│   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+│   └── 2009-04-26-barcamp-boston-4-roundup.md
 ├── _sass
-|   ├── _base.scss
-|   └── _layout.scss
+│   ├── _base.scss
+│   └── _layout.scss
 ├── _site
 ├── .jekyll-metadata
 └── index.html # 올바른 머리말을 가진 'index.md' 도 가능
 ```
 
-<div class="note info">
+<div class="note">
 <!--
   <h5>Directory structure of Jekyll sites using gem-based themes</h5>
 -->
   <h5>루비 젬 기반 테마를 사용하는 Jekyll 사이트의 디렉토리 구조</h5>
   <p>
 <!--
-    Starting <strong>Jekyll 3.2</strong>, a new Jekyll project bootstrapped with <code>jekyll new</code> uses <a href="/docs/themes/">gem-based themes</a> to define the look of the site. This results in a lighter default directory structure : <code>_layouts</code>, <code>_includes</code> and <code>_sass</code> are stored in the theme-gem, by default.
+    Since version {% include docs_version_badge.html version="3.2"%}, a new Jekyll project bootstrapped with <code>jekyll new</code> uses <a href="/docs/themes/">gem-based themes</a> to define the look of the site. This results in a lighter default directory structure: <code>_layouts</code>, <code>_includes</code> and <code>_sass</code> are stored in the theme-gem, by default.
 -->
-    <strong>Jekyll 3.2</strong> 버전부터, <code>jekyll new</code> 명령으로 생성된 Jekyll 프로젝트는 <a href="/docs/themes/">루비 젬 기반 테마</a>를 사용하여 사이트의 외관을 구성합니다. 이로 인해, 테마 루비 젬에 기본적으로 포함된 경량 디렉토리 구조 : <code>_layouts</code>, <code>_includes</code>, <code>_sass</code> 를 갖게 됩니다.
+    버전 {% include docs_version_badge.html version="3.2"%} 부터, <code>jekyll new</code> 명령으로 생성된 Jekyll 프로젝트는 <a href="/docs/themes/">루비 젬 기반 테마</a>를 사용하여 사이트의 외관을 구성합니다. 이로 인해, 테마 루비 젬에 기본적으로 포함된 경량 디렉토리 구조: <code>_layouts</code>, <code>_includes</code>, <code>_sass</code> 를 갖게 됩니다.
   </p>
   <br />
   <p>

@@ -45,6 +45,7 @@ In the case of Minima, you see only the following files in your Jekyll site dire
 Minima 의 경우, 당신의 Jekyll 사이트 디렉토리에서 볼 수 있는 파일은 다음과 같습니다:
 
 ```
+.
 ├── Gemfile
 ├── Gemfile.lock
 ├── _config.yml
@@ -125,33 +126,34 @@ To locate a theme's files on your computer:
 
    A Finder or Explorer window opens showing the theme's files and directories. The Minima theme gem contains these files:
 
-    ```
-    ├── LICENSE.txt
-    ├── README.md
-    ├── _includes
-    │   ├── disqus_comments.html
-    │   ├── footer.html
-    │   ├── google-analytics.html
-    │   ├── head.html
-    │   ├── header.html
-    │   ├── icon-github.html
-    │   ├── icon-github.svg
-    │   ├── icon-twitter.html
-    │   └── icon-twitter.svg
-    ├── _layouts
-    │   ├── default.html
-    │   ├── home.html
-    │   ├── page.html
-    │   └── post.html
-    ├── _sass
-    │   ├── minima
-    │   │   ├── _base.scss
-    │   │   ├── _layout.scss
-    │   │   └── _syntax-highlighting.scss
-    │   └── minima.scss
-    └── assets
-        └── main.scss
-     ```
+   ```
+   .
+   ├── LICENSE.txt
+   ├── README.md
+   ├── _includes
+   │   ├── disqus_comments.html
+   │   ├── footer.html
+   │   ├── google-analytics.html
+   │   ├── head.html
+   │   ├── header.html
+   │   ├── icon-github.html
+   │   ├── icon-github.svg
+   │   ├── icon-twitter.html
+   │   └── icon-twitter.svg
+   ├── _layouts
+   │   ├── default.html
+   │   ├── home.html
+   │   ├── page.html
+   │   └── post.html
+   ├── _sass
+   │   ├── minima
+   │   │   ├── _base.scss
+   │   │   ├── _layout.scss
+   │   │   └── _syntax-highlighting.scss
+   │   └── minima.scss
+   └── assets
+       └── main.scss
+   ```
 -->
 1. 테마의 젬 이름과 함께 `bundle info --path` 를 실행합니다. 예, Jekyll 기본 테마의 경우 `bundle info --path minima`.
 
@@ -178,33 +180,34 @@ To locate a theme's files on your computer:
 
    Finder 나 익스플로러 창이 열려 테마의 파일과 디렉토리를 보여줍니다. Minima 테마 젬에는 다음 파일들이 포함되어 있습니다:
 
-    ```
-    ├── LICENSE.txt
-    ├── README.md
-    ├── _includes
-    │   ├── disqus_comments.html
-    │   ├── footer.html
-    │   ├── google-analytics.html
-    │   ├── head.html
-    │   ├── header.html
-    │   ├── icon-github.html
-    │   ├── icon-github.svg
-    │   ├── icon-twitter.html
-    │   └── icon-twitter.svg
-    ├── _layouts
-    │   ├── default.html
-    │   ├── home.html
-    │   ├── page.html
-    │   └── post.html
-    ├── _sass
-    │   ├── minima
-    │   │   ├── _base.scss
-    │   │   ├── _layout.scss
-    │   │   └── _syntax-highlighting.scss
-    │   └── minima.scss
-    └── assets
-        └── main.scss
-     ```
+   ```
+   .
+   ├── LICENSE.txt
+   ├── README.md
+   ├── _includes
+   │   ├── disqus_comments.html
+   │   ├── footer.html
+   │   ├── google-analytics.html
+   │   ├── head.html
+   │   ├── header.html
+   │   ├── icon-github.html
+   │   ├── icon-github.svg
+   │   ├── icon-twitter.html
+   │   └── icon-twitter.svg
+   ├── _layouts
+   │   ├── default.html
+   │   ├── home.html
+   │   ├── page.html
+   │   └── post.html
+   ├── _sass
+   │   ├── minima
+   │   │   ├── _base.scss
+   │   │   ├── _layout.scss
+   │   │   └── _syntax-highlighting.scss
+   │   └── minima.scss
+   └── assets
+       └── main.scss
+   ```
 
 <!--
 With a clear understanding of the theme's files, you can now override any theme file by creating a similarly named file in your Jekyll site directory.
@@ -236,11 +239,11 @@ Note that making copies of theme files will prevent you from receiving any theme
 -->
 테마 파일의 복사본을 만든 경우 해당 파일에 대해서는 테마의 업데이트가 적용되지 않는다는 것을 기억하세요. 이에 관한 대안으로, 스타일시트에 관련된 테마 업데이트는 유지하고자 한다면, 직접 만든 CSS 파일을 고유한 이름으로 추가하고, 명시도가 높은 CSS 셀렉터를 사용하세요.
 
+{: .note .info}
 <!--
-Refer to your selected theme's documentation and source repository for more information on what files you can override.
+Refer to your selected theme's documentation and source repository for more information on which files you can override.
 -->
 사용중인 테마의 설명서나 소스 저장소를 참고하여 덮어쓸 수 있는 파일에 관한 더 많은 정보를 얻을 수 있습니다.
-{: .note .info}
 
 <!--
 ## Converting gem-based themes to regular themes
@@ -262,7 +265,7 @@ Then you must tell Jekyll about the plugins that were referenced by the theme. Y
 -->
 그 다음 테마가 참조하고 있던 플러그인들을 Jekyll 에 알려주어야 합니다. 이 플러그인들은 테마 gemspec 파일의 런타임 종속성 (Runtime Dependency) 을 보면 알 수 있습니다. Minima 테마로부터 변환하는 상황을 예로 들어보면, 다음과 같은 내용이 있을 것입니다:
 
-```
+```ruby
 spec.add_runtime_dependency "jekyll-feed", "~> 0.12"
 spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.6"
 ```
@@ -362,7 +365,8 @@ To install a gem-based theme:
    # This is an example, declare the theme gem you want to use here
    gem "jekyll-theme-minimal"
    ```
-  Or if you've started with the `jekyll new` command, replace `gem "minima", "~> 2.0"` with the gem you want, e.g:
+
+   Or if you've started with the `jekyll new` command, replace `gem "minima", "~> 2.0"` with the gem you want, e.g:
 
    ```diff
    # ./Gemfile
@@ -397,7 +401,8 @@ To install a gem-based theme:
    # 이것은 하나의 예제로, 자신이 원하는 테마 젬을 여기에 선언한다.
    gem "jekyll-theme-minimal"
    ```
-  처음에 `jekyll new` 명령으로 시작한 경우에는, `gem "minima", "~> 2.0"` 부분을 원하는 젬으로 변경합니다:
+
+   처음에 `jekyll new` 명령으로 시작한 경우에는, `gem "minima", "~> 2.0"` 부분을 원하는 젬으로 변경합니다:
 
    ```diff
    # ./Gemfile
@@ -424,11 +429,11 @@ To install a gem-based theme:
    bundle exec jekyll serve
    ```
 
+{: .note .info}
 <!--
 You can have multiple themes listed in your site's `Gemfile`, but only one theme can be selected in your site's `_config.yml`.
 -->
 여러 개의 테마를 `Gemfile` 에 나열할 수 있지만, `_config.yml` 파일에서 선택할 수 있는 테마는 오직 하나뿐입니다.
-{: .note .info }
 
 <!--
 If you're publishing your Jekyll site on [GitHub Pages](https://pages.github.com/), note that GitHub Pages supports only [some gem-based themes](https://pages.github.com/themes/). GitHub Pages also supports [using any theme hosted on GitHub](https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/#adding-a-jekyll-theme-in-your-sites-_configyml-file) using the `remote_theme` configuration as if it were a gem-based theme.
@@ -532,7 +537,7 @@ Your theme's stylesheets should be placed in your theme's `_sass` folder, again,
 
 ```
 _sass
-├── jekyll-theme-awesome.scss
+└── jekyll-theme-awesome.scss
 ```
 
 <!--
@@ -618,11 +623,11 @@ To preview your theme as you're authoring it, it may be helpful to add dummy con
 -->
 테마를 미리보기 하려면 실제로 사용해보세요. 임의의 가상 컨텐츠, 예를 들면 `/index.html` 과 `/page.html` 같은 파일을 넣어두는게 도움이 될 것입니다. 이로써 Jekyll 사이트의 미리보기를 하는 것과 동일하게, `jekyll build` 와 `jekyll serve` 명령으로 테마를 미리보기 할 수 있습니다.
 
+{: .note .info}
 <!--
 If you do preview your theme locally, be sure to add `/_site` to your theme's `.gitignore` file to prevent the compiled site from also being included when you distribute your theme.
 -->
 로컬상에서 테마를 미리보기하는 경우, 컴파일된 사이트가 배포판에 포함되지 않도록 테마의 `.gitignore` 파일에 `/_site` 를 추가하는 것을 잊지 마세요.
-{: .info .note}
 
 <!--
 ### Publishing your theme

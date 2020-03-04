@@ -23,7 +23,7 @@ CI 를 사용하는 것입니다.
 <!--
 These services run a script when there's a commit on your Git repository.
 You might want this script to build the site, run tests over the output then deploy it to the
-service of your choice. 
+service of your choice.
 -->
 이 서비스들은 Git 저장소에 커밋이 있을 때 스크립트를 실행합니다.
 이 스크립트는 사이트를 빌드하고, 결과물에 대해 테스트를 수행한 다음 당신이 원하는

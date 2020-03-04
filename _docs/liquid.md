@@ -6,7 +6,7 @@ redirect_from: "/docs/templates/"
 
 <!--
 Jekyll uses the [Liquid](https://shopify.github.io/liquid/) templating language
-to process templates. 
+to process templates.
 -->
 Jekyll 은 [Liquid](https://shopify.github.io/liquid/) 템플릿 언어를
 사용해 템플릿을 처리합니다.

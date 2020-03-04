@@ -32,12 +32,12 @@ You have 3 options for installing plugins:
    example:
 
    ```ruby
-    group :jekyll_plugins do
-      gem "jekyll-gist"
-      gem "jekyll-coffeescript"
-      gem "jekyll-assets"
-      gem "another-jekyll-plugin"
-    end
+   group :jekyll_plugins do
+     gem "jekyll-gist"
+     gem "jekyll-coffeescript"
+     gem "jekyll-assets"
+     gem "another-jekyll-plugin"
+   end
    ```
 
    Now you need to install all plugins from your Bundler group by running single command `bundle install`.
@@ -64,12 +64,12 @@ You have 3 options for installing plugins:
    같습니다:
 
    ```ruby
-    group :jekyll_plugins do
-      gem "jekyll-gist"
-      gem "jekyll-coffeescript"
-      gem "jekyll-assets"
-      gem "another-jekyll-plugin"
-    end
+   group :jekyll_plugins do
+     gem "jekyll-gist"
+     gem "jekyll-coffeescript"
+     gem "jekyll-assets"
+     gem "another-jekyll-plugin"
+   end
    ```
 
    이제 Bundler 그룹의 모든 플러그인을 설치해야 하는데, 단 하나의 명령어 `bundle install` 을 실행하세요.
@@ -103,7 +103,7 @@ You have 3 options for installing plugins:
   </p>
 </div>
 
-<div class="note info">
+<div class="note">
 <!--
   <h5>
     <code>_plugins</code>, <code>_config.yml</code> and <code>Gemfile</code>
@@ -147,15 +147,12 @@ the `plugins:` key in your site's config file.
 심지어 사이트 환경설정 파일의 `plugins:` 키에 정의되어 있지 않더라도, 이
 안에 있는 루비 젬들은 활성화됩니다.
 
-<div class="note warning">
-  <p>
+{: .note .warning}
 <!--
-    Gems included in the <code>:jekyll-plugins</code> group are activated
-    regardless of the <code>--safe</code> mode setting. Be aware of what
-    gems are included under this group!
+Gems included in the <code>:jekyll-plugins</code> group are activated
+regardless of the <code>--safe</code> mode setting. Be aware of which
+gems are included under this group!
 -->
-    그룹 <code>:jekyll-plugins</code> 에 포함되어 있는 루비 젬들은
-    <code>--safe</code> 모드 설정에 관계없이 활성화됩니다. 이 그룹에
-    어떤 루비 젬들을 포함시킬 것인지 주의를 기울이세요!
-  </p>
-</div>
+그룹 <code>:jekyll-plugins</code> 에 포함되어 있는 루비 젬들은
+<code>--safe</code> 모드 설정에 관계없이 활성화됩니다. 이 그룹에
+어떤 루비 젬들을 포함시킬 것인지 주의를 기울이세요!

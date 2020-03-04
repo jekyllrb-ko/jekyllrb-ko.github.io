@@ -4,11 +4,11 @@ title: 명령어
 permalink: /docs/plugins/commands/
 ---
 <!--
-As of version 2.5.0, Jekyll can be extended with plugins which provide
+As of version {% include docs_version_badge.html version="2.5.0"%}, Jekyll can be extended with plugins which provide
 subcommands for the `jekyll` executable. This is possible by including the
 relevant plugins in a `Gemfile` group called `:jekyll_plugins`:
 -->
-버전 2.5.0 부터, Jekyll 은 `jekyll` 실행파일에 하위명령어를 추가로 제공하는
+버전 {% include docs_version_badge.html version="2.5.0"%} 부터, Jekyll 은 `jekyll` 실행파일에 하위명령어를 추가로 제공하는
 플러그인들로 확장될 수 있습니다. `Gemfile` 의 `:jekyll_plugins` 라는 그룹에 관련
 플러그인을 추가하면 됩니다:
 
@@ -66,16 +66,14 @@ Commands should implement this single class method:
       <td>
         <p><code>init_with_program</code></p>
       </td>
-<!--
       <td><p>
+<!--
         This method accepts one parameter, the
         <code><a href="https://github.com/jekyll/mercenary#readme">Mercenary::Program</a></code>
         instance, which is the Jekyll program itself. Upon the program,
         commands may be created using the above syntax. For more details,
         visit the Mercenary repository on GitHub.com.
-      </p></td>
 -->
-      <td><p>
         이 메소드의 파라메터는 단 하나,
         <code><a href="https://github.com/jekyll/mercenary#readme">Mercenary::Program</a></code>
         인스턴스인데 이는 바로 Jekyll 프로그램 그 자체입니다. 프로그램에 따라,

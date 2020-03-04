@@ -27,8 +27,9 @@ example here's a collection of staff members:
 collections:
   - staff_members
 ```
+
 <!--
-In this case `collections` is defined as a sequence (i.e array) with no additional metadata defined for each collection.  
+In this case `collections` is defined as a sequence (i.e array) with no additional metadata defined for each collection.
 You can optionally specify metadata for your collection by defining `collections` as a mapping (i.e hashmap) instead of sequence, and then defining additional fields in it:
 -->
 여기서 `collections` 는 시퀀스로 (예, 배열) 각각의 컬렉션에 대한 부가적인 메타데이터 없이 정의되었습니다.
@@ -40,12 +41,17 @@ collections:
     people: true
 ```
 
-<div class="note">
+{: .note .info}
 <!--
-  <p>When defining a collection as a sequence, its pages will not be rendered by default. To enable this, <code>output: true</code> must be specified on the collection, which requires defining the collection as a mapping. For more information, see the section <a href="#output">Output</a></p>
+When defining a collection as a sequence, its pages will not be rendered by
+default. To enable this, <code>output: true</code> must be specified on the
+collection, which requires defining the collection as a mapping. For more
+information, see the section <a href="#output">Output</a>.
 -->
-  <p>컬렉션을 시퀀스로 정의할 때, 포함된 페이지들이 자동으로 렌더링되지 않습니다. 이를 활성화하려면, 컬렉션에 <code>output: true</code> 가 지정되어 있어야 하는데, 이는 컬렉션을 매핑으로 정의하는 것과 같습니다. 더 자세하 내용은, <a href="#output">출력</a> 섹션을 참고하세요</p>
-</div>
+컬렉션을 시퀀스로 정의할 때, 포함된 페이지들이 자동으로 렌더링되지
+않습니다. 이를 활성화하려면, 컬렉션에 <code>output: true</code> 가 지정되어
+있어야 하는데, 이는 컬렉션을 매핑으로 정의하는 것과 같습니다. 더 자세한
+내용은, <a href="#output">출력</a> 섹션을 참고하세요.
 
 <div class="note">
 <!--
@@ -131,7 +137,7 @@ Jane has worked on Jekyll for the past *five years*.
   위 예시는 내부적으로 컬렉션으로 분류되지만, [포스트](docs/posts/)에는 적용되지
   않는다는 것을 기억하세요. 올바른 형식의 파일명을 가진 포스트는 머리말이 없는
   경우에도 처리됩니다.
-</em> 
+</em>
 
 <div class="note info">
 <!--
@@ -165,7 +171,6 @@ using the `content` variable:
 {% endfor %}
 ```
 {% endraw %}
-
 
 <!--
 If you'd like Jekyll to create a rendered page for each document in your
@@ -470,7 +475,6 @@ you specified in your `_config.yml` (if present) and the following information:
   <code>published: false</code> 설정(<em>기본값 <code>true</code></em>)으로 가능합니다.
   </p>
 </div>
-
 
 <!--
 ### Documents

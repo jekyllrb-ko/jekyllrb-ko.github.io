@@ -190,7 +190,7 @@ of your `.bashrc` file:
 루비 젬을 설치하지 않고 관리자가 아닌 일반 계정으로 Jekyll 을 실행할 수
 있다는 사실입니다:
 
-```
+```bash
 <!--
 # Ruby exports
 -->
@@ -438,7 +438,7 @@ specified elsewhere.
 -->
 **메모: 버전 v3.3.0 부터는, `node_modules` 와 `vendor` 안의 몇몇 하위 디렉토리들은 처리하지 않는 것이 Jekyll 의 기본 동작방식입니다. 하지만 환경설정 파일에 `exclude:` 배열을 명시적으로 설정하여 이 기본 동작방식을 조정할 수 있는데, 이로 인해 몇몇 사용자들에게는 사이트 생성 시 다음과 같은 내용의 에러가 발생할 수도 있습니다:**
 
-```sh
+```
     ERROR: YOUR SITE COULD NOT BE BUILT:
     ------------------------------------
     Invalid date '<%= Time.now.strftime('%Y-%m-%d %H:%M:%S %z') %>':
@@ -450,7 +450,6 @@ specified elsewhere.
 Adding `vendor/bundle` to the `exclude:` list will solve this problem but will lead to having other sub-directories under `/vendor/` (and also `/node_modules/`, if present) be processed to the destination folder `_site`.
 -->
 그저 `vendor/bundle` 을 `exclude:` 목록에 추가하는 것만으로 이 문제를 해결할 수 있지만, `/vendor/` 의 하위 디렉토리들(존재하는 경우, `/node_modules/` 포함)도 최종 결과물 경로인 `_site` 안에 생성됩니다.
-
 
 <!--
 The proper solution is to incorporate the default setting for `exclude:` rather than override it completely:
@@ -479,7 +478,6 @@ From `v3.5` onward, `Gemfile` and `Gemfile.lock` are also excluded by default. S
 -->
 버전 `v3.5` 부터, 기본 설정으로 `Gemfile` 과 `Gemfile.lock` 도 제외됩니다. 따라서, 특별한 경우가 아닌 이상 환경설정 파일에 추가로 `exclude:` 배열을 정의할 필요가 없습니다. 또한 기본 설정에 이미 정의된 내용도 위와 같이 수정하거나, 아니면 완전히 제거하거나, 나중을 위해 주석 처리할 수 있습니다.
 
-
 <!--
 ## Markup Problems
 -->
@@ -503,7 +501,7 @@ Unlike previous versions, using `{{ "{{" }}` in 2.0 triggers the following error
 Liquid 2.0 은 템플릿에 사용하는 `{{ "{{" }}` 가 고장난 것 같습니다.
 이전 버전과는 다르게, 2.0 에서 `{{ "{{" }}` 를 사용하면 다음과 같은 에러가 발생합니다:
 
-```sh
+```
 '{{ "{{" }}' was not properly terminated with regexp: /\}\}/  (Liquid::SyntaxError)
 ```
 

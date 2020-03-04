@@ -73,7 +73,7 @@ Save the commands you want to run and succeed in a file: `./script/cibuild`
 -->
 ### HTML Proofer 실행파일
 
-```sh
+```bash
 #!/usr/bin/env bash
 set -e # halt script on error
 

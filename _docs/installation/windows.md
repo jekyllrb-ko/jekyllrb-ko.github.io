@@ -76,9 +76,10 @@ If you are using Windows 10 version 1607 or later, another option to run Jekyll 
 Windows Subsystem for Linux 를 [설치](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)하는 것입니다.
 
 <!--
-*Note:* You must have [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) enabled.
+{: .note .info}
+You must have [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) enabled.
 -->
-*중요:* 반드시 [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) 가 활성화되어 있어야 합니다.
+반드시 [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) 가 활성화되어 있어야 합니다.
 
 <!--
 First let's make sure all our packages / repositories are up to date. Open a new Command Prompt instance, and type the following:
@@ -88,6 +89,7 @@ First let's make sure all our packages / repositories are up to date. Open a new
 ```sh
 bash
 ```
+
 <!--
 Your Command Prompt instance should now be a Bash instance. Now we must update our repo lists and packages.
 -->
@@ -96,6 +98,7 @@ Your Command Prompt instance should now be a Bash instance. Now we must update o
 ```sh
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
+
 <!--
 Now we can install Ruby. To do this we will use a repository from [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/),
 which hosts optimized versions of Ruby for Ubuntu.
@@ -131,6 +134,7 @@ gem install jekyll bundler
 (*Note: no `sudo` here.*)
 -->
 (*중요: `sudo` 사용 안함.*)
+
 <!--
 Check if Jekyll installed properly by running:
 -->
@@ -164,10 +168,10 @@ with the current date in the filename.
 </div>
 
 <!--
-**Note:** Bash on Ubuntu on Windows is still under development, so you may run into issues.
+{: .note .info}
+Bash on Ubuntu on Windows is still under development, so you may run into issues.
 -->
-**중요:** 윈도우즈에서 사용하는 우분투용 Bash 는 지금도 개발이 진행중인 관계로, 문제가 발생할 가능성이 있습니다.
-
+윈도우즈에서 사용하는 우분투용 Bash 는 지금도 개발이 진행중인 관계로, 문제가 발생할 가능성이 있습니다.
 
 <!--
 ## Encoding
@@ -234,19 +238,19 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   <h5>TZInfo 2.0 비호환</h5>
   <p>
 <!--
-    <code>v2.0</code> of the TZInfo library has introduced a change in how timezone offsets are calculated.
+    Version 2.0 of the TZInfo library has introduced a change in how timezone offsets are calculated.
     This will result in incorrect date and time for your posts when the site is built with Jekyll 3.x on Windows.
 -->
-    TZInfo 라이브러리 <code>v2.0</code> 에서 타임존 오프셋 계산방법을 변경했습니다.
+    TZInfo 라이브러리 버전 2.0 에서 타임존 오프셋 계산방법을 변경했습니다.
     이로 인해 윈도우즈에서 Jekyll 3.x 로 사이트를 생성할 때 포스트의 날짜와 시간에 오류가 발생합니다.
   </p>
   <p>
 <!--
-    We therefore recommend that you lock the Timezone library to <code>v1.2</code> and above by listing
+    We therefore recommend that you lock the Timezone library to version 1.2 and above by listing
     <code>gem 'tzinfo', '~> 1.2'</code> in your <code>Gemfile</code>.
 -->
     따라서 <code>Gemfile</code> 에 <code>gem 'tzinfo', '~>1.2'</code> 를 추가해서
-    이 타임존 라이브러리의 버전을 고정시키는 것을 권장합니다.
+    이 타임존 라이브러리의 버전을 1.2 로 고정시킬 것을 권장합니다.
   </p>
 </div>
 
@@ -277,26 +281,3 @@ the MSYS2 build tools to successfully install the `wdm` gem.
 -->
 반드시 [Ruby+Devkit](https://rubyinstaller.org/downloads/) 버전 RubyInstaller 를 사용하고
 MSYS2 빌드 도구를 설치해야지만 `wdm` 젬을 정상적으로 설치할 수 있습니다.
-
-```sh
-bundle config path vendor/bundle
-```
-
-<!--
-**And that's it!**
--->
-**이제 끝났습니다!**
-
-<!--
-To start a new project named `my_blog`, just run:
--->
-새 프로젝트 `my_blog` 를 시작하려면, 이렇게 실행합니다:
-
-```sh
-jekyll new my_blog
-```
-
-<!--
-You can make sure time management is working properly by inspecting your `_posts` folder. You should see a markdown file with the current date in the filename.
--->
-생성된 `_posts` 폴더를 확인해보면 타임존 관리가 올바르게 작동하고 있는지 확인할 수 있습니다. 파일명에 현재시간이 들어가 있는 마크다운 파일이 있을 것입니다.

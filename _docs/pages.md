@@ -26,10 +26,10 @@ and associated URLs might look like:
 홈페이지와 소개 (About) 페이지, 연락처 (Contact) 페이지를 가진 사이트에서, 루트 디렉토리의
 내용과 각각에 해당하는 URL 은 다음과 같습니다:
 
-```sh
+```
 .
-|-- about.md    # => http://example.com/about.html
-|-- index.html    # => http://example.com/
+├── about.md    # => http://example.com/about.html
+├── index.html    # => http://example.com/
 └── contact.html  # => http://example.com/contact.html
 ```
 
@@ -39,22 +39,22 @@ If you have a lot of pages, you can organize them into subfolders. The same subf
 페이지가 많이 있는 경우에는, 하위 폴더로 정리할 수 있습니다. 사이트 빌드 시, 사이트 소스에서 페이지를 그룹지을 때 사용한 하위 폴더가 동일한 형태로 `_site` 폴더 안에 생성됩니다. 하지만, 페이지의 머리말에 *다른* 고유주소가 설정되어 있으면, `_site` 의 하위 폴더는 이에 맞게 변형됩니다.
 
 <!--
-```sh
+```
 .
-|-- about.md          # => http://example.com/about.html
-|-- documentation     # folder containing pages
-    └── doc1.md       # => http://example.com/documentation/doc1.html
-|-- design            # folder containing pages
-    └── draft.md      # => http://example.com/design/draft.html
+├── about.md          # => http://example.com/about.html
+├── documentation     # folder containing pages
+│   └── doc1.md       # => http://example.com/documentation/doc1.html
+├── design            # folder containing pages
+│   └── draft.md      # => http://example.com/design/draft.html
 ```
 -->
-```sh
+```
 .
-|-- about.md          # => http://example.com/about.html
-|-- documentation     # 페이지가 들어있는 폴더
-    └── doc1.md       # => http://example.com/documentation/doc1.html
-|-- design            # 페이지가 들어있는 폴더
-    └── draft.md      # => http://example.com/design/draft.html
+├── about.md          # => http://example.com/about.html
+├── documentation     # 페이지가 들어있는 폴더
+│   └── doc1.md       # => http://example.com/documentation/doc1.html
+├── design            # 페이지가 들어있는 폴더
+│   └── draft.md      # => http://example.com/design/draft.html
 ```
 
 <!--

@@ -63,7 +63,6 @@ There are a bunch of helpful community members on these services that should be 
 * [버그 리포트 방법](/docs/community/bug/)
 * [Jekyll 관리자 가이드](/docs/maintaining/)
 
-
 ## Jekyllconf
 
 <!--

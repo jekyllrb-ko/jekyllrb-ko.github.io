@@ -63,7 +63,6 @@ Install the Kickster gem and you are good to go. More documentation can here fou
 -->
 Kickster 젬만 설치하면 준비는 끝났습니다. 관련 문서는 [여기](https://github.com/nielsenramon/kickster#kickster)서 찾을 수 있습니다. 만약 루비 젬을 설치하거나 새 프로젝트를 만들고 싶지 않다면 [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) 나 [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci) 용 배포 스크립트만 복사해 사용할 수 있습니다.
 
-
 ## Netlify
 
 <!--

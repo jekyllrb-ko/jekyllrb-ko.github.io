@@ -4,10 +4,14 @@
     <option value="">Navigate the tutorials…</option>
 -->
     <option value="">튜토리얼을 선택하세요…</option>
-    {% for section in site.data.tutorials %}
+    {% for section in site.data.tutorials -%}
     <optgroup label="{{ section.title }}">
-      {% include tutorials_option.html items=section.tutorials %}
+      {% for item in section.tutorials -%}
+        {% assign item_url = item | prepend:"/tutorials/" | append:"/" -%}
+        {% assign tutorial = site.tutorials | where: "url", item_url | first -%}
+        <option value="{{ tutorial.url }}">{{ tutorial.title }}</option>
+      {% endfor -%}
     </optgroup>
-    {% endfor %}
+    {% endfor -%}
   </select>
 </div>

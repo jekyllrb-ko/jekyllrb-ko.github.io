@@ -47,7 +47,6 @@ from this as needed.
   </p>
 </div>
 
-
 <!--
 ## Usage
 -->
@@ -62,10 +61,8 @@ being wrapped.
 특별한 변수가 있는데, 그 값은 포스트나 페이지의 렌더링 된
 컨텐츠입니다.
 
-
-
 {% raw %}
-```
+```liquid
 <!doctype html>
 <html lang="en">
   <head>
@@ -107,7 +104,7 @@ from having to set this on every page.
 그리고 [머리말 기본값](/docs/configuration/front-matter-defaults/)을 사용하면
 모든 페이지에 같은 내용을 입력하지 않아도 됩니다.
 
-```
+```markdown
 ---
 title: My First Page
 layout: default
@@ -121,7 +118,7 @@ The rendered output of this page is:
 -->
 이 페이지의 렌더링된 결과물입니다:
 
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -144,7 +141,6 @@ The rendered output of this page is:
   </body>
 </html>
 ```
-
 
 <!--
 ## Inheritance
@@ -172,7 +168,7 @@ layout in front matter. For example this layout will live at
 예시입니다:
 
 {% raw %}
-```
+```liquid
 ---
 layout: default
 ---
@@ -202,7 +198,7 @@ example:
 들면 다음과 같습니다:
 
 {% raw %}
-```
+```liquid
 ---
 city: San Francisco
 ---

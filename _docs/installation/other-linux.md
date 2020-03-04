@@ -13,7 +13,7 @@ On Fedora, the dependencies can be installed as follows:
 -->
 페도라의 경우, 의존요소를 설치할 때 다음과 같이 실행합니다:
 
- ```sh
+```sh
 sudo dnf install ruby ruby-devel @development-tools
 ```
 

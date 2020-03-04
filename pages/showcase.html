@@ -13,18 +13,18 @@ redirect_from:
 <p>Jekyll 은 모든 종류의 사용 사례를 가지고 있습니다. 그 중에서 몇 가지를 골라봤습니다:</p>
 
 <ul class="showcase" id="showcase">
-  {% for s in site.data.showcase reversed %}
-    <li>
-      <a href="{{ s.url }}" target="_blank">
-        <figure>
-          <div class="imageWrapper">
-            <img class="b-lazy" src="/img/spacer.gif" alt="{{ s.name }}">
-          </div>
-          <figcaption>{{ s.name }}</figcaption>
-        </figure>
-      </a>
-    </li>
-  {% endfor %}
+  {% for s in site.data.showcase reversed -%}
+  <li>
+    <a href="{{ s.url }}" target="_blank">
+      <figure>
+        <div class="imageWrapper">
+          <img class="b-lazy" src="/img/spacer.gif" alt="{{ s.name }}">
+        </div>
+        <figcaption>{{ s.name }}</figcaption>
+      </figure>
+    </a>
+  </li>
+  {% endfor -%}
   <li class="spacer"></li>
 </ul>
 

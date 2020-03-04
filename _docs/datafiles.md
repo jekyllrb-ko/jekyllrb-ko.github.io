@@ -81,7 +81,7 @@ Or `_data/members.csv`:
 -->
 또는 `_data/members.csv` 에:
 
-```text
+```
 name,github
 Eric Mill,konklone
 Parker Moore,parkr

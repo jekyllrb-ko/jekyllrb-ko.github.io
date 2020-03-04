@@ -193,7 +193,7 @@ vendor/
 ```
 -->
 ```
-# Jekyll 가 생성한 메타 데이터 무시
+# Jekyll 이 생성한 메타 데이터 무시
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -203,4 +203,3 @@ _site/
 .bundle/
 vendor/
 ```
-

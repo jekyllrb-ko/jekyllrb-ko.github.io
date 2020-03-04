@@ -24,7 +24,7 @@ xcode-select --install
 
 <!--
 Jekyll requires **Ruby > {{ site.data.ruby.min_version }}**.
-macOS Catalina 10.15 comes with ruby 2.6.3, so you're fine. 
+macOS Catalina 10.15 comes with ruby 2.6.3, so you're fine.
 If you're running a previous macOS system, you'll have to install a newer version of Ruby.
 -->
 Jekyll 은 **루비 > {{ site.data.ruby.min_version }}** 버전을 필요로 합니다.
@@ -56,12 +56,12 @@ brew install ruby
 ```
 
 <!--
-Add the brew ruby path to your shell config :
+Add the brew ruby path to your shell config:
 -->
 Homebrew 루비의 경로를 쉘 환경설정에 추가합니다:
 
-```
-export PATH=/usr/local/opt/ruby/bin:$PATH
+```bash
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 ```
 
 <!--
@@ -102,10 +102,10 @@ Ruby versions. This is very useful when you need to be able to run a given Ruby 
 # Install rbenv and ruby-build
 brew install rbenv
 
-# Setup rbenv integration to your shell
+# Set up rbenv integration with your shell
 rbenv init
 
-# Check your install
+# Check your installation
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 ```
 -->
@@ -176,8 +176,8 @@ Then append your path file with the following, replacing the `X.X` with the firs
 -->
 이제 아래 내용을 쉘 환경에 추가하는데, `X.X` 부분에는 설치된 루비 버전의 처음 두 숫자를 넣습니다.
 
-```
-export PATH=$HOME/.gem/ruby/X.X.0/bin:$PATH
+```bash
+echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.bash_profile
 ```
 
 <!--
@@ -190,11 +190,11 @@ gem env
 ```
 
 <!--
-And check that `GEM PATHS:` points to a path in your home directory
+And check that `GEM PATHS:` points to a path in your home directory.
 -->
-그리고 `GEM PATHS:` 가 홈 디렉토리 내의 경로를 가리키고 있는지 확인합니다
+그리고 `GEM PATHS:` 가 홈 디렉토리 내의 경로를 가리키고 있는지 확인합니다.
 
-{: .note }
+{: .note .info}
 <!--
 Every time you update Ruby to a version with a different first two digits, you will need to update your path to match.
 -->

@@ -9,7 +9,7 @@ position: 1
 <!--
 Welcome to Jekyll's step-by-step tutorial. The goal of this tutorial is to take
 you from having some front end web development experience to building your
-first Jekyll site from scratch — not relying on the default gem-based theme. 
+first Jekyll site from scratch — not relying on the default gem-based theme.
 Let's get into it!
 -->
 Jekyll 단계별 튜토리얼에 오신 것을 환영합니다. 이 튜토리얼의 목표는 약간의
@@ -38,7 +38,7 @@ terminal:
 루비가 준비되었으면 터미널에 다음과 같이 실행하여 Jekyll 을 설치할 수
 있습니다:
 
-```
+```sh
 gem install jekyll bundler
 ```
 
@@ -47,16 +47,16 @@ To create a new `Gemfile` to list your project's dependencies run:
 -->
 프로젝트의 의존요소 목록인 `Gemfile` 을 생성하려면 이렇게 실행합니다:
 
-```
+```sh
 bundle init
 ```
 
 <!--
-Now edit the `Gemfile`and add jekyll as a dependency:
+Now edit the `Gemfile` and add jekyll as a dependency:
 -->
 이제 `Gemfile` 을 열어 jekyll 을 의존요소로 추가합니다:
 
-```
+```ruby
 gem "jekyll"
 ```
 
@@ -66,7 +66,7 @@ Finally run `bundle` to install jekyll for your project.
 마지막으로 `bundle` 을 실행해 프로젝트에 Jekyll 을 설치합니다.
 
 <!--
-You can now prefix all jekyll commands listed in this tutorial with `bundle exec` 
+You can now prefix all jekyll commands listed in this tutorial with `bundle exec`
 to make sure you use the jekyll version defined in your `Gemfile`.
 -->
 이제부터 이 튜토리얼에 언급된 모든 Jekyll 명령어 앞에 `bundle exec` 를 붙여

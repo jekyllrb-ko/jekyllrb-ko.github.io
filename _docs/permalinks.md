@@ -34,7 +34,7 @@ front matter of the page you would set:
 `/my_pages/about-me.html` 이고 url 을 `/about/` 으로 만드려고 합니다. 페이지의
 머리말에 다음과 같이 설정합니다:
 
-```
+```yaml
 ---
 permalink: /about/
 ---
@@ -87,7 +87,6 @@ For example, a permalink style of
 Here's the full list of placeholders available:
 -->
 다음은 사용할 수 있는 Placeholder 의 전체 목록입니다:
-
 
 <div class="mobile-side-scroller">
 <table>

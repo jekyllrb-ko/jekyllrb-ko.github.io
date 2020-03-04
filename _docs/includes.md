@@ -114,7 +114,7 @@ You can also pass parameters to an include. For example, suppose you have a file
 {% endraw %}
 
 <!--
-The `{% raw %}{{ include.content }}{% endraw %}` is a parameter that gets populated when you call the include and specify a value for that parameter, like this:
+The {% raw %}`{{ include.content }}`{% endraw %} is a parameter that gets populated when you call the include and specify a value for that parameter, like this:
 -->
 `{% raw %}{{ include.content }}{% endraw %}` 는 파라메터로서 다음과 같이 `include` 태그를 파라메터 대한 값과 함께 호출하면 그 값이 입력됩니다.
 

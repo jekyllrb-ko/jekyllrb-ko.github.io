@@ -40,17 +40,17 @@ in Jekyll 3 and above.
 대한 구문 강조 기능을 내장하고 있습니다.
 Jekyll 3 와 그 이상의 버전에서는 Rouge 가 기본 구문 강조기입니다.
 
-<div class="note warning">
+{: .note .warning}
 <!--
-  <p>Using Pygments has been deprecated and is not supported in
-  Jekyll 4, the configuration setting <code>highlighter: pygments</code>
-  now automatically falls back to using <em>Rouge</em> which is written in Ruby
-  and 100% compatible with stylesheets for Pygments.</p>
+Using Pygments has been deprecated and is not supported in
+Jekyll 4; the configuration setting <code>highlighter: pygments</code>
+now automatically falls back to using <em>Rouge</em> which is written in Ruby
+and 100% compatible with stylesheets for Pygments.
 -->
-  <p>Pygments 를 사용하는 것은 권장되지 않았었고 현재 Jekyll 4 에서는
-  지원되지 않기 때문에, 환경설정의 <code>highlighter: pygments</code> 는
-  이제 자동으로 루비로 작성된 <em>Rough</em> 를 사용하게 바뀌며
-  Pygments 용 스타일시트와 100% 호환됩니다.</p>
+Pygments 를 사용하는 것은 권장되지 않았었고 현재 Jekyll 4 에서는
+지원되지 않습니다. 환경설정의 <code>highlighter: pygments</code> 는
+이제 자동으로 루비로 작성된 <em>Rough</em> 를 사용하게 바뀌며
+Pygments 용 스타일시트와 100% 호환됩니다.
 </div>
 
 <!--
@@ -88,12 +88,12 @@ wiki](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexe
   <p>If you are using a language that contains curly braces, you
     will likely need to place <code>{&#37; raw &#37;}</code> and
     <code>{&#37; endraw &#37;}</code> tags around your code.
-    Since {% include docs_version_badge.html version="4.0" %} you can add <code>render_with_liquid: false</code> in your front matter to disable Liquid entirely for a particular document.</p>
+    Since Jekyll {% include docs_version_badge.html version="4.0" %}, you can add <code>render_with_liquid: false</code> in your front matter to disable Liquid entirely for a particular document.</p>
 -->
   <p>만약 당신이 사용하려는 언어에 중괄호가 포함되어 있다면, 당신의
     코드 앞 뒤를 <code>{&#37; raw &#37;}</code> 와
     <code>{&#37; endraw &#37;}</code> 태그로 감싸야 할 것입니다.
-    {% include docs_version_badge.html version="4.0" %} 버전부터 머리말에 <code>render_with_liquid: false</code> 를 추가해 문서 전체의 Liquid 를 비활성화할 수 있습니다.</p>
+    Jekyll {% include docs_version_badge.html version="4.0" %} 부터, 머리말에 <code>render_with_liquid: false</code> 를 추가해 문서 전체의 Liquid 를 비활성화할 수 있습니다.</p>
 </div>
 
 <!--
@@ -130,8 +130,8 @@ end
 <!--
 In order for the highlighting to show up, you’ll need to include a highlighting
 stylesheet. For Pygments or Rouge you can use a stylesheet for Pygments, you
-can find an example gallery 
-[here](https://jwarby.github.io/jekyll-pygments-themes/languages/ruby.html) 
+can find an example gallery
+[here](https://jwarby.github.io/jekyll-pygments-themes/languages/ruby.html)
 or from [its repository](https://github.com/jwarby/jekyll-pygments-themes).
 -->
 구문 강조를 작동시키려면, 구문 강조용 스타일시트를 추가해야 합니다.
@@ -156,11 +156,11 @@ CSS 파일 (예를 들어 `native.css`) 을 css 디렉토리에 복사하고
 -->
 ## 링크
 
-{: .note }
+{: .note}
 <!--
-Since Jekyll {% include docs_version_badge.html version="v4.0"%} you don't need to prepend `link` and `post_url` tags with `site.baseurl`
+Since Jekyll {% include docs_version_badge.html version="4.0"%}, you don't need to prepend `link` and `post_url` tags with `site.baseurl`.
 -->
-Jekyll {% include docs_version_badge.html version="v4.0"%} 부터 `link` 와 `post_url` 태그 앞에 `site.baseurl` 을 사용할 필요가 없습니다.
+Jekyll {% include docs_version_badge.html version="4.0"%} 부터, `link` 와 `post_url` 태그 앞에 `site.baseurl` 을 사용할 필요가 없습니다.
 
 <!--
 ### Linking to pages {#link}
@@ -211,7 +211,7 @@ For example, suppose you're creating a link in `page_a.md` (stored in `pages/fol
 예를 들어, `page_a.md` (`pages/folder1/folder2` 에 저장되어 있음) 에 `page_b.md` (`pages/folder1` 에 저장되어 있음) 로의 링크를 생성한다고 생각해봅시다. 이 링크의 경로는 `../page_b.html` 이 아닙니다. 경로는 `/pages/folder1/page_b.md` 입니다.
 
 <!--
-If you're unsure of the path, add `{% raw %}{{ page.path }}{% endraw %}` to the page and it will display the path.
+If you're unsure of the path, add {% raw %}`{{ page.path }}`{% endraw %} to the page and it will display the path.
 -->
 정확한 경로를 모르겠다면, 해당 페이지에 `{% raw %}{{ page.path }}{% endraw %}` 를 추가해서 경로를 표시할 수 있습니다.
 
@@ -221,9 +221,9 @@ One major benefit of using the `link` or `post_url` tag is link validation. If t
 이 `link` 나 `post_url` 태그를 사용하는 가장 큰 장점은 링크 유효성 검사입니다. 해당 링크가 존재하지 않는다면, Jekyll 은 사이트를 빌드하지 않을 것입니다. 이는 깨진 링크에 대한 경고를 주어 고칠 기회를 얻을 수 있으므로 장점이라고 할 수 있습니다 (그렇지 않으면 깨진 링크를 가진 사이트를 배포하게 될 것입니다).
 
 <!--
-Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}`. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques.
+Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as {% raw %}`{% link mypage.html | append: "#section1" %}`{% endraw %}. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques.
 -->
-`link` 태그에는 필터를 추가할 수 없다는 것을 알아두세요. 예를 들어, `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}` 처럼 Liquid 필터를 사용해 문자열을 추가할 수 없습니다. 페이지의 특정 부분에 링크하기 위해서는, 기본 HTML 링크나 마크다운 링크 방식을 사용해야 합니다.
+`link` 태그에는 필터를 추가할 수 없다는 것을 알아두세요. 예를 들어, {% raw %}`{% link mypage.html | append: "#section1" %}`{% endraw %} 처럼 Liquid 필터를 사용해 문자열을 추가할 수 없습니다. 페이지의 특정 부분에 링크하기 위해서는, 기본 HTML 링크나 마크다운 링크 방식을 사용해야 합니다.
 
 <!--
 ### Linking to posts

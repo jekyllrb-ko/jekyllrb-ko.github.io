@@ -96,8 +96,6 @@ I hope you like it!
   </p>
 </div>
 
-
-
 <div class="note info">
 <!--
   <h5>Be aware of character sets</h5>
@@ -177,7 +175,7 @@ simple example of how to create a list of links to your blog posts:
 포스트 링크 목록을 생성하는 간단한 예시가 있습니다:
 
 {% raw %}
-```html
+```liquid
 <ul>
   {% for post in site.posts %}
     <li>
@@ -277,7 +275,7 @@ can be customized by setting a `excerpt_separator` variable in front matter or
 `_config.yml`.
 -->
 
-```yaml
+```markdown
 ---
 excerpt_separator: <!--more-->
 ---
@@ -319,9 +317,11 @@ create a `_drafts` folder in your site's root and create your first draft:
 사이트의 루트 디렉토리에 `_drafts` 폴더를 만들고 초안을 생성하면 됩니다:
 
 
-```text
-|-- _drafts/
-|   |-- a-draft-post.md
+```
+.
+├── _drafts
+│   └── a-draft-post.md
+...
 ```
 
 <!--
