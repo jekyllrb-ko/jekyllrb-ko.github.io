@@ -17,6 +17,12 @@
     </div>
 -->
     <div class="meta hide-on-mobiles">
+    {% assign commit = site.data.ko.origin-commits[0] %}
+      <ul>
+        <li><a href="{{ site.repository-ko }}">{{ commit.date | date: "%y-%m-%d" }} 기준 번역</a><li>
+      </ul>
+    </div>
+    <div class="meta hide-on-mobiles">
       <ul>
         <li><a href="{{ site.repository }}/releases/tag/v{{ site.version }}">v{{ site.version }}</a></li>
         <li><a href="{{ site.repository }}">GitHub</a></li>
