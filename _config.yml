@@ -1,5 +1,7 @@
 ---
 version: 4.0.0
+#name: Jekyll • Simple, blog-aware, static sites
+#description: Transform your plain text into static websites and blogs
 name: Jekyll • 심플한, 블로그 지향적, 정적 사이트
 description: 평범한 텍스트 파일을 정적 웹사이트 또는 블로그로 변신시켜 보세요.
 url: https://jekyllrb.com
