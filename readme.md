@@ -1,19 +1,14 @@
-# Jekyll docs site
+# Jekyll 문서 사이트 한글 번역
 
-This directory contains the code for the Jekyll docs site, [jekyllrb.com](https://jekyllrb.com/).
+Jekyll 문서 사이트 [jekyllrb.com](https://jekyllrb.com/) 의 한글 번역 [jekyllrb-ko.github.io](https://jekyllrb-ko.github.io) 저장소입니다.
 
-## Contributing
+## 로컬 서버 구동 방법
 
-For information about contributing, see the [Contributing page](https://jekyllrb.com/docs/contributing/).
+프로젝트 루트 디렉토리에서 다음과 같이 입력합니다:
 
-## Running locally
-
-You can preview your contributions before opening a pull request by running from within the directory:
-
-1. `bundle install --without test test_legacy benchmark`
-2. `bundle exec rake site:preview`
-
-It's just a jekyll site, afterall! :wink:
+1. `bundle config set --local path vendor/bundle`
+2. `bundle install`
+3. `bundle exec jekyll serve`
 
 ## Updating Font Awesome
 
