@@ -120,6 +120,7 @@ Use a SaaS service as a backend for functionality on your Jekyll site
   - [formX](https://formx.stream)
   - [Simple Form](https://getsimpleform.com/)
   - [SmartForms](https://smartforms.dev/)
+  - [Typeform](https://www.typeform.com/templates/c/forms/)
 
 <!--
 ### Search
