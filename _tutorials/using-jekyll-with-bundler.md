@@ -80,7 +80,7 @@ dependencies globally on your system.
 의존요소들을 설치할 것입니다.
 
 ```sh
-bundle install --path vendor/bundle
+bundle config set path 'vendor/bundle'
 ```
 
 <div class="note info">

@@ -66,14 +66,21 @@ Kickster 젬만 설치하면 준비는 끝났습니다. 관련 문서는 [여기
 ## Netlify
 
 <!--
-Netlify provides Global CDN, Continuous Deployment, one click HTTPS and [much more](https://www.netlify.com/features/), providing developers the most robust toolset available for modern web projects, without added complexity. Netlify supports custom plugins for Jekyll and has a free plan for open source projects.
+Netlify provides Global CDN, Continuous Deployment, one click HTTPS and [much more](https://www.netlify.com/features/), providing developers a robust toolset for modern web projects, without added complexity. Netlify supports custom plugins for Jekyll and has a free plan for open source projects.
 -->
-Netlify 는 범세계적인 CDN 과 지속적인 서비스, 손쉬운 HTTPS 설정과 [그 밖의 많은 기능](https://www.netlify.com/features/)으로, 개발자들에게 현대식 웹 프로젝트에 사용할 수 있는 가장 강력한, 하지만 복잡하지 않은, 도구를 제공합니다.
+Netlify 는 범세계적인 CDN 과 지속적인 서비스, 손쉬운 HTTPS 설정과 [그 밖의 많은 기능](https://www.netlify.com/features/)으로, 개발자들에게 현대식 웹 프로젝트에 사용할 수 있는 강력한, 하지만 복잡하지 않은, 도구를 제공합니다. Netlify 에는 오픈 소스 프로젝트를 위한 무료 플랜도 있고 Jekyll 의 커스텀 플러그인도 지원합니다.
 
 <!--
 Read this [Jekyll step-by-step guide](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/) to setup your Jekyll site on Netlify.
 -->
 Netlify 에 Jekyll 사이트를 구성하려면 [단계적 Jekyll 설정방법](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/)을 읽어보세요.
+
+## Render
+
+<!--
+[Render](https://render.com) provides zero config continuous deployment for static sites. The service is free under 100GB monthly bandwith.
+-->
+[Render](https://render.com) 은 정적 사이트를 위한, 환경설정이 필요없는 지속적 배포를 제공합니다. 매 월 100GB 대역 이하로는 무료입니다.
 
 ## Static Publisher
 
@@ -81,3 +88,10 @@ Netlify 에 Jekyll 사이트를 구성하려면 [단계적 Jekyll 설정방법](
 [Static Publisher](https://github.com/static-publisher/static-publisher) is another automated deployment option with a server listening for webhook posts, though it's not tied to GitHub specifically. It has a one-click deploy to Heroku, it can watch multiple projects from one server, it has an easy to user admin interface and can publish to either S3 or to a git repository (e.g. gh-pages).
 -->
 GitHub 과 연관성은 없지만, Webhook 포스트를 감시하는 서버를 사용한 [Static Publisher](https://github.com/static-publisher/static-publisher) 라는 게시방법도 있습니다. 한 번의 클릭으로 Heroku 에 게시가 가능하고, 한 서버에서 여러 프로젝트를 감시할 수 있으며, 직관적인 관리자 인터페이스를 가지고 있고 S3 와 git 저장소 (예, gh-pages) 에 게시할 수 있습니다.
+
+## ZEIT
+
+<!--
+[ZEIT](https://zeit.co/) provides zero config continuous deployment, HTTPS Custom domains, high performance smart CDN, you get instant static deploy for free.
+-->
+[ZEIT](https://zeit.co/) 는 환경설정이 필요없는 지속 배포, HTTPS 커스텀 도메인, 고성능 스마트 CDN 을 통해 즉각적인 정적 사이트 배포를 무료로 제공합니다.
