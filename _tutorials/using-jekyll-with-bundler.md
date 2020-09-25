@@ -52,7 +52,7 @@ The first thing to do is create a new directory for your project and run
 Gemfile).
 -->
 가장 먼저 해야할 일은 프로젝트를 위한 새 디렉토리를 생성하고 `bundle init` 을
-실행하는 것입니다. 이 명령은 (빈 Gemgile 을 생성해서) 새 Bundler 프로젝트를
+실행하는 것입니다. 이 명령은 (빈 Gemfile 을 생성해서) 새 Bundler 프로젝트를
 생성합니다.
 
 ```sh
