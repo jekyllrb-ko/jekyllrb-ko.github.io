@@ -53,24 +53,24 @@ bundle exec jekyll serve
 ```
 6. Browse to [http://localhost:4000](http://localhost:4000){:target="_blank"}
 -->
-1. 완전한 [루비 개발환경](/docs/installation/)을 설치한다.
-2. Jekyll 과 [Bundler](/docs/ruby-101/#bundler) [젬](/docs/ruby-101/#gems)을 설치한다.
+1. 완전한 [루비 개발환경](/docs/installation/)을 설치합니다.
+2. Jekyll 과 [Bundler](/docs/ruby-101/#bundler) [젬](/docs/ruby-101/#gems)을 설치합니다.
 ```
 gem install jekyll bundler
 ```
-3. `./myblog` 에 새 Jekyll 사이트를 생성한다.
+3. `./myblog` 에 새 Jekyll 사이트를 생성합니다.
 ```
 jekyll new myblog
 ```
-4. 생성된 디렉토리로 이동한다.
+4. 생성된 디렉토리로 이동합니다.
 ```
 cd myblog
 ```
-5. 사이트를 빌드하고 로컬 서버에 적용한다.
+5. 사이트를 빌드하고 로컬 서버에 적용합니다.
 ```
 bundle exec jekyll serve
 ```
-6. 이제 브라우저로 [http://localhost:4000](http://localhost:4000){:target="_blank"} 에 접속한다.
+6. 이제 브라우저로 [http://localhost:4000](http://localhost:4000){:target="_blank"} 에 접속합니다.
 
 <!--
 If you encounter any errors during this process, see the
