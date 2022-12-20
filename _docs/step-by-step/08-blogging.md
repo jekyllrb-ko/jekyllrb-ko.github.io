@@ -40,7 +40,7 @@ This is like the `about.md` you created before except it has an author and
 a different layout. `author` is a custom variable, it's not required and could
 have been named something like `creator`. -->
 저자와 레이아웃이 다르다는 것을 제외하면 이전에 만든 `about.md` 파일과 같습니다.
-`저자`는 사용자 지정 변수이며, 필수적이지 않고 제작자와 같은 이름으로 지정될 수 있습니다.
+`저자`는 사용자 지정 변수이며, 필수적이지 않고 `제작자`와 같은 이름으로 지정될 수 있습니다.
 
 <!-- ## Layout -->
 ## 레이아웃
