@@ -39,8 +39,8 @@ when ripe.
 This is like the `about.md` you created before except it has an author and
 a different layout. `author` is a custom variable, it's not required and could
 have been named something like `creator`. -->
-저자와 레이아웃이 다르다는 것을 제외하면 이전에 만든 `about.md` 파일과 같습니다.
-`저자`는 사용자 지정 변수이며, 필수적이지 않고 `제작자`와 같은 이름으로 지정될 수 있습니다.
+작성자와 레이아웃이 다르다는 것을 제외하면 이전에 만든 `about.md` 파일과 같습니다.
+`작성자`는 사용자 지정 변수이며, 필수적이지 않고 `제작자`와 같은 이름으로 지정될 수 있습니다.
 
 <!-- ## Layout -->
 ## 레이아웃
@@ -64,7 +64,7 @@ layout: default
 <!-- This is an example of layout inheritance. The post layout outputs the title,
 date, author and content body which is wrapped by the default layout. -->
 이것은 레이아웃의 상속에 대한 예제입니다. 이 포스트 레이아웃은 기본 레이아웃으로 감싼 제목과,
-날짜 그리고 저자의 내용을 출력합니다.
+날짜 그리고 작성자의 내용을 출력합니다.
 
 <!-- Also note the `date_to_string` filter, this formats a date into a nicer format. -->
 또한 `date_to_string` 필터를 주목하세요. 이 필터는 더 나은 서식을 만들어줍니다.
@@ -173,4 +173,4 @@ and have a look through your blog posts. -->
 블로그 포스트을 확인해보세요.
 
 <!-- Next we'll focus on creating a page for each post author. -->
-다음은 각 포스트 저자를 위한 페이지를 만들어 볼 것입니다.
+다음은 각 포스트 작성자를 위한 페이지를 만들어 볼 것입니다.
