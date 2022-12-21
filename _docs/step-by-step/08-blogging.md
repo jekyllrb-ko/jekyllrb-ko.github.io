@@ -14,12 +14,12 @@ Jekyll style, blogging is powered by text files only. -->
 
 <!-- Blog posts live in a folder called `_posts`. The filename for posts have a
 special format: the publish date, then a title, followed by an extension. -->
-블로그 포스트은 `_post`라고 불리는 폴더에 저장됩니다.
+블로그 포스트는 `_post`라고 불리는 폴더에 저장됩니다.
 포스트의 파일이름은 게시 날짜-제목-확장자 순의 특별한 형식을 가지고 있습니다.
 
 <!-- Create your first post at `_posts/2018-08-20-bananas.md` with the
 following content: -->
-다음 내용을 포함해 `_posts/2018-08-20-bananas.md`이라는 첫 포스트을 만들어보세요:
+다음 내용을 포함해 `_posts/2018-08-20-bananas.md`이라는 첫 포스트를 만들어보세요:
 
 ```markdown
 ---
@@ -79,7 +79,7 @@ page which lists all the posts, let's do that next. -->
 
 
 <!-- Jekyll makes posts available at `site.posts`. -->
-Jekyll는 `site.posts`를 통해 포스트을 이용할 수 있게 만듭니다.
+Jekyll는 `site.posts`를 통해 포스트를 이용할 수 있게 만듭니다.
 
 <!-- Create `blog.html` in your root (`/blog.html`) with the following content: -->
 다음 내용을 포함하여 `blog.html`를 만들고, 최상위 폴더에(`/blog.html`) 추가해보세요:
@@ -170,7 +170,7 @@ texture, with a sweet and unique flavor.
 <!-- Open <a href="http://localhost:4000" target="_blank" data-proofer-ignore>http://localhost:4000</a>
 and have a look through your blog posts. -->
 <a href="http://localhost:4000" target="_blank" data-proofer-ignore>http://localhost:4000</a>를 열어
-블로그 포스트을 확인해보세요.
+블로그 포스트를 확인해보세요.
 
 <!-- Next we'll focus on creating a page for each post author. -->
 다음은 각 포스트 작성자를 위한 페이지를 만들어 볼 것입니다.
