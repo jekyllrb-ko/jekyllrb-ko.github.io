@@ -79,7 +79,7 @@ page which lists all the posts, let's do that next. -->
 
 
 <!-- Jekyll makes posts available at `site.posts`. -->
-Jekyll는 `site.posts`에서 포스트를 만들 수 있습니다.
+Jekyll는 `site.posts`를 통해 게시글을 이용할 수 있게 만듭니다.
 
 <!-- Create `blog.html` in your root (`/blog.html`) with the following content: -->
 다음 내용을 포함하여 `blog.html`를 만들고, 최상위 폴더에(`/blog.html`) 추가해보세요:
