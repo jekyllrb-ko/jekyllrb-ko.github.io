@@ -67,7 +67,7 @@ date, author and content body which is wrapped by the default layout. -->
 날짜 그리고 작성자의 내용을 출력합니다.
 
 <!-- Also note the `date_to_string` filter, this formats a date into a nicer format. -->
-또한 `date_to_string` 필터를 주목하세요. 이 필터는 더 나은 서식을 만들어줍니다.
+또한 `date_to_string` 필터를 주목하세요. 이 필터는 날짜를 더 나은 서식으로 만들어줍니다.
 
 <!-- ## List posts -->
 ## 포스트 리스트
