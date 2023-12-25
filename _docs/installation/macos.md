@@ -120,7 +120,7 @@ brew install rbenv
 rbenv init
 
 # 설치상태 검사
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
 ```
 
 <!--
